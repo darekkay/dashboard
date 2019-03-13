@@ -1,0 +1,25 @@
+### Node.js ###
+
+/node_modules
+/.pnp
+.pnp.js
+package-lock.json
+
+
+### IDE ###
+
+/.idea/workspace.xml
+/.idea/tasks.xml
+
+
+### App ###
+
+/build
+/coverage
+.env*.local
+
+
+### Misc ###
+
+*.log
+.DS_Store

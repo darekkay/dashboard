@@ -1,0 +1,39 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "react-app",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": ["import", "jsx-a11y", "prettier", "react"],
+  "root": true,
+  "rules": {
+    "linebreak-style": "off",
+    "prettier/prettier": "warn",
+    "radix": "off",
+    "react/jsx-filename-extension": "off",
+    "react/prop-types": "warn",
+    "react/require-default-props": "warn",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

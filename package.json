@@ -1,0 +1,72 @@
+{
+  "name": "dashboard",
+  "description": "Personal dashboard",
+  "version": "1.0.0",
+  "author": "Darek Kay <hello@darekkay.com> (https://darekkay.com/)",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "classnames": "2.2.6",
+    "lodash": "4.17.11",
+    "moment": "2.24.0",
+    "react": "16.8.4",
+    "react-dom": "16.8.4",
+    "react-scripts": "2.1.8"
+  },
+  "devDependencies": {
+    "@types/classnames": "2.2.7",
+    "@types/enzyme": "3.9.0",
+    "@types/jest": "24.0.11",
+    "@types/lodash": "4.14.123",
+    "@types/moment": "2.13.0",
+    "@types/node": "11.11.3",
+    "@types/react": "16.8.8",
+    "@types/react-dom": "16.8.2",
+    "@typescript-eslint/eslint-plugin": "1.4.2",
+    "@typescript-eslint/parser": "1.4.2",
+    "enzyme": "3.9.0",
+    "enzyme-adapter-react-16": "1.10.0",
+    "eslint-config-prettier": "4.1.0",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-prettier": "3.0.1",
+    "eslint-plugin-react": "7.12.4",
+    "node-sass": "4.11.0",
+    "prettier": "1.16.4",
+    "typescript": "3.3.3333"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "homepage": "https://dashboard.darekkay.com",
+  "jest": {
+    "coverageThreshold": {
+      "src/**/*.tsx": {
+        "statements": 80,
+        "branches": 80,
+        "functions": 80,
+        "lines": 80
+      }
+    }
+  },
+  "license": "MIT",
+  "main": "src/index.tsx",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darekkay/dashboard.git"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "ci": "npm run lint:check && npm run test",
+    "format": "prettier --write -- \"{src,public}/**/*.{js,jsx,tsx,json,css,scss}\"",
+    "lint:check": "eslint src/**/*.tsx",
+    "lint:fix": "eslint --fix src/**/*.tsx",
+    "start": "react-scripts start",
+    "test": "react-scripts test --modulePaths=src --coverage"
+  }
+}
