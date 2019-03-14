@@ -1,12 +1,16 @@
 import React, { PureComponent } from "react";
 
 import "./App.scss";
+import Link from "./link/Link";
 
 class App extends PureComponent {
   render() {
     return (
       <div className="App">
-        <header>Dashboard version {process.env.REACT_APP_VERSION}</header>
+        <header>
+          <Link url="https://github.com/darekkay/dashboard">Dashboard</Link>{" "}
+          version {process.env.REACT_APP_VERSION}
+        </header>
       </div>
     );
   }

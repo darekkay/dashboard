@@ -1,0 +1,21 @@
+$icon-size: 16px;
+$icon-margin: 5px;
+
+.icon {
+  display: inline-flex;
+  width: $icon-size;
+  height: $icon-size;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.icon-right {
+  margin-left: $icon-margin;
+}
+
+.icon-left {
+  margin-right: $icon-margin;
+}

@@ -1,0 +1,110 @@
+$btn-color-primary: #005aff;
+$btn-color-secondary: #4b6a88;
+$btn-color-disabled: #4b6a88;
+$btn-color-inverse: #fff;
+
+@mixin button-variant($foreground, $background, $accent, $event) {
+  color: $foreground;
+  background-color: $background;
+  border-color: $accent;
+
+  &:hover {
+    background-color: darken($accent, 7%);
+  }
+
+  &:active {
+    background-color: darken($accent, 10%);
+  }
+
+  &:hover,
+  &:active {
+    color: $event;
+
+    svg {
+      fill: $event;
+    }
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem transparentize($accent, 0.5);
+  }
+
+  svg {
+    fill: $foreground;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 1.4rem;
+  height: 4rem;
+
+  border: 1px solid transparent;
+  border-radius: 0.4rem;
+  cursor: pointer;
+
+  font-size: 1.6rem;
+  letter-spacing: 0.025em;
+  text-decoration: none;
+  white-space: nowrap;
+
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:active {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+
+  &[disabled],
+  &[disabled]:hover {
+    background-color: #fff;
+    color: $btn-color-disabled;
+    border-color: $btn-color-disabled;
+    opacity: 0.4;
+    cursor: default;
+  }
+}
+
+.btn-primary {
+  @include button-variant(
+    $btn-color-inverse,
+    $btn-color-primary,
+    $btn-color-primary,
+    $btn-color-inverse
+  );
+}
+
+.btn-primary-outline {
+  @include button-variant(
+    $btn-color-primary,
+    transparent,
+    $btn-color-primary,
+    $btn-color-inverse
+  );
+}
+
+.btn-secondary {
+  @include button-variant(
+    $btn-color-inverse,
+    $btn-color-secondary,
+    $btn-color-secondary,
+    $btn-color-inverse
+  );
+}
+
+.btn-secondary-outline {
+  @include button-variant(
+    $btn-color-secondary,
+    transparent,
+    $btn-color-secondary,
+    $btn-color-inverse
+  );
+}
