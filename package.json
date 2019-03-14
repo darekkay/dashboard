@@ -36,6 +36,7 @@
     "eslint-plugin-prettier": "3.0.1",
     "eslint-plugin-react": "7.12.4",
     "node-sass": "4.11.0",
+    "plop": "2.3.0",
     "prettier": "1.16.4",
     "typescript": "3.3.3333"
   },
@@ -64,6 +65,7 @@
     "build": "react-scripts build",
     "ci": "npm run lint:check && npm run test",
     "format": "prettier --write -- \"{src,public}/**/*.{js,jsx,tsx,json,css,scss}\"",
+    "generate": "plop --plopfile internals/generators/index.js",
     "lint:check": "eslint src/**/*.tsx",
     "lint:fix": "eslint --fix src/**/*.tsx",
     "start": "react-scripts start",

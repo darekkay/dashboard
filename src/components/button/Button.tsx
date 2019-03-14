@@ -9,7 +9,7 @@ const Button = ({
   type,
   outline,
   ...rest
-}: Props): JSX.Element => (
+}: Props) => (
   <button
     className={cn(
       "btn",

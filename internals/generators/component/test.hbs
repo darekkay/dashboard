@@ -1,0 +1,16 @@
+import React from "react";
+import { shallow, ShallowWrapper  } from "enzyme";
+
+import {{ properCase name }} from "./{{ properCase name }}";
+
+describe("<{{ properCase name }} />", () => {
+  let wrapper: ShallowWrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<{{ properCase name }} />);
+  });
+
+  it("renders without error", () => {
+    expect(wrapper.find(".{{ kebabCase name }}")).toHaveLength(1);
+  });
+});
