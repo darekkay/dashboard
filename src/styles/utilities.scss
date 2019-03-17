@@ -1,0 +1,79 @@
+@import "variables";
+
+// Typography
+
+.font-style-italic {
+  font-style: italic;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+@each $weight in $font-weights {
+  .font-weight-#{$weight} {
+    font-weight: $weight;
+  }
+}
+
+// Flex
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+// Grid
+
+.d-grid {
+  display: grid;
+}
+
+// Margins and Paddings
+
+@each $size, $length in $spacers {
+  @each $prop, $abbrev in (margin: m, padding: p) {
+    .#{$abbrev}-#{$size} {
+      #{$prop}: $length;
+    }
+    .#{$abbrev}t-#{$size} {
+      #{$prop}-top: $length;
+    }
+    .#{$abbrev}r-#{$size} {
+      #{$prop}-right: $length;
+    }
+    .#{$abbrev}b-#{$size} {
+      #{$prop}-bottom: $length;
+    }
+    .#{$abbrev}l-#{$size} {
+      #{$prop}-left: $length;
+    }
+    .#{$abbrev}x-#{$size} {
+      #{$prop}-left: $length;
+      #{$prop}-right: $length;
+    }
+    .#{$abbrev}y-#{$size} {
+      #{$prop}-top: $length;
+      #{$prop}-bottom: $length;
+    }
+  }
+}

@@ -38,7 +38,7 @@ The next step will be to integrate 3rd party providers. I'd like to store as few
   - Use a monorepo (lerna) to split this project into a core and individual modules.
 
 
-### Module/integration ideas
+### Widget/integration ideas
 
   - Current date and time
   - Current weather and forecast

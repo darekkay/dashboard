@@ -1,16 +1,40 @@
-import React, { PureComponent } from "react";
+import React from "react";
 
-import "./App.scss";
 import Link from "./link/Link";
+import Dashboard from "./dashboard/Dashboard";
+import "./App.scss";
 
-class App extends PureComponent {
+interface Config {
+  grid: {
+    rows: number;
+    columns: number;
+  };
+  widgets: {
+    width: number;
+    height: number;
+  }[];
+}
+
+export interface Props {
+  config: Config;
+}
+
+class App extends React.PureComponent<Props> {
   render() {
+    const { config } = this.props;
     return (
       <div className="App">
-        <header>
+        <main>
+          <Dashboard
+            columns={config.grid.columns}
+            rows={config.grid.rows}
+            widgets={config.widgets}
+          />
+        </main>
+        <footer className="text-right">
           <Link url="https://github.com/darekkay/dashboard">Dashboard</Link>{" "}
           version {process.env.REACT_APP_VERSION}
-        </header>
+        </footer>
       </div>
     );
   }

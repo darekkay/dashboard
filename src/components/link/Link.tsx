@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "classnames";
 
-interface Props {
+export interface Props {
   children: React.ReactNode;
   className?: string;
   url: string;

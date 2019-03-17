@@ -1,0 +1,12 @@
+@import "~styles/mixins";
+@import "~styles/variables";
+
+.widget {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-bottom: #{$dashboard-grid-gap-px}px;
+
+  @include media-breakpoint-up("md") {
+    margin-bottom: 0;
+  }
+}

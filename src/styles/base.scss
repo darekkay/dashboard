@@ -1,0 +1,21 @@
+@import "variables";
+
+html {
+  /* font-size 1em = 10px on default browser settings */
+  font-size: 62.5%;
+
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  background-repeat: inherit;
+}
+
+table {
+  /* Do not include additional border spacing */
+  border-collapse: collapse;
+}

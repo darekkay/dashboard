@@ -1,0 +1,28 @@
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer * 0.75,
+  4: $spacer,
+  5: $spacer * 1.5,
+  6: $spacer * 2,
+  7: $spacer * 3,
+  8: $spacer * 4,
+  9: $spacer * 8
+);
+
+$margin-default: map-get($spacers, 4);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$font-weights: (100, 300, 500, 700, 900);
+
+$dashboard-max-width-px: 1200;
+$dashboard-grid-gap-px: 15;

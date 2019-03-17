@@ -6,7 +6,7 @@ import svgs from "./svgs";
 
 import "./Icon.scss";
 
-interface Props {
+export interface Props {
   className?: string;
   color?: string;
   name: string;

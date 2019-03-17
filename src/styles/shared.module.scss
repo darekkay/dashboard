@@ -1,0 +1,9 @@
+@import "~styles/variables";
+
+// Variables shared between SCSS and JS
+
+//noinspection ALL
+:export {
+  dashboardMaxWidth: $dashboard-max-width-px;
+  dashboardGridGap: $dashboard-grid-gap-px;
+}

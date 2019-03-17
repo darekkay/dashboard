@@ -3,13 +3,7 @@ import cn from "classnames";
 
 import "./Button.scss";
 
-const Button = ({
-  children,
-  className,
-  type,
-  outline,
-  ...rest
-}: Props) => (
+const Button = ({ children, className, type, outline, ...rest }: Props) => (
   <button
     className={cn(
       "btn",
@@ -29,7 +23,7 @@ export enum ButtonType {
   Secondary = "secondary"
 }
 
-interface Props {
+export interface Props {
   children: React.ReactNode;
   className?: string;
   type?: "primary" | "secondary";
