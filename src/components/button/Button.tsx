@@ -3,7 +3,13 @@ import cn from "classnames";
 
 import "./Button.scss";
 
-const Button = ({ children, className, type, outline, ...rest }: Props) => (
+const Button = ({
+  children,
+  className,
+  type = "primary",
+  outline,
+  ...rest
+}: Props) => (
   <button
     className={cn(
       "btn",
@@ -29,9 +35,5 @@ export interface Props {
   type?: "primary" | "secondary";
   outline?: boolean;
 }
-
-Button.defaultProps = {
-  type: ButtonType.Primary
-};
 
 export default Button;

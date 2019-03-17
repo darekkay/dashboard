@@ -10,16 +10,10 @@ export interface Props {
 }
 
 class Link extends React.Component<Props> {
-  static defaultProps = {
-    className: undefined,
-    title: undefined,
-    external: true
-  };
-
   shouldComponentUpdate = () => false; // The link content does not ever change
 
   render() {
-    const { className, url, title, external } = this.props;
+    const { className, url, title, external = true } = this.props;
     return (
       <a
         className={cn("link", className)}

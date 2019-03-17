@@ -15,13 +15,6 @@ export interface Props {
 }
 
 class Icon extends React.PureComponent<Props> {
-  static defaultProps = {
-    className: undefined,
-    color: undefined,
-    alt: "",
-    position: undefined
-  };
-
   render() {
     const { name, className, position } = this.props;
     return (
