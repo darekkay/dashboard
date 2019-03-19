@@ -1,5 +1,6 @@
 ## Unreleased
 - :sparkles: Add a text widget.
+- :sparkled: Make widget content centered (configurable).
 
 ## 1.0.1 (2019-03-17)
 - :sparkles: Add a grid container with configurable widgets.

@@ -2,7 +2,7 @@ import React from "react";
 
 import variables, { Variables } from "common/variables";
 import widgetComponents from "common/widgets";
-import Widget from "components/widget/Widget";
+import Widget, { defaultOptions } from "components/widget/Widget";
 
 import "./Dashboard.scss";
 
@@ -59,6 +59,10 @@ class Dashboard extends React.Component<Props> {
                 width={widget.width}
                 height={widget.height}
                 type={widget.type}
+                options={{
+                  ...defaultOptions,
+                  ...widget.options
+                }}
                 heightInPx={heightInPx}
               >
                 {React.createElement(Component, widget.options)}
