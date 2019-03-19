@@ -4,7 +4,7 @@ import Widget from "components/widget/Widget";
 import variables, { Variables } from "../../common/variables";
 import "./Dashboard.scss";
 
-// complicated calculation to make a 1x1 widget appear as a square at full width
+// make a 1x1 widget appear as a square at full width
 export const getWidgetHeightInPx = (
   columns: number,
   widgetHeight: number,
@@ -12,9 +12,8 @@ export const getWidgetHeightInPx = (
 ) => {
   // calculate the width of a single 1x1 cell
   const totalGapSize = (columns - 1) * variables.dashboardGridGap;
-  const totalBorderSize = columns * 2;
   const singleCellWidth =
-    (variables.dashboardMaxWidth - totalGapSize + totalBorderSize) / columns;
+    (variables.dashboardMaxWidth - totalGapSize) / columns;
 
   // use the widget width and the column gap to calculate the real widget height
   const columnGapSize = (widgetHeight - 1) * variables.dashboardGridGap;
@@ -38,7 +37,7 @@ class Dashboard extends React.Component<Props> {
       <div
         className="dashboard"
         style={{
-          gridTemplateColumns: `repeat(${columns}, auto`,
+          gridTemplateColumns: `repeat(${columns}, 1fr`,
           gridTemplateRows: `repeat(${rows}, auto`
         }}
       >
