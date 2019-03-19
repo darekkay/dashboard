@@ -6,22 +6,20 @@
 
 The goal of this project is a fully customizable and extendable dashboard/startpage, with modules like clock, weather, todo tasks, bookmarks, calendar, ... (see also my [ideas](#design-and-ideas))
 
-Usually, I wait for a MVP before releasing a project. This project will be developed in public from Day 1. I document my progress and (knowledge) insights in the [journal](JOURNAL.md), while the [changelog](CHANGELOG.md) describes the actual project features. 
+Usually, I wait for a MVP before releasing a project. This project will be developed in public from Day 1. I document my progress and (knowledge) insights in the [journal](JOURNAL.md), while the [changelog](CHANGELOG.md) describes the actual project features.
 
 The current state of the project is available at [dashboard.darekkay.com](https://dashboard.darekkay.com).
-
 
 ## Motivation
 
 Why build yet another dashboard app?
 
-Most popular apps (like [Momentum](https://momentumdash.com/)) are neither open-source nor customizable to a degree that I'd like it to be. On the other hand, most open-source projects seem to be outdated. 
+Most popular apps (like [Momentum](https://momentumdash.com/)) are neither open-source nor customizable to a degree that I'd like it to be. On the other hand, most open-source projects seem to be outdated.
 
 Finally, a new project is a great opportunity to learn new concepts. For this project, I mainly want to try out the following:
 
 1. [TypeScript](https://www.typescriptlang.org/). I'm being late to the party with this one.
 2. Reactive programming using [RxJS](https://rxjs.dev/). The data for each module may come from different places (service, local storage etc.), so it sounds like a good use case.
-
 
 ## Design and Ideas
 
@@ -29,31 +27,35 @@ The first milestone is a dashboard framework ("grid") with some simple, static m
 
 The next step will be to integrate 3rd party providers. I'd like to store as few data as possible on the server side and use local storage whenever possible.
 
-
 ### Feature ideas
 
-  - Themes support. Because noone will bat an eye without a Dark Mode™.
-  - Use a real login to restrict access to sensitive data, especially when integrating 3rd party providers.
-  - Reorder modules within the UI instead of using a config file (Drag and Drop).
-  - Use a monorepo (lerna) to split this project into a core and individual modules.
+- Themes support. Because noone will bat an eye without a Dark Mode™.
+- Use a real login to restrict access to sensitive data, especially when integrating 3rd party providers.
+- Reorder modules within the UI instead of using a config file (Drag and Drop).
+- Use a monorepo (lerna) to split this project into a core and individual modules.
 
+### Implemented widgets
+
+| type | description |
+| ---- | ----------- |
+| text | Fixed text  |
+
+The configuration options for each widget are listed [here](docs/widgets.md).
 
 ### Widget/integration ideas
 
-  - Current date and time
-  - Current weather and forecast
-  - Bookmarks
-  - Search (for different search engines)
-  - Calendar / next events
-  - Daily message (quote, image, tip)
-  - Todo tasks (integration with 3rd party, like Todoist, Wunderlist or GitHub Issues)
-  - ...
-
+- Current date and time
+- Current weather and forecast
+- Bookmarks
+- Search (for different search engines)
+- Calendar / next events
+- Daily message (quote, image, tip)
+- Todo tasks (integration with 3rd party, like Todoist, Wunderlist or GitHub Issues)
+- ...
 
 ## Contribution
 
 All contributors are highly welcome, especially designers. If you want to collaborate on this project, just give me a [note](mailto:hello@darekkay.com).
-
 
 ## Development
 

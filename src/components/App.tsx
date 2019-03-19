@@ -2,6 +2,7 @@ import React from "react";
 
 import Link from "./link/Link";
 import Dashboard from "./dashboard/Dashboard";
+
 import "./App.scss";
 
 interface Config {
@@ -12,6 +13,8 @@ interface Config {
   widgets: {
     width: number;
     height: number;
+    type: string;
+    options?: object;
   }[];
 }
 

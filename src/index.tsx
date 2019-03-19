@@ -6,6 +6,7 @@ import "./styles/base.scss";
 import "./styles/utilities.scss";
 import "./styles/layout.scss";
 import "./styles/typography.scss";
+import "./styles/theme.scss";
 
 import App from "./components/App";
 import config from "./config";

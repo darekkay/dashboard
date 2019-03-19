@@ -17,7 +17,10 @@ describe("<Dashboard />", () => {
   it("renders widgets", () => {
     expect(wrapper.find("Widget")).toHaveLength(0);
     wrapper.setProps({
-      widgets: [{ width: 1, height: 1 }, { width: 2, height: 3 }]
+      widgets: [
+        { width: 1, height: 1, type: "text" },
+        { width: 2, height: 3, type: "text" }
+      ]
     });
     expect(wrapper.find("Widget")).toHaveLength(2);
   });

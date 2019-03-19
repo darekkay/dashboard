@@ -1,7 +1,9 @@
 import React from "react";
 
+import variables, { Variables } from "common/variables";
+import widgetComponents from "common/widgets";
 import Widget from "components/widget/Widget";
-import variables, { Variables } from "../../common/variables";
+
 import "./Dashboard.scss";
 
 // make a 1x1 widget appear as a square at full width
@@ -26,6 +28,8 @@ export interface Props {
   widgets: {
     width: number;
     height: number;
+    type: string;
+    options?: object;
   }[];
 }
 
@@ -42,18 +46,25 @@ class Dashboard extends React.Component<Props> {
         }}
       >
         {widgets &&
-          widgets.map((widget, idx) => (
-            <Widget
-              key={idx}
-              width={widget.width}
-              height={widget.height}
-              rowHeightInPx={getWidgetHeightInPx(
-                columns,
-                widget.height,
-                variables
-              )}
-            />
-          ))}
+          widgets.map((widget, idx) => {
+            const Component = widgetComponents[widget.type];
+            const heightInPx = getWidgetHeightInPx(
+              columns,
+              widget.height,
+              variables
+            );
+            return (
+              <Widget
+                key={idx}
+                width={widget.width}
+                height={widget.height}
+                type={widget.type}
+                heightInPx={heightInPx}
+              >
+                {React.createElement(Component, widget.options)}
+              </Widget>
+            );
+          })}
       </div>
     );
   }

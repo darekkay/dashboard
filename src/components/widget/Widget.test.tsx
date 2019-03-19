@@ -7,10 +7,19 @@ describe("<Widget />", () => {
   let wrapper: ShallowWrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Widget height={1} width={1} rowHeightInPx={125} />);
+    wrapper = shallow(
+      <Widget type="text" height={1} width={1} heightInPx={125}>
+        <div />
+      </Widget>
+    );
   });
 
   it("renders without error", () => {
     expect(wrapper.find(".widget")).toHaveLength(1);
+  });
+
+  it("renders gaps", () => {
+    wrapper.setProps({ type: "empty" });
+    expect(wrapper.find(".widget")).toHaveLength(0);
   });
 });
