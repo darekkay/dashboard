@@ -22,5 +22,6 @@ export default {
     { width: 3, height: 1, type: "text" },
     { width: 2, height: 1, type: "text" },
     { width: 2, height: 1, type: "text" }
-  ]
+  ],
+  theme: "default"
 };

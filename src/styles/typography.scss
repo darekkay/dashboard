@@ -6,12 +6,13 @@ body {
   font-size: 1.8rem;
   line-height: 1.5;
 
-  color: #2b3236;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 a,
 a:visited {
-  color: #005aff;
+  color: var(--highlight-color);
   text-decoration: none;
 }
 

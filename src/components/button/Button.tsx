@@ -34,6 +34,7 @@ export interface Props {
   className?: string;
   type?: "primary" | "secondary";
   outline?: boolean;
+  onClick?: () => void;
 }
 
 export default Button;

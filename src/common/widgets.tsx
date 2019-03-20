@@ -5,8 +5,6 @@ import Text from "widgets/text/Text";
 const Empty = () => null;
 
 interface Widgets {
-  empty: React.ElementType;
-  text: React.ElementType;
   [key: string]: React.ElementType;
 }
 

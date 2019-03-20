@@ -16,6 +16,7 @@ interface Config {
     type: string;
     options?: object;
   }[];
+  theme: string;
 }
 
 export interface Props {

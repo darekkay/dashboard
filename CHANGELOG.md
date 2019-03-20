@@ -1,4 +1,5 @@
 ## Unreleased
+- :sparkles: Add theme support.
 - :sparkles: Add favicons.
 - :rocket: Don't crash the whole app if a single widget fails.
 

@@ -30,6 +30,6 @@ I've implemented the first, very basic widget: Text Widget. It just displays fix
 
 Most work happened under the hood. I've cleaned up the code and tried to establish a good framework to build upon.
 
-## 2019-xx-xx (1.0.3)
+## 2019-03-21 (1.0.3)
 
-I've added a new shiny favicon, based on [Font Awesome 5](https://fontawesome.com/). I've also introduced React's [error boundaries](https://reactjs.org/docs/error-boundaries.html) so the app doesn't crash if a single widget throws any error.
+Now there's support for color themes! I've used CSS variables, so it's easy to switch values at runtime (try out the preview button). There's also a new shiny favicon, based on [Font Awesome 5](https://fontawesome.com/). Finally, I've introduced React's [error boundaries](https://reactjs.org/docs/error-boundaries.html) so the app doesn't crash if a single widget throws any error.

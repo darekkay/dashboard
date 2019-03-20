@@ -11,4 +11,7 @@
   @include media-breakpoint-up("md") {
     margin-bottom: 0;
   }
+
+  color: var(--widget-text-color);
+  background-color: var(--widget-background-color);
 }
