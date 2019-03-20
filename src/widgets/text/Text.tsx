@@ -10,4 +10,4 @@ export interface Props {
 
 Text.defaultProps = {};
 
-export default Text;
+export default React.memo(Text);

@@ -32,4 +32,4 @@ Most work happened under the hood. I've cleaned up the code and tried to establi
 
 ## 2019-xx-xx (1.0.3)
 
-I've added a new shiny favicon, based on [Font Awesome 5](https://fontawesome.com/).
+I've added a new shiny favicon, based on [Font Awesome 5](https://fontawesome.com/). I've also introduced React's [error boundaries](https://reactjs.org/docs/error-boundaries.html) so the app doesn't crash if a single widget throws any error.

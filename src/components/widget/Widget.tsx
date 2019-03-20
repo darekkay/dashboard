@@ -1,6 +1,10 @@
 import React from "react";
 import cn from "classnames";
 
+import withErrorHandling, {
+  State as ErrorProps
+} from "common/hoc/withErrorHandling";
+
 import "./Widget.scss";
 
 export interface OptionsProps {
@@ -23,15 +27,24 @@ export const defaultOptions: OptionsProps = {
 const isGap = (type: string) => type === "empty";
 
 /** Single widget within the dashboard */
-class Widget extends React.Component<Props> {
+export class Widget extends React.Component<Props & ErrorProps> {
   render() {
-    const { width, height, type, options, heightInPx, children } = this.props;
+    const {
+      width,
+      height,
+      type,
+      options,
+      heightInPx,
+      hasError,
+      children
+    } = this.props;
     return (
       <div
         className={cn({
           widget: !isGap(type),
           "d-flex align-items-center justify-content-center text-center":
-            options.align === "center"
+            options.align === "center",
+          error: hasError
         })}
         style={{
           gridRowStart: `span ${height}`,
@@ -39,10 +52,13 @@ class Widget extends React.Component<Props> {
           height: isGap(type) ? 0 : `${heightInPx}px`
         }}
       >
-        {children}
+        {hasError && "» Error «"}
+        {!hasError && children}
       </div>
     );
   }
 }
+
+export const WidgetEnhanced = withErrorHandling(Widget);
 
 export default Widget;

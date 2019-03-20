@@ -14,6 +14,7 @@ describe("<Widget />", () => {
         width={1}
         heightInPx={125}
         options={defaultOptions}
+        hasError={false}
       >
         <div />
       </Widget>
@@ -21,7 +22,12 @@ describe("<Widget />", () => {
   });
 
   it("renders without error", () => {
-    expect(wrapper.find(".widget")).toHaveLength(1);
+    expect(wrapper.find(".error")).toHaveLength(0);
+  });
+
+  it("renders errors", () => {
+    wrapper.setProps({ hasError: true });
+    expect(wrapper.find(".error")).toHaveLength(1);
   });
 
   it("renders gaps", () => {
