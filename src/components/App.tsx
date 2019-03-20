@@ -36,7 +36,7 @@ class App extends React.PureComponent<Props> {
         </main>
         <footer className="text-right">
           <Link url="https://github.com/darekkay/dashboard">Dashboard</Link>{" "}
-          version {process.env.REACT_APP_VERSION}
+          {process.env.REACT_APP_VERSION}
         </footer>
       </div>
     );

@@ -1,3 +1,6 @@
+## Unreleased
+- :sparkles: Add favicons.
+
 ## 1.0.2 (2019-03-20)
 - :sparkles: Add a text widget.
 - :sparkled: Make widget content centered (configurable).
