@@ -1,4 +1,4 @@
-## 2019-03-14
+## 2019-03-14 (1.0.0)
 
 The journey begins :rocket:
 
@@ -9,7 +9,7 @@ I'm really looking forward to experiencing the praised improvement over vanilla 
 The [CI pipeline](https://travis-ci.org/darekkay/dashboard) is on and the project is already [live](https://dashboard.darekkay.com) (not much is going on, though).
 
 
-## 2019-03-17
+## 2019-03-17 (1.0.1)
 
 I had to make a decision: what responsive behavior should the dashboard grid follow? There are multiple approaches:
 
@@ -24,3 +24,10 @@ I had to make a decision: what responsive behavior should the dashboard grid fol
 I think that #4 is the best trade-off.
 
 I've implemented a simple Dashboard using CSS Grid. The user may define the number of columns and rows and assign a relative width and height for each widget. In the future, this should be configurable within the UI (drag and drop), but for a MVP this is enough.
+
+
+## 2019-03-20 (1.0.2)
+
+I've implemented the first, very basic widget: Text Widget. It just displays fixed text, nothing fancy. Maybe it can be extended to support some basic formatting options in the future.
+
+Most work happened under the hood. I've cleaned up the code and tried to establish a good framework to build upon.
