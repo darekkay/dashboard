@@ -10,10 +10,6 @@ describe("<Dashboard />", () => {
     wrapper = shallow(<Dashboard columns={3} rows={2} widgets={[]} />);
   });
 
-  it("renders without error", () => {
-    expect(wrapper.find(".dashboard")).toHaveLength(1);
-  });
-
   it("renders widgets", () => {
     expect(wrapper.find("Widget")).toHaveLength(0);
     wrapper.setProps({

@@ -1,5 +1,4 @@
 import React from "react";
-import cn from "classnames";
 
 export interface Props {
   children: React.ReactNode;
@@ -16,7 +15,7 @@ class Link extends React.Component<Props> {
     const { className, url, title, external = true } = this.props;
     return (
       <a
-        className={cn("link", className)}
+        className={className}
         href={url}
         title={title}
         target={external ? "_blank" : undefined}

@@ -1,7 +1,7 @@
 import React from "react";
 
 const Text = ({ content }: Props) => {
-  return <div className="text">{content}</div>;
+  return <div>{content}</div>;
 };
 
 export interface Props {

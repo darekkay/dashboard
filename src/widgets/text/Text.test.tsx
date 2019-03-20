@@ -10,7 +10,9 @@ describe("<Text />", () => {
     wrapper = shallow(<Text />);
   });
 
-  it("renders without error", () => {
-    expect(wrapper.find(".text")).toHaveLength(1);
+  it("renders a fixed text", () => {
+    let content = "hello world";
+    wrapper.setProps({ content });
+    expect(wrapper.text()).toEqual(content);
   });
 });

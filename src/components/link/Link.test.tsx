@@ -10,8 +10,8 @@ describe("<Link />", () => {
     wrapper = shallow(<Link url="#">Label</Link>);
   });
 
-  it("renders without error", () => {
-    expect(wrapper.find(".link")).toHaveLength(1);
+  it("renders a single a element", () => {
+    expect(wrapper.find("a")).toHaveLength(1);
   });
 
   it("never rerenders", () => {
@@ -23,12 +23,12 @@ describe("<Link />", () => {
   });
 
   it("renders target and rel for external links", () => {
-    expect(wrapper.find(".link[target][rel]")).toHaveLength(1);
+    expect(wrapper.find("a[target][rel]")).toHaveLength(1);
     wrapper = shallow(
       <Link url="#" external={false}>
         Label
       </Link>
     );
-    expect(wrapper.find(".link[target][rel]")).toHaveLength(0);
+    expect(wrapper.find("a[target][rel]")).toHaveLength(0);
   });
 });

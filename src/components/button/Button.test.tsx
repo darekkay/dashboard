@@ -10,8 +10,8 @@ describe("<Button />", () => {
     wrapper = shallow(<Button>Example</Button>);
   });
 
-  it("renders without error", () => {
-    expect(wrapper.find(".btn")).toHaveLength(1);
+  it("renders a single button element", () => {
+    expect(wrapper.find("button")).toHaveLength(1);
   });
 
   it("renders all type/outline combinations", () => {
