@@ -6,7 +6,6 @@ import { ReactComponent as Plus } from "./svg/plus.svg";
 import { ReactComponent as Star } from "./svg/star.svg";
 import { ReactComponent as Undo } from "./svg/undo.svg";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const svgs: any = {
   Backward,
   Heart,

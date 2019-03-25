@@ -22,6 +22,7 @@
   "plugins": ["import", "jsx-a11y", "prettier", "react"],
   "root": true,
   "rules": {
+    "import/order": "error",
     "linebreak-style": "off",
     "prettier/prettier": "warn",
     "radix": "off",
@@ -29,7 +30,8 @@
     "react/prop-types": "warn",
     "react/require-default-props": "warn",
     "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/explicit-member-accessibility": "off"
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/no-explicit-any": "off"
   },
   "settings": {
     "react": {

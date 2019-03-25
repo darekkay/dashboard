@@ -1,29 +1,19 @@
 import React from "react";
+import { connect } from "react-redux";
 
-import Link from "./link/Link";
-import Dashboard from "./dashboard/Dashboard";
+import { Config } from "common/ducks/settings";
+import Dashboard from "components/dashboard/Dashboard";
+import Link from "components/link/Link";
+
+import { State } from "../store";
 
 import "./App.scss";
-
-interface Config {
-  grid: {
-    rows: number;
-    columns: number;
-  };
-  widgets: {
-    width: number;
-    height: number;
-    type: string;
-    options?: object;
-  }[];
-  theme: string;
-}
 
 export interface Props {
   config: Config;
 }
 
-class App extends React.PureComponent<Props> {
+export class App extends React.PureComponent<Props> {
   render() {
     const { config } = this.props;
     return (
@@ -44,4 +34,15 @@ class App extends React.PureComponent<Props> {
   }
 }
 
-export default App;
+const mapStateToProps = (state: State) => {
+  return {
+    config: state.config
+  };
+};
+
+const mapDispatchToProps = {};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

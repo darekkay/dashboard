@@ -1,8 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 
-import getThemeStyle from "common/themes";
-import Button from "components/button/Button";
+import App from "components/App";
+import ThemeSelect from "components/theme-select/ThemeSelect";
+
+import config from "./config";
+import initStore from "./store";
+// import * as serviceWorker from "./common/serviceWorker";
 
 import "./styles/mixins.scss";
 import "./styles/base.scss";
@@ -10,30 +15,22 @@ import "./styles/utilities.scss";
 import "./styles/layout.scss";
 import "./styles/typography.scss";
 
-import App from "./components/App";
-import config from "./config";
-// import * as serviceWorker from "./common/serviceWorker";
+const store = initStore({ config });
 
-ReactDOM.render(<App config={config} />, document.getElementById("root"));
-
-// Temporary theme preview button
-// TODO: introduce state into the project and refactor
-
-let selectedTheme = config.theme;
-
-const toggleTheme = () => {
-  document.documentElement.setAttribute("style", getThemeStyle(selectedTheme));
-  /* istanbul ignore next */
-  selectedTheme = selectedTheme === "default" ? "dark" : "default";
-};
-toggleTheme();
-
-const ThemeToggle = () => (
-  <Button type="primary" onClick={toggleTheme}>
-    Toggle Theme
-  </Button>
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
 );
-ReactDOM.render(<ThemeToggle />, document.getElementById("theme-toggle"));
+
+/* TODO: move into App */
+ReactDOM.render(
+  <Provider store={store}>
+    <ThemeSelect />
+  </Provider>,
+  document.getElementById("theme-toggle")
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
