@@ -3,11 +3,9 @@ import { connect } from "react-redux";
 
 import { Config } from "common/ducks/settings";
 import Dashboard from "components/dashboard/Dashboard";
-import Link from "components/link/Link";
+import Footer from "components/footer/Footer";
 
 import { State } from "../store";
-
-import "./App.scss";
 
 export interface Props {
   config: Config;
@@ -17,19 +15,16 @@ export class App extends React.PureComponent<Props> {
   render() {
     const { config } = this.props;
     return (
-      <div className="App">
-        <main>
+      <>
+        <main className="scrollable-y">
           <Dashboard
             columns={config.grid.columns}
             rows={config.grid.rows}
             widgets={config.widgets}
           />
         </main>
-        <footer className="text-right">
-          <Link url="https://github.com/darekkay/dashboard">Dashboard</Link>{" "}
-          {process.env.REACT_APP_VERSION}
-        </footer>
-      </div>
+        <Footer />
+      </>
     );
   }
 }

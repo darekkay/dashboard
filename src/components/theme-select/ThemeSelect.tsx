@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import getThemeStyle from "common/themes";
 import { actionCreators } from "common/ducks/settings";
 import Button from "components/button/Button";
+import Icon from "components/icon/Icon";
 import { State } from "../../store";
 
 import "./ThemeSelect.scss";
@@ -41,8 +42,9 @@ export class ThemeSelect extends React.PureComponent<Props> {
   render() {
     const { theme } = this.props;
     return (
-      <Button type="primary" onClick={this.toggleTheme}>
-        Toggle Theme - {theme}
+      <Button className="m-2" type="primary" onClick={this.toggleTheme}>
+        <Icon name="palette" position="left" />
+        Theme: {theme}
       </Button>
     );
   }

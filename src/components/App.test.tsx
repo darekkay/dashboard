@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import config from "../config";
-import { App } from "./App";
+import { mountConnected } from "common/utils/mock";
+import App from "./App";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<App config={config} />, div);
+
+  const wrapper = mountConnected(<App />);
+  ReactDOM.render(wrapper, div);
   ReactDOM.unmountComponentAtNode(div);
 });

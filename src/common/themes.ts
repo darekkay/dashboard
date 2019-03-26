@@ -11,6 +11,7 @@ export interface Variables {
   "--border-color": string;
   "--widget-text-color": string;
   "--widget-background-color": string;
+  "--footer-background-color": string;
   [key: string]: string;
 }
 
@@ -25,7 +26,8 @@ const themes: Themes = {
     "--highlight-color": "#005aff",
     "--border-color": "#ddd",
     "--widget-text-color": "#000",
-    "--widget-background-color": "#fff"
+    "--widget-background-color": "#fff",
+    "--footer-background-color": "#fff"
   },
   dark: {
     "--text-color": "#fff",
@@ -33,10 +35,12 @@ const themes: Themes = {
     "--highlight-color": "#b9ca4a",
     "--border-color": "#74715e",
     "--widget-text-color": "#fff",
-    "--widget-background-color": "#333"
+    "--widget-background-color": "#333",
+    "--footer-background-color": "#333"
   }
 };
 
+// TODO: memoize
 export const objectToStyleString = (object: { [key: string]: string }) => {
   const result = [];
   for (let prop in object) {

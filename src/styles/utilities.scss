@@ -46,6 +46,10 @@
   justify-content: space-around;
 }
 
+.justify-content-between {
+  justify-content: space-between;
+}
+
 // Grid
 
 .d-grid {
@@ -82,8 +86,14 @@
   }
 }
 
-// Misc
+// Borders
 
 .border {
   border: 1px solid $border-color;
+}
+
+@each $direction in (top, right, bottom, left) {
+  .border-#{$direction} {
+    border-#{$direction}: 1px solid $border-color;
+  }
 }

@@ -1,4 +1,5 @@
 ## Unreleased
+- :gem: Extract footer component.
 - :construction_worker_man: Add application state (redux).
 
 ## 1.0.3 (2019-03-21)

@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
 import App from "components/App";
-import ThemeSelect from "components/theme-select/ThemeSelect";
 
 import config from "./config";
 import initStore from "./store";
@@ -22,14 +21,6 @@ ReactDOM.render(
     <App />
   </Provider>,
   document.getElementById("root")
-);
-
-/* TODO: move into App */
-ReactDOM.render(
-  <Provider store={store}>
-    <ThemeSelect />
-  </Provider>,
-  document.getElementById("theme-toggle")
 );
 
 // If you want your app to work offline and load faster, you can change
