@@ -1,3 +1,5 @@
+// Spacing
+
 $spacer: 1rem;
 $spacers: (
   0: 0,
@@ -14,6 +16,8 @@ $spacers: (
 
 $margin-default: map-get($spacers, 4);
 
+// Grid breakpoints
+
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -22,9 +26,19 @@ $grid-breakpoints: (
   xl: 1200px
 );
 
+// Typography
+
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace;
+
 $font-weights: (100, 300, 500, 700, 900);
+
+$border-color: var(--border-color);
+
+// Dashboard
 
 $dashboard-max-width-px: 1200;
 $dashboard-grid-gap-px: 15;
-
-$border-color: var(--border-color);
