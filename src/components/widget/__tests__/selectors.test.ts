@@ -1,4 +1,4 @@
-import { getWidgetHeightInPx } from "./selectors";
+import { getWidgetHeightInPx } from "../selectors";
 
 describe("Widget selectors", () => {
   it("use correct widget heights", () => {

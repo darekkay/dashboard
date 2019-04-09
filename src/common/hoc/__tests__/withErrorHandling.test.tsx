@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import withErrorHandling, { State as ErrorProps } from "./withErrorHandling";
+import withErrorHandling, { State as ErrorProps } from "../withErrorHandling";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props {}

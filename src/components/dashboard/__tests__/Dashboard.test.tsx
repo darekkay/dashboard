@@ -2,7 +2,7 @@ import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
 import Widget from "components/widget/Widget";
-import Dashboard from "./Dashboard";
+import Dashboard from "../Dashboard";
 
 describe("<Dashboard />", () => {
   let wrapper: ShallowWrapper;

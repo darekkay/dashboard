@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
-import Text from "./Text";
+import Text from "../Text";
 
 describe("<Text />", () => {
   let wrapper: ShallowWrapper;

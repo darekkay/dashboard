@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { objectToStyleString } from "./themes";
+import { objectToStyleString } from "../themes";
 
 describe("objectToStyleString", () => {
   it("converts object to style string", () => {

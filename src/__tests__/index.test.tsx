@@ -10,7 +10,7 @@ describe("index", () => {
     themeToggle.setAttribute("id", "theme-toggle");
     document.body.appendChild(themeToggle);
 
-    require("./index");
+    require("../index");
     // @ts-ignore
     expect(document.getElementById("root")._reactRootContainer).toBeTruthy();
   });
