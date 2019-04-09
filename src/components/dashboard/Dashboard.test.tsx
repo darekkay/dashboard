@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
-import { WidgetEnhanced } from "components/widget/Widget";
+import Widget from "components/widget/Widget";
 import Dashboard, { getWidgetHeightInPx } from "./Dashboard";
 
 describe("<Dashboard />", () => {
@@ -12,14 +12,14 @@ describe("<Dashboard />", () => {
   });
 
   it("renders widgets", () => {
-    expect(wrapper.find(WidgetEnhanced)).toHaveLength(0);
+    expect(wrapper.find(Widget)).toHaveLength(0);
     wrapper.setProps({
       widgets: [
         { width: 1, height: 1, type: "text" },
         { width: 2, height: 3, type: "text" }
       ]
     });
-    expect(wrapper.find(WidgetEnhanced)).toHaveLength(2);
+    expect(wrapper.find(Widget)).toHaveLength(2);
   });
 
   it("uses correct widget heights", () => {

@@ -1,21 +1,27 @@
 import { configureStore } from "redux-starter-kit";
 
 import {
-  Config,
+  ConfigState,
   reducerWithInitialState as settingsReducer
 } from "common/ducks/settings";
+import {
+  WidgetState,
+  reducerWithInitialState as widgetReducer
+} from "components/widget/duck";
 
 export interface State {
-  config: Config;
+  config: ConfigState;
+  widgets: WidgetState[];
   [key: string]: any;
 }
 
-const initStore = (initialState: State) =>
+const initStore = () =>
   configureStore({
     reducer: {
-      config: settingsReducer(initialState.config) /* Rename to settings */
+      config: settingsReducer(),
+      widgets: widgetReducer()
     },
-    preloadedState: initialState
+    preloadedState: {} // TODO: load from session storage
   });
 
 export default initStore;

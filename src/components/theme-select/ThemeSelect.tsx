@@ -1,5 +1,5 @@
 import React from "react";
-import { bindActionCreators } from "redux";
+import { bindActionCreators, Dispatch } from "redux";
 import { connect } from "react-redux";
 
 import getThemeStyle from "common/themes";
@@ -12,7 +12,7 @@ import "./ThemeSelect.scss";
 
 export interface Props {
   theme: string;
-  changeTheme: (payload: any) => any; // TODO: type
+  changeTheme: (payload: string) => void;
 }
 
 export class ThemeSelect extends React.PureComponent<Props> {
@@ -56,8 +56,7 @@ const mapStateToProps = (state: State) => {
   };
 };
 
-/* TODO: type */
-const mapDispatchToProps = (dispatch: any) =>
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(actionCreators, dispatch);
 
 export default connect(

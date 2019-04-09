@@ -1,26 +1,28 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { Config } from "common/ducks/settings";
+import { ConfigState } from "common/ducks/settings";
+import { WidgetState } from "components/widget/duck";
 import Dashboard from "components/dashboard/Dashboard";
 import Footer from "components/footer/Footer";
 
 import { State } from "../store";
 
 export interface Props {
-  config: Config;
+  config: ConfigState;
+  widgets: WidgetState[];
 }
 
 export class App extends React.PureComponent<Props> {
   render() {
-    const { config } = this.props;
+    const { config, widgets } = this.props;
     return (
       <>
         <main className="scrollable-y">
           <Dashboard
             columns={config.grid.columns}
             rows={config.grid.rows}
-            widgets={config.widgets}
+            widgets={widgets}
           />
         </main>
         <Footer />
@@ -31,7 +33,8 @@ export class App extends React.PureComponent<Props> {
 
 const mapStateToProps = (state: State) => {
   return {
-    config: state.config
+    config: state.config,
+    widgets: state.widgets
   };
 };
 

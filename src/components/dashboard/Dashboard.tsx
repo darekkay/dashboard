@@ -2,7 +2,7 @@ import React from "react";
 
 import variables, { Variables } from "common/variables";
 import widgetComponents from "common/widgets";
-import { WidgetEnhanced, defaultOptions } from "components/widget/Widget";
+import Widget, { defaultOptions } from "components/widget/Widget";
 
 import "./Dashboard.scss";
 
@@ -54,7 +54,7 @@ class Dashboard extends React.Component<Props> {
               variables
             );
             return (
-              <WidgetEnhanced
+              <Widget
                 key={idx}
                 width={widget.width}
                 height={widget.height}
@@ -66,7 +66,7 @@ class Dashboard extends React.Component<Props> {
                 heightInPx={heightInPx}
               >
                 {React.createElement(Component, widget.options)}
-              </WidgetEnhanced>
+              </Widget>
             );
           })}
       </div>

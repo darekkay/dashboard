@@ -4,7 +4,6 @@ import { Provider } from "react-redux";
 
 import App from "components/App";
 
-import config from "./config";
 import initStore from "./store";
 // import * as serviceWorker from "./common/serviceWorker";
 
@@ -14,7 +13,7 @@ import "./styles/utilities.scss";
 import "./styles/layout.scss";
 import "./styles/typography.scss";
 
-const store = initStore({ config });
+const store = initStore();
 
 ReactDOM.render(
   <Provider store={store}>

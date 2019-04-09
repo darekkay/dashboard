@@ -59,6 +59,4 @@ export class Widget extends React.Component<Props & ErrorProps> {
   }
 }
 
-export const WidgetEnhanced = withErrorHandling(Widget);
-
-export default Widget;
+export default withErrorHandling(Widget);

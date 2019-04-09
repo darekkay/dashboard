@@ -2,24 +2,27 @@
 
 import { createAction, createReducer } from "redux-starter-kit";
 
-export interface Config {
+// TODO: rename to Settings
+export interface ConfigState {
   grid: {
     rows: number;
     columns: number;
   };
-  widgets: {
-    width: number;
-    height: number;
-    type: string;
-    options?: object;
-  }[];
   theme: string;
 }
 
 const changeTheme = createAction("theme-select/change");
 
-export const reducerWithInitialState = (initialState: Config) =>
-  createReducer(initialState, {
+const initialState = {
+  grid: {
+    rows: 3,
+    columns: 12
+  },
+  theme: "default"
+};
+
+export const reducerWithInitialState = (state: ConfigState = initialState) =>
+  createReducer(state, {
     [changeTheme as any]: (state, action) => ({
       ...state,
       theme: action.payload
