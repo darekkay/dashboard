@@ -1,5 +1,10 @@
 import React from "react";
+import { bindActionCreators, Dispatch } from "redux";
+import { connect } from "react-redux";
 import cn from "classnames";
+
+import widgetComponents from "common/widgets";
+import { makeSelectWidget } from "components/widget/selectors";
 
 import withErrorHandling, {
   State as ErrorProps
@@ -17,27 +22,15 @@ export interface Props {
   type: string;
   options: OptionsProps;
   heightInPx: number;
-  children: React.ReactNode;
 }
-
-export const defaultOptions: OptionsProps = {
-  align: "center"
-};
 
 const isGap = (type: string) => type === "empty";
 
 /** Single widget within the dashboard */
 export class Widget extends React.Component<Props & ErrorProps> {
   render() {
-    const {
-      width,
-      height,
-      type,
-      options,
-      heightInPx,
-      hasError,
-      children
-    } = this.props;
+    const { width, height, type, options, heightInPx, hasError } = this.props;
+    const Component = widgetComponents[type];
     return (
       <div
         className={cn({
@@ -53,10 +46,19 @@ export class Widget extends React.Component<Props & ErrorProps> {
         }}
       >
         {hasError && "» Error «"}
-        {!hasError && children}
+        {!hasError && React.createElement(Component, options)}
       </div>
     );
   }
 }
 
-export default withErrorHandling(Widget);
+const mapStateToProps = (id: string) => makeSelectWidget(id);
+
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators({}, dispatch);
+
+export default (id: string) =>
+  connect(
+    mapStateToProps(id),
+    mapDispatchToProps
+  )(withErrorHandling(Widget));

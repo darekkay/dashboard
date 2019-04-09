@@ -5,13 +5,13 @@ import {
   reducerWithInitialState as settingsReducer
 } from "common/ducks/settings";
 import {
-  WidgetState,
+  WidgetsState,
   reducerWithInitialState as widgetReducer
 } from "components/widget/duck";
 
 export interface State {
   config: ConfigState;
-  widgets: WidgetState[];
+  widgets: WidgetsState;
   [key: string]: any;
 }
 
