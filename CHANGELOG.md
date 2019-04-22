@@ -1,5 +1,10 @@
 ## Unreleased
+
+## 1.0.4 (2019-04-22)
+- :sparkles: Make text widget editable.
+- :rocket: Improve performance.
 - :gem: Extract footer component.
+- :gem: Clean up code.
 - :construction_worker_man: Add application state (redux).
 
 ## 1.0.3 (2019-03-21)

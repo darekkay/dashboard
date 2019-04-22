@@ -33,3 +33,7 @@ Most work happened under the hood. I've cleaned up the code and tried to establi
 ## 2019-03-21 (1.0.3)
 
 Now there's support for color themes! I've used CSS variables, so it's easy to switch values at runtime (try out the preview button). There's also a new shiny favicon, based on [Font Awesome 5](https://fontawesome.com/). Finally, I've introduced React's [error boundaries](https://reactjs.org/docs/error-boundaries.html) so the app doesn't crash if a single widget throws any error.
+
+## 2019-04-22 (1.0.4)
+
+I haven't made much functional progress in the last month as I've been mainly working on my other project: [Tip of the Day](https://tips.darekkay.com/). It is relevant to the dashboard, though, as I wish to connect both projects. The idea is to have a widget which displays a random tip every day (e.g. "country of the day"). I've also made some progress under the hood and made the text widget editable (the content is not stored yet, though). 
