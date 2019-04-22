@@ -13,7 +13,7 @@ export interface ConfigState {
 
 const changeTheme = createAction("theme-select/change-theme");
 
-const initialState = {
+export const initialState = {
   grid: {
     rows: 3,
     columns: 12
@@ -32,5 +32,3 @@ export const reducerWithInitialState = (state: ConfigState = initialState) =>
 export const actionCreators = {
   changeTheme
 };
-
-

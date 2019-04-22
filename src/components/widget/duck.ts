@@ -17,7 +17,7 @@ export interface WidgetsState {
   [key: string]: Widget;
 }
 
-const initialState = {
+export const initialState = {
   "id-01": { width: 3, height: 3, type: "text", options: {} },
   "id-02": { width: 3, height: 1, type: "text", options: {} },
   "id-03": { width: 3, height: 1, type: "text", options: {} },

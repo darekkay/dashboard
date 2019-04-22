@@ -1,6 +1,3 @@
-import React from "react";
-import { mount } from "enzyme";
-
 import { objectToStyleString } from "../themes";
 
 describe("objectToStyleString", () => {
