@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import { mountConnected } from "common/utils/mock";
-import App from "../App";
+import App from "../app/App";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");

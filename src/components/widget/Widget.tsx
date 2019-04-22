@@ -8,7 +8,7 @@ import withErrorHandling, {
   State as ErrorProps
 } from "common/hoc/withErrorHandling";
 
-import { makeSelectWidget } from "./selectors";
+import makeSelectWidget from "./selectors";
 import { actionCreators } from "./duck";
 
 import "./Widget.scss";

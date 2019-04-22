@@ -30,7 +30,7 @@ const makeSelectWidgetHeightInPx = (id: string) =>
       getWidgetHeightInPx(columns, widgetHeight, variables)
   );
 
-export const makeSelectWidget = (id: string) =>
+const makeSelectWidget = (id: string) =>
   createSelector(
     [`widgets.${id}`, makeSelectWidgetHeightInPx(id)],
     (widget, heightInPx) => ({
@@ -43,3 +43,5 @@ export const makeSelectWidget = (id: string) =>
       }
     })
   );
+
+export default makeSelectWidget;
