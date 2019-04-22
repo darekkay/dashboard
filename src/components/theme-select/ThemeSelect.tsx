@@ -1,12 +1,11 @@
 import React from "react";
-import { bindActionCreators, Dispatch } from "redux";
 import { connect } from "react-redux";
 
 import getThemeStyle from "common/themes";
 import { actionCreators } from "common/ducks/settings";
 import Button from "components/button/Button";
 import Icon from "components/icon/Icon";
-import { State } from "../../store";
+import selectComponentProps from "./selectors";
 
 import "./ThemeSelect.scss";
 
@@ -50,16 +49,7 @@ export class ThemeSelect extends React.PureComponent<Props> {
   }
 }
 
-const mapStateToProps = (state: State) => {
-  return {
-    theme: state.config.theme
-  };
-};
-
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators(actionCreators, dispatch);
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  selectComponentProps,
+  actionCreators
 )(ThemeSelect);

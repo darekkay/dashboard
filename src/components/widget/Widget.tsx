@@ -1,5 +1,4 @@
 import React from "react";
-import { bindActionCreators, Dispatch } from "redux";
 import { connect } from "react-redux";
 import cn from "classnames";
 
@@ -67,12 +66,8 @@ export class Widget extends React.PureComponent<Props & ErrorProps> {
 
 const mapStateToProps = (id: string) => makeSelectWidget(id);
 
-// NICE: bind id to action creators
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators(actionCreators, dispatch);
-
 export default (id: string) =>
   connect(
     mapStateToProps(id),
-    mapDispatchToProps
+    actionCreators // NICE: bind id to action creators
   )(withErrorHandling(Widget));

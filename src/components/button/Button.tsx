@@ -1,27 +1,23 @@
-import React from "react";
+import React, { memo } from "react";
 import cn from "classnames";
 
 import "./Button.scss";
 
-const Button = ({
-  children,
-  className,
-  type = "primary",
-  outline,
-  ...rest
-}: Props) => (
-  <button
-    className={cn(
-      "btn",
-      {
-        [`btn-${type}${outline ? "-outline" : ""}`]: type
-      },
-      className
-    )}
-    {...rest}
-  >
-    {children}
-  </button>
+const Button = memo(
+  ({ children, className, type = "primary", outline, onClick }: Props) => (
+    <button
+      className={cn(
+        "btn",
+        {
+          [`btn-${type}${outline ? "-outline" : ""}`]: type
+        },
+        className
+      )}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  )
 );
 
 export enum ButtonType {

@@ -2,7 +2,7 @@ import React, { memo } from "react";
 
 import "./Text.scss";
 
-const Text = ({ id, content, setOption }: Props) => {
+const Text = memo(({ id, content, setOption }: Props) => {
   return (
     <textarea
       onChange={event =>
@@ -11,7 +11,7 @@ const Text = ({ id, content, setOption }: Props) => {
       value={content}
     />
   );
-};
+});
 
 export interface Props {
   id: string;
@@ -19,6 +19,4 @@ export interface Props {
   setOption: (payload: object) => void;
 }
 
-Text.defaultProps = {};
-
-export default memo(Text);
+export default Text;

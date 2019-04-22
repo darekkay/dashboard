@@ -1,12 +1,12 @@
-import React from "react";
+import React, { memo } from "react";
 
 import "./{{ properCase name }}.scss";
 
-const {{ properCase name }} = ({}: Props) => {
+const {{ properCase name }} = memo(({}: Props) => {
   return (
     <div className="{{ lowerCase name }}"></div>
   );
-};
+});
 
 export interface Props {
   //
