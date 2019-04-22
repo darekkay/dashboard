@@ -8,10 +8,20 @@ export interface Props {
   columns: number;
   rows: number;
   widgetIDs: string[];
+  [key: string]: any;
 }
+
+const updateProps = ["columns", "rows"];
 
 /** A grid containing all the widgets */
 class Dashboard extends React.Component<Props> {
+  shouldComponentUpdate(nextProps: Readonly<Props>) {
+    return (
+      this.props.widgetIDs.length !== nextProps.widgetIDs.length ||
+      updateProps.some(prop => this.props[prop] !== nextProps[prop])
+    );
+  }
+
   render() {
     const { columns, rows, widgetIDs } = this.props;
     return (

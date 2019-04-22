@@ -11,7 +11,7 @@ export interface ConfigState {
   theme: string;
 }
 
-const changeTheme = createAction("theme-select/change");
+const changeTheme = createAction("theme-select/change-theme");
 
 const initialState = {
   grid: {

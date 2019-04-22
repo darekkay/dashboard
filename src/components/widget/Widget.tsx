@@ -4,11 +4,12 @@ import { connect } from "react-redux";
 import cn from "classnames";
 
 import widgetComponents from "common/widgets";
-import { makeSelectWidget } from "components/widget/selectors";
-
 import withErrorHandling, {
   State as ErrorProps
 } from "common/hoc/withErrorHandling";
+
+import { makeSelectWidget } from "./selectors";
+import { actionCreators } from "./duck";
 
 import "./Widget.scss";
 
@@ -17,23 +18,34 @@ export interface OptionsProps {
 }
 
 export interface Props {
+  id: string;
   width: number;
   height: number;
   type: string;
   options: OptionsProps;
   heightInPx: number;
+  setOption: () => void;
 }
 
 const isGap = (type: string) => type === "empty";
 
 /** Single widget within the dashboard */
-export class Widget extends React.Component<Props & ErrorProps> {
+export class Widget extends React.PureComponent<Props & ErrorProps> {
   render() {
-    const { width, height, type, options, heightInPx, hasError } = this.props;
+    const {
+      id,
+      width,
+      height,
+      type,
+      options,
+      heightInPx,
+      hasError,
+      setOption
+    } = this.props;
     const Component = widgetComponents[type];
     return (
       <div
-        className={cn({
+        className={cn(`widget-${type}`, {
           widget: !isGap(type),
           "d-flex align-items-center justify-content-center text-center":
             options.align === "center",
@@ -46,7 +58,8 @@ export class Widget extends React.Component<Props & ErrorProps> {
         }}
       >
         {hasError && "» Error «"}
-        {!hasError && React.createElement(Component, options)}
+        {!hasError &&
+          React.createElement(Component, { id, setOption, ...options })}
       </div>
     );
   }
@@ -54,8 +67,9 @@ export class Widget extends React.Component<Props & ErrorProps> {
 
 const mapStateToProps = (id: string) => makeSelectWidget(id);
 
+// NICE: bind id to action creators
 const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({}, dispatch);
+  bindActionCreators(actionCreators, dispatch);
 
 export default (id: string) =>
   connect(

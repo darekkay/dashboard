@@ -3,7 +3,6 @@
 
 .widget {
   margin-bottom: #{$dashboard-grid-gap-px}px;
-  padding: map-get($spacers, 1) map-get($spacers, 3);
 
   border: 1px solid $border-color;
   border-radius: 3px;

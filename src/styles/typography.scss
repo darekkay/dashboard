@@ -1,9 +1,10 @@
 @import "variables";
 
-body {
+body,
+textarea {
   font-family: $font-family-sans-serif;
-  font-size: 1.8rem;
-  line-height: 1.5;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
 
   color: var(--text-color);
   background-color: var(--background-color);

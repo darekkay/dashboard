@@ -34,6 +34,7 @@ export const makeSelectWidget = (id: string) =>
   createSelector(
     [`widgets.${id}`, makeSelectWidgetHeightInPx(id)],
     (widget, heightInPx) => ({
+      id,
       ...widget,
       heightInPx,
       options: {

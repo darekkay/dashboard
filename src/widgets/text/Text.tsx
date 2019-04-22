@@ -1,13 +1,24 @@
-import React from "react";
+import React, { memo } from "react";
 
-const Text = ({ content }: Props) => {
-  return <div>{content}</div>;
+import "./Text.scss";
+
+const Text = ({ id, content, setOption }: Props) => {
+  return (
+    <textarea
+      onChange={event =>
+        setOption({ id, key: "content", value: event.target.value })
+      }
+      value={content}
+    />
+  );
 };
 
 export interface Props {
+  id: string;
   content?: string;
+  setOption: (payload: object) => void;
 }
 
 Text.defaultProps = {};
 
-export default React.memo(Text);
+export default memo(Text);
