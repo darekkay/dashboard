@@ -16,7 +16,9 @@ describe("<ThemeSelect />", () => {
   it("toggles theme when clicking the button", () => {
     wrapper.setProps({ theme: "default" });
 
-    // TODO: replace with wrapper.find("Button") when react memo bug is fixed
+    test.todo(
+      'replace with wrapper.find("Button") when react memo bug is fixed'
+    ); // TODO
     // https://github.com/facebook/react/issues/15207
     wrapper.first().simulate("click");
     expect(changeThemeSpy).toHaveBeenCalledWith("dark");

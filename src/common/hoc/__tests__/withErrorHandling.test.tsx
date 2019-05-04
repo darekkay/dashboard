@@ -13,7 +13,7 @@ const Component = (props: Props & ErrorProps) => (
 const CatchErrors = withErrorHandling(Component);
 
 describe("withErrorHandling", () => {
-  /* TODO: Implement when enzyme supports getDerivedStateFromError */
+  test.todo("Implement when enzyme supports getDerivedStateFromError"); // TODO
   /* https://github.com/airbnb/enzyme/pull/2036 */
   xit("handles errors", () => {
     const wrapper = mount(<CatchErrors />);

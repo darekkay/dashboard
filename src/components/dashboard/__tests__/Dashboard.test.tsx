@@ -30,7 +30,7 @@ describe("<Dashboard />", () => {
     });
 
   xit("renders widgets", () => {
-    // TODO: write tests for connected component
+    test.todo("Write tests for connected component"); // TODO
     expect(wrapper.find(Widget)).toHaveLength(2);
   });
 
