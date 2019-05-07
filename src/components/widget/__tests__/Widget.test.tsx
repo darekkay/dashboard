@@ -10,11 +10,13 @@ describe("<Widget />", () => {
   beforeEach(() => {
     wrapper = shallow(
       <Widget
+        id="mock-widget"
         type="text"
         height={1}
         width={1}
         heightInPx={125}
         options={defaultOptions}
+        setOption={() => null}
         hasError={false}
       >
         <div />

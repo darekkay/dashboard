@@ -3,6 +3,7 @@ import "react-app-polyfill/stable";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
 import App from "components/app/App";
 
@@ -15,11 +16,14 @@ import "./styles/utilities.scss";
 import "./styles/layout.scss";
 import "./styles/typography.scss";
 
-const store = initStore();
+const { store, persistor } = initStore();
 
+// NICE: implement and display loading component
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <PersistGate loading={null} persistor={persistor}>
+      <App />
+    </PersistGate>
   </Provider>,
   document.getElementById("root")
 );

@@ -1,4 +1,5 @@
-import { configureStore } from "redux-starter-kit";
+import { createStore, combineReducers } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 import { reducerWithInitialState as heartbeatReducer } from "common/ducks/heartbeat";
 import {
@@ -10,6 +11,8 @@ import {
   reducerWithInitialState as widgetReducer
 } from "components/widget/duck";
 
+import { persistReducer, persistStore } from "./storage";
+
 export interface State {
   heartbeat: number;
   config: ConfigState;
@@ -18,14 +21,26 @@ export interface State {
   [key: string]: any;
 }
 
-const initStore = () =>
-  configureStore({
-    reducer: {
-      heartbeat: heartbeatReducer(),
-      config: settingsReducer(),
-      widgets: widgetReducer()
-    },
-    preloadedState: {} // TODO: load from session storage
+const IS_PRODUCTION = process.env.NODE_ENV === "production";
+
+const initStore = () => {
+  const rootReducer = combineReducers({
+    heartbeat: heartbeatReducer(),
+    config: settingsReducer(),
+    widgets: widgetReducer()
   });
+
+  const store = createStore(
+    persistReducer(rootReducer),
+    composeWithDevTools({
+      // Enable capture of stack traces for dispatched Redux actions
+      trace: !IS_PRODUCTION
+    })()
+  );
+
+  const persistor = persistStore(store);
+
+  return { store, persistor };
+};
 
 export default initStore;
