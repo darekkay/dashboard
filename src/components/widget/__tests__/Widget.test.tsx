@@ -12,6 +12,8 @@ describe("<Widget />", () => {
       <Widget
         id="mock-widget"
         type="text"
+        x={1}
+        y={1}
         height={1}
         width={1}
         heightInPx={125}
@@ -31,10 +33,5 @@ describe("<Widget />", () => {
   it("renders errors", () => {
     wrapper.setProps({ hasError: true });
     expect(wrapper.find(".error")).toHaveLength(1);
-  });
-
-  it("renders gaps", () => {
-    wrapper.setProps({ type: "empty" });
-    expect(wrapper.find(".widget")).toHaveLength(0);
   });
 });

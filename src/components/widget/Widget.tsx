@@ -20,13 +20,13 @@ export interface Props {
   id: string;
   width: number;
   height: number;
+  x: number;
+  y: number;
   type: string;
   options: OptionsProps;
   heightInPx: number;
   setOption: () => void;
 }
-
-const isGap = (type: string) => type === "empty";
 
 /** Single widget within the dashboard */
 export class Widget extends React.PureComponent<Props & ErrorProps> {
@@ -35,6 +35,8 @@ export class Widget extends React.PureComponent<Props & ErrorProps> {
       id,
       width,
       height,
+      x,
+      y,
       type,
       options,
       heightInPx,
@@ -44,16 +46,15 @@ export class Widget extends React.PureComponent<Props & ErrorProps> {
     const Component = widgetComponents[type];
     return (
       <div
-        className={cn(`widget-${type}`, {
-          widget: !isGap(type),
+        className={cn("widget", `widget-${type}`, {
           "d-flex align-items-center justify-content-center text-center":
             options.align === "center",
           error: hasError
         })}
         style={{
-          gridRowStart: `span ${height}`,
-          gridColumnStart: `span ${width}`,
-          height: isGap(type) ? 0 : `${heightInPx}px`
+          gridRow: `${y + 1} / span ${height}`,
+          gridColumn: `${x + 1} / span ${width}`,
+          height: `${heightInPx}px`
         }}
       >
         {hasError && "» Error «"}
