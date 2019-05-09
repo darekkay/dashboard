@@ -1,7 +1,8 @@
 import { Reducer } from "redux";
 import {
   persistStore as _persistStore,
-  persistReducer as _persistReducer
+  persistReducer as _persistReducer,
+  Persistor
 } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // localStorage for web and AsyncStorage for react-native
 
@@ -17,5 +18,10 @@ export const persistReducer = (reducer: Reducer) =>
     },
     reducer
   );
+
+export const pause = (persistor: Persistor) => {
+  persistor.purge();
+  persistor.pause();
+};
 
 export const persistStore = _persistStore;

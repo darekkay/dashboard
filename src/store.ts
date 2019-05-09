@@ -11,7 +11,7 @@ import {
   reducerWithInitialState as widgetReducer
 } from "components/widget/duck";
 
-import { persistReducer, persistStore } from "./storage";
+import { persistReducer, persistStore, pause } from "./storage";
 
 export interface State {
   heartbeat: number;
@@ -22,6 +22,7 @@ export interface State {
 }
 
 const IS_PRODUCTION = process.env.NODE_ENV === "production";
+const IS_PAUSED = false;
 
 const initStore = () => {
   const rootReducer = combineReducers({
@@ -39,6 +40,9 @@ const initStore = () => {
   );
 
   const persistor = persistStore(store);
+  if (IS_PAUSED) {
+    pause(persistor);
+  }
 
   return { store, persistor };
 };
