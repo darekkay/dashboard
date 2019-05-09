@@ -15,9 +15,18 @@ export interface Props {
 }
 
 export class App extends React.PureComponent<Props> {
+  private heartbeat: any;
+
   componentDidMount() {
-    // debug re-renderings:
-    // window.setInterval(() => this.props.sendHeartbeat(Date.now()), 1000);
+    /* istanbul ignore next */
+    this.heartbeat = window.setInterval(
+      () => this.props.sendHeartbeat(Date.now()),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    window.clearInterval(this.heartbeat);
   }
 
   render() {

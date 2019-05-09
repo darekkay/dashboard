@@ -7,7 +7,7 @@ import { PersistGate } from "redux-persist/integration/react";
 
 import App from "components/app/App";
 
-import initStore from "./store";
+import initStore from "state/store";
 // import * as serviceWorker from "./common/serviceWorker";
 
 import "./styles/mixins.scss";

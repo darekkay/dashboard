@@ -19,6 +19,7 @@ export const persistReducer = (reducer: Reducer) =>
     reducer
   );
 
+/* istanbul ignore next */
 export const pause = (persistor: Persistor) => {
   persistor.purge();
   persistor.pause();

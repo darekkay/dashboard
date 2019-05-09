@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 
-import initStore from "../../store";
+import initStore from "../../state/store";
 
 const { store } = initStore();
 
