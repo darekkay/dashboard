@@ -1,4 +1,4 @@
-import { getWidgetHeightInPx } from "../selectors";
+import { getWidgetHeightInPx, getTypeFromId } from "../selectors";
 
 describe("Widget selectors", () => {
   it("use correct widget heights", () => {
@@ -14,5 +14,12 @@ describe("Widget selectors", () => {
       dashboardMaxWidth: 1200
     });
     expect(result).toEqual(288.75); // magic number from browser dev tools
+  });
+
+  it("extract the widget type from the id", () => {
+    expect(getTypeFromId("type-01")).toEqual("type");
+    expect(getTypeFromId("type-")).toEqual("type");
+    expect(getTypeFromId("type-dash-")).toEqual("type-dash");
+    expect(getTypeFromId("type-dash-suffix")).toEqual("type-dash");
   });
 });

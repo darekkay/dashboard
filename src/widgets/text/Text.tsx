@@ -6,6 +6,7 @@ const Text = memo(({ id, content, setOption }: Props) => {
   return (
     <textarea
       aria-label="Text widget"
+      // TODO: throttle
       onChange={event =>
         setOption({ id, key: "content", value: event.target.value })
       }

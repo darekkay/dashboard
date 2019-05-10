@@ -30,16 +30,26 @@ const makeSelectWidgetHeightInPx = (id: string) =>
       getWidgetHeightInPx(columns, widgetHeight, variables)
   );
 
+export const getTypeFromId = (id: string) =>
+  id.substring(0, id.lastIndexOf("-"));
+
 const makeSelectWidget = (id: string) =>
   createSelector(
-    [`widgets.${id}`, makeSelectWidgetHeightInPx(id)],
-    (widget, heightInPx) => ({
+    [
+      `widgets.${id}`,
+      `sharedData.${getTypeFromId(id)}`,
+      makeSelectWidgetHeightInPx(id)
+    ],
+    (widget, sharedData, heightInPx) => ({
       id,
       ...widget,
       heightInPx,
       options: {
         ...defaultOptions,
         ...widget.options
+      },
+      data: {
+        ...sharedData
       }
     })
   );

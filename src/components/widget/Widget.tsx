@@ -24,6 +24,7 @@ export interface Props {
   y: number;
   type: string;
   options: OptionsProps;
+  data: { [key: string]: any };
   heightInPx: number;
   setOption: () => void;
 }
@@ -39,6 +40,7 @@ export class Widget extends React.PureComponent<Props & ErrorProps> {
       y,
       type,
       options,
+      data,
       heightInPx,
       hasError,
       setOption
@@ -59,7 +61,12 @@ export class Widget extends React.PureComponent<Props & ErrorProps> {
       >
         {hasError && "» Error «"}
         {!hasError &&
-          React.createElement(Component, { id, setOption, ...options })}
+          React.createElement(Component, {
+            id,
+            setOption,
+            ...options,
+            ...data
+          })}
       </div>
     );
   }

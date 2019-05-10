@@ -5,7 +5,10 @@
 
 import { createAction, createReducer } from "redux-starter-kit";
 import { ofType, Epic } from "redux-observable";
-import { ignoreElements } from "rxjs/operators";
+import { map, filter } from "rxjs/operators";
+import moment from "moment";
+
+import { setSharedDataValue } from "./sharedData";
 
 export const sendHeartbeat = createAction("heartbeat/send");
 
@@ -16,11 +19,31 @@ export const reducerWithInitialState = (state: number = initialState) =>
     [sendHeartbeat as any]: (state, action) => action.payload
   });
 
-// dummy epic
-export const epic: Epic = action$ =>
+export const getMinuteDate = (date: number) =>
+  moment(date)
+    .startOf("minute")
+    .valueOf();
+
+/* TODO: remove ignore flag when the test is implemented */
+export const epic: Epic = (action$, state$) =>
   action$.pipe(
     ofType(sendHeartbeat),
-    ignoreElements()
+    filter(
+      /* istanbul ignore next */
+      action =>
+        state$.value.sharedData["date-time"].date !==
+        getMinuteDate(action.payload)
+    ),
+    map(
+      /* istanbul ignore next */
+      action =>
+        setSharedDataValue({
+          widgetType: "date-time",
+          value: {
+            date: getMinuteDate(action.payload)
+          }
+        })
+    )
   );
 
 export const actionCreators = {
