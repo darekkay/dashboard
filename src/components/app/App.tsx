@@ -1,9 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 import { connect } from "react-redux";
 
 import { actionCreators as heartbeatActionCreators } from "common/ducks/heartbeat";
 import Dashboard from "components/dashboard/Dashboard";
 import Footer from "components/footer/Footer";
+import useInterval from "common/hooks/useInterval";
 
 import mapStateToProps from "./selectors";
 
@@ -14,37 +15,25 @@ export interface Props {
   sendHeartbeat: (date: number) => void;
 }
 
-export class App extends React.PureComponent<Props> {
-  private heartbeat: any;
+export const App = memo((props: Props) => {
+  const { gridColumns, gridRows, widgetIDs, sendHeartbeat } = props;
 
-  componentDidMount() {
-    /* istanbul ignore next */
-    this.heartbeat = window.setInterval(
-      () => this.props.sendHeartbeat(Date.now()),
-      1000
-    );
-  }
+  /* istanbul ignore next */
+  useInterval(() => sendHeartbeat(Date.now()), 1000);
 
-  componentWillUnmount() {
-    window.clearInterval(this.heartbeat);
-  }
-
-  render() {
-    const { gridColumns, gridRows, widgetIDs } = this.props;
-    return (
-      <>
-        <main className="scrollable-y">
-          <Dashboard
-            columns={gridColumns}
-            rows={gridRows}
-            widgetIDs={widgetIDs}
-          />
-        </main>
-        <Footer />
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <main className="scrollable-y">
+        <Dashboard
+          columns={gridColumns}
+          rows={gridRows}
+          widgetIDs={widgetIDs}
+        />
+      </main>
+      <Footer />
+    </>
+  );
+});
 
 export default connect(
   mapStateToProps,

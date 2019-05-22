@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import _ from "lodash";
 import cl from "classnames";
 
@@ -14,33 +14,31 @@ export interface Props {
   position?: "left" | "right";
 }
 
-class Icon extends React.PureComponent<Props> {
-  render() {
-    const { name, className, position } = this.props;
-    return (
-      <div
-        className={cl(
-          "icon",
-          `icon-${name}`,
-          {
-            [`icon-${position}`]: position
-          },
-          className
-        )}
-      >
-        {this.renderIcon(this.props)}
-      </div>
-    );
-  }
+const renderIcon = (props: Props) => {
+  const component = svgs[_.capitalize(props.name)];
+  if (!component) throw new Error(`Unknown icon '${props.name}'`);
 
-  renderIcon = (props: Props) => {
-    const component = svgs[_.capitalize(props.name)];
-    if (!component) throw new Error(`Unknown icon '${props.name}'`);
+  return React.createElement(component, {
+    "aria-label": props.alt // "alt" is not supported for inline SVGs
+  });
+};
 
-    return React.createElement(component, {
-      "aria-label": props.alt // "alt" is not supported for inline SVGs
-    });
-  };
-}
+const Icon = memo((props: Props) => {
+  const { name, className, position } = props;
+  return (
+    <div
+      className={cl(
+        "icon",
+        `icon-${name}`,
+        {
+          [`icon-${position}`]: position
+        },
+        className
+      )}
+    >
+      {renderIcon(props)}
+    </div>
+  );
+});
 
 export default Icon;

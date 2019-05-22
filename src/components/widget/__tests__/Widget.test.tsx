@@ -21,9 +21,7 @@ describe("<Widget />", () => {
         data={{}}
         setOption={() => null}
         hasError={false}
-      >
-        <div />
-      </Widget>
+      />
     );
   });
 

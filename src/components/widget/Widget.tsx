@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { connect } from "react-redux";
 import cn from "classnames";
 
@@ -30,47 +30,45 @@ export interface Props {
 }
 
 /** Single widget within the dashboard */
-export class Widget extends React.PureComponent<Props & ErrorProps> {
-  render() {
-    const {
-      id,
-      width,
-      height,
-      x,
-      y,
-      type,
-      options,
-      data,
-      heightInPx,
-      hasError,
-      setOption
-    } = this.props;
-    const Component = widgetComponents[type];
-    return (
-      <div
-        className={cn("widget", `widget-${type}`, {
-          "d-flex align-items-center justify-content-center text-center":
-            options.align === "center",
-          error: hasError
+export const Widget = memo((props: Props & ErrorProps) => {
+  const {
+    id,
+    width,
+    height,
+    x,
+    y,
+    type,
+    options,
+    data,
+    heightInPx,
+    hasError,
+    setOption
+  } = props;
+  const Component = widgetComponents[type];
+  return (
+    <div
+      className={cn("widget", `widget-${type}`, {
+        "d-flex align-items-center justify-content-center text-center":
+          options.align === "center",
+        error: hasError
+      })}
+      style={{
+        gridRow: `${y + 1} / span ${height}`,
+        gridColumn: `${x + 1} / span ${width}`,
+        height: `${heightInPx}px`
+      }}
+    >
+      {hasError && "» Error «"}
+      {!hasError &&
+        React.createElement(Component, {
+          id,
+          setOption,
+          ...options,
+          ...data
         })}
-        style={{
-          gridRow: `${y + 1} / span ${height}`,
-          gridColumn: `${x + 1} / span ${width}`,
-          height: `${heightInPx}px`
-        }}
-      >
-        {hasError && "» Error «"}
-        {!hasError &&
-          React.createElement(Component, {
-            id,
-            setOption,
-            ...options,
-            ...data
-          })}
-      </div>
-    );
-  }
-}
+    </div>
+  );
+});
 
 const mapStateToProps = (id: string) => makeSelectWidget(id);
 

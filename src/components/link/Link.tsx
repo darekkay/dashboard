@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 export interface Props {
   children: React.ReactNode;
@@ -8,23 +8,19 @@ export interface Props {
   external?: boolean;
 }
 
-class Link extends React.Component<Props> {
-  shouldComponentUpdate = () => false; // The link content does not ever change
-
-  render() {
-    const { className, url, title, external = true } = this.props;
-    return (
-      <a
-        className={className}
-        href={url}
-        title={title}
-        target={external ? "_blank" : undefined}
-        rel={external ? "noopener noreferrer" : undefined}
-      >
-        {this.props.children}
-      </a>
-    );
-  }
-}
+export const Link = memo((props: Props) => {
+  const { className, url, title, external = true } = props;
+  return (
+    <a
+      className={className}
+      href={url}
+      title={title}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+    >
+      {props.children}
+    </a>
+  );
+});
 
 export default Link;

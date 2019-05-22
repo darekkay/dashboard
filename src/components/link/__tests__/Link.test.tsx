@@ -14,14 +14,6 @@ describe("<Link />", () => {
     expect(wrapper.find("a")).toHaveLength(1);
   });
 
-  it("never rerenders", () => {
-    // @ts-ignore
-    const shouldUpdate = wrapper
-      .instance()
-      .shouldComponentUpdate({ url: "/test" });
-    expect(shouldUpdate).toBe(false);
-  });
-
   it("renders target and rel for external links", () => {
     expect(wrapper.find("a[target][rel]")).toHaveLength(1);
     wrapper = shallow(

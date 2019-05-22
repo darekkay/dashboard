@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo, useCallback, useEffect } from "react";
 import { connect } from "react-redux";
 
 import getThemeStyle from "common/themes";
@@ -14,40 +14,33 @@ export interface Props {
   changeTheme: (payload: string) => void;
 }
 
-export class ThemeSelect extends React.PureComponent<Props> {
-  componentDidMount() {
-    this.updateCssVariables();
-  }
+const updateCssVariables = (theme: string) => {
+  /* TODO: probably move to a side-effect library */
+  document.documentElement.setAttribute("style", getThemeStyle(theme));
+};
 
-  componentDidUpdate(prevProps: Readonly<Props>) {
-    if (prevProps.theme !== this.props.theme) {
-      this.updateCssVariables();
-    }
-  }
+/* TODO: refactor to select all themes instead of toggling */
+const getNextTheme = (theme: string) =>
+  theme === "default" ? "dark" : "default";
 
-  updateCssVariables = () => {
-    /* TODO: probably move to a side-effect library */
-    document.documentElement.setAttribute(
-      "style",
-      getThemeStyle(this.props.theme)
-    );
-  };
+export const ThemeSelect = memo((props: Props) => {
+  const { theme, changeTheme } = props;
 
-  /* TODO: refactor to select all themes instead of toggling */
-  getNextTheme = () => (this.props.theme === "default" ? "dark" : "default");
+  const toggleTheme = useCallback(() => {
+    changeTheme(getNextTheme(theme));
+  }, [theme, changeTheme]);
 
-  toggleTheme = () => this.props.changeTheme(this.getNextTheme());
+  useEffect(() => {
+    updateCssVariables(theme);
+  }, [theme]);
 
-  render() {
-    const { theme } = this.props;
-    return (
-      <Button className="m-2" type="primary" onClick={this.toggleTheme}>
-        <Icon name="palette" position="left" />
-        Theme: {theme}
-      </Button>
-    );
-  }
-}
+  return (
+    <Button className="m-2" type="primary" onClick={toggleTheme}>
+      <Icon name="palette" position="left" />
+      Theme: {theme}
+    </Button>
+  );
+});
 
 export default connect(
   selectComponentProps,
