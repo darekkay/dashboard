@@ -72,7 +72,7 @@
     "ci": "npm run lint:check && npm run test",
     "format": "prettier --write -- \"{src,public}/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "generate": "plop --plopfile internals/generators/index.js",
-    "lint:check": "eslint src/**/*.{ts,tsx,js,jsx}",
+    "lint:check": "tsc && eslint src/**/*.{ts,tsx,js,jsx}",
     "lint:fix": "eslint --fix src/**/*.{ts,tsx,js,jsx}",
     "start": "react-scripts start",
     "test": "react-scripts test --modulePaths=src --coverage"
