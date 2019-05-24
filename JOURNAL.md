@@ -1,12 +1,16 @@
-## 2019-03-14 (1.0.0)
+## 2019-04-22 (1.0.4)
 
-The journey begins :rocket:
+I haven't made much functional progress in the last month as I've been mainly working on my other project: [Tip of the Day](https://tips.darekkay.com/). It is relevant to the dashboard, though, as I wish to connect both projects. The idea is to have a widget which displays a random tip every day (e.g. "country of the day"). I've also made some progress under the hood and made the text widget editable (the content is not stored yet, though). 
 
-With zero practical TypeScript experience, I've had some issues setting up the project, despite using a [boilerplate](https://github.com/facebook/create-react-app). To get started, I've migrated three common JS components from my other app (button, link, icon). I've checked some best practices and popular Typescript/React projects, trying to do it the right way™ (e.g. correct types).
+## 2019-03-21 (1.0.3)
 
-I'm really looking forward to experiencing the praised improvement over vanilla JavaScript. My IDE of choice, IntelliJ IDEA, supports TypeScript types for popular projects, so I've already got a good IntelliSense even without TypeScript .
+Now there's support for color themes! I've used CSS variables, so it's easy to switch values at runtime (try out the preview button). There's also a new shiny favicon, based on [Font Awesome 5](https://fontawesome.com/). Finally, I've introduced React's [error boundaries](https://reactjs.org/docs/error-boundaries.html) so the app doesn't crash if a single widget throws any error.
 
-The [CI pipeline](https://travis-ci.org/darekkay/dashboard) is on and the project is already [live](https://dashboard.darekkay.com) (not much is going on, though).
+## 2019-03-20 (1.0.2)
+
+I've implemented the first, very basic widget: Text Widget. It just displays fixed text, nothing fancy. Maybe it can be extended to support some basic formatting options in the future.
+
+Most work happened under the hood. I've cleaned up the code and tried to establish a good framework to build upon.
 
 ## 2019-03-17 (1.0.1)
 
@@ -24,16 +28,12 @@ I think that #4 is the best trade-off.
 
 I've implemented a simple Dashboard using CSS Grid. The user may define the number of columns and rows and assign a relative width and height for each widget. In the future, this should be configurable within the UI (drag and drop), but for a MVP this is enough.
 
-## 2019-03-20 (1.0.2)
+## 2019-03-14 (1.0.0)
 
-I've implemented the first, very basic widget: Text Widget. It just displays fixed text, nothing fancy. Maybe it can be extended to support some basic formatting options in the future.
+The journey begins :rocket:
 
-Most work happened under the hood. I've cleaned up the code and tried to establish a good framework to build upon.
+With zero practical TypeScript experience, I've had some issues setting up the project, despite using a [boilerplate](https://github.com/facebook/create-react-app). To get started, I've migrated three common JS components from my other app (button, link, icon). I've checked some best practices and popular Typescript/React projects, trying to do it the right way™ (e.g. correct types).
 
-## 2019-03-21 (1.0.3)
+I'm really looking forward to experiencing the praised improvement over vanilla JavaScript. My IDE of choice, IntelliJ IDEA, supports TypeScript types for popular projects, so I've already got a good IntelliSense even without TypeScript .
 
-Now there's support for color themes! I've used CSS variables, so it's easy to switch values at runtime (try out the preview button). There's also a new shiny favicon, based on [Font Awesome 5](https://fontawesome.com/). Finally, I've introduced React's [error boundaries](https://reactjs.org/docs/error-boundaries.html) so the app doesn't crash if a single widget throws any error.
-
-## 2019-04-22 (1.0.4)
-
-I haven't made much functional progress in the last month as I've been mainly working on my other project: [Tip of the Day](https://tips.darekkay.com/). It is relevant to the dashboard, though, as I wish to connect both projects. The idea is to have a widget which displays a random tip every day (e.g. "country of the day"). I've also made some progress under the hood and made the text widget editable (the content is not stored yet, though). 
+The [CI pipeline](https://travis-ci.org/darekkay/dashboard) is on and the project is already [live](https://dashboard.darekkay.com) (not much is going on, though).
