@@ -49,7 +49,8 @@ const makeSelectWidget = (id: string) =>
         ...widget.options
       },
       data: {
-        ...sharedData
+        ...sharedData,
+        ...widget.data
       }
     })
   );

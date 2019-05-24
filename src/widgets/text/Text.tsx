@@ -2,13 +2,13 @@ import React, { memo } from "react";
 
 import "./Text.scss";
 
-const Text = memo(({ id, content, setOption }: Props) => {
+const Text = memo(({ id, content, setDataValue }: Props) => {
   return (
     <textarea
       aria-label="Text widget"
       // TODO: throttle
       onChange={event =>
-        setOption({ id, key: "content", value: event.target.value })
+        setDataValue({ id, key: "content", value: event.target.value })
       }
       value={content}
     />
@@ -18,7 +18,7 @@ const Text = memo(({ id, content, setOption }: Props) => {
 export interface Props {
   id: string;
   content?: string;
-  setOption: (payload: object) => void;
+  setDataValue: (payload: object) => void;
 }
 
 export default Text;

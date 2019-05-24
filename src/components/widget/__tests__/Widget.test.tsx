@@ -18,8 +18,9 @@ describe("<Widget />", () => {
         width={1}
         heightInPx={125}
         options={defaultOptions}
+        setOptionValue={() => null}
         data={{}}
-        setOption={() => null}
+        setDataValue={() => null}
         hasError={false}
       />
     );

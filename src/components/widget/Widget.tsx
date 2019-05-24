@@ -26,7 +26,8 @@ export interface Props {
   options: OptionsProps;
   data: { [key: string]: any };
   heightInPx: number;
-  setOption: () => void;
+  setOptionValue: () => void;
+  setDataValue: () => void;
 }
 
 /** Single widget within the dashboard */
@@ -42,7 +43,8 @@ export const Widget = memo((props: Props & ErrorProps) => {
     data,
     heightInPx,
     hasError,
-    setOption
+    setOptionValue,
+    setDataValue
   } = props;
   const Component = widgetComponents[type];
   return (
@@ -62,7 +64,8 @@ export const Widget = memo((props: Props & ErrorProps) => {
       {!hasError &&
         React.createElement(Component, {
           id,
-          setOption,
+          setOptionValue,
+          setDataValue,
           ...options,
           ...data
         })}

@@ -8,11 +8,11 @@ describe("<Text />", () => {
 
   const id = "mock-id";
   const content = "hello world";
-  const setOptionSpy = jest.fn();
+  const setDataValueSpy = jest.fn();
 
   beforeEach(() => {
     wrapper = shallow(
-      <Text id={id} content={content} setOption={setOptionSpy} />
+      <Text id={id} content={content} setDataValue={setDataValueSpy} />
     );
   });
 
@@ -25,7 +25,7 @@ describe("<Text />", () => {
     wrapper
       .find("textarea")
       .simulate("change", { target: { value: newContent } });
-    expect(setOptionSpy).toHaveBeenCalledWith({
+    expect(setDataValueSpy).toHaveBeenCalledWith({
       id,
       key: "content",
       value: newContent
