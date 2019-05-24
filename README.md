@@ -36,22 +36,23 @@ The next step will be to integrate 3rd party providers. I'd like to store as few
 
 ### Implemented widgets
 
-| type | description |
-| ---- | ----------- |
-| text | Fixed text  |
+| type      | description           |
+| --------- | --------------------- |
+| text      | Editable text field   |
+| date-time | Current date and time |
 
 The configuration options for each widget are listed [here](docs/widgets.md).
 
 ### Widget/integration ideas
 
-- Current date and time
-- Current weather and forecast
-- Bookmarks
-- Search (for different search engines)
-- Calendar / next events
-- Daily message (quote, image, tip)
-- Todo tasks (integration with 3rd party, like Todoist, Wunderlist or GitHub Issues)
-- ...
+[] Current date and time
+[] Current weather and forecast
+[] Bookmarks
+[] Search (for different search engines)
+[] Calendar / next events
+[] Daily message (quote, image, tip)
+[] Todo tasks (integration with 3rd party, like Todoist, Wunderlist or GitHub Issues)
+...
 
 ## Contribution
 

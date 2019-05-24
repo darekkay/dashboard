@@ -9,10 +9,4 @@ These options may be applied to all types of widgets:
 
 ## Text
 
-Display fixed text.
-
-### Options
-
-- `content`:
-  - value: string
-  - description: Text to be displayed
+Display editable text field, e.g. for notes.
