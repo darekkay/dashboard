@@ -1,5 +1,9 @@
 ## Unreleased
 
+## 1.0.5 (2019-05-25)
+- :sparkles: Add DateTime widget.
+- :rocket: Persist the state in the local storage. 
+
 ## 1.0.4 (2019-04-22)
 - :sparkles: Make text widget editable.
 - :rocket: Improve performance.

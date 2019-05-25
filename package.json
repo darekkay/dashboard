@@ -1,7 +1,7 @@
 {
   "name": "dashboard",
   "description": "Personal dashboard",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Darek Kay <hello@darekkay.com> (https://darekkay.com/)",
   "browserslist": [
     ">0.2%",
