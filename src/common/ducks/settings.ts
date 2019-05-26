@@ -5,7 +5,6 @@ import { createAction, createReducer } from "redux-starter-kit";
 // TODO: rename to Settings
 export interface ConfigState {
   grid: {
-    rows: number;
     columns: number;
   };
   theme: string;
@@ -15,7 +14,6 @@ const changeTheme = createAction("theme-select/change-theme");
 
 export const initialState = {
   grid: {
-    rows: 3,
     columns: 12
   },
   theme: "default"

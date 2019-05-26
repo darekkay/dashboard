@@ -1,10 +1,13 @@
 import createSelector from "selectorator";
 
+/* TODO: use a hash to prevent re-rendering */
+
 const selectComponentProps = createSelector(
-  ["config.grid.columns", "config.grid.rows", "widgets"],
-  (columns, rows, widgets) => ({
+  ["config.grid.columns", "layout", "widgets"],
+  (columns, layout, widgets) => ({
     gridColumns: columns,
-    gridRows: rows,
+    layout: layout.config,
+    isLayoutEditable: layout.isEditable,
     widgetIDs: Object.keys(widgets)
   })
 );

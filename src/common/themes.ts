@@ -11,6 +11,7 @@ export interface Variables {
   "--border-color": string;
   "--widget-text-color": string;
   "--widget-background-color": string;
+  "--widget-dim-background-color": string;
   "--footer-background-color": string;
   [key: string]: string;
 }
@@ -27,6 +28,7 @@ const themes: Themes = {
     "--border-color": "#ddd",
     "--widget-text-color": "#000",
     "--widget-background-color": "#fff",
+    "--widget-dim-background-color": "rgba(0, 0, 0, 0.05)",
     "--footer-background-color": "#fff"
   },
   dark: {
@@ -36,6 +38,7 @@ const themes: Themes = {
     "--border-color": "#74715e",
     "--widget-text-color": "#fff",
     "--widget-background-color": "#333",
+    "--widget-dim-background-color": "rgba(0, 0, 0, 0.5)",
     "--footer-background-color": "#333"
   }
 };

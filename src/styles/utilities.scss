@@ -50,6 +50,23 @@
   justify-content: space-between;
 }
 
+// Position
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 // Grid
 
 .d-grid {
@@ -96,4 +113,10 @@
   .border-#{$direction} {
     border-#{$direction}: 1px solid $border-color;
   }
+}
+
+// Colors
+
+.background-color-widget-dim {
+  background-color: var(--widget-dim-background-color);
 }

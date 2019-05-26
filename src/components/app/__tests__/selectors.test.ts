@@ -9,13 +9,15 @@ describe("App selector", () => {
           rows: 2
         }
       },
+      layout: {
+        config: [],
+        isEditable: false
+      },
       widgets: {
         "id-01": {},
         "id-02": {}
       }
     });
-    expect(result.gridColumns).toEqual(3);
-    expect(result.gridRows).toEqual(2);
     expect(result.widgetIDs).toEqual(["id-01", "id-02"]);
   });
 });

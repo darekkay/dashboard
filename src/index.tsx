@@ -10,6 +10,9 @@ import App from "components/app/App";
 import initStore from "state/store";
 // import * as serviceWorker from "./common/serviceWorker";
 
+import "react-grid-layout/css/styles.css";
+import "react-resizable/css/styles.css";
+
 import "./styles/mixins.scss";
 import "./styles/base.scss";
 import "./styles/utilities.scss";

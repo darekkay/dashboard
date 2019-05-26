@@ -1,17 +1,20 @@
 import React from "react";
+import RGL, { Layout, WidthProvider } from "react-grid-layout";
 
 import makeWidget from "components/widget/Widget";
 
-import "./Dashboard.scss";
+const ReactGridLayout = WidthProvider(RGL);
 
 export interface Props {
   columns: number;
-  rows: number;
+  layout: Layout[];
+  isLayoutEditable: boolean;
   widgetIDs: string[];
+  saveLayout: (layout: Layout[]) => void;
   [key: string]: any;
 }
 
-const updateProps = ["columns", "rows"];
+const updateProps = ["columns", "layout", "isLayoutEditable"];
 
 /** A grid containing all the widgets */
 class Dashboard extends React.Component<Props> {
@@ -23,20 +26,36 @@ class Dashboard extends React.Component<Props> {
   }
 
   render() {
-    const { columns, rows, widgetIDs } = this.props;
+    const {
+      columns,
+      layout,
+      isLayoutEditable,
+      widgetIDs,
+      saveLayout
+    } = this.props;
+    /* TODO: responsive */
     return (
-      <div
-        className="dashboard"
-        style={{
-          gridTemplateColumns: `repeat(${columns}, 1fr`,
-          gridTemplateRows: `repeat(${rows}, auto`
+      <ReactGridLayout
+        className="layout"
+        layout={layout}
+        cols={columns}
+        rowHeight={100}
+        compactType={null}
+        isRearrangeable={false}
+        isDraggable={isLayoutEditable}
+        isResizable={isLayoutEditable}
+        onLayoutChange={(layout: Layout[]) => {
+          saveLayout(layout);
         }}
       >
         {widgetIDs.map(widgetID =>
           // @ts-ignore
-          React.createElement(makeWidget(widgetID), { key: widgetID })
+          React.createElement(makeWidget(widgetID), {
+            key: widgetID,
+            isLayoutEditable
+          })
         )}
-      </div>
+      </ReactGridLayout>
     );
   }
 }

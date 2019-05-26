@@ -7,7 +7,9 @@ describe("<Footer />", () => {
   let wrapper: ShallowWrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Footer />);
+    wrapper = shallow(
+      <Footer isLayoutEditable={false} toggleLayoutEditable={() => null} />
+    );
   });
 
   it("renders without error", () => {

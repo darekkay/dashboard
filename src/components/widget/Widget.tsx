@@ -25,42 +25,47 @@ export interface Props {
   type: string;
   options: OptionsProps;
   data: { [key: string]: any };
-  heightInPx: number;
   setOptionValue: () => void;
   setDataValue: () => void;
+  isLayoutEditable: boolean;
+  className?: string;
+  children?: React.ReactNode;
 }
 
 /** Single widget within the dashboard */
 export const Widget = memo((props: Props & ErrorProps) => {
   const {
     id,
-    width,
-    height,
-    x,
-    y,
     type,
     options,
     data,
-    heightInPx,
     hasError,
     setOptionValue,
-    setDataValue
+    setDataValue,
+    isLayoutEditable,
+    className,
+    children,
+    ...rest
   } = props;
   const Component = widgetComponents[type];
   return (
     <div
-      className={cn("widget", `widget-${type}`, {
-        "d-flex align-items-center justify-content-center text-center":
-          options.align === "center",
-        error: hasError
-      })}
-      style={{
-        gridRow: `${y + 1} / span ${height}`,
-        gridColumn: `${x + 1} / span ${width}`,
-        height: `${heightInPx}px`
-      }}
+      className={cn(
+        "widget",
+        `widget-${type}`,
+        {
+          "d-flex align-items-center justify-content-center text-center":
+            options.align === "center",
+          error: hasError
+        },
+        className
+      )}
+      {...rest}
     >
       {hasError && "» Error «"}
+      {isLayoutEditable && (
+        <div className="position-absolute inset-0 background-color-widget-dim" />
+      )}
       {!hasError &&
         React.createElement(Component, {
           id,
@@ -69,6 +74,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
           ...options,
           ...data
         })}
+      {children}
     </div>
   );
 });
