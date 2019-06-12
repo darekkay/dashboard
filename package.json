@@ -48,6 +48,7 @@
     "node-sass": "4.12.0",
     "plop": "2.3.0",
     "prettier": "1.17.1",
+    "tailwindcss": "1.0.4",
     "typescript": "3.4.5"
   },
   "eslintConfig": {
@@ -79,6 +80,7 @@
     "lint:check": "tsc && eslint src/**/*.{ts,tsx,js,jsx}",
     "lint:fix": "eslint --fix src/**/*.{ts,tsx,js,jsx}",
     "start": "react-scripts start",
+    "tailwind": "tailwind build internals/tailwind/tailwind.css -c internals/tailwind/config.js --no-autoprefixer -o src/styles/tailwind.css",
     "test": "react-scripts test --modulePaths=src --coverage"
   }
 }

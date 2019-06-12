@@ -15,8 +15,8 @@ import "react-resizable/css/styles.css";
 
 import "./styles/mixins.scss";
 import "./styles/base.scss";
+import "./styles/tailwind.css";
 import "./styles/utilities.scss";
-import "./styles/layout.scss";
 import "./styles/typography.scss";
 
 const { store, persistor } = initStore();

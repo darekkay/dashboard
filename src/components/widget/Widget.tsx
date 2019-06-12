@@ -10,8 +10,6 @@ import withErrorHandling, {
 import makeSelectWidget from "./selectors";
 import { actionCreators } from "./duck";
 
-import "./Widget.scss";
-
 export interface OptionsProps {
   align: "center" | "base";
 }
@@ -53,8 +51,13 @@ export const Widget = memo((props: Props & ErrorProps) => {
       className={cn(
         "widget",
         `widget-${type}`,
+        "border",
+        "rounded",
+        "overflow-hidden",
+        "text-color-widget",
+        "bg-color-widget",
         {
-          "d-flex align-items-center justify-content-center text-center":
+          "flex flex-col items-center justify-center text-center":
             options.align === "center",
           error: hasError
         },
@@ -64,7 +67,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
     >
       {hasError && "» Error «"}
       {isLayoutEditable && (
-        <div className="position-absolute inset-0 background-color-widget-dim" />
+        <div className="absolute inset-0 bg-color-widget-dim" />
       )}
       {!hasError &&
         React.createElement(Component, {

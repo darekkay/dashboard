@@ -3,7 +3,6 @@ import React, { memo } from "react";
 import ThemeSelect from "components/theme-select/ThemeSelect";
 import Link from "components/link/Link";
 
-import "./Footer.scss";
 import Button from "../button/Button";
 import Icon from "../icon/Icon";
 
@@ -21,7 +20,7 @@ export interface Props {
 
 const Footer = memo(({ isLayoutEditable, toggleLayoutEditable }: Props) => {
   return (
-    <footer className="footer p-5 border-top">
+    <footer className="flex flex-col md:flex-row items-center justify-between p-5 border-top bg-color-footer">
       <div>
         <Button className="m-2" type="primary" onClick={toggleLayoutEditable}>
           <Icon name="edit" position="left" />

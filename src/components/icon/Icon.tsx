@@ -30,9 +30,9 @@ const Icon = memo((props: Props) => {
       className={cl(
         "icon",
         `icon-${name}`,
-        {
-          [`icon-${position}`]: position
-        },
+        "inline-flex",
+        { "mr-2": position === "left" },
+        { "ml-2": position === "right" },
         className
       )}
     >

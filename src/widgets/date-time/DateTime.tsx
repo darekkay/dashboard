@@ -1,8 +1,6 @@
 import React, { memo } from "react";
 import moment from "moment";
 
-import "./DateTime.scss";
-
 export const DateTime = memo(({ date }: Props) => {
   const momentDate = moment(date);
   return (

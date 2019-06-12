@@ -1,0 +1,205 @@
+module.exports = {
+  prefix: "",
+  important: false,
+  separator: ":",
+  theme: {
+    screens: {
+      md: "768px"
+    },
+
+    // Base
+
+    inset: {
+      "0": "0"
+    },
+
+    maxWidth: {
+      full: "100%"
+    },
+
+    // Typography
+
+    fontSize: {
+      1: "1.2rem",
+      2: "1.4rem",
+      3: "1.8rem",
+      4: "2rem",
+      5: "2.5rem",
+      6: "3rem",
+      7: "4rem"
+    },
+
+    fontWeight: {
+      light: "300",
+      normal: "400",
+      semibold: "600",
+      bold: "700",
+      extrabold: "800"
+    },
+
+    colors: {
+      black: "#000",
+      white: "#fff"
+    },
+
+    textColor: theme => theme("colors"),
+
+    backgroundColor: theme => theme("colors"),
+
+    // Spacing
+
+    spacing: {
+      "0": "0",
+      "1": "0.25rem",
+      "2": "0.5rem",
+      "3": "0.75rem",
+      "4": "1rem",
+      "5": "1.5rem",
+      "6": "2rem",
+      "7": "3rem",
+      "8": "4rem",
+      "9": "8rem"
+    },
+
+    margin: theme => ({
+      auto: "auto",
+      ...theme("spacing")
+    }),
+    padding: theme => theme("spacing"),
+
+    // Misc
+
+    cursor: {
+      auto: "auto",
+      default: "default",
+      pointer: "pointer",
+      wait: "wait",
+      text: "text",
+      move: "move",
+      "not-allowed": "not-allowed"
+    }
+  },
+  variants: {
+    // Base
+    display: [],
+    position: [],
+    inset: [],
+    overflow: [],
+    resize: [],
+    maxWidth: [],
+
+    // Flexbox
+
+    flexDirection: ["responsive"],
+    flexWrap: ["responsive"],
+    flexGrow: [],
+    flexShrink: [],
+    alignItems: ["responsive"],
+    justifyContent: ["responsive"],
+
+    // Spacing
+
+    margin: ["responsive"],
+    padding: ["responsive"],
+
+    // Typography
+
+    fontSize: [],
+    fontWeight: [],
+    textColor: [],
+    backgroundColor: [],
+    fontStyle: [],
+    textAlign: ["responsive"],
+    textDecoration: ["hover", "focus"],
+    textTransform: [],
+
+    // Misc
+
+    cursor: []
+  },
+  corePlugins: {
+    // Base
+
+    display: true,
+    position: true,
+    inset: true,
+    overflow: true,
+    resize: true,
+    maxWidth: true,
+
+    // Flexbox
+
+    flexDirection: true,
+    flexWrap: true,
+    flexGrow: true,
+    flexShrink: true,
+    alignItems: true,
+    justifyContent: true,
+
+    // Spacing
+
+    margin: true,
+    padding: true,
+
+    // Typography
+
+    fontSize: true,
+    fontWeight: true,
+    fontStyle: true,
+    textColor: true,
+    backgroundColor: true,
+    textAlign: true,
+    textDecoration: true,
+    textTransform: true,
+
+    // Misc
+
+    cursor: true,
+
+    // Disable everything else
+
+    alignContent: false,
+    alignSelf: false,
+    appearance: false,
+    backgroundAttachment: false,
+    backgroundPosition: false,
+    backgroundRepeat: false,
+    backgroundSize: false,
+    borderCollapse: false,
+    borderColor: false,
+    borderRadius: false,
+    borderStyle: false,
+    borderWidth: false,
+    boxShadow: false,
+    fill: false,
+    flex: false,
+    float: false,
+    fontFamily: false,
+    fontSmoothing: false,
+    height: false,
+    letterSpacing: false,
+    lineHeight: false,
+    listStylePosition: false,
+    listStyleType: false,
+    maxHeight: false,
+
+    minHeight: false,
+    minWidth: false,
+    objectFit: false,
+    objectPosition: false,
+    opacity: false,
+    order: false,
+    outline: false,
+    pointerEvents: false,
+    stroke: false,
+    tableLayout: false,
+    userSelect: false,
+    verticalAlign: false,
+    visibility: false,
+    whitespace: false,
+    width: false,
+    wordBreak: false,
+    zIndex: false
+  },
+  plugins: []
+};

@@ -19,12 +19,6 @@ module.exports = plop => {
       path: "../../src/components/{{kebabCase name}}/{{properCase name}}.test.tsx",
       templateFile: "./component/test.hbs",
       abortOnFail: false
-    },
-    {
-      type: "add",
-      path: "../../src/components/{{kebabCase name}}/{{properCase name}}.scss",
-      templateFile: "./component/styles.scss.hbs",
-      abortOnFail: false
     }
   ];
 

@@ -41,7 +41,7 @@ export const App = memo((props: Props) => {
 
   return (
     <>
-      <main className="scrollable-y">
+      <main className="p-1 md:p-6 h-100 overflow-y-auto">
         <Dashboard
           columns={gridColumns}
           layout={layout}

@@ -28,7 +28,7 @@ describe("<Widget />", () => {
 
   it("renders without error", () => {
     expect(wrapper.find(".error")).toHaveLength(0);
-    expect(wrapper.find(".background-color-widget-dim")).toHaveLength(0);
+    expect(wrapper.find(".bg-color-widget-dim")).toHaveLength(0);
   });
 
   it("renders errors", () => {
@@ -38,6 +38,6 @@ describe("<Widget />", () => {
 
   it("renders overlay when editing", () => {
     wrapper.setProps({ isLayoutEditable: true });
-    expect(wrapper.find(".background-color-widget-dim")).toHaveLength(1);
+    expect(wrapper.find(".bg-color-widget-dim")).toHaveLength(1);
   });
 });

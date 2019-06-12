@@ -1,122 +1,59 @@
-@import "variables";
+// Width & Height
 
-// Typography
-
-.font-style-italic {
-  font-style: italic;
+.w-100 {
+  width: 100%;
 }
 
-.text-left {
-  text-align: left;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-nowrap {
-  white-space: nowrap;
-}
-
-@each $weight in $font-weights {
-  .font-weight-#{$weight} {
-    font-weight: $weight;
-  }
-}
-
-// Flex
-
-.d-flex {
-  display: flex;
-}
-
-.align-items-center {
-  align-items: center;
-}
-
-.justify-content-center {
-  justify-content: center;
-}
-
-.justify-content-around {
-  justify-content: space-around;
-}
-
-.justify-content-between {
-  justify-content: space-between;
-}
-
-// Position
-
-.position-relative {
-  position: relative;
-}
-
-.position-absolute {
-  position: absolute;
-}
-
-.inset-0 {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-// Grid
-
-.d-grid {
-  display: grid;
-}
-
-// Margins and Paddings
-
-@each $size, $length in $spacers {
-  @each $prop, $abbrev in (margin: m, padding: p) {
-    .#{$abbrev}-#{$size} {
-      #{$prop}: $length;
-    }
-    .#{$abbrev}t-#{$size} {
-      #{$prop}-top: $length;
-    }
-    .#{$abbrev}r-#{$size} {
-      #{$prop}-right: $length;
-    }
-    .#{$abbrev}b-#{$size} {
-      #{$prop}-bottom: $length;
-    }
-    .#{$abbrev}l-#{$size} {
-      #{$prop}-left: $length;
-    }
-    .#{$abbrev}x-#{$size} {
-      #{$prop}-left: $length;
-      #{$prop}-right: $length;
-    }
-    .#{$abbrev}y-#{$size} {
-      #{$prop}-top: $length;
-      #{$prop}-bottom: $length;
-    }
-  }
+.h-100 {
+  height: 100%;
 }
 
 // Borders
 
 .border {
-  border: 1px solid $border-color;
+  border: 1px solid var(--border-color);
+}
+
+.border-0 {
+  border: none;
 }
 
 @each $direction in (top, right, bottom, left) {
   .border-#{$direction} {
-    border-#{$direction}: 1px solid $border-color;
+    border-#{$direction}: 1px solid var(--border-color);
   }
+}
+
+.rounded {
+  border-radius: 0.25rem;
 }
 
 // Colors
 
-.background-color-widget-dim {
+.text-color-default {
+  color: var(--text-color);
+}
+
+.text-color-highlight {
+  background-color: var(--highlight-color);
+}
+
+.text-color-widget {
+  background-color: var(--widget-text-color);
+}
+
+.bg-color-default {
+  background-color: var(--background-color);
+}
+
+.bg-color-widget {
+  background-color: var(--widget-background-color);
+}
+
+.bg-color-widget-dim {
   background-color: var(--widget-dim-background-color);
+}
+
+.bg-color-footer {
+  background-color: var(--footer-background-color);
 }

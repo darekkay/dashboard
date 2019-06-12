@@ -7,8 +7,6 @@ import Button from "components/button/Button";
 import Icon from "components/icon/Icon";
 import selectComponentProps from "./selectors";
 
-import "./ThemeSelect.scss";
-
 export interface Props {
   theme: string;
   changeTheme: (payload: string) => void;
