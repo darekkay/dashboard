@@ -5,7 +5,7 @@ node_js:
 cache:
   yarn: true
 
-script: npm run ci
+script: yarn ci
 
 branches:
   only:
