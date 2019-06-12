@@ -1,16 +1,17 @@
 import React from "react";
-import RGL, { Layout, WidthProvider } from "react-grid-layout";
+import { Responsive, WidthProvider } from "react-grid-layout";
 
+import { Layout } from "common/ducks/layout";
 import makeWidget from "components/widget/Widget";
 
-const ReactGridLayout = WidthProvider(RGL);
+const ReactGridLayout = WidthProvider(Responsive);
 
 export interface Props {
   columns: number;
-  layout: Layout[];
+  layout: Layout;
   isLayoutEditable: boolean;
   widgetIDs: string[];
-  saveLayout: (layout: Layout[]) => void;
+  saveLayout: (layout: Layout) => void;
   [key: string]: any;
 }
 
@@ -33,22 +34,22 @@ class Dashboard extends React.Component<Props> {
       widgetIDs,
       saveLayout
     } = this.props;
-    /* TODO: responsive */
     return (
       <ReactGridLayout
         className="layout"
-        layout={layout}
-        cols={columns}
+        layouts={layout}
+        breakpoints={{ mobile: 0, desktop: 768 }}
+        cols={{ mobile: 1, desktop: columns }}
         rowHeight={100}
         compactType={null}
         isRearrangeable={false}
         isDraggable={isLayoutEditable}
         isResizable={isLayoutEditable}
-        onLayoutChange={(layout: Layout[]) => {
-          saveLayout(layout);
+        onLayoutChange={(__: any, allLayouts: Layout) => {
+          saveLayout(allLayouts);
         }}
       >
-        {widgetIDs.map(widgetID =>
+        {widgetIDs.map((widgetID: string) =>
           // @ts-ignore
           React.createElement(makeWidget(widgetID), {
             key: widgetID,

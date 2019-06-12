@@ -1,9 +1,11 @@
 import React, { memo } from "react";
 import { connect } from "react-redux";
-import { Layout } from "react-grid-layout";
 
 import { actionCreators as heartbeatActionCreators } from "common/ducks/heartbeat";
-import { actionCreators as layoutActionCreators } from "common/ducks/layout";
+import {
+  actionCreators as layoutActionCreators,
+  Layout
+} from "common/ducks/layout";
 import Dashboard from "components/dashboard/Dashboard";
 import Footer from "components/footer/Footer";
 import useInterval from "common/hooks/useInterval";
@@ -14,8 +16,8 @@ export interface Props {
   gridColumns: number;
   widgetIDs: string[];
 
-  layout: Layout[];
-  saveLayout: (layout: Layout[]) => void;
+  layout: Layout;
+  saveLayout: (layout: Layout) => void;
 
   isLayoutEditable: boolean;
   toggleLayoutEditable: () => void;

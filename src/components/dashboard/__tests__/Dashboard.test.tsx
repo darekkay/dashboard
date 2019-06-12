@@ -1,14 +1,18 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
-import { Layout } from "react-grid-layout";
 
 import Widget from "components/widget/Widget";
+import { Layout } from "common/ducks/layout";
+
 import Dashboard from "../Dashboard";
 
 describe("<Dashboard />", () => {
   let wrapper: ShallowWrapper;
 
-  const layout = [] as Layout[];
+  const layout: Layout = {
+    mobile: [],
+    desktop: []
+  };
 
   beforeEach(() => {
     wrapper = shallow(
