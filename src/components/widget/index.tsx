@@ -1,11 +1,11 @@
-import React, { memo } from "react";
+import React, { memo, Suspense } from "react";
 import { connect } from "react-redux";
 import cn from "classnames";
 
-import widgetComponents from "common/widgets";
 import withErrorHandling, {
   State as ErrorProps
 } from "common/hoc/withErrorHandling";
+import widgets from "widgets/index";
 
 import makeSelectWidget from "./selectors";
 import { actionCreators } from "./duck";
@@ -45,7 +45,8 @@ export const Widget = memo((props: Props & ErrorProps) => {
     children,
     ...rest
   } = props;
-  const Component = widgetComponents[type];
+  const Component = widgets[type].component;
+
   return (
     <div
       className={cn(
@@ -69,14 +70,17 @@ export const Widget = memo((props: Props & ErrorProps) => {
       {isLayoutEditable && (
         <div className="absolute inset-0 bg-color-widget-dim" />
       )}
-      {!hasError &&
-        React.createElement(Component, {
-          id,
-          setOptionValue,
-          setDataValue,
-          ...options,
-          ...data
-        })}
+      {!hasError && (
+        <Suspense fallback={<div>Loading</div>}>
+          {React.createElement(Component, {
+            id,
+            setOptionValue,
+            setDataValue,
+            ...options,
+            ...data
+          })}
+        </Suspense>
+      )}
       {children}
     </div>
   );

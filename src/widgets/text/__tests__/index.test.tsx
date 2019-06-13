@@ -12,7 +12,12 @@ describe("<Text />", () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <Text id={id} content={content} setDataValue={setDataValueSpy} />
+      <Text
+        id={id}
+        content={content}
+        setDataValue={setDataValueSpy}
+        setOptionValue={() => null}
+      />
     );
   });
 

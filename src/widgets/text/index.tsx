@@ -1,5 +1,7 @@
 import React, { memo } from "react";
 
+import { WidgetProps } from "../index";
+
 const Text = memo(({ id, content, setDataValue }: Props) => {
   return (
     <textarea
@@ -14,10 +16,8 @@ const Text = memo(({ id, content, setDataValue }: Props) => {
   );
 });
 
-export interface Props {
-  id: string;
+interface Props extends WidgetProps {
   content?: string;
-  setDataValue: (payload: object) => void;
 }
 
 export default Text;

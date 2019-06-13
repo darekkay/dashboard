@@ -1,5 +1,6 @@
 ## Unreleased
 - :sparkles: Make widgets draggable and resizable.
+- :rocket: Load only currently used widgets.
 
 ## 1.0.5 (2019-05-25)
 - :sparkles: Add DateTime widget.

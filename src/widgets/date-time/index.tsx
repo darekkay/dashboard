@@ -1,6 +1,8 @@
 import React, { memo } from "react";
 import moment from "moment";
 
+import { WidgetProps } from "../index";
+
 export const DateTime = memo(({ date }: Props) => {
   const momentDate = moment(date);
   return (
@@ -12,7 +14,7 @@ export const DateTime = memo(({ date }: Props) => {
   );
 });
 
-export interface Props {
+export interface Props extends WidgetProps {
   date: number;
 }
 

@@ -7,7 +7,14 @@ describe("<DateTime />", () => {
   let wrapper: ShallowWrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<DateTime date={Date.now()} />);
+    wrapper = shallow(
+      <DateTime
+        id="date-time-mock-01"
+        date={Date.now()}
+        setDataValue={() => null}
+        setOptionValue={() => null}
+      />
+    );
   });
 
   it("renders without error", () => {
