@@ -7,6 +7,8 @@ import withErrorHandling, {
 } from "common/hoc/withErrorHandling";
 import widgets from "widgets/index";
 
+import Loading from "../loading";
+
 import makeSelectWidget from "./selectors";
 import { actionCreators } from "./duck";
 
@@ -71,7 +73,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
         <div className="absolute inset-0 bg-color-widget-dim" />
       )}
       {!hasError && (
-        <Suspense fallback={<div>Loading</div>}>
+        <Suspense fallback={<Loading />}>
           {React.createElement(Component, {
             id,
             setOptionValue,

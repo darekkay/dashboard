@@ -13,6 +13,9 @@ export interface Variables {
   "--widget-background-color": string;
   "--widget-dim-background-color": string;
   "--footer-background-color": string;
+  "--loading-background-color": string;
+  "--loading-spinner-color": string;
+
   [key: string]: string;
 }
 
@@ -29,7 +32,9 @@ const themes: Themes = {
     "--widget-text-color": "#000",
     "--widget-background-color": "#fff",
     "--widget-dim-background-color": "rgba(0, 0, 0, 0.05)",
-    "--footer-background-color": "#fff"
+    "--footer-background-color": "#fff",
+    "--loading-background-color": "hsla(0, 0%, 62%, 0.3)",
+    "--loading-spinner-color": "#202020"
   },
   dark: {
     "--text-color": "#fff",
@@ -39,7 +44,9 @@ const themes: Themes = {
     "--widget-text-color": "#fff",
     "--widget-background-color": "#333",
     "--widget-dim-background-color": "rgba(0, 0, 0, 0.5)",
-    "--footer-background-color": "#333"
+    "--footer-background-color": "#333",
+    "--loading-background-color": "hsla(0, 0%, 96%, 0.3)",
+    "--loading-spinner-color": "#fff"
   }
 };
 
