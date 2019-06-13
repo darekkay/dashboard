@@ -2,7 +2,6 @@ import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
 import { Widget } from "../index";
-import { defaultOptions } from "../selectors";
 
 describe("<Widget />", () => {
   let wrapper: ShallowWrapper;
@@ -16,10 +15,10 @@ describe("<Widget />", () => {
         y={1}
         height={1}
         width={1}
-        options={defaultOptions}
+        isLayoutEditable={false}
+        options={{}}
         setOptionValue={() => null}
         data={{}}
-        isLayoutEditable={false}
         setDataValue={() => null}
         hasError={false}
       />

@@ -1,6 +1,6 @@
 import React from "react";
 
-export type OptionUpdateAction = ({
+export type ValueUpdateAction = ({
   id,
   key,
   value
@@ -12,8 +12,8 @@ export type OptionUpdateAction = ({
 
 export interface WidgetProps {
   id: string;
-  setDataValue: OptionUpdateAction;
-  setOptionValue: OptionUpdateAction;
+  setDataValue: ValueUpdateAction;
+  setOptionValue: ValueUpdateAction;
 }
 
 export interface Widgets {

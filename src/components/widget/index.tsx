@@ -5,16 +5,12 @@ import cn from "classnames";
 import withErrorHandling, {
   State as ErrorProps
 } from "common/hoc/withErrorHandling";
-import widgets from "widgets/index";
+import widgets, { ValueUpdateAction } from "widgets/index";
 
 import Loading from "../loading";
 
 import makeSelectWidget from "./selectors";
 import { actionCreators } from "./duck";
-
-export interface OptionsProps {
-  align: "center" | "base";
-}
 
 export interface Props {
   id: string;
@@ -23,10 +19,10 @@ export interface Props {
   x: number;
   y: number;
   type: string;
-  options: OptionsProps;
+  options: { [key: string]: any };
   data: { [key: string]: any };
-  setOptionValue: () => void;
-  setDataValue: () => void;
+  setOptionValue: ValueUpdateAction;
+  setDataValue: ValueUpdateAction;
   isLayoutEditable: boolean;
   className?: string;
   children?: React.ReactNode;
@@ -54,14 +50,16 @@ export const Widget = memo((props: Props & ErrorProps) => {
       className={cn(
         "widget",
         `widget-${type}`,
+        "flex",
+        "flex-col",
+        "items-center",
+        "justify-center",
         "border",
         "rounded",
         "overflow-hidden",
         "text-color-widget",
         "bg-color-widget",
         {
-          "flex flex-col items-center justify-center text-center":
-            options.align === "center",
           error: hasError
         },
         className

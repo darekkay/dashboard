@@ -1,11 +1,5 @@
 import createSelector from "selectorator";
 
-import { OptionsProps } from "components/widget";
-
-export const defaultOptions: OptionsProps = {
-  align: "center"
-};
-
 export const getTypeFromId = (id: string) =>
   id.substring(0, id.lastIndexOf("-"));
 
@@ -15,10 +9,7 @@ const makeSelectWidget = (id: string) =>
     (widget, sharedData) => ({
       id,
       ...widget,
-      options: {
-        ...defaultOptions,
-        ...widget.options
-      },
+      options: widget.options,
       data: {
         ...sharedData,
         ...widget.data
