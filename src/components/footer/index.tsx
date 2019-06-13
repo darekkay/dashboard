@@ -1,10 +1,10 @@
 import React, { memo } from "react";
 
-import ThemeSelect from "components/theme-select/ThemeSelect";
-import Link from "components/link/Link";
+import ThemeSelect from "components/theme-select";
+import Link from "components/link";
 
-import Button from "../button/Button";
-import Icon from "../icon/Icon";
+import Button from "../button";
+import Icon from "../icon";
 
 const Version = memo(() => (
   <div>

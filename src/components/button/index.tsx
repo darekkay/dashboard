@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import cn from "classnames";
 
-import "./Button.scss";
+import "./styles.scss";
 
 const Button = memo(
   ({ children, className, type = "primary", outline, onClick }: Props) => (

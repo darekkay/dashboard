@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
-import { DateTime } from "./DateTime";
+import { DateTime } from "../index";
 
 describe("<DateTime />", () => {
   let wrapper: ShallowWrapper;

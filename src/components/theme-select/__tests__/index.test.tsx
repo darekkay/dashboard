@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
-import { ThemeSelect } from "../ThemeSelect";
+import { ThemeSelect } from "../index";
 
 describe("<ThemeSelect />", () => {
   let wrapper: ShallowWrapper;

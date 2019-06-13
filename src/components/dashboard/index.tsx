@@ -2,7 +2,7 @@ import React from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 
 import { Layout } from "common/ducks/layout";
-import makeWidget from "components/widget/Widget";
+import makeWidget from "components/widget";
 
 const ReactGridLayout = WidthProvider(Responsive);
 

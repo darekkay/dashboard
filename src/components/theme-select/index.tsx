@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 
 import getThemeStyle from "common/themes";
 import { actionCreators } from "common/ducks/settings";
-import Button from "components/button/Button";
-import Icon from "components/icon/Icon";
+import Button from "components/button";
+import Icon from "components/icon";
 import selectComponentProps from "./selectors";
 
 export interface Props {

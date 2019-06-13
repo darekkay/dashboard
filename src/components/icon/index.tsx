@@ -4,7 +4,7 @@ import cl from "classnames";
 
 import svgs from "./svgs";
 
-import "./Icon.scss";
+import "./styles.scss";
 
 export interface Props {
   className?: string;

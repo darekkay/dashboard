@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
-import Button, { ButtonType } from "../Button";
+import Button, { ButtonType } from "../index";
 
 describe("<Button />", () => {
   let wrapper: ShallowWrapper;

@@ -1,6 +1,6 @@
 import createSelector from "selectorator";
 
-import { OptionsProps } from "components/widget/Widget";
+import { OptionsProps } from "components/widget";
 
 export const defaultOptions: OptionsProps = {
   align: "center"

@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
-import Widget from "components/widget/Widget";
+import Widget from "components/widget";
 import { Layout } from "common/ducks/layout";
 
-import Dashboard from "../Dashboard";
+import Dashboard from "../index";
 
 describe("<Dashboard />", () => {
   let wrapper: ShallowWrapper;

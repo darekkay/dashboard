@@ -6,8 +6,8 @@ import {
   actionCreators as layoutActionCreators,
   Layout
 } from "common/ducks/layout";
-import Dashboard from "components/dashboard/Dashboard";
-import Footer from "components/footer/Footer";
+import Dashboard from "components/dashboard";
+import Footer from "components/footer";
 import useInterval from "common/hooks/useInterval";
 
 import mapStateToProps from "./selectors";

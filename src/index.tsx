@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 
-import App from "components/app/App";
+import App from "components/app";
 
 import initStore from "state/store";
 // import * as serviceWorker from "./common/serviceWorker";

@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
-import { Widget } from "../Widget";
+import { Widget } from "../index";
 import { defaultOptions } from "../selectors";
 
 describe("<Widget />", () => {
