@@ -10,13 +10,13 @@ module.exports = plop => {
   const componentActions = type => [
     {
       type: "add",
-      path: "../../src/components/{{kebabCase name}}/{{properCase name}}.tsx",
+      path: "../../src/components/{{kebabCase name}}/index.tsx",
       templateFile: `./component/${type}.hbs`,
       abortOnFail: false
     },
     {
       type: "add",
-      path: "../../src/components/{{kebabCase name}}/{{properCase name}}.test.tsx",
+      path: "../../src/components/{{kebabCase name}}/__tests__/index.test.tsx",
       templateFile: "./component/test.hbs",
       abortOnFail: false
     }
