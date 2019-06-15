@@ -22,6 +22,21 @@ module.exports = plop => {
     }
   ];
 
+  const widgetActions = [
+    {
+      type: "add",
+      path: "../../src/widgets/{{kebabCase name}}/index.tsx",
+      templateFile: `./widget/index.hbs`,
+      abortOnFail: false
+    },
+    {
+      type: "add",
+      path: "../../src/widgets/{{kebabCase name}}/__tests__/index.test.tsx",
+      templateFile: "./widget/test.hbs",
+      abortOnFail: false
+    }
+  ];
+
   plop.setGenerator("Stateless component", {
     description: "Stateless React function",
     prompts: componentPrompts,
@@ -32,5 +47,11 @@ module.exports = plop => {
     description: "React.Component",
     prompts: componentPrompts,
     actions: componentActions("class")
+  });
+
+  plop.setGenerator("Widget", {
+    description: "Dashboard widget",
+    prompts: componentPrompts,
+    actions: widgetActions
   });
 };

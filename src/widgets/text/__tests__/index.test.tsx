@@ -6,7 +6,7 @@ import Text from "../index";
 describe("<Text />", () => {
   let wrapper: ShallowWrapper;
 
-  const id = "mock-id";
+  const id = "text-mock-id";
   const content = "hello world";
   const setDataValueSpy = jest.fn();
 
