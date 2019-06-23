@@ -62,7 +62,7 @@ All contributors are highly welcome, especially designers. If you want to collab
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) (Typescript preset).
 
-Notice: I'm using `yarn`, but you may use use `npm` as well.
+Notice: I'm using `yarn`, but you may use `npm` as well.
 
 1. Install all dependencies:
 
@@ -84,6 +84,7 @@ The `package.json` file contains other useful scripts, which you can execute usi
 | -------- | ---------------------------------------------------- |
 | build    | Builds the app for production to the `build` folder. |
 | format   | Reformat all files with `prettier`.                  |
+| generate | Generate boilerplate code (components, widgets).     |
 | lint:fix | Run ESLint, apply automatic fixes if possible.       |
 | test     | Run tests and check test coverage.                   |
 

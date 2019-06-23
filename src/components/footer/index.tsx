@@ -3,7 +3,7 @@ import React, { memo } from "react";
 import ThemeSelect from "components/theme-select";
 import Link from "components/link";
 
-import Button from "../button";
+import Button, { ButtonType } from "../button";
 import Icon from "../icon";
 
 const Version = memo(() => (
@@ -22,7 +22,11 @@ const Footer = memo(({ isLayoutEditable, toggleLayoutEditable }: Props) => {
   return (
     <footer className="flex flex-col md:flex-row items-center justify-between p-5 border-top bg-color-footer">
       <div>
-        <Button className="m-2" type="primary" onClick={toggleLayoutEditable}>
+        <Button
+          className="m-2"
+          type={ButtonType.Primary}
+          onClick={toggleLayoutEditable}
+        >
           <Icon name="edit" position="left" />
           {isLayoutEditable ? "Save" : "Edit"}
         </Button>

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import getThemeStyle from "common/themes";
 import { actionCreators } from "common/ducks/config";
-import Button from "components/button";
+import Button, { ButtonType } from "components/button";
 import Icon from "components/icon";
 import selectComponentProps from "./selectors";
 
@@ -33,7 +33,7 @@ export const ThemeSelect = memo((props: Props) => {
   }, [theme]);
 
   return (
-    <Button className="m-2" type="primary" onClick={toggleTheme}>
+    <Button className="m-2" type={ButtonType.Primary} onClick={toggleTheme}>
       <Icon name="palette" position="left" />
       Theme: {theme}
     </Button>

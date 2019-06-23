@@ -31,14 +31,17 @@ export const initialState = {
     data: {},
     options: {}
   },
-  "text-02": {
+  "search-02": {
     x: 3,
     y: 0,
     width: 3,
     height: 1,
-    type: "text",
+    type: "search",
     data: {},
-    options: {}
+    options: {
+      pattern: "https://duckduckgo.com/?q=%s",
+      name: "DuckDuckGo"
+    }
   },
   "text-03": {
     x: 6,
