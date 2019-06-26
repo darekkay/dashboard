@@ -1,9 +1,14 @@
 import React, { memo } from "react";
+import cn from "classnames";
 
 import "./styles.scss";
 
-const Loading = memo(() => (
-  <div className="loading mx-auto" aria-label="Loading..." />
+export interface Props {
+  className?: string;
+}
+
+const Loading = memo(({ className }: Props) => (
+  <div className={cn("loading mx-auto", className)} aria-label="Loading..." />
 ));
 
 export default Loading;

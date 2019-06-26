@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 
 import App from "components/app";
+import Loading from "components/loading";
 import { updateCssVariables } from "components/theme-select";
 
 import initStore from "state/store";
@@ -27,7 +28,7 @@ updateCssVariables("default");
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate loading={<Loading className="mt-8" />} persistor={persistor}>
         <App />
       </PersistGate>
     </Provider>
