@@ -12,7 +12,7 @@ export interface Props {
   changeTheme: (payload: string) => void;
 }
 
-const updateCssVariables = (theme: string) => {
+export const updateCssVariables = (theme: string) => {
   /* TODO: probably move to a side-effect library */
   document.documentElement.setAttribute("style", getThemeStyle(theme));
 };

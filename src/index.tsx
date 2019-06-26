@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 
 import App from "components/app";
+import { updateCssVariables } from "components/theme-select";
 
 import initStore from "state/store";
 // import * as serviceWorker from "./common/serviceWorker";
@@ -21,7 +22,8 @@ import "./styles/typography.scss";
 
 const { store, persistor } = initStore();
 
-// NICE: implement and display loading component
+updateCssVariables("default");
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
