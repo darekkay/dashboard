@@ -2,7 +2,7 @@ import {
   initialState,
   reducerWithInitialState,
   actionCreators
-} from "../settings";
+} from "../config";
 
 describe("Settings duck", () => {
   it("updates the color theme", () => {

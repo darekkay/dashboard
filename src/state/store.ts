@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from "redux";
 import { createEpicMiddleware } from "redux-observable";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-import { ConfigState } from "common/ducks/settings";
+import { ConfigState } from "common/ducks/config";
 import { WidgetsState } from "components/widget/duck";
 import { sendHeartbeat } from "../common/ducks/heartbeat";
 

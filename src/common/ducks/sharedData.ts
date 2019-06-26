@@ -1,4 +1,4 @@
-/** Application settings */
+/** Shared data */
 
 import { createAction, createReducer } from "redux-starter-kit";
 

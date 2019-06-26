@@ -2,7 +2,6 @@
 
 import { createAction, createReducer } from "redux-starter-kit";
 
-// TODO: rename to Settings
 export interface ConfigState {
   grid: {
     columns: number;
