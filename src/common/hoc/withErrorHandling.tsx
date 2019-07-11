@@ -23,7 +23,10 @@ const withErrorHandling = <P extends object>(
 
     render() {
       return (
-        <WrappedComponent {...this.props as P} hasError={this.state.hasError} />
+        <WrappedComponent
+          {...(this.props as P)}
+          hasError={this.state.hasError}
+        />
       );
     }
   };
