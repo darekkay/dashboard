@@ -40,7 +40,7 @@ export const initialState = {
     data: {},
     options: {
       pattern: "https://duckduckgo.com/?q=%s",
-      name: "DuckDuckGo"
+      title: "DuckDuckGo"
     }
   },
   "text-03": {

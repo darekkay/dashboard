@@ -22,10 +22,7 @@ const openSearchUrl = (
 const Search = memo(({ id, setDataValue, name, pattern }: Props) => {
   const [value, setValue] = useState("");
   return (
-    <div className="max-w-full w-100 p-5">
-      <div>
-        <strong>{name}</strong>
-      </div>
+    <div className="max-w-full w-100 px-2">
       <div className="flex items-center">
         <Input
           value={value}

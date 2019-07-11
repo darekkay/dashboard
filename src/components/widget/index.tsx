@@ -44,16 +44,13 @@ export const Widget = memo((props: Props & ErrorProps) => {
     ...rest
   } = props;
   const Component = widgets[type].component;
+  const widgetTitle = options.title;
 
   return (
     <div
       className={cn(
-        "widget",
-        `widget-${type}`,
         "flex",
         "flex-col",
-        "items-center",
-        "justify-center",
         "border",
         "rounded",
         "overflow-hidden",
@@ -66,20 +63,26 @@ export const Widget = memo((props: Props & ErrorProps) => {
       )}
       {...rest}
     >
+      {widgetTitle && (
+        <h3 className="m-0 py-1 px-2 text-1 font-normal">{widgetTitle}</h3>
+      )}
+
       {hasError && "» Error «"}
       {isLayoutEditable && (
         <div className="absolute inset-0 bg-color-widget-dim" />
       )}
       {!hasError && (
-        <Suspense fallback={<Loading />}>
-          {React.createElement(Component, {
-            id,
-            setOptionValue,
-            setDataValue,
-            ...options,
-            ...data
-          })}
-        </Suspense>
+        <div className="flex flex-col items-center justify-center h-100">
+          <Suspense fallback={<Loading />}>
+            {React.createElement(Component, {
+              id,
+              setOptionValue,
+              setDataValue,
+              ...options,
+              ...data
+            })}
+          </Suspense>
+        </div>
       )}
       {children}
     </div>
