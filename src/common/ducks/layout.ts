@@ -3,7 +3,7 @@
 import { createAction, createReducer } from "redux-starter-kit";
 import { Layout as ReactGridLayout } from "react-grid-layout";
 
-import { initialState as widgets } from "components/widget/duck";
+import { initialLayout } from "widgets/demo";
 
 const saveLayout = createAction("layout/save");
 const toggleLayoutEditable = createAction("layout/toggle-editable");
@@ -22,23 +22,7 @@ export interface LayoutState {
 
 export const initialState = {
   isEditable: false,
-  config: {
-    mobile: Object.entries(widgets).map(([key, widget], index) => ({
-      i: key,
-      x: 0,
-      y: index,
-      w: 1,
-      h: 1
-    })),
-
-    desktop: Object.entries(widgets).map(([key, widget]) => ({
-      i: key,
-      x: widget.x,
-      y: widget.y,
-      w: widget.width,
-      h: widget.height
-    }))
-  }
+  config: initialLayout
 };
 
 export const reducerWithInitialState = (state: LayoutState = initialState) =>

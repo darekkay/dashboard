@@ -14,10 +14,6 @@ import { actionCreators } from "./duck";
 
 export interface Props {
   id: string;
-  width: number;
-  height: number;
-  x: number;
-  y: number;
   type: string;
   options: { [key: string]: any };
   data: { [key: string]: any };

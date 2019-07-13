@@ -11,10 +11,6 @@ describe("<Widget />", () => {
       <Widget
         id="mock-widget"
         type="text"
-        x={1}
-        y={1}
-        height={1}
-        width={1}
         isLayoutEditable={false}
         options={{}}
         setOptionValue={() => null}
