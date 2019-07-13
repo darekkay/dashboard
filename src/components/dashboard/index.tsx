@@ -42,6 +42,7 @@ class Dashboard extends React.Component<Props> {
         cols={{ mobile: 1, desktop: columns }}
         rowHeight={100}
         compactType={null}
+        useCSSTransforms={false}
         isRearrangeable={false}
         isDraggable={isLayoutEditable}
         isResizable={isLayoutEditable}
