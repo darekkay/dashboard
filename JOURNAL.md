@@ -1,10 +1,20 @@
+## 2019-07-15 (1.0.6)
+
+The first step for GUI-based dashboard customization is done: the widgets are now draggable/resizeable. The widget selection is still fixed, though, so I should implement a widget drawer soon.
+
+I've also added a new Search widget. Right now the DuckDuckGo search engine is hard-coded, but in the future there will be a list of pre-defined providers and also the possibility to define a custom website.
+
+Finally, I've replaced most of my (S)CSS files with a Functional CSS approach. I've used [Tailwind CSS](https://tailwindcss.com/), one of the most popular utility-first CSS frameworks. I really enjoy it so far :)
+
+Notice: The state data is stored in the Local Storage, so you might have to clear it if you have opened the website in the past. This won't be necessary when the project is out of the work-in-progress state of course.
+
 ## 2019-05-25 (1.0.5)
 
 There is a new widget for showing the current date and time. Additionally, the state is now persisted across the sessions. Under the hood I've added [redux-observable](https://github.com/redux-observable/redux-observable) to manage side effects and I've played around with the new [React Hooks](https://reactjs.org/docs/hooks-intro.html).
 
 ## 2019-04-22 (1.0.4)
 
-I haven't made much functional progress in the last month as I've been mainly working on my other project: [Tip of the Day](https://tips.darekkay.com/). It is relevant to the dashboard, though, as I wish to connect both projects. The idea is to have a widget which displays a random tip every day (e.g. "country of the day"). I've also made some progress under the hood and made the text widget editable (the content is not stored yet, though). 
+I haven't made much functional progress in the last month as I've been mainly working on my other project: [Tip of the Day](https://tips.darekkay.com/). It is relevant to the dashboard, though, as I wish to connect both projects. The idea is to have a widget which displays a random tip every day (e.g. "country of the day"). I've also made some progress under the hood and made the text widget editable (the content is not stored yet, though).
 
 ## 2019-03-21 (1.0.3)
 
