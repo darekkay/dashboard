@@ -1,6 +1,8 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
+import Button from "components/button";
+
 import { ThemeSelect } from "../index";
 
 describe("<ThemeSelect />", () => {
@@ -16,11 +18,7 @@ describe("<ThemeSelect />", () => {
   it("toggles theme when clicking the button", () => {
     wrapper.setProps({ theme: "default" });
 
-    test.todo(
-      'replace with wrapper.find("Button") when react memo bug is fixed'
-    ); // TODO
-    // https://github.com/facebook/react/issues/15207
-    wrapper.first().simulate("click");
+    wrapper.find(Button).simulate("click");
     expect(changeThemeSpy).toHaveBeenCalledWith("dark");
 
     wrapper.setProps({ theme: "dark" });
