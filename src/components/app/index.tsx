@@ -6,9 +6,10 @@ import {
   actionCreators as layoutActionCreators,
   Layout
 } from "common/ducks/layout";
-import Dashboard from "components/dashboard";
-import Footer from "components/footer";
 import useInterval from "common/hooks/useInterval";
+import Dashboard from "components/dashboard";
+import Drawer from "components/drawer";
+import Footer from "components/footer";
 
 import mapStateToProps from "./selectors";
 
@@ -22,6 +23,8 @@ export interface Props {
   isLayoutEditable: boolean;
   toggleLayoutEditable: () => void;
 
+  addWidget: (widgetName: string) => void;
+
   sendHeartbeat: (date: number) => void;
 }
 
@@ -33,6 +36,7 @@ export const App = memo((props: Props) => {
     saveLayout,
     isLayoutEditable,
     toggleLayoutEditable,
+    addWidget,
     sendHeartbeat
   } = props;
 
@@ -41,15 +45,19 @@ export const App = memo((props: Props) => {
 
   return (
     <>
-      <main className="p-1 md:p-6 h-100 overflow-y-auto">
-        <Dashboard
-          columns={gridColumns}
-          layout={layout}
-          isLayoutEditable={isLayoutEditable}
-          widgetIDs={widgetIDs}
-          saveLayout={saveLayout}
-        />
-      </main>
+      <div className="flex h-100 flex-col md:flex-row">
+        <main className="flex-grow w-100 p-1 md:p-6 overflow-y-auto">
+          <Dashboard
+            columns={gridColumns}
+            layout={layout}
+            isLayoutEditable={isLayoutEditable}
+            widgetIDs={widgetIDs}
+            saveLayout={saveLayout}
+          />
+        </main>
+        {/* TODO: connect drawer instead */}
+        {isLayoutEditable && <Drawer addWidget={addWidget}></Drawer>}
+      </div>
       <Footer
         isLayoutEditable={isLayoutEditable}
         toggleLayoutEditable={toggleLayoutEditable}

@@ -22,7 +22,7 @@ export interface Widgets {
   };
 }
 
-const availableWidgetNames = ["text", "date-time", "search"];
+export const availableWidgetNames = ["text", "date-time", "search"];
 
 const widgets: Widgets = availableWidgetNames.reduce(
   (acc, widgetName) => ({

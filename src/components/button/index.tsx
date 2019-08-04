@@ -21,6 +21,7 @@ const Button = memo(
     size = ButtonSize.Regular,
     outline,
     disabled,
+    ariaLabel,
     onClick
   }: Props) => (
     <button
@@ -31,6 +32,7 @@ const Button = memo(
         className
       )}
       disabled={disabled}
+      aria-label={ariaLabel}
       onClick={onClick}
     >
       {children}
@@ -45,6 +47,7 @@ export interface Props {
   size?: ButtonSize;
   outline?: boolean;
   disabled?: boolean;
+  ariaLabel?: string;
   onClick?: () => void;
 }
 
