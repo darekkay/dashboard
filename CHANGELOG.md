@@ -1,5 +1,7 @@
 ## Unreleased
 
+- :rocket: Disable all animations if the user prefers not to see any
+
 ## 1.0.6 (2019-07-15)
 
 - :sparkles: Make widgets draggable and resizable.

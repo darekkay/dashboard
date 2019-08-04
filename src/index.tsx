@@ -20,6 +20,7 @@ import "./styles/base.scss";
 import "./styles/tailwind.css";
 import "./styles/utilities.scss";
 import "./styles/typography.scss";
+import "./styles/reduced-motion.css";
 
 const { store, persistor } = initStore();
 
