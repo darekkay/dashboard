@@ -1,7 +1,6 @@
 import React, { memo, useCallback, useEffect } from "react";
 import { connect } from "react-redux";
 
-import getThemeStyle from "common/themes";
 import { actionCreators } from "common/ducks/config";
 import Button, { ButtonType } from "components/button";
 import Icon from "components/icon";
@@ -12,9 +11,13 @@ export interface Props {
   changeTheme: (payload: string) => void;
 }
 
+const themes = ["default", "dark"];
+const themeSelectors = themes.map(theme => `theme-${theme}`);
+
 export const updateCssVariables = (theme: string) => {
   /* TODO: probably move to a side-effect library */
-  document.documentElement.setAttribute("style", getThemeStyle(theme));
+  document.body.classList.remove(...themeSelectors);
+  document.body.classList.add(`theme-${theme}`);
 };
 
 /* TODO: refactor to select all themes instead of toggling */

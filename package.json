@@ -80,7 +80,7 @@
     "lint:check": "tsc && eslint src/**/*.{ts,tsx,js,jsx}",
     "lint:fix": "eslint --fix src/**/*.{ts,tsx,js,jsx}",
     "start": "react-scripts start",
-    "tailwind": "tailwind build internals/tailwind/tailwind.css -c internals/tailwind/config.js --no-autoprefixer -o src/styles/tailwind.css",
+    "tailwind": "tailwind build internals/tailwind/tailwind.css -c internals/tailwind/config.js --no-autoprefixer -o src/styles/_tailwind.scss",
     "test": "react-scripts test --modulePaths=src --coverage"
   }
 }

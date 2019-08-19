@@ -1,6 +1,7 @@
-@import "./mixins.scss";
-@import "./base.scss";
-@import "./tailwind.css";
-@import "./utilities.scss";
-@import "./typography.scss";
-@import "./reduced-motion.css";
+@import "mixins";
+@import "themes/index";
+@import "base";
+@import "tailwind";
+@import "utilities";
+@import "typography";
+@import "reduced-motion";
