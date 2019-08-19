@@ -66,6 +66,7 @@ $btn-color-inverse: #fff;
     color: $btn-color-disabled;
     border-color: $btn-color-disabled;
     opacity: 0.4;
+    pointer-events: none;
     cursor: default;
   }
 }
