@@ -23,6 +23,9 @@
     "redux-starter-kit": "0.5.1"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "5.1.11",
+    "@storybook/addons": "5.1.11",
+    "@storybook/react": "5.1.11",
     "@testing-library/react": "8.0.4",
     "@testing-library/react-hooks": "1.1.0",
     "@types/classnames": "2.2.9",
@@ -35,6 +38,7 @@
     "@types/react-dom": "16.8.4",
     "@types/react-grid-layout": "0.16.7",
     "@types/react-redux": "7.1.1",
+    "@types/storybook__react": "4.0.2",
     "@typescript-eslint/eslint-plugin": "1.11.0",
     "@typescript-eslint/parser": "1.11.0",
     "enzyme": "3.10.0",
@@ -48,6 +52,7 @@
     "node-sass": "4.12.0",
     "plop": "2.4.0",
     "prettier": "1.18.2",
+    "storybook-addon-themes": "5.2.0",
     "tailwindcss": "1.0.4",
     "typescript": "3.5.3"
   },
@@ -81,6 +86,7 @@
     "lint:fix": "eslint --fix src/**/*.{ts,tsx,js,jsx}",
     "start": "react-scripts start",
     "tailwind": "tailwind build internals/tailwind/tailwind.css -c internals/tailwind/config.js --no-autoprefixer -o src/styles/_tailwind.scss",
-    "test": "react-scripts test --modulePaths=src --coverage"
+    "test": "react-scripts test --modulePaths=src --coverage",
+    "storybook": "start-storybook -p 6006"
   }
 }

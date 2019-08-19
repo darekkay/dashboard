@@ -1,6 +1,9 @@
 ## Unreleased
 
-- :rocket: Disable all animations if the user prefers not to see any
+- :sparkles: Add widget drawer.
+- :rocket: Disable all animations if the user prefers not to see any.
+- :bug: Remove click effect for disabled buttons.
+- :construction_worker_man: Add Storybook to preview UI components.
 
 ## 1.0.6 (2019-07-15)
 

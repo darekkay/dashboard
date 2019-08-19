@@ -31,8 +31,8 @@ const Icon = memo((props: Props) => {
         "icon",
         `icon-${name}`,
         "inline-flex",
-        { "mr-2": position === "left" },
-        { "ml-2": position === "right" },
+        { "mr-3": position === "left" },
+        { "ml-3": position === "right" },
         className
       )}
     >
