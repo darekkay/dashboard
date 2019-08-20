@@ -48,6 +48,5 @@ export const reducerWithInitialState = (state: WidgetsState = initialState) =>
 
 export const actionCreators = {
   setOptionValue,
-  setDataValue,
-  createWidget
+  setDataValue
 };

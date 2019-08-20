@@ -14,7 +14,7 @@ const Drawer = memo(({ addWidget }: Props) => {
         {t("widget.common.drawerHeadline")}
       </div>
       {availableWidgetNames.map(widgetName => (
-        <div className="flex justify-between py-2">
+        <div key={widgetName} className="flex justify-between py-2">
           {t(`widget.${widgetName}.name`)}
           <Button
             size={ButtonSize.Small}

@@ -14,7 +14,6 @@ describe("<Drawer />", () => {
   });
 
   it("renders a button per available ", () => {
-    console.log(wrapper.html());
     expect(wrapper.find(Button)).toHaveLength(availableWidgetNames.length);
   });
 });
