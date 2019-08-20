@@ -1,6 +1,7 @@
 ## Unreleased
 
 - :sparkles: Add widget drawer.
+- :sparkles: Add multi-language support (English and German).
 - :rocket: Disable all animations if the user prefers not to see any.
 - :bug: Remove click effect for disabled buttons.
 - :construction_worker_man: Add Storybook to preview UI components.

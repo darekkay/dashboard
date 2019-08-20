@@ -7,15 +7,18 @@ export interface ConfigState {
     columns: number;
   };
   theme: string;
+  language: string;
 }
 
-const changeTheme = createAction("theme-select/change-theme");
+const changeTheme = createAction("config/change-theme");
+const changeLanguage = createAction("config/change-language");
 
 export const initialState = {
   grid: {
     columns: 12
   },
-  theme: "default"
+  theme: "default",
+  language: "en"
 };
 
 export const reducerWithInitialState = (state: ConfigState = initialState) =>
@@ -23,9 +26,14 @@ export const reducerWithInitialState = (state: ConfigState = initialState) =>
     [changeTheme as any]: (state, action) => ({
       ...state,
       theme: action.payload
+    }),
+    [changeLanguage as any]: (state, action) => ({
+      ...state,
+      language: action.payload
     })
   });
 
 export const actionCreators = {
-  changeTheme
+  changeTheme,
+  changeLanguage
 };

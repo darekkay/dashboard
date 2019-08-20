@@ -5,6 +5,8 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 
+import "common/i18n";
+
 import App from "components/app";
 import Loading from "components/loading";
 import { updateCssVariables } from "components/theme-select";

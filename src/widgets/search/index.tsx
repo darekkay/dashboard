@@ -1,4 +1,5 @@
 import React, { memo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import Button, { ButtonSize } from "components/button";
 import Input from "components/input";
@@ -21,6 +22,7 @@ const openSearchUrl = (
 
 const Search = memo(({ id, setDataValue, name, pattern }: Props) => {
   const [value, setValue] = useState("");
+  const { t } = useTranslation();
   return (
     <div className="max-w-full w-100 px-2">
       <div className="flex items-center">
@@ -34,9 +36,10 @@ const Search = memo(({ id, setDataValue, name, pattern }: Props) => {
           className="m-2"
           size={ButtonSize.Small}
           disabled={!value}
+          ariaLabel={t("widget.search.buttonAriaLabel")}
           onClick={() => openSearchUrl(pattern, value, setValue)}
         >
-          <Icon name="search" alt="Open search results" />
+          <Icon name="search" alt="" />
         </Button>
       </div>
     </div>

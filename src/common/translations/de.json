@@ -1,0 +1,24 @@
+{
+  "common": {
+    "edit": "Bearbeiten",
+    "save": "Speichern",
+    "loading": "Lade..."
+  },
+  "widget": {
+    "common": {
+      "drawerHeadline": "Widgets",
+      "add": "Widget für {{widget}} hinzufügen"
+    },
+
+    "date-time": {
+      "name": "Datum und Uhrzeit"
+    },
+    "search": {
+      "name": "Websuche",
+      "buttonAriaLabel": "Suchergebnisse öffnen"
+    },
+    "text": {
+      "name": "Notizen"
+    }
+  }
+}

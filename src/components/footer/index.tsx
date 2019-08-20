@@ -1,10 +1,11 @@
 import React, { memo } from "react";
+import { useTranslation } from "react-i18next";
 
-import ThemeSelect from "components/theme-select";
 import Link from "components/link";
-
-import Button, { ButtonType } from "../button";
-import Icon from "../icon";
+import Button, { ButtonType } from "components/button";
+import Icon from "components/icon";
+import ThemeSelect from "components/theme-select";
+import LanguageSelect from "components/language-select";
 
 const Version = memo(() => (
   <div>
@@ -19,6 +20,7 @@ export interface Props {
 }
 
 const Footer = memo(({ isLayoutEditable, toggleLayoutEditable }: Props) => {
+  const { t } = useTranslation();
   return (
     <footer className="flex flex-col md:flex-row items-center justify-between p-5 border-top bg-color-footer">
       <div>
@@ -28,9 +30,10 @@ const Footer = memo(({ isLayoutEditable, toggleLayoutEditable }: Props) => {
           onClick={toggleLayoutEditable}
         >
           <Icon name="edit" position="left" />
-          {isLayoutEditable ? "Save" : "Edit"}
+          {t(isLayoutEditable ? "common.save" : "common.edit")}
         </Button>
         <ThemeSelect />
+        <LanguageSelect />
       </div>
       <Version />
     </footer>

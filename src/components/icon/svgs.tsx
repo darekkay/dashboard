@@ -1,5 +1,6 @@
 import { ReactComponent as Backward } from "./svg/backward.svg";
 import { ReactComponent as Edit } from "./svg/edit.svg";
+import { ReactComponent as Flag } from "./svg/flag.svg";
 import { ReactComponent as Heart } from "./svg/heart.svg";
 import { ReactComponent as Home } from "./svg/home.svg";
 import { ReactComponent as Minus } from "./svg/minus.svg";
@@ -13,6 +14,7 @@ import { ReactComponent as Undo } from "./svg/undo.svg";
 const svgs: any = {
   Backward,
   Edit,
+  Flag,
   Heart,
   Home,
   Minus,
