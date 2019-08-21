@@ -29,30 +29,32 @@ The next step will be to integrate 3rd party providers. I'd like to store as few
 
 ### Feature ideas
 
-- Themes support. Because noone will bat an eye without a Dark Mode™.
-- Use a real login to restrict access to sensitive data, especially when integrating 3rd party providers.
-- Reorder modules within the UI instead of using a config file (Drag and Drop).
-- Use a monorepo (lerna) to split this project into a core and individual modules.
+- [x] Themes support. Because noone will bat an eye without a Dark Mode™.
+- [] Use a real login to restrict access to sensitive data, especially when integrating 3rd party providers.
+- [x] Reorder modules within the UI instead of using a config file (Drag and Drop).
+- [] Use a monorepo (lerna) to split this project into a core and individual modules.
 
 ### Implemented widgets
 
 | type      | description           |
 | --------- | --------------------- |
-| text      | Editable text field   |
+| text      | Notes field           |
 | date-time | Current date and time |
+| search    | Web search            |
 
 The configuration options for each widget are listed [here](docs/widgets.md).
 
 ### Widget/integration ideas
 
-[] Current date and time
-[] Current weather and forecast
-[] Bookmarks
-[] Search (for different search engines)
-[] Calendar / next events
-[] Daily message (quote, image, tip)
-[] Todo tasks (integration with 3rd party, like Todoist, Wunderlist or GitHub Issues)
-...
+- [x] Current date and time
+- [] Current weather and forecast
+- [] Bookmarks
+- [x] Search (for different search engines)
+- [x] Notes
+- [] Calendar / next events
+- [] Daily message (quote, image, tip)
+- [] Todo tasks (integration with 3rd party, like Todoist, Wunderlist or GitHub Issues)
+  ...
 
 ## Contribution
 
@@ -80,13 +82,14 @@ yarn start
 
 The `package.json` file contains other useful scripts, which you can execute using `yarn <command>` or `npm run <command>`:
 
-| Command  | Description                                          |
-| -------- | ---------------------------------------------------- |
-| build    | Builds the app for production to the `build` folder. |
-| format   | Reformat all files with `prettier`.                  |
-| generate | Generate boilerplate code (components, widgets).     |
-| lint:fix | Run ESLint, apply automatic fixes if possible.       |
-| test     | Run tests and check test coverage.                   |
+| Command   | Description                                          |
+| --------- | ---------------------------------------------------- |
+| build     | Builds the app for production to the `build` folder. |
+| format    | Reformat all files with `prettier`.                  |
+| generate  | Generate boilerplate code (components, widgets).     |
+| lint:fix  | Run ESLint, apply automatic fixes if possible.       |
+| storybook | Start Storybook                                      |
+| test      | Run tests and check test coverage.                   |
 
 The `master` branch is (manually) deployed to [dashboard.darekkay.com](https://dashboard.darekkay.com).
 
