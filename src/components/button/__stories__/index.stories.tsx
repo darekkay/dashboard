@@ -3,7 +3,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 
 import Icon from "components/icon";
-import Button, { ButtonType, ButtonSize, Props as ButtonProps } from "../index";
+import Button, { ButtonMode, ButtonSize, Props as ButtonProps } from "../index";
 
 const commonProps = {
   className: "mr-5"
@@ -40,15 +40,15 @@ const Row = ({
 
 storiesOf("Components.Button", module).add("Variants", () => (
   <div>
-    <Row title="Primary Button" type={ButtonType.Primary} />
-    <Row title="Secondary Button" type={ButtonType.Secondary} />
+    <Row title="Primary Button" mode={ButtonMode.Primary} />
+    <Row title="Secondary Button" mode={ButtonMode.Secondary} />
 
-    <Row title="Disabled Button" type={ButtonType.Primary} disabled />
+    <Row title="Disabled Button" mode={ButtonMode.Primary} disabled />
 
-    <Row title="Icon Text Button" type={ButtonType.Primary}>
+    <Row title="Icon Text Button" mode={ButtonMode.Primary}>
       Button <Icon name="heart" position="right" />
     </Row>
-    <Row title="Icon Button" type={ButtonType.Primary} ariaLabel="Icon Button">
+    <Row title="Icon Button" mode={ButtonMode.Primary} aria-label="Icon Button">
       <Icon name="heart" />
     </Row>
   </div>

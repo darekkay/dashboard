@@ -2,7 +2,7 @@ import React, { memo, useCallback, useEffect } from "react";
 import { connect } from "react-redux";
 
 import { actionCreators } from "common/ducks/config";
-import Button, { ButtonType } from "components/button";
+import Button, { ButtonMode } from "components/button";
 import Icon from "components/icon";
 import selectComponentProps from "./selectors";
 
@@ -36,7 +36,7 @@ export const ThemeSelect = memo((props: Props) => {
   }, [theme]);
 
   return (
-    <Button className="m-2" type={ButtonType.Primary} onClick={toggleTheme}>
+    <Button className="m-2" mode={ButtonMode.Primary} onClick={toggleTheme}>
       <Icon name="palette" position="left" />
       Theme: {theme}
     </Button>

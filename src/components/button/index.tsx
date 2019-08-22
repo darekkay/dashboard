@@ -3,7 +3,7 @@ import cn from "classnames";
 
 import "./styles.scss";
 
-export enum ButtonType {
+export enum ButtonMode {
   Primary = "primary",
   Secondary = "secondary"
 }
@@ -17,38 +17,29 @@ const Button = memo(
   ({
     children,
     className,
-    type = ButtonType.Primary,
+    mode = ButtonMode.Primary,
     size = ButtonSize.Regular,
     outline,
-    disabled,
-    ariaLabel,
-    onClick
+    ...domProps
   }: Props) => (
     <button
       className={cn(
         "btn",
-        `btn-${type}${outline ? "-outline" : ""}`,
+        `btn-${mode}${outline ? "-outline" : ""}`,
         `btn-${size}`,
         className
       )}
-      disabled={disabled}
-      aria-label={ariaLabel}
-      onClick={onClick}
+      {...domProps}
     >
       {children}
     </button>
   )
 );
 
-export interface Props {
-  children: React.ReactNode;
-  className?: string;
-  type?: ButtonType;
+export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  mode?: ButtonMode;
   size?: ButtonSize;
   outline?: boolean;
-  disabled?: boolean;
-  ariaLabel?: string;
-  onClick?: () => void;
 }
 
 export default Button;

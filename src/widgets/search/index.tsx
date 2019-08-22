@@ -36,7 +36,7 @@ const Search = memo(({ id, setDataValue, name, pattern }: Props) => {
           className="m-2"
           size={ButtonSize.Small}
           disabled={!value}
-          ariaLabel={t("widget.search.buttonAriaLabel")}
+          aria-label={t("widget.search.buttonAriaLabel")}
           onClick={() => openSearchUrl(pattern, value, setValue)}
         >
           <Icon name="search" alt="" />

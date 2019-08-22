@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 import { actionCreators } from "common/ducks/config";
-import Button, { ButtonType } from "components/button";
+import Button, { ButtonMode } from "components/button";
 import Icon from "components/icon";
 import selectComponentProps from "./selectors";
 
@@ -28,7 +28,7 @@ export const LanguageSelect = memo((props: Props) => {
   }, [language, i18n]);
 
   return (
-    <Button className="m-2" type={ButtonType.Primary} onClick={toggleLanguage}>
+    <Button className="m-2" mode={ButtonMode.Primary} onClick={toggleLanguage}>
       <Icon name="flag" position="left" />
       Language: {language}
     </Button>

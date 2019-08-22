@@ -19,7 +19,7 @@ const Drawer = memo(({ addWidget }: Props) => {
           <Button
             size={ButtonSize.Small}
             outline
-            ariaLabel={t("widget.common.add", {
+            aria-label={t("widget.common.add", {
               widget: t(`widget.${widgetName}.name`)
             })}
             onClick={() => addWidget(widgetName)}
