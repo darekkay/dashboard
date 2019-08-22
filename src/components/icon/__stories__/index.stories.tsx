@@ -11,7 +11,7 @@ const icons = Object.keys(svgs).map(_.toLower);
 storiesOf("Components.Icon", module).add("Kitchen Sink", () => (
   <div>
     {icons.map(icon => (
-      <Icon name={icon} position="left" />
+      <Icon key={icon} name={icon} position="left" />
     ))}
   </div>
 ));
