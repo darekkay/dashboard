@@ -1,22 +1,16 @@
 import React, { memo } from "react";
 
-export interface Props {
-  children: React.ReactNode;
-  className?: string;
-  url: string;
-  title?: string;
+export interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   external?: boolean;
 }
 
 export const Link = memo((props: Props) => {
-  const { className, url, title, external = true } = props;
+  const { external = true, ...domProps } = props;
   return (
     <a
-      className={className}
-      href={url}
-      title={title}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
+      {...domProps}
     >
       {props.children}
     </a>

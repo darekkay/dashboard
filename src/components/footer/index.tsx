@@ -9,7 +9,7 @@ import LanguageSelect from "components/language-select";
 
 const Version = memo(() => (
   <div>
-    <Link url="https://github.com/darekkay/dashboard">Dashboard</Link>{" "}
+    <Link href="https://github.com/darekkay/dashboard">Dashboard</Link>{" "}
     {process.env.REACT_APP_VERSION}
   </div>
 ));

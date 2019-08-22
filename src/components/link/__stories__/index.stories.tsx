@@ -9,17 +9,17 @@ const Story = () => {
   return (
     <>
       <div>
-        <Link url="#" external={false}>
+        <Link href="#" external={false}>
           Regular Link
         </Link>
       </div>
       <div>
-        <Link url="#" external={true}>
+        <Link href="#" external={true}>
           External Link
         </Link>
       </div>
       <div>
-        <Link url="#" external={true}>
+        <Link href="#" external={true}>
           Icon Link <Icon name="heart" position="right" />
         </Link>
       </div>

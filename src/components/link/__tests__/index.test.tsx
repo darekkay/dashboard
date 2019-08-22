@@ -7,7 +7,7 @@ describe("<Link />", () => {
   let wrapper: ShallowWrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Link url="#">Label</Link>);
+    wrapper = shallow(<Link href="#">Label</Link>);
   });
 
   it("renders a single a element", () => {
@@ -17,7 +17,7 @@ describe("<Link />", () => {
   it("renders target and rel for external links", () => {
     expect(wrapper.find("a[target][rel]")).toHaveLength(1);
     wrapper = shallow(
-      <Link url="#" external={false}>
+      <Link href="#" external={false}>
         Label
       </Link>
     );
