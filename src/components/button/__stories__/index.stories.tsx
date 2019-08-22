@@ -28,6 +28,12 @@ const Row = ({
       <Button {...commonProps} {...rest} size={ButtonSize.Small}>
         {children || "Small"}
       </Button>
+      <Button {...commonProps} {...rest} outline>
+        {children || "Outline"}
+      </Button>
+      <Button {...commonProps} {...rest} outline size={ButtonSize.Small}>
+        {children || "Outline Small"}
+      </Button>
     </div>
   </>
 );
@@ -36,9 +42,6 @@ storiesOf("Components.Button", module).add("Variants", () => (
   <div>
     <Row title="Primary Button" type={ButtonType.Primary} />
     <Row title="Secondary Button" type={ButtonType.Secondary} />
-
-    <Row title="Primary Outline Button" type={ButtonType.Primary} outline />
-    <Row title="Secondary Outline Button" type={ButtonType.Secondary} outline />
 
     <Row title="Disabled Button" type={ButtonType.Primary} disabled />
 
