@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+import cn from "classnames";
 
 const onKeyUp = (
   event: any,
@@ -12,19 +13,23 @@ const onKeyUp = (
   }
 };
 
-const Input = memo(({ value, setValue, onEnter, onEscape }: Props) => {
-  return (
-    <input
-      className="max-w-full w-100 m-2 p-2 border rounded text-color-default bg-color-default text-2"
-      value={value}
-      onChange={event => setValue(event.target.value)}
-      onKeyUp={event => onKeyUp(event, onEnter, onEscape)}
-    />
-  );
-});
+const Input = memo(
+  ({ className, setValue, onEnter, onEscape, ...domProps }: Props) => {
+    return (
+      <input
+        className={cn(
+          "max-w-full w-100 m-2 p-2 border rounded text-color-default bg-color-default text-2",
+          className
+        )}
+        onChange={event => setValue(event.target.value)}
+        onKeyUp={event => onKeyUp(event, onEnter, onEscape)}
+        {...domProps}
+      />
+    );
+  }
+);
 
-export interface Props {
-  value: string;
+export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   setValue: (value: string) => void;
   onEnter?: (value: string) => void;
   onEscape?: (value: string) => void;
