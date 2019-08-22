@@ -1,5 +1,6 @@
 import React, { memo, Suspense } from "react";
 import { connect } from "react-redux";
+import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
 import withErrorHandling, {
@@ -40,7 +41,9 @@ export const Widget = memo((props: Props & ErrorProps) => {
     ...rest
   } = props;
   const Component = widgets[type].component;
-  const widgetTitle = options.title;
+
+  const { t } = useTranslation();
+  const headline = t(`widget.${type}.headline`, options);
 
   return (
     <div
@@ -59,8 +62,8 @@ export const Widget = memo((props: Props & ErrorProps) => {
       )}
       {...rest}
     >
-      {widgetTitle && (
-        <h3 className="m-0 py-1 px-2 text-1 font-normal">{widgetTitle}</h3>
+      {headline && (
+        <h3 className="m-0 py-1 px-2 text-1 font-normal">{headline}</h3>
       )}
 
       {hasError && "» Error «"}

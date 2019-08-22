@@ -11,14 +11,17 @@
     },
 
     "date-time": {
-      "name": "Date and Time"
+      "name": "Date and Time",
+      "headline": ""
     },
     "search": {
       "name": "Web Search",
+      "headline": "{{title}} Search",
       "buttonAriaLabel": "Open search results"
     },
     "text": {
-      "name": "Notes"
+      "name": "Notes",
+      "headline": ""
     }
   }
 }

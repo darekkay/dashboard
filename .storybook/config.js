@@ -2,6 +2,8 @@ import { configure, addDecorator, addParameters } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { withThemes } from "storybook-addon-themes";
 
+import "common/i18n";
+
 import "../src/styles/index.scss";
 import "./storybook.scss";
 
