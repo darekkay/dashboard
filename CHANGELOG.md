@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 1.0.7 (2019-08-27)
+
 - :sparkles: Add widget drawer.
 - :sparkles: Add multi-language support (English and German).
 - :rocket: Disable all animations if the user prefers not to see any.
