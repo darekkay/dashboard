@@ -64,6 +64,10 @@
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/ban-ts-ignore": "off",
 
+        // The following line can be removed when this issue is solved:
+        // https://github.com/facebook/create-react-app/issues/7529
+        "@typescript-eslint/no-angle-bracket-type-assertion": "off",
+
         // disable duplicate rules:
         "no-array-constructor": "off",
         "no-unused-vars": "off",
