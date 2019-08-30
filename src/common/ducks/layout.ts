@@ -11,7 +11,7 @@ import { createWidget } from "components/widget/duck";
 
 const saveLayout = createAction("layout/save");
 const toggleLayoutEditable = createAction("layout/toggle-editable");
-const addWidget = createAction("layout/add-widget");
+const addWidgetToLayout = createAction("layout/add-widget");
 const incrementNextWidgetId = createAction("layout/increment-next-widget-id");
 
 export interface Layout {
@@ -52,7 +52,7 @@ export const reducerWithInitialState = (state: LayoutState = initialState) =>
       state.isEditable = !state.isEditable;
     },
 
-    [addWidget as any]: (state, action) => {
+    [addWidgetToLayout as any]: (state, action) => {
       const newWidget = {
         i: widgetId(action.payload, state.nextWidgetId),
         x: 0,
@@ -78,7 +78,7 @@ export const reducerWithInitialState = (state: LayoutState = initialState) =>
 /* When a new widget is added, create the according widget data and update the widget counter */
 export const epic: Epic = (action$, state$) =>
   action$.pipe(
-    ofType(addWidget),
+    ofType(addWidgetToLayout),
     mergeMap(action => [
       createWidget({
         type: action.payload,
@@ -91,5 +91,5 @@ export const epic: Epic = (action$, state$) =>
 export const actionCreators = {
   saveLayout,
   toggleLayoutEditable,
-  addWidget
+  addWidgetToLayout
 };

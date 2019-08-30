@@ -23,7 +23,7 @@ export interface Props {
   isLayoutEditable: boolean;
   toggleLayoutEditable: () => void;
 
-  addWidget: (widgetName: string) => void;
+  addWidgetToLayout: (widgetName: string) => void;
 
   sendHeartbeat: (date: number) => void;
 }
@@ -36,7 +36,7 @@ export const App = memo((props: Props) => {
     saveLayout,
     isLayoutEditable,
     toggleLayoutEditable,
-    addWidget,
+    addWidgetToLayout,
     sendHeartbeat
   } = props;
 
@@ -56,7 +56,9 @@ export const App = memo((props: Props) => {
           />
         </main>
         {/* TODO: connect drawer instead */}
-        {isLayoutEditable && <Drawer addWidget={addWidget}></Drawer>}
+        {isLayoutEditable && (
+          <Drawer addWidgetToLayout={addWidgetToLayout}></Drawer>
+        )}
       </div>
       <Footer
         isLayoutEditable={isLayoutEditable}

@@ -6,7 +6,7 @@ import { availableWidgetNames } from "widgets/index";
 import Icon from "../icon";
 
 /* TODO: render display name instead of slug */
-const Drawer = memo(({ addWidget }: Props) => {
+const Drawer = memo(({ addWidgetToLayout }: Props) => {
   const { t } = useTranslation();
   return (
     <div className="p-3 bg-color-default border" style={{ width: "250px" }}>
@@ -22,7 +22,7 @@ const Drawer = memo(({ addWidget }: Props) => {
             aria-label={t("widget.common.add", {
               widget: t(`widget.${widgetName}.name`)
             })}
-            onClick={() => addWidget(widgetName)}
+            onClick={() => addWidgetToLayout(widgetName)}
           >
             <Icon name="plus" alt="" />
           </Button>
@@ -33,7 +33,7 @@ const Drawer = memo(({ addWidget }: Props) => {
 });
 
 export interface Props {
-  addWidget: (widgetName: string) => void;
+  addWidgetToLayout: (widgetName: string) => void;
 }
 
 export default Drawer;

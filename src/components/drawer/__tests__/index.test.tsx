@@ -10,7 +10,7 @@ describe("<Drawer />", () => {
   let wrapper: ShallowWrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Drawer addWidget={() => null} />);
+    wrapper = shallow(<Drawer addWidgetToLayout={() => null} />);
   });
 
   it("renders a button per available ", () => {
