@@ -24,6 +24,7 @@ export interface Props {
   toggleLayoutEditable: () => void;
 
   addWidgetToLayout: (widgetName: string) => void;
+  removeWidgetFromLayout: (widgetId: string) => void;
 
   sendHeartbeat: (date: number) => void;
 }
@@ -37,6 +38,7 @@ export const App = memo((props: Props) => {
     isLayoutEditable,
     toggleLayoutEditable,
     addWidgetToLayout,
+    removeWidgetFromLayout,
     sendHeartbeat
   } = props;
 
@@ -53,6 +55,7 @@ export const App = memo((props: Props) => {
             isLayoutEditable={isLayoutEditable}
             widgetIDs={widgetIDs}
             saveLayout={saveLayout}
+            removeWidgetFromLayout={removeWidgetFromLayout}
           />
         </main>
         {/* TODO: connect drawer instead */}

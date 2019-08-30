@@ -12,6 +12,7 @@ export interface Props {
   isLayoutEditable: boolean;
   widgetIDs: string[];
   saveLayout: (layout: Layout) => void;
+  removeWidgetFromLayout: (widgetId: string) => void;
   [key: string]: any;
 }
 
@@ -32,7 +33,8 @@ class Dashboard extends React.Component<Props> {
       layout,
       isLayoutEditable,
       widgetIDs,
-      saveLayout
+      saveLayout,
+      removeWidgetFromLayout
     } = this.props;
     return (
       <ReactGridLayout
@@ -54,7 +56,8 @@ class Dashboard extends React.Component<Props> {
           // @ts-ignore
           React.createElement(makeWidget(widgetID), {
             key: widgetID,
-            isLayoutEditable
+            isLayoutEditable,
+            removeWidgetFromLayout
           })
         )}
       </ReactGridLayout>

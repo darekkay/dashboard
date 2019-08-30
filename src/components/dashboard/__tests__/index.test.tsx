@@ -1,5 +1,6 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
+import _ from "lodash";
 
 import Widget from "components/widget";
 import { Layout } from "common/ducks/layout";
@@ -19,7 +20,8 @@ describe("<Dashboard />", () => {
       <Dashboard
         layout={layout}
         isLayoutEditable={false}
-        saveLayout={() => null}
+        saveLayout={_.noop}
+        removeWidgetFromLayout={_.noop}
         columns={3}
         rows={2}
         widgetIDs={["id-01", "id-02"]}

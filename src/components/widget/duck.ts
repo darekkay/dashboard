@@ -7,6 +7,7 @@ import { initialWidgets } from "widgets/demo";
 const setOptionValue = createAction("widget/set-option-value");
 const setDataValue = createAction("widget/set-data-value");
 export const createWidget = createAction("widget/create");
+export const removeWidget = createAction("widget/remove");
 
 export interface Widget {
   type: string;
@@ -43,6 +44,11 @@ export const reducerWithInitialState = (state: WidgetsState = initialState) =>
         data: {},
         options: {}
       };
+    },
+
+    [removeWidget as any]: (state, action) => {
+      const id = action.payload;
+      delete state[id];
     }
   });
 

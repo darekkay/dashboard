@@ -7,7 +7,8 @@
   "widget": {
     "common": {
       "drawerHeadline": "Widgets",
-      "add": "Widget für {{widget}} hinzufügen"
+      "add": "Widget für {{widget}} hinzufügen",
+      "remove": "Widget für {{widget}} entfernen"
     },
 
     "date-time": {

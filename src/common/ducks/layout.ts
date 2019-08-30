@@ -2,16 +2,17 @@
 
 import _ from "lodash";
 import { createAction, createReducer } from "redux-starter-kit";
-import { ofType, Epic } from "redux-observable";
-import { mergeMap } from "rxjs/operators";
+import { ofType, combineEpics, Epic } from "redux-observable";
+import { map, mergeMap } from "rxjs/operators";
 import { Layout as ReactGridLayout } from "react-grid-layout";
 
 import { initialLayout } from "widgets/demo";
-import { createWidget } from "components/widget/duck";
+import { createWidget, removeWidget } from "components/widget/duck";
 
 const saveLayout = createAction("layout/save");
 const toggleLayoutEditable = createAction("layout/toggle-editable");
 const addWidgetToLayout = createAction("layout/add-widget");
+const removeWidgetFromLayout = createAction("layout/remove-widget");
 const incrementNextWidgetId = createAction("layout/increment-next-widget-id");
 
 export interface Layout {
@@ -69,6 +70,17 @@ export const reducerWithInitialState = (state: LayoutState = initialState) =>
       };
     },
 
+    [removeWidgetFromLayout as any]: (state, action) => {
+      const byId = (widget: ReactGridLayout) => widget.i !== action.payload;
+      return {
+        ...state,
+        config: {
+          mobile: _.filter(state.config.mobile, byId),
+          desktop: _.filter(state.config.desktop, byId)
+        }
+      };
+    },
+
     [incrementNextWidgetId as any]: (state, action) => ({
       ...state,
       nextWidgetId: state.nextWidgetId + 1
@@ -76,7 +88,7 @@ export const reducerWithInitialState = (state: LayoutState = initialState) =>
   });
 
 /* When a new widget is added, create the according widget data and update the widget counter */
-export const epic: Epic = (action$, state$) =>
+const addWidgetEpic: Epic = (action$, state$) =>
   action$.pipe(
     ofType(addWidgetToLayout),
     mergeMap(action => [
@@ -88,8 +100,18 @@ export const epic: Epic = (action$, state$) =>
     ])
   );
 
+/* When a widget is removed from the layout, the according widget data should be deleted as well */
+const removeWidgetEpic: Epic = (action$, state$) =>
+  action$.pipe(
+    ofType(removeWidgetFromLayout),
+    map(action => removeWidget(action.payload))
+  );
+
+export const epic = combineEpics(addWidgetEpic, removeWidgetEpic);
+
 export const actionCreators = {
   saveLayout,
   toggleLayoutEditable,
-  addWidgetToLayout
+  addWidgetToLayout,
+  removeWidgetFromLayout
 };

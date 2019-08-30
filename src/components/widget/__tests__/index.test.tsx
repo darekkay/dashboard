@@ -1,5 +1,6 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
+import _ from "lodash";
 
 import { Widget } from "../index";
 
@@ -16,6 +17,7 @@ describe("<Widget />", () => {
         setOptionValue={() => null}
         data={{}}
         setDataValue={() => null}
+        removeWidgetFromLayout={_.noop}
         hasError={false}
       />
     );

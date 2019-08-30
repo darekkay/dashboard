@@ -1,5 +1,7 @@
 ## Unreleased
 
+- :sparkles: Enable removing existing widgets from the dashboard.
+
 ## 1.0.7 (2019-08-27)
 
 - :sparkles: Add widget drawer.

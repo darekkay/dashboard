@@ -6,6 +6,8 @@ import cn from "classnames";
 import withErrorHandling, {
   State as ErrorProps
 } from "common/hoc/withErrorHandling";
+import Button, { ButtonMode, ButtonSize } from "components/button";
+import Icon from "components/icon";
 import widgets, { ValueUpdateAction } from "widgets/index";
 
 import Loading from "../loading";
@@ -20,6 +22,7 @@ export interface Props {
   data: { [key: string]: any };
   setOptionValue: ValueUpdateAction;
   setDataValue: ValueUpdateAction;
+  removeWidgetFromLayout: (id: string) => void;
   isLayoutEditable: boolean;
   className?: string;
   children?: React.ReactNode;
@@ -35,6 +38,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
     hasError,
     setOptionValue,
     setDataValue,
+    removeWidgetFromLayout,
     isLayoutEditable,
     className,
     children,
@@ -68,7 +72,21 @@ export const Widget = memo((props: Props & ErrorProps) => {
 
       {hasError && "» Error «"}
       {isLayoutEditable && (
-        <div className="absolute inset-0 bg-color-widget-dim" />
+        <>
+          <div className="absolute inset-0 bg-color-widget-dim" />
+          <div className="absolute right-0 top-0 m-2">
+            <Button
+              size={ButtonSize.Small}
+              mode={ButtonMode.Secondary}
+              aria-label={t(`widget.common.remove`, {
+                widget: t(`widget.${type}.name`)
+              })}
+              onClick={() => removeWidgetFromLayout(id)}
+            >
+              <Icon name="times" />
+            </Button>
+          </div>
+        </>
       )}
       {!hasError && (
         <div className="flex flex-col items-center justify-center h-100">
