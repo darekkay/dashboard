@@ -113,5 +113,6 @@ export const actionCreators = {
   saveLayout,
   toggleLayoutEditable,
   addWidgetToLayout,
-  removeWidgetFromLayout
+  removeWidgetFromLayout,
+  incrementNextWidgetId
 };

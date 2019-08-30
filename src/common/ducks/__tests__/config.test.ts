@@ -13,4 +13,13 @@ describe("Settings duck", () => {
 
     expect(updatedState.theme).toEqual("mock");
   });
+
+  it("changes the language", () => {
+    const updatedState = reducerWithInitialState()(
+      initialState,
+      actionCreators.changeLanguage("mock")
+    );
+
+    expect(updatedState.language).toEqual("mock");
+  });
 });

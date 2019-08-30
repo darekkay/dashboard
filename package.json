@@ -74,7 +74,8 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!**/node_modules/**",
-      "!**/__stories__/**"
+      "!**/__stories__/**",
+      "!**/react-app-env.d.ts"
     ]
   },
   "license": "MIT",
