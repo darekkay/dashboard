@@ -1,6 +1,6 @@
 # Dashboard
 
-[![Travis](https://img.shields.io/travis/darekkay/dashboard.svg?style=flat-square)](https://travis-ci.org/darekkay/dashboard) [![license](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](https://github.com/darekkay/dashboard/blob/master/LICENSE)
+[![Travis](https://img.shields.io/travis/com/darekkay/dashboard.svg?style=flat-square)](https://travis-ci.com/darekkay/dashboard) [![license](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](https://github.com/darekkay/dashboard/blob/master/LICENSE)
 
 ## Goal
 
