@@ -30,9 +30,9 @@ The next step will be to integrate 3rd party providers. I'd like to store as few
 ### Feature ideas
 
 - [x] Themes support. Because noone will bat an eye without a Dark Mode™.
-- [] Use a real login to restrict access to sensitive data, especially when integrating 3rd party providers.
+- [ ] Use a real login to restrict access to sensitive data, especially when integrating 3rd party providers.
 - [x] Reorder modules within the UI instead of using a config file (Drag and Drop).
-- [] Use a monorepo (lerna) to split this project into a core and individual modules.
+- [ ] Use a monorepo (lerna) to split this project into a core and individual modules.
 
 ### Implemented widgets
 
@@ -47,13 +47,13 @@ The configuration options for each widget are listed [here](docs/widgets.md).
 ### Widget/integration ideas
 
 - [x] Current date and time
-- [] Current weather and forecast
-- [] Bookmarks
+- [ ] Current weather and forecast
+- [ ] Bookmarks
 - [x] Search (for different search engines)
 - [x] Notes
-- [] Calendar / next events
-- [] Daily message (quote, image, tip)
-- [] Todo tasks (integration with 3rd party, like Todoist, Wunderlist or GitHub Issues)
+- [ ] Calendar / next events
+- [ ] Daily message (quote, image, tip)
+- [ ] Todo tasks (integration with 3rd party, like Todoist, Wunderlist or GitHub Issues)
   ...
 
 ## Contribution
