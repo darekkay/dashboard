@@ -31,6 +31,7 @@ const Search = memo(({ id, setDataValue, name, pattern }: Props) => {
           setValue={setValue}
           onEnter={value => openSearchUrl(pattern, value, setValue)}
           onEscape={() => setValue("")}
+          aria-labelledby={`widget-${id}-headline`}
         />
         <Button
           className="m-2"

@@ -67,7 +67,12 @@ export const Widget = memo((props: Props & ErrorProps) => {
       {...rest}
     >
       {headline && (
-        <h3 className="m-0 py-1 px-2 text-1 font-normal">{headline}</h3>
+        <h3
+          id={`widget-${id}-headline`}
+          className="m-0 py-1 px-2 text-1 font-normal"
+        >
+          {headline}
+        </h3>
       )}
 
       {hasError && "» Error «"}
