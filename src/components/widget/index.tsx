@@ -6,7 +6,7 @@ import cn from "classnames";
 import withErrorHandling, {
   State as ErrorProps
 } from "common/hoc/withErrorHandling";
-import Button, { ButtonMode, ButtonSize } from "components/button";
+import Button, { ButtonVariant, ButtonSize } from "components/button";
 import Icon from "components/icon";
 import widgets, { ValueUpdateAction } from "widgets/index";
 
@@ -82,7 +82,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
           <div className="absolute right-0 top-0 m-2">
             <Button
               size={ButtonSize.Small}
-              mode={ButtonMode.Secondary}
+              variant={ButtonVariant.Secondary}
               aria-label={t(`widget.common.remove`, {
                 widget: t(`widget.${type}.name`)
               })}

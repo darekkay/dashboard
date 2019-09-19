@@ -3,7 +3,7 @@ import cn from "classnames";
 
 import "./styles.scss";
 
-export enum ButtonMode {
+export enum ButtonVariant {
   Primary = "primary",
   Secondary = "secondary"
 }
@@ -17,7 +17,7 @@ const Button = memo(
   ({
     children,
     className,
-    mode = ButtonMode.Primary,
+    variant = ButtonVariant.Primary,
     size = ButtonSize.Regular,
     outline,
     ...domProps
@@ -25,7 +25,7 @@ const Button = memo(
     <button
       className={cn(
         "btn",
-        `btn-${mode}${outline ? "-outline" : ""}`,
+        `btn-${variant}${outline ? "-outline" : ""}`,
         `btn-${size}`,
         className
       )}
@@ -37,7 +37,7 @@ const Button = memo(
 );
 
 export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  mode?: ButtonMode;
+  variant?: ButtonVariant;
   size?: ButtonSize;
   outline?: boolean;
 }

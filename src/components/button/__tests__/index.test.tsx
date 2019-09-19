@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
-import Button, { ButtonMode } from "../index";
+import Button, { ButtonVariant } from "../index";
 
 describe("<Button />", () => {
   let wrapper: ShallowWrapper;
@@ -14,17 +14,17 @@ describe("<Button />", () => {
     expect(wrapper.find("button")).toHaveLength(1);
   });
 
-  it("renders all mode/outline combinations", () => {
-    wrapper.setProps({ mode: ButtonMode.Primary });
+  it("renders all variant/outline combinations", () => {
+    wrapper.setProps({ mode: ButtonVariant.Primary });
     expect(wrapper.find(".btn-primary")).toHaveLength(1);
 
-    wrapper.setProps({ mode: ButtonMode.Secondary });
+    wrapper.setProps({ mode: ButtonVariant.Secondary });
     expect(wrapper.find(".btn-secondary")).toHaveLength(1);
 
-    wrapper.setProps({ mode: ButtonMode.Primary, outline: true });
+    wrapper.setProps({ mode: ButtonVariant.Primary, outline: true });
     expect(wrapper.find(".btn-primary-outline")).toHaveLength(1);
 
-    wrapper.setProps({ mode: ButtonMode.Secondary, outline: true });
+    wrapper.setProps({ mode: ButtonVariant.Secondary, outline: true });
     expect(wrapper.find(".btn-secondary-outline")).toHaveLength(1);
   });
 });

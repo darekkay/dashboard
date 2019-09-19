@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import Link from "components/link";
-import Button, { ButtonMode } from "components/button";
+import Button, { ButtonVariant } from "components/button";
 import Icon from "components/icon";
 import ThemeSelect from "components/theme-select";
 import LanguageSelect from "components/language-select";
@@ -26,7 +26,7 @@ const Footer = memo(({ isLayoutEditable, toggleLayoutEditable }: Props) => {
       <div>
         <Button
           className="m-2"
-          mode={ButtonMode.Primary}
+          variant={ButtonVariant.Primary}
           onClick={toggleLayoutEditable}
         >
           <Icon name="edit" position="left" />
