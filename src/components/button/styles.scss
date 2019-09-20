@@ -131,3 +131,12 @@
     var(--button-secondary-focus-ring)
   );
 }
+
+.btn-unstyled {
+  background-color: transparent;
+}
+
+.btn-unstyled-outline {
+  background-color: transparent;
+  border-color: inherit;
+}

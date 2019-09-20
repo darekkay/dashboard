@@ -5,7 +5,8 @@ import "./styles.scss";
 
 export enum ButtonVariant {
   Primary = "primary",
-  Secondary = "secondary"
+  Secondary = "secondary",
+  Unstyled = "unstyled"
 }
 
 export enum ButtonSize {

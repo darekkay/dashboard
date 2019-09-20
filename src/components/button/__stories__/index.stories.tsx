@@ -42,6 +42,7 @@ storiesOf("Components.Button", module).add("Variants", () => (
   <div>
     <Row title="Primary Button" variant={ButtonVariant.Primary} />
     <Row title="Secondary Button" variant={ButtonVariant.Secondary} />
+    <Row title="Unstyled Button" variant={ButtonVariant.Unstyled} />
 
     <Row title="Disabled Button" variant={ButtonVariant.Primary} disabled />
 
