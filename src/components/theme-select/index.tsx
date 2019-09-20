@@ -36,7 +36,7 @@ export const ThemeSelect = memo((props: Props) => {
   }, [theme]);
 
   return (
-    <Button className="m-2" variant={ButtonVariant.Primary} onClick={toggleTheme}>
+    <Button className="m-2" outline onClick={toggleTheme}>
       <Icon name="palette" position="left" />
       Theme: {theme}
     </Button>

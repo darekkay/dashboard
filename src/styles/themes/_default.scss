@@ -3,10 +3,26 @@
   --background-color: #f5f7fb;
   --highlight-color: #005aff;
   --border-color: #ddd;
+
   --widget-text-color: #000;
   --widget-background-color: #fff;
   --widget-dim-background-color: rgba(0, 0, 0, 0.05);
-  --footer-background-color: #fff;
+
+  --button-primary-color: hsl(219, 100%, 50%);
+  --button-primary-hover-bg: hsl(219, 100%, 43%);
+  --button-primary-active-bg: hsl(219, 100%, 37%);
+  --button-primary-focus-ring: hsla(219, 100%, 50%, 0.5);
+
+  --button-secondary-color: hsl(256, 22%, 48%);
+  --button-secondary-hover-bg: hsl(256, 22%, 41%);
+  --button-secondary-active-bg: hsl(256, 22%, 35%);
+  --button-secondary-focus-ring: hsla(256, 22%, 48%, 0.5);
+
+  --button-inverse-color: #fff;
+  --button-disabled-color: #4b6a88;
+
   --loading-background-color: hsla(0, 0%, 62%, 0.3);
   --loading-spinner-color: #202020;
+
+  --footer-background-color: #fff;
 }

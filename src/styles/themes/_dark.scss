@@ -3,10 +3,26 @@
   --background-color: #1c1c1c;
   --highlight-color: #b9ca4a;
   --border-color: #74715e;
+
   --widget-text-color: #fff;
   --widget-background-color: #333;
   --widget-dim-background-color: rgba(0, 0, 0, 0.5);
-  --footer-background-color: #333;
+
+  --button-primary-color: hsl(37, 90%, 51%);
+  --button-primary-hover-bg: hsl(37, 90%, 58%);
+  --button-primary-active-bg: hsl(37, 90%, 64%);
+  --button-primary-focus-ring: hsla(37, 90%, 51%, 0.5);
+
+  --button-secondary-color: hsl(205, 91%, 59%);
+  --button-secondary-hover-bg: hsl(205, 91%, 66%);
+  --button-secondary-active-bg: hsl(205, 91%, 72%);
+  --button-secondary-focus-ring: hsla(205, 91%, 59%, 0.5);
+
+  --button-inverse-color: #000;
+  --button-disabled-color: #888;
+
   --loading-background-color: hsla(0, 0%, 96%, 0.3);
   --loading-spinner-color: #fff;
+
+  --footer-background-color: #333;
 }

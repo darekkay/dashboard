@@ -24,11 +24,7 @@ const Footer = memo(({ isLayoutEditable, toggleLayoutEditable }: Props) => {
   return (
     <footer className="flex flex-col md:flex-row items-center justify-between p-5 border-top bg-color-footer">
       <div>
-        <Button
-          className="m-2"
-          variant={ButtonVariant.Primary}
-          onClick={toggleLayoutEditable}
-        >
+        <Button className="m-2" outline onClick={toggleLayoutEditable}>
           <Icon name="edit" position="left" />
           {t(isLayoutEditable ? "common.save" : "common.edit")}
         </Button>

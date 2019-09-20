@@ -28,11 +28,7 @@ export const LanguageSelect = memo((props: Props) => {
   }, [language, i18n]);
 
   return (
-    <Button
-      className="m-2"
-      variant={ButtonVariant.Primary}
-      onClick={toggleLanguage}
-    >
+    <Button className="m-2" outline onClick={toggleLanguage}>
       <Icon name="flag" position="left" />
       Language: {language}
     </Button>

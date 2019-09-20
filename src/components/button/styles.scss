@@ -1,36 +1,39 @@
-$btn-color-primary: #005aff;
-$btn-color-secondary: #4b6a88;
-$btn-color-disabled: #4b6a88;
-$btn-color-inverse: #fff;
-
-@mixin button-variant($foreground, $background, $accent, $event) {
+@mixin button-variant(
+  $foreground,
+  $background,
+  $border,
+  $event-foreground,
+  $hover-background,
+  $active-background,
+  $focus-ring
+) {
   color: $foreground;
   background-color: $background;
-  border-color: $accent;
+  border-color: $border;
+
+  svg {
+    fill: $foreground;
+  }
 
   &:hover {
-    background-color: darken($accent, 7%);
+    background-color: $hover-background;
   }
 
   &:active {
-    background-color: darken($accent, 10%);
+    background-color: $active-background;
   }
 
   &:hover,
   &:active {
-    color: $event;
+    color: $event-foreground;
 
     svg {
-      fill: $event;
+      fill: $event-foreground;
     }
   }
 
   &:focus {
-    box-shadow: 0 0 0 0.2rem transparentize($accent, 0.5);
-  }
-
-  svg {
-    fill: $foreground;
+    box-shadow: 0 0 0 0.2rem $focus-ring;
   }
 }
 
@@ -62,9 +65,9 @@ $btn-color-inverse: #fff;
 
   &[disabled],
   &[disabled]:hover {
-    background-color: #fff;
-    color: $btn-color-disabled;
-    border-color: $btn-color-disabled;
+    background-color: var(--button-inverse-color);
+    color: var(--button-disabled-color);
+    border-color: var(--button-disabled-color);
     opacity: 0.4;
     pointer-events: none;
     cursor: default;
@@ -83,36 +86,48 @@ $btn-color-inverse: #fff;
 
 .btn-primary {
   @include button-variant(
-    $btn-color-inverse,
-    $btn-color-primary,
-    $btn-color-primary,
-    $btn-color-inverse
+    var(--button-inverse-color),
+    var(--button-primary-color),
+    var(--button-primary-color),
+    var(--button-inverse-color),
+    var(--button-primary-hover-bg),
+    var(--button-primary-active-bg),
+    var(--button-primary-focus-ring)
   );
 }
 
 .btn-primary-outline {
   @include button-variant(
-    $btn-color-primary,
+    var(--button-primary-color),
     transparent,
-    $btn-color-primary,
-    $btn-color-inverse
+    var(--button-primary-color),
+    var(--button-inverse-color),
+    var(--button-primary-hover-bg),
+    var(--button-primary-active-bg),
+    var(--button-primary-focus-ring)
   );
 }
 
 .btn-secondary {
   @include button-variant(
-    $btn-color-inverse,
-    $btn-color-secondary,
-    $btn-color-secondary,
-    $btn-color-inverse
+    var(--button-inverse-color),
+    var(--button-secondary-color),
+    var(--button-secondary-color),
+    var(--button-inverse-color),
+    var(--button-secondary-hover-bg),
+    var(--button-secondary-active-bg),
+    var(--button-secondary-focus-ring)
   );
 }
 
 .btn-secondary-outline {
   @include button-variant(
-    $btn-color-secondary,
+    var(--button-secondary-color),
     transparent,
-    $btn-color-secondary,
-    $btn-color-inverse
+    var(--button-secondary-color),
+    var(--button-inverse-color),
+    var(--button-secondary-hover-bg),
+    var(--button-secondary-active-bg),
+    var(--button-secondary-focus-ring)
   );
 }
