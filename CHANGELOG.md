@@ -1,6 +1,12 @@
 ## Unreleased
 
+
+## 1.0.8 (2019-09-21)
+
 - :sparkles: Enable removing existing widgets from the dashboard.
+- :gem: Extract button colors to support different themes.
+- :gem: Add a global focus ring for all focusable elements.
+- :construction_worker: Migrate to travis-ci.com.
 
 ## 1.0.7 (2019-08-27)
 

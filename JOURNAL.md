@@ -1,3 +1,13 @@
+## 2019-09-21 (1.0.8)
+
+Every widget can now be removed from the Dashboard. The last missing part of personalization is a settings dialog, so the user can select another search engine for example.
+
+As I had previously copied the Button component from my other projecs, it did not follow the new CSS variable approach to support different themes. The migration was not as trivial, because I could not use the `darken` and `transparentize` SCSS functions with CSS variables anymore. Converting the colors into HSL made the transition easier, though. Now Dashboard support different Button colors for the light and dark themes.
+
+Now that [travis-ci.com](https://travis-ci.com/) supports open source projects, I've migrated all my projects from travis-ci.org. The GitHub integration automatically checks each commit and PR and submits a [report](https://github.com/darekkay/dashboard/runs/230810744) directly on GitHub. I've also played around with the new [GitHub Actions](https://github.com/features/actions) after getting into the Beta. While it's quite powerful, I still prefer Travis CI and GitLab CI due to the native yarn support.
+
+![](docs/assets/img/1.0.8.png)
+
 ## 2019-08-27 (1.0.7)
 
 The announced widget drawer is now implemented. This means, all available widgets (date/time, notes, web search) can be placed onto the dashboard and moved/resized within the UI. Removing the widgets is not yet possible, though.

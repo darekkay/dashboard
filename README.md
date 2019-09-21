@@ -2,7 +2,7 @@
 
 [![Travis](https://img.shields.io/travis/com/darekkay/dashboard.svg?style=flat-square)](https://travis-ci.com/darekkay/dashboard) [![license](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](https://github.com/darekkay/dashboard/blob/master/LICENSE)
 
-![](docs/assets/img/1.0.6.png)
+![](docs/assets/img/1.0.8.png)
 
 ## Goal
 
