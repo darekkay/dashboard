@@ -18,6 +18,8 @@ Finally, I've replaced most of my (S)CSS files with a Functional CSS approach. I
 
 Notice: The state data is stored in the Local Storage, so you might have to clear it if you have opened the website in the past. This won't be necessary when the project is out of the work-in-progress state of course.
 
+![](docs/assets/img/1.0.6.png)
+
 ## 2019-05-25 (1.0.5)
 
 There is a new widget for showing the current date and time. Additionally, the state is now persisted across the sessions. Under the hood I've added [redux-observable](https://github.com/redux-observable/redux-observable) to manage side effects and I've played around with the new [React Hooks](https://reactjs.org/docs/hooks-intro.html).
@@ -30,11 +32,15 @@ I haven't made much functional progress in the last month as I've been mainly wo
 
 Now there's support for color themes! I've used CSS variables, so it's easy to switch values at runtime (try out the preview button). There's also a new shiny favicon, based on [Font Awesome 5](https://fontawesome.com/). Finally, I've introduced React's [error boundaries](https://reactjs.org/docs/error-boundaries.html) so the app doesn't crash if a single widget throws any error.
 
+![](docs/assets/img/1.0.3.png)
+
 ## 2019-03-20 (1.0.2)
 
 I've implemented the first, very basic widget: Text Widget. It just displays fixed text, nothing fancy. Maybe it can be extended to support some basic formatting options in the future.
 
 Most work happened under the hood. I've cleaned up the code and tried to establish a good framework to build upon.
+
+![](docs/assets/img/1.0.2.png)
 
 ## 2019-03-17 (1.0.1)
 
@@ -51,6 +57,8 @@ I had to make a decision: what responsive behavior should the dashboard grid fol
 I think that #4 is the best trade-off.
 
 I've implemented a simple Dashboard using CSS Grid. The user may define the number of columns and rows and assign a relative width and height for each widget. In the future, this should be configurable within the UI (drag and drop), but for a MVP this is enough.
+
+![](docs/assets/img/1.0.1.png)
 
 ## 2019-03-14 (1.0.0)
 
