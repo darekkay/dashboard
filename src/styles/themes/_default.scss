@@ -3,6 +3,7 @@
   --background-color: #f5f7fb;
   --highlight-color: #005aff;
   --border-color: #ddd;
+  --focus-ring-color: hsla(219, 100%, 50%, 0.5);
 
   --widget-text-color: #000;
   --widget-background-color: #fff;
@@ -11,7 +12,7 @@
   --button-primary-color: hsl(219, 100%, 50%);
   --button-primary-hover-bg: hsl(219, 100%, 43%);
   --button-primary-active-bg: hsl(219, 100%, 37%);
-  --button-primary-focus-ring: hsla(219, 100%, 50%, 0.5);
+  --button-primary-focus-ring: var(--focus-ring-color);
 
   --button-secondary-color: hsl(256, 22%, 48%);
   --button-secondary-hover-bg: hsl(256, 22%, 41%);

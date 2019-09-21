@@ -25,3 +25,9 @@ pre {
     "Courier New", monospace;
   font-size: 1.7rem;
 }
+
+/* Custom focus ring */
+:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem var(--focus-ring-color);
+}
