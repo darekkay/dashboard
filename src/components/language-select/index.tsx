@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 import { actionCreators } from "common/ducks/config";
-import Button, { ButtonVariant } from "components/button";
+import Button from "components/button";
 import Icon from "components/icon";
 import selectComponentProps from "./selectors";
 

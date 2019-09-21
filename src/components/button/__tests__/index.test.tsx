@@ -15,16 +15,16 @@ describe("<Button />", () => {
   });
 
   it("renders all variant/outline combinations", () => {
-    wrapper.setProps({ mode: ButtonVariant.Primary });
+    wrapper.setProps({ variant: ButtonVariant.Primary });
     expect(wrapper.find(".btn-primary")).toHaveLength(1);
 
-    wrapper.setProps({ mode: ButtonVariant.Secondary });
+    wrapper.setProps({ variant: ButtonVariant.Secondary });
     expect(wrapper.find(".btn-secondary")).toHaveLength(1);
 
-    wrapper.setProps({ mode: ButtonVariant.Primary, outline: true });
+    wrapper.setProps({ variant: ButtonVariant.Primary, outline: true });
     expect(wrapper.find(".btn-primary-outline")).toHaveLength(1);
 
-    wrapper.setProps({ mode: ButtonVariant.Secondary, outline: true });
+    wrapper.setProps({ variant: ButtonVariant.Secondary, outline: true });
     expect(wrapper.find(".btn-secondary-outline")).toHaveLength(1);
   });
 });

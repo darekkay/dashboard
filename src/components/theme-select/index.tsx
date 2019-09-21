@@ -2,7 +2,7 @@ import React, { memo, useCallback, useEffect } from "react";
 import { connect } from "react-redux";
 
 import { actionCreators } from "common/ducks/config";
-import Button, { ButtonVariant } from "components/button";
+import Button from "components/button";
 import Icon from "components/icon";
 import selectComponentProps from "./selectors";
 

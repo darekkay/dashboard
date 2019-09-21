@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import Link from "components/link";
-import Button, { ButtonVariant } from "components/button";
+import Button from "components/button";
 import Icon from "components/icon";
 import ThemeSelect from "components/theme-select";
 import LanguageSelect from "components/language-select";

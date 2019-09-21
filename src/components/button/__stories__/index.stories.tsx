@@ -3,7 +3,11 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 
 import Icon from "components/icon";
-import Button, { ButtonVariant, ButtonSize, Props as ButtonProps } from "../index";
+import Button, {
+  ButtonVariant,
+  ButtonSize,
+  Props as ButtonProps
+} from "../index";
 
 const commonProps = {
   className: "mr-5"
