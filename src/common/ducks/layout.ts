@@ -19,7 +19,7 @@ export interface Layout {
   mobile: ReactGridLayout[];
   desktop: ReactGridLayout[];
 
-  [key: string]: ReactGridLayout[];
+  readonly [key: string]: ReactGridLayout[];
 }
 
 export interface LayoutState {

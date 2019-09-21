@@ -20,7 +20,7 @@ export interface State {
   widgets: WidgetsState;
   sharedData: DataState;
 
-  [key: string]: any;
+  readonly [key: string]: any;
 }
 
 const IS_PRODUCTION = process.env.NODE_ENV === "production";
