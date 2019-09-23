@@ -83,7 +83,6 @@ export const Widget = memo((props: Props & ErrorProps) => {
             <Button
               size={ButtonSize.Small}
               variant={ButtonVariant.Unstyled}
-              className="text-color-default"
               aria-label={t(`widget.common.remove`, {
                 widget: t(`widget.${type}.name`)
               })}
