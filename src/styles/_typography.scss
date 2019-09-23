@@ -27,7 +27,7 @@ pre {
 }
 
 /* Custom focus ring */
-:focus {
+:focus:not([tabindex="-1"]) {
   outline: 0;
   box-shadow: 0 0 0 0.2rem var(--focus-ring-color);
 }
