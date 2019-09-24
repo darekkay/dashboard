@@ -15,6 +15,21 @@ const Story = () => {
         headline="Modal headline"
       >
         Modal content
+        <div className="mt-7 text-right">
+          <Button
+            className="w-full md:w-auto md:ml-5 mt-5"
+            outline
+            onClick={() => setOpen(false)}
+          >
+            Cancel
+          </Button>
+          <Button
+            className="w-full md:w-auto md:ml-5 mt-5"
+            onClick={() => setOpen(false)}
+          >
+            Save
+          </Button>
+        </div>
       </Modal>
     </>
   );
