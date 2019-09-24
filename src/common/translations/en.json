@@ -2,6 +2,7 @@
   "common": {
     "edit": "Edit",
     "save": "Save",
+    "close": "Close",
     "loading": "Loading..."
   },
   "widget": {

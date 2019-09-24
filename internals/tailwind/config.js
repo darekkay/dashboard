@@ -13,6 +13,11 @@ module.exports = {
       "0": "0"
     },
 
+    width: {
+      auto: "auto",
+      full: "100%"
+    },
+
     maxWidth: {
       full: "100%"
     },
@@ -86,6 +91,7 @@ module.exports = {
     inset: [],
     overflow: [],
     resize: [],
+    width: ["responsive"],
     maxWidth: [],
 
     // Flexbox
@@ -125,6 +131,7 @@ module.exports = {
     inset: true,
     overflow: true,
     resize: true,
+    width: true,
     maxWidth: true,
 
     // Flexbox
@@ -158,6 +165,7 @@ module.exports = {
 
     // Disable everything else
 
+    accessibility: false,
     alignContent: false,
     alignSelf: false,
     appearance: false,
@@ -190,6 +198,7 @@ module.exports = {
     opacity: false,
     order: false,
     outline: false,
+    placeholderColor: false,
     pointerEvents: false,
     stroke: false,
     tableLayout: false,
@@ -197,7 +206,6 @@ module.exports = {
     verticalAlign: false,
     visibility: false,
     whitespace: false,
-    width: false,
     wordBreak: false,
     zIndex: false
   },

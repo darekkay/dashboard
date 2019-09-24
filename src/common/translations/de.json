@@ -2,6 +2,7 @@
   "common": {
     "edit": "Bearbeiten",
     "save": "Speichern",
+    "close": "Schließen",
     "loading": "Lade..."
   },
   "widget": {

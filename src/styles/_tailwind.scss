@@ -8,10 +8,6 @@
   background-color: #fff;
 }
 
-.bg-text {
-  background-color: var(--text-color);
-}
-
 .cursor-auto {
   cursor: auto;
 }
@@ -963,10 +959,6 @@
   color: #fff;
 }
 
-.text-text {
-  color: var(--text-color);
-}
-
 .text-1 {
   font-size: 1.2rem;
 }
@@ -1053,6 +1045,14 @@
 
 .focus\:no-underline:focus {
   text-decoration: none;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-full {
+  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -1768,5 +1768,13 @@
 
   .md\:text-justify {
     text-align: justify;
+  }
+
+  .md\:w-auto {
+    width: auto;
+  }
+
+  .md\:w-full {
+    width: 100%;
   }
 }

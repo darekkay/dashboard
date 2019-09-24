@@ -1,7 +1,7 @@
 // Width & Height
 
 .w-100 {
-  width: 100%;
+  width: 100%; /* TODO: replace with w-full */
 }
 
 .h-100 {
@@ -26,6 +26,10 @@
 
 .rounded {
   border-radius: 0.25rem;
+}
+
+.outline-none {
+  outline: 0;
 }
 
 // Colors
@@ -56,4 +60,11 @@
 
 .bg-color-footer {
   background-color: var(--footer-background-color);
+}
+
+// Effects
+
+.backdrop {
+  backdrop-filter: blur(5px);
+  background-color: var(--backdrop-color);
 }
