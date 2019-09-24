@@ -94,7 +94,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
         </>
       )}
       {!hasError && (
-        <div className="flex flex-col items-center justify-center h-100">
+        <div className="flex flex-col items-center justify-center h-full">
           <Suspense fallback={<Loading />}>
             {React.createElement(Component, {
               id,

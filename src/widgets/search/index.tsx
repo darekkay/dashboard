@@ -24,7 +24,7 @@ const Search = memo(({ id, setDataValue, name, pattern }: Props) => {
   const [value, setValue] = useState("");
   const { t } = useTranslation();
   return (
-    <div className="max-w-full w-100 px-2">
+    <div className="max-w-full w-full px-2">
       <div className="flex items-center">
         <Input
           value={value}

@@ -13,6 +13,11 @@ module.exports = {
       "0": "0"
     },
 
+    height: {
+      auto: "auto",
+      full: "100%"
+    },
+
     width: {
       auto: "auto",
       full: "100%"
@@ -91,6 +96,7 @@ module.exports = {
     inset: [],
     overflow: [],
     resize: [],
+    height: [],
     width: ["responsive"],
     maxWidth: [],
 
@@ -131,6 +137,7 @@ module.exports = {
     inset: true,
     overflow: true,
     resize: true,
+    height: true,
     width: true,
     maxWidth: true,
 
@@ -184,7 +191,6 @@ module.exports = {
     float: false,
     fontFamily: false,
     fontSmoothing: false,
-    height: false,
     letterSpacing: false,
     lineHeight: false,
     listStylePosition: false,

@@ -47,8 +47,8 @@ export const App = memo((props: Props) => {
 
   return (
     <>
-      <div className="flex h-100 flex-col md:flex-row">
-        <main className="flex-grow w-100 p-1 md:p-6 overflow-y-auto">
+      <div className="flex h-full flex-col md:flex-row">
+        <main className="flex-grow w-full p-1 md:p-6 overflow-y-auto">
           <Dashboard
             columns={gridColumns}
             layout={layout}

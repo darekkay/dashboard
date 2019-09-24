@@ -18,7 +18,7 @@ const Input = memo(
     return (
       <input
         className={cn(
-          "max-w-full w-100 m-2 p-2 border rounded text-color-default bg-color-default text-2",
+          "max-w-full w-full m-2 p-2 border rounded text-color-default bg-color-default text-2",
           className
         )}
         onChange={event => setValue(event.target.value)}
