@@ -6,7 +6,7 @@ import { WidgetProps } from "../index";
 export const DateTime = memo(({ date }: Props) => {
   const momentDate = moment(date);
   return (
-    <time className="text-center" dateTime={momentDate.toISOString()}>
+    <time className="text-center p-4" dateTime={momentDate.toISOString()}>
       <div>{momentDate.format("HH:mm")}</div>
       <div>{momentDate.format("dddd")}</div>
       <div>{momentDate.format("LL")}</div>
