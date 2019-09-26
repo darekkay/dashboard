@@ -16,19 +16,33 @@ export interface WidgetProps {
   setOptionValue: ValueUpdateAction;
 }
 
+export interface ConfigurationProps {
+  id: string;
+  options: { [key: string]: any };
+  setOptionValue: ValueUpdateAction;
+}
+
 export interface Widgets {
   [key: string]: {
     component: React.ComponentClass<WidgetProps>;
+    configuration?: React.ComponentClass<ConfigurationProps>;
   };
 }
 
-export const availableWidgetNames = ["text", "date-time", "search"];
+export const availableWidgets = [
+  { name: "text", configurable: false },
+  { name: "date-time", configurable: false },
+  { name: "search", configurable: false }
+];
 
-const widgets: Widgets = availableWidgetNames.reduce(
-  (acc, widgetName) => ({
+const widgets: Widgets = availableWidgets.reduce(
+  (acc, widget) => ({
     ...acc,
-    [widgetName]: {
-      component: React.lazy(() => import(`widgets/${widgetName}`))
+    [widget.name]: {
+      component: React.lazy(() => import(`widgets/${widget.name}`)),
+      configuration: widget.configurable
+        ? React.lazy(() => import(`widgets/${widget.name}/configuration`))
+        : null
     }
   }),
   {}
