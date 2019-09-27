@@ -9,7 +9,8 @@
     "common": {
       "drawerHeadline": "Widgets",
       "add": "Add {{widget}} widget",
-      "remove": "Remove {{widget}} widget"
+      "remove": "Remove {{widget}} widget",
+      "configuration": "Configuration: {{widget}}"
     },
 
     "date-time": {

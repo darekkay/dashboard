@@ -1,4 +1,4 @@
-import React, { memo, Suspense } from "react";
+import React, { memo, Suspense, useState } from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
@@ -8,7 +8,8 @@ import withErrorHandling, {
 } from "common/hoc/withErrorHandling";
 import Button, { ButtonVariant, ButtonSize } from "components/button";
 import Icon from "components/icon";
-import widgets, { ValueUpdateAction } from "widgets/index";
+import Modal from "components/modal";
+import widgets, { ValueUpdateAction } from "widgets";
 
 import Loading from "../loading";
 
@@ -25,7 +26,6 @@ export interface Props {
   removeWidgetFromLayout: (id: string) => void;
   isLayoutEditable: boolean;
   className?: string;
-  children?: React.ReactNode;
 }
 
 /** Single widget within the dashboard */
@@ -41,17 +41,23 @@ export const Widget = memo((props: Props & ErrorProps) => {
     removeWidgetFromLayout,
     isLayoutEditable,
     className,
-    children,
     ...rest
   } = props;
   const Component = widgets[type].component;
+  const Configuration = widgets[type].configuration;
 
   const { t } = useTranslation();
   const headline = t(`widget.${type}.headline`, options);
 
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
   return (
     <div
       className={cn(
+        "visibility-trigger",
         "flex",
         "flex-col",
         "border",
@@ -59,6 +65,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
         "overflow-hidden",
         "text-color-widget",
         "bg-color-widget",
+        "relative",
         {
           error: hasError
         },
@@ -76,6 +83,19 @@ export const Widget = memo((props: Props & ErrorProps) => {
       )}
 
       {hasError && "» Error «"}
+      {!hasError && (
+        <div className="flex flex-col items-center justify-center h-full">
+          <Suspense fallback={<Loading />}>
+            {React.createElement(Component, {
+              id,
+              setOptionValue,
+              setDataValue,
+              ...options,
+              ...data
+            })}
+          </Suspense>
+        </div>
+      )}
       {isLayoutEditable && (
         <>
           <div className="absolute inset-0 bg-color-widget-dim" />
@@ -93,20 +113,46 @@ export const Widget = memo((props: Props & ErrorProps) => {
           </div>
         </>
       )}
-      {!hasError && (
-        <div className="flex flex-col items-center justify-center h-full">
-          <Suspense fallback={<Loading />}>
-            {React.createElement(Component, {
-              id,
-              setOptionValue,
-              setDataValue,
-              ...options,
-              ...data
+      {!isLayoutEditable && Configuration && (
+        <div className="absolute right-0 top-0 m-2">
+          <Button
+            size={ButtonSize.Small}
+            variant={ButtonVariant.Unstyled}
+            className="visibility-target bg-color-widget"
+            aria-label={t(`widget.common.configuration`, {
+              widget: t(`widget.${type}.name`)
             })}
-          </Suspense>
+            onClick={openModal}
+          >
+            <Icon name="cog" />
+          </Button>
         </div>
       )}
-      {children}
+      <Modal
+        headline={t(`widget.common.configuration`, {
+          widget: t(`widget.${type}.name`)
+        })}
+        closeModal={closeModal}
+        isOpen={isModalOpen}
+      >
+        {Configuration && (
+          <Suspense fallback={<Loading />}>
+            {React.createElement(Configuration, {
+              id,
+              setOptionValue,
+              options
+            })}
+          </Suspense>
+        )}
+        <div className="mt-6 text-right">
+          <Button
+            className="w-full md:w-auto md:ml-5 mt-5"
+            onClick={closeModal}
+          >
+            {t("common.close")}
+          </Button>
+        </div>
+      </Modal>
     </div>
   );
 });

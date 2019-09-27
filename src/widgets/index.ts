@@ -32,7 +32,7 @@ export interface Widgets {
 export const availableWidgets = [
   { name: "text", configurable: false },
   { name: "date-time", configurable: false },
-  { name: "search", configurable: false }
+  { name: "search", configurable: true }
 ];
 
 const widgets: Widgets = availableWidgets.reduce(

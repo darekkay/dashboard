@@ -15,7 +15,7 @@ const Story = () => {
         headline="Modal headline"
       >
         Modal content
-        <div className="mt-7 text-right">
+        <div className="mt-6 text-right">
           <Button
             className="w-full md:w-auto md:ml-5 mt-5"
             outline
