@@ -22,7 +22,7 @@ export interface Props {
 const Footer = memo(({ isLayoutEditable, toggleLayoutEditable }: Props) => {
   const { t } = useTranslation();
   return (
-    <footer className="flex flex-col md:flex-row items-center justify-between p-5 border-top bg-color-footer">
+    <footer className="flex flex-col md:flex-row items-center justify-between p-5 border-top bg-color-panel">
       <div>
         <Button className="m-2" outline onClick={toggleLayoutEditable}>
           <Icon name="edit" position="left" />

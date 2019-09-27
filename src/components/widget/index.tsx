@@ -66,8 +66,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
         "border",
         "rounded",
         "overflow-hidden",
-        "text-color-widget",
-        "bg-color-widget",
+        "bg-color-panel",
         "relative",
         {
           error: hasError
@@ -101,7 +100,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
       )}
       {isLayoutEditable && (
         <>
-          <div className="absolute inset-0 bg-color-widget-dim" />
+          <div className="absolute inset-0 bg-color-dim" />
           <div className="absolute right-0 top-0 m-2">
             <Button
               size={ButtonSize.Small}
@@ -121,7 +120,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
           <Button
             size={ButtonSize.Small}
             variant={ButtonVariant.Unstyled}
-            className="visibility-target bg-color-widget"
+            className="visibility-target bg-color-panel"
             aria-label={t(`widget.common.configuration`, {
               widget: t(`widget.${type}.name`)
             })}

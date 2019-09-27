@@ -18,7 +18,7 @@ const Modal = memo(
       <ReactModal
         onRequestClose={closeModal}
         overlayClassName="fixed inset-0 flex justify-center items-center p-2 backdrop"
-        className="w-full my-8 mx-auto p-6 text-color-default bg-color-default border rounded outline-none overflow-auto"
+        className="w-full my-8 mx-auto p-6 text-color-default bg-color-panel border rounded outline-none overflow-auto"
         contentLabel={headline}
         style={{
           content: {

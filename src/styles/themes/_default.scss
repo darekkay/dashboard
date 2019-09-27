@@ -1,14 +1,14 @@
 .theme-default {
   --text-color: #2b3236;
+  --text-color-highlight: #005aff;
+
   --background-color: #f5f7fb;
-  --highlight-color: #005aff;
+  --background-color-panel: #fff;
+  --background-color-dim: rgba(0, 0, 0, 0.05);
+
   --border-color: #ddd;
   --focus-ring-color: hsla(219, 100%, 50%, 0.5);
-  --backdrop-color: rgba(255 ,255, 255, 0.6);
-
-  --widget-text-color: #000;
-  --widget-background-color: #fff;
-  --widget-dim-background-color: rgba(0, 0, 0, 0.05);
+  --backdrop-color: rgba(255, 255, 255, 0.6);
 
   --button-primary-color: hsl(219, 100%, 50%);
   --button-primary-hover-bg: hsl(219, 100%, 43%);
@@ -25,6 +25,4 @@
 
   --loading-background-color: hsla(0, 0%, 62%, 0.3);
   --loading-spinner-color: #202020;
-
-  --footer-background-color: #fff;
 }

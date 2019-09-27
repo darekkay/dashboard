@@ -29,27 +29,19 @@
 }
 
 .text-color-highlight {
-  background-color: var(--highlight-color);
-}
-
-.text-color-widget {
-  background-color: var(--widget-text-color);
+  color: var(--text-color-highlight);
 }
 
 .bg-color-default {
   background-color: var(--background-color);
 }
 
-.bg-color-widget {
-  background-color: var(--widget-background-color);
+.bg-color-panel {
+  background-color: var(--background-color-panel);
 }
 
-.bg-color-widget-dim {
-  background-color: var(--widget-dim-background-color);
-}
-
-.bg-color-footer {
-  background-color: var(--footer-background-color);
+.bg-color-dim {
+  background-color: var(--background-color-dim);
 }
 
 // Effects

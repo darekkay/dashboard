@@ -5,7 +5,7 @@ import { WidgetProps } from "../index";
 const Text = memo(({ id, content, setDataValue }: Props) => {
   return (
     <textarea
-      className="py-1 px-3 w-full h-full border-0 resize-none text-color-widget bg-color-widget"
+      className="py-1 px-3 w-full h-full border-0 resize-none bg-color-panel"
       aria-label="Text widget"
       // TODO: throttle
       onChange={event =>
