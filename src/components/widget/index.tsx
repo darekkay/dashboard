@@ -26,6 +26,8 @@ export interface Props {
   removeWidgetFromLayout: (id: string) => void;
   isLayoutEditable: boolean;
   className?: string;
+  /** Required to inject the resize handle */
+  children?: React.ReactNode;
 }
 
 /** Single widget within the dashboard */
@@ -41,6 +43,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
     removeWidgetFromLayout,
     isLayoutEditable,
     className,
+    children,
     ...rest
   } = props;
   const Component = widgets[type].component;
@@ -153,6 +156,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
           </Button>
         </div>
       </Modal>
+      {children}
     </div>
   );
 });
