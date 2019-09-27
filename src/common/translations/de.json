@@ -20,7 +20,10 @@
     "search": {
       "name": "Websuche",
       "headline": "{{title}} Suche",
-      "buttonAriaLabel": "Suchergebnisse öffnen"
+      "buttonAriaLabel": "Suchergebnisse öffnen",
+      "configuration": {
+        "pattern": "URL für die Suche"
+      }
     },
     "text": {
       "name": "Notizen",

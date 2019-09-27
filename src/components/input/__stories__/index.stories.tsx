@@ -8,7 +8,7 @@ const Story = () => {
   const [value, setValue] = useState("Hello World");
   return (
     <div>
-      <Input value={value} setValue={setValue} aria-label="Input component" />
+      <Input value={value} setValue={setValue} label="Input component" />
     </div>
   );
 };

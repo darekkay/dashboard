@@ -20,7 +20,10 @@
     "search": {
       "name": "Web Search",
       "headline": "{{title}} Search",
-      "buttonAriaLabel": "Open search results"
+      "buttonAriaLabel": "Open search results",
+      "configuration": {
+        "pattern": "Search URL"
+      }
     },
     "text": {
       "name": "Notes",

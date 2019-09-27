@@ -14,22 +14,26 @@ const onKeyUp = (
 };
 
 const Input = memo(
-  ({ className, setValue, onEnter, onEscape, ...domProps }: Props) => {
+  ({ className, label, setValue, onEnter, onEscape, ...domProps }: Props) => {
     return (
-      <input
-        className={cn(
-          "max-w-full w-full m-2 p-2 border rounded text-color-default bg-color-default text-2",
-          className
-        )}
-        onChange={event => setValue(event.target.value)}
-        onKeyUp={event => onKeyUp(event, onEnter, onEscape)}
-        {...domProps}
-      />
+      <label className="max-w-full w-full flex flex-col">
+        {label && <span className="mb-2 text-2">{label}</span>}
+        <input
+          className={cn(
+            "w-full p-2 border rounded text-color-default bg-color-default text-2",
+            className
+          )}
+          onChange={event => setValue(event.target.value)}
+          onKeyUp={event => onKeyUp(event, onEnter, onEscape)}
+          {...domProps}
+        />
+      </label>
     );
   }
 );
 
 export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+  label?: string;
   setValue: (value: string) => void;
   onEnter?: (value: string) => void;
   onEscape?: (value: string) => void;
