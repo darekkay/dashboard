@@ -3,7 +3,6 @@
 import { createAction, createReducer } from "redux-starter-kit";
 
 import { initialWidgets } from "widgets/demo";
-import { ValueUpdateAction } from "widgets";
 
 const setOptions = createAction("widget/set-options");
 const setData = createAction("widget/set-data-value");
@@ -34,7 +33,7 @@ export const reducerWithInitialState = (state: WidgetsState = initialState) =>
     },
 
     [setData as any]: (state, action) => {
-      const { id, values} = action.payload;
+      const { id, values } = action.payload;
       state[id].data = { ...state[id].data, ...values };
     },
 
