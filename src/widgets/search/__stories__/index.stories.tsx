@@ -11,8 +11,8 @@ const Story = () => {
       type="search"
       options={{ pattern: "https://duckduckgo.com/?q=%s", title: "DuckDuckGo" }}
       data={{}}
-      setDataValue={_.noop}
-      setOptionValue={_.noop}
+      setData={_.noop}
+      setOptions={_.noop}
       removeWidgetFromLayout={_.noop}
       isLayoutEditable={false}
       hasError={false}

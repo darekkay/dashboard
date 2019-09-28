@@ -2,24 +2,22 @@ import React from "react";
 
 export type ValueUpdateAction = ({
   id,
-  key,
-  value
+  values
 }: {
   id: string;
-  key: string;
-  value: any;
+  values: { [key: string]: any };
 }) => void;
 
 export interface WidgetProps {
   id: string;
-  setDataValue: ValueUpdateAction;
-  setOptionValue: ValueUpdateAction;
+  setData: ValueUpdateAction;
+  setOptions: ValueUpdateAction;
 }
 
 export interface ConfigurationProps {
   id: string;
   options: { [key: string]: any };
-  setOptionValue: ValueUpdateAction;
+  setOptions: ValueUpdateAction;
 }
 
 export interface Widgets {

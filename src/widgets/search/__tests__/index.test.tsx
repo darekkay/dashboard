@@ -14,8 +14,8 @@ describe("<Search />", () => {
         id="search-mock-id"
         name="Search"
         pattern="https://example.com?s=%s"
-        setDataValue={() => null}
-        setOptionValue={() => null}
+        setData={() => null}
+        setOptions={() => null}
       />
     );
   });

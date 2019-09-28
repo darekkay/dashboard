@@ -3,9 +3,10 @@
 import { createAction, createReducer } from "redux-starter-kit";
 
 import { initialWidgets } from "widgets/demo";
+import { ValueUpdateAction } from "widgets";
 
-const setOptionValue = createAction("widget/set-option-value");
-const setDataValue = createAction("widget/set-data-value");
+const setOptions = createAction("widget/set-options");
+const setData = createAction("widget/set-data-value");
 export const createWidget = createAction("widget/create");
 export const removeWidget = createAction("widget/remove");
 
@@ -27,14 +28,14 @@ export const initialState = initialWidgets;
 
 export const reducerWithInitialState = (state: WidgetsState = initialState) =>
   createReducer(state, {
-    [setOptionValue as any]: (state, action) => {
-      const { id, key, value } = action.payload;
-      state[id].options[key] = value;
+    [setOptions as any]: (state, action) => {
+      const { id, values } = action.payload;
+      state[id].options = { ...state[id].options, ...values };
     },
 
-    [setDataValue as any]: (state, action) => {
-      const { id, key, value } = action.payload;
-      state[id].data[key] = value;
+    [setData as any]: (state, action) => {
+      const { id, values} = action.payload;
+      state[id].data = { ...state[id].data, ...values };
     },
 
     [createWidget as any]: (state, action) => {
@@ -53,6 +54,6 @@ export const reducerWithInitialState = (state: WidgetsState = initialState) =>
   });
 
 export const actionCreators = {
-  setOptionValue,
-  setDataValue
+  setOptions,
+  setData
 };

@@ -14,9 +14,9 @@ describe("<Widget />", () => {
         type="text"
         isLayoutEditable={false}
         options={{}}
-        setOptionValue={() => null}
+        setOptions={() => null}
         data={{}}
-        setDataValue={() => null}
+        setData={() => null}
         removeWidgetFromLayout={_.noop}
         hasError={false}
       />

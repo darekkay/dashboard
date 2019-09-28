@@ -21,8 +21,8 @@ export interface Props {
   type: string;
   options: { [key: string]: any };
   data: { [key: string]: any };
-  setOptionValue: ValueUpdateAction;
-  setDataValue: ValueUpdateAction;
+  setOptions: ValueUpdateAction;
+  setData: ValueUpdateAction;
   removeWidgetFromLayout: (id: string) => void;
   isLayoutEditable: boolean;
   className?: string;
@@ -38,8 +38,8 @@ export const Widget = memo((props: Props & ErrorProps) => {
     options,
     data,
     hasError,
-    setOptionValue,
-    setDataValue,
+    setOptions,
+    setData,
     removeWidgetFromLayout,
     isLayoutEditable,
     className,
@@ -90,8 +90,8 @@ export const Widget = memo((props: Props & ErrorProps) => {
           <Suspense fallback={<Loading />}>
             {React.createElement(Component, {
               id,
-              setOptionValue,
-              setDataValue,
+              setOptions,
+              setData,
               ...options,
               ...data
             })}
@@ -141,7 +141,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
           <Suspense fallback={<Loading />}>
             {React.createElement(Configuration, {
               id,
-              setOptionValue,
+              setOptions,
               options
             })}
           </Suspense>

@@ -11,8 +11,8 @@ describe("<DateTime />", () => {
       <DateTime
         id="date-time-mock-id"
         date={Date.now()}
-        setDataValue={() => null}
-        setOptionValue={() => null}
+        setData={() => null}
+        setOptions={() => null}
       />
     );
   });

@@ -5,10 +5,9 @@ describe("Widget duck", () => {
   it("updates the widget's option value", () => {
     const updatedState = reducerWithInitialState()(
       initialState,
-      actionCreators.setOptionValue({
+      actionCreators.setOptions({
         id: "date-time-01",
-        key: "content",
-        value: "mock"
+        values: { content: "mock" }
       })
     );
 
@@ -18,10 +17,9 @@ describe("Widget duck", () => {
   it("updates the widget's data value", () => {
     const updatedState = reducerWithInitialState()(
       initialState,
-      actionCreators.setDataValue({
+      actionCreators.setData({
         id: "date-time-01",
-        key: "content",
-        value: "mock"
+        values: { content: "mock" }
       })
     );
 

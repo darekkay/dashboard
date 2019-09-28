@@ -11,8 +11,8 @@ const Story = () => {
       type="date-time"
       options={{}}
       data={{ date: Date.now() }}
-      setDataValue={_.noop}
-      setOptionValue={_.noop}
+      setData={_.noop}
+      setOptions={_.noop}
       removeWidgetFromLayout={_.noop}
       isLayoutEditable={false}
       hasError={false}

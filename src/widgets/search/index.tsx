@@ -20,7 +20,7 @@ const openSearchUrl = (
   }
 };
 
-const Search = memo(({ id, setDataValue, name, pattern }: Props) => {
+const Search = memo(({ id, setData, name, pattern }: Props) => {
   const [value, setValue] = useState("");
   const { t } = useTranslation();
   return (
