@@ -7,11 +7,19 @@ import Input from "components/input";
 const Configuration = ({ id, options, setOptionValue }: ConfigurationProps) => {
   const { t } = useTranslation();
   return (
-    <Input
-      setValue={value => setOptionValue({ id, key: "pattern", value })}
-      value={options.pattern}
-      label={t("widget.search.configuration.pattern")}
-    />
+    <>
+      <Input
+        setValue={value => setOptionValue({ id, key: "title", value })}
+        value={options.title}
+        label={t("widget.search.configuration.title")}
+        className="mb-6"
+      />
+      <Input
+        setValue={value => setOptionValue({ id, key: "pattern", value })}
+        value={options.pattern}
+        label={t("widget.search.configuration.pattern")}
+      />
+    </>
   );
 };
 

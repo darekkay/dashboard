@@ -22,6 +22,7 @@
       "headline": "{{title}} Suche",
       "buttonAriaLabel": "Suchergebnisse öffnen",
       "configuration": {
+        "title": "Titel",
         "pattern": "URL für die Suche"
       }
     },
