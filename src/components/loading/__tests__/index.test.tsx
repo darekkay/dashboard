@@ -10,7 +10,7 @@ describe("<Loading />", () => {
     wrapper = shallow(<Loading />);
   });
 
-  it("renders without error", () => {
-    expect(wrapper.find(".loading")).toHaveLength(1);
+  it("renders a spinner by default", () => {
+    expect(wrapper.find(".spinner")).toHaveLength(1);
   });
 });

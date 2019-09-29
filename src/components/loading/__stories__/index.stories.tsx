@@ -6,9 +6,15 @@ import Loading from "../index";
 
 const Story = () => {
   return (
-    <div>
-      <Loading />
-    </div>
+    <>
+      <h2 className="mb-5">Spinner</h2>
+      <Loading type="spinner" />
+
+      <h2 className="my-5">Skeleton</h2>
+      <div style={{ height: "200px", width: "100%" }}>
+        <Loading type="skeleton" />
+      </div>
+    </>
   );
 };
 

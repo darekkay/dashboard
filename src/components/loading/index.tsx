@@ -6,13 +6,20 @@ import "./styles.scss";
 
 export interface Props {
   className?: string;
+  type?: "spinner" | "skeleton";
 }
 
-const Loading = memo(({ className }: Props) => {
+const Loading = memo(({ className, type = "spinner" }: Props) => {
   const { t } = useTranslation();
   return (
     <div
-      className={cn("loading mx-auto", className)}
+      className={cn(
+        {
+          "spinner mx-auto": type === "spinner",
+          skeleton: type === "skeleton"
+        },
+        className
+      )}
       aria-label={t("common.loading")}
     />
   );
