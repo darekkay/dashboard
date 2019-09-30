@@ -1,6 +1,13 @@
 ## Unreleased
 
 
+## 1.0.9 (2019-09-30)
+
+- :sparkles: Add a configuration dialog for the search widget.
+- :gem: Add common search providers.
+- :rocket: Replace the widget loading animation with a skeleton.
+- :bug: Minor bug fixes and improvements.
+
 ## 1.0.8 (2019-09-21)
 
 - :sparkles: Enable removing existing widgets from the dashboard.
