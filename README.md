@@ -60,7 +60,10 @@ The configuration options for each widget are listed [here](docs/widgets.md).
 
 ## Creating a new widget
 
-First, run the file generator to create a new widget (`yarn generate`). Then, re-scan the available widgets (`yarn scan-widgets`). This will make the widget available on the Dashboard.
+1. Run the file generator to create a new widget (`yarn generate`).
+2. Adjust the widget's `properties.ts` file with sane default values.
+3. Re-scan the available widgets (`yarn scan-widgets`).
+4. Define the required widget labels, like the name (visible in widget drawer) and headline (leave empty if no headline is required).
 
 ## Contribution
 

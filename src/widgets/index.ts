@@ -23,10 +23,18 @@ export interface ConfigurationProps {
 export interface Widgets {
   [key: string]: {
     configurable: boolean;
+    initialHeight: number;
+    initialWidth: number;
   };
 }
 
 export const isConfigurable = (widget: string) =>
   availableWidgets[widget].configurable;
+
+export const initialHeight = (widget: string) =>
+  availableWidgets[widget].initialHeight;
+
+export const initialWidth = (widget: string) =>
+  availableWidgets[widget].initialWidth;
 
 export default availableWidgets;

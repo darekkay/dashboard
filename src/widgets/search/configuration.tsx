@@ -5,7 +5,7 @@ import { ConfigurationProps } from "widgets/index";
 import Input from "components/input";
 import Button from "components/button";
 
-import providers from "widgets/search/providers";
+import providers from "widgets/search/lib/providers";
 
 const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
   const { t } = useTranslation();

@@ -1,6 +1,7 @@
 ## Unreleased
 
-- :gem: List available widgets dynamically.
+- :gem: Define default options per widget.
+- :construction_worker: List available widgets dynamically.
 
 ## 1.0.9 (2019-09-30)
 

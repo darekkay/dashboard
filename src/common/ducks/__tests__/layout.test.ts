@@ -56,7 +56,7 @@ describe("Layout duck", () => {
     const addWidgetToLayoutAction = (widgets: ReactGridLayout[]) =>
       reducerWithInitialState()(
         getInitialState(widgets),
-        actionCreators.addWidgetToLayout()
+        actionCreators.addWidgetToLayout("text")
       );
 
     let updatedState = addWidgetToLayoutAction([
