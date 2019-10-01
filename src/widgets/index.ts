@@ -25,6 +25,9 @@ export interface Widgets {
     configurable: boolean;
     initialHeight: number;
     initialWidth: number;
+    initialOptions: {
+      [key: string]: any;
+    };
   };
 }
 
@@ -36,5 +39,8 @@ export const initialHeight = (widget: string) =>
 
 export const initialWidth = (widget: string) =>
   availableWidgets[widget].initialWidth;
+
+export const initialOptions = (widget: string) =>
+  availableWidgets[widget].initialOptions;
 
 export default availableWidgets;
