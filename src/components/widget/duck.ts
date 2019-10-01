@@ -2,7 +2,7 @@
 
 import { createAction, createReducer } from "redux-starter-kit";
 
-import { initialOptions } from "widgets";
+import widgets from "widgets";
 import { initialWidgets } from "widgets/demo";
 
 const setOptions = createAction("widget/set-options");
@@ -43,7 +43,7 @@ export const reducerWithInitialState = (state: WidgetsState = initialState) =>
       state[id] = {
         type,
         data: {},
-        options: initialOptions(type)
+        options: widgets[type].initialOptions
       };
     },
 

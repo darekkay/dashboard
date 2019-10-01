@@ -9,7 +9,7 @@ import withErrorHandling, {
 import Button, { ButtonVariant, ButtonSize } from "components/button";
 import Icon from "components/icon";
 import Modal from "components/modal";
-import { isConfigurable, ValueUpdateAction } from "widgets";
+import widgets, { ValueUpdateAction } from "widgets";
 
 import Loading from "../loading";
 
@@ -47,7 +47,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
     ...rest
   } = props;
 
-  const isWidgetConfigurable = isConfigurable(type);
+  const isWidgetConfigurable = widgets[type].configurable;
 
   const { t } = useTranslation();
   const headline = t(`widget.${type}.headline`, options);
@@ -88,7 +88,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
       {!hasError && (
         <div className="flex flex-col items-center justify-center h-full">
           <Suspense fallback={<Loading type="skeleton" />}>
-            {React.createElement(React.lazy(() => import(`widgets/${type}`)), {
+            {React.createElement(widgets[type].Component, {
               id,
               setOptions,
               setData,
@@ -139,14 +139,11 @@ export const Widget = memo((props: Props & ErrorProps) => {
       >
         {isWidgetConfigurable && (
           <Suspense fallback={<Loading />}>
-            {React.createElement(
-              React.lazy(() => import(`widgets/${type}/configuration`)),
-              {
-                id,
-                setOptions,
-                options
-              }
-            )}
+            {React.createElement(widgets[type].Configuration, {
+              id,
+              setOptions,
+              options
+            })}
           </Suspense>
         )}
         <div className="mt-6 text-right">

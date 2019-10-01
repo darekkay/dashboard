@@ -1,3 +1,5 @@
+import React from "react";
+
 import availableWidgets from "./list";
 
 export type ValueUpdateAction = ({
@@ -20,27 +22,33 @@ export interface ConfigurationProps {
   setOptions: ValueUpdateAction;
 }
 
-export interface Widgets {
-  [key: string]: {
-    configurable: boolean;
-    initialHeight: number;
-    initialWidth: number;
-    initialOptions: {
-      [key: string]: any;
-    };
+export interface WidgetProperties {
+  configurable: boolean;
+  initialHeight: number;
+  initialWidth: number;
+  initialOptions: {
+    [key: string]: any;
   };
 }
 
-export const isConfigurable = (widget: string) =>
-  availableWidgets[widget].configurable;
+export interface WidgetElements {
+  Component: React.ComponentClass<WidgetProps>;
+  Configuration: React.ComponentClass<ConfigurationProps>;
+}
 
-export const initialHeight = (widget: string) =>
-  availableWidgets[widget].initialHeight;
+const importWidgets = (widgets: { [key: string]: WidgetProperties }) =>
+  Object.entries(widgets).reduce(
+    (acc, [type, values]) => ({
+      ...acc,
+      [type]: {
+        ...values,
+        Component: React.lazy(() => import(`widgets/${type}`)),
+        Configuration: values.configurable
+          ? React.lazy(() => import(`widgets/${type}/configuration`))
+          : null
+      }
+    }),
+    {}
+  ) as { [key: string]: WidgetProperties & WidgetElements };
 
-export const initialWidth = (widget: string) =>
-  availableWidgets[widget].initialWidth;
-
-export const initialOptions = (widget: string) =>
-  availableWidgets[widget].initialOptions;
-
-export default availableWidgets;
+export default importWidgets(availableWidgets);

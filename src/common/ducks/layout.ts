@@ -7,7 +7,7 @@ import { map, mergeMap } from "rxjs/operators";
 import { Layout as ReactGridLayout } from "react-grid-layout";
 
 import { initialLayout } from "widgets/demo";
-import { initialHeight, initialWidth } from "widgets";
+import widgets from "widgets";
 import { createWidget, removeWidget } from "components/widget/duck";
 
 const saveLayout = createAction("layout/save");
@@ -59,8 +59,8 @@ export const reducerWithInitialState = (state: LayoutState = initialState) =>
         i: widgetId(action.payload, state.nextWidgetId),
         x: 0,
         y: newWidgetY(state),
-        w: initialWidth(action.payload),
-        h: initialHeight(action.payload)
+        w: widgets[action.payload].initialWidth,
+        h: widgets[action.payload].initialHeight
       };
       return {
         ...state,
