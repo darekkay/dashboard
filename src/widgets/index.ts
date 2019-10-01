@@ -1,4 +1,4 @@
-import React from "react";
+import availableWidgets from "./list";
 
 export type ValueUpdateAction = ({
   id,
@@ -22,28 +22,11 @@ export interface ConfigurationProps {
 
 export interface Widgets {
   [key: string]: {
-    component: React.ComponentClass<WidgetProps>;
-    configuration?: React.ComponentClass<ConfigurationProps>;
+    configurable: boolean;
   };
 }
 
-export const availableWidgets = [
-  { name: "text", configurable: false },
-  { name: "date-time", configurable: false },
-  { name: "search", configurable: true }
-];
+export const isConfigurable = (widget: string) =>
+  availableWidgets[widget].configurable;
 
-const widgets: Widgets = availableWidgets.reduce(
-  (acc, widget) => ({
-    ...acc,
-    [widget.name]: {
-      component: React.lazy(() => import(`widgets/${widget.name}`)),
-      configuration: widget.configurable
-        ? React.lazy(() => import(`widgets/${widget.name}/configuration`))
-        : null
-    }
-  }),
-  {}
-);
-
-export default widgets;
+export default availableWidgets;

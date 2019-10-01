@@ -1,3 +1,7 @@
+## (1.0.10)
+
+Until now, the available widgets and their configurability were hard coded. With more widgets and widget properties (like initial options) coming, a dynamic way to list the widgets and their properties was needed. Now creating a new widget means just using the file generator (`yarn generate`) followed by a script to re-scan the available widgets (`yarn scan-widgets`).
+
 ## 2019-09-30 (1.0.9)
 
 The personalization concept is fully implemented: every widget can now define a configuration modal. The first (and currently only) widget is the Search widget, where the user is able to define the title and URL pattern. A list of predefined search engines is also available for a quicker access.

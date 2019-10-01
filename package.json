@@ -59,6 +59,7 @@
     "prettier": "1.18.2",
     "storybook-addon-themes": "5.2.0",
     "tailwindcss": "1.1.2",
+    "ts-node": "^8.4.1",
     "typescript": "3.6.3"
   },
   "eslintConfig": {
@@ -95,6 +96,7 @@
     "generate": "plop --plopfile internals/generators/index.js",
     "lint:check": "tsc && eslint src/**/*.{ts,tsx,js}",
     "lint:fix": "eslint --fix src/**/*.{ts,tsx,js}",
+    "scan-widgets": "ts-node -P internals/scripts/tsconfig.json internals/scripts/scan-widgets.ts && prettier --write src/widgets/list.ts",
     "start": "react-scripts start",
     "tailwind": "tailwind build internals/tailwind/tailwind.css -c internals/tailwind/config.js --no-autoprefixer -o src/styles/_tailwind.scss",
     "test": "react-scripts test --modulePaths=src --coverage",

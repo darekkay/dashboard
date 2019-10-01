@@ -58,6 +58,10 @@ The configuration options for each widget are listed [here](docs/widgets.md).
 - [ ] Todo tasks (integration with 3rd party, like Todoist, Wunderlist or GitHub Issues)
   ...
 
+## Creating a new widget
+
+First, run the file generator to create a new widget (`yarn generate`). Then, re-scan the available widgets (`yarn scan-widgets`). This will make the widget available on the Dashboard.
+
 ## Contribution
 
 All contributors are highly welcome, especially designers. If you want to collaborate on this project, just give me a [note](mailto:hello@darekkay.com).

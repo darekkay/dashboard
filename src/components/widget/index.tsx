@@ -9,7 +9,7 @@ import withErrorHandling, {
 import Button, { ButtonVariant, ButtonSize } from "components/button";
 import Icon from "components/icon";
 import Modal from "components/modal";
-import widgets, { ValueUpdateAction } from "widgets";
+import { isConfigurable, ValueUpdateAction } from "widgets";
 
 import Loading from "../loading";
 
@@ -46,8 +46,8 @@ export const Widget = memo((props: Props & ErrorProps) => {
     children,
     ...rest
   } = props;
-  const Component = widgets[type].component;
-  const Configuration = widgets[type].configuration;
+
+  const isWidgetConfigurable = isConfigurable(type);
 
   const { t } = useTranslation();
   const headline = t(`widget.${type}.headline`, options);
@@ -88,7 +88,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
       {!hasError && (
         <div className="flex flex-col items-center justify-center h-full">
           <Suspense fallback={<Loading type="skeleton" />}>
-            {React.createElement(Component, {
+            {React.createElement(React.lazy(() => import(`widgets/${type}`)), {
               id,
               setOptions,
               setData,
@@ -115,7 +115,7 @@ export const Widget = memo((props: Props & ErrorProps) => {
           </div>
         </>
       )}
-      {!isLayoutEditable && Configuration && (
+      {!isLayoutEditable && isWidgetConfigurable && (
         <div className="absolute right-0 top-0 m-2">
           <Button
             size={ButtonSize.Small}
@@ -137,13 +137,16 @@ export const Widget = memo((props: Props & ErrorProps) => {
         closeModal={closeModal}
         isOpen={isModalOpen}
       >
-        {Configuration && (
+        {isWidgetConfigurable && (
           <Suspense fallback={<Loading />}>
-            {React.createElement(Configuration, {
-              id,
-              setOptions,
-              options
-            })}
+            {React.createElement(
+              React.lazy(() => import(`widgets/${type}/configuration`)),
+              {
+                id,
+                setOptions,
+                options
+              }
+            )}
           </Suspense>
         )}
         <div className="mt-6 text-right">

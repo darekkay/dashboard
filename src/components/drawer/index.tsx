@@ -2,8 +2,10 @@ import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import Button, { ButtonSize } from "components/button";
-import { availableWidgets } from "widgets";
+import widgets from "widgets";
 import Icon from "../icon";
+
+const availableWidgets = Object.keys(widgets);
 
 /* TODO: render display name instead of slug */
 const Drawer = memo(({ addWidgetToLayout }: Props) => {
@@ -14,15 +16,15 @@ const Drawer = memo(({ addWidgetToLayout }: Props) => {
         {t("widget.common.drawerHeadline")}
       </div>
       {availableWidgets.map(widget => (
-        <div key={widget.name} className="flex justify-between py-2">
-          {t(`widget.${widget.name}.name`)}
+        <div key={widget} className="flex justify-between py-2">
+          {t(`widget.${widget}.name`)}
           <Button
             size={ButtonSize.Small}
             outline
             aria-label={t("widget.common.add", {
-              widget: t(`widget.${widget.name}.name`)
+              widget: t(`widget.${widget}.name`)
             })}
-            onClick={() => addWidgetToLayout(widget.name)}
+            onClick={() => addWidgetToLayout(widget)}
           >
             <Icon name="plus" alt="" />
           </Button>
