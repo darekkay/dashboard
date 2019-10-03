@@ -2,7 +2,6 @@ import { BehaviorSubject } from "rxjs";
 import { mergeMap } from "rxjs/operators";
 import { combineEpics, Epic } from "redux-observable";
 
-import { epic as heartbeatEpic$ } from "common/ducks/heartbeat";
 import { epic as layoutEpic$ } from "common/ducks/layout";
 
 const behaviorSubject = new BehaviorSubject(combineEpics());
@@ -14,4 +13,4 @@ const dynamicEpic$: Epic = (action$, state$) =>
     mergeMap((epic: Epic) => epic(action$, state$, undefined))
   );
 
-export const rootEpic = combineEpics(heartbeatEpic$, layoutEpic$, dynamicEpic$);
+export const rootEpic = combineEpics(layoutEpic$, dynamicEpic$);

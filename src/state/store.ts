@@ -4,7 +4,6 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 import { ConfigState } from "common/ducks/config";
 import { WidgetsState } from "components/widget/duck";
-import { sendHeartbeat } from "../common/ducks/heartbeat";
 
 import { persistReducer, persistStore, pause } from "./localStorage";
 import { rootReducer } from "./reducers";
@@ -15,7 +14,6 @@ interface DataState {
 }
 
 export interface State {
-  heartbeat: number;
   config: ConfigState;
   widgets: WidgetsState;
   sharedData: DataState;
@@ -30,7 +28,7 @@ const initStore = () => {
   const composeEnhancers = composeWithDevTools({
     // Enable capture of stack traces for dispatched Redux actions
     trace: !IS_PRODUCTION,
-    actionsBlacklist: [sendHeartbeat.toString()]
+    actionsBlacklist: []
   });
 
   const epicMiddleware = createEpicMiddleware();

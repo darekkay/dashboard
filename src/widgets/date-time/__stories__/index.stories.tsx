@@ -10,7 +10,7 @@ const Story = () => {
       id="date-time-01"
       type="date-time"
       options={{}}
-      data={{ date: Date.now() }}
+      data={{}}
       setData={_.noop}
       setOptions={_.noop}
       removeWidgetFromLayout={_.noop}

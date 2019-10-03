@@ -1,12 +1,10 @@
 import React, { memo } from "react";
 import { connect } from "react-redux";
 
-import { actionCreators as heartbeatActionCreators } from "common/ducks/heartbeat";
 import {
   actionCreators as layoutActionCreators,
   Layout
 } from "common/ducks/layout";
-import useInterval from "common/hooks/useInterval";
 import Dashboard from "components/dashboard";
 import Drawer from "components/drawer";
 import Footer from "components/footer";
@@ -25,8 +23,6 @@ export interface Props {
 
   addWidgetToLayout: (widgetName: string) => void;
   removeWidgetFromLayout: (widgetId: string) => void;
-
-  sendHeartbeat: (date: number) => void;
 }
 
 export const App = memo((props: Props) => {
@@ -38,12 +34,8 @@ export const App = memo((props: Props) => {
     isLayoutEditable,
     toggleLayoutEditable,
     addWidgetToLayout,
-    removeWidgetFromLayout,
-    sendHeartbeat
+    removeWidgetFromLayout
   } = props;
-
-  /* istanbul ignore next */
-  useInterval(() => sendHeartbeat(Date.now()), 1000);
 
   return (
     <>
@@ -74,7 +66,6 @@ export const App = memo((props: Props) => {
 export default connect(
   mapStateToProps,
   {
-    ...heartbeatActionCreators,
     ...layoutActionCreators
   }
 )(App);

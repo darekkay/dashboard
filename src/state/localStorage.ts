@@ -6,7 +6,7 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // localStorage for web and AsyncStorage for react-native
 
-const blacklist = ["heartbeat"];
+const blacklist: string[] = [];
 
 export const persistReducer = (reducer: Reducer) =>
   _persistReducer(

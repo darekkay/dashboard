@@ -10,7 +10,6 @@ describe("<DateTime />", () => {
     wrapper = shallow(
       <DateTime
         id="date-time-mock-id"
-        date={Date.now()}
         setData={() => null}
         setOptions={() => null}
       />

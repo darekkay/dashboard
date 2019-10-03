@@ -4,7 +4,7 @@ import {
   actionCreators
 } from "../sharedData";
 
-describe("Heartbeat duck", () => {
+describe("SharedData duck", () => {
   it("updates the state", () => {
     const mockDate = Date.now();
     const updatedState = reducerWithInitialState()(
