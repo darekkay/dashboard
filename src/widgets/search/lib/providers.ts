@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export interface SearchProvider {
   title: string;
   pattern: string;
