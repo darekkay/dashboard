@@ -14,7 +14,7 @@ export enum ButtonSize {
   Small = "small"
 }
 
-const Button = memo(
+const Button: React.FC<Props> = memo(
   ({
     children,
     className,
@@ -22,7 +22,7 @@ const Button = memo(
     size = ButtonSize.Regular,
     outline,
     ...domProps
-  }: Props) => (
+  }) => (
     <button
       className={cn(
         "btn",

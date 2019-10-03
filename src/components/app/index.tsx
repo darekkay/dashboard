@@ -25,7 +25,7 @@ export interface Props {
   removeWidgetFromLayout: (widgetId: string) => void;
 }
 
-export const App = memo((props: Props) => {
+export const App: React.FC<Props> = memo(props => {
   const {
     gridColumns,
     widgetIDs,

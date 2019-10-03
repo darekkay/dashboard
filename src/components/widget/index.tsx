@@ -31,7 +31,7 @@ export interface Props {
 }
 
 /** Single widget within the dashboard */
-export const Widget = memo((props: Props & ErrorProps) => {
+export const Widget: React.FC<Props & ErrorProps> = memo(props => {
   const {
     id,
     type,

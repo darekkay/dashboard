@@ -13,8 +13,8 @@ const onKeyUp = (
   }
 };
 
-const Input = memo(
-  ({ className, label, setValue, onEnter, onEscape, ...domProps }: Props) => {
+const Input: React.FC<Props> = memo(
+  ({ className, label, setValue, onEnter, onEscape, ...domProps }) => {
     return (
       <label className="max-w-full w-full flex flex-col">
         {label && <span className="mb-2 text-2">{label}</span>}

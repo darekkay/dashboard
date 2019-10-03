@@ -4,7 +4,7 @@ import moment from "moment";
 import useInterval from "common/hooks/useInterval";
 import { WidgetProps } from "../index";
 
-export const DateTime: React.FunctionComponent<WidgetProps> = memo(() => {
+export const DateTime: React.FC<WidgetProps> = memo(() => {
   const [momentDate, setMomentDate] = useState(moment());
   useInterval(() => setMomentDate(moment()), 1000);
 

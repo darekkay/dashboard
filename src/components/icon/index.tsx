@@ -14,7 +14,7 @@ export interface Props {
   position?: "left" | "right";
 }
 
-const renderIcon = (props: Props) => {
+const renderIcon: React.FC<Props> = props => {
   const component = svgs[_.capitalize(props.name)];
   if (!component) throw new Error(`Unknown icon '${props.name}'`);
 
@@ -23,7 +23,7 @@ const renderIcon = (props: Props) => {
   });
 };
 
-const Icon = memo((props: Props) => {
+const Icon: React.FC<Props> = memo(props => {
   const { name, className, position } = props;
   return (
     <div

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { WidgetProps } from "../index";
 
-const Text = memo(({ id, content, setData }: Props) => {
+const Text: React.FC<Props> = memo(({ id, content, setData }) => {
   const { t } = useTranslation();
   return (
     <textarea

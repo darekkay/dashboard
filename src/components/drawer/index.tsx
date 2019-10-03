@@ -7,8 +7,7 @@ import Icon from "../icon";
 
 const availableWidgets = Object.keys(widgets);
 
-/* TODO: render display name instead of slug */
-const Drawer = memo(({ addWidgetToLayout }: Props) => {
+const Drawer: React.FC<Props> = memo(({ addWidgetToLayout }) => {
   const { t } = useTranslation();
   return (
     <div className="p-3 bg-color-default border" style={{ width: "250px" }}>

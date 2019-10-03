@@ -11,8 +11,8 @@ if (process.env.NODE_ENV !== "test") {
   ReactModal.setAppElement("#root");
 }
 
-const Modal = memo(
-  ({ headline, maxWidth = "600px", closeModal, children, ...rest }: Props) => {
+const Modal: React.FC<Props> = memo(
+  ({ headline, maxWidth = "600px", closeModal, children, ...rest }) => {
     const { t } = useTranslation();
     return (
       <ReactModal

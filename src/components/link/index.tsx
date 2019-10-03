@@ -4,7 +4,7 @@ export interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   external?: boolean;
 }
 
-export const Link = memo((props: Props) => {
+export const Link: React.FC<Props> = memo(props => {
   const { external = true, ...domProps } = props;
   return (
     <a

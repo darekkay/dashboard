@@ -15,7 +15,7 @@ export interface Props {
 /* TODO: refactor to select all language instead of toggling */
 const getNextLanguage = (language: string) => (language === "de" ? "en" : "de");
 
-export const LanguageSelect = memo((props: Props) => {
+export const LanguageSelect: React.FC<Props> = memo(props => {
   const { language, changeLanguage } = props;
   const { i18n } = useTranslation();
 

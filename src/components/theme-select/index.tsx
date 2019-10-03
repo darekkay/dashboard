@@ -24,7 +24,7 @@ export const updateCssVariables = (theme: string) => {
 const getNextTheme = (theme: string) =>
   theme === "default" ? "dark" : "default";
 
-export const ThemeSelect = memo((props: Props) => {
+export const ThemeSelect: React.FC<Props> = memo(props => {
   const { theme, changeTheme } = props;
 
   const toggleTheme = useCallback(() => {

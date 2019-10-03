@@ -9,7 +9,7 @@ export interface Props {
   type?: "spinner" | "skeleton";
 }
 
-const Loading = memo(({ className, type = "spinner" }: Props) => {
+const Loading: React.FC<Props> = memo(({ className, type = "spinner" }) => {
   const { t } = useTranslation();
   return (
     <div
