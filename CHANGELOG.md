@@ -1,6 +1,7 @@
 ## Unreleased
 
 - :gem: Define default options per widget.
+- :gem: Centralize the access to environmental variables.
 - :construction_worker: List available widgets dynamically.
 
 ## 1.0.9 (2019-09-30)

@@ -1,18 +1,19 @@
 import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 
+import { APP_VERSION } from "common/environment";
 import Link from "components/link";
 import Button from "components/button";
 import Icon from "components/icon";
 import ThemeSelect from "components/theme-select";
 import LanguageSelect from "components/language-select";
 
-const Version: React.FC<{}> = memo(() => (
+const Version: React.FC<{}> = () => (
   <div>
     <Link href="https://github.com/darekkay/dashboard">Dashboard</Link>{" "}
-    {process.env.REACT_APP_VERSION}
+    {APP_VERSION}
   </div>
-));
+);
 
 export interface Props {
   isLayoutEditable: boolean;

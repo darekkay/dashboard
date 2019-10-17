@@ -2,6 +2,7 @@ import { createStore, applyMiddleware } from "redux";
 import { createEpicMiddleware } from "redux-observable";
 import { composeWithDevTools } from "redux-devtools-extension";
 
+import { IS_PRODUCTION, IS_STORAGE_PAUSED } from "common/environment";
 import { ConfigState } from "common/ducks/config";
 import { WidgetsState } from "components/widget/duck";
 
@@ -20,9 +21,6 @@ export interface State {
 
   readonly [key: string]: any;
 }
-
-const IS_PRODUCTION = process.env.NODE_ENV === "production";
-const IS_PAUSED = false;
 
 const initStore = () => {
   const composeEnhancers = composeWithDevTools({
@@ -43,7 +41,7 @@ const initStore = () => {
   const persistor = persistStore(store);
 
   /* istanbul ignore next */
-  if (IS_PAUSED) {
+  if (IS_STORAGE_PAUSED) {
     pause(persistor);
   }
 
