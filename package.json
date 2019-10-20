@@ -81,6 +81,7 @@
       "!**/node_modules/**",
       "!**/__stories__/**",
       "!**/react-app-env.d.ts",
+      "!src/components/**/selectors.ts",
       "!src/widgets/**/properties.ts",
       "!src/widgets/**/configuration.tsx"
     ]

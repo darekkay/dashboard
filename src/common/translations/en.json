@@ -3,7 +3,8 @@
     "edit": "Edit",
     "save": "Save",
     "close": "Close",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "settings": "Settings"
   },
   "widget": {
     "common": {
