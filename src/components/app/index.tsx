@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useEffect } from "react";
 import { connect } from "react-redux";
 
 import {
@@ -8,6 +8,7 @@ import {
 import Dashboard from "components/dashboard";
 import Drawer from "components/drawer";
 import Header from "components/header";
+import { updateCssVariables, Theme } from "components/theme-select";
 
 import mapStateToProps from "./selectors";
 
@@ -23,6 +24,8 @@ export interface Props {
 
   addWidgetToLayout: (widgetName: string) => void;
   removeWidgetFromLayout: (widgetId: string) => void;
+
+  currentTheme: Theme;
 }
 
 export const App: React.FC<Props> = memo(props => {
@@ -34,8 +37,13 @@ export const App: React.FC<Props> = memo(props => {
     isLayoutEditable,
     toggleLayoutEditable,
     addWidgetToLayout,
-    removeWidgetFromLayout
+    removeWidgetFromLayout,
+    currentTheme
   } = props;
+
+  useEffect(() => {
+    updateCssVariables(currentTheme);
+  }, [currentTheme]);
 
   return (
     <>

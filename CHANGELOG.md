@@ -1,6 +1,7 @@
 ## Unreleased
 
 - :rocket: Restructure the settings UI.
+- :rocket: Add a theme selection preview.
 - :gem: Define default options per widget.
 - :gem: Centralize the access to environmental variables.
 - :bug: Hide vertical scrollbar if all widgets fit into the screen.

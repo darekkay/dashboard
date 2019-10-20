@@ -1,45 +1,80 @@
-import React, { memo, useCallback, useEffect } from "react";
+import React, { memo, useEffect } from "react";
 import { connect } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import { actionCreators } from "common/ducks/config";
-import Button from "components/button";
 import Icon from "components/icon";
+
 import selectComponentProps from "./selectors";
 
 export interface Props {
-  theme: string;
+  theme: Theme;
   changeTheme: (payload: string) => void;
 }
 
+export type Theme = "default" | "dark";
+
+/* TODO: move to another place */
 const themes = ["default", "dark"];
 const themeSelectors = themes.map(theme => `theme-${theme}`);
 
-export const updateCssVariables = (theme: string) => {
+export const updateCssVariables = (theme: Theme) => {
   /* TODO: probably move to a side-effect library */
   document.body.classList.remove(...themeSelectors);
   document.body.classList.add(`theme-${theme}`);
 };
 
-/* TODO: refactor to select all themes instead of toggling */
-const getNextTheme = (theme: string) =>
-  theme === "default" ? "dark" : "default";
+export const Theme: React.FC<ThemeProps> = ({ name, label, onClick }) => (
+  <div
+    className={`theme-${name} inline-block m-4 cursor-pointer`}
+    style={{ width: "200px", height: "120px" }}
+    tabIndex={0}
+    role="button"
+    onClick={onClick}
+  >
+    <div className="flex flex-col w-full h-full relative p-2 border text-color-default bg-color-default">
+      <div className="flex items-center mx-3">
+        <span>{label}</span>
+        <div className="ml-auto text-color-highlight">
+          <Icon name="bars" />
+        </div>
+      </div>
+
+      <div className="flex flex-grow">
+        <div className="bg-color-panel m-4" style={{ width: "40%" }} />
+        <div className="bg-color-panel m-4" style={{ width: "60%" }} />
+      </div>
+    </div>
+  </div>
+);
+
+interface ThemeProps {
+  name: string;
+  label: string;
+  onClick: () => void;
+}
 
 export const ThemeSelect: React.FC<Props> = memo(props => {
   const { theme, changeTheme } = props;
 
-  const toggleTheme = useCallback(() => {
-    changeTheme(getNextTheme(theme));
-  }, [theme, changeTheme]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     updateCssVariables(theme);
   }, [theme]);
 
   return (
-    <Button className="m-2" outline onClick={toggleTheme}>
-      <Icon name="palette" position="left" />
-      Theme: {theme}
-    </Button>
+    <>
+      {themes.map(themeName => {
+        return (
+          <Theme
+            name={themeName}
+            label={t(`theme.${themeName}`)}
+            onClick={() => changeTheme(themeName)}
+          />
+        );
+      })}
+    </>
   );
 });
 

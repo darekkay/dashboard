@@ -17,7 +17,7 @@ const Menu: React.FC<Props> = memo(({ items, title, icon }) => {
         aria-label={title}
         className="btn btn-unstyled btn-small"
       >
-        <Icon name={icon} />
+        <Icon className="text-color-highlight" name={icon} />
       </MenuDisclosure>
       <ReakitMenu
         {...menu}

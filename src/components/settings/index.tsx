@@ -6,7 +6,8 @@ import LanguageSelect from "components/language-select";
 const Settings: React.FC<Props> = memo(() => {
   return (
     <>
-      <div>
+      <div className="mb-6">
+        <h3 className="text-3 font-semibold">Theme</h3>
         <ThemeSelect />
       </div>
       <div>

@@ -6,6 +6,10 @@
     "loading": "Lade...",
     "settings": "Einstellungen"
   },
+  "theme": {
+    "default": "Standard",
+    "dark": "Dunkel"
+  },
   "widget": {
     "common": {
       "drawerHeadline": "Widgets",
