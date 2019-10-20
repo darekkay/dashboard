@@ -1,3 +1,5 @@
+# Journal
+
 ## (1.0.10)
 
 Until now, the available widgets and their configurability were hard coded. With more widgets and widget properties (like initial options) coming, a dynamic way to list the widgets and their properties was needed. Now creating a new widget means just using the file generator (`yarn generate`) followed by a script to re-scan the available widgets (`yarn scan-widgets`).
