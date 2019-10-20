@@ -1,7 +1,9 @@
 ## Unreleased
 
+- :rocket: Restructure the settings UI.
 - :gem: Define default options per widget.
 - :gem: Centralize the access to environmental variables.
+- :bug: Hide vertical scrollbar if all widgets fit into the screen.
 - :construction_worker: List available widgets dynamically.
 
 ## 1.0.9 (2019-09-30)
@@ -37,7 +39,7 @@
 ## 1.0.5 (2019-05-25)
 
 - :sparkles: Add DateTime widget.
-- :rocket: Persist the state in the local storage.
+- :sparkles: Persist the state in the local storage.
 
 ## 1.0.4 (2019-04-22)
 
@@ -56,7 +58,7 @@
 ## 1.0.2 (2019-03-20)
 
 - :sparkles: Add a text widget.
-- :sparkled: Make widget content centered (configurable).
+- :sparkles: Make widget content centered (configurable).
 
 ## 1.0.1 (2019-03-17)
 
