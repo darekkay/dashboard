@@ -3,8 +3,9 @@ import { useTranslation } from "react-i18next";
 
 import { APP_VERSION } from "common/environment";
 import Link from "components/link";
-import Button, { ButtonSize } from "components/button";
+import Button, { ButtonSize, ButtonVariant } from "components/button";
 import Icon from "components/icon";
+import Menu from "components/menu";
 import ThemeSelect from "components/theme-select";
 import LanguageSelect from "components/language-select";
 
@@ -26,19 +27,37 @@ const Header: React.FC<Props> = memo(
     return (
       <header className="flex flex-col md:flex-row items-center justify-between px-7 py-2 border-bottom bg-color-panel">
         <div>
-          <Button
-            className="m-2"
-            outline
-            size={ButtonSize.Small}
-            onClick={toggleLayoutEditable}
-          >
-            <Icon name="edit" position="left" />
-            {t(isLayoutEditable ? "common.save" : "common.edit")}
-          </Button>
           <ThemeSelect />
           <LanguageSelect />
         </div>
         <Version />
+
+        {isLayoutEditable && (
+          <Button
+            className="m-2"
+            variant={ButtonVariant.Primary}
+            outline
+            size={ButtonSize.Small}
+            onClick={toggleLayoutEditable}
+          >
+            <Icon name="save" position="left" />
+            {t("common.save")}
+          </Button>
+        )}
+
+        {!isLayoutEditable && (
+          <Menu
+            icon="bars"
+            title="Main menu"
+            items={[
+              {
+                text: t("common.edit"),
+                icon: "edit",
+                onClick: toggleLayoutEditable
+              }
+            ]}
+          />
+        )}
       </header>
     );
   }

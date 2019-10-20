@@ -518,6 +518,14 @@
   max-width: 100%;
 }
 
+.min-w-250 {
+  min-width: 250px;
+}
+
+.min-w-full {
+  min-width: 100%;
+}
+
 .overflow-auto {
   overflow: auto;
 }
@@ -1061,6 +1069,10 @@
 
 .w-full {
   width: 100%;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 @media (min-width: 768px) {

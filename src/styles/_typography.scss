@@ -36,7 +36,7 @@ h6 {
 }
 
 /* Custom focus ring */
-:focus:not([tabindex="-1"]) {
+:focus:not([tabindex="-1"]):not(.no-focus) {
   outline: 0;
   box-shadow: 0 0 0 0.2rem var(--focus-ring-color);
 }

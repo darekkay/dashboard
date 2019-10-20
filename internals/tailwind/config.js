@@ -23,6 +23,11 @@ module.exports = {
       full: "100%"
     },
 
+    minWidth: {
+      "250": "250px",
+      full: "100%"
+    },
+
     maxWidth: {
       full: "100%"
     },
@@ -87,6 +92,10 @@ module.exports = {
       text: "text",
       move: "move",
       "not-allowed": "not-allowed"
+    },
+
+    zIndex: {
+      "10": 10
     }
   },
   variants: {
@@ -98,6 +107,7 @@ module.exports = {
     resize: [],
     height: [],
     width: ["responsive"],
+    minWidth: [],
     maxWidth: [],
 
     // Flexbox
@@ -127,7 +137,8 @@ module.exports = {
 
     // Misc
 
-    cursor: []
+    cursor: [],
+    zIndex: []
   },
   corePlugins: {
     // Base
@@ -139,6 +150,7 @@ module.exports = {
     resize: true,
     height: true,
     width: true,
+    minWidth: true,
     maxWidth: true,
 
     // Flexbox
@@ -169,6 +181,7 @@ module.exports = {
     // Misc
 
     cursor: true,
+    zIndex: true,
 
     // Disable everything else
 
@@ -198,7 +211,6 @@ module.exports = {
     maxHeight: false,
 
     minHeight: false,
-    minWidth: false,
     objectFit: false,
     objectPosition: false,
     opacity: false,
@@ -212,8 +224,7 @@ module.exports = {
     verticalAlign: false,
     visibility: false,
     whitespace: false,
-    wordBreak: false,
-    zIndex: false
+    wordBreak: false
   },
   plugins: []
 };

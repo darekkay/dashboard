@@ -44,6 +44,14 @@
   background-color: var(--background-color-dim);
 }
 
+.event\:bg-color-dim {
+  &:focus,
+  &:hover,
+  &:active {
+    background-color: var(--background-color-dim);
+  }
+}
+
 // Effects
 
 .backdrop {
