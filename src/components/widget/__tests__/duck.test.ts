@@ -1,5 +1,11 @@
 import _ from "lodash";
-import { initialState, reducerWithInitialState, actionCreators } from "../duck";
+import {
+  initialState,
+  reducerWithInitialState,
+  actionCreators,
+  createWidget,
+  removeWidget
+} from "../duck";
 
 describe("Widget duck", () => {
   it("updates the widget's option value", () => {
@@ -24,5 +30,23 @@ describe("Widget duck", () => {
     );
 
     expect(_.get(updatedState, "date-time-01.data.content")).toEqual("mock");
+  });
+
+  it("creates and removes a widget", () => {
+    let updatedState = reducerWithInitialState()(
+      initialState,
+      createWidget({
+        id: "date-time-01",
+        type: "date-time"
+      })
+    );
+
+    expect(_.get(updatedState, "date-time-01.data")).toBeDefined();
+
+    updatedState = reducerWithInitialState()(
+      initialState,
+      removeWidget("date-time-01")
+    );
+    expect(_.get(updatedState, "date-time-01.data")).toBeUndefined();
   });
 });
