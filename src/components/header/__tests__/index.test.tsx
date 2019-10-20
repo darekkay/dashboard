@@ -1,18 +1,18 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
-import Footer from "../index";
+import Header from "../index";
 
-describe("<Footer />", () => {
+describe("<Header />", () => {
   let wrapper: ShallowWrapper;
 
   beforeEach(() => {
     wrapper = shallow(
-      <Footer isLayoutEditable={false} toggleLayoutEditable={() => null} />
+      <Header isLayoutEditable={false} toggleLayoutEditable={() => null} />
     );
   });
 
   it("renders without error", () => {
-    expect(wrapper.find("footer")).toHaveLength(1);
+    expect(wrapper.find("header")).toHaveLength(1);
   });
 });

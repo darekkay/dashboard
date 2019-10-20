@@ -7,7 +7,7 @@ import {
 } from "common/ducks/layout";
 import Dashboard from "components/dashboard";
 import Drawer from "components/drawer";
-import Footer from "components/footer";
+import Header from "components/header";
 
 import mapStateToProps from "./selectors";
 
@@ -39,6 +39,10 @@ export const App: React.FC<Props> = memo(props => {
 
   return (
     <>
+      <Header
+        isLayoutEditable={isLayoutEditable}
+        toggleLayoutEditable={toggleLayoutEditable}
+      />
       <div className="flex h-full flex-col md:flex-row">
         <main className="flex-grow w-full p-1 md:p-6 overflow-y-auto">
           <Dashboard
@@ -55,10 +59,6 @@ export const App: React.FC<Props> = memo(props => {
           <Drawer addWidgetToLayout={addWidgetToLayout}></Drawer>
         )}
       </div>
-      <Footer
-        isLayoutEditable={isLayoutEditable}
-        toggleLayoutEditable={toggleLayoutEditable}
-      />
     </>
   );
 });

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { APP_VERSION } from "common/environment";
 import Link from "components/link";
-import Button from "components/button";
+import Button, { ButtonSize } from "components/button";
 import Icon from "components/icon";
 import ThemeSelect from "components/theme-select";
 import LanguageSelect from "components/language-select";
@@ -20,13 +20,18 @@ export interface Props {
   toggleLayoutEditable: () => void;
 }
 
-const Footer: React.FC<Props> = memo(
+const Header: React.FC<Props> = memo(
   ({ isLayoutEditable, toggleLayoutEditable }) => {
     const { t } = useTranslation();
     return (
-      <footer className="flex flex-col md:flex-row items-center justify-between p-5 border-top bg-color-panel">
+      <header className="flex flex-col md:flex-row items-center justify-between px-7 py-2 border-bottom bg-color-panel">
         <div>
-          <Button className="m-2" outline onClick={toggleLayoutEditable}>
+          <Button
+            className="m-2"
+            outline
+            size={ButtonSize.Small}
+            onClick={toggleLayoutEditable}
+          >
             <Icon name="edit" position="left" />
             {t(isLayoutEditable ? "common.save" : "common.edit")}
           </Button>
@@ -34,9 +39,9 @@ const Footer: React.FC<Props> = memo(
           <LanguageSelect />
         </div>
         <Version />
-      </footer>
+      </header>
     );
   }
 );
 
-export default Footer;
+export default Header;
