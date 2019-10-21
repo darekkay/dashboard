@@ -18,6 +18,10 @@ module.exports = {
       full: "100%"
     },
 
+    maxHeight: {
+      full: "100%"
+    },
+
     width: {
       auto: "auto",
       full: "100%"
@@ -106,6 +110,7 @@ module.exports = {
     overflow: [],
     resize: [],
     height: [],
+    maxHeight: [],
     width: ["responsive"],
     minWidth: [],
     maxWidth: [],
@@ -149,6 +154,7 @@ module.exports = {
     overflow: true,
     resize: true,
     height: true,
+    maxHeight: true,
     width: true,
     minWidth: true,
     maxWidth: true,
@@ -208,7 +214,6 @@ module.exports = {
     lineHeight: false,
     listStylePosition: false,
     listStyleType: false,
-    maxHeight: false,
 
     minHeight: false,
     objectFit: false,

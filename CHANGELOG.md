@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- :bug: Display modal scrollbars if the content does not fit the screen.
+
 ## 1.0.10 (2019-10-21)
 
 - :rocket: Restructure the settings UI.
