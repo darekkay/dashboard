@@ -2,6 +2,7 @@ import React, { memo, useEffect } from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 
+import { THEMES } from "common/environment";
 import { actionCreators } from "common/ducks/config";
 import Icon from "components/icon";
 
@@ -14,9 +15,7 @@ export interface Props {
 
 export type Theme = "default" | "dark";
 
-/* TODO: move to another place */
-const themes = ["default", "dark"];
-const themeSelectors = themes.map(theme => `theme-${theme}`);
+const themeSelectors = THEMES.map(theme => `theme-${theme}`);
 
 export const updateCssVariables = (theme: Theme) => {
   /* TODO: probably move to a side-effect library */
@@ -65,7 +64,7 @@ export const ThemeSelect: React.FC<Props> = memo(props => {
 
   return (
     <>
-      {themes.map(themeName => {
+      {THEMES.map(themeName => {
         return (
           <Theme
             name={themeName}

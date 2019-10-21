@@ -2,6 +2,12 @@ import _ from "lodash";
 
 export const toBoolean = (value?: string) => _.toLower(value) === "true";
 
+/** Available languages */
+export const LANGUAGES = ["en", "de"];
+
+/** Available themes */
+export const THEMES = ["default", "dark"];
+
 /** True, if the application is running in production mode*/
 export const IS_PRODUCTION = process.env.NODE_ENV === "production";
 

@@ -2,6 +2,7 @@ import React, { memo, useCallback, useEffect } from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 
+import { LANGUAGES } from "common/environment";
 import { actionCreators } from "common/ducks/config";
 import Button from "components/button";
 import Icon from "components/icon";
@@ -11,9 +12,6 @@ export interface Props {
   language: string;
   changeLanguage: (payload: string) => void;
 }
-
-/* TODO: move to another place */
-const languages = ["en", "de"];
 
 export const LanguageSelect: React.FC<Props> = memo(props => {
   const { language, changeLanguage } = props;
@@ -25,7 +23,7 @@ export const LanguageSelect: React.FC<Props> = memo(props => {
 
   return (
     <>
-      {languages.map(language => (
+      {LANGUAGES.map(language => (
         <Button
           className="m-2"
           outline
