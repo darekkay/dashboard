@@ -12,26 +12,30 @@ export interface Props {
   changeLanguage: (payload: string) => void;
 }
 
-/* TODO: refactor to select all language instead of toggling */
-const getNextLanguage = (language: string) => (language === "de" ? "en" : "de");
+/* TODO: move to another place */
+const languages = ["en", "de"];
 
 export const LanguageSelect: React.FC<Props> = memo(props => {
   const { language, changeLanguage } = props;
-  const { i18n } = useTranslation();
-
-  const toggleLanguage = useCallback(() => {
-    changeLanguage(getNextLanguage(language));
-  }, [language, changeLanguage]);
+  const { i18n, t } = useTranslation();
 
   useEffect(() => {
     i18n.changeLanguage(language);
   }, [language, i18n]);
 
   return (
-    <Button className="m-2" outline onClick={toggleLanguage}>
-      <Icon name="flag" position="left" />
-      Language: {language}
-    </Button>
+    <>
+      {languages.map(language => (
+        <Button
+          className="m-2"
+          outline
+          onClick={() => changeLanguage(language)}
+        >
+          <Icon name={language} position="left" />
+          {t(`language.${language}`)}
+        </Button>
+      ))}
+    </>
   );
 });
 

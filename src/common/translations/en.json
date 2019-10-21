@@ -7,8 +7,14 @@
     "settings": "Settings"
   },
   "theme": {
+    "headline": "Theme",
     "default": "Default",
     "dark": "Dark"
+  },
+  "language": {
+    "headline": "Language",
+    "en": "English",
+    "de": "Deutsch"
   },
   "widget": {
     "common": {

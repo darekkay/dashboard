@@ -7,8 +7,12 @@
     "settings": "Einstellungen"
   },
   "theme": {
+    "headline": "Farbschema",
     "default": "Standard",
     "dark": "Dunkel"
+  },
+  "language": {
+    "headline": "Sprache"
   },
   "widget": {
     "common": {

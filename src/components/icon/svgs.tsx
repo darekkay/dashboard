@@ -14,6 +14,9 @@ import { ReactComponent as Star } from "./svg/star.svg";
 import { ReactComponent as Times } from "./svg/times.svg";
 import { ReactComponent as Undo } from "./svg/undo.svg";
 
+import { ReactComponent as De } from "./svg/lang/de.svg";
+import { ReactComponent as En } from "./svg/lang/en.svg";
+
 const svgs: any = {
   Backward,
   Bars,
@@ -29,7 +32,9 @@ const svgs: any = {
   Search,
   Star,
   Times,
-  Undo
+  Undo,
+  De,
+  En
 };
 
 export default svgs;

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- :rocket: Improve the language selection UI. 
 - :bug: Display modal scrollbars if the content does not fit the screen.
 - :bug: Prevent header height changes when switching between edit and view mode. 
 
