@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.0.10 (2019-10-21)
+
 - :rocket: Restructure the settings UI.
 - :rocket: Add a theme selection preview.
 - :gem: Define default options per widget.
