@@ -50,6 +50,7 @@ const Header: React.FC<Props> = memo(
           <Menu
             icon="bars"
             title="Main menu"
+            disclosureClassName="my-2"
             items={[
               {
                 text: t("common.edit"),

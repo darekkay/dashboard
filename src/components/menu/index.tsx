@@ -5,46 +5,49 @@ import {
   MenuDisclosure,
   MenuItem
 } from "reakit/Menu";
+import cn from "classnames";
 
 import Icon from "components/icon";
 
-const Menu: React.FC<Props> = memo(({ items, title, icon }) => {
-  const menu = useMenuState();
-  return (
-    <>
-      <MenuDisclosure
-        {...menu}
-        aria-label={title}
-        className="btn btn-unstyled btn-small"
-      >
-        <Icon className="text-color-highlight" name={icon} />
-      </MenuDisclosure>
-      <ReakitMenu
-        {...menu}
-        className="z-10 min-w-250 bg-color-panel border outline-none"
-      >
-        {items.map(item => {
-          if (item === "separator")
-            return <hr className="border-0 border-top m-0" />;
-          return (
-            <MenuItem
-              {...menu}
-              key={item.text}
-              className="block w-full flex p-4 text-left text-2 text-color-default bg-color-panel border-0 no-focus outline-none hover event:bg-color-dim cursor-pointer"
-              onClick={() => {
-                item.onClick();
-                menu.hide();
-              }}
-            >
-              <Icon name={item.icon} position="left" />
-              <span>{item.text}</span>
-            </MenuItem>
-          );
-        })}
-      </ReakitMenu>
-    </>
-  );
-});
+const Menu: React.FC<Props> = memo(
+  ({ items, title, icon, disclosureClassName }) => {
+    const menu = useMenuState();
+    return (
+      <>
+        <MenuDisclosure
+          {...menu}
+          aria-label={title}
+          className={cn("btn btn-unstyled btn-small", disclosureClassName)}
+        >
+          <Icon className="text-color-highlight" name={icon} />
+        </MenuDisclosure>
+        <ReakitMenu
+          {...menu}
+          className="z-10 min-w-250 bg-color-panel border outline-none"
+        >
+          {items.map(item => {
+            if (item === "separator")
+              return <hr className="border-0 border-top m-0" />;
+            return (
+              <MenuItem
+                {...menu}
+                key={item.text}
+                className="block w-full flex p-4 text-left text-2 text-color-default bg-color-panel border-0 no-focus outline-none hover event:bg-color-dim cursor-pointer"
+                onClick={() => {
+                  item.onClick();
+                  menu.hide();
+                }}
+              >
+                <Icon name={item.icon} position="left" />
+                <span>{item.text}</span>
+              </MenuItem>
+            );
+          })}
+        </ReakitMenu>
+      </>
+    );
+  }
+);
 
 export interface MenuItemProps {
   text: string;
@@ -56,6 +59,7 @@ export interface Props {
   icon: string;
   title: string;
   items: (MenuItemProps | "separator")[];
+  disclosureClassName?: string;
 }
 
 export default Menu;
