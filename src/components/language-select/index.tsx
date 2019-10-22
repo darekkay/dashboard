@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect } from "react";
+import React, { memo, useEffect } from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 

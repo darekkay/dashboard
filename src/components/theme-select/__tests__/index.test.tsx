@@ -14,7 +14,6 @@ describe("<ThemeSelect />", () => {
   });
 
   it("changes the theme", () => {
-    wrapper.setProps({ theme: "default" });
     wrapper
       .find(Theme)
       .at(0)

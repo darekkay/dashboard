@@ -15,14 +15,17 @@ describe("<LanguageSelect />", () => {
     );
   });
 
-  it("toggles theme when clicking the button", () => {
-    wrapper.setProps({ language: "en" });
-
-    wrapper.find(Button).simulate("click");
-    expect(changeLanguageSpy).toHaveBeenCalledWith("de");
-
-    wrapper.setProps({ language: "de" });
-    wrapper.first().simulate("click");
+  it("changes the language", () => {
+    wrapper
+      .find(Button)
+      .at(0)
+      .simulate("click");
     expect(changeLanguageSpy).toHaveBeenCalledWith("en");
+
+    wrapper
+      .find(Button)
+      .at(1)
+      .simulate("click");
+    expect(changeLanguageSpy).toHaveBeenCalledWith("de");
   });
 });
