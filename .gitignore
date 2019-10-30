@@ -1,6 +1,6 @@
 ### Node.js ###
 
-/node_modules
+node_modules
 /.pnp
 .pnp.js
 package-lock.json
@@ -15,10 +15,11 @@ package-lock.json
 
 ### App ###
 
-/build
+build
+dist
 /coverage
 .env*.local
-
+docs/.vuepress/public
 
 ### Misc ###
 

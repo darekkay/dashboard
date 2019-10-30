@@ -1,0 +1,28 @@
+{
+  "name": "dashboard-docs",
+  "description": "Dashboard documentation",
+  "version": "1.0.0",
+  "author": "Darek Kay <hello@darekkay.com> (https://darekkay.com/)",
+  "dependencies": {},
+  "devDependencies": {
+    "chalk": "2.4.2",
+    "copyfiles": "2.1.1",
+    "fs-extra": "8.1.0",
+    "rimraf": "3.0.0",
+    "rss": "1.2.2",
+    "vuepress": "1.2.0"
+  },
+  "homepage": "https://dashboard.darekkay.com",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darekkay/dashboard.git"
+  },
+  "scripts": {
+    "clean": "rimraf .vuepress/public .vuepress/dist",
+    "copy-assets": "copyfiles assets/**/* .vuepress/public",
+    "docs:build": "yarn clean && yarn copy-assets && vuepress build",
+    "docs:dev": "vuepress dev"
+  }
+}
