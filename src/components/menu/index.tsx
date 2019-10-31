@@ -34,7 +34,8 @@ const Menu: React.FC<Props> = memo(
                 key={item.text}
                 className="block w-full flex p-4 text-left text-2 text-color-default bg-color-panel border-0 no-focus outline-none hover event:bg-color-dim cursor-pointer"
                 onClick={() => {
-                  item.onClick();
+                  if (item.onClick) item.onClick();
+                  if (item.href) window.open(item.href, "_blank");
                   menu.hide();
                 }}
               >
@@ -52,7 +53,8 @@ const Menu: React.FC<Props> = memo(
 export interface MenuItemProps {
   text: string;
   icon: string;
-  onClick: () => void;
+  onClick?: () => void;
+  href?: string;
 }
 
 export interface Props {

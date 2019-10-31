@@ -57,6 +57,11 @@ const Header: React.FC<Props> = memo(
                 icon: "edit",
                 onClick: toggleLayoutEditable
               },
+              {
+                text: "Documentation",
+                icon: "question",
+                href: "https://dashboard.darekkay.com/docs"
+              },
               "separator",
               { text: "Settings", icon: "cog", onClick: openSettingsModal }
             ]}

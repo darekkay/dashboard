@@ -8,6 +8,7 @@ import { ReactComponent as Home } from "./svg/home.svg";
 import { ReactComponent as Minus } from "./svg/minus.svg";
 import { ReactComponent as Palette } from "./svg/palette.svg";
 import { ReactComponent as Plus } from "./svg/plus.svg";
+import { ReactComponent as Question } from "./svg/question.svg";
 import { ReactComponent as Save } from "./svg/save.svg";
 import { ReactComponent as Search } from "./svg/search.svg";
 import { ReactComponent as Star } from "./svg/star.svg";
@@ -28,6 +29,7 @@ const svgs: any = {
   Minus,
   Palette,
   Plus,
+  Question,
   Save,
   Search,
   Star,
