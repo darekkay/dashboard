@@ -23,11 +23,12 @@ const Menu: React.FC<Props> = memo(
         </MenuDisclosure>
         <ReakitMenu
           {...menu}
+          aria-label={title}
           className="z-10 min-w-250 bg-color-panel border outline-none"
         >
-          {items.map(item => {
+          {items.map((item, index) => {
             if (item === "separator")
-              return <hr className="border-0 border-top m-0" />;
+              return <hr key={index} className="border-0 border-top m-0" />;
             return (
               <MenuItem
                 {...menu}
