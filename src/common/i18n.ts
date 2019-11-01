@@ -1,12 +1,14 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
+import { DEBUG_LABELS } from "common/environment";
+
 import de from "./translations/de.json";
 import en from "./translations/en.json";
 
 const resources = {
   en: {
-    translation: en
+    translation: DEBUG_LABELS ? {} : en
   },
   de: {
     translation: de

@@ -21,3 +21,6 @@ export const APP_VERSION = process.env.REACT_APP_VERSION;
 export const IS_STORAGE_PAUSED = toBoolean(
   process.env.REACT_APP_IS_STORAGE_PAUSED
 );
+
+/** If the URL contains the specified string, label IDs are displayed instead of English translations */
+export const DEBUG_LABELS = window.location.href.indexOf("debug:labels") >= 0;

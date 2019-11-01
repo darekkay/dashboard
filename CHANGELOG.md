@@ -6,6 +6,7 @@
 - :bug: Display modal scrollbars if the content does not fit the screen.
 - :bug: Prevent header height changes when switching between edit and view mode. 
 - :docs: Use VuePress for documentation.
+- :construction_worker: Add a debugging mode for label translations.
 - :construction_worker: Format Tailwind output file after it is generated.
 - :construction_worker: Update dependencies.
 
