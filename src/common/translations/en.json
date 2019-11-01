@@ -4,7 +4,8 @@
     "save": "Save",
     "close": "Close",
     "loading": "Loading...",
-    "settings": "Settings"
+    "settings": "Settings",
+    "documentation": "Documentation"
   },
   "theme": {
     "headline": "Theme",

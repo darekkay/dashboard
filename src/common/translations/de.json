@@ -4,7 +4,8 @@
     "save": "Speichern",
     "close": "Schließen",
     "loading": "Lade...",
-    "settings": "Einstellungen"
+    "settings": "Einstellungen",
+    "documentation": "Dokumentation"
   },
   "theme": {
     "headline": "Farbschema",
