@@ -30,10 +30,11 @@ describe("Layout duck", () => {
   it("saves the layout", () => {
     const updatedState = reducerWithInitialState()(
       initialState,
-      actionCreators.saveLayout("mockLayout")
+      actionCreators.saveLayout({ desktop: [], mobile: [] })
     );
 
-    expect(updatedState.config).toEqual("mockLayout");
+    expect(updatedState.config.desktop.length).toBe(0);
+    expect(updatedState.config.mobile.length).toBe(0);
   });
 
   it("toggles the editing state", () => {

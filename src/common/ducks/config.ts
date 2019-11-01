@@ -10,8 +10,8 @@ export interface ConfigState {
   language: string;
 }
 
-const changeTheme = createAction("config/change-theme");
-const changeLanguage = createAction("config/change-language");
+const changeTheme = createAction<string>("config/change-theme");
+const changeLanguage = createAction<string>("config/change-language");
 
 export const initialState = {
   grid: {

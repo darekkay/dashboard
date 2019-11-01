@@ -10,11 +10,13 @@ import { initialLayout } from "widgets/demo";
 import widgets from "widgets";
 import { createWidget, removeWidget } from "components/widget/duck";
 
-const saveLayout = createAction("layout/save");
-const toggleLayoutEditable = createAction("layout/toggle-editable");
-const addWidgetToLayout = createAction("layout/add-widget");
-const removeWidgetFromLayout = createAction("layout/remove-widget");
-const incrementNextWidgetId = createAction("layout/increment-next-widget-id");
+const saveLayout = createAction<Layout>("layout/save");
+const toggleLayoutEditable = createAction<void>("layout/toggle-editable");
+const addWidgetToLayout = createAction<string>("layout/add-widget");
+const removeWidgetFromLayout = createAction<string>("layout/remove-widget");
+const incrementNextWidgetId = createAction<void>(
+  "layout/increment-next-widget-id"
+);
 
 export interface Layout {
   mobile: ReactGridLayout[];

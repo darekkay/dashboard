@@ -7,6 +7,7 @@
 - :bug: Prevent header height changes when switching between edit and view mode. 
 - :docs: Use VuePress for documentation.
 - :construction_worker: Format Tailwind output file after it is generated.
+- :construction_worker: Update dependencies.
 
 ## 1.0.10 (2019-10-21)
 

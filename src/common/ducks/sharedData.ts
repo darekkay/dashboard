@@ -6,7 +6,10 @@ interface DataState {
   [key: string]: any;
 }
 
-export const setSharedDataValue = createAction("sharedData/set-value");
+export const setSharedDataValue = createAction<{
+  widgetType: string;
+  value: { [key: string]: any };
+}>("sharedData/set-value");
 
 export const initialState = {
   "date-time": {

@@ -5,10 +5,17 @@ import { createAction, createReducer } from "redux-starter-kit";
 import widgets from "widgets";
 import { initialWidgets } from "widgets/demo";
 
-const setOptions = createAction("widget/set-options");
-const setData = createAction("widget/set-data-value");
-export const createWidget = createAction("widget/create");
-export const removeWidget = createAction("widget/remove");
+interface SetValuesPayload {
+  id: string;
+  values: { [key: string]: any };
+}
+
+const setOptions = createAction<SetValuesPayload>("widget/set-options");
+const setData = createAction<SetValuesPayload>("widget/set-data-value");
+export const createWidget = createAction<{ id: string; type: string }>(
+  "widget/create"
+);
+export const removeWidget = createAction<string>("widget/remove");
 
 export interface Widget {
   type: string;
@@ -28,17 +35,17 @@ export const initialState = initialWidgets;
 
 export const reducerWithInitialState = (state: WidgetsState = initialState) =>
   createReducer(state, {
-    [setOptions as any]: (state, action) => {
+    [setOptions.toString()]: (state, action) => {
       const { id, values } = action.payload;
       state[id].options = { ...state[id].options, ...values };
     },
 
-    [setData as any]: (state, action) => {
+    [setData.toString()]: (state, action) => {
       const { id, values } = action.payload;
       state[id].data = { ...state[id].data, ...values };
     },
 
-    [createWidget as any]: (state, action) => {
+    [createWidget.toString()]: (state, action) => {
       const { id, type } = action.payload;
       state[id] = {
         type,
@@ -47,7 +54,7 @@ export const reducerWithInitialState = (state: WidgetsState = initialState) =>
       };
     },
 
-    [removeWidget as any]: (state, action) => {
+    [removeWidget.toString()]: (state, action) => {
       const id = action.payload;
       delete state[id];
     }
