@@ -6,7 +6,7 @@
 
 The goal of this project is a fully customizable and extendable dashboard/startpage, with modules like clock, weather, todo tasks, bookmarks, calendar, etc.
 
-Usually, I wait for a MVP before releasing a project. This project will be developed in public from Day 1. I document my progress and (knowledge) insights in the blog, while the changelog describes the actual project features.
+Usually, I wait for a MVP before releasing a project. This project is being developed in public from Day 1. I document my progress and (knowledge) insights in the blog, while the changelog describes the actual project features.
 
 The current state of the project is available at [dashboard.darekkay.com](https://dashboard.darekkay.com).
 
@@ -14,7 +14,7 @@ The current state of the project is available at [dashboard.darekkay.com](https:
 
 Why build yet another dashboard app?
 
-Most popular apps (like [Momentum](https://momentumdash.com/)) are neither open-source nor customizable to a degree that I'd like it to be. On the other hand, most open-source projects seem to be outdated.
+Most popular apps are neither open-source nor customizable to a degree that I'd like it to be. On the other hand, most open-source projects seem to be outdated.
 
 A new project is also a great opportunity to learn new concepts.
 
@@ -32,3 +32,7 @@ All available widgets are listed [here](widgets/README.md).
 All contributors are highly welcome. If you want to collaborate on this project, just give me a [note](mailto:hello@darekkay.com).
 
 View the [development documentation](development/README.md) for more information.
+
+## License
+
+This project and its contents are open source under the MIT license.

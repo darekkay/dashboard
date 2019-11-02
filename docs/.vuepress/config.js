@@ -7,6 +7,7 @@ module.exports = {
       { text: "Home", link: "/" },
       { text: "Widgets", link: "/widgets/" },
       { text: "Development", link: "/development/" },
+      { text: "Changelog", link: "/changelog/" },
       { text: "Blog", link: "/blog/" },
       { text: "RSS", link: "https://dashboard.darekkay.com/docs/rss.xml" }
     ],
