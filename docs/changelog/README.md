@@ -1,12 +1,12 @@
 # Changelog
 
-## Development
+## 1.0.11 (2019-11-03)
 
 - :sparkles: Add a button in the settings modal to delete all user data.
 - :rocket: Improve the language selection UI. 
 - :bug: Display modal scrollbars if the content does not fit the screen.
 - :bug: Prevent header height changes when switching between edit and view mode. 
-- :book: Use VuePress for documentation.
+- :book: Use VuePress for documentation (see [live](https://dashboard.darekkay.com/docs/)).
 - :construction_worker: Add a debugging mode for label translations.
 - :construction_worker: Format Tailwind output file after it is generated.
 - :construction_worker: Update dependencies.
