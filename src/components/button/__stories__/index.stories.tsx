@@ -24,8 +24,8 @@ const Row = ({
   ...rest
 }: RowProps & Omit<ButtonProps, "children">) => (
   <>
-    <h2>{title}</h2>
-    <div>
+    <h2 className="mb-2">{title}</h2>
+    <div className="mb-5">
       <Button {...commonProps} {...rest}>
         {children || "Regular"}
       </Button>
@@ -46,6 +46,7 @@ storiesOf("Components.Button", module).add("Variants", () => (
   <div>
     <Row title="Primary Button" variant={ButtonVariant.Primary} />
     <Row title="Secondary Button" variant={ButtonVariant.Secondary} />
+    <Row title="Danger Button" variant={ButtonVariant.Danger} />
     <Row title="Unstyled Button" variant={ButtonVariant.Unstyled} />
 
     <Row title="Disabled Button" variant={ButtonVariant.Primary} disabled />

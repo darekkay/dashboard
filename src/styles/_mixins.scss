@@ -16,3 +16,11 @@
     @content;
   }
 }
+
+/* Custom focus ring */
+@mixin focus-ring($color) {
+  &:focus:not([tabindex="-1"]):not(.no-focus) {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem $color;
+  }
+}

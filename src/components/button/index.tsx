@@ -6,6 +6,7 @@ import "./styles.scss";
 export enum ButtonVariant {
   Primary = "primary",
   Secondary = "secondary",
+  Danger = "danger",
   Unstyled = "unstyled"
 }
 

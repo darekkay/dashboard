@@ -1,3 +1,5 @@
+@import "~styles/mixins";
+
 @mixin button-variant(
   $foreground,
   $background,
@@ -32,9 +34,7 @@
     }
   }
 
-  &:focus {
-    box-shadow: 0 0 0 0.2rem $focus-ring;
-  }
+  @include focus-ring($focus-ring);
 }
 
 .btn {
@@ -129,6 +129,29 @@
     var(--button-secondary-hover-bg),
     var(--button-secondary-active-bg),
     var(--button-secondary-focus-ring)
+  );
+}
+
+.btn-danger {
+  @include button-variant(
+    var(--button-inverse-color),
+    var(--button-danger-color),
+    var(--button-danger-color),
+    var(--button-inverse-color),
+    var(--button-danger-hover-bg),
+    var(--button-danger-active-bg),
+    var(--button-danger-focus-ring)
+  );
+}
+.btn-danger-outline {
+  @include button-variant(
+    var(--button-danger-color),
+    transparent,
+    var(--button-danger-color),
+    var(--button-inverse-color),
+    var(--button-danger-hover-bg),
+    var(--button-danger-active-bg),
+    var(--button-danger-focus-ring)
   );
 }
 
