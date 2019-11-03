@@ -19,7 +19,8 @@ import "react-resizable/css/styles.css";
 
 import "./styles/index.scss";
 
-const { store, persistor } = initStore();
+const { store, persistor, purgeStore } = initStore();
+export const PersistorContext = React.createContext(purgeStore);
 
 updateCssVariables("default");
 
@@ -27,7 +28,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={<Loading className="mt-8" />} persistor={persistor}>
-        <App />
+        <PersistorContext.Provider value={purgeStore}>
+          <App />
+        </PersistorContext.Provider>
       </PersistGate>
     </Provider>
   </React.StrictMode>,

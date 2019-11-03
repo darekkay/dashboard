@@ -1,5 +1,9 @@
 # 1.0.11
 
+## Features
+
+A new button in the settings modal makes it possible to delete all user data. This is especially useful in the early stage of development, as the main data schema may still change regularly.
+
 ## Documentation
 
 The project documentation is now hosted on [my own domain](https://dashboard.darekkay.com/docs/). The GitHub Markdown preview is nice (and can still be used), but a separate site has some advantages:

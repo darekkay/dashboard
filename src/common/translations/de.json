@@ -15,6 +15,9 @@
   "language": {
     "headline": "Sprache"
   },
+  "data": {
+    "purge": "Alle daten löschen"
+  },
   "widget": {
     "common": {
       "drawerHeadline": "Widgets",

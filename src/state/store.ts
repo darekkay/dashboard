@@ -45,7 +45,13 @@ const initStore = () => {
     pause(persistor);
   }
 
-  return { store, persistor };
+  return {
+    store,
+    persistor,
+    purgeStore: () => {
+      persistor.purge().then(() => window.location.reload());
+    }
+  };
 };
 
 export default initStore;

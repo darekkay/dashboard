@@ -67,6 +67,7 @@ export const ThemeSelect: React.FC<Props> = memo(props => {
       {THEMES.map(themeName => {
         return (
           <Theme
+            key={themeName}
             name={themeName}
             label={t(`theme.${themeName}`)}
             onClick={() => changeTheme(themeName)}

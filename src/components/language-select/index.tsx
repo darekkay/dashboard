@@ -25,7 +25,8 @@ export const LanguageSelect: React.FC<Props> = memo(props => {
     <>
       {LANGUAGES.map(language => (
         <Button
-          className="m-2"
+          key={language}
+          className="m-4"
           outline
           onClick={() => changeLanguage(language)}
         >

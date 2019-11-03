@@ -17,6 +17,9 @@
     "en": "English",
     "de": "Deutsch"
   },
+  "data": {
+    "purge": "Delete all data"
+  },
   "widget": {
     "common": {
       "drawerHeadline": "Widgets",

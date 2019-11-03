@@ -13,6 +13,7 @@ import { ReactComponent as Save } from "./svg/save.svg";
 import { ReactComponent as Search } from "./svg/search.svg";
 import { ReactComponent as Star } from "./svg/star.svg";
 import { ReactComponent as Times } from "./svg/times.svg";
+import { ReactComponent as Trash } from "./svg/trash.svg";
 import { ReactComponent as Undo } from "./svg/undo.svg";
 
 import { ReactComponent as De } from "./svg/lang/de.svg";
@@ -34,6 +35,7 @@ const svgs: any = {
   Search,
   Star,
   Times,
+  Trash,
   Undo,
   De,
   En
