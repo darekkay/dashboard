@@ -29,7 +29,7 @@ All available widgets are listed [here](widgets/README.md).
 
 ## Contribution
 
-All contributors are highly welcome. If you want to collaborate on this project, just give me a [note](mailto:hello@darekkay.com).
+All contributors are highly welcome. If you want to collaborate on this project, just give me a [note](mailto:hello@darekkay.com) or create a GitHub Issue.
 
 View the [development documentation](development/README.md) for more information.
 

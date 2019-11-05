@@ -26,6 +26,8 @@ A new project is also a great opportunity to learn new concepts.
 
 All contributors are highly welcome. If you want to collaborate on this project, just give me a [note](mailto:hello@darekkay.com) or create a GitHub Issue.
 
+This project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+
 View the [development documentation](https://dashboard.darekkay.com/docs/development/) for more information.
 
 ## License

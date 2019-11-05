@@ -1,5 +1,7 @@
 # Changelog
 
+- :book: Add [Code of Conduct](https://github.com/darekkay/dashboard/blob/master/CODE_OF_CONDUCT.md).
+
 ## 1.0.11 (2019-11-03)
 
 - :sparkles: Add a button in the settings modal to delete all user data.

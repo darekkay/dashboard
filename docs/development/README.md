@@ -53,3 +53,7 @@ The `master` branch is (manually) deployed to [dashboard.darekkay.com](https://d
 4. Add mandatory widget labels (at least `name`) to all translation files under `common/translations`.
 
 Optionally, you may create a `configuration.tsx` file to enable a configuration modal for the new widget.
+
+## Code of Conduct
+
+This project is released with a [Contributor Code of Conduct](https://github.com/darekkay/dashboard/blob/master/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
