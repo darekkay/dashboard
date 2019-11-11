@@ -7,7 +7,6 @@ import Icon from "components/icon";
 
 import { WidgetProps } from "../index";
 
-// TODO: add clear button
 const openSearchUrl = (
   pattern: string,
   value: string,
@@ -30,7 +29,7 @@ const Search: React.FC<Props> = memo(({ id, setData, name, pattern }) => {
           value={value}
           setValue={setValue}
           onEnter={value => openSearchUrl(pattern, value, setValue)}
-          onEscape={() => setValue("")}
+          clearOnEscape
           aria-labelledby={`widget-${id}-headline`}
         />
         <Button

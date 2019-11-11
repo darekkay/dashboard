@@ -25,7 +25,7 @@ describe("<Input />", () => {
 
   it("handles Escape key up event", () => {
     const handler = jest.fn();
-    wrapper.setProps({ onEscape: handler });
+    wrapper.setProps({ clearOnEscape: true, setValue: handler });
     const input = wrapper.find("input");
     expect(handler).not.toHaveBeenCalled();
     input.simulate("keyup", { which: 27, key: "Escape", target: input });
