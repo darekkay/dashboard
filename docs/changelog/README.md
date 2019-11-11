@@ -1,5 +1,6 @@
 # Changelog
 
+- :rocket: Add a button to clear input fields.
 - :book: Add [Code of Conduct](https://github.com/darekkay/dashboard/blob/master/CODE_OF_CONDUCT.md).
 
 ## 1.0.11 (2019-11-03)
