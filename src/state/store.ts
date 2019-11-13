@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from "redux";
-import { createEpicMiddleware } from "redux-observable";
+import createSagaMiddleware from "redux-saga";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import { IS_PRODUCTION, IS_STORAGE_PAUSED } from "common/environment";
@@ -8,7 +8,7 @@ import { WidgetsState } from "components/widget/duck";
 
 import { persistReducer, persistStore, pause } from "./localStorage";
 import { rootReducer } from "./reducers";
-import { rootEpic } from "./epics";
+import { rootSaga } from "./sagas";
 
 interface DataState {
   [key: string]: any;
@@ -29,14 +29,14 @@ const initStore = () => {
     actionsBlacklist: []
   });
 
-  const epicMiddleware = createEpicMiddleware();
+  const sagaMiddleware = createSagaMiddleware();
 
   const store = createStore(
     persistReducer(rootReducer),
-    composeEnhancers(applyMiddleware(epicMiddleware))
+    composeEnhancers(applyMiddleware(sagaMiddleware))
   );
 
-  epicMiddleware.run(rootEpic);
+  sagaMiddleware.run(rootSaga);
 
   const persistor = persistStore(store);
 

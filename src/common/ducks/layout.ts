@@ -1,9 +1,8 @@
 /** Grid layout duck */
 
 import _ from "lodash";
-import { createAction, createReducer } from "redux-starter-kit";
-import { ofType, combineEpics, Epic } from "redux-observable";
-import { map, mergeMap } from "rxjs/operators";
+import { createAction, createReducer, PayloadAction } from "redux-starter-kit";
+import { put, select, takeEvery } from "redux-saga/effects";
 import { Layout as ReactGridLayout } from "react-grid-layout";
 
 import { initialLayout } from "widgets/demo";
@@ -90,27 +89,30 @@ export const reducerWithInitialState = (state: LayoutState = initialState) =>
     })
   });
 
+const selectNextWidgetId = (state: { layout: LayoutState }) =>
+  state.layout.nextWidgetId;
+
 /* When a new widget is added, create the according widget data and update the widget counter */
-const addWidgetEpic: Epic = (action$, state$) =>
-  action$.pipe(
-    ofType(addWidgetToLayout),
-    mergeMap(action => [
-      createWidget({
-        type: action.payload,
-        id: widgetId(action.payload, state$.value.layout.nextWidgetId)
-      }),
-      incrementNextWidgetId()
-    ])
+function* addWidgetSaga(action: PayloadAction<string>) {
+  const nextWidgetId = yield select(selectNextWidgetId);
+  yield put(
+    createWidget({
+      type: action.payload,
+      id: widgetId(action.payload, nextWidgetId)
+    })
   );
+  yield put(incrementNextWidgetId());
+}
 
 /* When a widget is removed from the layout, the according widget data should be deleted as well */
-const removeWidgetEpic: Epic = (action$, state$) =>
-  action$.pipe(
-    ofType(removeWidgetFromLayout),
-    map(action => removeWidget(action.payload))
-  );
+function* removeWidgetSaga(action: PayloadAction<string>) {
+  yield put(removeWidget(action.payload));
+}
 
-export const epic = combineEpics(addWidgetEpic, removeWidgetEpic);
+export function* saga() {
+  yield takeEvery(addWidgetToLayout.toString(), addWidgetSaga);
+  yield takeEvery(removeWidgetFromLayout.toString(), removeWidgetSaga);
+}
 
 export const actionCreators = {
   saveLayout,
