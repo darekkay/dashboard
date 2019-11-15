@@ -3,6 +3,7 @@
 - :rocket: Add a button to clear input fields.
 - :book: Add [Code of Conduct](https://github.com/darekkay/dashboard/blob/master/CODE_OF_CONDUCT.md).
 - :construction_worker: Replace redux-observable with [redux-saga](https://github.com/redux-saga/redux-saga).
+- :construction_worker: Turn off TypeScript linter rules for plain JavaScript files.
 
 ## 1.0.11 (2019-11-03)
 
