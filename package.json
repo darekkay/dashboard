@@ -96,7 +96,7 @@
   "scripts": {
     "build": "react-scripts build",
     "ci": "npm run lint:check && npm run test",
-    "format": "prettier --write -- \"{src,public}/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "format": "prettier --write -- \"{src,public,docs}/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "generate": "plop --plopfile internals/generators/index.js",
     "lint:check": "tsc && eslint src/**/*.{ts,tsx,js}",
     "lint:fix": "eslint --fix src/**/*.{ts,tsx,js}",

@@ -4,13 +4,14 @@
 - :book: Add [Code of Conduct](https://github.com/darekkay/dashboard/blob/master/CODE_OF_CONDUCT.md).
 - :construction_worker: Replace redux-observable with [redux-saga](https://github.com/redux-saga/redux-saga).
 - :construction_worker: Turn off TypeScript linter rules for plain JavaScript files.
+- :book: Fix formatting and grammar issues in the documentation.
 
 ## 1.0.11 (2019-11-03)
 
 - :sparkles: Add a button in the settings modal to delete all user data.
-- :rocket: Improve the language selection UI. 
+- :rocket: Improve the language selection UI.
 - :bug: Display modal scrollbars if the content does not fit the screen.
-- :bug: Prevent header height changes when switching between edit and view mode. 
+- :bug: Prevent header height changes when switching between edit and view mode.
 - :book: Use VuePress for documentation (see [live](https://dashboard.darekkay.com/docs/)).
 - :construction_worker: Add a debugging mode for label translations.
 - :construction_worker: Format Tailwind output file after it is generated.
@@ -22,7 +23,7 @@
 - :rocket: Add a theme selection preview.
 - :gem: Define default options per widget.
 - :gem: Centralize the access to environmental variables.
-- :bug: Hide vertical scrollbar if all widgets fit into the screen.
+- :bug: Hide the vertical scrollbar if all widgets fit into the screen.
 - :book: Update documentation.
 - :construction_worker: List available widgets dynamically.
 
