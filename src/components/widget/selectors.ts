@@ -5,13 +5,12 @@ export const getTypeFromId = (id: string) =>
 
 const makeSelectWidget = (id: string) =>
   createSelector(
-    [`widgets.${id}`, `sharedData.${getTypeFromId(id)}`],
-    (widget, sharedData) => ({
+    [`widgets.${id}`],
+    widget => ({
       id,
       ...widget,
       options: widget.options,
       data: {
-        ...sharedData,
         ...widget.data
       }
     })
