@@ -8,7 +8,8 @@ const widgets = {
     height: 2,
     type: "date-time",
     data: {},
-    options: {}
+    options: {},
+    meta: {}
   },
   "search-02": {
     x: 3,
@@ -20,7 +21,8 @@ const widgets = {
     options: {
       pattern: "https://duckduckgo.com/?q=%s",
       title: "DuckDuckGo"
-    }
+    },
+    meta: {}
   },
   "text-03": {
     x: 7,
@@ -31,7 +33,20 @@ const widgets = {
     data: {
       content: "Hello World!"
     },
-    options: {}
+    options: {},
+    meta: {}
+  },
+  "totd-chemical-elements-01": {
+    x: 2,
+    y: 2,
+    width: 1,
+    height: 1,
+    type: "totd-chemical-elements",
+    data: {},
+    options: {},
+    meta: {
+      updateCycle: { hours: 24 }
+    }
   }
 };
 

@@ -7,10 +7,14 @@ import { Widget } from "components/widget";
 const Story = () => {
   return (
     <Widget
-      id="date-time-01"
-      type="date-time"
+      id="totd-chemical-elements-01"
+      type="totd-chemical-elements"
       options={{}}
-      data={{}}
+      data={{
+        symbol: "V",
+        name: "Vanadium",
+        atomicNumber: 23
+      }}
       meta={{}}
       setData={_.noop}
       setOptions={_.noop}
@@ -22,4 +26,7 @@ const Story = () => {
   );
 };
 
-storiesOf("Widgets.DateTime", module).add("Variants", () => <Story />);
+storiesOf("Widgets.Tip of the Day.Chemical Elements", module).add(
+  "Variants",
+  () => <Story />
+);

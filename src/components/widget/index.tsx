@@ -14,15 +14,17 @@ import widgets, { ValueUpdateAction } from "widgets";
 import Loading from "../loading";
 
 import makeSelectWidget from "./selectors";
-import { actionCreators } from "./duck";
+import { actionCreators, WidgetMeta } from "./duck";
 
 export interface Props {
   id: string;
   type: string;
   options: { [key: string]: any };
   data: { [key: string]: any };
+  meta: WidgetMeta;
   setOptions: ValueUpdateAction;
   setData: ValueUpdateAction;
+  triggerUpdate: (id: string) => void;
   removeWidgetFromLayout: (id: string) => void;
   isLayoutEditable: boolean;
   className?: string;
@@ -37,9 +39,11 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
     type,
     options,
     data,
+    meta,
     hasError,
     setOptions,
     setData,
+    triggerUpdate,
     removeWidgetFromLayout,
     isLayoutEditable,
     className,
@@ -83,15 +87,16 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
           {headline}
         </h3>
       )}
-
       {hasError && "» Error «"}
       {!hasError && (
-        <div className="flex flex-col items-center justify-center h-full">
+        <div className="flex flex-col items-stretch justify-center h-full">
           <Suspense fallback={<Loading type="skeleton" />}>
             {React.createElement(widgets[type].Component, {
               id,
               setOptions,
               setData,
+              triggerUpdate,
+              meta,
               ...options,
               ...data
             })}

@@ -14,8 +14,10 @@ describe("<Search />", () => {
         id="search-mock-id"
         name="Search"
         pattern="https://example.com?s=%s"
+        meta={{}}
         setData={() => null}
         setOptions={() => null}
+        triggerUpdate={() => null}
       />
     );
   });

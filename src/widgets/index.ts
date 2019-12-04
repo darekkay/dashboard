@@ -1,4 +1,8 @@
 import React from "react";
+import { injectSaga } from "redux-sagas-injector";
+import { MomentInputObject } from "moment";
+
+import { WidgetMeta } from "components/widget/duck";
 
 import availableWidgets from "./list";
 
@@ -12,8 +16,10 @@ export type ValueUpdateAction = ({
 
 export interface WidgetProps {
   id: string;
+  meta: WidgetMeta;
   setData: ValueUpdateAction;
   setOptions: ValueUpdateAction;
+  triggerUpdate: (id: string) => void;
 }
 
 export interface ConfigurationProps {
@@ -29,6 +35,10 @@ export interface WidgetProperties {
   initialOptions: {
     [key: string]: any;
   };
+  initialMeta: {
+    updateCycle?: MomentInputObject;
+    [key: string]: any;
+  };
 }
 
 export interface WidgetElements {
@@ -42,7 +52,14 @@ const importWidgets = (widgets: { [key: string]: WidgetProperties }) =>
       ...acc,
       [type]: {
         ...values,
-        Component: React.lazy(() => import(`widgets/${type}`)),
+        Component: React.lazy(() =>
+          import(`widgets/${type}`).then(module => {
+            if (module.saga) {
+              injectSaga(type, module.saga);
+            }
+            return module;
+          })
+        ),
         Configuration: values.configurable
           ? React.lazy(() => import(`widgets/${type}/configuration`))
           : null

@@ -6,7 +6,8 @@ export default {
     configurable: false,
     initialHeight: 1,
     initialWidth: 2,
-    initialOptions: {}
+    initialOptions: {},
+    initialMeta: {}
   },
   search: {
     configurable: true,
@@ -15,12 +16,21 @@ export default {
     initialOptions: {
       title: "DuckDuckGo",
       pattern: "https://duckduckgo.com/?q=%s"
-    }
+    },
+    initialMeta: {}
   },
   text: {
     configurable: false,
     initialHeight: 2,
     initialWidth: 2,
-    initialOptions: {}
+    initialOptions: {},
+    initialMeta: {}
+  },
+  "totd-chemical-elements": {
+    configurable: false,
+    initialHeight: 1,
+    initialWidth: 1,
+    initialOptions: {},
+    initialMeta: {}
   }
 } as { [key: string]: WidgetProperties };

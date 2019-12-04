@@ -11,8 +11,10 @@ const Story = () => {
       type="text"
       options={{}}
       data={{ content: "Hello World!" }}
+      meta={{}}
       setData={_.noop}
       setOptions={_.noop}
+      triggerUpdate={_.noop}
       removeWidgetFromLayout={_.noop}
       isLayoutEditable={false}
       hasError={false}

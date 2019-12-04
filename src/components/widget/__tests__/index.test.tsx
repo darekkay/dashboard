@@ -17,6 +17,8 @@ describe("<Widget />", () => {
         setOptions={() => null}
         data={{}}
         setData={() => null}
+        meta={{}}
+        triggerUpdate={_.noop}
         removeWidgetFromLayout={_.noop}
         hasError={false}
       />

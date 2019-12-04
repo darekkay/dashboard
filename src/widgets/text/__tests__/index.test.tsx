@@ -15,8 +15,10 @@ describe("<Text />", () => {
       <Text
         id={id}
         content={content}
+        meta={{}}
         setData={setDataSpy}
         setOptions={() => null}
+        triggerUpdate={() => null}
       />
     );
   });

@@ -10,6 +10,7 @@ const makeSelectWidget = (id: string) =>
       id,
       ...widget,
       options: widget.options,
+      meta: widget.meta,
       data: {
         ...widget.data
       }

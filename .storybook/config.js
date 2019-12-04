@@ -1,10 +1,13 @@
 import { configure, addDecorator, addParameters } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 
+import initStore from "state/store";
 import "common/i18n";
 
 import "../src/styles/index.scss";
 import "./storybook.scss";
+
+initStore();
 
 // Automatically import all files ending with *.stories.tsx
 const req = require.context("../src", true, /\.stories\.tsx$/);

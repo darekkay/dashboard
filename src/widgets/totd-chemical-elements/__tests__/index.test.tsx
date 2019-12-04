@@ -1,15 +1,18 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
-import { DateTime } from "../index";
+import ChemicalElements from "../index";
 
-describe("<DateTime />", () => {
+describe("<ChemicalElements />", () => {
   let wrapper: ShallowWrapper;
 
   beforeEach(() => {
     wrapper = shallow(
-      <DateTime
-        id="date-time-mock-id"
+      <ChemicalElements
+        id="totd-chemical-elements-mock-id"
+        symbol="V"
+        atomicNumber="23"
+        name="Vanadium"
         meta={{}}
         setData={() => null}
         setOptions={() => null}
@@ -19,6 +22,6 @@ describe("<DateTime />", () => {
   });
 
   it("renders without error", () => {
-    expect(wrapper.find("time")).toHaveLength(1);
+    expect(wrapper.find("div[children='Vanadium']")).toHaveLength(1);
   });
 });

@@ -45,6 +45,10 @@
     "text": {
       "name": "Notes",
       "headline": ""
+    },
+    "totd-chemical-elements": {
+      "name": "Chemical elements",
+      "headline": ""
     }
   }
 }
