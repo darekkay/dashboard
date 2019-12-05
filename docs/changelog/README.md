@@ -1,10 +1,13 @@
 # Changelog
 
-- :sparkles: Add new widget: Chemical Element of the Day.
+## 1.1.0 (2019-12-05)
+
+- :sparkles: Add a new widget: Chemical Element of the Day.
 - :rocket: Add a button to clear input fields.
-- :book: Add [Code of Conduct](https://github.com/darekkay/dashboard/blob/master/CODE_OF_CONDUCT.md).
+- :construction_worker: Prepare the architecture to support remote-driven widgets.
 - :construction_worker: Replace `redux-observable` with [redux-saga](https://github.com/redux-saga/redux-saga).
 - :construction_worker: Turn off TypeScript linter rules for plain JavaScript files.
+- :book: Add [Code of Conduct](https://github.com/darekkay/dashboard/blob/master/CODE_OF_CONDUCT.md).
 - :book: Fix formatting and grammar issues in the documentation.
 
 ## 1.0.11 (2019-11-03)
