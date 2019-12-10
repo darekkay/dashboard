@@ -24,11 +24,9 @@ A new project is also a great opportunity to learn new concepts.
 
 ## Contribution
 
-All contributors are highly welcome. If you want to collaborate on this project, just give me a [note](mailto:hello@darekkay.com) or create a GitHub Issue.
+Contributions are always welcome, no matter how large or small. Before contributing, please read the [Code of Conduct](./CODE_OF_CONDUCT.md). When contributing to this repository, please first discuss the change you wish to make via [GitHub Issue](https://github.com/darekkay/dashboard/issues/new) or [email](mailto:hello@darekkay.com).
 
-This project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
-
-View the [development documentation](https://dashboard.darekkay.com/docs/development/) for more information.
+To get started with the project code, please read the [development documentation](https://dashboard.darekkay.com/docs/development/).
 
 ## License
 
