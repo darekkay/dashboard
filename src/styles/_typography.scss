@@ -4,6 +4,8 @@ textarea {
     "Noto Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 1.8rem;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   color: var(--text-color);
   background-color: var(--background-color);
@@ -21,8 +23,8 @@ a:hover {
 
 code,
 pre {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  font-family: source-code-pro, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   font-size: 1.7rem;
 }
 

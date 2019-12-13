@@ -34,11 +34,7 @@ const Input: React.FC<Props> = memo(props => {
       onBlur={event => {
         const currentTarget = event.currentTarget as Element;
         const relatedTarget = event.relatedTarget as Element;
-        setFocused(
-          currentTarget &&
-            relatedTarget &&
-            currentTarget.contains(relatedTarget)
-        );
+        setFocused(relatedTarget && currentTarget?.contains(relatedTarget));
       }}
     >
       {label && <span className="mb-2 text-2">{label}</span>}
