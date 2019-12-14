@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- :book: Use an accessible accent color for the documentation.
+
 ## 1.1.0 (2019-12-05)
 
 - :sparkles: Add a new widget: Chemical Element of the Day.
