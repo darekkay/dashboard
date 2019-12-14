@@ -36,8 +36,21 @@ const widgets = {
     options: {},
     meta: {}
   },
-  "totd-chemical-elements-01": {
-    x: 2,
+  "image-04": {
+    x: 3,
+    y: 1,
+    width: 3,
+    height: 2,
+    type: "image",
+    data: {},
+    options: {
+      url:
+        "https://images.pexels.com/photos/162240/bull-calf-heifer-ko-162240.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    },
+    meta: {}
+  },
+  "totd-chemical-elements-05": {
+    x: 0,
     y: 2,
     width: 1,
     height: 1,

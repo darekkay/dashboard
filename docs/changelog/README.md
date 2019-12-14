@@ -2,12 +2,13 @@
 
 ## Unreleased
 
+- :sparkles: New widget: Image.
 - :construction_worker: Let the widget generator create a properties file.
 - :book: Use an accessible accent color for the documentation.
 
 ## 1.1.0 (2019-12-05)
 
-- :sparkles: Add a new widget: Chemical Element of the Day.
+- :sparkles: New widget: Chemical Element of the Day.
 - :rocket: Add a button to clear input fields.
 - :construction_worker: Prepare the architecture to support remote-driven widgets.
 - :construction_worker: Replace `redux-observable` with [redux-saga](https://github.com/redux-saga/redux-saga).

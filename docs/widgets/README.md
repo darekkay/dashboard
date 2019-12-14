@@ -4,6 +4,10 @@
 
 Editable text field, e.g. for notes.
 
+## Image
+
+Display an external image.
+
 ## Date & Time
 
 Current date and time.

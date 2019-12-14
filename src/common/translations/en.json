@@ -46,6 +46,13 @@
       "name": "Notes",
       "headline": ""
     },
+    "image": {
+      "name": "Image",
+      "headline": "",
+      "configuration": {
+        "url": "Image URL"
+      }
+    },
     "totd-chemical-elements": {
       "name": "Chemical elements",
       "headline": ""

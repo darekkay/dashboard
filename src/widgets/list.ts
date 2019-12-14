@@ -9,6 +9,13 @@ export default {
     initialOptions: {},
     initialMeta: {}
   },
+  image: {
+    configurable: true,
+    initialHeight: 3,
+    initialWidth: 2,
+    initialOptions: {},
+    initialMeta: {}
+  },
   search: {
     configurable: true,
     initialHeight: 1,
@@ -31,6 +38,6 @@ export default {
     initialHeight: 1,
     initialWidth: 1,
     initialOptions: {},
-    initialMeta: {}
+    initialMeta: { updateCycle: { hours: 24 } }
   }
 } as { [key: string]: WidgetProperties };

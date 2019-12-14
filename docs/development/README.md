@@ -47,12 +47,12 @@ The `master` branch is (manually) deployed to [dashboard.darekkay.com](https://d
 
 ## Creating a new widget
 
-1. Run the file generator (`yarn generate`) and select `Widget`.
+1. Run the file generator (`yarn generate Widget`).
 2. Adjust the widget's `properties.ts` file with sane initial values.
-3. Re-scan the available widgets (`yarn scan-widgets`).
-4. Add mandatory widget labels (at least `name`) to all translation files under `common/translations`.
-
-Optionally, you may create a `configuration.tsx` file to enable a configuration modal for the new widget.
+3. Optionally, you may create a `configuration.tsx` file to enable a configuration modal for the new widget.
+4. Re-scan the available widgets (`yarn scan-widgets`).
+5. Add mandatory widget labels (at least `name`) to all translation files under `common/translations`.
+6. Add documentation under `docs/widgets`.
 
 ## Code of Conduct
 
