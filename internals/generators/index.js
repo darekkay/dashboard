@@ -34,6 +34,12 @@ module.exports = plop => {
       path: "../../src/widgets/{{kebabCase name}}/__tests__/index.test.tsx",
       templateFile: "./widget/test.hbs",
       abortOnFail: false
+    },
+    {
+      type: "add",
+      path: "../../src/widgets/{{kebabCase name}}/properties.ts",
+      templateFile: "./widget/properties.hbs",
+      abortOnFail: false
     }
   ];
 
