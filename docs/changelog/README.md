@@ -4,6 +4,7 @@
 
 - :sparkles: New widget: Image.
 - :construction_worker: Let the widget generator create a properties file.
+- :construction_worker: Include a `robots.txt` file.
 - :book: Use an accessible accent color for the documentation.
 
 ## 1.1.0 (2019-12-05)
