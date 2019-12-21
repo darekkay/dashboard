@@ -16,7 +16,9 @@ export const setOptions = createAction<SetValuesPayload>("widget/set-options");
 export const setData = createAction<SetValuesPayload>("widget/set-data-value");
 
 // Update actions
-export const triggerUpdate = createAction<string>("widget/update-trigger");
+export const triggerUpdate = (widgetType: string) =>
+  createAction<string>(`widget/${widgetType}/update`);
+export const updatePending = createAction<string>("widget/update-pending");
 export const updateSuccess = createAction<string>("widget/update-success");
 export const updateError = createAction<string>("widget/update-error");
 
@@ -63,7 +65,7 @@ export const reducerWithInitialState = (state: WidgetsState = initialState) =>
       state[id].data = { ...state[id].data, ...values };
     },
 
-    [triggerUpdate.toString()]: (state, action) => {
+    [updatePending.toString()]: (state, action) => {
       const id = action.payload;
       state[id].meta.updateStatus = "pending";
     },

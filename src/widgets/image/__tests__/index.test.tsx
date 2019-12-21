@@ -1,5 +1,6 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
+import _ from "lodash";
 
 import Image from "../index";
 
@@ -8,7 +9,14 @@ describe("<Image />", () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <Image id="image-mock-id" setData={() => null} setOptions={() => null} />
+      <Image
+        id="image-mock-id"
+        url="https://example.com/example.jpg"
+        meta={{}}
+        setData={_.noop}
+        setOptions={_.noop}
+        triggerUpdate={_.noop}
+      />
     );
   });
 

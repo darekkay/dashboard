@@ -6,6 +6,7 @@ import _ from "lodash";
 import {
   setData,
   triggerUpdate,
+  updatePending,
   updateError,
   updateSuccess
 } from "components/widget/duck";
@@ -16,8 +17,9 @@ const fetchTipOfTheDay = () => {
   return axios(URL).then(response => response.data);
 };
 
-function* moo(action: PayloadAction<string>) {
+function* onTriggerUpdate(action: PayloadAction<string>) {
   const id = action.payload;
+  yield put(updatePending(id));
   try {
     const data = yield call(fetchTipOfTheDay);
     yield put(
@@ -36,5 +38,9 @@ function* moo(action: PayloadAction<string>) {
 }
 
 export function* saga() {
-  yield takeLatest(triggerUpdate.toString(), moo);
+  // NICE: define/infer the widget type
+  yield takeLatest(
+    triggerUpdate("totd-chemical-elements").toString(),
+    onTriggerUpdate
+  );
 }

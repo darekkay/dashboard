@@ -55,7 +55,7 @@ const importWidgets = (widgets: { [key: string]: WidgetProperties }) =>
         Component: React.lazy(() =>
           import(`widgets/${type}`).then(module => {
             if (module.saga) {
-              injectSaga(type, module.saga);
+              injectSaga(type, module.saga); // NICE: import dynamically?
             }
             return module;
           })

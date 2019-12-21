@@ -13,7 +13,7 @@ import widgets, { ValueUpdateAction } from "widgets";
 
 import Loading from "../loading";
 
-import makeSelectWidget from "./selectors";
+import makeSelectWidget, { getTypeFromId } from "./selectors";
 import { actionCreators, WidgetMeta } from "./duck";
 
 export interface Props {
@@ -168,7 +168,7 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
 const mapStateToProps = (id: string) => makeSelectWidget(id);
 
 export default (id: string) =>
-  connect(
-    mapStateToProps(id),
-    actionCreators // NICE: bind id to action creators
-  )(withErrorHandling(Widget));
+  connect(mapStateToProps(id), {
+    ...actionCreators,
+    triggerUpdate: actionCreators.triggerUpdate(getTypeFromId(id))
+  })(withErrorHandling(Widget));
