@@ -4,6 +4,7 @@ import { WidgetProperties } from "./index";
 export default {
   "date-time": {
     configurable: false,
+    widgetType: "date-time",
     initialHeight: 1,
     initialWidth: 2,
     initialOptions: {},
@@ -11,6 +12,7 @@ export default {
   },
   image: {
     configurable: true,
+    widgetType: "image",
     initialHeight: 3,
     initialWidth: 2,
     initialOptions: {},
@@ -18,6 +20,7 @@ export default {
   },
   search: {
     configurable: true,
+    widgetType: "search",
     initialHeight: 1,
     initialWidth: 2,
     initialOptions: {
@@ -28,6 +31,7 @@ export default {
   },
   text: {
     configurable: false,
+    widgetType: "text",
     initialHeight: 2,
     initialWidth: 2,
     initialOptions: {},
@@ -35,6 +39,7 @@ export default {
   },
   "totd-chemical-elements": {
     configurable: false,
+    widgetType: "totd-chemical-elements",
     initialHeight: 1,
     initialWidth: 1,
     initialOptions: {},

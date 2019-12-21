@@ -11,6 +11,8 @@ import {
   updateSuccess
 } from "components/widget/duck";
 
+import { widgetType } from "./properties";
+
 const URL = "https://tips.darekkay.com/json/chemical-elements-en.json";
 
 const fetchTipOfTheDay = () => {
@@ -38,9 +40,5 @@ function* onTriggerUpdate(action: PayloadAction<string>) {
 }
 
 export function* saga() {
-  // NICE: define/infer the widget type
-  yield takeLatest(
-    triggerUpdate("totd-chemical-elements").toString(),
-    onTriggerUpdate
-  );
+  yield takeLatest(triggerUpdate(widgetType).toString(), onTriggerUpdate);
 }

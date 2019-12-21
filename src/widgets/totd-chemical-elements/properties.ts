@@ -1,3 +1,4 @@
+export const widgetType = "totd-chemical-elements";
 export const initialHeight = 1;
 export const initialWidth = 1;
 export const initialOptions = {};
