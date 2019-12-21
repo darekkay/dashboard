@@ -25,5 +25,6 @@ export const connectedWidgetProps = {
   removeWidgetFromLayout: _.noop,
   isLayoutEditable: false,
   hasError: false,
+  className: "resize",
   ...widgetProps
 };

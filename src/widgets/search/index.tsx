@@ -23,7 +23,7 @@ const Search: React.FC<Props> = memo(({ id, setData, name, pattern }) => {
   const [value, setValue] = useState("");
   const { t } = useTranslation();
   return (
-    <div className="max-w-full w-full px-3">
+    <div className="max-w-full w-full p-3">
       <div className="flex items-center">
         <Input
           value={value}
