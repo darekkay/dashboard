@@ -8,11 +8,7 @@ describe("<Image />", () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <Image
-        id="image-mock-id"
-        setData={() => null}
-        setOptions={() => null}
-      />
+      <Image id="image-mock-id" setData={() => null} setOptions={() => null} />
     );
   });
 

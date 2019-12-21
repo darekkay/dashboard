@@ -71,9 +71,6 @@ export const App: React.FC<Props> = memo(props => {
   );
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    ...layoutActionCreators
-  }
-)(App);
+export default connect(mapStateToProps, {
+  ...layoutActionCreators
+})(App);

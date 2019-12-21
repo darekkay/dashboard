@@ -78,7 +78,4 @@ export const ThemeSelect: React.FC<Props> = memo(props => {
   );
 });
 
-export default connect(
-  selectComponentProps,
-  actionCreators
-)(ThemeSelect);
+export default connect(selectComponentProps, actionCreators)(ThemeSelect);

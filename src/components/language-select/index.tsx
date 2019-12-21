@@ -38,7 +38,4 @@ export const LanguageSelect: React.FC<Props> = memo(props => {
   );
 });
 
-export default connect(
-  selectComponentProps,
-  actionCreators
-)(LanguageSelect);
+export default connect(selectComponentProps, actionCreators)(LanguageSelect);
