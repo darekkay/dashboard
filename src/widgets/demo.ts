@@ -5,7 +5,7 @@ const widgets = {
     x: 0,
     y: 0,
     width: 2,
-    height: 2,
+    height: 1,
     type: "date-time",
     data: {},
     options: {},
@@ -14,7 +14,7 @@ const widgets = {
   "search-02": {
     x: 3,
     y: 0,
-    width: 3,
+    width: 2,
     height: 1,
     type: "search",
     data: {},
@@ -25,19 +25,20 @@ const widgets = {
     meta: {}
   },
   "text-03": {
-    x: 7,
-    y: 0,
-    width: 5,
-    height: 3,
+    x: 3,
+    y: 1,
+    width: 2,
+    height: 2,
     type: "text",
     data: {
-      content: "Hello World!"
+      content:
+        "Rule #1\n\nAlways code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live."
     },
     options: {},
     meta: {}
   },
   "image-04": {
-    x: 3,
+    x: 0,
     y: 1,
     width: 3,
     height: 2,
@@ -50,8 +51,8 @@ const widgets = {
     meta: {}
   },
   "totd-chemical-elements-05": {
-    x: 0,
-    y: 2,
+    x: 2,
+    y: 0,
     width: 1,
     height: 1,
     type: "totd-chemical-elements",

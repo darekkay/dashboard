@@ -32,6 +32,7 @@ module.exports = {
           collapsable: false,
           sidebarDepth: 0,
           children: [
+            "2019-12-22",
             "2019-12-05",
             "2019-11-03",
             "2019-10-21",

@@ -1,10 +1,13 @@
 # Changelog
 
-## Unreleased
+## 1.1.1 (2019-12-22)
 
 - :sparkles: New widget: Image.
-- :construction_worker: Let the widget generator create a properties file.
+- :construction_worker: Make Storybook widgets resizeable for improved UI tests.
 - :construction_worker: Include a `robots.txt` file.
+- :construction_worker: Add new file generators (widget story, widget properties).
+- :construction_worker: Enable GitLab CI.
+- :construction_worker: Update dependencies.
 - :book: Use an accessible accent color for the documentation.
 
 ## 1.1.0 (2019-12-05)
