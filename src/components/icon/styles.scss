@@ -1,8 +1,14 @@
 $icon-size: 1.6rem;
+$icon-size-2x: 3.2rem;
 
 .icon {
   width: $icon-size;
   height: $icon-size;
+
+  &.icon-2x {
+    width: $icon-size-2x;
+    height: $icon-size-2x;
+  }
 
   svg {
     width: 100%;

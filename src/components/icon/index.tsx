@@ -12,10 +12,11 @@ export interface Props {
   name: string;
   alt?: string;
   position?: "left" | "right";
+  icons?: any;
 }
 
 const renderIcon: React.FC<Props> = props => {
-  const component = svgs[_.capitalize(props.name)];
+  const component = (props.icons || svgs)[_.capitalize(props.name)];
   if (!component) throw new Error(`Unknown icon '${props.name}'`);
 
   return React.createElement(component, {
@@ -24,12 +25,11 @@ const renderIcon: React.FC<Props> = props => {
 };
 
 const Icon: React.FC<Props> = memo(props => {
-  const { name, className, position } = props;
+  const { className, position } = props;
   return (
     <div
       className={cl(
         "icon",
-        `icon-${name}`,
         "inline-flex",
         { "mr-3": position === "left" },
         { "ml-3": position === "right" },
