@@ -23,22 +23,36 @@ module.exports = plop => {
   ];
 
   const widgetActions = [
+    // Widget index file
     {
       type: "add",
       path: "../../src/widgets/{{kebabCase name}}/index.tsx",
       templateFile: `./widget/index.hbs`,
       abortOnFail: false
     },
+
+    // Widget properties
+    {
+      type: "add",
+      path: "../../src/widgets/{{kebabCase name}}/properties.ts",
+      templateFile: "./widget/properties.hbs",
+      abortOnFail: false
+    },
+
+    // Unit tests
     {
       type: "add",
       path: "../../src/widgets/{{kebabCase name}}/__tests__/index.test.tsx",
       templateFile: "./widget/test.hbs",
       abortOnFail: false
     },
+
+    // Storybook story
     {
       type: "add",
-      path: "../../src/widgets/{{kebabCase name}}/properties.ts",
-      templateFile: "./widget/properties.hbs",
+      path:
+        "../../src/widgets/{{kebabCase name}}/__stories__/index.stories.tsx",
+      templateFile: "./widget/story.hbs",
       abortOnFail: false
     }
   ];

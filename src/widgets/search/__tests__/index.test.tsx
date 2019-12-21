@@ -2,6 +2,7 @@ import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
 import Input from "components/input";
+import { widgetProps } from "common/utils/mock";
 
 import Search from "../index";
 
@@ -11,13 +12,10 @@ describe("<Search />", () => {
   beforeEach(() => {
     wrapper = shallow(
       <Search
+        {...widgetProps}
         id="search-mock-id"
         name="Search"
         pattern="https://example.com?s=%s"
-        meta={{}}
-        setData={() => null}
-        setOptions={() => null}
-        triggerUpdate={() => null}
       />
     );
   });

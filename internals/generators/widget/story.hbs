@@ -8,11 +8,12 @@ const Story = () => {
   return (
     <Widget
       {...connectedWidgetProps}
-      id="search-01"
-      type="search"
-      options={{ pattern: "https://duckduckgo.com/?q=%s", title: "DuckDuckGo" }}
+      id="{{ kebabCase name }}-01"
+      type="{{ kebabCase name }}"
+      options=\{{}}
+      data=\{{}}
     />
   );
 };
 
-storiesOf("Widgets.Search", module).add("Variants", () => <Story />);
+storiesOf("Widgets.{{ properCase name }}", module).add("Variants", () => <Story />);

@@ -1,6 +1,7 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
-import _ from "lodash";
+
+import { widgetProps } from "common/utils/mock";
 
 import Image from "../index";
 
@@ -10,12 +11,9 @@ describe("<Image />", () => {
   beforeEach(() => {
     wrapper = shallow(
       <Image
+        {...widgetProps}
         id="image-mock-id"
         url="https://example.com/example.jpg"
-        meta={{}}
-        setData={_.noop}
-        setOptions={_.noop}
-        triggerUpdate={_.noop}
       />
     );
   });

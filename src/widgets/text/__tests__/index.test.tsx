@@ -1,6 +1,8 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
+import { widgetProps } from "common/utils/mock";
+
 import Text from "../index";
 
 describe("<Text />", () => {
@@ -12,14 +14,7 @@ describe("<Text />", () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <Text
-        id={id}
-        content={content}
-        meta={{}}
-        setData={setDataSpy}
-        setOptions={() => null}
-        triggerUpdate={() => null}
-      />
+      <Text {...widgetProps} id={id} content={content} setData={setDataSpy} />
     );
   });
 

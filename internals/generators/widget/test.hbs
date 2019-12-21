@@ -1,6 +1,8 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
+import { widgetProps } from "common/utils/mock";
+
 import {{ properCase name }} from "../index";
 
 describe("<{{ properCase name }} />", () => {
@@ -9,9 +11,8 @@ describe("<{{ properCase name }} />", () => {
   beforeEach(() => {
     wrapper = shallow(
       <{{ properCase name }}
+        {...widgetProps}
         id="{{ kebabCase name }}-mock-id"
-        setData={() => null}
-        setOptions={() => null}
       />
     );
   });
