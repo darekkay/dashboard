@@ -6,7 +6,7 @@
 
 The goal of this project is a fully customizable and extendable dashboard/startpage, with modules like clock, weather, todo tasks, bookmarks, calendar, etc.
 
-Usually, I wait for a MVP before releasing a project. This project is being developed in public from Day 1. I document my progress and (knowledge) insights in the blog, while the changelog describes the actual project features.
+Usually, I wait for a MVP before releasing a project. This project is being [developed in public](https://github.com/darekkay/dashboard) from Day 1. I document my progress and (knowledge) insights in the blog, while the changelog describes the actual project features.
 
 The current state of the project is available at [dashboard.darekkay.com](https://dashboard.darekkay.com).
 
@@ -29,7 +29,7 @@ All available widgets are listed [here](widgets/README.md).
 
 ## Contribution
 
-All contributors are highly welcome. If you want to collaborate on this project, just give me a [note](mailto:hello@darekkay.com) or create a GitHub Issue.
+All contributors are highly welcome. If you want to collaborate on this project, just give me a [note](mailto:hello@darekkay.com) or create a [GitHub Issue](https://github.com/darekkay/dashboard/issues/new).
 
 View the [development documentation](development/README.md) for more information.
 

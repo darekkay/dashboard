@@ -3,6 +3,9 @@ module.exports = {
   description: "Customizable personal dashboard and startpage",
   base: "/docs/",
   themeConfig: {
+    repo: "https://github.com/darekkay/dashboard",
+    docsDir: "docs",
+    editLinks: true,
     nav: [
       { text: "Home", link: "/" },
       { text: "Widgets", link: "/widgets/" },
