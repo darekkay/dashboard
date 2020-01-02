@@ -37,4 +37,9 @@ h6 {
   margin: 0;
 }
 
+// Remove inner focus ring in Firefox
+::-moz-focus-inner {
+  border: 0;
+}
+
 @include focus-ring(var(--focus-ring-color));
