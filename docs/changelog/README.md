@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- :sparkles: Auto-detect default language.
 - :gem: Remove inner focus ring in Firefox.
 
 ## 1.1.1 (2019-12-22)

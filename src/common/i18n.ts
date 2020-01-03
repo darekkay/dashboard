@@ -1,4 +1,4 @@
-import i18n from "i18next";
+import i18n, { Resource } from "i18next";
 import { initReactI18next } from "react-i18next";
 
 import { DEBUG_LABELS } from "common/environment";
@@ -6,18 +6,24 @@ import { DEBUG_LABELS } from "common/environment";
 import de from "./translations/de.json";
 import en from "./translations/en.json";
 
-const resources = {
+export const resources = {
   en: {
     translation: DEBUG_LABELS ? {} : en
   },
   de: {
     translation: de
   }
+} as Resource;
+
+/* Use browser language as default, if a translation is available */
+export const defaultLanguage = () => {
+  const browserLanguage = navigator.language?.substr(0, 2);
+  return resources[browserLanguage] ? browserLanguage : "en";
 };
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en",
+  lng: defaultLanguage(),
   fallbackLng: "en",
 
   interpolation: {
