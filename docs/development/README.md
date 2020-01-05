@@ -54,6 +54,14 @@ The `master` branch is (manually) deployed to [dashboard.darekkay.com](https://d
 5. Add mandatory widget labels (at least `name`) to all translation files under `common/translations`.
 6. Add documentation under `docs/widgets`.
 
+## Commit message format
+
+- Use imperative form (e.g. "Fix" instead of "Fixed" or "Fixes").
+
+## Changelog format
+
+The changelog uses emojis to categorize changes. View the emoji format [here](https://github.com/darekkay/config-files/blob/master/github/CHANGELOG.md).
+
 ## Code of Conduct
 
 This project is released with a [Contributor Code of Conduct](https://github.com/darekkay/dashboard/blob/master/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
