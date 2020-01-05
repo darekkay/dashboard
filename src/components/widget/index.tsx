@@ -8,7 +8,7 @@ import withErrorHandling, {
 } from "common/hoc/withErrorHandling";
 import Button, { ButtonVariant, ButtonSize } from "components/button";
 import Icon from "components/icon";
-import Modal from "components/modal";
+import WidgetConfiguration from "components/widget-configuration";
 import widgets, { ValueUpdateAction } from "widgets";
 
 import Loading from "../loading";
@@ -135,31 +135,17 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
           </Button>
         </div>
       )}
-      <Modal
-        headline={t(`widget.common.configuration`, {
-          widget: t(`widget.${type}.name`)
-        })}
-        closeModal={closeModal}
-        isOpen={isModalOpen}
-      >
-        {isWidgetConfigurable && (
-          <Suspense fallback={<Loading />}>
-            {React.createElement(widgets[type].Configuration, {
-              id,
-              setOptions,
-              options
-            })}
-          </Suspense>
-        )}
-        <div className="mt-6 text-right">
-          <Button
-            className="w-full md:w-auto md:ml-5 mt-5"
-            onClick={closeModal}
-          >
-            {t("common.close")}
-          </Button>
-        </div>
-      </Modal>
+      {isWidgetConfigurable && (
+        <WidgetConfiguration
+          id={id}
+          type={type}
+          configuration={widgets[type].Configuration}
+          options={options}
+          setOptions={setOptions}
+          closeModal={closeModal}
+          isModalOpen={isModalOpen}
+        ></WidgetConfiguration>
+      )}
       {children}
     </div>
   );
