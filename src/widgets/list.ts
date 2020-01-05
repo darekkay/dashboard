@@ -10,6 +10,14 @@ export default {
     initialOptions: {},
     initialMeta: {}
   },
+  website: {
+    configurable: true,
+    widgetType: "website",
+    initialHeight: 3,
+    initialWidth: 2,
+    initialOptions: {},
+    initialMeta: {}
+  },
   image: {
     configurable: true,
     widgetType: "image",

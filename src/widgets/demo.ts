@@ -11,7 +11,7 @@ const widgets = {
     options: {},
     meta: {}
   },
-  "search-02": {
+  "search-01": {
     x: 3,
     y: 0,
     width: 2,
@@ -24,7 +24,7 @@ const widgets = {
     },
     meta: {}
   },
-  "text-03": {
+  "text-01": {
     x: 3,
     y: 1,
     width: 2,
@@ -37,7 +37,7 @@ const widgets = {
     options: {},
     meta: {}
   },
-  "image-04": {
+  "image-01": {
     x: 0,
     y: 1,
     width: 3,
@@ -50,7 +50,19 @@ const widgets = {
     },
     meta: {}
   },
-  "totd-chemical-elements-05": {
+  "website-01": {
+    x: 5,
+    y: 0,
+    width: 3,
+    height: 3,
+    type: "website",
+    data: {},
+    options: {
+      url: "https://dashboard.darekkay.com/docs/"
+    },
+    meta: {}
+  },
+  "totd-chemical-elements-01": {
     x: 2,
     y: 0,
     width: 1,

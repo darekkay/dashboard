@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- :sparkles: New widget: [Website](https://dashboard.darekkay.com/docs/widgets/website.html) (Iframe).
 - :sparkles: Auto-detect default language.
 - :rocket: Add a button to cancel changed widget options.
 - :rocket: Remove inner focus ring in Firefox.
@@ -14,7 +15,7 @@
 
 ## 1.1.1 (2019-12-22)
 
-- :sparkles: New widget: Image.
+- :sparkles: New widget: [Image](https://dashboard.darekkay.com/docs/widgets/image.html).
 - :gem: Include a `robots.txt` file.
 - :hammer: Make Storybook widgets resizeable for improved UI tests.
 - :hammer: Add new file generators (widget story, widget properties).
@@ -24,7 +25,7 @@
 
 ## 1.1.0 (2019-12-05)
 
-- :sparkles: New widget: Chemical Element of the Day.
+- :sparkles: New widget: [Chemical Element of the Day](https://dashboard.darekkay.com/docs/widgets/totd-chemical-elements.html).
 - :rocket: Add a button to clear input fields.
 - :gem: Prepare the architecture to support remote-driven widgets.
 - :gem: Replace `redux-observable` with [redux-saga](https://github.com/redux-saga/redux-saga).

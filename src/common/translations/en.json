@@ -34,6 +34,20 @@
       "name": "Date and Time",
       "headline": ""
     },
+    "website": {
+      "name": "Website",
+      "headline": "",
+      "configuration": {
+        "url": "Website URL"
+      }
+    },
+    "image": {
+      "name": "Image",
+      "headline": "",
+      "configuration": {
+        "url": "Image URL"
+      }
+    },
     "search": {
       "name": "Web Search",
       "headline": "{{title}} Search",
@@ -46,13 +60,6 @@
     "text": {
       "name": "Notes",
       "headline": ""
-    },
-    "image": {
-      "name": "Image",
-      "headline": "",
-      "configuration": {
-        "url": "Image URL"
-      }
     },
     "totd-chemical-elements": {
       "name": "Chemical elements",

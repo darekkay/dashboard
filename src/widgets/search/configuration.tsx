@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { ConfigurationProps } from "widgets/index";
 import Input from "components/input";
-import Button, { ButtonVariant } from "components/button";
+import Button from "components/button";
 
 import providers from "widgets/search/lib/providers";
 

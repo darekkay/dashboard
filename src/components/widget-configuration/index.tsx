@@ -1,7 +1,7 @@
 import React, { memo, Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import Button, { ButtonVariant } from "components/button";
+import Button from "components/button";
 import Modal from "components/modal";
 import Loading from "components/loading";
 import { ConfigurationProps, ValueUpdateAction } from "widgets";
