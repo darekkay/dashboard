@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { ConfigurationProps } from "widgets/index";
 import Input from "components/input";
-import Button from "components/button";
+import Button, { ButtonVariant } from "components/button";
 
 import providers from "widgets/search/lib/providers";
 
@@ -12,13 +12,13 @@ const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
   return (
     <>
       <Input
-        setValue={value => setOptions({ id, values: { title: value } })}
+        setValue={value => setOptions({ title: value })}
         value={options.title}
         label={t("widget.search.configuration.title")}
         className="mb-6"
       />
       <Input
-        setValue={value => setOptions({ id, values: { pattern: value } })}
+        setValue={value => setOptions({ pattern: value })}
         value={options.pattern}
         label={t("widget.search.configuration.pattern")}
         className="mb-6"
@@ -30,8 +30,8 @@ const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
             outline
             onClick={() =>
               setOptions({
-                id,
-                values: { title: provider.title, pattern: provider.pattern }
+                title: provider.title,
+                pattern: provider.pattern
               })
             }
           >

@@ -2,6 +2,7 @@
   "common": {
     "edit": "Bearbeiten",
     "save": "Speichern",
+    "cancel": "Abbrechen",
     "close": "Schließen",
     "clear": "Löschen",
     "loading": "Lade...",

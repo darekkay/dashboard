@@ -9,7 +9,7 @@ const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
   return (
     <>
       <Input
-        setValue={value => setOptions({ id, values: { url: value } })}
+        setValue={value => setOptions({ url: value })}
         value={options.url}
         label={t("widget.image.configuration.url")}
       />

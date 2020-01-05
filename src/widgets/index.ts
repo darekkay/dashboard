@@ -25,7 +25,7 @@ export interface WidgetProps {
 export interface ConfigurationProps {
   id: string;
   options: { [key: string]: any };
-  setOptions: ValueUpdateAction;
+  setOptions: (values: { [key: string]: any }) => void;
 }
 
 export interface WidgetProperties {

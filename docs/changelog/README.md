@@ -3,6 +3,7 @@
 ## Unreleased
 
 - :sparkles: Auto-detect default language.
+- :rocket: Add a button to cancel changed widget options.
 - :rocket: Remove inner focus ring in Firefox.
 - :rocket: Normalize some CSS rules across browsers.
 - :bug: Prevent double vertical scrollbar.
