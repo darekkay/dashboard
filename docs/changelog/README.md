@@ -5,6 +5,7 @@
 - :sparkles: Auto-detect default language.
 - :rocket: Remove inner focus ring in Firefox.
 - :rocket: Normalize some CSS rules across browsers.
+- :book: Add internationalization docs.
 - :book: Standardize the changelog format.
 
 ## 1.1.1 (2019-12-22)

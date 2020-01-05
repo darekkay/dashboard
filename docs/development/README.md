@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - View: [React](https://reactjs.org/)
 - State management: [Redux](https://redux.js.org/)
 - Side effects: [redux-observable](https://redux-observable.js.org/)
-- Internationalization: [i18next](https://www.i18next.com/)
+- Internationalization: [react-i18next](https://react.i18next.com/)
 - Styling: [SCSS](https://sass-lang.com/) with [Tailwind](https://tailwindcss.com/)
 - Package management: [yarn](https://yarnpkg.com)
 
@@ -53,6 +53,14 @@ The `master` branch is (manually) deployed to [dashboard.darekkay.com](https://d
 4. Re-scan the available widgets (`yarn scan-widgets`).
 5. Add mandatory widget labels (at least `name`) to all translation files under `common/translations`.
 6. Add documentation under `docs/widgets`.
+
+## Internationalization
+
+The [react-i18next](https://react.i18next.com/) library is being used for internationalization. Translations are located under `src/common/translations`, one file per language. Currently, English (`en.json`) and German (`de.json`) translations are available.
+
+The label keys can be viewed in a `debug` mode by adding `debug:labels` to the URL, e.g. [https://dashboard.darekkay.com/?debug:labels](https://dashboard.darekkay.com/?debug:labels).
+
+Default UI language is based on the browser language and can be changed by the user in the settings dialog.
 
 ## Commit message format
 
