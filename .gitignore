@@ -20,6 +20,7 @@ dist
 /coverage
 .env*.local
 docs/.vuepress/public
+/storybook-static
 
 ### Misc ###
 

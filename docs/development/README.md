@@ -54,6 +54,10 @@ The `master` branch is (manually) deployed to [dashboard.darekkay.com](https://d
 5. Add mandatory widget labels (at least `name`) to all translation files under `common/translations`.
 6. Add documentation under `docs/widgets`.
 
+## Storybook
+
+This project uses [Storybook](https://storybook.js.org/), a tool for developing UI components in isolation. It is automatically deployed [here](https://dashboard.darekkay.com/storybook/) on every push to production. Every widget and every common component should provide a story in a `__stories__` sub-folder.
+
 ## Internationalization
 
 The [react-i18next](https://react.i18next.com/) library is being used for internationalization. Translations are located under `src/common/translations`, one file per language. Currently, English (`en.json`) and German (`de.json`) translations are available.

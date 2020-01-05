@@ -6,6 +6,7 @@
 - :rocket: Remove inner focus ring in Firefox.
 - :rocket: Normalize some CSS rules across browsers.
 - :bug: Prevent double vertical scrollbar.
+- :hammer: Host [Storybook](https://dashboard.darekkay.com/storybook/).
 - :book: Add internationalization docs.
 - :book: Standardize the changelog format.
 
