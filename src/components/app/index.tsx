@@ -62,7 +62,6 @@ export const App: React.FC<Props> = memo(props => {
             removeWidgetFromLayout={removeWidgetFromLayout}
           />
         </main>
-        {/* TODO: connect drawer instead */}
         {isLayoutEditable && (
           <Drawer addWidgetToLayout={addWidgetToLayout}></Drawer>
         )}

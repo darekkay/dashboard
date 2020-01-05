@@ -18,7 +18,6 @@ export type Theme = "default" | "dark";
 const themeSelectors = THEMES.map(theme => `theme-${theme}`);
 
 export const updateCssVariables = (theme: Theme) => {
-  /* TODO: probably move to a side-effect library */
   document.body.classList.remove(...themeSelectors);
   document.body.classList.add(`theme-${theme}`);
 };
