@@ -4,6 +4,7 @@
 
 - :sparkles: Auto-detect default language.
 - :gem: Remove inner focus ring in Firefox.
+- :construction_worker: Normalize some CSS rules across browsers.
 
 ## 1.1.1 (2019-12-22)
 

@@ -4,6 +4,9 @@ html {
 
   box-sizing: border-box;
   background-repeat: no-repeat;
+
+  /* Prevent adjustments of font size after orientation changes in iOS */
+  -webkit-text-size-adjust: 100%;
 }
 
 *,
@@ -16,4 +19,12 @@ html {
 table {
   /* Do not include additional border spacing */
   border-collapse: collapse;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  /* Correct the inability to style clickable types in iOS and Safari */
+  -webkit-appearance: button;
 }
