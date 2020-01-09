@@ -1,30 +1,27 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
-import { MenuItem } from "reakit";
-import _ from "lodash";
+import { mount, ReactWrapper } from "enzyme";
 
-import Menu from "../index";
+import Menu, { MenuAction, MenuSeparator } from "../index";
 
 describe("<Menu />", () => {
-  let wrapper: ShallowWrapper;
+  let wrapper: ReactWrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Menu icon="cog" title="title" items={[]} />);
+    wrapper = mount(
+      <Menu icon="cog" title="title">
+        <MenuAction text="Item 1" icon="heart" />
+        <MenuSeparator />
+        <MenuAction text="Item 2" icon="edit" />
+      </Menu>
+    );
   });
 
-  it("renders an empty menu", () => {
-    expect(wrapper.find(MenuItem)).toHaveLength(0);
+  it("renders required aria attributes", () => {
+    expect(wrapper.find("[role='menu']")).toHaveLength(1);
+    expect(wrapper.find("[role='menuitem']")).toHaveLength(2);
   });
 
-  it("renders menu items and separators", () => {
-    wrapper.setProps({
-      items: [
-        { text: "Item", icon: "heart", onClick: _.noop() },
-        "separator",
-        { text: "Item", icon: "heart", onClick: _.noop() }
-      ]
-    });
-    expect(wrapper.find(MenuItem)).toHaveLength(2);
+  it("renders a separator", () => {
     expect(wrapper.find("hr")).toHaveLength(1);
   });
 });

@@ -7,6 +7,7 @@
 - :rocket: Remove inner focus ring in Firefox.
 - :rocket: Normalize some CSS rules across browsers.
 - :bug: Prevent double vertical scrollbar.
+- :gem: Refactor the menu into a [compound component](https://kentcdodds.com/blog/compound-components-with-react-hooks).
 - :hammer: Host [Storybook](https://dashboard.darekkay.com/storybook/).
 - :book: Add internationalization docs.
 - :book: Standardize the changelog format.

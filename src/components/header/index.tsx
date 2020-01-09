@@ -5,7 +5,7 @@ import { APP_VERSION } from "common/environment";
 import Link from "components/link";
 import Button, { ButtonSize, ButtonVariant } from "components/button";
 import Icon from "components/icon";
-import Menu from "components/menu";
+import Menu, { MenuAction, MenuSeparator } from "components/menu";
 import Modal from "components/modal";
 import Settings from "components/settings";
 
@@ -47,29 +47,24 @@ const Header: React.FC<Props> = memo(
         )}
 
         {!isLayoutEditable && (
-          <Menu
-            icon="bars"
-            title="Main menu"
-            disclosureClassName="my-2"
-            items={[
-              {
-                text: t("common.edit"),
-                icon: "edit",
-                onClick: toggleLayoutEditable
-              },
-              {
-                text: t("common.documentation"),
-                icon: "question",
-                href: "https://dashboard.darekkay.com/docs"
-              },
-              "separator",
-              {
-                text: t("common.settings"),
-                icon: "cog",
-                onClick: openSettingsModal
-              }
-            ]}
-          />
+          <Menu icon="bars" title="Main menu" disclosureClassName="my-2">
+            <MenuAction
+              text={t("common.edit")}
+              icon="edit"
+              onClick={toggleLayoutEditable}
+            />
+            <MenuAction
+              text={t("common.documentation")}
+              icon="question"
+              href="https://dashboard.darekkay.com/docs"
+            />
+            <MenuSeparator />
+            <MenuAction
+              text={t("common.settings")}
+              icon="cog"
+              onClick={openSettingsModal}
+            />
+          </Menu>
         )}
 
         <Modal
