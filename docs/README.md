@@ -4,7 +4,7 @@
 
 ## Goal
 
-The goal of this project is a fully customizable and extendable dashboard/startpage, with modules like clock, weather, todo tasks, bookmarks, calendar, etc.
+The goal of this project is a fully customizable and extendable dashboard/startpage, with modules like clock, weather, todo tasks, bookmarks, calendar, etc. The user should be able to view all important information on a single page.
 
 Usually, I wait for a MVP before releasing a project. This project is being [developed in public](https://github.com/darekkay/dashboard) from Day 1. I document my progress and (knowledge) insights in the blog, while the changelog describes the actual project features.
 
@@ -20,8 +20,8 @@ A new project is also a great opportunity to learn new concepts.
 
 ## Features
 
-- [x] Themes support. Because noone will bat an eye without a Dark Mode™.
-- [x] Multi-language support (English and German already provided).
+- ☑ Themes support. Because noone will bat an eye without a Dark Mode™.
+- ☑ Multi-language support (English and German already provided).
 
 ## Implemented widgets
 

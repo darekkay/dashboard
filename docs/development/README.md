@@ -7,10 +7,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Programming language: [TypeScript](https://www.typescriptlang.org/)
 - View: [React](https://reactjs.org/)
 - State management: [Redux](https://redux.js.org/)
-- Side effects: [redux-observable](https://redux-observable.js.org/)
+- Side effects: [redux-saga](https://redux-saga.js.org/)
 - Internationalization: [react-i18next](https://react.i18next.com/)
 - Styling: [SCSS](https://sass-lang.com/) with [Tailwind](https://tailwindcss.com/)
-- Package management: [yarn](https://yarnpkg.com)
+- Dependency management: [yarn](https://yarnpkg.com)
 
 ## Installation
 
@@ -34,14 +34,14 @@ yarn start
 
 The `package.json` file contains other useful scripts, which you can execute using `yarn <command>` or `npm run <command>`:
 
-| Command   | Description                                          |
-| --------- | ---------------------------------------------------- |
-| build     | Builds the app for production to the `build` folder. |
-| format    | Reformat all files with `prettier`.                  |
-| generate  | Generate boilerplate code (components, widgets).     |
-| lint:fix  | Run ESLint, apply automatic fixes if possible.       |
-| storybook | Start Storybook                                      |
-| test      | Run tests and check test coverage.                   |
+| Command         | Description                                          |
+| --------------- | ---------------------------------------------------- |
+| build           | Builds the app for production to the `build` folder. |
+| format          | Reformat all files with `prettier`.                  |
+| generate        | Generate boilerplate code (components, widgets).     |
+| lint:fix        | Run ESLint, apply automatic fixes if possible.       |
+| storybook:start | Start Storybook                                      |
+| test            | Run tests and check test coverage.                   |
 
 The `master` branch is (manually) deployed to [dashboard.darekkay.com](https://dashboard.darekkay.com).
 
@@ -60,7 +60,7 @@ This project uses [Storybook](https://storybook.js.org/), a tool for developing 
 
 ## Internationalization
 
-The [react-i18next](https://react.i18next.com/) library is being used for internationalization. Translations are located under `src/common/translations`, one file per language. Currently, English (`en.json`) and German (`de.json`) translations are available.
+The [react-i18next](https://react.i18next.com/) library handles internationalization. Translations are located under `src/common/translations`, one file per language. Currently, English (`en.json`) and German (`de.json`) translations are available.
 
 The label keys can be viewed in a `debug` mode by adding `debug:labels` to the URL, e.g. [https://dashboard.darekkay.com/?debug:labels](https://dashboard.darekkay.com/?debug:labels).
 
