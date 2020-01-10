@@ -10,19 +10,19 @@ export default {
     initialOptions: {},
     initialMeta: {}
   },
-  website: {
-    configurable: true,
-    widgetType: "website",
-    initialHeight: 3,
-    initialWidth: 2,
-    initialOptions: {},
-    initialMeta: {}
-  },
   image: {
     configurable: true,
     widgetType: "image",
     initialHeight: 3,
     initialWidth: 2,
+    initialOptions: {},
+    initialMeta: {}
+  },
+  "qr-code": {
+    configurable: true,
+    widgetType: "qr-code",
+    initialHeight: 1,
+    initialWidth: 1,
     initialOptions: {},
     initialMeta: {}
   },
@@ -52,5 +52,13 @@ export default {
     initialWidth: 1,
     initialOptions: {},
     initialMeta: { updateCycle: { hours: 24 } }
+  },
+  website: {
+    configurable: true,
+    widgetType: "website",
+    initialHeight: 3,
+    initialWidth: 3,
+    initialOptions: {},
+    initialMeta: {}
   }
 } as { [key: string]: WidgetProperties };

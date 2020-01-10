@@ -1,6 +1,7 @@
 import React, { memo, Suspense, useState } from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
+import Measure from "react-measure";
 import cn from "classnames";
 
 import withErrorHandling, {
@@ -15,6 +16,13 @@ import Loading from "../loading";
 
 import makeSelectWidget, { getTypeFromId } from "./selectors";
 import { actionCreators, WidgetMeta } from "./duck";
+
+const initialDimensions = { width: 1, height: 1 };
+
+export interface Dimensions {
+  width: number;
+  height: number;
+}
 
 export interface Props {
   id: string;
@@ -61,9 +69,12 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
 
+  const [dimensions, setDimensions] = useState<Dimensions>(initialDimensions);
+
   return (
     <div
       className={cn(
+        "widget",
         "visibility-trigger",
         "flex",
         "flex-col",
@@ -89,19 +100,34 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
       )}
       {hasError && "» Error «"}
       {!hasError && (
-        <div className="flex flex-col items-center justify-center h-full">
-          <Suspense fallback={<Loading type="skeleton" />}>
-            {React.createElement(widgets[type].Component, {
-              id,
-              setOptions,
-              setData,
-              triggerUpdate,
-              meta,
-              ...options,
-              ...data
-            })}
-          </Suspense>
-        </div>
+        <Measure
+          bounds
+          onResize={contentRect => {
+            setDimensions(contentRect?.bounds || initialDimensions);
+          }}
+        >
+          {({ measureRef }) => (
+            <div
+              ref={measureRef}
+              className="flex flex-col items-center justify-center h-full"
+            >
+              <Suspense fallback={<Loading type="skeleton" />}>
+                {React.createElement(widgets[type].Component, {
+                  id,
+                  setOptions,
+                  setData,
+                  triggerUpdate,
+                  meta: {
+                    ...meta,
+                    dimensions
+                  },
+                  ...options,
+                  ...data
+                })}
+              </Suspense>
+            </div>
+          )}
+        </Measure>
       )}
       {isLayoutEditable && (
         <>

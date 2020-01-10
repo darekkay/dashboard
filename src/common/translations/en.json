@@ -7,7 +7,8 @@
     "clear": "Clear",
     "loading": "Loading...",
     "settings": "Settings",
-    "documentation": "Documentation"
+    "documentation": "Documentation",
+    "headline": "Headline"
   },
   "theme": {
     "headline": "Theme",
@@ -34,18 +35,18 @@
       "name": "Date and Time",
       "headline": ""
     },
-    "website": {
-      "name": "Website",
-      "headline": "",
-      "configuration": {
-        "url": "Website URL"
-      }
-    },
     "image": {
       "name": "Image",
       "headline": "",
       "configuration": {
         "url": "Image URL"
+      }
+    },
+    "qr-code": {
+      "name": "QR Code",
+      "headline": "{{headline}}",
+      "configuration": {
+        "content": "Content"
       }
     },
     "search": {
@@ -64,6 +65,13 @@
     "totd-chemical-elements": {
       "name": "Chemical elements",
       "headline": ""
+    },
+    "website": {
+      "name": "Website",
+      "headline": "",
+      "configuration": {
+        "url": "Website URL"
+      }
     }
   }
 }

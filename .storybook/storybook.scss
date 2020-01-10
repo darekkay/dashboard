@@ -2,3 +2,8 @@ body {
   padding: 1rem 2rem;
   background-color: var(--background-color-panel);
 }
+
+.widget,
+.widget > * {
+  min-height: 80px;
+}

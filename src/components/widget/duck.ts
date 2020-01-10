@@ -5,6 +5,7 @@ import { MomentInputObject } from "moment";
 
 import widgets from "widgets";
 import { initialWidgets } from "widgets/demo";
+import { Dimensions } from "components/widget/index";
 
 interface SetValuesPayload {
   id: string;
@@ -34,6 +35,7 @@ export interface WidgetMeta {
   updateStatus?: UpdateStatus;
   lastUpdated?: number;
   updateCycle?: MomentInputObject;
+  dimensions?: Dimensions;
 }
 
 export interface Widget {

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- :sparkles: New widget: [QR Code](https://dashboard.darekkay.com/docs/widgets/qr-code.html).
 - :hammer: Add a file generator for widget documentation.
 
 ## 1.1.2 (2020-01-10)

@@ -27,7 +27,7 @@ const widgets = {
   "text-01": {
     x: 3,
     y: 1,
-    width: 2,
+    width: 3,
     height: 2,
     type: "text",
     data: {
@@ -61,6 +61,18 @@ const widgets = {
     meta: {
       updateCycle: { hours: 24 }
     }
+  },
+  "qr-code-01": {
+    x: 5,
+    y: 0,
+    width: 1,
+    height: 1,
+    type: "qr-code",
+    data: {},
+    options: {
+      content: "https://dashboard.darekkay.com/"
+    },
+    meta: {}
   }
 };
 

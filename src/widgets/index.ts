@@ -5,6 +5,7 @@ import { MomentInputObject } from "moment";
 import { WidgetMeta } from "components/widget/duck";
 
 import availableWidgets from "./list";
+import { Dimensions } from "components/widget";
 
 export type ValueUpdateAction = ({
   id,
@@ -17,6 +18,7 @@ export type ValueUpdateAction = ({
 export interface WidgetProps {
   id: string;
   meta: WidgetMeta;
+  dimensions?: Dimensions;
   setData: ValueUpdateAction;
   setOptions: ValueUpdateAction;
   triggerUpdate: (id: string) => void;
