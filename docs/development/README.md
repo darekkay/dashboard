@@ -52,7 +52,7 @@ The `master` branch is (manually) deployed to [dashboard.darekkay.com](https://d
 3. Optionally, you may create a `configuration.tsx` file to enable a configuration modal for the new widget.
 4. Re-scan the available widgets (`yarn scan-widgets`).
 5. Add mandatory widget labels (at least `name`) to all translation files under `common/translations`.
-6. Add documentation under `docs/widgets`.
+6. Edit documentation under `docs/widgets`.
 
 ## Storybook
 

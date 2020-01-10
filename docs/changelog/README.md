@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- :hammer: Add a file generator for widget documentation.
+
 ## 1.1.2 (2020-01-10)
 
 - :sparkles: New widget: [Website](https://dashboard.darekkay.com/docs/widgets/website.html) (Iframe).
