@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.1.2 (2020-01-10)
 
 - :sparkles: New widget: [Website](https://dashboard.darekkay.com/docs/widgets/website.html) (Iframe).
 - :sparkles: Auto-detect default language.

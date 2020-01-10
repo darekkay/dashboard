@@ -50,18 +50,6 @@ const widgets = {
     },
     meta: {}
   },
-  "website-01": {
-    x: 5,
-    y: 0,
-    width: 3,
-    height: 3,
-    type: "website",
-    data: {},
-    options: {
-      url: "https://dashboard.darekkay.com/docs/"
-    },
-    meta: {}
-  },
   "totd-chemical-elements-01": {
     x: 2,
     y: 0,
