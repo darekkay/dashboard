@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
 import Button, { ButtonSize, ButtonVariant } from "components/button";
+import Label from "components/forms/label";
 import Icon from "components/icon";
 
 const onKeyUp = (event: any, props: Props) => {
@@ -26,19 +27,18 @@ const Input: React.FC<Props> = memo(props => {
   const [isFocused, setFocused] = useState(false);
   const { t } = useTranslation();
   return (
-    <label
-      className="max-w-full w-full flex flex-col"
-      onFocus={event => {
-        setFocused(true);
-      }}
-      onBlur={event => {
-        const currentTarget = event.currentTarget as Element;
-        const relatedTarget = event.relatedTarget as Element;
-        setFocused(relatedTarget && currentTarget?.contains(relatedTarget));
-      }}
-    >
-      {label && <span className="mb-2 text-2">{label}</span>}
-      <div className="relative">
+    <Label text={label}>
+      <div
+        className="w-full relative"
+        onFocus={event => {
+          setFocused(true);
+        }}
+        onBlur={event => {
+          const currentTarget = event.currentTarget as Element;
+          const relatedTarget = event.relatedTarget as Element;
+          setFocused(relatedTarget && currentTarget?.contains(relatedTarget));
+        }}
+      >
         <input
           className={cn(
             "w-full p-2 border rounded text-color-default bg-color-default text-2",
@@ -66,7 +66,7 @@ const Input: React.FC<Props> = memo(props => {
           </Button>
         )}
       </div>
-    </label>
+    </Label>
   );
 });
 

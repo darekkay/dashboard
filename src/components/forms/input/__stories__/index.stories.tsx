@@ -7,9 +7,14 @@ import Input from "../index";
 const Story = () => {
   const [value, setValue] = useState("Hello World");
   return (
-    <div>
-      <Input value={value} setValue={setValue} label="Input component" />
-    </div>
+    <>
+      <div className="mb-6">
+        <Input value={value} setValue={setValue} label="Input component" />
+      </div>
+      <div>
+        <Input value={value} setValue={setValue} aria-label="ARIA label" />
+      </div>
+    </>
   );
 };
 
