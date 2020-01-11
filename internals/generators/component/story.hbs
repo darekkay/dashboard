@@ -1,0 +1,15 @@
+import React from "react";
+
+import { storiesOf } from "@storybook/react";
+
+import {{ properCase name }} from "../index";
+
+const Story = () => {
+  return (
+    <div>
+      <{{ properCase name }} />
+    </div>
+  );
+};
+
+storiesOf("Components.{{ properCase name }}", module).add("Variants", () => <Story />);

@@ -8,16 +8,28 @@ module.exports = plop => {
   ];
 
   const componentActions = type => [
+    // Component index file
     {
       type: "add",
       path: "../../src/components/{{kebabCase name}}/index.tsx",
       templateFile: `./component/${type}.hbs`,
       abortOnFail: false
     },
+
+    // Unit tests
     {
       type: "add",
       path: "../../src/components/{{kebabCase name}}/__tests__/index.test.tsx",
       templateFile: "./component/test.hbs",
+      abortOnFail: false
+    },
+
+    // Component story
+    {
+      type: "add",
+      path:
+        "../../src/components/{{kebabCase name}}/__stories__/index.stories.tsx",
+      templateFile: "./component/story.hbs",
       abortOnFail: false
     }
   ];
@@ -47,7 +59,7 @@ module.exports = plop => {
       abortOnFail: false
     },
 
-    // Storybook story
+    // Widget story
     {
       type: "add",
       path:
