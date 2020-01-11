@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { ConfigurationProps } from "widgets/index";
-import Input from "components/input";
+import Input from "components/forms/input";
 import Button from "components/button";
 
 import providers from "widgets/search/lib/providers";

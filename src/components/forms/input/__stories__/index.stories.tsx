@@ -13,4 +13,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Components.Input", module).add("Variants", () => <Story />);
+storiesOf("Components.Forms.Input", module).add("Variants", () => <Story />);

@@ -2,7 +2,7 @@ import React, { memo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import Button, { ButtonSize } from "components/button";
-import Input from "components/input";
+import Input from "components/forms/input";
 import Icon from "components/icon";
 
 import { WidgetProps } from "../index";

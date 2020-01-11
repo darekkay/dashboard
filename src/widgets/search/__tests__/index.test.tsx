@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
-import Input from "components/input";
+import Input from "components/forms/input";
 import { widgetProps } from "common/utils/mock";
 
 import Search from "../index";
