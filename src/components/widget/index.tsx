@@ -147,11 +147,11 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
         </>
       )}
       {!isLayoutEditable && isWidgetConfigurable && (
-        <div className="absolute right-0 top-0 m-2">
+        <div className="visibility-target absolute -top-1 -right-1 bg-color-default border">
           <Button
             size={ButtonSize.Small}
             variant={ButtonVariant.Unstyled}
-            className="visibility-target bg-color-panel"
+            className="visibility-target"
             aria-label={t(`widget.common.configuration`, {
               widget: t(`widget.${type}.name`)
             })}

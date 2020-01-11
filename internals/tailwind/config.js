@@ -10,6 +10,7 @@ module.exports = {
     // Base
 
     inset: {
+      "-1": "-1px",
       "0": "0"
     },
 

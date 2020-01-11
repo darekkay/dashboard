@@ -15,7 +15,7 @@
 }
 
 .rounded {
-  border-radius: 0.25rem;
+  border-radius: 0.4rem;
 }
 
 .outline-none {
@@ -64,6 +64,9 @@
 .visibility-trigger {
   .visibility-target {
     visibility: hidden;
+
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
 
     &:active,
     &:focus {

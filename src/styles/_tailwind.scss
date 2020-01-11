@@ -913,6 +913,13 @@
   left: 0;
 }
 
+.-inset-1 {
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+}
+
 .inset-y-0 {
   top: 0;
   bottom: 0;
@@ -921,6 +928,16 @@
 .inset-x-0 {
   right: 0;
   left: 0;
+}
+
+.-inset-y-1 {
+  top: -1px;
+  bottom: -1px;
+}
+
+.-inset-x-1 {
+  right: -1px;
+  left: -1px;
 }
 
 .top-0 {
@@ -937,6 +954,22 @@
 
 .left-0 {
   left: 0;
+}
+
+.-top-1 {
+  top: -1px;
+}
+
+.-right-1 {
+  right: -1px;
+}
+
+.-bottom-1 {
+  bottom: -1px;
+}
+
+.-left-1 {
+  left: -1px;
 }
 
 .resize-none {
