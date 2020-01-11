@@ -6,7 +6,14 @@
 
 ## Goal
 
-The goal of this project is a fully customizable and extendable dashboard/startpage, with modules like clock, weather, todo tasks, bookmarks, calendar, etc.
+The goal of this project is a fully customizable and extendable dashboard, with modules like clock, weather, todo tasks, bookmarks, calendar, etc. The user should be able to view all important information on a single page.
+
+- Create a browser start page with some common widgets.
+- Display company-related information on TVs around the office.
+- Display marketing information at an exhibition stand.
+- Brainstorm ideas using notes and images.
+- Monitor systems to ensure their availability and efficiency.
+- Visualize your Internet of Things (IoT) devices.
 
 Usually, I wait for a MVP before releasing a project. This project is being developed in public from Day 1. I document my progress and (knowledge) insights in the [blog](https://dashboard.darekkay.com/docs/blog/), while the [changelog](https://dashboard.darekkay.com/docs/changelog/) describes the actual project features.
 
@@ -18,7 +25,7 @@ For more information, view the [official documentation](https://dashboard.darekk
 
 Why build yet another dashboard app?
 
-Most popular apps are neither open-source nor customizable to a degree that I'd like it to be. On the other hand, most open-source projects seem to be outdated.
+Most popular apps are neither open-source nor customizable to a degree I'd like it to be. Additionally, most open-source projects seem to be outdated.
 
 A new project is also a great opportunity to learn new concepts.
 
