@@ -1,7 +1,8 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import { shallow, mount, ShallowWrapper } from "enzyme";
 
 import { widgetProps } from "common/utils/mock";
+import TextArea from "components/forms/text-area";
 
 import Text from "../index";
 
@@ -19,12 +20,15 @@ describe("<Text />", () => {
   });
 
   it("renders a fixed text", () => {
-    expect(wrapper.find("textarea").props().value).toEqual(content);
+    expect(wrapper.find(TextArea).props().value).toEqual(content);
   });
 
   it("updates the content on change", () => {
+    const mountWrapper = mount(
+      <Text {...widgetProps} id={id} content={content} setData={setDataSpy} />
+    );
     const newContent = "new";
-    wrapper
+    mountWrapper
       .find("textarea")
       .simulate("change", { target: { value: newContent } });
     expect(setDataSpy).toHaveBeenCalledWith({

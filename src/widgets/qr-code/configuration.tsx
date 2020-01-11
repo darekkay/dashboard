@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { ConfigurationProps } from "widgets/index";
 import Input from "components/forms/input";
+import TextArea from "components/forms/text-area";
 
 const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
   const { t } = useTranslation();
@@ -14,8 +15,7 @@ const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
         label={t("common.headline")}
         className="mb-6"
       />
-      {/* TODO: Create and use TextArea */}
-      <Input
+      <TextArea
         setValue={value => setOptions({ content: value })}
         value={options.content}
         label={t("widget.qr-code.configuration.content")}

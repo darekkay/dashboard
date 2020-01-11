@@ -3,9 +3,9 @@ import { injectSaga } from "redux-sagas-injector";
 import { MomentInputObject } from "moment";
 
 import { WidgetMeta } from "components/widget/duck";
+import { Dimensions } from "components/widget";
 
 import availableWidgets from "./list";
-import { Dimensions } from "components/widget";
 
 export type ValueUpdateAction = ({
   id,
