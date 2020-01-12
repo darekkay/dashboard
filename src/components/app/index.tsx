@@ -9,6 +9,7 @@ import Dashboard from "components/dashboard";
 import Drawer from "components/drawer";
 import Header from "components/header";
 import { updateCssVariables, Theme } from "components/theme-select";
+import { importWidgets, WidgetsState } from "components/widget/duck";
 
 import mapStateToProps from "./selectors";
 
@@ -24,6 +25,7 @@ export interface Props {
 
   addWidgetToLayout: (widgetName: string) => void;
   removeWidgetFromLayout: (widgetId: string) => void;
+  importWidgets: (widgets: WidgetsState) => void;
 
   currentTheme: Theme;
 }
@@ -38,6 +40,7 @@ export const App: React.FC<Props> = memo(props => {
     toggleLayoutEditable,
     addWidgetToLayout,
     removeWidgetFromLayout,
+    importWidgets,
     currentTheme
   } = props;
 
@@ -60,6 +63,7 @@ export const App: React.FC<Props> = memo(props => {
             widgetIDs={widgetIDs}
             saveLayout={saveLayout}
             removeWidgetFromLayout={removeWidgetFromLayout}
+            importWidgets={importWidgets}
           />
         </main>
         {isLayoutEditable && (
@@ -71,5 +75,6 @@ export const App: React.FC<Props> = memo(props => {
 });
 
 export default connect(mapStateToProps, {
-  ...layoutActionCreators
+  ...layoutActionCreators,
+  importWidgets
 })(App);

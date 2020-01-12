@@ -1,19 +1,15 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
+import _ from "lodash";
 
-import { widgetProps } from "common/utils/mock";
+import WelcomePage from "../index";
 
-import {{ properCase name }} from "../index";
-
-describe("<{{ properCase name }} />", () => {
+describe("<WelcomePage />", () => {
   let wrapper: ShallowWrapper;
 
   beforeEach(() => {
     wrapper = shallow(
-      <{{ properCase name }}
-        {...widgetProps}
-        id="{{ kebabCase name }}-mock-id"
-      />
+      <WelcomePage importWidgets={_.noop} saveLayout={_.noop} />
     );
   });
 

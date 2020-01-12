@@ -1,11 +1,19 @@
 import _ from "lodash";
 import {
-  initialState,
   reducerWithInitialState,
   actionCreators,
   createWidget,
   removeWidget
 } from "../duck";
+
+const initialState = {
+  "date-time-01": {
+    type: "date-time",
+    options: {},
+    data: {},
+    meta: {}
+  }
+};
 
 describe("Widget duck", () => {
   it("updates the widget's option value", () => {

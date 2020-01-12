@@ -3,6 +3,8 @@ import { Responsive, WidthProvider } from "react-grid-layout";
 
 import { Layout } from "common/ducks/layout";
 import makeWidget from "components/widget";
+import WelcomePage from "components/welcome-page";
+import { WidgetsState } from "components/widget/duck";
 
 const ReactGridLayout = WidthProvider(Responsive);
 
@@ -13,6 +15,7 @@ export interface Props {
   widgetIDs: string[];
   saveLayout: (layout: Layout) => void;
   removeWidgetFromLayout: (widgetId: string) => void;
+  importWidgets: (widgets: WidgetsState) => void;
   [key: string]: any;
 }
 
@@ -34,8 +37,13 @@ class Dashboard extends React.Component<Props> {
       isLayoutEditable,
       widgetIDs,
       saveLayout,
-      removeWidgetFromLayout
+      removeWidgetFromLayout,
+      importWidgets
     } = this.props;
+    if (widgetIDs.length === 0)
+      return (
+        <WelcomePage saveLayout={saveLayout} importWidgets={importWidgets} />
+      );
     return (
       <ReactGridLayout
         className="layout"

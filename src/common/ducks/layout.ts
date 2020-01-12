@@ -5,7 +5,6 @@ import { createAction, createReducer, PayloadAction } from "redux-starter-kit";
 import { put, select, takeEvery } from "redux-saga/effects";
 import { Layout as ReactGridLayout } from "react-grid-layout";
 
-import { initialLayout } from "widgets/demo";
 import widgets from "widgets";
 import { createWidget, removeWidget } from "components/widget/duck";
 
@@ -32,7 +31,7 @@ export interface LayoutState {
 
 export const initialState = {
   isEditable: false,
-  config: initialLayout,
+  config: { mobile: [], desktop: [] },
   nextWidgetId: 100
 };
 

@@ -22,6 +22,7 @@ describe("<Dashboard />", () => {
         isLayoutEditable={false}
         saveLayout={_.noop}
         removeWidgetFromLayout={_.noop}
+        importWidgets={_.noop}
         columns={3}
         rows={2}
         widgetIDs={["id-01", "id-02"]}

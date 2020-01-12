@@ -76,7 +76,7 @@ const widgets = {
   }
 };
 
-export const initialWidgets = Object.entries(widgets).reduce(
+export const exampleWidgets = Object.entries(widgets).reduce(
   (acc, [key, widget], index) => ({
     ...acc,
     [key]: _.omit(widget, ["height", "width", "x", "y"])
@@ -84,7 +84,7 @@ export const initialWidgets = Object.entries(widgets).reduce(
   {}
 );
 
-export const initialLayout = {
+export const exampleLayout = {
   mobile: Object.entries(widgets).map(([key, widget], index) => ({
     i: key,
     x: 0,

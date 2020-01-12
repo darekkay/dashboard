@@ -4,7 +4,6 @@ import { createAction, createReducer } from "redux-starter-kit";
 import { MomentInputObject } from "moment";
 
 import widgets from "widgets";
-import { initialWidgets } from "widgets/demo";
 import { Dimensions } from "components/widget/index";
 
 interface SetValuesPayload {
@@ -15,6 +14,7 @@ interface SetValuesPayload {
 // Data actions
 export const setOptions = createAction<SetValuesPayload>("widget/set-options");
 export const setData = createAction<SetValuesPayload>("widget/set-data-value");
+export const importWidgets = createAction<WidgetsState>("widget/importWidgets");
 
 // Update actions
 export const triggerUpdate = (widgetType: string) =>
@@ -53,7 +53,7 @@ export interface WidgetsState {
   [key: string]: Widget;
 }
 
-export const initialState = initialWidgets;
+export const initialState = {};
 
 export const reducerWithInitialState = (state: WidgetsState = initialState) =>
   createReducer(state, {
@@ -65,6 +65,10 @@ export const reducerWithInitialState = (state: WidgetsState = initialState) =>
     [setData.toString()]: (state, action) => {
       const { id, values } = action.payload;
       state[id].data = { ...state[id].data, ...values };
+    },
+
+    [importWidgets.toString()]: (state, action) => {
+      return action.payload;
     },
 
     [updatePending.toString()]: (state, action) => {

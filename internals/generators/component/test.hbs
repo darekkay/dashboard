@@ -11,6 +11,6 @@ describe("<{{ properCase name }} />", () => {
   });
 
   it("renders without error", () => {
-    expect(wrapper.find(".{{ kebabCase name }}")).toHaveLength(1);
+    expect(wrapper.isEmptyRender()).toBe(false);
   });
 });
