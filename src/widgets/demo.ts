@@ -27,7 +27,7 @@ const widgets = {
   "text-01": {
     x: 3,
     y: 1,
-    width: 3,
+    width: 2,
     height: 2,
     type: "text",
     data: {
@@ -40,7 +40,7 @@ const widgets = {
   "image-01": {
     x: 0,
     y: 1,
-    width: 3,
+    width: 2,
     height: 2,
     type: "image",
     data: {},
@@ -52,7 +52,7 @@ const widgets = {
   },
   "totd-chemical-elements-01": {
     x: 2,
-    y: 0,
+    y: 1,
     width: 1,
     height: 1,
     type: "totd-chemical-elements",
@@ -63,7 +63,7 @@ const widgets = {
     }
   },
   "qr-code-01": {
-    x: 5,
+    x: 2,
     y: 0,
     width: 1,
     height: 1,
@@ -72,6 +72,16 @@ const widgets = {
     options: {
       content: "https://dashboard.darekkay.com/"
     },
+    meta: {}
+  },
+  "counter-01": {
+    x: 2,
+    y: 2,
+    width: 1,
+    height: 1,
+    type: "counter",
+    data: {},
+    options: {},
     meta: {}
   }
 };

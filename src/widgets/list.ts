@@ -2,6 +2,14 @@
 import { WidgetProperties } from "./index";
 
 export default {
+  counter: {
+    configurable: true,
+    widgetType: "counter",
+    initialHeight: 1,
+    initialWidth: 1,
+    initialOptions: {},
+    initialMeta: {}
+  },
   "date-time": {
     configurable: false,
     widgetType: "date-time",

@@ -36,6 +36,12 @@
       "unconfigured": "Widgetkonfiguration erforderlich"
     },
 
+    "counter": {
+      "name": "Zähler",
+      "headline": "{{headline}}",
+      "increment": "Um eins erhöhen",
+      "decrement": "Um eins verringern"
+    },
     "date-time": {
       "name": "Datum und Uhrzeit",
       "headline": ""

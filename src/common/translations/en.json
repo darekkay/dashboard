@@ -38,6 +38,12 @@
       "unconfigured": "Widget configuration required."
     },
 
+    "counter": {
+      "name": "Counter",
+      "headline": "{{headline}}",
+      "increment": "Increment",
+      "decrement": "Decrement"
+    },
     "date-time": {
       "name": "Date and Time",
       "headline": ""
