@@ -129,29 +129,35 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
           )}
         </Measure>
       )}
+
+      {/* Dimmed background in edit mode */}
+      {isLayoutEditable && <div className="absolute inset-0 bg-color-dim" />}
+
+      {/* Remove button in edit mode */}
       {isLayoutEditable && (
-        <>
-          <div className="absolute inset-0 bg-color-dim" />
-          <div className="absolute right-0 top-0 m-2">
-            <Button
-              size={ButtonSize.Small}
-              variant={ButtonVariant.Unstyled}
-              aria-label={t(`widget.common.remove`, {
-                widget: t(`widget.${type}.name`)
-              })}
-              onClick={() => removeWidgetFromLayout(id)}
-            >
-              <Icon name="times" />
-            </Button>
-          </div>
-        </>
+        <div className="absolute -top-1 -right-1 bg-color-panel border">
+          <Button
+            size={ButtonSize.Small}
+            variant={ButtonVariant.Unstyled}
+            aria-label={t(`widget.common.remove`, {
+              widget: t(`widget.${type}.name`)
+            })}
+            onClick={() => removeWidgetFromLayout(id)}
+          >
+            <Icon name="times" />
+          </Button>
+        </div>
       )}
+
+      {/* Configuration button */}
       {!isLayoutEditable && isWidgetConfigurable && (
         <div className="visibility-target absolute -top-1 -right-1 bg-color-default border">
           <Button
             size={ButtonSize.Small}
             variant={ButtonVariant.Unstyled}
-            className="visibility-target"
+            className={cn({
+              "visibility-target": !isLayoutEditable
+            })}
             aria-label={t(`widget.common.configuration`, {
               widget: t(`widget.${type}.name`)
             })}
@@ -161,6 +167,7 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
           </Button>
         </div>
       )}
+
       {isWidgetConfigurable && (
         <WidgetConfiguration
           id={id}
