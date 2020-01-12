@@ -55,7 +55,7 @@ export const App: React.FC<Props> = memo(props => {
         toggleLayoutEditable={toggleLayoutEditable}
       />
       <div className="flex h-full flex-col md:flex-row overflow-y-auto">
-        <main className="flex-grow h-full w-full p-1 md:p-6">
+        <main className="flex-grow w-full p-1 md:p-6">
           <Dashboard
             columns={gridColumns}
             layout={layout}
