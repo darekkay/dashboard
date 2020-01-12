@@ -1,6 +1,7 @@
 import React from "react";
 import { mount, ReactWrapper } from "enzyme";
 
+import WidgetUnconfigured from "components/widget-unconfigured";
 import { widgetProps } from "common/utils/mock";
 
 import QrCode from "../index";
@@ -20,6 +21,6 @@ describe("<QrCode />", () => {
 
   it("doesn't render if the content is missing", () => {
     wrapper.setProps({ content: undefined });
-    expect(wrapper.isEmptyRender()).toBe(true);
+    expect(wrapper.find(WidgetUnconfigured)).toHaveLength(1);
   });
 });

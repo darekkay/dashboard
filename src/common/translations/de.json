@@ -26,7 +26,8 @@
       "drawerHeadline": "Widgets",
       "add": "Widget für {{widget}} hinzufügen",
       "remove": "Widget für {{widget}} entfernen",
-      "configuration": "Konfiguration: {{widget}}"
+      "configuration": "Konfiguration: {{widget}}",
+      "unconfigured": "Widgetkonfiguration erforderlich"
     },
 
     "date-time": {

@@ -6,6 +6,7 @@ import Modal from "components/modal";
 import Loading from "components/loading";
 import { ConfigurationProps, ValueUpdateAction } from "widgets";
 
+/* Widget configuration modal */
 const WidgetConfiguration: React.FC<Props> = memo(
   ({
     id,

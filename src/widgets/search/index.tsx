@@ -1,11 +1,14 @@
 import React, { memo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import _ from "lodash";
 
 import Button, { ButtonSize } from "components/button";
 import Input from "components/forms/input";
 import Icon from "components/icon";
+import WidgetUnconfigured from "components/widget-unconfigured";
 
 import { WidgetProps } from "../index";
+import { widgetType } from "./properties";
 
 const openSearchUrl = (
   pattern: string,
@@ -20,6 +23,7 @@ const openSearchUrl = (
 };
 
 const Search: React.FC<Props> = memo(({ id, setData, name, pattern }) => {
+  if (_.isEmpty(pattern)) return <WidgetUnconfigured type={widgetType} />;
   const [value, setValue] = useState("");
   const { t } = useTranslation();
   return (
