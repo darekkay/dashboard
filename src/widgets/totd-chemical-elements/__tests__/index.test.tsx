@@ -1,15 +1,15 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import { mount, ReactWrapper } from "enzyme";
 
 import { widgetProps } from "common/utils/mock";
 
 import ChemicalElements from "../index";
 
 describe("<ChemicalElements />", () => {
-  let wrapper: ShallowWrapper;
+  let wrapper: ReactWrapper;
 
   beforeEach(() => {
-    wrapper = shallow(
+    wrapper = mount(
       <ChemicalElements
         {...widgetProps}
         id="totd-chemical-elements-mock-id"
@@ -22,5 +22,15 @@ describe("<ChemicalElements />", () => {
 
   it("renders without error", () => {
     expect(wrapper.find("div[children='Vanadium']")).toHaveLength(1);
+  });
+
+  /* TODO: Write using react-hooks-testing-library or similar */
+  xit("should trigger update", () => {
+    const triggerUpdate = jest.fn();
+    wrapper.setProps({
+      meta: { updateCycle: { hours: 1 } },
+      triggerUpdate
+    });
+    expect(triggerUpdate).toHaveBeenCalledTimes(1);
   });
 });

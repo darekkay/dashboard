@@ -1,5 +1,5 @@
 import React from "react";
-import { mount, ReactWrapper } from "enzyme";
+import { mount, ReactWrapper, shallow } from "enzyme";
 
 import Menu, { MenuAction, MenuSeparator } from "../index";
 
@@ -23,5 +23,10 @@ describe("<Menu />", () => {
 
   it("renders a separator", () => {
     expect(wrapper.find("hr")).toHaveLength(1);
+  });
+
+  it("doesn't allow MenuAction to be used outside of a Menu", () => {
+    const throwFn = () => shallow(<MenuAction text="Item 1" icon="heart" />);
+    expect(throwFn).toThrow();
   });
 });

@@ -6,6 +6,7 @@ import {
   MenuItem,
   MenuStateReturn
 } from "reakit/Menu";
+import _ from "lodash";
 import cn from "classnames";
 
 import Icon from "components/icon";
@@ -42,7 +43,7 @@ const Menu: React.FC<Props> = ({
 
 const useMenuContext = () => {
   const context = React.useContext<MenuStateReturn>(MenuContext);
-  if (!context) {
+  if (_.isEmpty(context)) {
     throw new Error(
       "Menu compound components cannot be rendered outside the Menu component"
     );
