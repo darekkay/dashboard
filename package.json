@@ -110,7 +110,7 @@
     "start": "react-scripts start",
     "tailwind": "tailwind build internals/tailwind/tailwind.css -c internals/tailwind/config.js --no-autoprefixer -o src/styles/_tailwind.scss && prettier --write src/styles/_tailwind.scss",
     "test": "react-scripts test --modulePaths=src --coverage",
-    "storybook:start": "start-storybook -p 6006",
+    "storybook:start": "start-storybook -p 6006 -s .storybook/assets",
     "storybook:build": "build-storybook"
   }
 }

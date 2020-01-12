@@ -1,0 +1,18 @@
+{
+  "atomicMass": 14.0067,
+  "atomicNumber": 7,
+  "ionizationEnergy": 14.5341,
+  "elementGroup": "non-metal",
+  "group": 15,
+  "name": "Nitrogen",
+  "period": 2,
+  "symbol": "N",
+  "electronsPerShell": [
+    2,
+    5
+  ],
+  "discoveryDate": 1772,
+  "context": "Apart from its use in fertilisers and energy-stores, nitrogen is a constituent of organic compounds as diverse as Kevlar used in high-strength fabric and cyanoacrylate used in superglue. Nitrogen is a constituent of every major pharmacological drug class, including antibiotics.",
+  "nameLatin": "Nitrogenium",
+  "nameDE": "Stickstoff"
+}
