@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from "react";
+import React, { memo } from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 
@@ -14,12 +14,8 @@ export interface Props {
 }
 
 export const LanguageSelect: React.FC<Props> = memo(props => {
-  const { language, changeLanguage } = props;
-  const { i18n, t } = useTranslation();
-
-  useEffect(() => {
-    i18n.changeLanguage(language);
-  }, [language, i18n]);
+  const { changeLanguage } = props;
+  const { t } = useTranslation();
 
   return (
     <>

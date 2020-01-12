@@ -22,7 +22,7 @@
     "purge": "Alle daten löschen"
   },
   "welcome": {
-    "message1": "Willkommen im <0>{{projectName}}</0> — Deiner digitalen Infoanzeige.",
+    "message1": "Willkommen im <0>{{projectName}}</0> — Deiner digitalen Infoanzeige",
     "message2": "Pass den Inhalt an, indem du neue Komponenten hinzufügst, oder verwende die folgende Vorlage mit häufig genutzten Komponenten.",
     "message3": "Lies die <0>Dokumentation</0> für weitere Informationen.",
     "createExampleBoard": "Nutze Vorlage"

@@ -24,7 +24,7 @@
     "purge": "Delete all data"
   },
   "welcome": {
-    "message1": "Welcome to <0>{{projectName}}</0> — Your digital info board.",
+    "message1": "Welcome to <0>{{projectName}}</0> — Your digital info board",
     "message2": "Customize the content by adding new widgets from the menu or use the following template with some common widgets.",
     "message3": "Read the <0>documentation</0> for more information.",
     "createExampleBoard": "Use Template"

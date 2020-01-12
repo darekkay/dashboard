@@ -1,7 +1,6 @@
 /** Application settings */
 
 import { createAction, createReducer } from "redux-starter-kit";
-import { defaultLanguage } from "common/i18n";
 
 export interface ConfigState {
   grid: {
@@ -12,14 +11,14 @@ export interface ConfigState {
 }
 
 const changeTheme = createAction<string>("config/change-theme");
-const changeLanguage = createAction<string>("config/change-language");
+export const changeLanguage = createAction<string>("config/change-language");
 
 export const initialState = {
   grid: {
     columns: 12
   },
   theme: "default",
-  language: defaultLanguage()
+  language: "" // let i18next use the correct language
 };
 
 export const reducerWithInitialState = (state: ConfigState = initialState) =>
