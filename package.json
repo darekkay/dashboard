@@ -108,9 +108,9 @@
     "lint:fix": "eslint --fix src/**/*.{ts,tsx,js}",
     "scan-widgets": "ts-node -P internals/scripts/tsconfig.json internals/scripts/scan-widgets.ts && prettier --write src/widgets/list.ts",
     "start": "react-scripts start",
-    "tailwind": "tailwind build internals/tailwind/tailwind.css -c internals/tailwind/config.js --no-autoprefixer -o src/styles/_tailwind.scss && prettier --write src/styles/_tailwind.scss",
-    "test": "react-scripts test --modulePaths=src --coverage",
+    "storybook:build": "build-storybook",
     "storybook:start": "start-storybook -p 6006 -s .storybook/assets",
-    "storybook:build": "build-storybook"
+    "tailwind": "tailwind build internals/tailwind/tailwind.css -c internals/tailwind/config.js --no-autoprefixer -o src/styles/_tailwind.scss && prettier --write src/styles/_tailwind.scss",
+    "test": "react-scripts test --modulePaths=src --coverage"
   }
 }
