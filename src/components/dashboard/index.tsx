@@ -1,5 +1,6 @@
 import React from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
+import _ from "lodash";
 
 import { Layout } from "common/ducks/layout";
 import makeWidget from "components/widget";
@@ -20,6 +21,8 @@ export interface Props {
 }
 
 const updateProps = ["columns", "layout", "isLayoutEditable"];
+
+const makeWidgetMemoized = _.memoize(makeWidget);
 
 /** A grid containing all the widgets */
 class Dashboard extends React.Component<Props> {
@@ -62,7 +65,7 @@ class Dashboard extends React.Component<Props> {
       >
         {widgetIDs.map((widgetID: string) =>
           // @ts-ignore
-          React.createElement(makeWidget(widgetID), {
+          React.createElement(makeWidgetMemoized(widgetID), {
             key: widgetID,
             isLayoutEditable,
             removeWidgetFromLayout
