@@ -6,11 +6,16 @@ import WidgetUnconfigured from "components/widget-unconfigured";
 import { WidgetProps } from "../index";
 import { widgetType } from "./properties";
 
-const Website: React.FC<Props> = memo(({ id, url, setData }) => {
-  if (_.isEmpty(url)) return <WidgetUnconfigured type={widgetType} />;
+const Website: React.FC<Props> = memo(
+  ({ id, url, setData }) => {
+    console.log("RERENDER");
+    if (_.isEmpty(url)) return <WidgetUnconfigured type={widgetType} />;
 
-  return <iframe src={url} title={id} className="h-full w-full"></iframe>;
-});
+    return <iframe src={url} title={id} className="h-full w-full"></iframe>;
+  },
+  // TODO: extract/use utility
+  (prevProps, nextProps) => prevProps.url === nextProps.url
+);
 
 interface Props extends WidgetProps {
   url: string;
