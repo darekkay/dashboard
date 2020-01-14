@@ -105,7 +105,7 @@ module.exports = {
   },
   variants: {
     // Base
-    display: [],
+    display: ["responsive"],
     position: [],
     inset: [],
     overflow: [],

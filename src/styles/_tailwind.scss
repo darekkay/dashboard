@@ -1113,6 +1113,42 @@
 }
 
 @media (min-width: 768px) {
+  .md\:block {
+    display: block;
+  }
+
+  .md\:inline-block {
+    display: inline-block;
+  }
+
+  .md\:inline {
+    display: inline;
+  }
+
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:inline-flex {
+    display: inline-flex;
+  }
+
+  .md\:table {
+    display: table;
+  }
+
+  .md\:table-row {
+    display: table-row;
+  }
+
+  .md\:table-cell {
+    display: table-cell;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
