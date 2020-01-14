@@ -3,7 +3,19 @@
 ## Unreleased
 
 - :sparkles: New widget: [QR Code](https://dashboard.darekkay.com/docs/widgets/qr-code.html).
-- :hammer: Add a file generator for widget documentation.
+- :sparkles: New widget: [Counter](https://dashboard.darekkay.com/docs/widgets/counter.html).
+- :sparkles: Display a message if required widget configuration is missing.
+- :sparkles: Display a welcome page when no widget is available.
+- :rocket: Move the board edit button into the header.
+- :rocket: Display a list of examples within the Website widget configuration.
+- :rocket: Improve widget buttons design.
+- :rocket: Provide a more detailed message if the user disabled JavaScript.
+- :rocket: Prevent re-mounting all widgets on every layout change.
+- :bug: Persist the selected language across sessions.
+- :bug: Fix widget drawer layout on mobile.
+- :gem: Refactor form components.
+- :hammer: Add new file generators.
+- :book: Update documentation.
 
 ## 1.1.2 (2020-01-10)
 
