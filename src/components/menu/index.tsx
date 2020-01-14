@@ -26,9 +26,9 @@ const Menu: React.FC<Props> = ({
       <MenuDisclosure
         {...menu}
         aria-label={title}
-        className={cn("btn btn-unstyled btn-small", disclosureClassName)}
+        className={cn("btn btn-primary-outline btn-small", disclosureClassName)}
       >
-        <Icon className="text-color-highlight" name={icon} />
+        <Icon name={icon} />
       </MenuDisclosure>
       <ReakitMenu
         {...menu}

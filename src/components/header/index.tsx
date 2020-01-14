@@ -31,41 +31,34 @@ const Header: React.FC<Props> = memo(
 
     return (
       <header className="flex items-center justify-between px-7 py-2 border-bottom bg-color-panel">
-        <Version />
+        <div className="mr-auto">
+          <Version />
+        </div>
 
-        {isLayoutEditable && (
-          <Button
-            className="m-2"
-            variant={ButtonVariant.Primary}
-            outline
-            size={ButtonSize.Small}
-            onClick={toggleLayoutEditable}
-          >
-            <Icon name="save" position="left" />
-            {t("common.save")}
-          </Button>
-        )}
+        <Button
+          className="mx-6 my-2"
+          variant={ButtonVariant.Primary}
+          outline
+          size={ButtonSize.Small}
+          onClick={toggleLayoutEditable}
+        >
+          <Icon name={isLayoutEditable ? "save" : "edit"} position="left" />
+          {t(isLayoutEditable ? "common.save" : "common.edit")}
+        </Button>
 
-        {!isLayoutEditable && (
-          <Menu icon="bars" title="Main menu" disclosureClassName="my-2">
-            <MenuAction
-              text={t("common.edit")}
-              icon="edit"
-              onClick={toggleLayoutEditable}
-            />
-            <MenuAction
-              text={t("common.documentation")}
-              icon="question"
-              href="https://dashboard.darekkay.com/docs"
-            />
-            <MenuSeparator />
-            <MenuAction
-              text={t("common.settings")}
-              icon="cog"
-              onClick={openSettingsModal}
-            />
-          </Menu>
-        )}
+        <Menu icon="bars" title="Main menu" disclosureClassName="my-2">
+          <MenuAction
+            text={t("common.documentation")}
+            icon="question"
+            href="https://dashboard.darekkay.com/docs"
+          />
+          <MenuSeparator />
+          <MenuAction
+            text={t("common.settings")}
+            icon="cog"
+            onClick={openSettingsModal}
+          />
+        </Menu>
 
         <Modal
           headline={t(`common.settings`)}
