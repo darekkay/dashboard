@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 
 import { ConfigurationProps } from "widgets/index";
 import Input from "components/forms/input";
-import Button from "components/button";
+import Button, { ButtonSize } from "components/button";
 
-import providers from "widgets/search/lib/providers";
+import providers from "./lib/providers";
 
 const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
   const { t } = useTranslation();
@@ -26,8 +26,10 @@ const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
       <div>
         {providers.map(provider => (
           <Button
+            key={provider.title}
             className="mr-5 mb-2"
             outline
+            size={ButtonSize.Small}
             onClick={() =>
               setOptions({
                 title: provider.title,
