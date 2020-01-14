@@ -11,8 +11,8 @@ const Drawer: React.FC<Props> = memo(({ addWidgetToLayout }) => {
   const { t } = useTranslation();
   return (
     <div
-      className="p-3 bg-color-default border-left"
-      style={{ width: "250px" }}
+      className="p-4 bg-color-panel border-left"
+      style={{ width: "280px" }}
     >
       <div className="p-3 text-center uppercase font-bold text-2">
         {t("widget.common.drawerHeadline")}
