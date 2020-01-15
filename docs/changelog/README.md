@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- :bug: Let the Image always fit the whole widget.
+
+## 1.1.3 (2020-01-14)
+
 - :sparkles: New widget: [QR Code](https://dashboard.darekkay.com/docs/widgets/qr-code.html).
 - :sparkles: New widget: [Counter](https://dashboard.darekkay.com/docs/widgets/counter.html).
 - :sparkles: Display a message if required widget configuration is missing.

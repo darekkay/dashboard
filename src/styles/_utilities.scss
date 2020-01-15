@@ -59,6 +59,12 @@
   background-color: var(--backdrop-color);
 }
 
+// Misc
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
 // Conditional visibility
 
 .visibility-trigger {

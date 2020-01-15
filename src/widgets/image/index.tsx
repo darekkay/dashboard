@@ -8,7 +8,7 @@ import { widgetType } from "./properties";
 
 const Image: React.FC<Props> = memo(({ id, url, setData }) => {
   if (_.isEmpty(url)) return <WidgetUnconfigured type={widgetType} />;
-  return <img src={url} alt="" />;
+  return <img src={url} className="h-full w-full object-fit-cover" alt="" />;
 });
 
 interface Props extends WidgetProps {
