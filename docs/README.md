@@ -7,6 +7,7 @@
 The goal of this project is a fully customizable and extendable dashboard, with modules like clock, weather, todo tasks, bookmarks, calendar, etc. The user should be able to view all important information on a single page.
 
 - Create a browser start page with some common widgets.
+- Create public information displays.
 - Display company-related information on TVs around the office.
 - Display marketing information at an exhibition stand.
 - Brainstorm ideas using notes and images.

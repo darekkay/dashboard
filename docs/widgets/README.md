@@ -21,6 +21,7 @@ Here's a list of widget ideas. They may or may not be implemented in the future.
 - Bookmarks, [Static Marks](https://darekkay.com/static-marks/)
 - Countdown, Timer
 - Counter
+- Calculator
 - Pomodoro Timer
 - Graphs
 - Video

@@ -12,6 +12,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Styling: [SCSS](https://sass-lang.com/) with [Tailwind](https://tailwindcss.com/)
 - Dependency management: [yarn](https://yarnpkg.com)
 
+## Prerequisites
+
+Required:
+
+- Node.js 10+
+
+Recommended:
+
+- React Developer Tools (AddOn for [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) / [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/))
+- Redux DevTools (AddOn for [Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) / [Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/))
+
 ## Installation
 
 Notice: You may also use `npm` instead of `yarn`.
@@ -70,6 +81,10 @@ The [react-i18next](https://react.i18next.com/) library handles internationaliza
 The label keys can be viewed in a `debug` mode by adding `debug:labels` to the URL, e.g. [https://dashboard.darekkay.com/?debug:labels](https://dashboard.darekkay.com/?debug:labels).
 
 Default UI language is based on the browser language and can be changed by the user in the settings dialog.
+
+## Browser support
+
+All current browsers are supported (Chrome, Firefox, Safari, Edge). IE11 is **not** supported, mostly due to the usage of [CSS Custom Properties](https://caniuse.com/#search=custom%20properties). I've tried using [a polyfill](https://github.com/nuxodin/ie11CustomProperties), but the results weren't great.
 
 ## Commit message format
 

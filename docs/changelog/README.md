@@ -3,6 +3,7 @@
 ## Unreleased
 
 - :bug: Let the Image always fit the whole widget.
+- :book: Update documentation.
 
 ## 1.1.3 (2020-01-14)
 
