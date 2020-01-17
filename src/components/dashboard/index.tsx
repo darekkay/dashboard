@@ -53,7 +53,7 @@ class Dashboard extends React.Component<Props> {
         layouts={layout}
         breakpoints={{ mobile: 0, desktop: 768 }}
         cols={{ mobile: 1, desktop: columns }}
-        rowHeight={100}
+        rowHeight={60}
         compactType={null}
         useCSSTransforms={false}
         isRearrangeable={false}

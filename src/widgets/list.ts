@@ -5,40 +5,40 @@ export default {
   counter: {
     configurable: true,
     widgetType: "counter",
-    initialHeight: 1,
-    initialWidth: 1,
+    initialHeight: 2,
+    initialWidth: 2,
     initialOptions: {},
     initialMeta: {}
   },
   "date-time": {
     configurable: false,
     widgetType: "date-time",
-    initialHeight: 1,
-    initialWidth: 2,
+    initialHeight: 2,
+    initialWidth: 3,
     initialOptions: {},
     initialMeta: {}
   },
   image: {
     configurable: true,
     widgetType: "image",
-    initialHeight: 3,
-    initialWidth: 2,
+    initialHeight: 4,
+    initialWidth: 4,
     initialOptions: {},
     initialMeta: {}
   },
   "qr-code": {
     configurable: true,
     widgetType: "qr-code",
-    initialHeight: 1,
-    initialWidth: 1,
+    initialHeight: 2,
+    initialWidth: 2,
     initialOptions: {},
     initialMeta: {}
   },
   search: {
     configurable: true,
     widgetType: "search",
-    initialHeight: 1,
-    initialWidth: 2,
+    initialHeight: 2,
+    initialWidth: 4,
     initialOptions: {
       title: "DuckDuckGo",
       pattern: "https://duckduckgo.com/?q=%s"
@@ -48,24 +48,24 @@ export default {
   text: {
     configurable: false,
     widgetType: "text",
-    initialHeight: 2,
-    initialWidth: 2,
+    initialHeight: 4,
+    initialWidth: 4,
     initialOptions: {},
     initialMeta: {}
   },
   "totd-chemical-elements": {
     configurable: false,
     widgetType: "totd-chemical-elements",
-    initialHeight: 1,
-    initialWidth: 1,
+    initialHeight: 2,
+    initialWidth: 2,
     initialOptions: {},
     initialMeta: { updateCycle: { hours: 24 } }
   },
   website: {
     configurable: true,
     widgetType: "website",
-    initialHeight: 3,
-    initialWidth: 3,
+    initialHeight: 5,
+    initialWidth: 5,
     initialOptions: {},
     initialMeta: {}
   }

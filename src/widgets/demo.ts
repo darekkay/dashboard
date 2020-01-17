@@ -4,18 +4,18 @@ const widgets = {
   "date-time-01": {
     x: 0,
     y: 0,
-    width: 2,
-    height: 1,
+    width: 3,
+    height: 2,
     type: "date-time",
     data: {},
     options: {},
     meta: {}
   },
   "search-01": {
-    x: 3,
+    x: 5,
     y: 0,
-    width: 2,
-    height: 1,
+    width: 5,
+    height: 2,
     type: "search",
     data: {},
     options: {
@@ -25,10 +25,10 @@ const widgets = {
     meta: {}
   },
   "text-01": {
-    x: 3,
-    y: 1,
-    width: 2,
-    height: 2,
+    x: 6,
+    y: 2,
+    width: 4,
+    height: 4,
     type: "text",
     data: {
       content:
@@ -39,9 +39,9 @@ const widgets = {
   },
   "image-01": {
     x: 0,
-    y: 1,
-    width: 2,
-    height: 2,
+    y: 2,
+    width: 4,
+    height: 4,
     type: "image",
     data: {},
     options: {
@@ -51,10 +51,10 @@ const widgets = {
     meta: {}
   },
   "totd-chemical-elements-01": {
-    x: 2,
-    y: 1,
-    width: 1,
-    height: 1,
+    x: 4,
+    y: 2,
+    width: 2,
+    height: 2,
     type: "totd-chemical-elements",
     data: {},
     options: {},
@@ -63,10 +63,10 @@ const widgets = {
     }
   },
   "qr-code-01": {
-    x: 2,
+    x: 3,
     y: 0,
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
     type: "qr-code",
     data: {},
     options: {
@@ -75,10 +75,10 @@ const widgets = {
     meta: {}
   },
   "counter-01": {
-    x: 2,
-    y: 2,
-    width: 1,
-    height: 1,
+    x: 4,
+    y: 4,
+    width: 2,
+    height: 2,
     type: "counter",
     data: {},
     options: {},

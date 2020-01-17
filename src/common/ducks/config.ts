@@ -15,7 +15,7 @@ export const changeLanguage = createAction<string>("config/change-language");
 
 export const initialState = {
   grid: {
-    columns: 12
+    columns: 24
   },
   theme: "default",
   language: "" // let i18next use the correct language
