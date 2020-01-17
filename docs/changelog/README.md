@@ -3,6 +3,7 @@
 ## Unreleased
 
 - :bug: Let the Image always fit the whole widget.
+- :bug: Fix the Input clear button on macOS.
 - :book: Update documentation.
 
 ## 1.1.3 (2020-01-14)

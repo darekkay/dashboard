@@ -26,11 +26,14 @@ const Input: React.FC<Props> = memo(props => {
   } = props;
   const [isFocused, setFocused] = useState(false);
   const { t } = useTranslation();
+  const clearValue = () => setValue("");
   return (
     <Label text={label}>
       <div
         className="w-full relative"
-        onFocus={event => {
+        // replace with onFocusIn / onFocusOut when implemented in React:
+        // https://github.com/facebook/react/issues/6410
+        onFocus={() => {
           setFocused(true);
         }}
         onBlur={event => {
@@ -60,7 +63,8 @@ const Input: React.FC<Props> = memo(props => {
             className="absolute right-0 h-full"
             size={ButtonSize.Small}
             variant={ButtonVariant.Unstyled}
-            onClick={() => setValue("")}
+            onClick={clearValue}
+            onMouseDown={clearValue}
             aria-label={t("common.clear")}
           >
             <Icon name="times" />
