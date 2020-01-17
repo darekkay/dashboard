@@ -3,6 +3,7 @@
 ## Unreleased
 
 - :rocket: Use 24 columns instead of 12.
+- :rocket: Center template board horizontally.
 - :bug: Let the Image always fit the whole widget.
 - :bug: Fix the Input clear button on macOS.
 - :book: Update documentation.

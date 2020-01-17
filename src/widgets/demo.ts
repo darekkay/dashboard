@@ -2,7 +2,7 @@ import _ from "lodash";
 
 const widgets = {
   "date-time-01": {
-    x: 0,
+    x: 7,
     y: 0,
     width: 3,
     height: 2,
@@ -12,7 +12,7 @@ const widgets = {
     meta: {}
   },
   "search-01": {
-    x: 5,
+    x: 12,
     y: 0,
     width: 5,
     height: 2,
@@ -25,7 +25,7 @@ const widgets = {
     meta: {}
   },
   "text-01": {
-    x: 6,
+    x: 13,
     y: 2,
     width: 4,
     height: 4,
@@ -38,7 +38,7 @@ const widgets = {
     meta: {}
   },
   "image-01": {
-    x: 0,
+    x: 7,
     y: 2,
     width: 4,
     height: 4,
@@ -51,7 +51,7 @@ const widgets = {
     meta: {}
   },
   "totd-chemical-elements-01": {
-    x: 4,
+    x: 11,
     y: 2,
     width: 2,
     height: 2,
@@ -63,7 +63,7 @@ const widgets = {
     }
   },
   "qr-code-01": {
-    x: 3,
+    x: 10,
     y: 0,
     width: 2,
     height: 2,
@@ -75,7 +75,7 @@ const widgets = {
     meta: {}
   },
   "counter-01": {
-    x: 4,
+    x: 11,
     y: 4,
     width: 2,
     height: 2,
