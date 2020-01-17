@@ -11,7 +11,9 @@ import Settings from "components/settings";
 
 const Version: React.FC<{}> = () => (
   <div>
-    <Link href="https://github.com/darekkay/dashboard">Dashboard</Link>{" "}
+    <Link href="/" external={false}>
+      Dashboard
+    </Link>{" "}
     {APP_VERSION}
   </div>
 );
