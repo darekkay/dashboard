@@ -57,15 +57,6 @@ module.exports = {
       extrabold: "800"
     },
 
-    colors: {
-      black: "#000",
-      white: "#fff"
-    },
-
-    textColor: theme => theme("colors"),
-
-    backgroundColor: theme => theme("colors"),
-
     // Spacing
 
     spacing: {
@@ -179,8 +170,6 @@ module.exports = {
     fontSize: true,
     fontWeight: true,
     fontStyle: true,
-    textColor: true,
-    backgroundColor: true,
     textAlign: true,
     textDecoration: true,
     textTransform: true,
@@ -197,6 +186,7 @@ module.exports = {
     alignSelf: false,
     appearance: false,
     backgroundAttachment: false,
+    backgroundColor: false,
     backgroundPosition: false,
     backgroundRepeat: false,
     backgroundSize: false,
@@ -215,7 +205,6 @@ module.exports = {
     lineHeight: false,
     listStylePosition: false,
     listStyleType: false,
-
     minHeight: false,
     objectFit: false,
     objectPosition: false,
@@ -226,6 +215,7 @@ module.exports = {
     pointerEvents: false,
     stroke: false,
     tableLayout: false,
+    textColor: false,
     userSelect: false,
     verticalAlign: false,
     visibility: false,

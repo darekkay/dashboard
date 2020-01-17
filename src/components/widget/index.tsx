@@ -144,7 +144,7 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
             })}
             onClick={() => removeWidgetFromLayout(id)}
           >
-            <Icon name="times" />
+            <Icon name="trash" className="text-color-danger" />
           </Button>
         </div>
       )}
