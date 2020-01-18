@@ -28,7 +28,7 @@ function* onTriggerUpdate(action: PayloadAction<string>) {
       setData({
         id,
         values: {
-          ..._.pick(data, "name", "symbol", "atomicNumber")
+          ..._.pick(data, "name", "nameDE", "symbol", "atomicNumber")
         }
       })
     );

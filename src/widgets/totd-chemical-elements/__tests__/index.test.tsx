@@ -16,6 +16,7 @@ describe("<ChemicalElements />", () => {
         symbol="V"
         atomicNumber="23"
         name="Vanadium"
+        nameDE="Vanadium"
       />
     );
   });

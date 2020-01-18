@@ -6,7 +6,8 @@
 - :rocket: Center template board horizontally.
 - :rocket: Use a red trash icon for the widget removal button.
 - :rocket: Let the header link point to home instead of GitHub.
-- :bug: Let the Image always fit the whole widget.
+- :rocket: **[Chemical Elements]**: Display German name if German language is active.
+- :bug: **[Image]**: Let the content always fit the whole widget.
 - :bug: Fix the Input clear button on macOS.
 - :book: Update documentation.
 
@@ -17,7 +18,7 @@
 - :sparkles: Display a message if required widget configuration is missing.
 - :sparkles: Display a welcome page when no widget is available.
 - :rocket: Move the board edit button into the header.
-- :rocket: Display a list of examples within the Website widget configuration.
+- :rocket: **[Website]** Display a list of example pages within the configuration modal.
 - :rocket: Improve widget buttons design.
 - :rocket: Provide a more detailed message if the user disabled JavaScript.
 - :rocket: Prevent re-mounting all widgets on every layout change.
@@ -84,7 +85,7 @@
 ## 1.0.9 (2019-09-30)
 
 - :sparkles: Add a configuration dialog for the search widget.
-- :rocket: Add common search providers.
+- :rocket: **[Search]** Add common search providers.
 - :rocket: Replace the widget loading animation with a skeleton.
 - :bug: Minor bug fixes and improvements.
 
@@ -105,20 +106,20 @@
 
 ## 1.0.6 (2019-07-15)
 
+- :sparkles: New widget: [Search](https://dashboard.darekkay.com/docs/widgets/search.html).
 - :sparkles: Make widgets draggable and resizable.
-- :sparkles: Add search widget.
 - :rocket: Load only currently used widgets.
 - :gem: Use functional CSS with Tailwind CSS.
 - :hammer: Add widget file generator.
 
 ## 1.0.5 (2019-05-25)
 
-- :sparkles: Add DateTime widget.
+- :sparkles: New widget: [Date & Time](https://dashboard.darekkay.com/docs/widgets/date-time.html).
 - :sparkles: Persist the state in the local storage.
 
 ## 1.0.4 (2019-04-22)
 
-- :sparkles: Make text widget editable.
+- :sparkles: **[Text]** Make the widget editable.
 - :rocket: Improve performance.
 - :gem: Extract footer component.
 - :gem: Clean up code.
@@ -132,7 +133,7 @@
 
 ## 1.0.2 (2019-03-20)
 
-- :sparkles: Add a text widget.
+- :sparkles: New widget: [Text](https://dashboard.darekkay.com/docs/widgets/text.html).
 - :rocket: Make widget content centered (configurable).
 
 ## 1.0.1 (2019-03-17)

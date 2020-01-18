@@ -1,4 +1,6 @@
 import React, { memo } from "react";
+import { useTranslation } from "react-i18next";
+
 import { shouldTriggerUpdate } from "components/widget/utils";
 import { useMountEffect } from "common/hooks/useMountEffect";
 
@@ -7,7 +9,18 @@ import { WidgetProps } from "../index";
 export { saga } from "./sagas";
 
 const ChemicalElements: React.FC<Props> = memo(
-  ({ id, name, symbol, atomicNumber, meta, setData, triggerUpdate }) => {
+  ({
+    id,
+    name,
+    nameDE,
+    symbol,
+    atomicNumber,
+    meta,
+    setData,
+    triggerUpdate
+  }) => {
+    const { i18n } = useTranslation();
+
     useMountEffect(() => {
       if (shouldTriggerUpdate(meta)) {
         triggerUpdate(id);
@@ -18,7 +31,7 @@ const ChemicalElements: React.FC<Props> = memo(
       <div className="w-100 p-4 text-center">
         <div className="text-1">{atomicNumber}</div>
         <div className="text-4">{symbol}</div>
-        <div className="text-2">{name}</div>
+        <div className="text-2">{i18n.language === "de" ? nameDE : name}</div>
       </div>
     );
   }
@@ -26,6 +39,7 @@ const ChemicalElements: React.FC<Props> = memo(
 
 interface Props extends WidgetProps {
   name: string;
+  nameDE: string;
   symbol: string;
   atomicNumber: string;
 }
