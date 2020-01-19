@@ -38,6 +38,13 @@
       "configuration": "Configuration: {{widget}}",
       "unconfigured": "Widget configuration required."
     },
+    "category": {
+      "general": "General",
+      "media": "Media",
+      "knowledge": "Knowledge",
+      "tools": "Tools",
+      "tracking": "Tracking"
+    },
 
     "counter": {
       "name": "Counter",

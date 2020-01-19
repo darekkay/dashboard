@@ -5,6 +5,7 @@ export default {
   counter: {
     configurable: true,
     widgetType: "counter",
+    category: "tracking",
     initialHeight: 2,
     initialWidth: 2,
     initialOptions: {},
@@ -13,6 +14,7 @@ export default {
   "date-time": {
     configurable: false,
     widgetType: "date-time",
+    category: "general",
     initialHeight: 2,
     initialWidth: 3,
     initialOptions: {},
@@ -21,6 +23,7 @@ export default {
   image: {
     configurable: true,
     widgetType: "image",
+    category: "media",
     initialHeight: 4,
     initialWidth: 4,
     initialOptions: {},
@@ -29,6 +32,7 @@ export default {
   "qr-code": {
     configurable: true,
     widgetType: "qr-code",
+    category: "tools",
     initialHeight: 2,
     initialWidth: 2,
     initialOptions: {},
@@ -37,6 +41,7 @@ export default {
   search: {
     configurable: true,
     widgetType: "search",
+    category: "tools",
     initialHeight: 2,
     initialWidth: 4,
     initialOptions: {
@@ -48,6 +53,7 @@ export default {
   text: {
     configurable: false,
     widgetType: "text",
+    category: "general",
     initialHeight: 4,
     initialWidth: 4,
     initialOptions: {},
@@ -56,6 +62,7 @@ export default {
   "totd-chemical-elements": {
     configurable: false,
     widgetType: "totd-chemical-elements",
+    category: "knowledge",
     initialHeight: 2,
     initialWidth: 2,
     initialOptions: {},
@@ -64,6 +71,7 @@ export default {
   website: {
     configurable: true,
     widgetType: "website",
+    category: "media",
     initialHeight: 5,
     initialWidth: 5,
     initialOptions: {},

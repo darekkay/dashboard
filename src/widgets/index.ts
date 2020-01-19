@@ -4,6 +4,7 @@ import { MomentInputObject } from "moment";
 
 import { WidgetMeta } from "components/widget/duck";
 import { Dimensions } from "components/widget";
+import WidgetCategory from "widgets/categories";
 
 import availableWidgets from "./list";
 
@@ -32,6 +33,8 @@ export interface ConfigurationProps {
 
 export interface WidgetProperties {
   configurable: boolean;
+  widgetType: string;
+  category: WidgetCategory;
   initialHeight: number;
   initialWidth: number;
   initialOptions: {

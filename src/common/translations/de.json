@@ -36,6 +36,13 @@
       "configuration": "Konfiguration: {{widget}}",
       "unconfigured": "Widgetkonfiguration erforderlich"
     },
+    "category": {
+      "general": "Allgemein",
+      "media": "Medien",
+      "knowledge": "Wissen",
+      "tools": "Tools",
+      "tracking": "Tracking"
+    },
 
     "counter": {
       "name": "Zähler",

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- :rocket: Introduce widget categories.
 - :rocket: Use 24 columns instead of 12.
 - :rocket: Center template board horizontally.
 - :rocket: Use a red trash icon for the widget removal button.
