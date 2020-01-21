@@ -9,12 +9,6 @@ import "./storybook.scss";
 
 initStore();
 
-// Automatically import all files ending with *.stories.tsx
-const req = require.context("../src", true, /\.stories\.tsx$/);
-function loadStories() {
-  req.keys().forEach(filename => req(filename));
-}
-
 // Enable a11y addon
 addDecorator(withA11y);
 
@@ -30,5 +24,3 @@ addParameters({
     { name: "Dark", color: "#1c1c1c", class: "theme-dark" }
   ]
 });
-
-configure(loadStories, module);
