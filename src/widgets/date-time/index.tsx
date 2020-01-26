@@ -10,9 +10,9 @@ export const DateTime: React.FC<WidgetProps> = memo(() => {
 
   return (
     <time className="text-center p-4" dateTime={momentDate.toISOString()}>
-      <div>{momentDate.format("HH:mm")}</div>
-      <div>{momentDate.format("dddd")}</div>
-      <div>{momentDate.format("LL")}</div>
+      <div className="text-5 font-semibold">{momentDate.format("HH:mm")}</div>
+      <div className="text-3">{momentDate.format("dddd")}</div>
+      <div className="text-2">{momentDate.format("LL")}</div>
     </time>
   );
 });

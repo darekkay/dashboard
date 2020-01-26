@@ -93,7 +93,7 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
       {headline && (
         <h3
           id={`widget-${id}-headline`}
-          className="m-0 py-1 px-2 text-1 font-normal"
+          className="m-0 py-1 px-2 text-2 font-normal"
         >
           {headline}
         </h3>

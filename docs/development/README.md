@@ -82,6 +82,10 @@ The label keys can be viewed in a `debug` mode by adding `debug:labels` to the U
 
 Default UI language is based on the browser language and can be changed by the user in the settings dialog.
 
+## Typography
+
+Use CSS utility classes `text-1` to `text-7` to adjust font sizes. To preserve a consistent look across all widgets, use `text-3` as the base size.
+
 ## Browser support
 
 All current browsers are supported (Chrome, Firefox, Safari, Edge). IE11 is **not** supported, mostly due to the usage of [CSS Custom Properties](https://caniuse.com/#search=custom%20properties). I've tried using [a polyfill](https://github.com/nuxodin/ie11CustomProperties), but the results weren't great.

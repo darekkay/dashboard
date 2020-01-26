@@ -29,9 +29,9 @@ const ChemicalElements: React.FC<Props> = memo(
 
     return (
       <div className="w-100 p-4 text-center">
-        <div className="text-1">{atomicNumber}</div>
-        <div className="text-4">{symbol}</div>
-        <div className="text-2">{i18n.language === "de" ? nameDE : name}</div>
+        <div className="text-2">{atomicNumber}</div>
+        <div className="text-5 font-semibold">{symbol}</div>
+        <div className="text-3">{i18n.language === "de" ? nameDE : name}</div>
       </div>
     );
   }
