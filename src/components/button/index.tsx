@@ -22,6 +22,8 @@ const Button: React.FC<Props> = memo(
     variant = ButtonVariant.Primary,
     size = ButtonSize.Regular,
     outline,
+    border = true,
+    style,
     ...domProps
   }) => (
     <button
@@ -29,8 +31,17 @@ const Button: React.FC<Props> = memo(
         "btn",
         `btn-${variant}${outline ? "-outline" : ""}`,
         `btn-${size}`,
+        { "btn-border": border },
+        "inline-flex",
+        "items-center",
+        "justify-center",
+        "rounded",
+        "cursor-pointer",
+        "text-3",
+        "no-underline",
         className
       )}
+      style={style}
       {...domProps}
     >
       {children}
@@ -42,6 +53,7 @@ export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   size?: ButtonSize;
   outline?: boolean;
+  border?: boolean;
 }
 
 export default Button;

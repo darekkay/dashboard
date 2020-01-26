@@ -26,7 +26,18 @@ const Menu: React.FC<Props> = ({
       <MenuDisclosure
         {...menu}
         aria-label={title}
-        className={cn("btn btn-primary-outline btn-small", disclosureClassName)}
+        className={cn(
+          "btn btn-primary-outline btn-small ",
+          // TODO: either fix Reakit not handling Button or replace with PrimeReact
+          "inline-flex",
+          "items-center",
+          "justify-center",
+          "rounded",
+          "cursor-pointer",
+          "text-3",
+          "no-underline",
+          disclosureClassName
+        )}
       >
         <Icon name={icon} />
       </MenuDisclosure>

@@ -26,6 +26,7 @@ const Drawer: React.FC<Props> = memo(({ addWidgetToLayout }) => {
                 <Button
                   size={ButtonSize.Small}
                   outline
+                  border={false}
                   aria-label={t("widget.common.add", {
                     widget: t(`widget.${widget}.name`)
                   })}

@@ -11,7 +11,10 @@
 ) {
   color: $foreground;
   background-color: $background;
-  border-color: $border;
+
+  &.btn-border {
+    border-color: $border;
+  }
 
   svg {
     fill: $foreground;
@@ -38,17 +41,9 @@
 }
 
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
   border: 1px solid transparent;
-  border-radius: 0.4rem;
-  cursor: pointer;
 
-  font-size: 1.6rem;
   letter-spacing: 0.025em;
-  text-decoration: none;
   white-space: nowrap;
 
   -webkit-transition: all 0.15s ease;
@@ -67,10 +62,13 @@
   &[disabled]:hover {
     background-color: var(--button-inverse-color);
     color: var(--button-disabled-color);
-    border-color: var(--button-disabled-color);
     opacity: 0.4;
     pointer-events: none;
     cursor: default;
+
+    &.btn-border {
+      border-color: var(--button-disabled-color);
+    }
   }
 }
 
@@ -81,7 +79,7 @@
 
 .btn-small {
   padding: 0 1rem;
-  height: 2.8rem;
+  height: 3rem;
 }
 
 .btn-primary {
@@ -159,8 +157,8 @@
 .btn-unstyled-outline {
   color: var(--text-color);
   background-color: transparent;
-}
 
-.btn-unstyled-outline {
-  border-color: inherit;
+  &.btn-border {
+    border-color: inherit;
+  }
 }

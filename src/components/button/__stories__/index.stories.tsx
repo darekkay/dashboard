@@ -38,6 +38,9 @@ const Row = ({
       <Button {...commonProps} {...rest} outline size={ButtonSize.Small}>
         {children || "Outline Small"}
       </Button>
+      <Button {...commonProps} {...rest} outline border={false}>
+        {children || "Borderless"}
+      </Button>
     </div>
   </>
 );

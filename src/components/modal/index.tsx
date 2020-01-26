@@ -32,6 +32,8 @@ const Modal: React.FC<Props> = memo(
           <Button
             variant={ButtonVariant.Unstyled}
             size={ButtonSize.Small}
+            outline
+            border={false}
             className="ml-auto"
             onClick={closeModal}
           >

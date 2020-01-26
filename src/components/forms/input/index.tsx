@@ -63,6 +63,7 @@ const Input: React.FC<Props> = memo(props => {
             className="absolute right-0 h-full"
             size={ButtonSize.Small}
             variant={ButtonVariant.Unstyled}
+            border={false}
             onClick={clearValue}
             onMouseDown={clearValue}
             aria-label={t("common.clear")}

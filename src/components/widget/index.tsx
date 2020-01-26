@@ -139,6 +139,7 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
           <Button
             size={ButtonSize.Small}
             variant={ButtonVariant.Unstyled}
+            border={false}
             aria-label={t(`widget.common.remove`, {
               widget: t(`widget.${type}.name`)
             })}
@@ -155,6 +156,7 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
           <Button
             size={ButtonSize.Small}
             variant={ButtonVariant.Unstyled}
+            border={false}
             className={cn({
               "visibility-target": !isLayoutEditable
             })}

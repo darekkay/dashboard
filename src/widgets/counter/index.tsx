@@ -14,6 +14,7 @@ const Counter: React.FC<Props> = ({ id, value = 0, setData }) => {
       <div className="w-full flex items-center justify-around">
         <Button
           outline
+          border={false}
           size={ButtonSize.Small}
           onClick={() => setData({ id, values: { value: value - 1 } })}
           aria-label={t("widget.counter.decrement")}
@@ -22,6 +23,7 @@ const Counter: React.FC<Props> = ({ id, value = 0, setData }) => {
         </Button>
         <Button
           outline
+          border={false}
           size={ButtonSize.Small}
           onClick={() => setData({ id, values: { value: value + 1 } })}
           aria-label={t("widget.counter.increment")}
