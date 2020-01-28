@@ -55,14 +55,14 @@ storiesOf("Components.Button", module).add("Variants", () => (
     <Row title="Disabled Button" variant={ButtonVariant.Primary} disabled />
 
     <Row title="Icon Text Button" variant={ButtonVariant.Primary}>
-      Button <Icon name="heart" position="right" />
+      Button <Icon name="cog" position="right" />
     </Row>
     <Row
       title="Icon Button"
       variant={ButtonVariant.Primary}
       aria-label="Icon Button"
     >
-      <Icon name="heart" />
+      <Icon name="cog" />
     </Row>
   </div>
 ));

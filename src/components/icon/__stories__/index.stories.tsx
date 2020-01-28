@@ -1,17 +1,21 @@
 import React from "react";
-import _ from "lodash";
 
 import { storiesOf } from "@storybook/react";
 
 import Icon from "../index";
-import svgs from "../svgs";
 
-const icons = Object.keys(svgs).map(_.toLower);
+import customIcons from "../custom";
+import fontAwesomeIcons from "../font-awesome";
+
+const icons = [...Object.keys(fontAwesomeIcons), ...Object.keys(customIcons)];
 
 storiesOf("Components.Icon", module).add("Kitchen Sink", () => (
   <div>
     {icons.map(icon => (
-      <Icon key={icon} name={icon} position="left" />
+      <div className="flex items-center">
+        <Icon key={icon} name={icon} position="left" />
+        <div>{icon}</div>
+      </div>
     ))}
   </div>
 ));

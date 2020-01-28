@@ -9,7 +9,7 @@ describe("<Menu />", () => {
   beforeEach(() => {
     wrapper = mount(
       <Menu icon="cog" title="title">
-        <MenuAction text="Item 1" icon="heart" />
+        <MenuAction text="Item 1" icon="cog" />
         <MenuSeparator />
         <MenuAction text="Item 2" icon="edit" />
       </Menu>
@@ -26,7 +26,7 @@ describe("<Menu />", () => {
   });
 
   it("doesn't allow MenuAction to be used outside of a Menu", () => {
-    const throwFn = () => shallow(<MenuAction text="Item 1" icon="heart" />);
+    const throwFn = () => shallow(<MenuAction text="Item 1" icon="cog" />);
     expect(throwFn).toThrow();
   });
 });

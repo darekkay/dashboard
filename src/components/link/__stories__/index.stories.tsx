@@ -20,7 +20,7 @@ const Story = () => {
       </div>
       <div>
         <Link href="#" external={true}>
-          Icon Link <Icon name="heart" position="right" />
+          Icon Link <Icon name="cog" position="right" />
         </Link>
       </div>
     </>

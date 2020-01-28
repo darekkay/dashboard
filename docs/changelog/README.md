@@ -12,6 +12,7 @@
 - :bug: Fix the Input clear button on macOS.
 - :gem: Use consistent typography.
 - :gem: Add borderless buttons.
+- :gem: Use the public Font Awesome icon package.
 - :book: Update documentation.
 
 ## 1.1.3 (2020-01-14)

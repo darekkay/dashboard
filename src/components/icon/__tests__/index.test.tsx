@@ -4,8 +4,13 @@ import { shallow } from "enzyme";
 import Icon from "../index";
 
 describe("<Icon />", () => {
-  it("renders a defined icon", () => {
-    const wrapper = shallow(<Icon name="heart" />);
+  it("renders a custom icon", () => {
+    const wrapper = shallow(<Icon name="lang-de" />);
+    expect(wrapper.find(".icon")).toHaveLength(1);
+  });
+
+  it("renders a font awesome icon", () => {
+    const wrapper = shallow(<Icon name="cog" />);
     expect(wrapper.find(".icon")).toHaveLength(1);
   });
 

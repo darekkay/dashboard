@@ -26,7 +26,7 @@ export const LanguageSelect: React.FC<Props> = memo(props => {
           outline
           onClick={() => changeLanguage(language)}
         >
-          <Icon name={language} position="left" />
+          <Icon name={`lang-${language}`} position="left" />
           {t(`language.${language}`)}
         </Button>
       ))}
