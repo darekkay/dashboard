@@ -8,6 +8,15 @@ export const LANGUAGES = ["en", "de"];
 /** Available themes */
 export const THEMES = ["default", "dark"];
 
+/** Dashboard grid properties */
+export const GRID = {
+  /** Number of dashboard columns */
+  COLUMNS_COUNT: 24,
+
+  /** Dashboard row height in px */
+  ROW_HEIGHT_PX: 60
+};
+
 /** True, if the application is running in production mode*/
 export const IS_PRODUCTION = process.env.NODE_ENV === "production";
 

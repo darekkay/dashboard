@@ -3,6 +3,7 @@ import { Responsive, WidthProvider } from "react-grid-layout";
 import _ from "lodash";
 
 import { Layout } from "common/ducks/layout";
+import { GRID } from "common/environment";
 import makeWidget from "components/widget";
 import WelcomePage from "components/welcome-page";
 import { WidgetsState } from "components/widget/duck";
@@ -10,7 +11,6 @@ import { WidgetsState } from "components/widget/duck";
 const ReactGridLayout = WidthProvider(Responsive);
 
 export interface Props {
-  columns: number;
   layout: Layout;
   isLayoutEditable: boolean;
   widgetIDs: string[];
@@ -20,7 +20,7 @@ export interface Props {
   [key: string]: any;
 }
 
-const updateProps = ["columns", "layout", "isLayoutEditable"];
+const updateProps = ["layout", "isLayoutEditable"];
 
 const makeWidgetMemoized = _.memoize(makeWidget);
 
@@ -35,7 +35,6 @@ class Dashboard extends React.Component<Props> {
 
   render() {
     const {
-      columns,
       layout,
       isLayoutEditable,
       widgetIDs,
@@ -52,8 +51,8 @@ class Dashboard extends React.Component<Props> {
         className="layout"
         layouts={layout}
         breakpoints={{ mobile: 0, desktop: 768 }}
-        cols={{ mobile: 1, desktop: columns }}
-        rowHeight={60}
+        cols={{ mobile: 1, desktop: GRID.COLUMNS_COUNT }}
+        rowHeight={GRID.ROW_HEIGHT_PX}
         compactType={null}
         useCSSTransforms={false}
         isRearrangeable={false}

@@ -14,7 +14,6 @@ import { importWidgets, WidgetsState } from "components/widget/duck";
 import mapStateToProps from "./selectors";
 
 export interface Props {
-  gridColumns: number;
   widgetIDs: string[];
 
   layout: Layout;
@@ -32,7 +31,6 @@ export interface Props {
 
 export const App: React.FC<Props> = memo(props => {
   const {
-    gridColumns,
     widgetIDs,
     layout,
     saveLayout,
@@ -57,7 +55,6 @@ export const App: React.FC<Props> = memo(props => {
       <div className="flex h-full flex-col md:flex-row overflow-y-auto">
         <main className="flex-grow w-full p-1 md:p-6">
           <Dashboard
-            columns={gridColumns}
             layout={layout}
             isLayoutEditable={isLayoutEditable}
             widgetIDs={widgetIDs}

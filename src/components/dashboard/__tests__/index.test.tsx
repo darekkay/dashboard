@@ -23,8 +23,6 @@ describe("<Dashboard />", () => {
         saveLayout={_.noop}
         removeWidgetFromLayout={_.noop}
         importWidgets={_.noop}
-        columns={3}
-        rows={2}
         widgetIDs={["id-01", "id-02"]}
       />
     );
@@ -55,7 +53,6 @@ describe("<Dashboard />", () => {
     expect(shouldUpdate({ columns: 3, widgetIDs: ["id-02", "id-01"] })).toBe(
       false
     );
-    expect(shouldUpdate({ columns: 99 })).toBe(true);
     expect(shouldUpdate({ widgetIDs: ["id-01"] })).toBe(true);
   });
 });

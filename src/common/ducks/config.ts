@@ -3,9 +3,6 @@
 import { createAction, createReducer } from "redux-starter-kit";
 
 export interface ConfigState {
-  grid: {
-    columns: number;
-  };
   theme: string;
   language: string;
 }
@@ -14,9 +11,6 @@ const changeTheme = createAction<string>("config/change-theme");
 export const changeLanguage = createAction<string>("config/change-language");
 
 export const initialState = {
-  grid: {
-    columns: 24
-  },
   theme: "default",
   language: "" // let i18next use the correct language
 };
