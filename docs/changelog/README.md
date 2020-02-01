@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+# 1.1.4 (2020-02-04)
 
 - :rocket: Introduce widget categories.
 - :rocket: Use 24 columns instead of 12.
