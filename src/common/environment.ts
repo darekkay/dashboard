@@ -14,7 +14,7 @@ export const GRID = {
   COLUMNS_COUNT: 24,
 
   /** Dashboard row height in px */
-  ROW_HEIGHT_PX: 60
+  ROW_HEIGHT_PX: 50
 };
 
 /** True, if the application is running in production mode*/
