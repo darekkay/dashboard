@@ -7,9 +7,9 @@ import {
   MenuStateReturn
 } from "reakit/Menu";
 import _ from "lodash";
-import cn from "classnames";
 
 import Icon from "components/icon";
+import Button, { ButtonSize } from "components/button";
 
 // @ts-ignore default value is defined in the context provider
 const MenuContext = React.createContext<MenuStateReturn>({});
@@ -26,18 +26,10 @@ const Menu: React.FC<Props> = ({
       <MenuDisclosure
         {...menu}
         aria-label={title}
-        className={cn(
-          "btn btn-primary-outline btn-small ",
-          // TODO: either fix Reakit not handling Button or replace with PrimeReact
-          "inline-flex",
-          "items-center",
-          "justify-center",
-          "rounded",
-          "cursor-pointer",
-          "text-3",
-          "no-underline",
-          disclosureClassName
-        )}
+        className={disclosureClassName}
+        as={Button}
+        size={ButtonSize.Small}
+        outline
       >
         <Icon name={icon} />
       </MenuDisclosure>

@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import cn from "classnames";
 
 import "./styles.scss";
@@ -15,17 +15,20 @@ export enum ButtonSize {
   Small = "small"
 }
 
-const Button: React.FC<Props> = memo(
-  ({
-    children,
-    className,
-    variant = ButtonVariant.Primary,
-    size = ButtonSize.Regular,
-    outline,
-    border = true,
-    style,
-    ...domProps
-  }) => (
+const Button: React.FC<Props> = React.forwardRef(
+  (
+    {
+      children,
+      className,
+      variant = ButtonVariant.Primary,
+      size = ButtonSize.Regular,
+      outline,
+      border = true,
+      style,
+      ...domProps
+    },
+    ref
+  ) => (
     <button
       className={cn(
         "btn",
@@ -43,6 +46,7 @@ const Button: React.FC<Props> = memo(
       )}
       style={style}
       {...domProps}
+      ref={ref}
     >
       {children}
     </button>
@@ -54,6 +58,7 @@ export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   outline?: boolean;
   border?: boolean;
+  ref?: React.RefObject<HTMLButtonElement>;
 }
 
 export default Button;
