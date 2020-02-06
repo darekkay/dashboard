@@ -39,8 +39,8 @@ h6 {
   margin: 0;
 }
 
-// Remove inner focus ring in Firefox
 ::-moz-focus-inner {
+  /* Remove inner focus ring and padding in Firefox */
   border: 0;
   padding: 0;
 }

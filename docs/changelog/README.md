@@ -2,6 +2,7 @@
 
 # Unreleased
 
+- :gem: Normalize styling across browsers.
 - :gem: Replace the (hamburger) menu button with a custom Button component.
 
 # 1.1.4 (2020-02-04)

@@ -16,9 +16,29 @@ html {
   background-repeat: inherit;
 }
 
-table {
-  /* Do not include additional border spacing */
-  border-collapse: collapse;
+body {
+  /* Remove the margin in all browsers */
+  margin: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  /* Change the font styles in all browsers */
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+
+  /* Remove the margin in Firefox and Safari */
+  margin: 0;
+}
+
+button,
+select {
+  /* Remove the inheritance of text transform in Firefox */
+  text-transform: none;
 }
 
 button,
@@ -27,6 +47,38 @@ button,
 [type="submit"] {
   /* Correct the inability to style clickable types in iOS and Safari */
   -webkit-appearance: button;
+}
+
+[type="search"] {
+  /* Correct the odd appearance in Chrome and Safari */
+  -webkit-appearance: textfield;
+
+  /* Correct the outline style in Safari */
+  outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+  /* Remove the inner padding in Chrome and Safari on macOS */
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  /* Correct the inability to style clickable types in iOS and Safari */
+  -webkit-appearance: button;
+
+  /* Change font properties to `inherit` in Safari */
+  font: inherit;
+}
+
+table {
+  /* Do not include additional border spacing */
+  border-collapse: collapse;
+}
+
+hr {
+  /* Add the correct box sizing in Firefox */
+  box-sizing: content-box;
+  height: 0;
 }
 
 iframe {
