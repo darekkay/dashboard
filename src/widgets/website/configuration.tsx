@@ -16,6 +16,8 @@ const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
         value={options.url}
         label={t("widget.website.configuration.url")}
         className="mb-6"
+        type="url"
+        autoComplete="url"
       />
       <div>
         {providers.map(provider => (

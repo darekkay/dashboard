@@ -13,6 +13,7 @@ const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
         value={options.headline}
         label={t("common.headline")}
         className="mb-6"
+        type="text"
       />
     </>
   );

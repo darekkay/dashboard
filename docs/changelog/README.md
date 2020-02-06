@@ -2,6 +2,7 @@
 
 # Unreleased
 
+- :gem: Add semantics to all input fields.
 - :gem: Normalize styling across browsers.
 - :gem: Replace the (hamburger) menu button with a custom Button component.
 

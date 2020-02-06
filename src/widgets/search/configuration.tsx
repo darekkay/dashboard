@@ -16,12 +16,14 @@ const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
         value={options.title}
         label={t("widget.search.configuration.title")}
         className="mb-6"
+        type="text"
       />
       <Input
         setValue={value => setOptions({ pattern: value })}
         value={options.pattern}
         label={t("widget.search.configuration.pattern")}
         className="mb-6"
+        type="text"
       />
       <div>
         {providers.map(provider => (

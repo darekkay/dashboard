@@ -50,15 +50,15 @@ button,
 }
 
 [type="search"] {
-  /* Correct the odd appearance in Chrome and Safari */
-  -webkit-appearance: textfield;
-
   /* Correct the outline style in Safari */
   outline-offset: -2px;
 }
 
-[type="search"]::-webkit-search-decoration {
-  /* Remove the inner padding in Chrome and Safari on macOS */
+[type="search"]::-webkit-search-decoration,
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-results-button,
+[type="search"]::-webkit-search-results-decoration {
+  /* Remove the default clear button, as a custom clear button exists */
   -webkit-appearance: none;
 }
 

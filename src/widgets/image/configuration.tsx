@@ -12,6 +12,8 @@ const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
         setValue={value => setOptions({ url: value })}
         value={options.url}
         label={t("widget.image.configuration.url")}
+        type="url"
+        autoComplete="url"
       />
     </>
   );

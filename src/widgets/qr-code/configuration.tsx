@@ -14,11 +14,13 @@ const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
         value={options.headline}
         label={t("common.headline")}
         className="mb-6"
+        type="text"
       />
       <TextArea
         setValue={value => setOptions({ content: value })}
         value={options.content}
         label={t("widget.qr-code.configuration.content")}
+        rows={5}
       />
     </>
   );

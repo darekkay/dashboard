@@ -34,6 +34,7 @@ const Search: React.FC<Props> = memo(({ id, setData, name, pattern }) => {
           setValue={setValue}
           onEnter={value => openSearchUrl(pattern, value, setValue)}
           clearOnEscape
+          type="search"
           aria-labelledby={`widget-${id}-headline`}
         />
         <Button
