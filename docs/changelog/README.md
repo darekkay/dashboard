@@ -3,6 +3,7 @@
 # Unreleased
 
 - :gem: Add semantics to all input fields.
+- :gem: Provide focus ring fallback for Windows High Contrast mode.
 - :gem: Normalize styling across browsers.
 - :gem: Replace the (hamburger) menu button with a custom Button component.
 
