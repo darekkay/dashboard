@@ -36,10 +36,10 @@
     "selectorator": "4.0.3"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "5.3.11",
-    "@storybook/addons": "5.3.11",
+    "@storybook/addon-a11y": "5.3.12",
+    "@storybook/addons": "5.3.12",
     "@storybook/preset-create-react-app": "1.5.2",
-    "@storybook/react": "5.3.11",
+    "@storybook/react": "5.3.12",
     "@testing-library/react": "9.4.0",
     "@testing-library/react-hooks": "3.2.1",
     "@types/classnames": "2.2.9",
