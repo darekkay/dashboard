@@ -8,12 +8,14 @@ import { WidgetProps } from "../index";
 const Text: React.FC<Props> = memo(({ id, content, setData }) => {
   const { t } = useTranslation();
   return (
-    <TextArea
-      className="border-0 bg-color-panel"
-      aria-label={t("widget.text.name")}
-      setValue={value => setData({ id, values: { content: value } })}
-      value={content}
-    />
+    <div className="flex w-full h-full p-1 items-stretch">
+      <TextArea
+        className="border-0 bg-color-panel"
+        aria-label={t("widget.text.name")}
+        setValue={value => setData({ id, values: { content: value } })}
+        value={content}
+      />
+    </div>
   );
 });
 
