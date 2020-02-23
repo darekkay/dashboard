@@ -1,8 +1,12 @@
+@import "~@darekkay/styles/src/base/reset";
+@import "~@darekkay/styles/src/base/colors";
+@import "~@darekkay/styles/src/forms/all";
+@import "~@darekkay/styles/src/utilities/reduced-motion";
+
 @import "mixins";
 @import "themes/index";
-@import "base";
 @import "tailwind";
 @import "utilities";
 @import "typography";
 @import "vendor";
-@import "reduced-motion";
+

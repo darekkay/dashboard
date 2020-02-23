@@ -28,7 +28,7 @@ const Modal: React.FC<Props> = memo(
         {...rest}
       >
         <div className="flex">
-          {headline && <h2 className="text-3 mb-6">{headline}</h2>}
+          {headline && <h2 className="text-3 font-bold mb-6">{headline}</h2>}
           <Button
             variant={ButtonVariant.Unstyled}
             size={ButtonSize.Small}
