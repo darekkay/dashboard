@@ -4,6 +4,10 @@
 
 ![](docs/assets/img/1.1.4.png)
 
+## Project status
+
+The project is under active development. While it is [live](https://dashboard.darekkay.com) already, I consider the status **late alpha** due to possible changes and the minimal amount of widgets.
+
 ## Goal
 
 The goal of this project is a fully customizable and extendable dashboard, with modules like clock, weather, todo tasks, bookmarks, calendar, etc. The user should be able to view all important information on a single page.
