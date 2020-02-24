@@ -1,33 +1,35 @@
-.theme-dark {
-  --text-color: #fff;
-  --text-color-highlight: #b9ca4a;
+@import "~@darekkay/styles/src/base/colors";
 
-  --background-color: #1c1c1c;
-  --background-color-panel: #333;
+.theme-dark {
+  --text-color: #{$white};
+  --text-color-highlight: #{$green-warm-vivid-30};
+
+  --background-color: #{$gray-warm-90};
+  --background-color-panel: #{$gray-cool-80};
   --background-color-dim: rgba(0, 0, 0, 0.5);
 
-  --border-color: #74715e;
-  --focus-ring-color: hsla(68, 55%, 54%, 0.5);
+  --border-color: #{$gray-warm-60};
+  --focus-ring-color: #{$green-warm-50};
   --backdrop-color: rgba(0, 0, 0, 0.6);
 
-  --button-primary-color: hsl(68, 55%, 54%);
-  --button-primary-hover-bg: hsl(68, 55%, 61%);
-  --button-primary-active-bg: hsl(68, 55%, 67%);
-  --button-primary-focus-ring: var(--focus-ring-color);
+  --button-primary-color: #{$green-warm-vivid-30};
+  --button-primary-hover-bg: #{$green-warm-30};
+  --button-primary-active-bg: #{$green-warm-30};
+  --button-primary-focus-ring: #{$green-warm-50};
 
-  --button-secondary-color: hsl(205, 91%, 59%);
-  --button-secondary-hover-bg: hsl(205, 91%, 66%);
-  --button-secondary-active-bg: hsl(205, 91%, 72%);
-  --button-secondary-focus-ring: hsla(205, 91%, 59%, 0.5);
+  --button-secondary-color: #{$blue-vivid-30};
+  --button-secondary-hover-bg: #{$blue-30};
+  --button-secondary-active-bg: #{$blue-30};
+  --button-secondary-focus-ring: #{$blue-60};
 
-  --button-danger-color: hsl(37, 90%, 51%);
-  --button-danger-hover-bg: hsl(37, 90%, 58%);
-  --button-danger-active-bg: hsl(37, 90%, 64%);
-  --button-danger-focus-ring: hsla(37, 90%, 51%, 0.5);
+  --button-danger-color: #{$gold-vivid-30};
+  --button-danger-hover-bg: #{$gold-vivid-20};
+  --button-danger-active-bg: #{$gold-vivid-20};
+  --button-danger-focus-ring: #{$gold-vivid-50};
 
-  --button-inverse-color: #000;
-  --button-disabled-color: #888;
+  --button-inverse-color: #{$black};
+  --button-disabled-color: #{$gray-40};
 
-  --loading-background-color: hsla(0, 0%, 96%, 0.3);
-  --loading-spinner-color: #fff;
+  --loading-background-color: #{$gray-50};
+  --loading-spinner-color: #{$gray-warm-5};
 }

@@ -44,6 +44,11 @@ h6 {
   margin: 0;
 }
 
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+}
+
 ::-moz-focus-inner {
   /* Remove inner focus ring and padding in Firefox */
   border: 0;
