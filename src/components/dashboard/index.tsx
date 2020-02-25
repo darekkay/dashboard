@@ -55,7 +55,6 @@ class Dashboard extends React.Component<Props> {
         rowHeight={GRID.ROW_HEIGHT_PX}
         compactType={null}
         useCSSTransforms={false}
-        isRearrangeable={false}
         isDraggable={isLayoutEditable}
         isResizable={isLayoutEditable}
         onLayoutChange={(__: any, allLayouts: Layout) => {
