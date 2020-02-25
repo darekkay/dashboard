@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { ConfigurationProps } from "widgets/index";
 import Input from "components/forms/input";
-import Button, { ButtonSize } from "components/button";
+import Button, { ButtonSize, ButtonVariant } from "components/button";
 
 import providers from "./lib/providers";
 
@@ -24,8 +24,9 @@ const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
           <Button
             key={provider.title}
             className="mr-5 mb-2"
-            outline
+            variant={ButtonVariant.Secondary}
             size={ButtonSize.Small}
+            outline
             onClick={() =>
               setOptions({
                 url: provider.url
