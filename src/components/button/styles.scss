@@ -5,8 +5,7 @@
   $background,
   $border,
   $event-foreground,
-  $hover-background,
-  $active-background,
+  $event-background,
   $focus-ring
 ) {
   color: $foreground;
@@ -20,17 +19,10 @@
     fill: $foreground;
   }
 
-  &:hover {
-    background-color: $hover-background;
-  }
-
-  &:active {
-    background-color: $active-background;
-  }
-
   &:hover,
   &:active {
     color: $event-foreground;
+    background-color: $event-background;
 
     svg {
       fill: $event-foreground;
@@ -88,8 +80,7 @@
     var(--button-primary-color),
     var(--button-primary-color),
     var(--button-inverse-color),
-    var(--button-primary-hover-bg),
-    var(--button-primary-active-bg),
+    var(--button-primary-event-bg),
     var(--button-primary-focus-ring)
   );
 }
@@ -100,8 +91,7 @@
     transparent,
     var(--button-primary-color),
     var(--button-inverse-color),
-    var(--button-primary-hover-bg),
-    var(--button-primary-active-bg),
+    var(--button-primary-event-bg),
     var(--button-primary-focus-ring)
   );
 }
@@ -112,8 +102,7 @@
     var(--button-secondary-color),
     var(--button-secondary-color),
     var(--button-inverse-color),
-    var(--button-secondary-hover-bg),
-    var(--button-secondary-active-bg),
+    var(--button-secondary-event-bg),
     var(--button-secondary-focus-ring)
   );
 }
@@ -124,8 +113,7 @@
     transparent,
     var(--button-secondary-color),
     var(--button-inverse-color),
-    var(--button-secondary-hover-bg),
-    var(--button-secondary-active-bg),
+    var(--button-secondary-event-bg),
     var(--button-secondary-focus-ring)
   );
 }
@@ -136,8 +124,7 @@
     var(--button-danger-color),
     var(--button-danger-color),
     var(--button-inverse-color),
-    var(--button-danger-hover-bg),
-    var(--button-danger-active-bg),
+    var(--button-danger-event-bg),
     var(--button-danger-focus-ring)
   );
 }
@@ -147,8 +134,7 @@
     transparent,
     var(--button-danger-color),
     var(--button-inverse-color),
-    var(--button-danger-hover-bg),
-    var(--button-danger-active-bg),
+    var(--button-danger-event-bg),
     var(--button-danger-focus-ring)
   );
 }

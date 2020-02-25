@@ -13,18 +13,15 @@
   --backdrop-color: rgba(255, 255, 255, 0.6);
 
   --button-primary-color: #{$blue-vivid-50};
-  --button-primary-hover-bg: #{$blue-vivid-60};
-  --button-primary-active-bg: #{$blue-vivid-60};
+  --button-primary-event-bg: #{$blue-vivid-60};
   --button-primary-focus-ring: #{$blue-30};
 
-  --button-secondary-color: #{$mint-50};
-  --button-secondary-hover-bg: #{$mint-60};
-  --button-secondary-active-bg: #{$mint-60};
-  --button-secondary-focus-ring: #{$mint-cool-30};
+  --button-secondary-color: #{$violet-50};
+  --button-secondary-event-bg: #{$violet-60};
+  --button-secondary-focus-ring: #{$violet-vivid-30};
 
   --button-danger-color: #{$red-50};
-  --button-danger-hover-bg: #{$red-60};
-  --button-danger-active-bg: #{$red-60};
+  --button-danger-event-bg: #{$red-60};
   --button-danger-focus-ring: #{$red-30};
 
   --button-inverse-color: #{$white};
