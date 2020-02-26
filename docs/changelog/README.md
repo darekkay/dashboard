@@ -10,6 +10,7 @@
 - :gem: Extract shared styles into a [separate package](https://www.npmjs.com/package/@darekkay/styles).
 - :gem: Use a common color palette.
 - :gem: Replace the (hamburger) menu button with a custom Button component.
+- :hammer: Update dependencies.
 
 # 1.1.4 (2020-02-04)
 
