@@ -1,6 +1,6 @@
 /** Widget duck */
 
-import { createAction, createReducer } from "redux-starter-kit";
+import { createAction, createReducer } from "@reduxjs/toolkit";
 import { MomentInputObject } from "moment";
 
 import widgets from "widgets";

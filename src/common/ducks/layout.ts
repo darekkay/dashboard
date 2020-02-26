@@ -1,7 +1,7 @@
 /** Grid layout duck */
 
 import _ from "lodash";
-import { createAction, createReducer, PayloadAction } from "redux-starter-kit";
+import { createAction, createReducer, PayloadAction } from "@reduxjs/toolkit";
 import { put, select, takeEvery } from "redux-saga/effects";
 import { Layout as ReactGridLayout } from "react-grid-layout";
 

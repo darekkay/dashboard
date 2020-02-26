@@ -1,6 +1,6 @@
 import i18n, { Resource } from "i18next";
 import { initReactI18next } from "react-i18next";
-import { PayloadAction } from "redux-starter-kit";
+import { PayloadAction } from "@reduxjs/toolkit";
 import { takeEvery } from "@redux-saga/core/effects";
 
 import { DEBUG_LABELS } from "common/environment";

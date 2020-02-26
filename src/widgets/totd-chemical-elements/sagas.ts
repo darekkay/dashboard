@@ -1,5 +1,5 @@
 import { put, call, takeLatest } from "@redux-saga/core/effects";
-import { PayloadAction } from "redux-starter-kit";
+import { PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import _ from "lodash";
 
