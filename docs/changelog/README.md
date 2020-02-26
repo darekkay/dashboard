@@ -3,6 +3,7 @@
 # Unreleased
 
 - :rocket: **[Text]**: Display a focus indicator.
+- :bug: Persist widget state on viewport changes.
 - :gem: Add semantics to all input fields.
 - :gem: Provide focus ring fallback for Windows High Contrast mode.
 - :gem: Normalize styling across browsers.

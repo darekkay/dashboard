@@ -11657,10 +11657,10 @@ react-focus-lock@^2.1.0:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-grid-layout@0.17.1:
-  version "0.17.1"
-  resolved "https://registry.yarnpkg.com/react-grid-layout/-/react-grid-layout-0.17.1.tgz#0b75c72e5b7d7085f0f0054e160b31298971c5e2"
-  integrity sha512-L+wHFevK+klKvoAHuHn4Q5qHtrW+4zCj0F3QnpR7wZbkZPmrdaWC7cztFLXwINq6WnOWGE22BCTCDCHJi7dVDw==
+react-grid-layout@0.18.2:
+  version "0.18.2"
+  resolved "https://registry.yarnpkg.com/react-grid-layout/-/react-grid-layout-0.18.2.tgz#91a8740d473d256071c56a558b3449c57224689d"
+  integrity sha512-PF4LfGoJ2SbuCJtQ3wPapC4ZuZcqKKNWv36m/QnxbfEw8C48HcGB8162wPkIUc9mfKPLE/MBlHjRSaPQ3VlwYw==
   dependencies:
     classnames "2.x"
     lodash.isequal "^4.0.0"
