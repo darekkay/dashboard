@@ -1,5 +1,7 @@
 import React from "react";
 
+import log from "common/log";
+
 export interface State {
   hasError: boolean;
 }
@@ -18,7 +20,7 @@ const withErrorHandling = <P extends object>(
     }
 
     componentDidCatch(error: Error) {
-      console.error(error.message);
+      log.error(error.message);
     }
 
     render() {

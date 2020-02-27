@@ -28,6 +28,7 @@
   "rules": {
     "import/order": "error",
     "linebreak-style": "off",
+    "no-console": "error",
     "prettier/prettier": "warn",
     "radix": "off",
     "react/jsx-filename-extension": "off",

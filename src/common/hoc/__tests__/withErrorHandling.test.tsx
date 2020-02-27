@@ -1,6 +1,8 @@
 import React from "react";
 import { mount } from "enzyme";
 
+import log from "common/log";
+
 import withErrorHandling, { State as ErrorProps } from "../withErrorHandling";
 
 const Component = (props: {} & ErrorProps) => (
@@ -20,9 +22,9 @@ describe("withErrorHandling", () => {
 
   /** As "istanbul ignore" doesn't work either, let's make sure the coverage is fulfilled */
   it("fulfills the code coverage", () => {
-    const consoleHandle = console.error;
-    console.error = jest.fn();
-    const spyConsoleError = jest.spyOn(console, "error");
+    const consoleHandle = log.error;
+    log.error = jest.fn();
+    const spyConsoleError = jest.spyOn(log, "error");
 
     const wrapper = mount(<CatchErrors />);
     const component = wrapper.find(Component);
@@ -32,6 +34,6 @@ describe("withErrorHandling", () => {
     expect(CatchErrors.getDerivedStateFromError().hasError).toBe(true);
     expect(spyConsoleError).toHaveBeenCalledWith(errorMessage);
 
-    console.error = consoleHandle;
+    log.error = consoleHandle;
   });
 });

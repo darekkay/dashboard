@@ -20,6 +20,7 @@
     "classnames": "2.2.6",
     "i18next": "19.3.2",
     "lodash": "4.17.15",
+    "loglevel": "1.6.7",
     "moment": "2.24.0",
     "qrcode.react": "1.0.0",
     "react": "16.13.0",

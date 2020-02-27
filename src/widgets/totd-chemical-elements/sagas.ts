@@ -10,6 +10,7 @@ import {
   updateError,
   updateSuccess
 } from "components/widget/duck";
+import log from "common/log";
 
 import { widgetType } from "./properties";
 
@@ -34,7 +35,7 @@ function* onTriggerUpdate(action: PayloadAction<string>) {
     );
     yield put(updateSuccess(id));
   } catch (error) {
-    console.error(error);
+    log.error(error);
     yield put(updateError(id));
   }
 }
