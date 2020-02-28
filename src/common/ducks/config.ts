@@ -1,6 +1,7 @@
 /** Application settings */
 
 import { createAction, createReducer } from "@reduxjs/toolkit";
+import { Theme } from "components/theme-select";
 
 export interface ConfigState {
   theme: string;
@@ -10,8 +11,13 @@ export interface ConfigState {
 const changeTheme = createAction<string>("config/change-theme");
 export const changeLanguage = createAction<string>("config/change-language");
 
+export const defaultTheme = (): Theme =>
+  window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)")
+    ? "dark"
+    : "default";
+
 export const initialState = {
-  theme: "default",
+  theme: defaultTheme(),
   language: "" // let i18next use the correct language
 };
 

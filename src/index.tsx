@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 
 import "common/i18n";
 import { updateCssVariables } from "components/theme-select";
+import { defaultTheme } from "common/ducks/config";
 // import * as serviceWorker from "common/serviceWorker";
 
 import "react-grid-layout/css/styles.css";
@@ -13,7 +14,7 @@ import "./styles/index.scss";
 
 import Entry from "./entry";
 
-updateCssVariables("default");
+updateCssVariables(defaultTheme());
 
 ReactDOM.render(<Entry />, document.getElementById("root"));
 
