@@ -38,8 +38,10 @@
   letter-spacing: 0.025em;
   white-space: nowrap;
 
-  -webkit-transition: all 0.15s ease;
-  transition: all 0.15s ease;
+  &:not(.no-transition) {
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+  }
 
   &:focus {
     outline: 0;

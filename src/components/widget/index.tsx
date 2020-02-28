@@ -75,7 +75,6 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
     <div
       className={cn(
         "widget",
-        "visibility-trigger",
         "flex",
         "flex-col",
         "border",
@@ -84,6 +83,7 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
         "bg-color-panel",
         "relative",
         {
+          "visibility-trigger": !isLayoutEditable,
           error: hasError
         },
         className
@@ -133,9 +133,37 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
       {/* Dimmed background in edit mode */}
       {isLayoutEditable && <div className="absolute inset-0 bg-color-dim" />}
 
+      {/* Configuration button */}
+      {isWidgetConfigurable && (
+        <div
+          className={cn(
+            "visibility-target absolute -top-1 -right-1 border grid-undraggable",
+            {
+              "bg-color-panel mr-8": isLayoutEditable,
+              "bg-color-default": !isLayoutEditable
+            }
+          )}
+        >
+          <Button
+            size={ButtonSize.Small}
+            variant={ButtonVariant.Unstyled}
+            border={false}
+            className={cn("no-transition", {
+              "visibility-target": !isLayoutEditable
+            })}
+            aria-label={t(`widget.common.configuration`, {
+              widget: t(`widget.${type}.name`)
+            })}
+            onClick={openModal}
+          >
+            <Icon name="cog" />
+          </Button>
+        </div>
+      )}
+
       {/* Remove button in edit mode */}
       {isLayoutEditable && (
-        <div className="absolute -top-1 -right-1 bg-color-panel border">
+        <div className="absolute -top-1 -right-1 bg-color-panel border grid-undraggable">
           <Button
             size={ButtonSize.Small}
             variant={ButtonVariant.Unstyled}
@@ -146,26 +174,6 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
             onClick={() => removeWidgetFromLayout(id)}
           >
             <Icon name="trash" className="text-color-danger" />
-          </Button>
-        </div>
-      )}
-
-      {/* Configuration button */}
-      {!isLayoutEditable && isWidgetConfigurable && (
-        <div className="visibility-target absolute -top-1 -right-1 bg-color-default border">
-          <Button
-            size={ButtonSize.Small}
-            variant={ButtonVariant.Unstyled}
-            border={false}
-            className={cn({
-              "visibility-target": !isLayoutEditable
-            })}
-            aria-label={t(`widget.common.configuration`, {
-              widget: t(`widget.${type}.name`)
-            })}
-            onClick={openModal}
-          >
-            <Icon name="cog" />
           </Button>
         </div>
       )}
@@ -181,6 +189,7 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
           isModalOpen={isModalOpen}
         ></WidgetConfiguration>
       )}
+
       {children}
     </div>
   );

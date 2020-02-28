@@ -2,6 +2,7 @@
 
 # Unreleased
 
+- :rocket: Enable widget configuration in edit mode.
 - :rocket: **[Text]**: Display a focus indicator.
 - :bug: Persist widget state on viewport changes.
 - :gem: Add semantics to all input fields.

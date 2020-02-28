@@ -86,9 +86,6 @@
   .visibility-target {
     visibility: hidden;
 
-    -webkit-transition: all 0.15s ease;
-    transition: all 0.15s ease;
-
     &:active,
     &:focus {
       visibility: visible;
