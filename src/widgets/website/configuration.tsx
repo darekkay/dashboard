@@ -7,7 +7,12 @@ import Button, { ButtonSize, ButtonVariant } from "components/button";
 
 import providers from "./lib/providers";
 
-const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
+const Configuration = ({
+  id,
+  options,
+  setOptions,
+  save
+}: ConfigurationProps) => {
   const { t } = useTranslation();
   return (
     <>
@@ -18,6 +23,7 @@ const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
         className="mb-6"
         type="url"
         autoComplete="url"
+        onEnter={save}
       />
       <div>
         {providers.map(provider => (

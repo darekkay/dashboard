@@ -43,7 +43,8 @@ const WidgetConfiguration: React.FC<Props> = memo(
             setOptions: modalValues => {
               setValues({ ...values, ...modalValues });
             },
-            options: values
+            options: values,
+            save: onSave
           })}
         </Suspense>
 

@@ -29,6 +29,7 @@ export interface ConfigurationProps {
   id: string;
   options: { [key: string]: any };
   setOptions: (values: { [key: string]: any }) => void;
+  save: () => void;
 }
 
 export interface WidgetProperties {

@@ -4,7 +4,12 @@ import { useTranslation } from "react-i18next";
 import { ConfigurationProps } from "widgets/index";
 import Input from "components/forms/input";
 
-const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
+const Configuration = ({
+  id,
+  options,
+  setOptions,
+  save
+}: ConfigurationProps) => {
   const { t } = useTranslation();
   return (
     <>
@@ -14,6 +19,7 @@ const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
         label={t("common.headline")}
         className="mb-6"
         type="text"
+        onEnter={save}
       />
     </>
   );

@@ -7,7 +7,12 @@ import Button, { ButtonSize, ButtonVariant } from "components/button";
 
 import providers from "./lib/providers";
 
-const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
+const Configuration = ({
+  id,
+  options,
+  setOptions,
+  save
+}: ConfigurationProps) => {
   const { t } = useTranslation();
   return (
     <>
@@ -17,6 +22,7 @@ const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
         label={t("widget.search.configuration.title")}
         className="mb-6"
         type="text"
+        onEnter={save}
       />
       <Input
         setValue={value => setOptions({ pattern: value })}
@@ -24,6 +30,7 @@ const Configuration = ({ id, options, setOptions }: ConfigurationProps) => {
         label={t("widget.search.configuration.pattern")}
         className="mb-6"
         type="text"
+        onEnter={save}
       />
       <div>
         {providers.map(provider => (
