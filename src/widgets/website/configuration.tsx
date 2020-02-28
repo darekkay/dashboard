@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 import { ConfigurationProps } from "widgets/index";
 import Input from "components/forms/input";
@@ -25,7 +25,7 @@ const Configuration = ({
         autoComplete="url"
         onEnter={save}
       />
-      <div>
+      <div className="mb-6">
         {providers.map(provider => (
           <Button
             key={provider.title}
@@ -43,6 +43,10 @@ const Configuration = ({
           </Button>
         ))}
       </div>
+      {/* NICE: Extract "Alert/Info" component */}
+      <Trans i18nKey="widget.website.configuration.disclaimer">
+        <strong></strong>
+      </Trans>
     </>
   );
 };
