@@ -5,6 +5,7 @@
 - :rocket: Enable widget configuration in edit mode.
 - :rocket: Save configuration modals on pressing Enter within inputs.
 - :rocket: Detect OS dark theme preference.
+- :rocket: Improve widget placement by removing vertical gaps.
 - :rocket: **[Text]**: Display a focus indicator.
 - :bug: Persist widget state on viewport changes.
 - :gem: Add semantics to all input fields.

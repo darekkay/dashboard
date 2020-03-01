@@ -53,7 +53,7 @@ class Dashboard extends React.Component<Props> {
         breakpoints={{ mobile: 0, desktop: 768 }}
         cols={{ mobile: 1, desktop: GRID.COLUMNS_COUNT }}
         rowHeight={GRID.ROW_HEIGHT_PX}
-        compactType={null}
+        compactType="vertical"
         useCSSTransforms={false}
         isDraggable={isLayoutEditable}
         isResizable={isLayoutEditable}
