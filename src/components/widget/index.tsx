@@ -7,12 +7,10 @@ import cn from "classnames";
 import withErrorHandling, {
   State as ErrorProps
 } from "common/hoc/withErrorHandling";
-import Button, { ButtonVariant, ButtonSize } from "components/button";
-import Icon from "components/icon";
-import WidgetConfiguration from "components/widget-configuration";
+import Loading from "components/loading";
+import WidgetOverlay from "components/widget-overlay";
+import WidgetError from "components/widget-error";
 import widgets, { ValueUpdateAction } from "widgets";
-
-import Loading from "../loading";
 
 import makeSelectWidget, { getTypeFromId } from "./selectors";
 import { actionCreators, WidgetMeta } from "./duck";
@@ -59,15 +57,8 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
     ...rest
   } = props;
 
-  const isWidgetConfigurable = widgets[type].configurable;
-
   const { t } = useTranslation();
   const headline = t(`widget.${type}.headline`, options);
-
-  const [isModalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
 
   const [dimensions, setDimensions] = useState<Dimensions>(initialDimensions);
 
@@ -98,7 +89,9 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
           {headline}
         </h3>
       )}
-      {hasError && "» Error «"}
+
+      {hasError && <WidgetError />}
+
       {!hasError && (
         <Measure
           bounds
@@ -130,66 +123,16 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
         </Measure>
       )}
 
-      {/* Dimmed background in edit mode */}
-      {isLayoutEditable && <div className="absolute inset-0 bg-color-dim" />}
+      <WidgetOverlay
+        id={id}
+        type={type}
+        options={options}
+        setOptions={setOptions}
+        removeWidgetFromLayout={removeWidgetFromLayout}
+        isLayoutEditable={isLayoutEditable}
+      />
 
-      {/* Configuration button */}
-      {isWidgetConfigurable && (
-        <div
-          className={cn(
-            "visibility-target absolute -top-1 -right-1 border grid-undraggable",
-            {
-              "bg-color-panel mr-8": isLayoutEditable,
-              "bg-color-default": !isLayoutEditable
-            }
-          )}
-        >
-          <Button
-            size={ButtonSize.Small}
-            variant={ButtonVariant.Unstyled}
-            border={false}
-            className={cn("no-transition", {
-              "visibility-target": !isLayoutEditable
-            })}
-            aria-label={t(`widget.common.configuration`, {
-              widget: t(`widget.${type}.name`)
-            })}
-            onClick={openModal}
-          >
-            <Icon name="cog" />
-          </Button>
-        </div>
-      )}
-
-      {/* Remove button in edit mode */}
-      {isLayoutEditable && (
-        <div className="absolute -top-1 -right-1 bg-color-panel border grid-undraggable">
-          <Button
-            size={ButtonSize.Small}
-            variant={ButtonVariant.Unstyled}
-            border={false}
-            aria-label={t(`widget.common.remove`, {
-              widget: t(`widget.${type}.name`)
-            })}
-            onClick={() => removeWidgetFromLayout(id)}
-          >
-            <Icon name="trash" className="text-color-danger" />
-          </Button>
-        </div>
-      )}
-
-      {isWidgetConfigurable && (
-        <WidgetConfiguration
-          id={id}
-          type={type}
-          configuration={widgets[type].Configuration}
-          options={options}
-          setOptions={setOptions}
-          closeModal={closeModal}
-          isModalOpen={isModalOpen}
-        ></WidgetConfiguration>
-      )}
-
+      {/* react-grid-library uses children to inject the resize handler */}
       {children}
     </div>
   );
