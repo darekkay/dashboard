@@ -9,8 +9,9 @@ import { useTranslation } from "react-i18next";
 
 import Button, { ButtonSize, ButtonVariant } from "components/button";
 import Icon from "components/icon";
-import WidgetConfiguration from "components/widget-configuration";
 import widgets, { ValueUpdateAction } from "widgets";
+
+import "./styles.scss";
 
 const MOUSE_MOVE_THRESHOLD = 3;
 
@@ -30,15 +31,12 @@ const WidgetOverlay: React.FC<Props> = ({
   isWidgetMenuVisible,
   isDraggable,
   setDraggable,
-  removeWidgetFromLayout
+  removeWidgetFromLayout,
+  openConfigurationModal
 }) => {
   const { t } = useTranslation();
 
   const isWidgetConfigurable = widgets[type].configurable;
-
-  const [isModalOpen, setModalOpen] = useState(false);
-  const openModal = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
 
   const [lastMouseDownPosition, setLastMouseDownPosition] = useState({
     x: 0,
@@ -75,52 +73,43 @@ const WidgetOverlay: React.FC<Props> = ({
         />
       )}
 
-      {/* Configuration button */}
-      {isWidgetConfigurable && isWidgetMenuVisible && (
-        <div className="absolute -top-1 -right-1 mr-8 border bg-color-panel grid-undraggable">
-          <Button
-            size={ButtonSize.Small}
-            variant={ButtonVariant.Unstyled}
-            border={false}
-            className="no-transition"
-            aria-label={t(`widget.common.configuration`, {
-              widget: t(`widget.${type}.name`)
-            })}
-            onClick={openModal}
-          >
-            <Icon name="cog" />
-          </Button>
-        </div>
-      )}
-
-      {/* Remove button */}
       {isWidgetMenuVisible && (
-        <div className="absolute -top-1 -right-1 bg-color-panel border grid-undraggable">
-          <Button
-            size={ButtonSize.Small}
-            variant={ButtonVariant.Unstyled}
-            border={false}
-            aria-label={t(`widget.common.remove`, {
-              widget: t(`widget.${type}.name`)
-            })}
-            onClick={() => removeWidgetFromLayout(id)}
-          >
-            <Icon name="trash" className="text-color-danger" />
-          </Button>
-        </div>
-      )}
+        <div className="button-bar absolute z-20 flex px-2 bg-color-panel border rounded">
+          {/* Configuration button */}
+          {isWidgetConfigurable && (
+            <div className="bg-color-panel mr-1">
+              <Button
+                size={ButtonSize.Auto}
+                variant={ButtonVariant.Unstyled}
+                border={false}
+                className="no-transition"
+                aria-label={t(`widget.common.configuration`, {
+                  widget: t(`widget.${type}.name`)
+                })}
+                onClick={openConfigurationModal}
+              >
+                <Icon name="cog" />
+              </Button>
+            </div>
+          )}
 
-      {/* Configuration modal */}
-      {isWidgetConfigurable && (
-        <WidgetConfiguration
-          id={id}
-          type={type}
-          configuration={widgets[type].Configuration}
-          options={options}
-          setOptions={setOptions}
-          closeModal={closeModal}
-          isModalOpen={isModalOpen}
-        />
+          {/* Remove button */}
+          {isWidgetMenuVisible && (
+            <div className="bg-color-panel">
+              <Button
+                size={ButtonSize.Auto}
+                variant={ButtonVariant.Unstyled}
+                border={false}
+                aria-label={t(`widget.common.remove`, {
+                  widget: t(`widget.${type}.name`)
+                })}
+                onClick={() => removeWidgetFromLayout(id)}
+              >
+                <Icon name="trash" className="text-color-danger" />
+              </Button>
+            </div>
+          )}
+        </div>
       )}
     </>
   );
@@ -135,6 +124,7 @@ export interface Props {
   isDraggable: boolean;
   setDraggable: Dispatch<SetStateAction<boolean>>;
   removeWidgetFromLayout: (id: string) => void;
+  openConfigurationModal: () => void;
 }
 
 export default WidgetOverlay;

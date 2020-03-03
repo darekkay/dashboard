@@ -12,7 +12,8 @@ export enum ButtonVariant {
 
 export enum ButtonSize {
   Regular = "regular",
-  Small = "small"
+  Small = "small",
+  Auto = "auto"
 }
 
 const Button: React.FC<Props> = React.forwardRef(

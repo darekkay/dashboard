@@ -17,6 +17,7 @@ describe("<WidgetOverlay />", () => {
         options={{}}
         setOptions={() => null}
         removeWidgetFromLayout={() => null}
+        openConfigurationModal={() => null}
       />
     );
   });

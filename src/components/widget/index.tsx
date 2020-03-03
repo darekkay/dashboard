@@ -7,9 +7,11 @@ import cn from "classnames";
 import withErrorHandling, {
   State as ErrorProps
 } from "common/hoc/withErrorHandling";
+import useBooleanState from "common/hooks/useBooleanState";
 import Loading from "components/loading";
 import WidgetOverlay from "components/widget-overlay";
 import WidgetError from "components/widget-error";
+import WidgetConfiguration from "components/widget-configuration";
 import widgets, { ValueUpdateAction } from "widgets";
 
 import makeSelectWidget, { getTypeFromId } from "./selectors";
@@ -58,102 +60,130 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
   const { t } = useTranslation();
   const headline = t(`widget.${type}.headline`, options);
 
+  const isWidgetConfigurable = widgets[type].configurable;
+
   const [dimensions, setDimensions] = useState<Dimensions>(initialDimensions);
   const [isDraggable, setDraggable] = useState(true);
-  const [isWidgetMenuVisible, setWidgetMenuVisible] = useState(false);
+
+  const [
+    isWidgetMenuVisible,
+    showWidgetMenu,
+    ,
+    setWidgetMenuVisible
+  ] = useBooleanState(false);
+
+  const [
+    isConfigurationModalOpen,
+    openConfigurationModal,
+    closeConfigurationModal
+  ] = useBooleanState(false);
 
   const widgetRef = useRef(null);
 
   return (
-    <div
-      className={cn(
-        "widget",
-        "flex",
-        "flex-col",
-        "border",
-        "rounded",
-        "overflow-hidden",
-        "bg-color-panel",
-        "relative",
-        {
-          error: hasError
-        },
-        className
+    <>
+      <div
+        className={cn(
+          "widget",
+          "flex",
+          "flex-col",
+          "border",
+          "rounded",
+          "bg-color-panel",
+          "relative",
+          {
+            error: hasError
+          },
+          className
+        )}
+        ref={widgetRef}
+        tabIndex={0}
+        aria-label={t(`widget.${type}.name`)}
+        onFocus={showWidgetMenu}
+        onBlur={event => {
+          // The widget becomes draggable if neither of its children is focused
+          const relatedTarget = event.relatedTarget as Element;
+          if (widgetRef?.current) {
+            // @ts-ignore
+            const widgetNode = widgetRef.current as Element;
+            const blurWithinParent = widgetNode.contains(relatedTarget);
+            setDraggable(!blurWithinParent);
+            setWidgetMenuVisible(blurWithinParent);
+          }
+        }}
+        {...rest}
+      >
+        {headline && (
+          <h3
+            id={`widget-${id}-headline`}
+            className="m-0 py-1 px-2 text-2 font-normal"
+          >
+            {headline}
+          </h3>
+        )}
+
+        {hasError && <WidgetError />}
+
+        {!hasError && (
+          <Measure
+            bounds
+            onResize={contentRect => {
+              setDimensions(contentRect?.bounds || initialDimensions);
+            }}
+          >
+            {({ measureRef }) => (
+              <div
+                ref={measureRef}
+                className="flex flex-col items-center justify-center h-full overflow-hidden"
+              >
+                <Suspense fallback={<Loading type="skeleton" />}>
+                  {React.createElement(widgets[type].Component, {
+                    id,
+                    setOptions,
+                    setData,
+                    triggerUpdate,
+                    meta: {
+                      ...meta,
+                      dimensions
+                    },
+                    ...options,
+                    ...data
+                  })}
+                </Suspense>
+              </div>
+            )}
+          </Measure>
+        )}
+
+        <WidgetOverlay
+          id={id}
+          type={type}
+          options={options}
+          setOptions={setOptions}
+          isWidgetMenuVisible={isWidgetMenuVisible}
+          isDraggable={isDraggable}
+          setDraggable={setDraggable}
+          removeWidgetFromLayout={removeWidgetFromLayout}
+          openConfigurationModal={openConfigurationModal}
+        />
+
+        {/* react-grid-library uses children to inject the resize handler */}
+        {children}
+      </div>
+
+      {/* Configuration modal */}
+      {isWidgetConfigurable && (
+        <WidgetConfiguration
+          id={id}
+          type={type}
+          configuration={widgets[type].Configuration}
+          options={options}
+          setOptions={setOptions}
+          closeModal={closeConfigurationModal}
+          isModalOpen={isConfigurationModalOpen}
+        />
       )}
-      ref={widgetRef}
-      tabIndex={0}
-      aria-label={t(`widget.${type}.name`)}
-      onFocus={event => setWidgetMenuVisible(true)}
-      onBlur={event => {
-        // The widget becomes draggable if neither of its children is focused
-        if (widgetRef?.current) {
-          // @ts-ignore
-          const widgetNode = widgetRef.current as Element;
-          const blurWithinParent = widgetNode.contains(
-            event.relatedTarget as Element
-          );
-          setDraggable(!blurWithinParent);
-          setWidgetMenuVisible(blurWithinParent);
-        }
-      }}
-      {...rest}
-    >
-      {headline && (
-        <h3
-          id={`widget-${id}-headline`}
-          className="m-0 py-1 px-2 text-2 font-normal"
-        >
-          {headline}
-        </h3>
-      )}
-
-      {hasError && <WidgetError />}
-
-      {!hasError && (
-        <Measure
-          bounds
-          onResize={contentRect => {
-            setDimensions(contentRect?.bounds || initialDimensions);
-          }}
-        >
-          {({ measureRef }) => (
-            <div
-              ref={measureRef}
-              className="flex flex-col items-center justify-center h-full"
-            >
-              <Suspense fallback={<Loading type="skeleton" />}>
-                {React.createElement(widgets[type].Component, {
-                  id,
-                  setOptions,
-                  setData,
-                  triggerUpdate,
-                  meta: {
-                    ...meta,
-                    dimensions
-                  },
-                  ...options,
-                  ...data
-                })}
-              </Suspense>
-            </div>
-          )}
-        </Measure>
-      )}
-
-      <WidgetOverlay
-        id={id}
-        type={type}
-        options={options}
-        setOptions={setOptions}
-        isWidgetMenuVisible={isWidgetMenuVisible}
-        isDraggable={isDraggable}
-        setDraggable={setDraggable}
-        removeWidgetFromLayout={removeWidgetFromLayout}
-      />
-
-      {/* react-grid-library uses children to inject the resize handler */}
-      {children}
-    </div>
+    </>
   );
 });
 

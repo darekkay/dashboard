@@ -57,7 +57,6 @@ class Dashboard extends React.Component<Props> {
         isDraggable={true}
         isResizable={true}
         draggableHandle=".grid-draggable"
-        draggableCancel=".grid-undraggable"
         onLayoutChange={(__: any, allLayouts: Layout) => {
           saveLayout(allLayouts);
         }}

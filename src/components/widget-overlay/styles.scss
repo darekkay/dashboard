@@ -1,0 +1,19 @@
+.button-bar {
+  $button-bar-height: 2.9rem;
+
+  right: 1px;
+  top: -$button-bar-height;
+  height: $button-bar-height;
+
+  overflow: hidden;
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+
+  border-bottom: 3px solid var(--button-secondary-color);
+  box-shadow: 3px -2px 5px 0 var(--box-shadow-color),
+    -3px -2px 5px 0 var(--box-shadow-color);
+
+  .btn {
+    height: #{$button-bar-height - 0.6rem};
+  }
+}

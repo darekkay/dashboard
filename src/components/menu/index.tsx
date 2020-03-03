@@ -36,7 +36,7 @@ const Menu: React.FC<Props> = ({
       <ReakitMenu
         {...menu}
         aria-label={title}
-        className="z-10 min-w-250 bg-color-panel border outline-none"
+        className="z-20 min-w-250 bg-color-panel border outline-none"
       >
         <MenuContext.Provider value={menu}>{children}</MenuContext.Provider>
       </ReakitMenu>
