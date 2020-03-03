@@ -36,7 +36,6 @@ class Dashboard extends React.Component<Props> {
   render() {
     const {
       layout,
-      isLayoutEditable,
       widgetIDs,
       saveLayout,
       removeWidgetFromLayout,
@@ -55,8 +54,9 @@ class Dashboard extends React.Component<Props> {
         rowHeight={GRID.ROW_HEIGHT_PX}
         compactType="vertical"
         useCSSTransforms={false}
-        isDraggable={isLayoutEditable}
-        isResizable={isLayoutEditable}
+        isDraggable={true}
+        isResizable={true}
+        draggableHandle=".grid-draggable"
         draggableCancel=".grid-undraggable"
         onLayoutChange={(__: any, allLayouts: Layout) => {
           saveLayout(allLayouts);
@@ -66,7 +66,6 @@ class Dashboard extends React.Component<Props> {
           // @ts-ignore
           React.createElement(makeWidgetMemoized(widgetID), {
             key: widgetID,
-            isLayoutEditable,
             removeWidgetFromLayout
           })
         )}

@@ -23,7 +23,6 @@ export const connectedWidgetProps = {
   options: {},
   data: {},
   removeWidgetFromLayout: _.noop,
-  isLayoutEditable: false,
   hasError: false,
   className: "resize",
   ...widgetProps

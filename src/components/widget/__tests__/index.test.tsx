@@ -12,7 +12,6 @@ describe("<Widget />", () => {
       <Widget
         id="mock-widget"
         type="text"
-        isLayoutEditable={false}
         options={{}}
         setOptions={() => null}
         data={{}}
@@ -33,10 +32,5 @@ describe("<Widget />", () => {
   it("renders errors", () => {
     wrapper.setProps({ hasError: true });
     expect(wrapper.find(".error")).toHaveLength(1);
-  });
-
-  it("renders overlay when editing", () => {
-    wrapper.setProps({ isLayoutEditable: true });
-    expect(wrapper.find(".bg-color-dim")).toHaveLength(1);
   });
 });

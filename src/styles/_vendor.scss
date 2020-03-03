@@ -1,3 +1,10 @@
 .react-grid-item > .react-resizable-handle::after {
   border-color: var(--text-color);
 }
+
+.react-resizable-handle {
+  background-image: none !important;
+  &::after {
+    border: none !important;
+  }
+}

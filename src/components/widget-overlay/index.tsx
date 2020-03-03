@@ -1,52 +1,88 @@
-import React, { useState } from "react";
+import React, {
+  Dispatch,
+  SetStateAction,
+  MouseEvent,
+  useEffect,
+  useState
+} from "react";
 import { useTranslation } from "react-i18next";
-import cn from "classnames";
 
 import Button, { ButtonSize, ButtonVariant } from "components/button";
 import Icon from "components/icon";
 import WidgetConfiguration from "components/widget-configuration";
 import widgets, { ValueUpdateAction } from "widgets";
 
+const MOUSE_MOVE_THRESHOLD = 3;
+
+/* Minimal movement should trigger a click instead of a move event */
+const isMouseMoved = (
+  lastMouseDownPosition: { x: number; y: number },
+  event: MouseEvent
+) =>
+  Math.abs(event.pageX - lastMouseDownPosition.x) > MOUSE_MOVE_THRESHOLD ||
+  Math.abs(event.pageY - lastMouseDownPosition.y) > MOUSE_MOVE_THRESHOLD;
+
 const WidgetOverlay: React.FC<Props> = ({
   id,
   type,
   options,
   setOptions,
-  removeWidgetFromLayout,
-  isLayoutEditable
+  isWidgetMenuVisible,
+  isDraggable,
+  setDraggable,
+  removeWidgetFromLayout
 }) => {
   const { t } = useTranslation();
 
   const isWidgetConfigurable = widgets[type].configurable;
 
   const [isModalOpen, setModalOpen] = useState(false);
-
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
 
+  const [lastMouseDownPosition, setLastMouseDownPosition] = useState({
+    x: 0,
+    y: 0
+  });
+  const [lastMouseUpPosition, setLastMouseUpPosition] = useState({
+    x: 0,
+    y: 0
+  });
+
+  useEffect(() => {
+    if (!isDraggable) {
+      const element = document.elementFromPoint(
+        lastMouseUpPosition.x,
+        lastMouseUpPosition.y
+      );
+      element && (element as HTMLElement).focus();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isDraggable]);
+
   return (
     <>
-      {/* Dimmed background in edit mode */}
-      {isLayoutEditable && <div className="absolute inset-0 bg-color-dim" />}
+      {isDraggable && (
+        <div
+          className="widget-overlay absolute inset-0 cursor-move grid-draggable"
+          onMouseDown={event => {
+            setLastMouseDownPosition({ x: event.pageX, y: event.pageY });
+          }}
+          onMouseUp={event => {
+            setLastMouseUpPosition({ x: event.pageX, y: event.pageY });
+            setDraggable(isMouseMoved(lastMouseDownPosition, event));
+          }}
+        />
+      )}
 
       {/* Configuration button */}
-      {isWidgetConfigurable && (
-        <div
-          className={cn(
-            "visibility-target absolute -top-1 -right-1 border grid-undraggable",
-            {
-              "bg-color-panel mr-8": isLayoutEditable,
-              "bg-color-default": !isLayoutEditable
-            }
-          )}
-        >
+      {isWidgetConfigurable && isWidgetMenuVisible && (
+        <div className="absolute -top-1 -right-1 mr-8 border bg-color-panel grid-undraggable">
           <Button
             size={ButtonSize.Small}
             variant={ButtonVariant.Unstyled}
             border={false}
-            className={cn("no-transition", {
-              "visibility-target": !isLayoutEditable
-            })}
+            className="no-transition"
             aria-label={t(`widget.common.configuration`, {
               widget: t(`widget.${type}.name`)
             })}
@@ -58,7 +94,7 @@ const WidgetOverlay: React.FC<Props> = ({
       )}
 
       {/* Remove button */}
-      {isLayoutEditable && (
+      {isWidgetMenuVisible && (
         <div className="absolute -top-1 -right-1 bg-color-panel border grid-undraggable">
           <Button
             size={ButtonSize.Small}
@@ -74,6 +110,7 @@ const WidgetOverlay: React.FC<Props> = ({
         </div>
       )}
 
+      {/* Configuration modal */}
       {isWidgetConfigurable && (
         <WidgetConfiguration
           id={id}
@@ -83,7 +120,7 @@ const WidgetOverlay: React.FC<Props> = ({
           setOptions={setOptions}
           closeModal={closeModal}
           isModalOpen={isModalOpen}
-        ></WidgetConfiguration>
+        />
       )}
     </>
   );
@@ -94,8 +131,10 @@ export interface Props {
   type: string;
   options: { [key: string]: any };
   setOptions: ValueUpdateAction;
+  isWidgetMenuVisible: boolean;
+  isDraggable: boolean;
+  setDraggable: Dispatch<SetStateAction<boolean>>;
   removeWidgetFromLayout: (id: string) => void;
-  isLayoutEditable: boolean;
 }
 
 export default WidgetOverlay;

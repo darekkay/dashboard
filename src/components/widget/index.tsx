@@ -1,4 +1,4 @@
-import React, { memo, Suspense, useState } from "react";
+import React, { memo, Suspense, useRef, useState } from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 import Measure from "react-measure";
@@ -32,7 +32,6 @@ export interface Props {
   setData: ValueUpdateAction;
   triggerUpdate: (id: string) => void;
   removeWidgetFromLayout: (id: string) => void;
-  isLayoutEditable: boolean;
   className?: string;
   /** Required to inject the resize handle */
   children?: React.ReactNode;
@@ -51,7 +50,6 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
     setData,
     triggerUpdate,
     removeWidgetFromLayout,
-    isLayoutEditable,
     className,
     children,
     ...rest
@@ -61,6 +59,10 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
   const headline = t(`widget.${type}.headline`, options);
 
   const [dimensions, setDimensions] = useState<Dimensions>(initialDimensions);
+  const [isDraggable, setDraggable] = useState(true);
+  const [isWidgetMenuVisible, setWidgetMenuVisible] = useState(false);
+
+  const widgetRef = useRef(null);
 
   return (
     <div
@@ -74,11 +76,26 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
         "bg-color-panel",
         "relative",
         {
-          "visibility-trigger": !isLayoutEditable,
           error: hasError
         },
         className
       )}
+      ref={widgetRef}
+      tabIndex={0}
+      aria-label={t(`widget.${type}.name`)}
+      onFocus={event => setWidgetMenuVisible(true)}
+      onBlur={event => {
+        // The widget becomes draggable if neither of its children is focused
+        if (widgetRef?.current) {
+          // @ts-ignore
+          const widgetNode = widgetRef.current as Element;
+          const blurWithinParent = widgetNode.contains(
+            event.relatedTarget as Element
+          );
+          setDraggable(!blurWithinParent);
+          setWidgetMenuVisible(blurWithinParent);
+        }
+      }}
       {...rest}
     >
       {headline && (
@@ -128,8 +145,10 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
         type={type}
         options={options}
         setOptions={setOptions}
+        isWidgetMenuVisible={isWidgetMenuVisible}
+        isDraggable={isDraggable}
+        setDraggable={setDraggable}
         removeWidgetFromLayout={removeWidgetFromLayout}
-        isLayoutEditable={isLayoutEditable}
       />
 
       {/* react-grid-library uses children to inject the resize handler */}
