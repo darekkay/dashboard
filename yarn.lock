@@ -922,10 +922,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
-"@darekkay/styles@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@darekkay/styles/-/styles-1.0.1.tgz#aeeb253a29abc73abfded53d7b93d2d8be561bfa"
-  integrity sha512-D9YGCuqMfVhmfLZsEr0+2GpIsMYwhBzHweLDLtw18zZugUNb+wA4keogw8EpDtOsT+WLsfAAfCq49wcOji+ifA==
+"@darekkay/styles@1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@darekkay/styles/-/styles-1.0.4.tgz#d364cd239814b3d8a773a624114fca792503d212"
+  integrity sha512-iFaqBi6sZktEmtVPRfURPmfIBXj7iK9whouYIk6YkTOpqZQ9S2tFx7Ke8UC21qFRd248nv9v4RVE1EczGj1l6w==
 
 "@emotion/cache@^10.0.27":
   version "10.0.27"
