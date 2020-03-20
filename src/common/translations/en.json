@@ -5,6 +5,7 @@
     "cancel": "Cancel",
     "close": "Close",
     "clear": "Clear",
+    "download": "Download",
     "loading": "Loading...",
     "settings": "Settings",
     "help": "Help",
@@ -22,7 +23,8 @@
     "de": "Deutsch"
   },
   "data": {
-    "purge": "Delete all data"
+    "purge": "Delete all data",
+    "backup": "Backup data"
   },
   "welcome": {
     "message1": "Welcome to <0>{{projectName}}</0> — Your digital info board",

@@ -1,5 +1,9 @@
 # Changelog
 
+# Unreleased
+
+- :sparkles: Enable data backups.
+
 # 1.1.5 (2020-03-04)
 
 - :sparkles: Enable moving/resizing widgets in view mode.

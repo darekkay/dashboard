@@ -4,15 +4,15 @@ import { storiesOf } from "@storybook/react";
 
 import initStore from "state/store";
 
-import ThemeSelect from "../index";
+import ImportExport from "../index";
 
 const Story = () => {
   const { store } = initStore();
   return (
     <Provider store={store}>
-      <ThemeSelect />
+      <ImportExport />
     </Provider>
   );
 };
 
-storiesOf("Components.ThemeSelect", module).add("Variants", () => <Story />);
+storiesOf("Components.ImportExport", module).add("Variants", () => <Story />);

@@ -3,6 +3,7 @@ import { IconDefinition } from "@fortawesome/fontawesome-common-types";
 import {
   faBars,
   faCog,
+  faDownload,
   faEdit,
   faHome,
   faMinus,
@@ -22,6 +23,7 @@ import {
 const icons: { [key: string]: IconDefinition } = {
   bars: faBars,
   cog: faCog,
+  download: faDownload,
   edit: faEdit,
   home: faHome,
   minus: faMinus,

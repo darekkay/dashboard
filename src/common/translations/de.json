@@ -5,6 +5,7 @@
     "cancel": "Abbrechen",
     "close": "Schließen",
     "clear": "Löschen",
+    "download": "Herunterladen",
     "loading": "Lade...",
     "settings": "Einstellungen",
     "help": "Hilfe",
@@ -20,7 +21,8 @@
     "headline": "Sprache"
   },
   "data": {
-    "purge": "Alle daten löschen"
+    "purge": "Alle daten löschen",
+    "backup": "Daten sichern"
   },
   "welcome": {
     "message1": "Willkommen im <0>{{projectName}}</0> — Deiner digitalen Infoanzeige",
