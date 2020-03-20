@@ -8,7 +8,7 @@ import {
 import Dashboard from "components/dashboard";
 import Drawer from "components/drawer";
 import Header from "components/header";
-import { updateCssVariables, Theme } from "components/theme-select";
+import { updateCssVariables, Theme } from "components/settings/theme-select";
 import { importWidgets, WidgetsState } from "components/widget/duck";
 
 import mapStateToProps from "./selectors";

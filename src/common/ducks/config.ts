@@ -1,7 +1,7 @@
 /** Application settings */
 
 import { createAction, createReducer } from "@reduxjs/toolkit";
-import { Theme } from "components/theme-select";
+import { Theme } from "components/settings/theme-select";
 
 export interface ConfigState {
   theme: string;

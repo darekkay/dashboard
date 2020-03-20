@@ -1,11 +1,11 @@
 import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 
-import ThemeSelect from "components/theme-select";
-import LanguageSelect from "components/language-select";
+import { PersistorContext } from "entry";
+import ThemeSelect from "components/settings/theme-select";
+import LanguageSelect from "components/settings/language-select";
 import Button, { ButtonVariant } from "components/button";
 import Icon from "components/icon";
-import { PersistorContext } from "entry";
 
 const Settings: React.FC<Props> = memo(() => {
   const { t } = useTranslation();

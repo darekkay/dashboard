@@ -4,7 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "common/i18n";
-import { updateCssVariables } from "components/theme-select";
+import { updateCssVariables } from "components/settings/theme-select";
 import { defaultTheme } from "common/ducks/config";
 // import * as serviceWorker from "common/serviceWorker";
 
