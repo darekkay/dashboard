@@ -5,16 +5,19 @@ import {
   faCog,
   faDownload,
   faEdit,
+  faExclamationCircle,
   faHome,
   faMinus,
   faPalette,
   faPlus,
   faSearch,
   faTimes,
-  faUndoAlt
+  faUndoAlt,
+  faUpload
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
+  faCheckCircle,
   faQuestionCircle,
   faSave,
   faTrashAlt
@@ -25,6 +28,7 @@ const icons: { [key: string]: IconDefinition } = {
   cog: faCog,
   download: faDownload,
   edit: faEdit,
+  error: faExclamationCircle,
   home: faHome,
   minus: faMinus,
   palette: faPalette,
@@ -32,9 +36,11 @@ const icons: { [key: string]: IconDefinition } = {
   question: faQuestionCircle,
   save: faSave,
   search: faSearch,
+  success: faCheckCircle,
   times: faTimes,
   trash: faTrashAlt,
-  undo: faUndoAlt
+  undo: faUndoAlt,
+  upload: faUpload
 };
 
 export default icons;

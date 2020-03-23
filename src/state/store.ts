@@ -4,14 +4,18 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 import { IS_PRODUCTION, IS_STORAGE_PAUSED } from "common/environment";
 import { ConfigState } from "common/ducks/config";
+import { LayoutState } from "common/ducks/layout";
 import { WidgetsState } from "components/widget/duck";
 
 import { persistReducer, persistStore, pause } from "./localStorage";
 import { rootReducer } from "./reducers";
 import { rootSaga } from "./sagas";
 
+export const STATE_PROPERTIES = ["config", "layout", "widgets"];
+
 export interface State {
   config: ConfigState;
+  layout: LayoutState;
   widgets: WidgetsState;
 
   readonly [key: string]: any;

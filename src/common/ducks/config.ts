@@ -1,7 +1,13 @@
 /** Application settings */
 
-import { createAction, createReducer } from "@reduxjs/toolkit";
+import { createAction, createReducer, PayloadAction } from "@reduxjs/toolkit";
+import { put, takeEvery } from "redux-saga/effects";
+
+import { State } from "state/store";
 import { Theme } from "components/settings/theme-select";
+import { importState, handleImportState } from "common/ducks/state";
+
+const SUB_STATE_NAME = "config";
 
 export interface ConfigState {
   theme: string;
@@ -23,15 +29,26 @@ export const initialState = {
 
 export const reducerWithInitialState = (state: ConfigState = initialState) =>
   createReducer(state, {
+    ...handleImportState(SUB_STATE_NAME),
+
     [changeTheme as any]: (state, action) => ({
       ...state,
       theme: action.payload
     }),
+
     [changeLanguage as any]: (state, action) => ({
       ...state,
       language: action.payload
     })
   });
+
+function* updateLanguage(action: PayloadAction<State>) {
+  yield put(changeLanguage(action.payload.config.language));
+}
+
+export function* saga() {
+  yield takeEvery(importState.toString(), updateLanguage);
+}
 
 export const actionCreators = {
   changeTheme,

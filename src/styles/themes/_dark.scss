@@ -4,6 +4,9 @@
   --text-color: #{$white};
   --text-color-highlight: #{$green-warm-vivid-30};
 
+  --text-color-danger: #{$gold-vivid-30};
+  --text-color-success: #{$green-cool-vivid-30};
+
   --background-color: #{$gray-warm-90};
   --background-color-panel: #{$gray-cool-80};
   --background-color-dim: rgba(0, 0, 0, 0.5);
@@ -21,7 +24,7 @@
   --button-secondary-event-bg: #{$blue-30};
   --button-secondary-focus-ring: #{$blue-60};
 
-  --button-danger-color: #{$gold-vivid-30};
+  --button-danger-color: var(--text-color-danger);
   --button-danger-event-bg: #{$gold-vivid-20};
   --button-danger-focus-ring: #{$gold-vivid-50};
 

@@ -7,6 +7,7 @@ import { Layout as ReactGridLayout } from "react-grid-layout";
 
 import widgets from "widgets";
 import { createWidget, removeWidget } from "components/widget/duck";
+import { handleImportState } from "common/ducks/state";
 
 const saveLayout = createAction<Layout>("layout/save");
 const toggleLayoutEditable = createAction<void>("layout/toggle-editable");
@@ -15,6 +16,8 @@ const removeWidgetFromLayout = createAction<string>("layout/remove-widget");
 const incrementNextWidgetId = createAction<void>(
   "layout/increment-next-widget-id"
 );
+
+const SUB_STATE_NAME = "layout";
 
 export interface Layout {
   mobile: ReactGridLayout[];
@@ -45,6 +48,8 @@ const newWidgetY = (state: LayoutState) => {
 
 export const reducerWithInitialState = (state: LayoutState = initialState) =>
   createReducer(state, {
+    ...handleImportState(SUB_STATE_NAME),
+
     [saveLayout as any]: (state, action) => ({
       ...state,
       config: action.payload

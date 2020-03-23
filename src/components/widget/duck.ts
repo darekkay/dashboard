@@ -5,6 +5,9 @@ import { MomentInputObject } from "moment";
 
 import widgets from "widgets";
 import { Dimensions } from "components/widget/index";
+import { handleImportState } from "common/ducks/state";
+
+const SUB_STATE_NAME = "widgets";
 
 interface SetValuesPayload {
   id: string;
@@ -57,6 +60,8 @@ export const initialState = {};
 
 export const reducerWithInitialState = (state: WidgetsState = initialState) =>
   createReducer(state, {
+    ...handleImportState(SUB_STATE_NAME),
+
     [setOptions.toString()]: (state, action) => {
       const { id, values } = action.payload;
       state[id].options = { ...state[id].options, ...values };

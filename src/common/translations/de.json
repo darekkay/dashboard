@@ -22,7 +22,8 @@
   },
   "data": {
     "purge": "Alle daten löschen",
-    "backup": "Daten sichern"
+    "backup": "Daten sichern",
+    "restore": "Daten wiederherstellen"
   },
   "welcome": {
     "message1": "Willkommen im <0>{{projectName}}</0> — Deiner digitalen Infoanzeige",

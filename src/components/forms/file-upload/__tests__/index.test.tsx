@@ -1,16 +1,13 @@
 import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 
-import { stateProps } from "common/utils/mock";
-import { ImportExport } from "../index";
+import FileUpload from "../index";
 
-describe("<ImportExport />", () => {
+describe("<FileUpload />", () => {
   let wrapper: ShallowWrapper;
 
   beforeEach(() => {
-    wrapper = shallow(
-      <ImportExport state={stateProps} importState={() => null} />
-    );
+    wrapper = shallow(<FileUpload label="Drag and drop files" />);
   });
 
   it("renders without error", () => {

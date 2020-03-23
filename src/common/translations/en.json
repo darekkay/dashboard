@@ -24,7 +24,8 @@
   },
   "data": {
     "purge": "Delete all data",
-    "backup": "Backup data"
+    "backup": "Backup data",
+    "restore": "Restore backup"
   },
   "welcome": {
     "message1": "Welcome to <0>{{projectName}}</0> — Your digital info board",

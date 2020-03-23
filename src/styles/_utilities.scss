@@ -33,7 +33,11 @@
 }
 
 .text-color-danger {
-  color: var(--button-danger-color);
+  color: var(--text-color-danger);
+}
+
+.text-color-success {
+  color: var(--text-color-success);
 }
 
 .bg-color-default {

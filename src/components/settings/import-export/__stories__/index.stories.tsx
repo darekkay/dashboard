@@ -10,7 +10,9 @@ const Story = () => {
   const { store } = initStore();
   return (
     <Provider store={store}>
-      <ImportExport />
+      <div style={{ maxWidth: "400px" }}>
+        <ImportExport />
+      </div>
     </Provider>
   );
 };

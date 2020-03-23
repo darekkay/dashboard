@@ -2,7 +2,7 @@
 
 # Unreleased
 
-- :sparkles: Enable data backups.
+- :sparkles: Enable data backup & restore.
 
 # 1.1.5 (2020-03-04)
 
