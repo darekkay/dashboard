@@ -1,5 +1,7 @@
 import _ from "lodash";
 
+import pkg from "../../package.json";
+
 export const toBoolean = (value?: string) => _.toLower(value) === "true";
 
 /** Available languages */
@@ -24,7 +26,7 @@ export const IS_PRODUCTION = process.env.NODE_ENV === "production";
 export const IS_DEVELOPMENT = process.env.NODE_ENV === "development";
 
 /** The application version, derived from package.json */
-export const APP_VERSION = process.env.REACT_APP_VERSION;
+export const APP_VERSION = pkg.version;
 
 /** Pause saving the application state, used for testing purposes */
 export const IS_STORAGE_PAUSED = toBoolean(
