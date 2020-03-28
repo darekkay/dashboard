@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "./dist",
+
+    "strict": true,
+
+    "resolveJsonModule": true,
+
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "esModuleInterop": true,
+
+    "typeRoots": ["./node_modules/@types", "./typings"]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

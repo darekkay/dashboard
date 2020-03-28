@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="storybook:start" type="js.build_tools.npm" nameIsGenerated="true">
-    <package-json value="$PROJECT_DIR$/package.json" />
+  <configuration default="false" name="[app] start" type="js.build_tools.npm">
+    <package-json value="$PROJECT_DIR$/app/package.json" />
     <command value="run" />
     <scripts>
-      <script value="storybook:start" />
+      <script value="start" />
     </scripts>
     <node-interpreter value="project" />
     <envs />
