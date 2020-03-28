@@ -1,0 +1,15 @@
+app-node-10:
+  image: node:10
+
+  variables:
+    DIR: app
+
+  extends: .job
+
+app-node-12:
+  image: node:12
+
+  variables:
+    DIR: app
+
+  extends: .job

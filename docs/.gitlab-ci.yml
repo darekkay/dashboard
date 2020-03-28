@@ -1,0 +1,21 @@
+docs-node-10:
+  image: node:10
+
+  variables:
+    DIR: app
+
+  script:
+    - yarn build
+
+  extends: .job
+
+docs-node-12:
+  image: node:12
+
+  variables:
+    DIR: app
+
+  script:
+    - yarn build
+
+  extends: .job

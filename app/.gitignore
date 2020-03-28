@@ -1,9 +1,4 @@
-### Node.js ###
 
-node_modules
-/.pnp
-.pnp.js
-package-lock.json
 
 ### App ###
 
@@ -13,8 +8,3 @@ dist
 .env*.local
 docs/.vuepress/public
 /storybook-static
-
-### Misc ###
-
-*.log
-.DS_Store
