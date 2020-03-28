@@ -81,7 +81,7 @@ module.exports = plop => {
       // Readme / Documentation
       {
         type: "add",
-        path: "../../docs/widgets/{{kebabCase name}}.md",
+        path: "../../../docs/widgets/{{kebabCase name}}.md",
         templateFile: "./widget/readme.hbs",
         abortOnFail: false
       }
