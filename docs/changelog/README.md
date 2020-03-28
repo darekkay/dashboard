@@ -3,6 +3,9 @@
 # Unreleased
 
 - :sparkles: Enable data backup & restore.
+- :hammer: Split project into separate modules.
+- :hammer: Create an Express server.
+- :hammer: Update dependencies.
 
 # 1.1.5 (2020-03-04)
 

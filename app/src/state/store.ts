@@ -22,6 +22,8 @@ export interface State {
 }
 
 const initStore = () => {
+  // TODO: replace with "configureStore"?
+  // https://redux.js.org/recipes/configuring-your-store#simplifying-setup-with-redux-toolkit
   const composeEnhancers = composeWithDevTools({
     // Enable capture of stack traces for dispatched Redux actions
     trace: !IS_PRODUCTION,
