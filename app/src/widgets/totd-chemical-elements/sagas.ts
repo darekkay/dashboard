@@ -8,7 +8,8 @@ import {
   triggerUpdate,
   updatePending,
   updateError,
-  updateSuccess
+  updateSuccess,
+  TriggerUpdateAction
 } from "components/widget/duck";
 import log from "common/log";
 
@@ -20,8 +21,8 @@ const fetchTipOfTheDay = () => {
   return axios(URL).then(response => response.data);
 };
 
-function* onTriggerUpdate(action: PayloadAction<string>) {
-  const id = action.payload;
+function* onTriggerUpdate(action: PayloadAction<TriggerUpdateAction>) {
+  const { id } = action.payload;
   yield put(updatePending(id));
   try {
     const data = yield call(fetchTipOfTheDay);

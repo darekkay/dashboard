@@ -14,6 +14,11 @@ interface SetValuesPayload {
   values: { [key: string]: any };
 }
 
+export interface TriggerUpdateAction {
+  id: string;
+  params?: { [key: string]: any };
+}
+
 // Data actions
 export const setOptions = createAction<SetValuesPayload>("widget/set-options");
 export const setData = createAction<SetValuesPayload>("widget/set-data-value");
@@ -21,7 +26,7 @@ export const importWidgets = createAction<WidgetsState>("widget/importWidgets");
 
 // Update actions
 export const triggerUpdate = (widgetType: string) =>
-  createAction<string>(`widget/${widgetType}/update`);
+  createAction<TriggerUpdateAction>(`widget/${widgetType}/update`);
 export const updatePending = createAction<string>("widget/update-pending");
 export const updateSuccess = createAction<string>("widget/update-success");
 export const updateError = createAction<string>("widget/update-error");

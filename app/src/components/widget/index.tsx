@@ -15,7 +15,7 @@ import WidgetConfiguration from "components/widget-configuration";
 import widgets, { ValueUpdateAction } from "widgets";
 
 import makeSelectWidget, { getTypeFromId } from "./selectors";
-import { actionCreators, WidgetMeta } from "./duck";
+import { actionCreators, TriggerUpdateAction, WidgetMeta } from "./duck";
 
 const initialDimensions = { width: 1, height: 1 };
 
@@ -32,7 +32,7 @@ export interface Props {
   meta: WidgetMeta;
   setOptions: ValueUpdateAction;
   setData: ValueUpdateAction;
-  triggerUpdate: (id: string) => void;
+  triggerUpdate: (action: TriggerUpdateAction) => void;
   removeWidgetFromLayout: (id: string) => void;
   className?: string;
   /** Required to inject the resize handle */

@@ -2,7 +2,7 @@ import React from "react";
 import { injectSaga } from "redux-sagas-injector";
 import { MomentInputObject } from "moment";
 
-import { WidgetMeta } from "components/widget/duck";
+import { TriggerUpdateAction, WidgetMeta } from "components/widget/duck";
 import { Dimensions } from "components/widget";
 import WidgetCategory from "widgets/categories";
 
@@ -22,7 +22,7 @@ export interface WidgetProps {
   dimensions?: Dimensions;
   setData: ValueUpdateAction;
   setOptions: ValueUpdateAction;
-  triggerUpdate: (id: string) => void;
+  triggerUpdate: (action: TriggerUpdateAction) => void;
 }
 
 export interface ConfigurationProps {

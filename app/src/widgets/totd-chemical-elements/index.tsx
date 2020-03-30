@@ -23,7 +23,7 @@ const ChemicalElements: React.FC<Props> = memo(
 
     useMountEffect(() => {
       if (shouldTriggerUpdate(meta)) {
-        triggerUpdate(id);
+        triggerUpdate({ id });
       }
     });
 
