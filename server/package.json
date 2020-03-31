@@ -11,11 +11,15 @@
     "body-parser": "1.19.0",
     "cors": "2.8.5",
     "express": "4.17.1",
+    "lodash": "4.17.15",
+    "moment": "2.24.0",
     "morgan": "1.10.0"
   },
   "devDependencies": {
     "@types/cors": "2.8.6",
     "@types/express": "4.17.3",
+    "@types/lodash": "4.14.149",
+    "@types/moment": "2.13.0",
     "@types/morgan": "1.9.0",
     "nodemon": "2.0.2",
     "ts-node": "8.8.1",
