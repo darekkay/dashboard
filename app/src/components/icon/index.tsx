@@ -10,7 +10,7 @@ import "./styles.scss";
 export interface Props {
   className?: string;
   color?: string;
-  name: string;
+  name: string; // TODO: better typing
   alt?: string;
   position?: "left" | "right";
   icons?: CustomIcons;

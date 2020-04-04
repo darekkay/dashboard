@@ -1,10 +1,13 @@
 import { IconDefinition } from "@fortawesome/fontawesome-common-types";
 
 import {
+  faArrowUp,
+  faArrowDown,
   faBars,
   faCog,
   faDownload,
   faEdit,
+  faEquals,
   faExclamationCircle,
   faHome,
   faMinus,
@@ -24,10 +27,13 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 
 const icons: { [key: string]: IconDefinition } = {
+  arrowDown: faArrowDown,
+  arrowUp: faArrowUp,
   bars: faBars,
   cog: faCog,
   download: faDownload,
   edit: faEdit,
+  equals: faEquals,
   error: faExclamationCircle,
   home: faHome,
   minus: faMinus,
