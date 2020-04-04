@@ -1,13 +1,17 @@
+@import "~styles/variables";
+
 $icon-size: 1.6rem;
-$icon-size-2x: 3.2rem;
 
 .icon {
   width: $icon-size;
   height: $icon-size;
 
-  &.icon-2x {
-    width: $icon-size-2x;
-    height: $icon-size-2x;
+  /* Derive icon size from the surrounding text size */
+  @each $name, $font-size in $font-sizes {
+    .text-#{$name} & {
+      height: $font-size;
+      width: $font-size;
+    }
   }
 
   svg {
