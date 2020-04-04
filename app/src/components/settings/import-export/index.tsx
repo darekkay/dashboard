@@ -35,7 +35,7 @@ export const ImportExport: React.FC<Props> = ({ state, importState }) => {
   return (
     <div>
       <Link
-        className="inline-flex items-center m-4"
+        className="inline-flex items-center mr-6 mb-3"
         href={`data:text/plain;charset=utf-8,${encodeURIComponent(
           JSON.stringify(state)
         )}`}

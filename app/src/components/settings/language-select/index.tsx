@@ -22,7 +22,7 @@ export const LanguageSelect: React.FC<Props> = memo(props => {
       {LANGUAGES.map(language => (
         <Button
           key={language}
-          className="m-4"
+          className="mr-6 mb-3"
           outline
           onClick={() => changeLanguage(language)}
         >

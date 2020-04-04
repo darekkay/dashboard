@@ -3,6 +3,7 @@ import { storiesOf } from "@storybook/react";
 
 import { connectedWidgetProps } from "common/utils/mock";
 import { Widget } from "components/widget";
+import Section from "components/section";
 
 const Story = () => {
   const sharedProps = {
@@ -11,16 +12,18 @@ const Story = () => {
   };
   return (
     <div style={{ maxWidth: "500px" }}>
-      <h2 className="mb-2 font-bold">Regular</h2>
-      <Widget id="search-01" {...connectedWidgetProps} {...sharedProps} />
+      <Section type="story" headline="Regular">
+        <Widget id="search-01" {...connectedWidgetProps} {...sharedProps} />
+      </Section>
 
-      <h2 className="mb-2 mt-5 font-bold">Error</h2>
-      <Widget
-        id="search-01"
-        {...connectedWidgetProps}
-        {...sharedProps}
-        hasError
-      />
+      <Section type="story" headline="Error">
+        <Widget
+          id="search-01"
+          {...connectedWidgetProps}
+          {...sharedProps}
+          hasError
+        />
+      </Section>
     </div>
   );
 };

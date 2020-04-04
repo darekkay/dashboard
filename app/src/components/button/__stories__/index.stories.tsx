@@ -3,6 +3,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 
 import Icon from "components/icon";
+import Section from "components/section";
 import Button, {
   ButtonVariant,
   ButtonSize,
@@ -23,9 +24,8 @@ const Row = ({
   children,
   ...rest
 }: RowProps & Omit<ButtonProps, "children">) => (
-  <>
-    <h2 className="mb-2">{title}</h2>
-    <div className="mb-5">
+  <Section type="story" headline={title}>
+    <>
       <Button {...commonProps} {...rest}>
         {children || "Regular"}
       </Button>
@@ -41,8 +41,8 @@ const Row = ({
       <Button {...commonProps} {...rest} outline border={false}>
         {children || "Borderless"}
       </Button>
-    </div>
-  </>
+    </>
+  </Section>
 );
 
 storiesOf("Components.Button", module).add("Variants", () => (

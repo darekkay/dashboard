@@ -7,6 +7,7 @@ import LanguageSelect from "components/settings/language-select";
 import ImportExport from "components/settings/import-export";
 import Button, { ButtonVariant } from "components/button";
 import Icon from "components/icon";
+import Section from "components/section";
 
 const Settings: React.FC<Props> = memo(() => {
   const { t } = useTranslation();
@@ -14,20 +15,17 @@ const Settings: React.FC<Props> = memo(() => {
     <PersistorContext.Consumer>
       {purgeStore => (
         <>
-          <div className="mb-6">
-            <h3 className="text-3 font-semibold">{t("theme.headline")}</h3>
+          <Section type="modal" headline={t("theme.headline")}>
             <ThemeSelect />
-          </div>
+          </Section>
 
-          <div className="mb-6">
-            <h3 className="text-3 font-semibold">{t("language.headline")}</h3>
+          <Section type="modal" headline={t("language.headline")}>
             <LanguageSelect />
-          </div>
+          </Section>
 
-          <div className="mb-6">
-            <h3 className="text-3 font-semibold">{t("data.purge")}</h3>
+          <Section type="modal" headline={t("data.purge")}>
             <Button
-              className="m-4"
+              className="mr-6 mb-3"
               outline
               variant={ButtonVariant.Danger}
               onClick={purgeStore}
@@ -35,12 +33,11 @@ const Settings: React.FC<Props> = memo(() => {
               <Icon name="trash" position="left" />
               {t("data.purge")}
             </Button>
-          </div>
+          </Section>
 
-          <div>
-            <h3 className="text-3 font-semibold">{t("data.backup")}</h3>
+          <Section type="modal" headline={t("data.backup")}>
             <ImportExport />
-          </div>
+          </Section>
         </>
       )}
     </PersistorContext.Consumer>

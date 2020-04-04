@@ -2,18 +2,21 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 
+import Section from "components/section";
 import Loading from "../index";
 
 const Story = () => {
   return (
     <>
-      <h2 className="mb-5">Spinner</h2>
-      <Loading type="spinner" />
+      <Section type="story" headline="Spinner">
+        <Loading type="spinner" />
+      </Section>
 
-      <h2 className="my-5">Skeleton</h2>
-      <div style={{ height: "200px", width: "100%" }}>
-        <Loading type="skeleton" />
-      </div>
+      <Section type="story" headline="Skeleton">
+        <div style={{ height: "200px", width: "100%" }}>
+          <Loading type="skeleton" />
+        </div>
+      </Section>
     </>
   );
 };
