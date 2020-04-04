@@ -1,8 +1,8 @@
 import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 
+import useMountEffect from "common/hooks/useMountEffect";
 import { shouldTriggerUpdate } from "components/widget/utils";
-import { useMountEffect } from "common/hooks/useMountEffect";
 
 import { WidgetProps } from "../index";
 
