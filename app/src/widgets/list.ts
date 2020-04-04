@@ -11,6 +11,15 @@ export default {
     initialOptions: {},
     initialMeta: {}
   },
+  cryptocurrencies: {
+    configurable: true,
+    widgetType: "cryptocurrencies",
+    category: "monitoring",
+    initialHeight: 2,
+    initialWidth: 3,
+    initialOptions: { fiat: "", crypto: "" },
+    initialMeta: { updateCycle: { minutes: 15 } }
+  },
   "date-time": {
     configurable: false,
     widgetType: "date-time",

@@ -28,6 +28,9 @@ export const IS_DEVELOPMENT = process.env.NODE_ENV === "development";
 /** The application version, derived from package.json */
 export const APP_VERSION = pkg.version;
 
+/** Base URL for all internal API requests */
+export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
 /** Pause saving the application state, used for testing purposes */
 export const IS_STORAGE_PAUSED = toBoolean(
   process.env.REACT_APP_IS_STORAGE_PAUSED

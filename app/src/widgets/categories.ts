@@ -3,7 +3,8 @@ enum WidgetCategory {
   Media = "media",
   Knowledge = "knowledge",
   Tools = "tools",
-  Tracking = "tracking"
+  Tracking = "tracking",
+  Monitoring = "monitoring"
 
   // Possible categories for future widgets
   // Charts = "charts",
@@ -18,7 +19,8 @@ export const categories = [
   WidgetCategory.Media,
   WidgetCategory.Knowledge,
   WidgetCategory.Tools,
-  WidgetCategory.Tracking
+  WidgetCategory.Tracking,
+  WidgetCategory.Monitoring
 ];
 
 export default WidgetCategory;

@@ -16,7 +16,7 @@ interface SetValuesPayload {
 
 export interface TriggerUpdateAction {
   id: string;
-  params?: { [key: string]: any };
+  params: { [key: string]: any };
 }
 
 // Data actions
@@ -30,6 +30,7 @@ export const triggerUpdate = (widgetType: string) =>
 export const updatePending = createAction<string>("widget/update-pending");
 export const updateSuccess = createAction<string>("widget/update-success");
 export const updateError = createAction<string>("widget/update-error");
+export const updateAbort = createAction<string>("widget/update-abort"); // NICE: check if really necessary
 
 // Widget actions
 export const createWidget = createAction<{ id: string; type: string }>(
@@ -98,6 +99,11 @@ export const reducerWithInitialState = (state: WidgetsState = initialState) =>
     [updateError.toString()]: (state, action) => {
       const id = action.payload;
       state[id].meta.updateStatus = "error";
+    },
+
+    [updateAbort.toString()]: (state, action) => {
+      const id = action.payload;
+      state[id].meta.updateStatus = undefined;
     },
 
     [createWidget.toString()]: (state, action) => {

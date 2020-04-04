@@ -21,7 +21,11 @@ const Story = () => {
       </Section>
 
       <Section type="story" headline="With unit">
-        <Deviation value={10} unit="%" />
+        <Deviation value={10} unit="€" />
+      </Section>
+
+      <Section type="story" headline="With percentage">
+        <Deviation value={27} unit="€" percentage={1.6} />
       </Section>
 
       <Section type="story" headline="Custom style">

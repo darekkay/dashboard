@@ -83,6 +83,19 @@ const widgets = {
     data: {},
     options: {},
     meta: {}
+  },
+  "cryptocurrencies-01": {
+    x: 4,
+    y: 0,
+    width: 3,
+    height: 2,
+    type: "cryptocurrencies",
+    data: {},
+    options: {
+      fiat: "EUR",
+      crypto: "bitcoin"
+    },
+    meta: { updateCycle: { minutes: 15 } }
   }
 };
 

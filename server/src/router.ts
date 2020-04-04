@@ -4,7 +4,7 @@ import cryptocurrencies from "./routes/cryptocurrencies";
 import passthrough from "./routes/passthrough";
 
 const routes = (app: core.Express) => {
-  // TODO: use an API documentation framework
+  // NICE: use an API documentation framework
   cryptocurrencies(app);
   passthrough(app);
 };

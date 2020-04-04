@@ -22,8 +22,9 @@ const ChemicalElements: React.FC<Props> = memo(
     const { i18n } = useTranslation();
 
     useMountEffect(() => {
+      // TODO: replace with common hook
       if (shouldTriggerUpdate(meta)) {
-        triggerUpdate({ id });
+        triggerUpdate({ id, params: {} });
       }
     });
 

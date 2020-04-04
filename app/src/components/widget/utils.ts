@@ -2,6 +2,7 @@ import moment from "moment";
 
 import { WidgetMeta } from "components/widget/duck";
 
+/** @deprecated */
 export const shouldTriggerUpdate = (
   { lastUpdated, updateCycle, updateStatus }: WidgetMeta,
   currentDate: number = Date.now()

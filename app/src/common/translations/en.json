@@ -46,7 +46,8 @@
       "media": "Media",
       "knowledge": "Knowledge",
       "tools": "Tools",
-      "tracking": "Tracking"
+      "tracking": "Tracking",
+      "monitoring": "Monitoring"
     },
 
     "counter": {
@@ -54,6 +55,14 @@
       "headline": "{{headline}}",
       "increment": "Increment",
       "decrement": "Decrement"
+    },
+    "cryptocurrencies": {
+      "name": "Cryptocurrencies",
+      "headline": "",
+      "configuration": {
+        "fiat": "Fiat currency",
+        "crypto": "Crypto currency"
+      }
     },
     "date-time": {
       "name": "Date and Time",

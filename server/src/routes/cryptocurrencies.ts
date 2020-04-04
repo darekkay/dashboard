@@ -31,7 +31,10 @@ const routes = (app: Express) =>
           last24h: {
             change: _.round(values.price_change_24h, 2),
             changePercentage: _.round(values.price_change_percentage_24h, 2)
-          }
+          },
+          imageUrl: values.image
+            ? values.image.replace("/large/", "/small/")
+            : undefined
         });
       } catch (error) {
         next(error);
