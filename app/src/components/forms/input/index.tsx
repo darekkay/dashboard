@@ -1,5 +1,4 @@
 import React, { memo, useState } from "react";
-import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
 import Button, { ButtonSize, ButtonVariant } from "components/button";
@@ -25,7 +24,6 @@ const Input: React.FC<Props> = memo(props => {
     ...domProps
   } = props;
   const [isFocused, setFocused] = useState(false);
-  const { t } = useTranslation();
   const clearValue = () => setValue("");
   return (
     <Label text={label}>
@@ -66,7 +64,8 @@ const Input: React.FC<Props> = memo(props => {
             border={false}
             onClick={clearValue}
             onMouseDown={clearValue}
-            aria-label={t("common.clear")}
+            aria-hidden
+            tabIndex={-1}
           >
             <Icon name="times" />
           </Button>
