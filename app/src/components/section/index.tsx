@@ -12,7 +12,7 @@ const Section: React.FC<Props> = ({ headline, children }) => {
           {headline}
         </Headline>
       )}
-      <div className="ml-5">{children}</div>
+      <div className="mx-5">{children}</div>
     </div>
   );
 };

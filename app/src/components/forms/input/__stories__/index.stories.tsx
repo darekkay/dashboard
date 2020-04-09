@@ -9,7 +9,7 @@ const Story = () => {
   return (
     <>
       <div className="mb-6">
-        <Input value={value} setValue={setValue} label="Input component" />
+        <Input value={value} setValue={setValue} label="Input" />
       </div>
       <div>
         <Input value={value} setValue={setValue} aria-label="ARIA label" />

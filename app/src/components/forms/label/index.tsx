@@ -9,7 +9,7 @@ const Label: React.FC<Props> = ({ text, className, children, ...domProps }) => {
       className={cn("max-w-full w-full flex flex-col", className)}
       {...domProps}
     >
-      <span className="mb-2 text-2">{text}</span>
+      <span className="mb-2 text-2 font-semibold">{text}</span>
       {children}
     </label>
   );
