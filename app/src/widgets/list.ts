@@ -8,7 +8,7 @@ export default {
     category: "tracking",
     initialHeight: 2,
     initialWidth: 2,
-    initialOptions: {},
+    initialOptions: { headline: "" },
     initialMeta: {}
   },
   cryptocurrencies: {
@@ -35,7 +35,7 @@ export default {
     category: "media",
     initialHeight: 4,
     initialWidth: 4,
-    initialOptions: {},
+    initialOptions: { url: "" },
     initialMeta: {}
   },
   "qr-code": {
@@ -44,7 +44,7 @@ export default {
     category: "tools",
     initialHeight: 2,
     initialWidth: 2,
-    initialOptions: {},
+    initialOptions: { headline: "", content: "" },
     initialMeta: {}
   },
   search: {
@@ -83,7 +83,7 @@ export default {
     category: "media",
     initialHeight: 5,
     initialWidth: 5,
-    initialOptions: {},
+    initialOptions: { url: "" },
     initialMeta: {}
   }
 } as { [key: string]: WidgetProperties };
