@@ -1,8 +1,7 @@
 import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 
-import useMountEffect from "common/hooks/useMountEffect";
-import { shouldTriggerUpdate } from "components/widget/utils";
+import useTriggerUpdate from "common/hooks/useTriggerUpdate";
 
 import { WidgetProps } from "../index";
 
@@ -21,12 +20,7 @@ const ChemicalElements: React.FC<Props> = memo(
   }) => {
     const { i18n } = useTranslation();
 
-    useMountEffect(() => {
-      // TODO: replace with common hook
-      if (shouldTriggerUpdate(meta)) {
-        triggerUpdate({ id, params: {} });
-      }
-    });
+    useTriggerUpdate({ id, params: {}, meta, triggerUpdate }, []);
 
     return (
       <div className="w-100 p-4 text-center">
