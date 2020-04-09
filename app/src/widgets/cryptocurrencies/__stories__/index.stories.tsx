@@ -13,6 +13,8 @@ const Story = () => {
       data={{
         crypto: "bitcoin",
         fiat: "EUR",
+        imageUrl:
+          "https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579",
         currentPrice: 6714,
         last24h: {
           change: 123,

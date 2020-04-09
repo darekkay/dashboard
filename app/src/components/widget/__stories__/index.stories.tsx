@@ -18,7 +18,7 @@ const Story = () => {
 
       <Section type="story" headline="Error">
         <Widget
-          id="search-01"
+          id="search-02"
           {...connectedWidgetProps}
           {...sharedProps}
           hasError

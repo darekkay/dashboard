@@ -8,7 +8,7 @@ import TextArea from "../index";
 const Story = () => {
   return (
     <div>
-      <TextArea setValue={_.noop} />
+      <TextArea setValue={_.noop} label="TextArea example" />
     </div>
   );
 };
