@@ -92,7 +92,7 @@ const widgets = {
     type: "cryptocurrencies",
     data: {},
     options: {
-      fiat: "EUR",
+      fiat: "eur",
       crypto: "bitcoin"
     },
     meta: { updateCycle: { minutes: 15 } }

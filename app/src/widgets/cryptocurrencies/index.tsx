@@ -30,7 +30,7 @@ const Cryptocurrencies: React.FC<Props> = memo(
           <img src={imageUrl} alt={crypto} />
         </div>
         <div className="text-4 font-semibold">
-          {currentPrice} <span className="text-2">{fiat}</span>
+          {currentPrice} <span className="text-2 uppercase">{fiat}</span>
         </div>
         {last24h && (
           <>

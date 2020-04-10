@@ -17,7 +17,7 @@ export default {
     category: "monitoring",
     initialHeight: 2,
     initialWidth: 3,
-    initialOptions: { fiat: "", crypto: "" },
+    initialOptions: { fiat: "eur", crypto: "bitcoin" },
     initialMeta: { updateCycle: { minutes: 15 } }
   },
   "date-time": {

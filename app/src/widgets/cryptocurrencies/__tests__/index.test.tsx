@@ -14,7 +14,7 @@ describe("<Cryptocurrencies />", () => {
         {...widgetProps}
         id="cryptocurrencies-mock-id"
         crypto="bitcoin"
-        fiat="EUR"
+        fiat="eur"
         currentPrice={6714}
         last24h={{
           change: 123,

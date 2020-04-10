@@ -62,6 +62,21 @@
       "configuration": {
         "fiat": "Fiat currency",
         "crypto": "Crypto currency"
+      },
+      "crypto": {
+        "bitcoin": "Bitcoin (BTC)",
+        "bitcoin-cash": "Bitcoin Cash (BCH)",
+        "dash": "Dash (DASH)",
+        "eos": "EOS",
+        "ethereum": "Ethereum (ETH)",
+        "link": "LINK",
+        "litecoin": "Litecoin (LTC)",
+        "monero": "Monero (XMR)",
+        "ripple": "Ripple (XRP)",
+        "stellar": "Stellar (XLM)",
+        "tether": "Tether (USDT)",
+        "tezos": "Tezos (XTZ)",
+        "zcash": "Zcash (ZEC)"
       }
     },
     "date-time": {
