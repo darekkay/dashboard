@@ -2,7 +2,7 @@
 
 [![Travis](https://img.shields.io/travis/com/darekkay/dashboard?style=flat-square)](https://travis-ci.com/darekkay/dashboard) [![license](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/darekkay/dashboard/blob/master/LICENSE)
 
-![](docs/assets/img/1.1.4.png)
+![](docs/assets/img/1.2.0.png)
 
 ## Project status
 

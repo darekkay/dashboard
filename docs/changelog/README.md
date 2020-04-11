@@ -1,6 +1,6 @@
 # Changelog
 
-# Unreleased
+# 1.2.0 (2020-04-11)
 
 - :sparkles: New widget: [Cryptocurrencies](https://dashboard.darekkay.com/docs/widgets/cryptocurrencies.html).
 - :sparkles: Enable data backup & restore.
