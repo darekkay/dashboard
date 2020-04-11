@@ -2,9 +2,6 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import logger from "morgan";
-import axios from "axios";
-
-import pkg from "../../app/package.json";
 
 import config from "./config";
 import includeRoutes from "./router";
@@ -27,5 +24,6 @@ app.set("port", config.port);
 
 // Run HTTP server
 app.listen(app.get("port"), function() {
+  // NICE: replace with a logger
   console.info("Server running at http://localhost:" + app.get("port"));
 });

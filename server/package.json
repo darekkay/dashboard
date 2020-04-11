@@ -21,7 +21,14 @@
     "@types/lodash": "4.14.149",
     "@types/moment": "2.13.0",
     "@types/morgan": "1.9.0",
+    "@typescript-eslint/eslint-plugin": "2.27.0",
+    "@typescript-eslint/parser": "2.27.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.10.1",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-prettier": "3.1.2",
     "nodemon": "2.0.2",
+    "prettier": "1.19.1",
     "ts-node": "8.8.1",
     "typescript": "3.8.3"
   },
@@ -34,6 +41,10 @@
   },
   "scripts": {
     "dev": "nodemon src/index.ts",
+    "ci": "npm run lint:check",
+    "format": "prettier --write -- \"{src,public,docs}/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "lint:check": "tsc && eslint src/**/*.{ts,tsx,js}",
+    "lint:fix": "eslint --fix src/**/*.{ts,tsx,js}",
     "start": "ts-node src/index.ts"
   }
 }

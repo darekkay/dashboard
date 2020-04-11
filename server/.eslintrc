@@ -1,0 +1,60 @@
+{
+  "extends": ["prettier"],
+
+  "env": {
+    "browser": false,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+
+  "plugins": ["import", "prettier"],
+
+  "root": true,
+
+  "rules": {
+    "import/order": "error",
+    "linebreak-style": "off",
+    // "no-console": "error", // Activate after using a logger
+    "prettier/prettier": "warn",
+    "radix": "off"
+  },
+
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        // typescript-eslint specific options
+        "warnOnUnsupportedTypeScriptVersion": true
+      },
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-member-accessibility": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/ban-ts-ignore": "off",
+
+        // The following line can be removed when this issue is solved:
+        // https://github.com/facebook/create-react-app/issues/7529
+        "@typescript-eslint/no-angle-bracket-type-assertion": "off",
+
+        // disable duplicate rules:
+        "no-array-constructor": "off",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "args": "none",
+            "ignoreRestSiblings": true
+          }
+        ],
+        "no-useless-constructor": "off",
+        "@typescript-eslint/no-useless-constructor": "error"
+      }
+    }
+  ]
+}
