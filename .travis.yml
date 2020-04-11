@@ -15,6 +15,13 @@ jobs:
         - yarn install --pure-lockfile --prefer-offline
         - yarn ci
         - yarn build
+    - name: server
+      node_js:
+        - "10"
+      script:
+        - cd server
+        - yarn install --pure-lockfile --prefer-offline
+        - yarn ci
     - name: docs
       node_js:
         - "10"
