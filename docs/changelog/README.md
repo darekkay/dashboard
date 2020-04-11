@@ -2,7 +2,9 @@
 
 # Unreleased
 
+- :sparkles: New widget: [Cryptocurrencies](https://dashboard.darekkay.com/docs/widgets/cryptocurrencies.html).
 - :sparkles: Enable data backup & restore.
+- :rocket: Make input clear button not focusable via keyboard.
 - :hammer: Split project into separate modules.
 - :hammer: Create an Express server.
 - :hammer: Update dependencies.
