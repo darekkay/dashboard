@@ -23,6 +23,10 @@
 
 - [Counter](counter.md): Number counter.
 
+## Monitoring
+
+- [Cryptocurrencies](cryptocurrencies.md): Current market price for various cryptocurrencies.
+
 ## Widget ideas
 
 Here's a list of widget ideas. They may or may not be implemented in the future.
@@ -40,14 +44,14 @@ Here's a list of widget ideas. They may or may not be implemented in the future.
 - Graphs
 - Video
 - Animation
-- Currencies / Cryptocurrencies
+- Currencies
 - Quote (daily or slideshow)
 - Soundboard, Background Sounds ([Noisli](https://www.noisli.com/), [MyNoise](https://mynoise.net/))
 - Conway's Game of Life
 - [Tip of the Day](https://tips.darekkay.com/)
 - Server Administration
   - Status Page, Uptime
-- GitHub / GitLab
+- GitHub / GitLab integration
 - GoAccess
 - Mini Games
   - Cookie Clicker
