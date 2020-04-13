@@ -5,7 +5,7 @@ import pkg from "../../package.json";
 export const toBoolean = (value?: string) => _.toLower(value) === "true";
 
 /** Available languages */
-export const LANGUAGES = ["en", "de"];
+export const LANGUAGES = ["en", "de", "fr"];
 
 /** Available themes */
 export const THEMES = ["default", "dark"];

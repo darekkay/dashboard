@@ -9,6 +9,7 @@ import { State } from "state/store";
 
 import de from "./translations/de.json";
 import en from "./translations/en.json";
+import fr from "./translations/fr.json";
 
 export const resources = {
   en: {
@@ -16,6 +17,9 @@ export const resources = {
   },
   de: {
     translation: de
+  },
+  fr: {
+    translation: fr
   }
 } as Resource;
 
