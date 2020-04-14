@@ -55,8 +55,8 @@ const onChangeLanguage = (action: PayloadAction<string>) => {
 
 /* If the language was stored before, use it when the store is rehydrated */
 const onRehydrate = (action: PayloadAction<State>) => {
-  const language = action.payload?.config?.language;
-  if (language) updateLanguage(language);
+  const language = action.payload?.config?.language || "en";
+  updateLanguage(language);
 };
 
 export function* saga() {
