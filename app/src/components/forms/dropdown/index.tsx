@@ -27,7 +27,7 @@ const Dropdown: React.FC<Props> = ({
         )}
       >
         <select
-          className="w-full pl-4 pr-7 py-3 border rounded bg-color-default text-color-default text-2"
+          className="w-full pl-4 pr-7 py-1 border rounded bg-color-default text-color-default"
           onChange={event => {
             setValue(event.target.value);
           }}

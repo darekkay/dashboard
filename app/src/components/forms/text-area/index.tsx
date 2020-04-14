@@ -13,7 +13,7 @@ const TextArea: React.FC<Props> = ({
     <Label text={label}>
       <textarea
         className={cn(
-          "py-1 px-3 w-full h-full border rounded resize-none text-3",
+          "py-1 px-4 w-full h-full border rounded resize-none text-3",
           { "bg-color-default": !className?.includes("bg-color-") },
           className
         )}

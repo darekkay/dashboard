@@ -42,7 +42,7 @@ const Input: React.FC<Props> = memo(props => {
       >
         <input
           className={cn(
-            "w-full px-4 py-3 border rounded text-color-default text-2",
+            "w-full px-4 py-1 border rounded text-color-default",
             {
               "pr-7": isFocused,
               "bg-color-default": !className?.includes("bg-color-")
