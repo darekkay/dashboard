@@ -1,6 +1,6 @@
 # Dashboard
 
-[![Travis](https://img.shields.io/travis/com/darekkay/dashboard?style=flat-square)](https://travis-ci.com/darekkay/dashboard) [![license](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/darekkay/dashboard/blob/master/LICENSE)
+[![Travis](https://img.shields.io/travis/com/darekkay/dashboard?style=flat-square)](https://travis-ci.com/darekkay/dashboard) [![Gitter](https://img.shields.io/gitter/room/darekkay/dashboard?style=flat-square)](https://gitter.im/darekkay-dashboard/community) [![license](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/darekkay/dashboard/blob/master/LICENSE)
 
 ![](docs/assets/img/1.2.0.png)
 
@@ -35,7 +35,7 @@ A new project is also a great opportunity to learn new concepts.
 
 ## Contribution
 
-Contributions are always welcome, no matter how large or small. Before contributing, please read the [Code of Conduct](./CODE_OF_CONDUCT.md). When contributing to this repository, please first discuss the change you wish to make via [GitHub Issue](https://github.com/darekkay/dashboard/issues/new) or [email](mailto:hello@darekkay.com).
+Contributions are always welcome, no matter how large or small. Before contributing, please read the [Code of Conduct](./CODE_OF_CONDUCT.md). When contributing to this repository, please first discuss the change you wish to make via [GitHub Issue](https://github.com/darekkay/dashboard/issues/new) or join our community chat on [Gitter](https://gitter.im/darekkay-dashboard/community).
 
 To get started with the project code, please read the [development documentation](https://dashboard.darekkay.com/docs/development/).
 
