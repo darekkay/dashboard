@@ -20,7 +20,8 @@
   "language": {
     "headline": "Language",
     "en": "English",
-    "de": "Deutsch"
+    "de": "Deutsch",
+    "fr": "Français"
   },
   "data": {
     "purge": "Delete all data",

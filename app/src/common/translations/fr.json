@@ -1,0 +1,127 @@
+{
+  "common": {
+    "edit": "Modifier",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "clear": "Vider",
+    "download": "Télécharger",
+    "loading": "Chargement...",
+    "settings": "Paramètres",
+    "help": "Aide",
+    "documentation": "Documentation",
+    "headline": "Entête"
+  },
+  "theme": {
+    "headline": "Thème",
+    "default": "Défaut",
+    "dark": "Sombre"
+  },
+  "language": {
+    "headline": "Langage",
+    "en": "Anglais",
+    "de": "Allemand",
+    "fr": "Français"
+  },
+  "data": {
+    "purge": "Supprimer les données",
+    "backup": "Faire une sauvegarde",
+    "restore": "Restaurer une sauvegarde"
+  },
+  "welcome": {
+    "message1": "Bienvenue à <0>{{projectName}}</0> — Votre tableau de bord digital",
+    "message2": "Personnalisez le contenu en ajoutant de nouveaux composants depuis le menu ou utilisez les modèles suivants de composants.",
+    "message3": "Lisez la <0>documentation</0> pour plus d'informations.",
+    "createExampleBoard": "Utiliser un modèle"
+  },
+  "widget": {
+    "common": {
+      "drawerHeadline": "Composants",
+      "add": "Ajouter {{widget}} composant",
+      "remove": "Retirer le composant {{widget}}",
+      "configuration": "Configuration: {{widget}}",
+      "unconfigured": "Configuration requise."
+    },
+    "category": {
+      "general": "General",
+      "media": "Media",
+      "knowledge": "Knowledge",
+      "tools": "Tools",
+      "tracking": "Tracking",
+      "monitoring": "Monitoring"
+    },
+
+    "counter": {
+      "name": "Compteur",
+      "headline": "{{headline}}",
+      "increment": "Plus",
+      "decrement": "Moins"
+    },
+    "cryptocurrencies": {
+      "name": "Cryptomonnaie",
+      "headline": "",
+      "configuration": {
+        "fiat": "Fiat monnaie",
+        "crypto": "Crypto monnaie"
+      },
+      "crypto": {
+        "bitcoin": "Bitcoin (BTC)",
+        "bitcoin-cash": "Bitcoin Cash (BCH)",
+        "dash": "Dash (DASH)",
+        "eos": "EOS",
+        "ethereum": "Ethereum (ETH)",
+        "link": "LINK",
+        "litecoin": "Litecoin (LTC)",
+        "monero": "Monero (XMR)",
+        "ripple": "Ripple (XRP)",
+        "stellar": "Stellar (XLM)",
+        "tether": "Tether (USDT)",
+        "tezos": "Tezos (XTZ)",
+        "zcash": "Zcash (ZEC)"
+      }
+    },
+    "date-time": {
+      "name": "Date et Heure",
+      "headline": ""
+    },
+    "image": {
+      "name": "Image",
+      "headline": "",
+      "configuration": {
+        "url": "Image URL"
+      }
+    },
+    "qr-code": {
+      "name": "QR Code",
+      "headline": "{{headline}}",
+      "configuration": {
+        "content": "Contenu"
+      }
+    },
+    "search": {
+      "name": "Recherche internet",
+      "headline": "Recherche {{title}}",
+      "buttonAriaLabel": "Résultat de la recherche",
+      "configuration": {
+        "title": "Titre",
+        "pattern": "URL de recherche"
+      }
+    },
+    "text": {
+      "name": "Notes",
+      "headline": ""
+    },
+    "totd-chemical-elements": {
+      "name": "Eléments chimiques",
+      "headline": ""
+    },
+    "website": {
+      "name": "Site web",
+      "headline": "",
+      "configuration": {
+        "url": "URL du site web",
+        "disclaimer": "<0>Attention:</0> Malheureusement, beaucoup de site n'autorise pas d'être inclue dans une iframe. Si un site ne peux pas être afficher, c'est vraissemblablement pour cela."
+      }
+    }
+  }
+}
