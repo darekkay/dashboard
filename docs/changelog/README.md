@@ -1,5 +1,13 @@
 # Changelog
 
+# Current
+
+- :sparkles: Add French translation ([@faboo03](https://github.com/faboo03)).
+- :rocket: **[Date & Time]**: Localize date format.
+- :rocket: Replace language select buttons with a dropdown.
+- :book: Publish a roadmap.
+- :book: Update documentation.
+
 # 1.2.0 (2020-04-11)
 
 - :sparkles: New widget: [Cryptocurrencies](https://dashboard.darekkay.com/docs/widgets/cryptocurrencies.html).

@@ -1,5 +1,7 @@
 # Widgets
 
+This is a list of all currently implemented widgets. The [roadmap](../roadmap/README.md) contains many possible widget ideas.
+
 ## General
 
 - [Date & Time](date-time.md): Current date and time.
@@ -26,33 +28,3 @@
 ## Monitoring
 
 - [Cryptocurrencies](cryptocurrencies.md): Current market price for various cryptocurrencies.
-
-## Widget ideas
-
-Here's a list of widget ideas. They may or may not be implemented in the future.
-
-- Tasks, Todo list
-  - Local
-  - 3rd Party (Todoist, Trello, GitHub Issues, ...)
-- Calendar, Next events
-- Weather
-- Bookmarks, [Static Marks](https://darekkay.com/static-marks/)
-- Countdown, Timer
-- Counter
-- Calculator
-- Pomodoro Timer
-- Graphs
-- Video
-- Animation
-- Currencies
-- Quote (daily or slideshow)
-- Soundboard, Background Sounds ([Noisli](https://www.noisli.com/), [MyNoise](https://mynoise.net/))
-- Conway's Game of Life
-- [Tip of the Day](https://tips.darekkay.com/)
-- Server Administration
-  - Status Page, Uptime
-- GitHub / GitLab integration
-- GoAccess
-- Mini Games
-  - Cookie Clicker
-  - Tamagotchi

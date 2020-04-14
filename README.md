@@ -18,6 +18,7 @@ The goal of this project is a fully customizable and extendable dashboard, with 
 - Brainstorm ideas using notes and images.
 - Monitor systems to ensure their availability and efficiency.
 - Visualize your Internet of Things (IoT) devices.
+- Create a [life engine](https://github.com/samsquire/ideas#5-life-engine).
 
 Usually, I wait for a MVP before releasing a project. This project is being developed in public from Day 1. I document my progress and (knowledge) insights in the [blog](https://dashboard.darekkay.com/docs/blog/), while the [changelog](https://dashboard.darekkay.com/docs/changelog/) describes the actual project features.
 
