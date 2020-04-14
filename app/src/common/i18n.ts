@@ -3,10 +3,15 @@ import { initReactI18next } from "react-i18next";
 import { PayloadAction } from "@reduxjs/toolkit";
 import { takeEvery } from "@redux-saga/core/effects";
 
+import moment from "moment";
+import "moment/locale/de";
+import "moment/locale/fr";
+
 import { DEBUG_LABELS } from "common/environment";
 import { changeLanguage } from "common/ducks/config";
 import { State } from "state/store";
 
+// NICE: import only the language that is being used
 import de from "./translations/de.json";
 import en from "./translations/en.json";
 import fr from "./translations/fr.json";
@@ -39,14 +44,19 @@ i18n.use(initReactI18next).init({
   }
 });
 
+const updateLanguage = (language: string) => {
+  i18n.changeLanguage(language);
+  moment.locale(language);
+};
+
 const onChangeLanguage = (action: PayloadAction<string>) => {
-  i18n.changeLanguage(action.payload);
+  updateLanguage(action.payload);
 };
 
 /* If the language was stored before, use it when the store is rehydrated */
 const onRehydrate = (action: PayloadAction<State>) => {
   const language = action.payload?.config?.language;
-  if (language) i18n.changeLanguage(language);
+  if (language) updateLanguage(language);
 };
 
 export function* saga() {
