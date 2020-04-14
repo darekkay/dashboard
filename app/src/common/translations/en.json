@@ -60,10 +60,6 @@
     "cryptocurrencies": {
       "name": "Cryptocurrencies",
       "headline": "",
-      "configuration": {
-        "fiat": "Fiat currency",
-        "crypto": "Crypto currency"
-      },
       "crypto": {
         "bitcoin": "Bitcoin (BTC)",
         "bitcoin-cash": "Bitcoin Cash (BCH)",
