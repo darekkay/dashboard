@@ -18,10 +18,7 @@
     "dark": "Sombre"
   },
   "language": {
-    "headline": "Langage",
-    "en": "Anglais",
-    "de": "Allemand",
-    "fr": "Français"
+    "headline": "Langage"
   },
   "data": {
     "purge": "Supprimer les données",

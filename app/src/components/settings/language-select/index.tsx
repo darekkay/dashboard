@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 
 import { LANGUAGES } from "common/environment";
 import { actionCreators } from "common/ducks/config";
-import Button from "components/button";
-import Icon from "components/icon";
+import Dropdown from "components/forms/dropdown";
+
 import selectComponentProps from "./selectors";
 
 export interface Props {
@@ -14,23 +14,16 @@ export interface Props {
 }
 
 export const LanguageSelect: React.FC<Props> = memo(props => {
-  const { changeLanguage } = props;
+  const { language, changeLanguage } = props;
   const { t } = useTranslation();
 
   return (
-    <>
-      {LANGUAGES.map(language => (
-        <Button
-          key={language}
-          className="mr-6 mb-3"
-          outline
-          onClick={() => changeLanguage(language)}
-        >
-          <Icon name={`lang-${language}`} position="left" />
-          {t(`language.${language}`)}
-        </Button>
-      ))}
-    </>
+    <Dropdown
+      options={LANGUAGES}
+      getOptionLabel={languageKey => t(`language.${languageKey}`)}
+      value={language}
+      setValue={language => changeLanguage(language)}
+    />
   );
 });
 
