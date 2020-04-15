@@ -93,3 +93,4 @@ Many more integrations ideas can be found in other products, e.g.:
 
 - [Smashing](https://github.com/Smashing/smashing/wiki/Additional-Widgets)
 - [n8n.io](https://n8n.io/integrations)
+- [MagicMirror](https://github.com/MichMich/MagicMirror/wiki/3rd-Party-Modules)
