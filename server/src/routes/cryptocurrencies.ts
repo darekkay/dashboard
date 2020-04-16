@@ -1,4 +1,3 @@
-import axios from "axios";
 import _ from "lodash";
 import {
   Express,
@@ -6,6 +5,8 @@ import {
   Response,
   NextFunction
 } from "express-serve-static-core";
+
+import axios from "../axios";
 
 const routes = (app: Express) =>
   /* Get the current price for a cryptocurrency */
@@ -20,11 +21,11 @@ const routes = (app: Express) =>
             params: {
               vs_currency: fiat,
               ids: crypto
-            }
+            },
+            ttl: 14.5 * 60 // TODO: Derive TTL from widget's update cycle
           }
         );
 
-        // TODO: cache results (RAM or DB)
         const values = response.data[0];
         res.json({
           currentPrice: values.current_price,

@@ -286,7 +286,7 @@ astral-regex@^1.0.0:
   resolved "https://registry.yarnpkg.com/astral-regex/-/astral-regex-1.0.0.tgz#6c8c3fb827dd43ee3918f27b82782ab7658a6fd9"
   integrity sha512-+Ryf6g3BKoRc7jfp7ad8tM4TtMiaWvbF/1/sQcZPkkS7ag3D5nMBCe2UfOTONtAkaG0tO0ij3C5Lwmf1EiyjHg==
 
-axios@0.19.2:
+axios@0.19.2, "axios@^0.18.0 || ^0.19.0":
   version "0.19.2"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
   integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
@@ -364,6 +364,15 @@ bytes@3.1.0:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
   integrity sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
 
+cachios@2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/cachios/-/cachios-2.2.3.tgz#9d8e5b8ba25504289d26601d8291dd738c91ded7"
+  integrity sha512-faYdB351vUfLuMGijnugV/4PMucgojGWr5/EpZG6IxmkL3oRRNsBYJ54bZk/RrMHRSCQ2MnJOQWc9xBTzdc8LA==
+  dependencies:
+    axios "^0.18.0 || ^0.19.0"
+    node-cache "^4.1.1 || ^5.0.0"
+    object-hash "^2.0.0"
+
 callsites@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/callsites/-/callsites-3.1.0.tgz#b3630abd8943432f54b3f0519238e33cd7df2f73"
@@ -437,6 +446,11 @@ cli-width@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-2.2.0.tgz#ff19ede8a9a5e579324147b0c11f0fbcbabed639"
   integrity sha1-/xnt6Kml5XkyQUewwR8PvLq+1jk=
+
+clone@2.x:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
+  integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
 
 color-convert@^1.9.0:
   version "1.9.3"
@@ -1556,6 +1570,13 @@ nice-try@^1.0.4:
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
+"node-cache@^4.1.1 || ^5.0.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/node-cache/-/node-cache-5.1.0.tgz#266786c28dcec0fd34385ee29c383e6d6f1aa5de"
+  integrity sha512-gFQwYdoOztBuPlwg6DKQEf50G+gkK69aqLnw4djkmlHCzeVrLJfwvg9xl4RCAGviTIMUVoqcyoZ/V/wPEu/VVg==
+  dependencies:
+    clone "2.x"
+
 nodemon@2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-2.0.2.tgz#9c7efeaaf9b8259295a97e5d4585ba8f0cbe50b0"
@@ -1605,6 +1626,11 @@ object-assign@^4:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
+
+object-hash@^2.0.0:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-2.0.3.tgz#d12db044e03cd2ca3d77c0570d87225b02e1e6ea"
+  integrity sha512-JPKn0GMu+Fa3zt3Bmr66JhokJU5BaNBIh4ZeTlaCBzrBsOeXzwcKKAK1tbLiPKgvwmPXsDvvLHoWh5Bm7ofIYg==
 
 object-inspect@^1.7.0:
   version "1.7.0"
