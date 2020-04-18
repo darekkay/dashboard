@@ -25,12 +25,16 @@ const Cryptocurrencies: React.FC<Props> = ({
 
   return (
     <div className="flex flex-col items-center text-center">
-      <div style={{ width: "2rem", height: "2rem" }}>
-        <img src={imageUrl} alt={crypto} />
-      </div>
-      <div className="text-4 font-semibold">
-        {currentPrice} <span className="text-2 uppercase">{fiat}</span>
-      </div>
+      {imageUrl && (
+        <div style={{ width: "2rem", height: "2rem" }}>
+          <img src={imageUrl} alt={crypto} />
+        </div>
+      )}
+      {currentPrice && (
+        <div className="text-4 font-semibold">
+          {currentPrice} <span className="text-2 uppercase">{fiat}</span>
+        </div>
+      )}
       {last24h && (
         <>
           <Deviation
