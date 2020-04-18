@@ -23,6 +23,7 @@ export interface Props {
   toggleLayoutEditable: () => void;
 }
 
+// NICE: check React.memo usage after widget drawer redesign
 const Header: React.FC<Props> = memo(
   ({ isLayoutEditable, toggleLayoutEditable }) => {
     const { t } = useTranslation();

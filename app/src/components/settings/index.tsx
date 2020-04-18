@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { PersistorContext } from "entry";
@@ -9,7 +9,7 @@ import Button, { ButtonVariant } from "components/button";
 import Icon from "components/icon";
 import Section from "components/section";
 
-const Settings: React.FC<Props> = memo(() => {
+const Settings: React.FC<Props> = () => {
   const { t } = useTranslation();
   return (
     <PersistorContext.Consumer>
@@ -42,7 +42,7 @@ const Settings: React.FC<Props> = memo(() => {
       )}
     </PersistorContext.Consumer>
   );
-});
+};
 
 export interface Props {
   //

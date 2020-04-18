@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 
@@ -13,7 +13,7 @@ export interface Props {
   changeLanguage: (payload: string) => void;
 }
 
-export const LanguageSelect: React.FC<Props> = memo(props => {
+export const LanguageSelect: React.FC<Props> = props => {
   const { language, changeLanguage } = props;
   const { t } = useTranslation();
 
@@ -25,6 +25,6 @@ export const LanguageSelect: React.FC<Props> = memo(props => {
       setValue={language => changeLanguage(language)}
     />
   );
-});
+};
 
 export default connect(selectComponentProps, actionCreators)(LanguageSelect);

@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React, { useState } from "react";
 import cn from "classnames";
 
 import Button, { ButtonSize, ButtonVariant } from "components/button";
@@ -13,7 +13,7 @@ const onKeyUp = (event: any, props: Props) => {
   }
 };
 
-const Input: React.FC<Props> = memo(props => {
+const Input: React.FC<Props> = props => {
   const {
     className,
     label,
@@ -73,7 +73,7 @@ const Input: React.FC<Props> = memo(props => {
       </div>
     </Label>
   );
-});
+};
 
 export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;

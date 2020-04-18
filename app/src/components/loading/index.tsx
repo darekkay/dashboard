@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
@@ -9,7 +9,7 @@ export interface Props {
   type?: "spinner" | "skeleton";
 }
 
-const Loading: React.FC<Props> = memo(({ className, type = "spinner" }) => {
+const Loading: React.FC<Props> = ({ className, type = "spinner" }) => {
   const { t } = useTranslation();
   return (
     <div
@@ -23,6 +23,6 @@ const Loading: React.FC<Props> = memo(({ className, type = "spinner" }) => {
       aria-label={t("common.loading")}
     />
   );
-});
+};
 
 export default Loading;

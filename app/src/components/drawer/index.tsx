@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import _ from "lodash";
 
@@ -9,7 +9,7 @@ import Icon from "../icon";
 
 const categoriesWithWidgets = _.groupBy(widgets, widget => widget.category);
 
-const Drawer: React.FC<Props> = memo(({ addWidgetToLayout }) => {
+const Drawer: React.FC<Props> = ({ addWidgetToLayout }) => {
   const { t } = useTranslation();
   return (
     <div className="p-4 bg-color-panel border-left" style={{ width: "280px" }}>
@@ -41,7 +41,7 @@ const Drawer: React.FC<Props> = memo(({ addWidgetToLayout }) => {
       ))}
     </div>
   );
-});
+};
 
 export interface Props {
   addWidgetToLayout: (widgetName: string) => void;

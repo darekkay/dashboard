@@ -1,10 +1,10 @@
-import React, { memo } from "react";
+import React from "react";
 
 export interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   external?: boolean;
 }
 
-export const Link: React.FC<Props> = memo(props => {
+export const Link: React.FC<Props> = props => {
   const { external = true, ...domProps } = props;
   return (
     <a
@@ -15,6 +15,6 @@ export const Link: React.FC<Props> = memo(props => {
       {props.children}
     </a>
   );
-});
+};
 
 export default Link;

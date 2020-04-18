@@ -1,4 +1,4 @@
-import React, { memo, Suspense, useRef, useState } from "react";
+import React, { Suspense, useRef, useState } from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 import Measure from "react-measure";
@@ -40,7 +40,7 @@ export interface Props {
 }
 
 /** Single widget within the dashboard */
-export const Widget: React.FC<Props & ErrorProps> = memo(props => {
+export const Widget: React.FC<Props & ErrorProps> = props => {
   const {
     id,
     type,
@@ -185,7 +185,7 @@ export const Widget: React.FC<Props & ErrorProps> = memo(props => {
       )}
     </>
   );
-});
+};
 
 const mapStateToProps = (id: string) => makeSelectWidget(id);
 

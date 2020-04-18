@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import _ from "lodash";
 
@@ -22,10 +22,10 @@ const openSearchUrl = (
   }
 };
 
-const Search: React.FC<Props> = memo(({ id, setData, name, pattern }) => {
-  if (_.isEmpty(pattern)) return <WidgetUnconfigured type={widgetType} />;
+const Search: React.FC<Props> = ({ id, setData, name, pattern }) => {
   const [value, setValue] = useState("");
   const { t } = useTranslation();
+  if (_.isEmpty(pattern)) return <WidgetUnconfigured type={widgetType} />;
   return (
     <div className="max-w-full w-full p-3">
       <div className="flex items-center">
@@ -50,7 +50,7 @@ const Search: React.FC<Props> = memo(({ id, setData, name, pattern }) => {
       </div>
     </div>
   );
-});
+};
 
 interface Props extends WidgetProps {
   name: string;

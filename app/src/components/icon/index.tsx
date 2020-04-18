@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import cl from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -13,10 +13,15 @@ export interface Props {
   name: string; // TODO: better typing
   alt?: string;
   position?: "left" | "right";
-  icons?: CustomIcons;
+  icons?: CustomIcons; // TODO: remove
 }
 
 const renderIcon: React.FC<Props> = props => {
+  const fontAwesomeIcon = fontAwesomeIcons[props.name];
+  if (fontAwesomeIcon !== undefined) {
+    return <FontAwesomeIcon title={props.alt} icon={fontAwesomeIcon} />;
+  }
+
   const customIcon = (props.icons || customIcons)[props.name];
   if (customIcon !== undefined) {
     return React.createElement(customIcon, {
@@ -24,15 +29,10 @@ const renderIcon: React.FC<Props> = props => {
     });
   }
 
-  const fontAwesomeIcon = fontAwesomeIcons[props.name];
-  if (fontAwesomeIcon !== undefined) {
-    return <FontAwesomeIcon title={props.alt} icon={fontAwesomeIcon} />;
-  }
-
   throw new Error(`Unknown icon '${props.name}'`);
 };
 
-const Icon: React.FC<Props> = memo(props => {
+const Icon: React.FC<Props> = props => {
   const { className, position } = props;
   return (
     <div
@@ -47,6 +47,6 @@ const Icon: React.FC<Props> = memo(props => {
       {renderIcon(props)}
     </div>
   );
-});
+};
 
 export default Icon;

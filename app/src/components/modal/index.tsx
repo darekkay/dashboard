@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import ReactModal, { Props as ReactModalProps } from "react-modal";
 import { useTranslation } from "react-i18next";
 import { MaxWidthProperty } from "csstype";
@@ -11,40 +11,44 @@ if (process.env.NODE_ENV !== "test") {
   ReactModal.setAppElement("#root");
 }
 
-const Modal: React.FC<Props> = memo(
-  ({ headline, maxWidth = "600px", closeModal, children, ...rest }) => {
-    const { t } = useTranslation();
-    return (
-      <ReactModal
-        onRequestClose={closeModal}
-        overlayClassName="fixed inset-0 z-30 flex justify-center items-center p-2 backdrop"
-        className="w-full my-8 mx-auto p-6 text-color-default bg-color-panel border rounded outline-none max-h-full overflow-auto"
-        contentLabel={headline}
-        style={{
-          content: {
-            maxWidth
-          }
-        }}
-        {...rest}
-      >
-        <div className="flex">
-          {headline && <h2 className="text-3 font-bold mb-6">{headline}</h2>}
-          <Button
-            variant={ButtonVariant.Unstyled}
-            size={ButtonSize.Small}
-            outline
-            border={false}
-            className="ml-auto"
-            onClick={closeModal}
-          >
-            <Icon name="times" alt={t("common.close")} />
-          </Button>
-        </div>
-        {children}
-      </ReactModal>
-    );
-  }
-);
+const Modal: React.FC<Props> = ({
+  headline,
+  maxWidth = "600px",
+  closeModal,
+  children,
+  ...rest
+}) => {
+  const { t } = useTranslation();
+  return (
+    <ReactModal
+      onRequestClose={closeModal}
+      overlayClassName="fixed inset-0 z-30 flex justify-center items-center p-2 backdrop"
+      className="w-full my-8 mx-auto p-6 text-color-default bg-color-panel border rounded outline-none max-h-full overflow-auto"
+      contentLabel={headline}
+      style={{
+        content: {
+          maxWidth
+        }
+      }}
+      {...rest}
+    >
+      <div className="flex">
+        {headline && <h2 className="text-3 font-bold mb-6">{headline}</h2>}
+        <Button
+          variant={ButtonVariant.Unstyled}
+          size={ButtonSize.Small}
+          outline
+          border={false}
+          className="ml-auto"
+          onClick={closeModal}
+        >
+          <Icon name="times" alt={t("common.close")} />
+        </Button>
+      </div>
+      {children}
+    </ReactModal>
+  );
+};
 
 export interface Props extends ReactModalProps {
   headline?: string;

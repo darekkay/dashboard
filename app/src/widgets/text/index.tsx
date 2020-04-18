@@ -1,11 +1,11 @@
-import React, { memo } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 import TextArea from "components/forms/text-area";
 
 import { WidgetProps } from "../index";
 
-const Text: React.FC<Props> = memo(({ id, content, setData }) => {
+const Text: React.FC<Props> = ({ id, content, setData }) => {
   const { t } = useTranslation();
   return (
     <div className="flex w-full h-full p-1 items-stretch">
@@ -17,7 +17,7 @@ const Text: React.FC<Props> = memo(({ id, content, setData }) => {
       />
     </div>
   );
-});
+};
 
 interface Props extends WidgetProps {
   content?: string;

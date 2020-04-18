@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
 import {
@@ -29,7 +29,7 @@ export interface Props {
   currentTheme: Theme;
 }
 
-export const App: React.FC<Props> = memo(props => {
+export const App: React.FC<Props> = props => {
   const {
     widgetIDs,
     layout,
@@ -69,7 +69,7 @@ export const App: React.FC<Props> = memo(props => {
       </div>
     </>
   );
-});
+};
 
 export default connect(mapStateToProps, {
   ...layoutActionCreators,

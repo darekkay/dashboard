@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 
@@ -52,7 +52,7 @@ interface ThemeProps {
   onClick: () => void;
 }
 
-export const ThemeSelect: React.FC<Props> = memo(props => {
+export const ThemeSelect: React.FC<Props> = props => {
   const { theme, changeTheme } = props;
 
   const { t } = useTranslation();
@@ -75,6 +75,6 @@ export const ThemeSelect: React.FC<Props> = memo(props => {
       })}
     </>
   );
-});
+};
 
 export default connect(selectComponentProps, actionCreators)(ThemeSelect);

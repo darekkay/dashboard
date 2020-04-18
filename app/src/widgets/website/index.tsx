@@ -7,7 +7,7 @@ import { WidgetProps } from "../index";
 import { widgetType } from "./properties";
 
 const Website: React.FC<Props> = memo(
-  ({ id, url, setData }) => {
+  ({ id, url }) => {
     if (_.isEmpty(url)) return <WidgetUnconfigured type={widgetType} />;
 
     return <iframe src={url} title={id} className="h-full w-full"></iframe>;

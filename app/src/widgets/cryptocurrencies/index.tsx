@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 
 import useTriggerUpdate from "common/hooks/useTriggerUpdate";
 import Deviation from "components/stats/deviation";
@@ -7,44 +7,42 @@ import { WidgetProps } from "../index";
 
 export { saga } from "./sagas";
 
-const Cryptocurrencies: React.FC<Props> = memo(
-  ({
-    id,
+const Cryptocurrencies: React.FC<Props> = ({
+  id,
+  crypto,
+  fiat,
+  imageUrl,
+  currentPrice,
+  last24h,
+  meta,
+  setData,
+  triggerUpdate
+}) => {
+  useTriggerUpdate({ id, params: { crypto, fiat }, meta, triggerUpdate }, [
     crypto,
-    fiat,
-    imageUrl,
-    currentPrice,
-    last24h,
-    meta,
-    setData,
-    triggerUpdate
-  }) => {
-    useTriggerUpdate({ id, params: { crypto, fiat }, meta, triggerUpdate }, [
-      crypto,
-      fiat
-    ]);
+    fiat
+  ]);
 
-    return (
-      <div className="flex flex-col items-center text-center">
-        <div style={{ width: "2rem", height: "2rem" }}>
-          <img src={imageUrl} alt={crypto} />
-        </div>
-        <div className="text-4 font-semibold">
-          {currentPrice} <span className="text-2 uppercase">{fiat}</span>
-        </div>
-        {last24h && (
-          <>
-            <Deviation
-              value={last24h.change}
-              className="text-2 font-semibold"
-              percentage={last24h.changePercentage}
-            />
-          </>
-        )}
+  return (
+    <div className="flex flex-col items-center text-center">
+      <div style={{ width: "2rem", height: "2rem" }}>
+        <img src={imageUrl} alt={crypto} />
       </div>
-    );
-  }
-);
+      <div className="text-4 font-semibold">
+        {currentPrice} <span className="text-2 uppercase">{fiat}</span>
+      </div>
+      {last24h && (
+        <>
+          <Deviation
+            value={last24h.change}
+            className="text-2 font-semibold"
+            percentage={last24h.changePercentage}
+          />
+        </>
+      )}
+    </div>
+  );
+};
 
 interface Props extends WidgetProps {
   imageUrl?: string;
