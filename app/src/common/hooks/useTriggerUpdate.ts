@@ -31,7 +31,10 @@ const useTriggerUpdate = (
   }
 
   const updateProps = { id, params };
-  const canTriggerUpdate = Object.values(params).every(value => !!value);
+
+  const canTriggerUpdate =
+    meta.updateStatus !== "pending" &&
+    Object.values(params).every(value => !!value);
 
   useEffect(() => {
     if (canTriggerUpdate) {
