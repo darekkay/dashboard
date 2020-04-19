@@ -11,6 +11,7 @@
     "help": "Hilfe",
     "error": "Fehler",
     "documentation": "Dokumentation",
+    "poweredBy": "Powered by <0>{{name}}</0>",
     "headline": "Überschrift",
     "fullscreen": {
       "start": "Vollbildmodus",

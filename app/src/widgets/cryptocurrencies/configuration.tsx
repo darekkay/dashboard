@@ -1,8 +1,9 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 import { ConfigurationProps } from "widgets/index";
 import Dropdown from "components/forms/dropdown";
+import Link from "components/link";
 
 const Configuration = ({
   id,
@@ -89,6 +90,11 @@ const Configuration = ({
           "zcash"
         ]}
       />
+      <div className="text-right text-1">
+        <Trans i18nKey="common.poweredBy">
+          <Link href="https://www.coingecko.com/">{{ name: "CoinGecko" }}</Link>
+        </Trans>
+      </div>
     </>
   );
 };
