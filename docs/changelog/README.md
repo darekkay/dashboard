@@ -3,6 +3,7 @@
 # Current
 
 - :sparkles: Add French translation ([@faboo03](https://github.com/faboo03)).
+- :sparkles: Add a button to view the dashboard in fullscreen mode.
 - :rocket: **[Date & Time]**: Localize date format.
 - :rocket: Replace language select buttons with a dropdown.
 - :rocket: Cache external axios calls.

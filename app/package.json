@@ -26,6 +26,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-dropzone": "10.2.2",
+    "react-full-screen": "0.2.4",
     "react-grid-layout": "darekkay/react-grid-layout#darekkay",
     "react-i18next": "11.3.4",
     "react-measure": "2.3.0",

@@ -1,5 +1,9 @@
 # 2020-xx-xx (1.2.x)
 
+## Fullscreen feature
+
+When viewing a dashboard on a dedicated screen, one usually doesn't want to see the browser UI around it. It was the first time I've learned about the [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API). Previously, I thought there was a JavaScript function to just trigger the F11 native browser fullscreen mode. But the API is more powerful than that - it can put any DOM mode in fullscreen. It still has some quirks, but [react-full-screen](https://www.npmjs.com/package/react-full-screen) abstracts everything away and JustWorks™.
+
 ## Request caching
 
 While the Coingecko API is very generous (100 requests/min with no registration), this project shouldn't abuse it. An obvious optimization is caching external requests on the server side.

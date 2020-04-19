@@ -17,7 +17,7 @@ export interface Props {
   saveLayout: (layout: Layout) => void;
   removeWidgetFromLayout: (widgetId: string) => void;
   importWidgets: (widgets: WidgetsState) => void;
-  [key: string]: any;
+  [key: string]: any; // TODO: can this be removed?
 }
 
 const updateProps = ["layout", "isLayoutEditable"];

@@ -10,7 +10,11 @@
     "settings": "Einstellungen",
     "help": "Hilfe",
     "documentation": "Dokumentation",
-    "headline": "Überschrift"
+    "headline": "Überschrift",
+    "fullscreen": {
+      "start": "Vollbildmodus",
+      "exit": "Vollbildmodus beenden"
+    }
   },
   "theme": {
     "headline": "Farbschema",

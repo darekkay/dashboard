@@ -10,7 +10,11 @@
     "settings": "Paramètres",
     "help": "Aide",
     "documentation": "Documentation",
-    "headline": "Entête"
+    "headline": "Entête",
+    "fullscreen": {
+      "start": "Plein écran",
+      "exit": "Quitter le mode plein écran"
+    }
   },
   "theme": {
     "headline": "Thème",

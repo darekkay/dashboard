@@ -10,7 +10,12 @@ describe("<Header />", () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <Header isLayoutEditable={false} toggleLayoutEditable={() => null} />
+      <Header
+        isLayoutEditable={false}
+        toggleLayoutEditable={() => null}
+        isFullscreen={false}
+        toggleFullscreen={() => null}
+      />
     );
   });
 

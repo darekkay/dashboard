@@ -10,8 +10,13 @@
     "settings": "Settings",
     "help": "Help",
     "documentation": "Documentation",
-    "headline": "Headline"
+    "headline": "Headline",
+    "fullscreen": {
+      "start": "Fullscreen",
+      "exit": "Exit fullscreen"
+    }
   },
+
   "theme": {
     "headline": "Theme",
     "default": "Default",

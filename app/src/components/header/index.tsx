@@ -21,11 +21,19 @@ const Version: React.FC<{}> = () => (
 export interface Props {
   isLayoutEditable: boolean;
   toggleLayoutEditable: () => void;
+
+  isFullscreen: boolean;
+  toggleFullscreen: () => void;
 }
 
 // NICE: check React.memo usage after widget drawer redesign
 const Header: React.FC<Props> = memo(
-  ({ isLayoutEditable, toggleLayoutEditable }) => {
+  ({
+    isLayoutEditable,
+    toggleLayoutEditable,
+    isFullscreen,
+    toggleFullscreen
+  }) => {
     const { t } = useTranslation();
 
     const [isSettingsModalOpen, setSettingsModalOpen] = useState(false);
@@ -39,7 +47,7 @@ const Header: React.FC<Props> = memo(
         </div>
 
         <Button
-          className="mx-6 my-2"
+          className="mr-6 my-2"
           variant={ButtonVariant.Primary}
           outline
           size={ButtonSize.Small}
@@ -47,6 +55,19 @@ const Header: React.FC<Props> = memo(
         >
           <Icon name={isLayoutEditable ? "save" : "edit"} position="left" />
           {t(isLayoutEditable ? "common.save" : "common.edit")}
+        </Button>
+
+        <Button
+          className="mr-6 my-2"
+          variant={ButtonVariant.Primary}
+          outline
+          size={ButtonSize.Small}
+          onClick={toggleFullscreen}
+          aria-label={t(
+            isFullscreen ? "common.fullscreen.exit" : "common.fullscreen.start"
+          )}
+        >
+          <Icon name={isFullscreen ? "compress" : "expand"} />
         </Button>
 
         <Menu icon="bars" title="Main menu" disclosureClassName="my-2">

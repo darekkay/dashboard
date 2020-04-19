@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import Fullscreen from "react-full-screen";
 
 import {
   actionCreators as layoutActionCreators,
   Layout
 } from "common/ducks/layout";
+import useToggle from "common/hooks/useToggle";
 import Dashboard from "components/dashboard";
 import Drawer from "components/drawer";
 import Header from "components/header";
@@ -46,13 +48,20 @@ export const App: React.FC<Props> = props => {
     updateCssVariables(currentTheme);
   }, [currentTheme]);
 
+  const [isFullscreen, toggleFullscreen] = useToggle(false);
+
   return (
-    <>
+    <Fullscreen
+      enabled={isFullscreen}
+      onChange={isFull => toggleFullscreen(isFull)}
+    >
       <Header
         isLayoutEditable={isLayoutEditable}
         toggleLayoutEditable={toggleLayoutEditable}
+        isFullscreen={isFullscreen}
+        toggleFullscreen={toggleFullscreen}
       />
-      <div className="flex h-full flex-col md:flex-row overflow-y-auto">
+      <div className="flex h-full flex-col md:flex-row overflow-y-auto bg-color-default text-color-default">
         <main className="flex-grow w-full p-1 md:p-6">
           <Dashboard
             layout={layout}
@@ -67,7 +76,7 @@ export const App: React.FC<Props> = props => {
           <Drawer addWidgetToLayout={addWidgetToLayout}></Drawer>
         )}
       </div>
-    </>
+    </Fullscreen>
   );
 };
 
