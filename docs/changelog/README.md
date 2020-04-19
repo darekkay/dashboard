@@ -9,6 +9,7 @@
 - :rocket: Cache external axios calls.
 - :gem: Remove unnecessary `React.memo` calls.
 - :gem: Improve error screen design.
+- :hammer: Add a script to find missing label translations.
 - :book: Publish a roadmap.
 - :book: Update documentation.
 

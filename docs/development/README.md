@@ -100,6 +100,8 @@ The label keys can be viewed in a `debug` mode by adding `debug:labels` to the U
 
 Default UI language is based on the browser language and can be changed by the user in the settings dialog.
 
+To find missing label translations, run `yarn i18n` in the `app` module.
+
 ## Typography
 
 Use CSS utility classes `text-1` to `text-7` to adjust font sizes. To preserve a consistent look across all widgets, use `text-3` as the base size.
