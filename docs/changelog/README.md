@@ -8,6 +8,7 @@
 - :rocket: Replace language select buttons with a dropdown.
 - :rocket: Cache external axios calls.
 - :gem: Remove unnecessary `React.memo` calls.
+- :gem: Improve error screen design.
 - :book: Publish a roadmap.
 - :book: Update documentation.
 
