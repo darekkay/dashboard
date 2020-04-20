@@ -5,7 +5,7 @@ const axiosInstance = axios.create({
   timeout: 10000
 });
 
-axiosInstance.interceptors.request.use(config => {
+axiosInstance?.interceptors.request.use(config => {
   /* Log axios requests to verify caching */
   console.info(`[Axios Request] ${config.method?.toUpperCase()} ${config.url}`);
   return config;
