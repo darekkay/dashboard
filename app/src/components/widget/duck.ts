@@ -20,6 +20,11 @@ export interface TriggerUpdateAction {
   params: { [key: string]: any };
 }
 
+export interface UpdateActionError {
+  id: string;
+  error: any;
+}
+
 // Data actions
 export const setOptions = createAction<SetValuesPayload>("widget/set-options");
 export const setData = createAction<SetValuesPayload>("widget/set-data-value");
@@ -30,7 +35,9 @@ export const triggerUpdate = (widgetType: string) =>
   createAction<TriggerUpdateAction>(`widget/${widgetType}/update`);
 export const updatePending = createAction<string>("widget/update-pending");
 export const updateSuccess = createAction<string>("widget/update-success");
-export const updateError = createAction<string>("widget/update-error");
+export const updateError = createAction<UpdateActionError>(
+  "widget/update-error"
+);
 export const updateAbort = createAction<string>("widget/update-abort"); // NICE: check if really necessary
 
 // Widget actions
@@ -45,6 +52,7 @@ export interface WidgetMeta {
   updateStatus?: UpdateStatus;
   lastUpdated?: number;
   updateCycle?: MomentInputObject;
+  errorCode?: number;
   dimensions?: Dimensions;
   headlineIcon?: IconName;
 }
@@ -94,13 +102,15 @@ export const reducerWithInitialState = (state: WidgetsState = initialState) =>
       state[id].meta = {
         ...state[id].meta,
         updateStatus: "success",
+        errorCode: undefined,
         lastUpdated: Date.now()
       };
     },
 
     [updateError.toString()]: (state, action) => {
-      const id = action.payload;
+      const { id, error } = action.payload as UpdateActionError;
       state[id].meta.updateStatus = "error";
+      state[id].meta.errorCode = error?.response?.status; // use axios response error code
     },
 
     [updateAbort.toString()]: (state, action) => {

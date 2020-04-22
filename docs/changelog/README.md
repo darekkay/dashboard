@@ -11,6 +11,7 @@
 - :gem: Remove unnecessary `React.memo` calls.
 - :gem: Improve error screen design.
 - :gem: Improve icon name TypeScript typing.
+- :gem: Implement error handling for internal and 3rd-party requests.
 - :hammer: Add a script to find missing label translations.
 - :book: Publish a roadmap.
 - :book: Update documentation.

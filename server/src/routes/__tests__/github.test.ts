@@ -138,5 +138,16 @@ describe("github", () => {
         .query({ query: "da/rek/kay" })
         .expect(422);
     });
+
+    it("should return 404 if the username cannot be found", () => {
+      const mockedAxios = axios as jest.Mocked<typeof axios>;
+      mockedAxios.get.mockImplementation(() => {
+        throw { response: { status: 404 } };
+      });
+      return request(app)
+        .get("/github/stats")
+        .query({ query: "darekkay12345" })
+        .expect(404);
+    });
   });
 });

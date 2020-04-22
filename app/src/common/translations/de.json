@@ -82,6 +82,9 @@
       "openIssues": "offene Issues",
       "configuration": {
         "query": "GitHub Benutzername oder Repository"
+      },
+      "error": {
+        "404": "Benutzername oder Repository unbekannt"
       }
     },
     "image": {

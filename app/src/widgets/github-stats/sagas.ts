@@ -1,7 +1,6 @@
 import { put, call, takeEvery } from "@redux-saga/core/effects";
 import { PayloadAction } from "@reduxjs/toolkit";
 
-import log from "common/log";
 import api, { GITHUB_STATS } from "common/api";
 import {
   setData,
@@ -32,8 +31,7 @@ function* onTriggerUpdate(action: PayloadAction<TriggerUpdateAction>) {
     );
     yield put(updateSuccess(id));
   } catch (error) {
-    log.error(error);
-    yield put(updateError(id));
+    yield put(updateError({ id, error }));
   }
 }
 

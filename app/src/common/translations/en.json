@@ -101,6 +101,9 @@
       "openIssues": "open issues",
       "configuration": {
         "query": "GitHub username or repository"
+      },
+      "error": {
+        "404": "Unknown username or repository"
       }
     },
     "image": {

@@ -1,4 +1,4 @@
-import express from "express";
+import express, { ErrorRequestHandler } from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import logger from "morgan";
@@ -18,7 +18,23 @@ app.get("/", (_req, res) => {
 
 includeRoutes(app);
 
-// TODO: custom error handling
+// custom error handling
+const errorHandler: ErrorRequestHandler = (error, __, res, ___) => {
+  const axiosErrorStatusCode = error?.response?.status;
+
+  // If the error comes from a 3rd party axios call, forward the response error code
+  // Otherwise, return a generic 500 "Internal Server Error" code
+  const responseStatusCode = axiosErrorStatusCode || 500;
+
+  console.error(error.stack);
+
+  return res.status(responseStatusCode).json({
+    error: responseStatusCode,
+    external: !!responseStatusCode // differentiate between internal and 3rd party errors
+  });
+};
+
+app.use(errorHandler);
 
 app.set("port", config.port);
 

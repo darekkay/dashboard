@@ -5,6 +5,7 @@ import _ from "lodash";
 import useTriggerUpdate from "common/hooks/useTriggerUpdate";
 import Icon, { IconName } from "components/icon";
 import WidgetUnconfigured from "components/widget-unconfigured";
+import WidgetError from "components/widget-error";
 
 import { WidgetProps } from "../index";
 import { widgetType } from "./properties";
@@ -36,9 +37,13 @@ const GithubStats: React.FC<Props> = ({
   meta,
   triggerUpdate
 }) => {
+  const { t } = useTranslation();
   useTriggerUpdate({ id, params: { query }, meta, triggerUpdate }, [query]);
 
   if (_.isEmpty(query)) return <WidgetUnconfigured type={widgetType} />;
+  if (meta.errorCode === 404)
+    return <WidgetError labelKey={t("widget.github-stats.error.404")} />;
+
   return (
     <div>
       {!!stars && (

@@ -11,7 +11,6 @@ import {
   updateSuccess,
   TriggerUpdateAction
 } from "components/widget/duck";
-import log from "common/log";
 
 import { widgetType } from "./properties";
 
@@ -36,8 +35,7 @@ function* onTriggerUpdate(action: PayloadAction<TriggerUpdateAction>) {
     );
     yield put(updateSuccess(id));
   } catch (error) {
-    log.error(error);
-    yield put(updateError(id));
+    yield put(updateError({ id, error }));
   }
 }
 

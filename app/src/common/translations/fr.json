@@ -97,6 +97,9 @@
       "openIssues": "problèmes ouverts",
       "configuration": {
         "query": "GitHub nom d’utilisateur ou référentiel"
+      },
+      "error": {
+        "404": "Nom d’utilisateur ou référentiel inconnu"
       }
     },
     "image": {
