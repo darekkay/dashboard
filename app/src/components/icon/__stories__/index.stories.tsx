@@ -4,10 +4,9 @@ import { storiesOf } from "@storybook/react";
 
 import Icon from "../index";
 
-import customIcons from "../custom";
-import fontAwesomeIcons from "../font-awesome";
+import fontAwesomeIcons, { FontAwesomeIconName } from "../font-awesome";
 
-const icons = [...Object.keys(fontAwesomeIcons), ...Object.keys(customIcons)];
+const icons = [...Object.keys(fontAwesomeIcons)] as FontAwesomeIconName[];
 
 storiesOf("Components.Icon", module).add("Kitchen Sink", () => (
   <div>

@@ -10,6 +10,7 @@ describe("<Icon />", () => {
   });
 
   it("does not render unknown icons", () => {
+    // @ts-ignore
     const throwFn = () => shallow(<Icon name="c01c4b" />);
     expect(throwFn).toThrow();
   });

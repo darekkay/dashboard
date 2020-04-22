@@ -112,6 +112,27 @@ Base style definitions are extracted into a common [@darekkay/styles](https://gi
 
 Currently, there are two different color themes (`default` and `dark`). This is solved using CSS custom properties, making it easy to maintain and extend different color schemes. The naming should be color-agnostic (e.g. `primary` instead of `red`), but it is still a work in progress.
 
+## Icons
+
+This project uses icons from [Font Awesome](https://fontawesome.com/icons). The icons are imported and (re-)defined one at a time to include only used icons in the build bundle (`components/icon/font-awesome`):
+
+```jsx
+import { faHome, ... } from "@fortawesome/free-solid-svg-icons";
+
+export type FontAwesomeIconName = "home" | ...;
+
+const icons = {
+  home: faHome,
+  ...
+}
+```
+
+Example usage:
+
+```jsx
+<Icon name="home" />
+```
+
 ## Grid
 
 The actual dashboard/grid functionality is implemented with the [react-grid-layout](https://github.com/STRML/react-grid-layout/) library. Because of some critical issues, a [fork](https://github.com/darekkay/react-grid-layout) is currently being used.

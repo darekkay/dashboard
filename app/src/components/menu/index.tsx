@@ -8,7 +8,7 @@ import {
 } from "reakit/Menu";
 import _ from "lodash";
 
-import Icon from "components/icon";
+import Icon, { IconName } from "components/icon";
 import Button, { ButtonSize } from "components/button";
 
 // @ts-ignore default value is defined in the context provider
@@ -84,13 +84,13 @@ export const MenuAction: React.FC<MenuItemProps> = ({
 
 export interface MenuItemProps {
   text: string;
-  icon: string;
+  icon: IconName;
   onClick?: () => void;
   href?: string;
 }
 
 export interface Props {
-  icon: string;
+  icon: IconName;
   title: string;
   children: React.ReactNode | React.ReactNode[];
   disclosureClassName?: string;

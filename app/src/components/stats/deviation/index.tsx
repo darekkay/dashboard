@@ -1,9 +1,9 @@
 import React from "react";
 import cn from "classnames";
 
-import Icon from "components/icon";
+import Icon, { IconName } from "components/icon";
 
-const iconName = (value: number) => {
+const iconName = (value: number): IconName => {
   if (value < 0) return "arrowDown";
   if (value > 0) return "arrowUp";
   return "equals";
