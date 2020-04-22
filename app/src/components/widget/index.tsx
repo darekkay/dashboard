@@ -9,6 +9,7 @@ import withErrorHandling, {
 } from "common/hoc/withErrorHandling";
 import useBooleanState from "common/hooks/useBooleanState";
 import Loading from "components/loading";
+import Icon from "components/icon";
 import WidgetOverlay from "components/widget-overlay";
 import WidgetError from "components/widget-error";
 import WidgetConfiguration from "components/widget-configuration";
@@ -58,8 +59,7 @@ export const Widget: React.FC<Props & ErrorProps> = props => {
   } = props;
 
   const { t } = useTranslation();
-  const headline = t(`widget.${type}.headline`, options);
-
+  const headline = t(`widget.${type}.headline`, { ...options, ...data });
   const isWidgetConfigurable = widgets[type].configurable;
 
   const [dimensions, setDimensions] = useState<Dimensions>(initialDimensions);
@@ -116,8 +116,11 @@ export const Widget: React.FC<Props & ErrorProps> = props => {
         {headline && (
           <h3
             id={`widget-${id}-headline`}
-            className="m-0 py-1 px-2 text-2 font-normal"
+            className="flex items-center m-0 py-1 px-2 text-2 font-semibold"
           >
+            {meta.headlineIcon && (
+              <Icon name={meta.headlineIcon} position="left" />
+            )}
             {headline}
           </h3>
         )}

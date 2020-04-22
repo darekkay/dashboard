@@ -5,6 +5,7 @@ import { MomentInputObject } from "moment";
 
 import widgets from "widgets";
 import { Dimensions } from "components/widget/index";
+import { IconName } from "components/icon";
 import { handleImportState } from "common/ducks/state";
 
 const SUB_STATE_NAME = "widgets";
@@ -45,6 +46,7 @@ export interface WidgetMeta {
   lastUpdated?: number;
   updateCycle?: MomentInputObject;
   dimensions?: Dimensions;
+  headlineIcon?: IconName;
 }
 
 export interface Widget {
