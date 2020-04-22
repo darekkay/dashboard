@@ -6,8 +6,9 @@ import {
 } from "express-serve-static-core";
 
 import axios from "../axios";
+import { ttlForWidgetType } from "../utils";
 
-const TTL = 23.5 * 60 * 60; // TODO: Derive TTL from widget's update cycle
+const TTL = ttlForWidgetType("github-stats");
 
 export type QueryType = "user" | "repository" | "unknown";
 

@@ -74,4 +74,6 @@ const importWidgets = (widgets: { [key: string]: WidgetProperties }) =>
     {}
   ) as { [key: string]: WidgetProperties & WidgetElements };
 
-export default importWidgets(availableWidgets);
+export default importWidgets(
+  availableWidgets as Record<string, WidgetProperties>
+);

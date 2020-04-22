@@ -7,6 +7,7 @@ import {
 } from "express-serve-static-core";
 
 import axios from "../axios";
+import { ttlForWidgetType } from "../utils";
 
 const routes = (app: Express) =>
   /* Get the current price for a cryptocurrency */
@@ -22,7 +23,7 @@ const routes = (app: Express) =>
               vs_currency: fiat,
               ids: crypto
             },
-            ttl: 14.5 * 60 // TODO: Derive TTL from widget's update cycle
+            ttl: ttlForWidgetType("cryptocurrencies")
           }
         );
 
