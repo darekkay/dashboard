@@ -19,7 +19,7 @@ const Drawer: React.FC<Props> = ({ addWidgetToLayout }) => {
           <div className="p-2 text-center uppercase font-bold text-2">
             {t(`widget.category.${category}`)}
           </div>
-          {categoriesWithWidgets[category].map(
+          {categoriesWithWidgets[category] ? categoriesWithWidgets[category].map(
             ({ widgetType: widget }: WidgetProperties) => (
               <div key={widget} className="flex justify-between py-2">
                 {t(`widget.${widget}.name`)}
@@ -36,7 +36,9 @@ const Drawer: React.FC<Props> = ({ addWidgetToLayout }) => {
                 </Button>
               </div>
             )
-          )}
+          ) : 
+            <div className="flex justify-between py-2 italic">{t("widget.common.noWidget")}</div>
+        }
         </div>
       ))}
     </div>
