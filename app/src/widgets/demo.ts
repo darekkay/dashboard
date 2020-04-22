@@ -96,6 +96,19 @@ const widgets = {
       crypto: "bitcoin"
     },
     meta: { updateCycle: { minutes: 15 } }
+  },
+  "github-stats-01": {
+    x: 4,
+    y: 2,
+    width: 3,
+    height: 3,
+    type: "github-stats",
+    data: {},
+    options: {
+      query: "darekkay/dashboard"
+    },
+    // TODO: read from "list.ts" to keep values in sync
+    meta: { updateCycle: { hours: 24 }, headlineIcon: "github" }
   }
 };
 

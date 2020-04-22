@@ -91,6 +91,18 @@
       "name": "Date and Time",
       "headline": ""
     },
+    "github-stats": {
+      "name": "GitHub Stats",
+      "headline": "{{name}}",
+      "stars": "stars",
+      "subscribers": "subscribers",
+      "followers": "followers",
+      "forks": "forks",
+      "openIssues": "open issues",
+      "configuration": {
+        "query": "GitHub username or repository"
+      }
+    },
     "image": {
       "name": "Image",
       "headline": "",

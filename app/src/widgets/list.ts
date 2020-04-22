@@ -29,6 +29,15 @@ export default {
     initialOptions: {},
     initialMeta: {}
   },
+  "github-stats": {
+    configurable: true,
+    widgetType: "github-stats",
+    category: "monitoring",
+    initialHeight: 3,
+    initialWidth: 3,
+    initialOptions: {},
+    initialMeta: { updateCycle: { hours: 24 }, headlineIcon: "github" }
+  },
   image: {
     configurable: true,
     widgetType: "image",

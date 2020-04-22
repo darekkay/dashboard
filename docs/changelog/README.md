@@ -2,6 +2,7 @@
 
 # Current
 
+- :sparkles: New widget: [GitHub Stats](https://dashboard.darekkay.com/docs/widgets/github-stats.html).
 - :sparkles: Add French translation ([@faboo03](https://github.com/faboo03)).
 - :sparkles: Add a button to view the dashboard in fullscreen mode.
 - :rocket: **[Date & Time]**: Localize date format.
