@@ -133,6 +133,11 @@
       "name": "Notes",
       "headline": ""
     },
+    "todoist": {
+      "configuration" : {
+        "token": "Token"
+      }
+    },
     "totd-chemical-elements": {
       "name": "Chemical elements",
       "headline": ""
