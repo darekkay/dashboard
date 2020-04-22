@@ -90,16 +90,16 @@
     "github-stats": {
       "name": "GitHub Stats",
       "headline": "{{name}}",
-      "stars": "stars",
-      "subscribers": "subscribers",
-      "followers": "followers",
+      "stars": "etoiles",
+      "subscribers": "abonnés",
+      "followers": "follower",
       "forks": "forks",
-      "openIssues": "problèmes ouverts",
+      "openIssues": "tickets ouverts",
       "configuration": {
-        "query": "GitHub nom d’utilisateur ou référentiel"
+        "query": "Pseudo ou repos Github"
       },
       "error": {
-        "404": "Nom d’utilisateur ou référentiel inconnu"
+        "404": "Pseudo ou repos Github inconnu"
       }
     },
     "image": {

@@ -75,7 +75,7 @@
     "github-stats": {
       "name": "GitHub Stats",
       "headline": "{{name}}",
-      "stars": "Stars",
+      "stars": "Sterne",
       "subscribers": "Subscriber",
       "followers": "Follower",
       "forks": "Forks",
