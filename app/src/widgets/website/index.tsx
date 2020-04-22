@@ -12,7 +12,6 @@ const Website: React.FC<Props> = memo(
 
     return <iframe src={url} title={id} className="h-full w-full"></iframe>;
   },
-  // TODO: extract/use utility
   (prevProps, nextProps) => prevProps.url === nextProps.url
 );
 
