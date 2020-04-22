@@ -47,7 +47,8 @@
       "add": "Add {{widget}} widget",
       "remove": "Remove {{widget}} widget",
       "configuration": "Configuration: {{widget}}",
-      "unconfigured": "Widget configuration required."
+      "unconfigured": "Widget configuration required.",
+      "noWidget": "No widget available"
     },
     "category": {
       "general": "General",
@@ -55,7 +56,8 @@
       "knowledge": "Knowledge",
       "tools": "Tools",
       "tracking": "Tracking",
-      "monitoring": "Monitoring"
+      "monitoring": "Monitoring",
+      "productivity": "Productivity"
     },
 
     "counter": {
@@ -134,6 +136,8 @@
       "headline": ""
     },
     "todoist": {
+      "name": "Todoist",
+      "headline": "Todoist",
       "configuration" : {
         "token": "Token"
       }
