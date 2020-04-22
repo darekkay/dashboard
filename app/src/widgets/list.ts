@@ -75,6 +75,15 @@ export default {
     initialOptions: {},
     initialMeta: {}
   },
+  todoist: {
+    configurable: true,
+    widgetType: "todoist",
+    category: "productivity",
+    initialHeight: 3,
+    initialWidth: 4,
+    initialOptions: {},
+    initialMeta: { updateCycle: { hours: 24 } }
+  },
   "totd-chemical-elements": {
     configurable: false,
     widgetType: "totd-chemical-elements",
