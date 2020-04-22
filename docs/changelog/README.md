@@ -1,6 +1,6 @@
 # Changelog
 
-# Current
+# 1.3.0 (2020-04-22)
 
 - :sparkles: New widget: [GitHub Stats](https://dashboard.darekkay.com/docs/widgets/github-stats.html).
 - :sparkles: Add French translation ([@faboo03](https://github.com/faboo03)).

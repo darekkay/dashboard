@@ -1,7 +1,7 @@
 {
   "name": "dashboard-server",
   "description": "A server for the dashboard app",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "author": "Darek Kay <hello@darekkay.com> (https://darekkay.com/)",
   "bugs": {
     "url": "https://github.com/darekkay/dashboard-server/issues"

@@ -1,6 +1,6 @@
 # Dashboard
 
-![](./assets/img/1.2.0.png)
+![](./assets/img/1.3.0.png)
 
 ## Goal
 
