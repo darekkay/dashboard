@@ -119,9 +119,13 @@ export const Widget: React.FC<Props & ErrorProps> = props => {
             className="flex items-center m-0 py-1 px-2 text-2 font-semibold"
           >
             {meta.headlineIcon && (
-              <Icon name={meta.headlineIcon} position="left" />
+              <Icon
+                name={meta.headlineIcon}
+                position="left"
+                className="flex-shrink-0"
+              />
             )}
-            {headline}
+            <span className="truncate">{headline}</span>
           </h3>
         )}
 

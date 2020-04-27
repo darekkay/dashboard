@@ -138,6 +138,7 @@ module.exports = {
     // Misc
 
     cursor: [],
+    wordBreak: [],
     zIndex: []
   },
   corePlugins: {
@@ -180,6 +181,7 @@ module.exports = {
     // Misc
 
     cursor: true,
+    wordBreak: true,
     zIndex: true,
 
     // Disable everything else
@@ -244,8 +246,7 @@ module.exports = {
     userSelect: false,
     verticalAlign: false,
     visibility: false,
-    whitespace: false,
-    wordBreak: false
+    whitespace: false
   },
   plugins: []
 };

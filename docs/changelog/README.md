@@ -1,5 +1,9 @@
 # Changelog
 
+# Current
+
+- :bug: Truncate widget headline.
+
 # 1.3.0 (2020-04-22)
 
 - :sparkles: New widget: [GitHub Stats](https://dashboard.darekkay.com/docs/widgets/github-stats.html).
