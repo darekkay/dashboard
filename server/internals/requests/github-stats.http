@@ -1,0 +1,10 @@
+# User stats
+GET localhost:3000/github/stats?query=darekkay
+
+###
+
+# Repository stats
+GET localhost:3000/github/stats?query=darekkay/dashboard
+
+###
+

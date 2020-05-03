@@ -1,0 +1,5 @@
+# EUR <> BTC
+GET localhost:3000/cryptocurrencies/price?fiat=eur&crypto=bitcoin
+
+###
+
