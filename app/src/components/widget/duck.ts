@@ -46,10 +46,10 @@ export const createWidget = createAction<{ id: string; type: string }>(
 );
 export const removeWidget = createAction<string>("widget/remove");
 
-export type UpdateStatus = "pending" | "success" | "error";
+export type UpdateStatus = "pending" | "success" | "error"; // TODO: add "idle" state as default instead of using undefined
 
 export interface WidgetMeta {
-  updateStatus?: UpdateStatus;
+  updateStatus?: UpdateStatus; // TODO: Remove optional flag after introducing "idle" state
   lastUpdated?: number;
   updateCycle?: MomentInputObject;
   errorCode?: number;
@@ -91,6 +91,9 @@ export const reducerWithInitialState = (state: WidgetsState = initialState) =>
     [importWidgets.toString()]: (state, action) => {
       return action.payload;
     },
+
+    // NICE: for each updateStatus action, check for the correct preciding updateStatus
+    // https://mobile.twitter.com/devongovett/status/1256368203594264576
 
     [updatePending.toString()]: (state, action) => {
       const id = action.payload;

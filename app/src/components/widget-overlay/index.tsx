@@ -1,10 +1,4 @@
-import React, {
-  Dispatch,
-  SetStateAction,
-  MouseEvent,
-  useEffect,
-  useState
-} from "react";
+import React, { MouseEvent, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import Button, { ButtonSize, ButtonVariant } from "components/button";
@@ -94,21 +88,19 @@ const WidgetOverlay: React.FC<Props> = ({
           )}
 
           {/* Remove button */}
-          {isWidgetMenuVisible && (
-            <div className="bg-color-panel">
-              <Button
-                size={ButtonSize.Auto}
-                variant={ButtonVariant.Unstyled}
-                border={false}
-                aria-label={t(`widget.common.remove`, {
-                  widget: t(`widget.${type}.name`)
-                })}
-                onClick={() => removeWidgetFromLayout(id)}
-              >
-                <Icon name="trash" className="text-color-danger" />
-              </Button>
-            </div>
-          )}
+          <div className="bg-color-panel">
+            <Button
+              size={ButtonSize.Auto}
+              variant={ButtonVariant.Unstyled}
+              border={false}
+              aria-label={t(`widget.common.remove`, {
+                widget: t(`widget.${type}.name`)
+              })}
+              onClick={() => removeWidgetFromLayout(id)}
+            >
+              <Icon name="trash" className="text-color-danger" />
+            </Button>
+          </div>
         </div>
       )}
     </>
@@ -122,7 +114,7 @@ export interface Props {
   setOptions: ValueUpdateAction;
   isWidgetMenuVisible: boolean;
   isDraggable: boolean;
-  setDraggable: Dispatch<SetStateAction<boolean>>;
+  setDraggable: (value: boolean) => void;
   removeWidgetFromLayout: (id: string) => void;
   openConfigurationModal: () => void;
 }

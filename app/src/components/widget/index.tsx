@@ -102,6 +102,7 @@ export const Widget: React.FC<Props & ErrorProps> = props => {
         onFocus={showWidgetMenu}
         onBlur={event => {
           // The widget becomes draggable if neither of its children is focused
+          // NOTE: relatedTarget is "null" in Firefox, if the target is an iframe, which makes the Website widget unusable
           const relatedTarget = event.relatedTarget as Element;
           if (widgetRef?.current) {
             // @ts-ignore
