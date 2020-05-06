@@ -1,13 +1,18 @@
 import React from "react";
 
 import { WidgetProps } from "../index";
+{{#if configurationEnabled}}
 import { Props as ConfigurationProps } from "./configuration";
+{{/if}}
+{{#if useSagas}}
+export { saga } from "./sagas";
+{{/if}}
 
 const {{ properCase name }}: React.FC<Props> = ({ id, setData }) => {
   return (<div></div>);
 };
 
-interface Props extends WidgetProps, ConfigurationProps {
+interface Props extends WidgetProps{{#if configurationEnabled}}, ConfigurationProps{{/if}} {
 
 }
 

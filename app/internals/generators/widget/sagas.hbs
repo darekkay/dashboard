@@ -1,7 +1,7 @@
 import { put, call, takeEvery } from "@redux-saga/core/effects";
 import { PayloadAction } from "@reduxjs/toolkit";
 
-import api, { CRYPTOCURRENCIES_PRICE } from "common/api";
+import api, { ENDPOINT } from "common/api";
 import {
   setData,
   triggerUpdate,
@@ -13,17 +13,16 @@ import {
 
 import { widgetType } from "./properties";
 
-const fetchCryptocurrencyPrice = async (params: Record<string, any>) => {
-  const response = await api.get(CRYPTOCURRENCIES_PRICE, { params });
+const fetchData = async (params: Record<string, any>) => {
+  const response = await api.get(ENDPOINT, { params });
   return response.data;
 };
 
-// TODO: extract reusable generic saga
 function* onTriggerUpdate(action: PayloadAction<TriggerUpdateAction>) {
   const { id, params } = action.payload;
   yield put(updatePending(id));
   try {
-    const data = yield call(fetchCryptocurrencyPrice, params);
+    const data = yield call(fetchData, params);
     yield put(
       setData({
         id,

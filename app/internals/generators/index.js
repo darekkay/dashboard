@@ -13,6 +13,11 @@ module.exports = plop => {
       type: "confirm",
       name: "configurationEnabled",
       message: "Do you want to use a configuration modal for your widget?"
+    },
+    {
+      type: "confirm",
+      name: "useSagas",
+      message: "Does your widget use sagas (e.g. fetch external data)?"
     }
   ];
 
@@ -88,11 +93,21 @@ module.exports = plop => {
     ];
 
     if (userInputs.configurationEnabled) {
-      // Widget configuration (if selected)
+      // widget configuration (if selected)
       widgetActions.push({
         type: "add",
         path: "../../src/widgets/{{kebabCase name}}/configuration.tsx",
         templateFile: "./widget/configuration.hbs",
+        abortOnFail: false
+      });
+    }
+
+    if (userInputs.useSagas) {
+      // widget saga (if selected)
+      widgetActions.push({
+        type: "add",
+        path: "../../src/widgets/{{kebabCase name}}/sagas.ts",
+        templateFile: "./widget/sagas.hbs",
         abortOnFail: false
       });
     }

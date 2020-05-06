@@ -36,5 +36,5 @@ function* onTriggerUpdate(action: PayloadAction<TriggerUpdateAction>) {
 }
 
 export function* saga() {
-  yield takeEvery(triggerUpdate(widgetType).toString(), onTriggerUpdate);
+  yield takeEvery(triggerUpdate(widgetType).type, onTriggerUpdate);
 }

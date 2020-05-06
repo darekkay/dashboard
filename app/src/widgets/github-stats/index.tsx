@@ -10,6 +10,7 @@ import WidgetError from "components/widget-error";
 import { WidgetProps } from "../index";
 import { Props as ConfigurationProps } from "./configuration";
 import { widgetType } from "./properties";
+
 export { saga } from "./sagas";
 
 const StatsRow: React.FC<{
