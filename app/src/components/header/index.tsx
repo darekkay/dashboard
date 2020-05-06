@@ -18,14 +18,6 @@ const Version: React.FC<{}> = () => (
   </div>
 );
 
-export interface Props {
-  isLayoutEditable: boolean;
-  toggleLayoutEditable: () => void;
-
-  isFullscreen: boolean;
-  toggleFullscreen: () => void;
-}
-
 // NICE: check React.memo usage after widget drawer redesign
 const Header: React.FC<Props> = memo(
   ({
@@ -103,5 +95,13 @@ const Header: React.FC<Props> = memo(
     );
   }
 );
+
+export interface Props {
+  isLayoutEditable: boolean;
+  toggleLayoutEditable: () => void;
+
+  isFullscreen: boolean;
+  toggleFullscreen: () => void;
+}
 
 export default Header;

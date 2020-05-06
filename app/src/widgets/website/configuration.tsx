@@ -7,10 +7,6 @@ import Button, { ButtonSize, ButtonVariant } from "components/button";
 
 import providers from "./lib/providers";
 
-export interface Props {
-  url: string;
-}
-
 const Configuration = ({
   options,
   setOptions,
@@ -53,5 +49,9 @@ const Configuration = ({
     </>
   );
 };
+
+export interface Props {
+  url: string;
+}
 
 export default Configuration;

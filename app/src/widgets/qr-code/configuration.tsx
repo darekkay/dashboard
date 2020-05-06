@@ -5,11 +5,6 @@ import { ConfigurationProps } from "widgets/index";
 import Input from "components/forms/input";
 import TextArea from "components/forms/text-area";
 
-export interface Props {
-  content: string;
-  headline?: string;
-}
-
 const Configuration = ({
   options,
   setOptions,
@@ -35,5 +30,10 @@ const Configuration = ({
     </>
   );
 };
+
+export interface Props {
+  content: string;
+  headline?: string;
+}
 
 export default Configuration;

@@ -4,11 +4,6 @@ import cn from "classnames";
 
 import "./styles.scss";
 
-export interface Props {
-  className?: string;
-  type?: "spinner" | "skeleton";
-}
-
 const Loading: React.FC<Props> = ({ className, type = "spinner" }) => {
   const { t } = useTranslation();
   return (
@@ -24,5 +19,10 @@ const Loading: React.FC<Props> = ({ className, type = "spinner" }) => {
     />
   );
 };
+
+export interface Props {
+  className?: string;
+  type?: "spinner" | "skeleton";
+}
 
 export default Loading;

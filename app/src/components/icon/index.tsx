@@ -8,14 +8,6 @@ import "./styles.scss";
 
 export type IconName = FontAwesomeIconName;
 
-export interface Props {
-  className?: string;
-  color?: string;
-  name: IconName;
-  alt?: string;
-  position?: "left" | "right";
-}
-
 const renderIcon: React.FC<Props> = props => {
   const fontAwesomeIcon = fontAwesomeIcons[props.name];
   if (fontAwesomeIcon !== undefined) {
@@ -41,5 +33,13 @@ const Icon: React.FC<Props> = props => {
     </div>
   );
 };
+
+export interface Props {
+  className?: string;
+  color?: string;
+  name: IconName;
+  alt?: string;
+  position?: "left" | "right";
+}
 
 export default Icon;

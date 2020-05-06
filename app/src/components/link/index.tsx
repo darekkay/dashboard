@@ -1,9 +1,5 @@
 import React from "react";
 
-export interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  external?: boolean;
-}
-
 export const Link: React.FC<Props> = props => {
   const { external = true, ...domProps } = props;
   return (
@@ -16,5 +12,9 @@ export const Link: React.FC<Props> = props => {
     </a>
   );
 };
+
+export interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  external?: boolean;
+}
 
 export default Link;

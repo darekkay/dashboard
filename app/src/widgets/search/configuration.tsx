@@ -7,11 +7,6 @@ import Button, { ButtonSize, ButtonVariant } from "components/button";
 
 import providers from "./lib/providers";
 
-export interface Props {
-  title: string;
-  pattern: string;
-}
-
 const Configuration = ({
   options,
   setOptions,
@@ -58,5 +53,10 @@ const Configuration = ({
     </>
   );
 };
+
+export interface Props {
+  title: string;
+  pattern: string;
+}
 
 export default Configuration;

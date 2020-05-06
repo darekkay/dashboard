@@ -18,27 +18,7 @@ import widgets, { ValueUpdateAction } from "widgets";
 import makeSelectWidget, { getTypeFromId } from "./selectors";
 import { actionCreators, TriggerUpdateAction, WidgetMeta } from "./duck";
 
-const initialDimensions = { width: 1, height: 1 };
-
-export interface Dimensions {
-  width: number;
-  height: number;
-}
-
-export interface Props {
-  id: string;
-  type: string;
-  options: Record<string, any>;
-  data: Record<string, any>;
-  meta: WidgetMeta;
-  setOptions: ValueUpdateAction;
-  setData: ValueUpdateAction;
-  triggerUpdate: (action: TriggerUpdateAction) => void;
-  removeWidgetFromLayout: (id: string) => void;
-  className?: string;
-  /** Required to inject the resize handle */
-  children?: React.ReactNode;
-}
+const initialDimensions: Dimensions = { width: 1, height: 1 };
 
 /** Single widget within the dashboard */
 export const Widget: React.FC<Props & ErrorProps> = props => {
@@ -194,6 +174,27 @@ export const Widget: React.FC<Props & ErrorProps> = props => {
     </>
   );
 };
+
+export interface Props {
+  id: string;
+  type: string;
+  options: Record<string, any>;
+  data: Record<string, any>;
+  meta: WidgetMeta;
+  setOptions: ValueUpdateAction;
+  setData: ValueUpdateAction;
+  triggerUpdate: (action: TriggerUpdateAction) => void;
+  removeWidgetFromLayout: (id: string) => void;
+  className?: string;
+
+  /** Required to inject the resize handle */
+  children?: React.ReactNode;
+}
+
+export interface Dimensions {
+  width: number;
+  height: number;
+}
 
 const mapStateToProps = (id: string) => makeSelectWidget(id);
 

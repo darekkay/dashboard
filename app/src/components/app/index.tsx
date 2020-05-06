@@ -15,22 +15,6 @@ import { importWidgets, WidgetsState } from "components/widget/duck";
 
 import mapStateToProps from "./selectors";
 
-export interface Props {
-  widgetIDs: string[];
-
-  layout: Layout;
-  saveLayout: (layout: Layout) => void;
-
-  isLayoutEditable: boolean;
-  toggleLayoutEditable: () => void;
-
-  addWidgetToLayout: (widgetName: string) => void;
-  removeWidgetFromLayout: (widgetId: string) => void;
-  importWidgets: (widgets: WidgetsState) => void;
-
-  currentTheme: Theme;
-}
-
 export const App: React.FC<Props> = props => {
   const {
     widgetIDs,
@@ -79,6 +63,22 @@ export const App: React.FC<Props> = props => {
     </Fullscreen>
   );
 };
+
+export interface Props {
+  widgetIDs: string[];
+
+  layout: Layout;
+  saveLayout: (layout: Layout) => void;
+
+  isLayoutEditable: boolean;
+  toggleLayoutEditable: () => void;
+
+  addWidgetToLayout: (widgetName: string) => void;
+  removeWidgetFromLayout: (widgetId: string) => void;
+  importWidgets: (widgets: WidgetsState) => void;
+
+  currentTheme: Theme;
+}
 
 export default connect(mapStateToProps, {
   ...layoutActionCreators,

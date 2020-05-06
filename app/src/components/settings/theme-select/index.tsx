@@ -8,13 +8,6 @@ import Icon from "components/icon";
 
 import selectComponentProps from "./selectors";
 
-export interface Props {
-  theme: Theme;
-  changeTheme: (payload: string) => void;
-}
-
-export type Theme = "default" | "dark";
-
 const themeSelectors = THEMES.map(theme => `theme-${theme}`);
 
 export const updateCssVariables = (theme: Theme) => {
@@ -76,5 +69,12 @@ export const ThemeSelect: React.FC<Props> = props => {
     </>
   );
 };
+
+export type Theme = "default" | "dark";
+
+export interface Props {
+  theme: Theme;
+  changeTheme: (payload: string) => void;
+}
 
 export default connect(selectComponentProps, actionCreators)(ThemeSelect);

@@ -10,16 +10,6 @@ import { WidgetsState } from "components/widget/duck";
 
 const ReactGridLayout = WidthProvider(Responsive);
 
-export interface Props {
-  layout: Layout;
-  isLayoutEditable: boolean;
-  widgetIDs: string[];
-  saveLayout: (layout: Layout) => void;
-  removeWidgetFromLayout: (widgetId: string) => void;
-  importWidgets: (widgets: WidgetsState) => void;
-  [key: string]: any; // required for shouldComponentUpdate
-}
-
 const updateProps = ["layout", "isLayoutEditable"];
 
 const makeWidgetMemoized = _.memoize(makeWidget);
@@ -71,6 +61,16 @@ class Dashboard extends React.Component<Props> {
       </ReactGridLayout>
     );
   }
+}
+
+export interface Props {
+  layout: Layout;
+  isLayoutEditable: boolean;
+  widgetIDs: string[];
+  saveLayout: (layout: Layout) => void;
+  removeWidgetFromLayout: (widgetId: string) => void;
+  importWidgets: (widgets: WidgetsState) => void;
+  [key: string]: any; // required for shouldComponentUpdate
 }
 
 export default Dashboard;
