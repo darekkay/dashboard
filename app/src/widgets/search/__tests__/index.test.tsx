@@ -15,7 +15,7 @@ describe("<Search />", () => {
       <Search
         {...widgetProps}
         id="search-mock-id"
-        name="Search"
+        title="Search"
         pattern="https://example.com?s=%s"
       />
     );

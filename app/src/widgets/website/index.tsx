@@ -4,6 +4,7 @@ import _ from "lodash";
 import WidgetUnconfigured from "components/widget-unconfigured";
 
 import { WidgetProps } from "../index";
+import { Props as ConfigurationProps } from "./configuration";
 import { widgetType } from "./properties";
 
 const Website: React.FC<Props> = memo(
@@ -15,8 +16,6 @@ const Website: React.FC<Props> = memo(
   (prevProps, nextProps) => prevProps.url === nextProps.url
 );
 
-interface Props extends WidgetProps {
-  url: string;
-}
+interface Props extends WidgetProps, ConfigurationProps {}
 
 export default Website;

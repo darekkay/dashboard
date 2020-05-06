@@ -24,10 +24,10 @@ export interface WidgetProps {
   triggerUpdate: (action: TriggerUpdateAction) => void;
 }
 
-export interface ConfigurationProps {
+export interface ConfigurationProps<T> {
   id: string;
-  options: Record<string, any>;
-  setOptions: (values: Record<string, any>) => void;
+  options: T;
+  setOptions: (values: Partial<T>) => void;
   save: () => void;
 }
 
@@ -43,7 +43,7 @@ export interface WidgetProperties {
 
 export interface WidgetElements {
   Component: React.ComponentClass<WidgetProps>;
-  Configuration: React.ComponentClass<ConfigurationProps>;
+  Configuration: React.ComponentClass<ConfigurationProps<any>>;
 }
 
 const importWidgets = (widgets: Record<string, WidgetProperties>) =>

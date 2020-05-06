@@ -3,11 +3,15 @@ import { useTranslation } from "react-i18next";
 
 import { ConfigurationProps } from "widgets/index";
 
+export interface Props {
+
+}
+
 const Configuration = ({
   options,
   setOptions,
   save
-}: ConfigurationProps) => {
+}: ConfigurationProps<Props>) => {
   const { t } = useTranslation();
   return (
     <></>

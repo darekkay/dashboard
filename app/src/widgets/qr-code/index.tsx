@@ -6,6 +6,7 @@ import WidgetUnconfigured from "components/widget-unconfigured";
 import { Dimensions } from "components/widget";
 
 import { WidgetProps } from "../index";
+import { Props as ConfigurationProps } from "./configuration";
 import { widgetType } from "./properties";
 
 const getSquareSize = (dimensions?: Dimensions) => {
@@ -22,8 +23,6 @@ const QrCode: React.FC<Props> = ({ meta, content }) => {
   );
 };
 
-interface Props extends WidgetProps {
-  content: string;
-}
+interface Props extends WidgetProps, ConfigurationProps {}
 
 export default QrCode;

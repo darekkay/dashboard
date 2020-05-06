@@ -8,6 +8,7 @@ import WidgetUnconfigured from "components/widget-unconfigured";
 import WidgetError from "components/widget-error";
 
 import { WidgetProps } from "../index";
+import { Props as ConfigurationProps } from "./configuration";
 import { widgetType } from "./properties";
 export { saga } from "./sagas";
 
@@ -85,7 +86,7 @@ const GithubStats: React.FC<Props> = ({
   );
 };
 
-interface Props extends WidgetProps {
+interface Props extends WidgetProps, ConfigurationProps {
   name?: string;
 
   followers?: number;
@@ -93,8 +94,6 @@ interface Props extends WidgetProps {
   subscribers?: number;
   forks?: number;
   open_issues?: number;
-
-  query?: string;
 }
 
 export default GithubStats;

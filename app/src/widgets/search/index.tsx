@@ -8,6 +8,7 @@ import Icon from "components/icon";
 import WidgetUnconfigured from "components/widget-unconfigured";
 
 import { WidgetProps } from "../index";
+import { Props as ConfigurationProps } from "./configuration";
 import { widgetType } from "./properties";
 
 const openSearchUrl = (
@@ -52,9 +53,6 @@ const Search: React.FC<Props> = ({ id, pattern }) => {
   );
 };
 
-interface Props extends WidgetProps {
-  name: string;
-  pattern: string;
-}
+interface Props extends WidgetProps, ConfigurationProps {}
 
 export default Search;

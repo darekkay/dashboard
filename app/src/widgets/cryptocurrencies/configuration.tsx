@@ -5,7 +5,12 @@ import { ConfigurationProps } from "widgets/index";
 import Dropdown from "components/forms/dropdown";
 import Link from "components/link";
 
-const Configuration = ({ options, setOptions }: ConfigurationProps) => {
+export interface Props {
+  crypto: string;
+  fiat: string;
+}
+
+const Configuration = ({ options, setOptions }: ConfigurationProps<Props>) => {
   const { t } = useTranslation();
   return (
     <>

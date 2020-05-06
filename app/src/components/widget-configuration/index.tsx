@@ -70,7 +70,7 @@ export interface Props {
   setOptions: ValueUpdateAction;
   isModalOpen: boolean;
   closeModal: () => void;
-  configuration: React.ComponentClass<ConfigurationProps, any>;
+  configuration: React.ComponentClass<ConfigurationProps<any>, any>;
 }
 
 export default WidgetConfiguration;

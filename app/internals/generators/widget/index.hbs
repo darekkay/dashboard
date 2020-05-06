@@ -1,12 +1,13 @@
 import React from "react";
 
 import { WidgetProps } from "../index";
+import { Props as ConfigurationProps } from "./configuration";
 
 const {{ properCase name }}: React.FC<Props> = ({ id, setData }) => {
   return (<div></div>);
 };
 
-interface Props extends WidgetProps {
+interface Props extends WidgetProps, ConfigurationProps {
 
 }
 

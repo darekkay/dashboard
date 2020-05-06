@@ -7,7 +7,16 @@ import Button, { ButtonSize, ButtonVariant } from "components/button";
 
 import providers from "./lib/providers";
 
-const Configuration = ({ options, setOptions, save }: ConfigurationProps) => {
+export interface Props {
+  title: string;
+  pattern: string;
+}
+
+const Configuration = ({
+  options,
+  setOptions,
+  save
+}: ConfigurationProps<Props>) => {
   const { t } = useTranslation();
   return (
     <>

@@ -4,7 +4,15 @@ import { useTranslation } from "react-i18next";
 import { ConfigurationProps } from "widgets/index";
 import Input from "components/forms/input";
 
-const Configuration = ({ options, setOptions, save }: ConfigurationProps) => {
+export interface Props {
+  query?: string;
+}
+
+const Configuration = ({
+  options,
+  setOptions,
+  save
+}: ConfigurationProps<Props>) => {
   const { t } = useTranslation();
   return (
     <>
