@@ -5,12 +5,7 @@ import { ConfigurationProps } from "widgets/index";
 import Dropdown from "components/forms/dropdown";
 import Link from "components/link";
 
-const Configuration = ({
-  id,
-  options,
-  setOptions,
-  save
-}: ConfigurationProps) => {
+const Configuration = ({ options, setOptions }: ConfigurationProps) => {
   const { t } = useTranslation();
   return (
     <>

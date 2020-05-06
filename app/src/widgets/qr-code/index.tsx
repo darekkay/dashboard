@@ -12,7 +12,7 @@ const getSquareSize = (dimensions?: Dimensions) => {
   return Math.min(dimensions?.width || 0, dimensions?.height || 0);
 };
 
-const QrCode: React.FC<Props> = ({ id, meta, content }) => {
+const QrCode: React.FC<Props> = ({ meta, content }) => {
   const imageSize = getSquareSize(meta.dimensions);
   if (_.isEmpty(content)) return <WidgetUnconfigured type={widgetType} />;
   return (

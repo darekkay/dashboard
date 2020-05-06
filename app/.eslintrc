@@ -71,9 +71,9 @@
         "no-array-constructor": "off",
         "no-unused-vars": "off",
         "@typescript-eslint/no-unused-vars": [
-          "warn",
+          "error",
           {
-            "args": "none",
+            "args": "after-used",
             "ignoreRestSiblings": true
           }
         ],

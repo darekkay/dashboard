@@ -5,12 +5,7 @@ import { ConfigurationProps } from "widgets/index";
 import Input from "components/forms/input";
 import TextArea from "components/forms/text-area";
 
-const Configuration = ({
-  id,
-  options,
-  setOptions,
-  save
-}: ConfigurationProps) => {
+const Configuration = ({ options, setOptions, save }: ConfigurationProps) => {
   const { t } = useTranslation();
   return (
     <>

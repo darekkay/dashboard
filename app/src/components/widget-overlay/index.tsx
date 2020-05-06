@@ -20,8 +20,6 @@ const isMouseMoved = (
 const WidgetOverlay: React.FC<Props> = ({
   id,
   type,
-  options,
-  setOptions,
   isWidgetMenuVisible,
   isDraggable,
   setDraggable,

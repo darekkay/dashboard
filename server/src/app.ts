@@ -19,6 +19,7 @@ app.get("/", (_req, res) => {
 includeRoutes(app);
 
 // custom error handling
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const errorHandler: ErrorRequestHandler = (error, __, res, ___) => {
   const axiosErrorStatusCode = error?.response?.status;
 
