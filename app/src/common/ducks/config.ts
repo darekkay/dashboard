@@ -5,10 +5,8 @@ import { put, takeEvery } from "redux-saga/effects";
 
 import { State } from "state/store";
 import { Theme } from "components/settings/theme-select";
-import { importState, handleImportState } from "common/ducks/state";
+import { importState } from "common/ducks/state";
 import { IS_DEVELOPMENT } from "common/environment";
-
-const SUB_STATE_NAME = "config";
 
 export interface ConfigState {
   theme: string;
@@ -33,19 +31,18 @@ export const initialState = {
 };
 
 export const reducerWithInitialState = (state: ConfigState = initialState) =>
-  createReducer(state, {
-    ...handleImportState(SUB_STATE_NAME),
+  createReducer<ConfigState>(state, builder =>
+    builder
+      .addCase(importState, (state, action) => action.payload.config)
 
-    [changeTheme as any]: (state, action) => ({
-      ...state,
-      theme: action.payload
-    }),
+      .addCase(changeTheme, (state, action) => {
+        state.theme = action.payload;
+      })
 
-    [changeLanguage as any]: (state, action) => ({
-      ...state,
-      language: action.payload
-    })
-  });
+      .addCase(changeLanguage, (state, action) => {
+        state.language = action.payload;
+      })
+  );
 
 function* updateLanguage(action: PayloadAction<State>) {
   yield put(changeLanguage(action.payload.config.language));

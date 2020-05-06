@@ -6,9 +6,7 @@ import { MomentInputObject } from "moment";
 import widgets from "widgets";
 import { Dimensions } from "components/widget/index";
 import { IconName } from "components/icon";
-import { handleImportState } from "common/ducks/state";
-
-const SUB_STATE_NAME = "widgets";
+import { importState } from "common/ducks/state";
 
 interface SetValuesPayload {
   id: string;
@@ -71,67 +69,66 @@ export interface WidgetsState {
 export const initialState = {};
 
 export const reducerWithInitialState = (state: WidgetsState = initialState) =>
-  createReducer(state, {
-    ...handleImportState(SUB_STATE_NAME),
+  createReducer<WidgetsState>(state, builder =>
+    builder
+      .addCase(importState, (state, action) => action.payload.widgets)
 
-    [setOptions.toString()]: (state, action) => {
-      const { id, values } = action.payload;
-      state[id].options = { ...state[id].options, ...values };
-    },
+      .addCase(setOptions, (state, action) => {
+        const { id, values } = action.payload;
+        state[id].options = { ...state[id].options, ...values };
+      })
 
-    [setData.toString()]: (state, action) => {
-      const { id, values } = action.payload;
-      state[id].data = { ...state[id].data, ...values };
-    },
+      .addCase(setData, (state, action) => {
+        const { id, values } = action.payload;
+        state[id].data = { ...state[id].data, ...values };
+      })
 
-    [importWidgets.toString()]: (state, action) => {
-      return action.payload;
-    },
+      .addCase(importWidgets, (state, action) => action.payload)
 
-    // NICE: for each updateStatus action, check for the correct preciding updateStatus
-    // https://mobile.twitter.com/devongovett/status/1256368203594264576
+      // NICE: for each updateStatus action, check for the correct preciding updateStatus
+      // https://mobile.twitter.com/devongovett/status/1256368203594264576
 
-    [updatePending.toString()]: (state, action) => {
-      const id = action.payload;
-      state[id].meta.updateStatus = "pending";
-    },
+      .addCase(updatePending, (state, action) => {
+        const id = action.payload;
+        state[id].meta.updateStatus = "pending";
+      })
 
-    [updateSuccess.toString()]: (state, action) => {
-      const id = action.payload;
-      state[id].meta = {
-        ...state[id].meta,
-        updateStatus: "success",
-        errorCode: undefined,
-        lastUpdated: Date.now()
-      };
-    },
+      .addCase(updateSuccess, (state, action) => {
+        const id = action.payload;
+        state[id].meta = {
+          ...state[id].meta,
+          updateStatus: "success",
+          errorCode: undefined,
+          lastUpdated: Date.now()
+        };
+      })
 
-    [updateError.toString()]: (state, action) => {
-      const { id, error } = action.payload as UpdateActionError;
-      state[id].meta.updateStatus = "error";
-      state[id].meta.errorCode = error?.response?.status; // use axios response error code
-    },
+      .addCase(updateError, (state, action) => {
+        const { id, error } = action.payload as UpdateActionError;
+        state[id].meta.updateStatus = "error";
+        state[id].meta.errorCode = error?.response?.status; // use axios response error code
+      })
 
-    [updateAbort.toString()]: (state, action) => {
-      const id = action.payload;
-      state[id].meta.updateStatus = undefined;
-    },
+      .addCase(updateAbort, (state, action) => {
+        const id = action.payload;
+        state[id].meta.updateStatus = undefined;
+      })
 
-    [createWidget.toString()]: (state, action) => {
-      const { id, type } = action.payload;
-      state[id] = {
-        type,
-        data: {},
-        options: widgets[type].initialOptions || {},
-        meta: widgets[type].initialMeta || {}
-      };
-    },
+      .addCase(createWidget, (state, action) => {
+        const { id, type } = action.payload;
+        state[id] = {
+          type,
+          data: {},
+          options: widgets[type].initialOptions || {},
+          meta: widgets[type].initialMeta || {}
+        };
+      })
 
-    [removeWidget.toString()]: (state, action) => {
-      const id = action.payload;
-      delete state[id];
-    }
-  });
+      .addCase(removeWidget, (state, action) => {
+        const id = action.payload;
+        delete state[id];
+      })
+  );
 
 export const actionCreators = {
   setOptions,
