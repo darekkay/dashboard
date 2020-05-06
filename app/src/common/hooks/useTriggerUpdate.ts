@@ -7,9 +7,7 @@ import { TriggerUpdateAction, WidgetMeta } from "components/widget/duck";
 
 interface UseTriggerUpdate {
   id: string;
-  params: {
-    [key: string]: any;
-  };
+  params: Record<string, any>;
   meta: WidgetMeta;
   triggerUpdate: (action: TriggerUpdateAction) => void;
 }

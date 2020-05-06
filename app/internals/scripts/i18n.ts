@@ -23,7 +23,7 @@ const flattenKeys = (object: any, path: string[] = []): any =>
         {}
       );
 
-const readI18nFiles = (path: string): { [key: string]: string[] } =>
+const readI18nFiles = (path: string): Record<string, string[]> =>
   readdirSync(path)
     // Read all i18n files
     .map(fileName => ({

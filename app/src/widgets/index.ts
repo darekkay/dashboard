@@ -1,6 +1,5 @@
 import React from "react";
 import { injectSaga } from "redux-sagas-injector";
-import { MomentInputObject } from "moment";
 
 import { TriggerUpdateAction, WidgetMeta } from "components/widget/duck";
 import { Dimensions } from "components/widget";
@@ -13,7 +12,7 @@ export type ValueUpdateAction = ({
   values
 }: {
   id: string;
-  values: { [key: string]: any };
+  values: Record<string, any>;
 }) => void;
 
 export interface WidgetProps {
@@ -27,8 +26,8 @@ export interface WidgetProps {
 
 export interface ConfigurationProps {
   id: string;
-  options: { [key: string]: any };
-  setOptions: (values: { [key: string]: any }) => void;
+  options: Record<string, any>;
+  setOptions: (values: Record<string, any>) => void;
   save: () => void;
 }
 
@@ -38,13 +37,8 @@ export interface WidgetProperties {
   category: WidgetCategory;
   initialHeight: number;
   initialWidth: number;
-  initialOptions: {
-    [key: string]: any;
-  };
-  initialMeta: {
-    updateCycle?: MomentInputObject;
-    [key: string]: any;
-  };
+  initialOptions: Record<string, any>;
+  initialMeta: WidgetMeta;
 }
 
 export interface WidgetElements {
@@ -52,7 +46,7 @@ export interface WidgetElements {
   Configuration: React.ComponentClass<ConfigurationProps>;
 }
 
-const importWidgets = (widgets: { [key: string]: WidgetProperties }) =>
+const importWidgets = (widgets: Record<string, WidgetProperties>) =>
   Object.entries(widgets).reduce(
     (acc, [type, values]) => ({
       ...acc,
@@ -72,7 +66,7 @@ const importWidgets = (widgets: { [key: string]: WidgetProperties }) =>
       }
     }),
     {}
-  ) as { [key: string]: WidgetProperties & WidgetElements };
+  ) as Record<string, WidgetProperties & WidgetElements>;
 
 export default importWidgets(
   availableWidgets as Record<string, WidgetProperties>

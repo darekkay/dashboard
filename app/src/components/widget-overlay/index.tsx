@@ -110,7 +110,7 @@ const WidgetOverlay: React.FC<Props> = ({
 export interface Props {
   id: string;
   type: string;
-  options: { [key: string]: any };
+  options: Record<string, any>;
   setOptions: ValueUpdateAction;
   isWidgetMenuVisible: boolean;
   isDraggable: boolean;

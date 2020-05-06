@@ -28,8 +28,8 @@ export interface Dimensions {
 export interface Props {
   id: string;
   type: string;
-  options: { [key: string]: any };
-  data: { [key: string]: any };
+  options: Record<string, any>;
+  data: Record<string, any>;
   meta: WidgetMeta;
   setOptions: ValueUpdateAction;
   setData: ValueUpdateAction;

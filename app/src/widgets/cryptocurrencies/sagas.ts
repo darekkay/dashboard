@@ -13,7 +13,7 @@ import {
 
 import { widgetType } from "./properties";
 
-const fetchCryptocurrencyPrice = async (params: { [key: string]: any }) => {
+const fetchCryptocurrencyPrice = async (params: Record<string, any>) => {
   const response = await api.get(CRYPTOCURRENCIES_PRICE, { params });
   return response.data;
 };

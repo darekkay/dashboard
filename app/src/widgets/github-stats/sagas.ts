@@ -13,7 +13,7 @@ import {
 
 import { widgetType } from "./properties";
 
-const fetchGitHubStats = async (params: { [key: string]: any }) => {
+const fetchGitHubStats = async (params: Record<string, any>) => {
   const response = await api.get(GITHUB_STATS, { params });
   return response.data;
 };

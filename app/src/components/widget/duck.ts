@@ -12,12 +12,12 @@ const SUB_STATE_NAME = "widgets";
 
 interface SetValuesPayload {
   id: string;
-  values: { [key: string]: any };
+  values: Record<string, any>;
 }
 
 export interface TriggerUpdateAction {
   id: string;
-  params: { [key: string]: any };
+  params: Record<string, any>;
 }
 
 export interface UpdateActionError {
@@ -59,12 +59,8 @@ export interface WidgetMeta {
 
 export interface Widget {
   type: string;
-  options: {
-    [key: string]: any;
-  };
-  data: {
-    [key: string]: any;
-  };
+  options: Record<string, any>;
+  data: Record<string, any>;
   meta: WidgetMeta;
 }
 
