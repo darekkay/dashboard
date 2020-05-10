@@ -12,7 +12,7 @@ import initStore from "state/store";
 const { store, persistor, purgeStore } = initStore();
 export const PersistorContext = React.createContext(purgeStore);
 
-const Entry: React.FC<{}> = () => (
+const Entry: React.FC = () => (
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={<Loading className="mt-8" />} persistor={persistor}>

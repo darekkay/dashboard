@@ -1,58 +1,74 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import { renderConnected, screen } from "common/testing";
 import _ from "lodash";
 
-import Widget from "components/widget";
-import { Layout } from "common/ducks/layout";
+import { stateProps } from "common/utils/mock";
 
-import Dashboard from "../index";
+import Dashboard, { shouldUpdateComponent, Props } from "../index";
 
 describe("<Dashboard />", () => {
-  let wrapper: ShallowWrapper;
-
-  const layout: Layout = {
-    mobile: [],
-    desktop: []
+  const defaultProps: Props = {
+    layout: {
+      mobile: [],
+      desktop: []
+    },
+    isLayoutEditable: false,
+    saveLayout: _.noop,
+    removeWidgetFromLayout: _.noop,
+    importWidgets: _.noop,
+    widgetIDs: ["search-01", "text-02"]
   };
 
-  beforeEach(() => {
-    wrapper = shallow(
-      <Dashboard
-        layout={layout}
-        isLayoutEditable={false}
-        saveLayout={_.noop}
-        removeWidgetFromLayout={_.noop}
-        importWidgets={_.noop}
-        widgetIDs={["id-01", "id-02"]}
-      />
-    );
-  });
-
-  const shouldUpdate = ({
-    columns,
-    widgetIDs
-  }: {
-    columns?: number;
-    widgetIDs?: string[];
-  }) =>
-    // @ts-ignore
-    wrapper.instance().shouldComponentUpdate({
-      columns: columns || 3,
-      widgetIDs: widgetIDs || ["id-02", "id-01"],
-      isLayoutEditable: false,
-      layout
+  test("renders widgets", () => {
+    renderConnected(<Dashboard {...defaultProps} />, {
+      initialState: {
+        ...stateProps,
+        widgets: {
+          "search-01": {
+            type: "search",
+            data: {},
+            options: {
+              pattern: "https://duckduckgo.com/?q=%s",
+              title: "DuckDuckGo"
+            },
+            meta: {}
+          },
+          "text-02": {
+            type: "text",
+            data: {
+              content:
+                "Rule #1\n\nAlways code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live."
+            },
+            options: {},
+            meta: {}
+          }
+        }
+      }
     });
 
-  xit("renders widgets", () => {
-    test.todo("Write tests for connected component"); // TODO
-    expect(wrapper.find(Widget)).toHaveLength(2);
+    expect(screen.getAllByTestId("widget")).toHaveLength(2);
+    expect(screen.queryByText("welcome.message1")).toBeNull();
   });
 
-  it("does not perform unnecessary re-renders", () => {
-    expect(shouldUpdate({})).toBe(false);
-    expect(shouldUpdate({ columns: 3, widgetIDs: ["id-02", "id-01"] })).toBe(
-      false
-    );
-    expect(shouldUpdate({ widgetIDs: ["id-01"] })).toBe(true);
+  test("renders a welcome page", () => {
+    renderConnected(<Dashboard {...defaultProps} widgetIDs={[]} />);
+    expect(screen.getByText("welcome.message1")).toBeInTheDocument();
+  });
+
+  test("does not perform unnecessary re-renders", () => {
+    expect(
+      shouldUpdateComponent(defaultProps, {
+        ...defaultProps,
+        widgetIDs: ["text-02", "search-01"],
+        saveLayout: () => 2
+      })
+    ).toBe(false);
+
+    expect(
+      shouldUpdateComponent(defaultProps, {
+        ...defaultProps,
+        widgetIDs: ["search-01"]
+      })
+    ).toBe(true);
   });
 });

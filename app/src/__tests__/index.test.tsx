@@ -1,7 +1,13 @@
-import "jest";
+import ReactDOM from "react-dom";
 
 describe("index", () => {
-  it("renders without crashing", () => {
+  test("renders the app", () => {
+    // See also: https://stackoverflow.com/questions/43044696/test-a-create-react-app-index-js-file
+
+    const reactRenderSpy = jest
+      .spyOn(ReactDOM, "render")
+      .mockImplementation(() => undefined);
+
     const root = document.createElement("div");
     root.setAttribute("id", "root");
     document.body.appendChild(root);
@@ -11,7 +17,8 @@ describe("index", () => {
     document.body.appendChild(themeToggle);
 
     require("../index");
-    // @ts-ignore
-    expect(document.getElementById("root")._reactRootContainer).toBeTruthy();
+    expect(reactRenderSpy).toHaveBeenCalledTimes(1);
   });
 });
+
+export {}; // required for TS

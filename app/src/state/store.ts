@@ -21,7 +21,7 @@ export interface State {
   readonly [key: string]: any;
 }
 
-const initStore = () => {
+const initStore = (initialState?: State) => {
   // TODO: replace with "configureStore"?
   // https://redux.js.org/recipes/configuring-your-store#simplifying-setup-with-redux-toolkit
   const composeEnhancers = composeWithDevTools({
@@ -33,7 +33,7 @@ const initStore = () => {
   const enhancers = composeEnhancers(applyMiddleware(sagaMiddleware));
   const store = createInjectSagasStore(
     { rootSaga },
-    persistReducer(rootReducer),
+    persistReducer(rootReducer(initialState)),
     {},
     enhancers
   );

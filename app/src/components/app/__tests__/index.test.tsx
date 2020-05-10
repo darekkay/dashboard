@@ -1,14 +1,16 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
-import { mountConnected } from "common/utils/mock";
+import { renderConnected, screen } from "common/testing";
+
 import App from "../index";
 
-/** With react-grid-layout 0.17.1, this test is failing */
-it("renders without crashing", () => {
-  const div = document.createElement("div");
+describe("<App>", () => {
+  test("renders without errors", () => {
+    renderConnected(<App />);
+    expect(screen.getByRole("main")).toBeInTheDocument();
 
-  const wrapper = mountConnected(<App />);
-  ReactDOM.render(wrapper, div);
-  ReactDOM.unmountComponentAtNode(div);
+    // TODO: replace when the issue is fixed
+    // "banner" role is currently broken: https://github.com/testing-library/dom-testing-library/issues/578
+    // expect(screen.getByRole("banner", { hidden: true })).toBeInTheDocument();
+  });
 });

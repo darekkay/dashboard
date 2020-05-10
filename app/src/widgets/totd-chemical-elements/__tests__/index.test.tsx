@@ -1,15 +1,13 @@
 import React from "react";
-import { mount, ReactWrapper } from "enzyme";
+import { render, screen } from "common/testing";
 
 import { widgetProps } from "common/utils/mock";
 
 import ChemicalElements from "../index";
 
 describe("<ChemicalElements />", () => {
-  let wrapper: ReactWrapper;
-
-  beforeEach(() => {
-    wrapper = mount(
+  test("renders without errors", () => {
+    render(
       <ChemicalElements
         {...widgetProps}
         id="totd-chemical-elements-mock-id"
@@ -19,19 +17,27 @@ describe("<ChemicalElements />", () => {
         nameDE="Vanadium"
       />
     );
+
+    expect(screen.getByText("Vanadium")).toBeInTheDocument();
   });
 
-  it("renders without error", () => {
-    expect(wrapper.find("div[children='Vanadium']")).toHaveLength(1);
-  });
-
-  /* TODO: Write using react-hooks-testing-library or similar */
-  xit("should trigger update", () => {
+  test("triggers an update", () => {
     const triggerUpdate = jest.fn();
-    wrapper.setProps({
-      meta: { updateCycle: { hours: 1 } },
-      triggerUpdate
-    });
+    render(
+      <ChemicalElements
+        {...widgetProps}
+        id="totd-chemical-elements-mock-id"
+        symbol="V"
+        atomicNumber="23"
+        name="Vanadium"
+        nameDE="Vanadium"
+        triggerUpdate={triggerUpdate}
+      />
+    );
     expect(triggerUpdate).toHaveBeenCalledTimes(1);
+    expect(triggerUpdate).toHaveBeenCalledWith({
+      id: "totd-chemical-elements-mock-id",
+      params: {}
+    });
   });
 });

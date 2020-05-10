@@ -1,16 +1,16 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import { render, screen } from "common/testing";
 
 import Dropdown from "components/forms/dropdown/index";
 
 describe("<Dropdown />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<Dropdown setValue={() => null} options={[]} />);
+  test("renders without errors", () => {
+    render(<Dropdown setValue={() => null} options={[]} />);
+    expect(screen.getByRole("combobox")).toBeInTheDocument();
   });
 
-  it("renders without error", () => {
-    expect(wrapper.isEmptyRender()).toBe(false);
+  test("renders options", () => {
+    render(<Dropdown setValue={() => null} options={["A", "B", "C"]} />);
+    expect(screen.getAllByRole("option")).toHaveLength(3);
   });
 });

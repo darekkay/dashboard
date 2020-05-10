@@ -53,6 +53,6 @@ const Search: React.FC<Props> = ({ id, pattern }) => {
   );
 };
 
-interface Props extends WidgetProps, ConfigurationProps {}
+export interface Props extends WidgetProps, ConfigurationProps {}
 
 export default Search;

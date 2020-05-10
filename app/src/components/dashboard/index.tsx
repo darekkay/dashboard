@@ -14,13 +14,20 @@ const updateProps = ["layout", "isLayoutEditable"];
 
 const makeWidgetMemoized = _.memoize(makeWidget);
 
+export const shouldUpdateComponent = (
+  currentProps: Props,
+  nextProps: Props
+) => {
+  return (
+    currentProps.widgetIDs.length !== nextProps.widgetIDs.length ||
+    updateProps.some(prop => currentProps[prop] !== nextProps[prop])
+  );
+};
+
 /** A grid containing all the widgets */
 class Dashboard extends React.Component<Props> {
   shouldComponentUpdate(nextProps: Readonly<Props>) {
-    return (
-      this.props.widgetIDs.length !== nextProps.widgetIDs.length ||
-      updateProps.some(prop => this.props[prop] !== nextProps[prop])
-    );
+    return shouldUpdateComponent(this.props, nextProps);
   }
 
   render() {

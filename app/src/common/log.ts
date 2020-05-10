@@ -1,8 +1,12 @@
 import logger from "loglevel";
 
-import { IS_PRODUCTION } from "common/environment";
+const logLevel = {
+  development: logger.levels.TRACE,
+  production: logger.levels.INFO,
+  test: logger.levels.ERROR
+};
 
-logger.setLevel(IS_PRODUCTION ? logger.levels.INFO : logger.levels.TRACE);
+logger.setLevel(logLevel[process.env.NODE_ENV]);
 
 /* Custom logger facade */
 const log = {

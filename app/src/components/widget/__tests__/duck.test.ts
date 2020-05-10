@@ -1,4 +1,7 @@
 import _ from "lodash";
+
+import { importState } from "common/ducks/state";
+import { stateProps } from "common/utils/mock";
 import {
   reducerWithInitialState,
   actionCreators,
@@ -16,7 +19,7 @@ const initialState = {
 };
 
 describe("Widget duck", () => {
-  it("updates the widget's option value", () => {
+  test("updates the widget's option value", () => {
     const updatedState = reducerWithInitialState()(
       initialState,
       actionCreators.setOptions({
@@ -28,7 +31,7 @@ describe("Widget duck", () => {
     expect(_.get(updatedState, "date-time-01.options.content")).toEqual("mock");
   });
 
-  it("updates the widget's data value", () => {
+  test("updates the widget's data value", () => {
     const updatedState = reducerWithInitialState()(
       initialState,
       actionCreators.setData({
@@ -40,7 +43,7 @@ describe("Widget duck", () => {
     expect(_.get(updatedState, "date-time-01.data.content")).toEqual("mock");
   });
 
-  it("creates and removes a widget", () => {
+  test("creates and removes a widget", () => {
     let updatedState = reducerWithInitialState()(
       initialState,
       createWidget({
@@ -56,5 +59,26 @@ describe("Widget duck", () => {
       removeWidget("date-time-01")
     );
     expect(_.get(updatedState, "date-time-01.data")).toBeUndefined();
+  });
+
+  test("imports the state", () => {
+    const widgets = {
+      "search-01": {
+        type: "search",
+        options: {},
+        data: {},
+        meta: {}
+      }
+    };
+
+    let updatedState = reducerWithInitialState()(
+      initialState,
+      importState({
+        ...stateProps,
+        widgets
+      })
+    );
+
+    expect(updatedState).toBe(widgets);
   });
 });

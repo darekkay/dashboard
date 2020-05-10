@@ -1,26 +1,28 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import { render, screen } from "common/testing";
 
 import Link from "../index";
 
 describe("<Link />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<Link href="#">Label</Link>);
+  test("renders without errors", () => {
+    render(<Link href="#">Link</Link>);
+    const link = screen.getByRole("link", { name: /link/i });
+    expect(link).toBeInTheDocument();
   });
 
-  it("renders a single a element", () => {
-    expect(wrapper.find("a")).toHaveLength(1);
-  });
-
-  it("renders target and rel for external links", () => {
-    expect(wrapper.find("a[target][rel]")).toHaveLength(1);
-    wrapper = shallow(
+  test("external links open in a new tab", () => {
+    const { rerender } = render(
       <Link href="#" external={false}>
-        Label
+        Link content
       </Link>
     );
-    expect(wrapper.find("a[target][rel]")).toHaveLength(0);
+
+    const link = screen.getByRole("link", { name: /link content/i });
+    expect(link).not.toHaveAttribute("target");
+    expect(link).not.toHaveAttribute("rel");
+
+    rerender(<Link external>Link</Link>);
+    expect(link).toHaveAttribute("target", "_blank");
+    expect(link).toHaveAttribute("rel", "noopener noreferrer");
   });
 });

@@ -1,34 +1,54 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import { render, screen, fireEvent, userEvent } from "common/testing";
 
 import Input from "../index";
 
 describe("<Input />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<Input value="text" setValue={() => null} />);
+  test("renders without errors", () => {
+    render(<Input value="text" setValue={() => null} />);
+    expect(screen.getByRole("textbox")).toBeInTheDocument();
   });
 
-  it("renders without error", () => {
-    expect(wrapper.find("input")).toHaveLength(1);
+  test("handles Enter key up event", async () => {
+    const setValue = jest.fn();
+    render(<Input value="text" setValue={() => null} onEnter={setValue} />);
+    const input = screen.getByRole("textbox");
+
+    expect(setValue).not.toHaveBeenCalled();
+    await fireEvent.keyUp(input, { which: 13, key: "Enter" });
+    expect(setValue).toHaveBeenCalled();
   });
 
-  it("handles Enter key up event", () => {
-    const handler = jest.fn();
-    wrapper.setProps({ onEnter: handler });
-    const input = wrapper.find("input");
-    expect(handler).not.toHaveBeenCalled();
-    input.simulate("keyup", { which: 13, key: "Enter", target: input });
-    expect(handler).toHaveBeenCalled();
+  test("handles Escape key up event", async () => {
+    const setValue = jest.fn();
+    render(<Input value="text" setValue={setValue} clearOnEscape />);
+    const input = screen.getByRole("textbox");
+
+    expect(setValue).not.toHaveBeenCalled();
+    await fireEvent.keyUp(input, { which: 27, key: "Escape" });
+    expect(setValue).toHaveBeenCalled();
   });
 
-  it("handles Escape key up event", () => {
-    const handler = jest.fn();
-    wrapper.setProps({ clearOnEscape: true, setValue: handler });
-    const input = wrapper.find("input");
-    expect(handler).not.toHaveBeenCalled();
-    input.simulate("keyup", { which: 27, key: "Escape", target: input });
-    expect(handler).toHaveBeenCalled();
+  test("displays a clear button when focused", async () => {
+    const setValue = jest.fn();
+    render(<Input value="text" setValue={setValue} clearOnEscape />);
+
+    expect(screen.queryByRole("button", { hidden: true })).toBeNull();
+
+    const input = screen.getByRole("textbox");
+    await fireEvent.focus(input);
+    expect(screen.getByRole("button", { hidden: true })).toBeInTheDocument();
+
+    await fireEvent.blur(input);
+    expect(screen.queryByRole("button", { hidden: true })).toBeNull();
+
+    await fireEvent.focus(input);
+
+    // clicking the clear button should clear the input value
+    expect(setValue).not.toHaveBeenCalled();
+    userEvent.click(screen.getByRole("button", { hidden: true }));
+
+    expect(setValue).toHaveBeenCalledTimes(1);
+    expect(setValue).toHaveBeenCalledWith("");
   });
 });

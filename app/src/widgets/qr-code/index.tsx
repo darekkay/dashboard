@@ -14,8 +14,8 @@ const getSquareSize = (dimensions?: Dimensions) => {
 };
 
 const QrCode: React.FC<Props> = ({ meta, content }) => {
-  const imageSize = getSquareSize(meta.dimensions);
   if (_.isEmpty(content)) return <WidgetUnconfigured type={widgetType} />;
+  const imageSize = getSquareSize(meta.dimensions);
   return (
     <div className="flex items-center h-full">
       <QRCode size={imageSize - 10} value={content} />

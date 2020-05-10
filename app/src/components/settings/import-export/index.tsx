@@ -46,7 +46,7 @@ export const ImportExport: React.FC<Props> = ({ state, importState }) => {
         {t("common.download")}
       </Link>
       <FileUpload
-        label={t("data.restore")}
+        label={t("data.restore.default")}
         className={cn("mb-2", uploadResult)}
         accept=".json"
         onDropAccepted={onDropAccepted}
@@ -54,13 +54,13 @@ export const ImportExport: React.FC<Props> = ({ state, importState }) => {
       {uploadResult === "error" && (
         <div className="flex items-center text-color-danger">
           <Icon name="error" position="left" />
-          Could not restore backup.
+          {t("data.restore.error")}
         </div>
       )}
       {uploadResult === "success" && (
         <div className="flex items-center text-color-success">
           <Icon name="success" position="left" />
-          Backup restored.
+          {t("data.restore.success")}
         </div>
       )}
     </div>

@@ -1,29 +1,20 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
 
-import { Theme, ThemeSelect } from "../index";
+import { render, screen, userEvent } from "common/testing";
+
+import { ThemeSelect } from "../index";
 
 describe("<ThemeSelect />", () => {
-  let wrapper: ShallowWrapper;
-  const changeThemeSpy = jest.fn();
+  test("changes the theme", () => {
+    const changeThemeSpy = jest.fn();
+    render(<ThemeSelect theme="default" changeTheme={changeThemeSpy} />);
 
-  beforeEach(() => {
-    wrapper = shallow(
-      <ThemeSelect theme="default" changeTheme={changeThemeSpy} />
-    );
-  });
-
-  it("changes the theme", () => {
-    wrapper
-      .find(Theme)
-      .at(0)
-      .simulate("click");
+    const defaultTheme = screen.getByRole("button", { name: "theme.default" });
+    userEvent.click(defaultTheme);
     expect(changeThemeSpy).toHaveBeenCalledWith("default");
 
-    wrapper
-      .find(Theme)
-      .at(1)
-      .simulate("click");
+    const darkTheme = screen.getByRole("button", { name: "theme.dark" });
+    userEvent.click(darkTheme);
     expect(changeThemeSpy).toHaveBeenCalledWith("dark");
   });
 });

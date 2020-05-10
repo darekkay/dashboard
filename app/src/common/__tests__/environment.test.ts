@@ -1,8 +1,7 @@
-import "jest";
 import { toBoolean } from "common/environment";
 
 describe("toBoolean", () => {
-  it("returns true only if the value equals 'true' (case insensitive)", () => {
+  test("returns true only if the value equals 'true' (case insensitive)", () => {
     expect(toBoolean("true")).toBe(true);
     expect(toBoolean("TRUE")).toBe(true);
     expect(toBoolean("True")).toBe(true);

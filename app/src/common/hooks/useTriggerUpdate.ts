@@ -31,6 +31,7 @@ const useTriggerUpdate = (
   const updateProps = { id, params };
 
   const canTriggerUpdate =
+    meta.updateCycle !== undefined &&
     meta.updateStatus !== "pending" &&
     Object.values(params).every(value => !!value);
 

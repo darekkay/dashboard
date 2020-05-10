@@ -16,7 +16,7 @@ export interface Props
     React.HTMLAttributes<HTMLHeadingElement>,
     HTMLHeadingElement
   > {
-  level?: number;
+  level?: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
 export default Headline;

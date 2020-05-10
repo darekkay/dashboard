@@ -1,45 +1,48 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import { render, screen, userEvent } from "common/testing";
 
-import Button from "components/button";
 import { widgetProps } from "common/utils/mock";
 
 import Counter from "../index";
 
 describe("<Counter />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<Counter {...widgetProps} id="counter-mock-id" />);
-  });
-
-  it("renders without error", () => {
-    expect(wrapper.isEmptyRender()).toBe(false);
-  });
-
-  it("increments the value", () => {
+  test("increments the value", async () => {
     const setData = jest.fn();
-    wrapper.setProps({ setData, value: 5 });
-    wrapper
-      .find(Button)
-      .at(0)
-      .simulate("click");
-    expect(setData).toHaveBeenCalledWith({
-      id: "counter-mock-id",
-      values: { value: 4 }
-    });
-  });
+    render(
+      <Counter
+        {...widgetProps}
+        id="counter-mock-id"
+        setData={setData}
+        value={5}
+      />
+    );
+    await userEvent.click(
+      screen.getByRole("button", { name: "widget.counter.increment" })
+    );
 
-  it("decrements the value", () => {
-    const setData = jest.fn();
-    wrapper.setProps({ setData, value: 5 });
-    wrapper
-      .find(Button)
-      .at(1)
-      .simulate("click");
     expect(setData).toHaveBeenCalledWith({
       id: "counter-mock-id",
       values: { value: 6 }
+    });
+  });
+
+  test("decrements the value", async () => {
+    const setData = jest.fn();
+    render(
+      <Counter
+        {...widgetProps}
+        id="counter-mock-id"
+        setData={setData}
+        value={5}
+      />
+    );
+    await userEvent.click(
+      screen.getByRole("button", { name: "widget.counter.decrement" })
+    );
+
+    expect(setData).toHaveBeenCalledWith({
+      id: "counter-mock-id",
+      values: { value: 4 }
     });
   });
 });

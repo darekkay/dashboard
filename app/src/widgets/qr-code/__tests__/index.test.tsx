@@ -1,26 +1,19 @@
 import React from "react";
-import { mount, ReactWrapper } from "enzyme";
+import { render, screen } from "common/testing";
 
-import WidgetUnconfigured from "components/widget-unconfigured";
 import { widgetProps } from "common/utils/mock";
 
 import QrCode from "../index";
 
 describe("<QrCode />", () => {
-  let wrapper: ReactWrapper;
+  test("renders without errors", () => {
+    render(<QrCode {...widgetProps} id="qr-code-mock-id" content="example" />);
 
-  beforeEach(() => {
-    wrapper = mount(
-      <QrCode {...widgetProps} id="qr-code-mock-id" content="example" />
-    );
+    expect(screen.queryByText("widget.common.unconfigured")).toBeNull();
   });
 
-  it("renders without error", () => {
-    expect(wrapper.find("canvas")).toHaveLength(1);
-  });
-
-  it("doesn't render if the content is missing", () => {
-    wrapper.setProps({ content: undefined });
-    expect(wrapper.find(WidgetUnconfigured)).toHaveLength(1);
+  test("doesn't render if the query is missing", () => {
+    render(<QrCode {...widgetProps} id="qr-code-mock-id" content="" />);
+    expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 });

@@ -1,15 +1,11 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
-
-import Menu from "components/menu";
+import { render } from "common/testing";
 
 import Header from "../index";
 
 describe("<Header />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(
+  test("renders without errors", () => {
+    const { container } = render(
       <Header
         isLayoutEditable={false}
         toggleLayoutEditable={() => null}
@@ -17,10 +13,10 @@ describe("<Header />", () => {
         toggleFullscreen={() => null}
       />
     );
-  });
 
-  it("renders without error", () => {
-    expect(wrapper.find("header")).toHaveLength(1);
-    expect(wrapper.find(Menu)).toHaveLength(1);
+    // TODO: replace when the issue is fixed
+    // "banner" role is currently broken: https://github.com/testing-library/dom-testing-library/issues/578
+    // expect(screen.getByRole("banner")).toBeInTheDocument();
+    expect(container.querySelector("header")).toBeInTheDocument();
   });
 });

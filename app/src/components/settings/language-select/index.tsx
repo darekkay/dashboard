@@ -12,6 +12,7 @@ export const LanguageSelect: React.FC<Props> = props => {
   const { language, changeLanguage } = props;
   const { t } = useTranslation();
 
+  /* TODO: associate element with a label (a11y) */
   return (
     <Dropdown
       options={LANGUAGES}

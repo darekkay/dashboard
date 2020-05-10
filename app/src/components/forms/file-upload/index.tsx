@@ -33,9 +33,10 @@ const FileUpload: React.FC<Props> = ({
       )}
       {...getRootProps()}
     >
-      <input {...getInputProps()} />
+      <input {...getInputProps()} aria-label={label} />
       <div className="flex items-center">
         <Icon name="upload" position="left" />
+        {/* NICE: display a generic "invalid file type" error message for rejectedFiles */}
         {acceptedFiles.length > 0 ? acceptedFiles[0].name : label}
       </div>
     </div>

@@ -1,31 +1,20 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
 
-import Button from "components/button";
+import { render, screen, userEvent } from "common/testing";
 
 import { LanguageSelect } from "../index";
 
 describe("<LanguageSelect />", () => {
-  let wrapper: ShallowWrapper;
-  const changeLanguageSpy = jest.fn();
+  test("changes the language", () => {
+    const changeLanguageSpy = jest.fn();
+    render(<LanguageSelect language="de" changeLanguage={changeLanguageSpy} />);
 
-  beforeEach(() => {
-    wrapper = shallow(
-      <LanguageSelect language="de" changeLanguage={changeLanguageSpy} />
-    );
-  });
+    const dropdown = screen.getByRole("combobox");
 
-  xit("changes the language", () => {
-    wrapper
-      .find(Button)
-      .at(0)
-      .simulate("click");
-    expect(changeLanguageSpy).toHaveBeenCalledWith("en");
-
-    wrapper
-      .find(Button)
-      .at(1)
-      .simulate("click");
+    userEvent.selectOptions(dropdown, "de");
     expect(changeLanguageSpy).toHaveBeenCalledWith("de");
+
+    userEvent.selectOptions(dropdown, "en");
+    expect(changeLanguageSpy).toHaveBeenCalledWith("en");
   });
 });

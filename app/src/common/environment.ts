@@ -25,6 +25,9 @@ export const IS_PRODUCTION = process.env.NODE_ENV === "production";
 /** True, if the application is running in development mode */
 export const IS_DEVELOPMENT = process.env.NODE_ENV === "development";
 
+/** True, if the application is running in test environment */
+export const IS_TEST = process.env.NODE_ENV === "test";
+
 /** The application version, derived from package.json */
 export const APP_VERSION = pkg.version;
 

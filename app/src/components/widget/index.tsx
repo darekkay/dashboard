@@ -77,6 +77,7 @@ export const Widget: React.FC<Props & ErrorProps> = props => {
           className
         )}
         ref={widgetRef}
+        data-testid="widget"
         tabIndex={0}
         aria-label={t(`widget.${type}.name`)}
         onFocus={showWidgetMenu}

@@ -1,18 +1,15 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import moment from "moment";
+import { render, screen } from "common/testing";
 
 import { widgetProps } from "common/utils/mock";
 
 import { DateTime } from "../index";
 
 describe("<DateTime />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<DateTime {...widgetProps} id="date-time-mock-id" />);
-  });
-
-  it("renders without error", () => {
-    expect(wrapper.find("time")).toHaveLength(1);
+  test("renders the current date", () => {
+    render(<DateTime {...widgetProps} id="date-time-mock-id" />);
+    // TODO: mock moment instead?
+    expect(screen.getByText(moment().format("dddd"))).toBeInTheDocument();
   });
 });

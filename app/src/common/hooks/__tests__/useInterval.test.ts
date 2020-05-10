@@ -1,9 +1,6 @@
-import { cleanup } from "@testing-library/react";
-import { renderHook } from "@testing-library/react-hooks";
+import { renderHook } from "common/testing";
 
 import useInterval from "../useInterval";
-afterEach(cleanup);
-jest.useFakeTimers();
 
 /* Based on: https://github.com/donavon/use-interval */
 describe("useInterval", () => {

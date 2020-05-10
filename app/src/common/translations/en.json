@@ -33,7 +33,11 @@
   "data": {
     "purge": "Delete all data",
     "backup": "Backup data",
-    "restore": "Restore backup"
+    "restore": {
+      "default": "Restore backup",
+      "success": "Backup restored",
+      "error": "Could not restore backup"
+    }
   },
   "welcome": {
     "message1": "Welcome to <0>{{projectName}}</0> — Your digital info board",
@@ -43,7 +47,7 @@
   },
   "widget": {
     "common": {
-      "drawerHeadline": "Widgets",
+      "headline": "Widgets",
       "add": "Add {{widget}} widget",
       "remove": "Remove {{widget}} widget",
       "configuration": "Configuration: {{widget}}",

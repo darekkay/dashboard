@@ -1,22 +1,40 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "common/testing";
 
 import Deviation from "components/stats/deviation/index";
 
 describe("<Deviation />", () => {
-  it("renders an absolute value", () => {
-    const { queryByText } = render(<Deviation value={-5} />);
-    expect(queryByText("-5")).toBeNull();
-    expect(queryByText("5")).not.toBeNull();
+  test("renders a negative value", () => {
+    render(<Deviation value={-5} />);
+    expect(screen.getByLabelText("-5")).toBeInTheDocument();
+    expect(screen.getByText("5")).toBeInTheDocument();
   });
 
-  it("renders a correct aria label", () => {
-    const { queryByLabelText } = render(<Deviation value={-5} />);
-    expect(queryByLabelText("-5")).not.toBeNull();
-    // TODO: check for the exact value to catch "5 undefined" issues when no unit is provided
+  test("renders a positive value", () => {
+    render(<Deviation value={5} />);
+    expect(screen.getByLabelText("5")).toBeInTheDocument();
+    expect(screen.getByText("5")).toBeInTheDocument();
   });
 
-  it("renders a unique icon per absolute deviation", () => {
+  test("renders a unit", () => {
+    render(<Deviation value={-5} unit="eur" />);
+    expect(screen.getByLabelText("-5 eur")).toBeInTheDocument();
+    expect(screen.getByText("5 eur")).toBeInTheDocument();
+  });
+
+  test("renders a percentage", () => {
+    render(<Deviation value={-5} percentage={-12} />);
+    expect(screen.getByLabelText("-5 (-12%)")).toBeInTheDocument();
+    expect(screen.getByText("5 / 12%")).toBeInTheDocument();
+  });
+
+  test("renders a unit with percentage", () => {
+    render(<Deviation value={-5} unit="eur" percentage={-12} />);
+    expect(screen.getByLabelText("-5 eur (-12%)")).toBeInTheDocument();
+    expect(screen.getByText("5 eur / 12%")).toBeInTheDocument();
+  });
+
+  test("renders a unique icon per absolute deviation", () => {
     const { container: positive } = render(<Deviation value={5} />);
     const { container: negative } = render(<Deviation value={-5} />);
     const { container: zero } = render(<Deviation value={0} />);

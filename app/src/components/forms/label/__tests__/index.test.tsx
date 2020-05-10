@@ -1,21 +1,16 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import { render } from "common/testing";
 
 import Label from "../index";
 
 describe("<Label />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<Label text="label" />);
+  test("renders without errors", () => {
+    const { container } = render(<Label text="example" />);
+    expect(container.querySelector("label")).not.toBeNull();
   });
 
-  it("renders without error", () => {
-    expect(wrapper.find("label")).toHaveLength(1);
-  });
-
-  it("doesn't render a label if a text is missing", () => {
-    wrapper.setProps({ text: undefined });
-    expect(wrapper.find("label")).toHaveLength(0);
+  test("doesn't render a label if a text is missing", () => {
+    const { container } = render(<Label text={undefined} />);
+    expect(container).toBeEmpty();
   });
 });

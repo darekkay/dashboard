@@ -1,39 +1,40 @@
 import React from "react";
-import { mount } from "enzyme";
+import { render, screen } from "common/testing";
 
 import log from "common/log";
 
 import withErrorHandling, { State as ErrorProps } from "../withErrorHandling";
 
-const Component = (props: {} & ErrorProps) => (
-  <div className={props.hasError ? "error" : ""}>Success</div>
+const ComponentWithoutErrors = (props: {} & ErrorProps) => (
+  <div>
+    {props.hasError && <span>Error</span>}
+    {!props.hasError && <span>Success</span>}
+  </div>
 );
+const NoErrors = withErrorHandling(ComponentWithoutErrors);
 
-const CatchErrors = withErrorHandling(Component);
+const ComponentWithErrors = (props: {} & ErrorProps) => {
+  if (!props.hasError) throw new Error("💣️");
+  else return <span>Error</span>;
+};
+const Errors = withErrorHandling(ComponentWithErrors);
 
 describe("withErrorHandling", () => {
-  it("handles errors", () => {
-    const wrapper = mount(<CatchErrors />);
-    const component = wrapper.find(Component);
-    expect(wrapper.find(".error").length).toBe(0);
-    component.simulateError(new Error("Dummy error"));
-    expect(wrapper.find(".error").length).toBe(1);
+  test("handles no errors", () => {
+    render(<NoErrors />);
+    expect(screen.getByText(/success/i)).toBeInTheDocument();
+    expect(screen.queryByText(/error/i)).toBeNull();
   });
 
-  /** As "istanbul ignore" doesn't work either, let's make sure the coverage is fulfilled */
-  it("fulfills the code coverage", () => {
-    const consoleHandle = log.error;
-    log.error = jest.fn();
-    const spyConsoleError = jest.spyOn(log, "error");
+  test("handles errors", () => {
+    jest.spyOn(console, "error").mockImplementation(() => {});
+    const logErrorSpy = jest.spyOn(log, "error").mockImplementation(() => {});
 
-    const wrapper = mount(<CatchErrors />);
-    const component = wrapper.find(Component);
-    const errorMessage = "Dummy error";
+    render(<Errors />);
+    expect(screen.getByText(/error/i)).toBeInTheDocument();
+    expect(logErrorSpy).toHaveBeenCalledTimes(1);
+    expect(logErrorSpy).toHaveBeenCalledWith("💣️");
 
-    component.simulateError(new Error(errorMessage));
-    expect(CatchErrors.getDerivedStateFromError().hasError).toBe(true);
-    expect(spyConsoleError).toHaveBeenCalledWith(errorMessage);
-
-    log.error = consoleHandle;
+    jest.clearAllMocks();
   });
 });

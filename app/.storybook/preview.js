@@ -1,4 +1,4 @@
-import { configure, addDecorator, addParameters } from "@storybook/react";
+import { addDecorator, addParameters } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 
 import "components/icon/font-awesome/setup"; // Font Awesome setup

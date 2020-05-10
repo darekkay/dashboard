@@ -13,7 +13,7 @@ const Drawer: React.FC<Props> = ({ addWidgetToLayout }) => {
   const { t } = useTranslation();
   return (
     <div className="p-4 bg-color-panel border-left" style={{ width: "280px" }}>
-      <div className="sr-only">{t("widget.common.drawerHeadline")}</div>
+      <div className="sr-only">{t("widget.common.headline")}</div>
       {categories.map((category: string) => (
         <div className="mb-6" key={category}>
           <div className="p-2 text-center uppercase font-bold text-2">

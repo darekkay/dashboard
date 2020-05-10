@@ -1,22 +1,31 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import { render, screen } from "common/testing";
 
-import Modal from "../index";
+import Modal, { Props as ModalProps } from "../index";
 
 describe("<Modal />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(
-      <Modal isOpen={true} closeModal={() => null}>
+  const renderModal = (props: Partial<ModalProps>) =>
+    render(
+      <Modal
+        isOpen={true}
+        closeModal={() => null}
+        {...props}
+        // used for tests only
+        ariaHideApp={false}
+      >
         Content
       </Modal>
     );
+
+  test("doesn't render a headline when not provided", () => {
+    renderModal({});
+    expect(screen.queryByRole("heading")).toBeNull();
   });
 
-  it("renders a headline when provided", () => {
-    expect(wrapper.find("h2").length).toBe(0);
-    wrapper.setProps({ headline: "Modal headline" });
-    expect(wrapper.find("h2").length).toBe(1);
+  test("renders a headline when provided", () => {
+    renderModal({ headline: "Modal headline" });
+    expect(
+      screen.getByRole("heading", { name: /modal headline/i })
+    ).toBeInTheDocument();
   });
 });

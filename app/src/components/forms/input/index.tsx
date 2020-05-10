@@ -34,10 +34,8 @@ const Input: React.FC<Props> = props => {
         onFocus={() => {
           setFocused(true);
         }}
-        onBlur={event => {
-          const currentTarget = event.currentTarget as Element;
-          const relatedTarget = event.relatedTarget as Element;
-          setFocused(relatedTarget && currentTarget?.contains(relatedTarget));
+        onBlur={() => {
+          setFocused(false);
         }}
       >
         <input
@@ -54,6 +52,7 @@ const Input: React.FC<Props> = props => {
           }}
           onKeyUp={event => onKeyUp(event, props)}
           value={value}
+          type="text"
           {...domProps}
         />
         {value && isFocused && (
@@ -62,7 +61,6 @@ const Input: React.FC<Props> = props => {
             size={ButtonSize.Small}
             variant={ButtonVariant.Unstyled}
             border={false}
-            onClick={clearValue}
             onMouseDown={clearValue}
             aria-hidden
             tabIndex={-1}

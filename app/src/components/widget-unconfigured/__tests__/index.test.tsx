@@ -1,16 +1,11 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import { render, screen } from "common/testing";
 
 import WidgetUnconfigured from "../index";
 
 describe("<WidgetUnconfigured />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<WidgetUnconfigured type="image" />);
-  });
-
-  it("renders without error", () => {
-    expect(wrapper).not.toBeNull();
+  test("renders without errors", () => {
+    render(<WidgetUnconfigured type="image" />);
+    expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 });

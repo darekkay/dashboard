@@ -1,16 +1,11 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
 import {{ properCase name }} from "../index";
 
 describe("<{{ properCase name }} />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<{{ properCase name }} />);
-  });
-
-  it("renders without error", () => {
-    expect(wrapper.isEmptyRender()).toBe(false);
+  test("renders without errors", () => {
+    render(<{{ properCase name }} /);
+    expect(screen.getByRole("TODO", { name: /TODO text/i })).toBeInTheDocument();
   });
 });

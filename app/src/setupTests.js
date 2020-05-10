@@ -1,9 +1,18 @@
 // create-react-app: test setup file
-import { configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+
+// custom jest matchers for testing-library
+import "@testing-library/jest-dom/extend-expect";
 
 import "common/i18n";
 
-configure({ adapter: new Adapter() });
-
 jest.useFakeTimers();
+
+/*
+ * Mock unimplemented JSDOM functions
+ * https://github.com/jsdom/jsdom/issues/2751
+ * https://github.com/jsdom/jsdom/issues/1435
+ * https://github.com/jsdom/jsdom/issues/1695
+ */
+Document.prototype.elementFromPoint = jest.fn();
+
+HTMLCanvasElement.prototype.getContext = () => null;

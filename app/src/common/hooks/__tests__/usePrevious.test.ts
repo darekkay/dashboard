@@ -1,9 +1,9 @@
-import { renderHook } from "@testing-library/react-hooks";
+import { renderHook } from "common/testing";
 
 import usePrevious from "../usePrevious";
 
 describe("usePrevious", () => {
-  it("returns the previous value", () => {
+  test("returns the previous value", () => {
     const { result, rerender } = renderHook(value => usePrevious(value), {
       initialProps: "first" as any
     });

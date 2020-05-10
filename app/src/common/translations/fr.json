@@ -29,7 +29,11 @@
   "data": {
     "purge": "Supprimer les données",
     "backup": "Faire une sauvegarde",
-    "restore": "Restaurer une sauvegarde"
+    "restore": {
+      "default": "Restaurer une sauvegarde",
+      "success": "Sauvegarde a été restaurée",
+      "error": "Sauvegarde n'a pas été restaurée"
+    }
   },
   "welcome": {
     "message1": "Bienvenue à <0>{{projectName}}</0> — Votre tableau de bord digital",
@@ -39,7 +43,7 @@
   },
   "widget": {
     "common": {
-      "drawerHeadline": "Composants",
+      "headline": "Composants",
       "add": "Ajouter {{widget}} composant",
       "remove": "Retirer le composant {{widget}}",
       "configuration": "Configuration: {{widget}}",

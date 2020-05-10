@@ -1,7 +1,7 @@
 import selectComponentProps from "../selectors";
 
 describe("App selector", () => {
-  it("returns required props", () => {
+  test("returns required props", () => {
     const result = selectComponentProps({
       config: {
         grid: {

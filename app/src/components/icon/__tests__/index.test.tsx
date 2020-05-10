@@ -1,17 +1,16 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render, screen, expectToThrow } from "common/testing";
 
 import Icon from "../index";
 
 describe("<Icon />", () => {
-  it("renders a font awesome icon", () => {
-    const wrapper = shallow(<Icon name="cog" />);
-    expect(wrapper.find(".icon")).toHaveLength(1);
+  test("renders a font awesome icon", () => {
+    render(<Icon name="cog" alt="Settings" />);
+    expect(screen.getByLabelText(/settings/i)).toBeInTheDocument();
   });
 
-  it("does not render unknown icons", () => {
+  test("does not render unknown icons", () => {
     // @ts-ignore
-    const throwFn = () => shallow(<Icon name="c01c4b" />);
-    expect(throwFn).toThrow();
+    expectToThrow(() => render(<Icon name="c01c4b" />));
   });
 });

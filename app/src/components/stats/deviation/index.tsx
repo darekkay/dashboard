@@ -16,7 +16,7 @@ const ariaLabel = (value: number, unit?: string, percentage?: number) => {
   return result;
 };
 
-/* Display a value deviation (increment/decrement) */
+/** A value deviation (increment/decrement) */
 const Deviation: React.FC<Props> = ({ value, unit, percentage, className }) => {
   return (
     <div

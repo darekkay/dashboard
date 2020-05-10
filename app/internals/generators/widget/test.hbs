@@ -1,23 +1,18 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
 import { widgetProps } from "common/utils/mock";
 
 import {{ properCase name }} from "../index";
 
 describe("<{{ properCase name }} />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(
+  test("renders without errors", () => {
+    render(
       <{{ properCase name }}
         {...widgetProps}
         id="{{ kebabCase name }}-mock-id"
       />
     );
-  });
-
-  it("renders without error", () => {
-    expect(wrapper.isEmptyRender()).toBe(false);
+    expect(screen.getByRole("TODO", { name: /TODO text/i })).toBeInTheDocument();
   });
 });

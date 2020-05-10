@@ -27,7 +27,7 @@ const getLastWidget = (widgets: ReactGridLayout[]) =>
   widgets[widgets.length - 1];
 
 describe("Layout duck", () => {
-  it("saves the layout", () => {
+  test("saves the layout", () => {
     const updatedState = reducerWithInitialState()(
       initialState,
       actionCreators.saveLayout({ desktop: [], mobile: [] })
@@ -37,7 +37,7 @@ describe("Layout duck", () => {
     expect(updatedState.config.mobile.length).toBe(0);
   });
 
-  it("toggles the editing state", () => {
+  test("toggles the editing state", () => {
     let updatedState = reducerWithInitialState()(
       initialState,
       actionCreators.toggleLayoutEditable()
@@ -53,7 +53,7 @@ describe("Layout duck", () => {
     expect(updatedState.isEditable).toEqual(false);
   });
 
-  it("places a new widget in the next available row", () => {
+  test("places a new widget in the next available row", () => {
     const addWidgetToLayoutAction = (widgets: ReactGridLayout[]) =>
       reducerWithInitialState()(
         getInitialState(widgets),
@@ -80,7 +80,7 @@ describe("Layout duck", () => {
     expect(getLastWidget(updatedState.config.desktop).y).toEqual(0);
   });
 
-  it("removes widgets from the dashboard", () => {
+  test("removes widgets from the dashboard", () => {
     const removeWidgetFromLayoutAction = (
       widgets: ReactGridLayout[],
       id: string
@@ -110,7 +110,7 @@ describe("Layout duck", () => {
     expect(updatedState.config.desktop.length).toEqual(2);
   });
 
-  it("increments the nextWidgetId", () => {
+  test("increments the nextWidgetId", () => {
     const incrementNextWidgetIdAction = (state: LayoutState) =>
       reducerWithInitialState()(state, actionCreators.incrementNextWidgetId());
 

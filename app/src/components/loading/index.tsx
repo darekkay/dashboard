@@ -15,6 +15,8 @@ const Loading: React.FC<Props> = ({ className, type = "spinner" }) => {
         },
         className
       )}
+      role="progressbar"
+      aria-busy={true}
       aria-label={t("common.loading")}
     />
   );

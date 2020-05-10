@@ -1,16 +1,15 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import { render, screen } from "common/testing";
 
 import Section from "../index";
 
 describe("<Section />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<Section type="modal" />);
-  });
-
-  it("renders without error", () => {
-    expect(wrapper.isEmptyRender()).toBe(false);
+  test("renders a headline when provided", () => {
+    const { rerender } = render(<Section type="modal" />);
+    expect(screen.queryByRole("heading")).toBeNull();
+    rerender(<Section type="modal" headline="Section headline" />);
+    expect(
+      screen.getByRole("heading", { name: /section headline/i })
+    ).toBeInTheDocument();
   });
 });

@@ -9,7 +9,7 @@ import Menu, { MenuAction, MenuSeparator } from "components/menu";
 import Modal from "components/modal";
 import Settings from "components/settings";
 
-const Version: React.FC<{}> = () => (
+const Version: React.FC = () => (
   <div>
     <Link href="/" external={false}>
       Dashboard

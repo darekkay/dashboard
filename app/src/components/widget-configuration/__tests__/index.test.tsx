@@ -1,30 +1,60 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
 import _ from "lodash";
+import { render, screen, userEvent } from "common/testing";
 
-import Modal from "components/modal";
 import widgets from "widgets";
 
-import WidgetConfiguration from "../index";
+import WidgetConfiguration, { Props } from "../index";
 
 describe("<WidgetConfiguration />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(
+  const renderWidgetConfiguration = (props: Partial<Props>) =>
+    render(
       <WidgetConfiguration
         id="image-01"
         type="image"
         closeModal={_.noop}
         configuration={widgets["image"].Configuration}
         isModalOpen
-        options={{}}
+        options={{ url: "" }}
         setOptions={_.noop}
+        {...props}
       />
     );
+
+  test("renders without errors", () => {
+    renderWidgetConfiguration({});
+    expect(screen.getByRole("dialog")).toBeInTheDocument();
   });
 
-  it("renders without error", () => {
-    expect(wrapper.find(Modal)).toHaveLength(1);
+  test("saves modal settings on save", async () => {
+    const setOptions = jest.fn();
+    renderWidgetConfiguration({ setOptions });
+
+    expect(setOptions).not.toHaveBeenCalled();
+
+    const imageSourceInput = screen.getByRole("textbox", {
+      name: "widget.image.configuration.url"
+    });
+    await userEvent.type(imageSourceInput, "https://example.com");
+
+    const saveButton = screen.getByRole("button", { name: "common.save" });
+    userEvent.click(saveButton);
+
+    expect(setOptions).toHaveBeenCalledTimes(1);
+  });
+
+  test("discards modal settings on cancel", async () => {
+    const setOptions = jest.fn();
+    renderWidgetConfiguration({ setOptions });
+
+    const imageSourceInput = screen.getByRole("textbox", {
+      name: "widget.image.configuration.url"
+    });
+    await userEvent.type(imageSourceInput, "https://example.com");
+
+    const cancelButton = screen.getByRole("button", { name: "common.cancel" });
+    userEvent.click(cancelButton);
+
+    expect(setOptions).not.toHaveBeenCalled();
   });
 });

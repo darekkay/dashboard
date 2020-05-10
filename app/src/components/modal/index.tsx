@@ -9,6 +9,12 @@ import Icon from "components/icon";
 if (process.env.NODE_ENV !== "test") {
   // bind modal to the root app element
   ReactModal.setAppElement("#root");
+} else {
+  // create a mock modal root
+  const modalRoot = document.createElement("div");
+  modalRoot.setAttribute("id", "modal-root");
+  document.body.appendChild(modalRoot);
+  ReactModal.setAppElement("#modal-root");
 }
 
 const Modal: React.FC<Props> = ({

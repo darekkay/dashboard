@@ -1,14 +1,15 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
 import _ from "lodash";
+
+import { render, screen } from "common/testing";
+import { State as ErrorProps } from "common/hoc/withErrorHandling";
+import { WidgetProps } from "widgets";
 
 import { Widget } from "../index";
 
 describe("<Widget />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(
+  const renderWidget = (props: Partial<WidgetProps & ErrorProps>) =>
+    render(
       <Widget
         id="mock-widget"
         type="text"
@@ -20,17 +21,17 @@ describe("<Widget />", () => {
         triggerUpdate={_.noop}
         removeWidgetFromLayout={_.noop}
         hasError={false}
+        {...props}
       />
     );
+
+  test("renders without errors", () => {
+    renderWidget({});
+    expect(screen.queryByText("common.error")).toBeNull();
   });
 
-  it("renders without error", () => {
-    expect(wrapper.find(".error")).toHaveLength(0);
-    expect(wrapper.find(".bg-color-dim")).toHaveLength(0);
-  });
-
-  it("renders errors", () => {
-    wrapper.setProps({ hasError: true });
-    expect(wrapper.find(".error")).toHaveLength(1);
+  test("renders errors", () => {
+    renderWidget({ hasError: true });
+    expect(screen.getByText("common.error")).toBeInTheDocument();
   });
 });

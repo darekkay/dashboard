@@ -1,30 +1,24 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import { render, screen } from "common/testing";
 
-import WidgetUnconfigured from "components/widget-unconfigured";
 import { widgetProps } from "common/utils/mock";
 
 import Image from "../index";
 
 describe("<Image />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(
+  test("renders without errors", () => {
+    render(
       <Image
         {...widgetProps}
         id="image-mock-id"
         url="https://example.com/example.jpg"
       />
     );
+    expect(screen.queryByText("widget.common.unconfigured")).toBeNull();
   });
 
-  it("renders without error", () => {
-    expect(wrapper.find("img")).toHaveLength(1);
-  });
-
-  it("doesn't render if the url is missing", () => {
-    wrapper.setProps({ url: undefined });
-    expect(wrapper.find(WidgetUnconfigured)).toHaveLength(1);
+  test("doesn't render if the url is missing", () => {
+    render(<Image {...widgetProps} id="image-mock-id" url="" />);
+    expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 });

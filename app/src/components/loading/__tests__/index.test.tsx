@@ -1,16 +1,20 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import { render, screen } from "common/testing";
 
 import Loading from "../index";
 
 describe("<Loading />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<Loading />);
+  test("renders a spinner", () => {
+    render(<Loading type="spinner" />);
+    expect(
+      screen.getByRole("progressbar", { name: /common.loading/i })
+    ).toBeInTheDocument();
   });
 
-  it("renders a spinner by default", () => {
-    expect(wrapper.find(".spinner")).toHaveLength(1);
+  test("renders a spinner", () => {
+    render(<Loading type="skeleton" />);
+    expect(
+      screen.getByRole("progressbar", { name: /common.loading/i })
+    ).toBeInTheDocument();
   });
 });

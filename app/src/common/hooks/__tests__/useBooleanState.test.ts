@@ -1,5 +1,4 @@
-import { act } from "react-test-renderer";
-import { renderHook } from "@testing-library/react-hooks";
+import { hookAct, renderHook } from "common/testing";
 
 import useBooleanState from "../useBooleanState";
 
@@ -9,7 +8,7 @@ const getResult = (result: any) => {
 };
 
 describe("useBooleanState", () => {
-  it("uses false by default", () => {
+  test("uses false by default", () => {
     const { result } = renderHook(
       (initialState: boolean) => useBooleanState(initialState),
       {}
@@ -18,7 +17,7 @@ describe("useBooleanState", () => {
     expect(getResult(result).value).toBe(false);
   });
 
-  it("changes and returns the current value correctly", () => {
+  test("changes and returns the current value correctly", () => {
     const { result } = renderHook(
       (initialState: boolean) => useBooleanState(initialState),
       { initialProps: true }
@@ -26,22 +25,22 @@ describe("useBooleanState", () => {
 
     expect(getResult(result).value).toBe(true);
 
-    act(() => {
+    hookAct(() => {
       getResult(result).setValue(false);
     });
     expect(getResult(result).value).toBe(false);
 
-    act(() => {
+    hookAct(() => {
       getResult(result).setValue(true);
     });
     expect(getResult(result).value).toBe(true);
 
-    act(() => {
+    hookAct(() => {
       getResult(result).setValueFalse();
     });
     expect(getResult(result).value).toBe(false);
 
-    act(() => {
+    hookAct(() => {
       getResult(result).setValueTrue();
     });
     expect(getResult(result).value).toBe(true);

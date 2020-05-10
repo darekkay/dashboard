@@ -24,7 +24,10 @@ const Cryptocurrencies: React.FC<Props> = ({
   ]);
 
   return (
-    <div className="flex flex-col items-center text-center">
+    <div
+      className="flex flex-col items-center text-center"
+      data-testid="widget-cryptocurrencies"
+    >
       {imageUrl && (
         <div style={{ width: "2rem", height: "2rem" }}>
           <img src={imageUrl} alt={crypto} />
@@ -50,7 +53,7 @@ const Cryptocurrencies: React.FC<Props> = ({
 
 interface Props extends WidgetProps, ConfigurationProps {
   imageUrl?: string;
-  currentPrice: number;
+  currentPrice?: number;
   last24h?: {
     change: number;
     changePercentage: number;

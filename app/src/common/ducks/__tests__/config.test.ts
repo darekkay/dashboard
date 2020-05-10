@@ -5,7 +5,7 @@ import {
 } from "../config";
 
 describe("Settings duck", () => {
-  it("updates the color theme", () => {
+  test("updates the color theme", () => {
     const updatedState = reducerWithInitialState()(
       initialState,
       actionCreators.changeTheme("mock")
@@ -14,7 +14,7 @@ describe("Settings duck", () => {
     expect(updatedState.theme).toEqual("mock");
   });
 
-  it("changes the language", () => {
+  test("changes the language", () => {
     const updatedState = reducerWithInitialState()(
       initialState,
       actionCreators.changeLanguage("mock")

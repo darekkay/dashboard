@@ -54,7 +54,7 @@ const useMenuContext = () => {
   return context;
 };
 
-export const MenuSeparator: React.FC<{}> = () => (
+export const MenuSeparator: React.FC = () => (
   <hr className="border-0 border-top m-0" />
 );
 

@@ -1,7 +1,9 @@
 {
   "extends": [
     "react-app",
-    "prettier"
+    "prettier",
+    "plugin:jest-dom/recommended",
+    "plugin:testing-library/recommended"
   ],
 
   "env": {
@@ -21,7 +23,15 @@
     "sourceType": "module"
   },
 
-  "plugins": ["import", "jsx-a11y", "prettier", "react", "react-hooks"],
+  "plugins": [
+    "import",
+    "jsx-a11y",
+    "prettier",
+    "react",
+    "react-hooks",
+    "jest-dom",
+    "testing-library"
+  ],
 
   "root": true,
 
@@ -29,11 +39,23 @@
     "import/order": "error",
     "linebreak-style": "off",
     "no-console": "error",
-    "prettier/prettier": "warn",
     "radix": "off",
+
+    "prettier/prettier": "warn",
+
     "react/jsx-filename-extension": "off",
     "react/prop-types": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+
+    "testing-library/await-async-query": "error",
+    "testing-library/await-async-utils": "error",
+    "testing-library/await-fire-event": "error",
+    "testing-library/no-dom-import": "error",
+    "testing-library/no-manual-cleanup": "error",
+    "testing-library/no-wait-for-empty-callback": "error",
+    "testing-library/prefer-explicit-assert": "error",
+    "testing-library/prefer-screen-queries": "error",
+    "testing-library/prefer-wait-for": "error"
   },
 
   "settings": {
@@ -63,7 +85,7 @@
         "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/ban-ts-ignore": "off",
 
-        // The following line can be removed when this issue is solved:
+        // TODO: The following line can be removed when this issue is solved:
         // https://github.com/facebook/create-react-app/issues/7529
         "@typescript-eslint/no-angle-bracket-type-assertion": "off",
 

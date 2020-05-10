@@ -29,7 +29,11 @@
   "data": {
     "purge": "Alle daten löschen",
     "backup": "Daten sichern",
-    "restore": "Daten wiederherstellen"
+    "restore": {
+      "default": "Daten wiederherstellen",
+      "success": "Backup wiederhergestellt",
+      "error": "Backup konnte nicht wiederhergestellt werden"
+    }
   },
   "welcome": {
     "message1": "Willkommen im <0>{{projectName}}</0> — Deiner digitalen Infoanzeige",
@@ -39,7 +43,7 @@
   },
   "widget": {
     "common": {
-      "drawerHeadline": "Widgets",
+      "headline": "Widgets",
       "add": "Widget für {{widget}} hinzufügen",
       "remove": "Widget für {{widget}} entfernen",
       "configuration": "Konfiguration: {{widget}}",

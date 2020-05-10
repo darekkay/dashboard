@@ -1,34 +1,40 @@
 import React from "react";
-import { shallow, ShallowWrapper } from "enzyme";
+import { render, screen } from "common/testing";
 
-import WidgetOverlay from "../index";
+import WidgetOverlay, { Props as WidgetOverlayProps } from "../index";
 
 describe("<WidgetOverlay />", () => {
-  let wrapper: ShallowWrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(
+  const renderWidgetOverlay = (props: Partial<WidgetOverlayProps>) =>
+    render(
       <WidgetOverlay
         id="text-01"
         type="text"
-        isWidgetMenuVisible
-        isDraggable
+        isWidgetMenuVisible={!!props.isWidgetMenuVisible}
+        isDraggable={!!props.isDraggable}
         setDraggable={() => null}
         options={{}}
         setOptions={() => null}
         removeWidgetFromLayout={() => null}
         openConfigurationModal={() => null}
+        {...props}
       />
     );
+
+  test("doesn't render anything when no overlay or menu is visible", () => {
+    const { container } = renderWidgetOverlay({
+      isDraggable: false,
+      isWidgetMenuVisible: false
+    });
+    expect(container).toBeEmpty();
   });
 
-  it("renders without error", () => {
-    expect(wrapper.isEmptyRender()).toBe(false);
-    expect(wrapper.find(".grid-draggable")).toHaveLength(1);
+  test("renders a draggable section", () => {
+    const { container } = renderWidgetOverlay({ isDraggable: true });
+    expect(container.querySelector(".grid-draggable")).not.toBeNull();
   });
 
-  it("doesn't render a drag handle when not draggable", () => {
-    wrapper.setProps({ isDraggable: false });
-    expect(wrapper.find(".grid-draggable")).toHaveLength(0);
+  test("renders a widget menu", () => {
+    renderWidgetOverlay({ isWidgetMenuVisible: true });
+    expect(screen.getByRole("menubar")).toBeInTheDocument();
   });
 });
