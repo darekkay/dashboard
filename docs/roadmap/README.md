@@ -73,9 +73,16 @@ Here's a list of rough widget ideas and integrations. They may or may not be imp
 - [GoAccess](https://goaccess.io/) statistics
 - [PM2](https://pm2.keymetrics.io/) status
 - GitHub / GitLab integration
+- [YouTube Statistics](https://leerob.io/blog/youtube-api-nextjs)
+- [GoodReads API](https://www.goodreads.com/api)
+  - e.g. reading progress, library size
 - Calculator
+- Plex [intergration](https://github.com/Arcanemagus/plex-api/wiki/Plex-Web-API-Overview)
 - Whiteboard (for drawing)
-- [Currencies](https://news.ycombinator.com/item?id=22087612) exchange rate
+- Currencies exchange rate
+  - [Hacker News thread 1](https://news.ycombinator.com/item?id=22087612)
+  - [Hacker News thread 2](https://news.ycombinator.com/item?id=22979288)
+- [Stock Trading](https://www.tradingview.com/)
 - [Man pages](https://tldr.sh/)
 - Launchpad (Music Pad)
   - Pressing a widget makes a sound

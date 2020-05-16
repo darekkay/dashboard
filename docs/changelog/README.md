@@ -1,10 +1,10 @@
 # Changelog
 
-# Current
+## Current
 
 - :bug: Truncate widget headline.
 
-# 1.3.0 (2020-04-22)
+## 1.3.0 (2020-04-22)
 
 - :sparkles: New widget: [GitHub Stats](https://dashboard.darekkay.com/docs/widgets/github-stats.html).
 - :sparkles: Add French translation ([@faboo03](https://github.com/faboo03)).
@@ -20,7 +20,7 @@
 - :book: Publish a roadmap.
 - :book: Update documentation.
 
-# 1.2.0 (2020-04-11)
+## 1.2.0 (2020-04-11)
 
 - :sparkles: New widget: [Cryptocurrencies](https://dashboard.darekkay.com/docs/widgets/cryptocurrencies.html).
 - :sparkles: Enable data backup & restore.
@@ -29,7 +29,7 @@
 - :hammer: Create an Express server.
 - :hammer: Update dependencies.
 
-# 1.1.5 (2020-03-04)
+## 1.1.5 (2020-03-04)
 
 - :sparkles: Enable moving/resizing widgets in view mode.
 - :rocket: Enable widget configuration in edit mode.
@@ -46,7 +46,7 @@
 - :gem: Replace the (hamburger) menu button with a custom Button component.
 - :hammer: Update dependencies.
 
-# 1.1.4 (2020-02-04)
+## 1.1.4 (2020-02-04)
 
 - :rocket: Introduce widget categories.
 - :rocket: Use 24 columns instead of 12.
