@@ -16,6 +16,7 @@ This client module was bootstrapped with [Create React App](https://github.com/f
 - Side effects: [redux-saga](https://redux-saga.js.org/)
 - Internationalization: [react-i18next](https://react.i18next.com/)
 - Styling: [SCSS](https://sass-lang.com/) with [Tailwind](https://tailwindcss.com/)
+- Testing: [jest](https://jestjs.io/), [react-testing-library](https://testing-library.com/)
 - Dependency management: [yarn](https://yarnpkg.com)
 
 ### Server
