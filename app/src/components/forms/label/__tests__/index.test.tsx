@@ -11,6 +11,6 @@ describe("<Label />", () => {
 
   test("doesn't render a label if a text is missing", () => {
     const { container } = render(<Label text={undefined} />);
-    expect(container).toBeEmpty();
+    expect(container).toBeEmptyDOMElement();
   });
 });

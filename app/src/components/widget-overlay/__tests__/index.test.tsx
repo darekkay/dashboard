@@ -25,7 +25,7 @@ describe("<WidgetOverlay />", () => {
       isDraggable: false,
       isWidgetMenuVisible: false
     });
-    expect(container).toBeEmpty();
+    expect(container).toBeEmptyDOMElement();
   });
 
   test("renders a draggable section", () => {
