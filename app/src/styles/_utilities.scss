@@ -77,6 +77,15 @@
   object-fit: cover;
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.transform-center {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

@@ -40,7 +40,10 @@ const Dropdown: React.FC<Props> = ({
           ))}
           {children}
         </select>
-        <Icon name="chevronDown" className="bg-color-inherit" />
+        <Icon
+          name="chevronDown"
+          className="absolute transform-center bg-color-inherit pointer-events-none"
+        />
       </div>
     </Label>
   );
