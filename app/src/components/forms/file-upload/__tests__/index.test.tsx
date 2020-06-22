@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, userEvent, act } from "common/testing";
+import { render, screen, fireEvent, act } from "common/testing";
 
 import FileUpload from "../index";
 
@@ -19,7 +19,9 @@ describe("<FileUpload />", () => {
     });
 
     await act(async () => {
-      userEvent.upload(fileInput, file);
+      // Somehow this one broke on user-event@12.0.0
+      // userEvent.upload(fileInput, file);
+      await fireEvent.change(fileInput, { target: { files: [file] } });
     });
 
     expect(screen.getByText(/chucknorris\.png/)).toBeInTheDocument();

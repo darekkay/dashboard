@@ -16,7 +16,7 @@ export enum ButtonSize {
   Auto = "auto"
 }
 
-const Button: React.FC<Props> = React.forwardRef(
+const Button: React.FC<Props> = React.forwardRef<HTMLButtonElement, Props>(
   (
     {
       children,
@@ -59,7 +59,7 @@ export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   outline?: boolean;
   border?: boolean;
-  ref?: React.RefObject<HTMLButtonElement>;
+  ref?: React.Ref<HTMLButtonElement>;
 }
 
 export default Button;
