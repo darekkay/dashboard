@@ -1165,6 +1165,14 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
+"@darekkay/eslint-config@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@darekkay/eslint-config/-/eslint-config-1.0.0.tgz#3cc05ab4e63e5df98fcc477ff54fc139f5751b41"
+  integrity sha512-Xe83isyoygn4iudaZWwcSiIT0mxbmXUkHcMMSgrOSqK/Kbqg7K+MJE0OOZp0ioGzN3sJtGkRQlupWuMx4JXCpw==
+  dependencies:
+    eslint-config-prettier "6.11.0"
+    eslint-config-react-app "5.2.1"
+
 "@darekkay/styles@1.0.7":
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/@darekkay/styles/-/styles-1.0.7.tgz#986d4d4c5c6cd7dc964c3378d46bd966aca01e8f"

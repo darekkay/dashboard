@@ -309,6 +309,14 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@darekkay/eslint-config@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@darekkay/eslint-config/-/eslint-config-1.0.0.tgz#3cc05ab4e63e5df98fcc477ff54fc139f5751b41"
+  integrity sha512-Xe83isyoygn4iudaZWwcSiIT0mxbmXUkHcMMSgrOSqK/Kbqg7K+MJE0OOZp0ioGzN3sJtGkRQlupWuMx4JXCpw==
+  dependencies:
+    eslint-config-prettier "6.11.0"
+    eslint-config-react-app "5.2.1"
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.0.0.tgz#10602de5570baea82f8afbfa2630b24e7a8cfe5b"
@@ -1432,6 +1440,11 @@ configstore@^5.0.1:
     write-file-atomic "^3.0.0"
     xdg-basedir "^4.0.0"
 
+confusing-browser-globals@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/confusing-browser-globals/-/confusing-browser-globals-1.0.9.tgz#72bc13b483c0276801681871d4898516f8f54fdd"
+  integrity sha512-KbS1Y0jMtyPgIxjO7ZzMAuUpAKMt1SzCL9fsrKsX6b0zJPTaT0SiSPmewwVZg9UAO83HVIlEhZF84LIjZ0lmAw==
+
 contains-path@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/contains-path/-/contains-path-0.1.0.tgz#fe8cf184ff6670b6baef01a9d4861a5cbec4120a"
@@ -1842,6 +1855,13 @@ eslint-config-prettier@6.11.0:
   integrity sha512-oB8cpLWSAjOVFEJhhyMZh6NOEOtBVziaqdDQ86+qhDHFbZXoRTM7pNSvFRfW/W/L/LrQ38C99J5CGuRBBzBsdA==
   dependencies:
     get-stdin "^6.0.0"
+
+eslint-config-react-app@5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-react-app/-/eslint-config-react-app-5.2.1.tgz#698bf7aeee27f0cea0139eaef261c7bf7dd623df"
+  integrity sha512-pGIZ8t0mFLcV+6ZirRgYK6RVqUIKRIi9MmgzUEmrIknsn3AdO0I32asO86dJgloHq+9ZPl8UIg8mYrvgP5u2wQ==
+  dependencies:
+    confusing-browser-globals "^1.0.9"
 
 eslint-import-resolver-node@^0.3.3:
   version "0.3.4"
