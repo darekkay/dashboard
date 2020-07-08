@@ -73,6 +73,7 @@ Here's a list of rough widget ideas and integrations. They may or may not be imp
 - [GoAccess](https://goaccess.io/) statistics
 - [PM2](https://pm2.keymetrics.io/) status
 - GitHub / GitLab integration
+- NPM statistics
 - [YouTube Statistics](https://leerob.io/blog/youtube-api-nextjs)
 - [GoodReads API](https://www.goodreads.com/api)
   - e.g. reading progress, library size
