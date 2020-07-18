@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { APP_VERSION } from "common/environment";
 import Link from "components/link";
-import Button, { ButtonSize, ButtonVariant } from "components/button";
+import Button from "components/button";
 import Icon from "components/icon";
 import Menu, { MenuAction, MenuSeparator } from "components/menu";
 import Modal from "components/modal";
@@ -40,9 +40,9 @@ const Header: React.FC<Props> = memo(
 
         <Button
           className="mr-6 my-2"
-          variant={ButtonVariant.Primary}
+          variant="primary"
           outline
-          size={ButtonSize.Small}
+          size="small"
           onClick={toggleLayoutEditable}
         >
           <Icon name={isLayoutEditable ? "save" : "edit"} position="left" />
@@ -51,9 +51,9 @@ const Header: React.FC<Props> = memo(
 
         <Button
           className="mr-6 my-2"
-          variant={ButtonVariant.Primary}
+          variant="primary"
           outline
-          size={ButtonSize.Small}
+          size="small"
           onClick={toggleFullscreen}
           aria-label={t(
             isFullscreen ? "common.fullscreen.exit" : "common.fullscreen.start"

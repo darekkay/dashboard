@@ -9,7 +9,7 @@ import {
 import _ from "lodash";
 
 import Icon, { IconName } from "components/icon";
-import Button, { ButtonSize } from "components/button";
+import Button from "components/button";
 
 // @ts-ignore default value is defined in the context provider
 const MenuContext = React.createContext<MenuStateReturn>({});
@@ -28,7 +28,7 @@ const Menu: React.FC<Props> = ({
         aria-label={title}
         className={disclosureClassName}
         as={Button}
-        size={ButtonSize.Small}
+        size="small"
         outline
       >
         <Icon name={icon} />

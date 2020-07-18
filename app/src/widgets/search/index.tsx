@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import _ from "lodash";
 
-import Button, { ButtonSize } from "components/button";
+import Button from "components/button";
 import Input from "components/forms/input";
 import Icon from "components/icon";
 import WidgetUnconfigured from "components/widget-unconfigured";
@@ -40,7 +40,7 @@ const Search: React.FC<Props> = ({ id, pattern }) => {
         />
         <Button
           className="ml-3"
-          size={ButtonSize.Small}
+          size="small"
           outline
           disabled={!value}
           aria-label={t("widget.search.buttonAriaLabel")}

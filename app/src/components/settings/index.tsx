@@ -5,7 +5,7 @@ import { PersistorContext } from "entry";
 import ThemeSelect from "components/settings/theme-select";
 import LanguageSelect from "components/settings/language-select";
 import ImportExport from "components/settings/import-export";
-import Button, { ButtonVariant } from "components/button";
+import Button from "components/button";
 import Icon from "components/icon";
 import Section from "components/section";
 
@@ -27,7 +27,7 @@ const Settings: React.FC<Props> = () => {
             <Button
               className="mr-6 mb-3"
               outline
-              variant={ButtonVariant.Danger}
+              variant="danger"
               onClick={purgeStore}
             >
               <Icon name="trash" position="left" />

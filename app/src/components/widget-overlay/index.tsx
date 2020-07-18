@@ -1,7 +1,7 @@
 import React, { MouseEvent, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import Button, { ButtonSize, ButtonVariant } from "components/button";
+import Button from "components/button";
 import Icon from "components/icon";
 import widgets, { ValueUpdateAction } from "widgets";
 
@@ -77,8 +77,8 @@ const WidgetOverlay: React.FC<Props> = ({
             <div className="bg-color-panel mr-1">
               <Button
                 role="menuitem"
-                size={ButtonSize.Auto}
-                variant={ButtonVariant.Unstyled}
+                size="auto"
+                variant="unstyled"
                 border={false}
                 className="no-transition"
                 aria-label={t(`widget.common.configuration`, {
@@ -95,8 +95,8 @@ const WidgetOverlay: React.FC<Props> = ({
           <div className="bg-color-panel">
             <Button
               role="menuitem"
-              size={ButtonSize.Auto}
-              variant={ButtonVariant.Unstyled}
+              size="auto"
+              variant="unstyled"
               border={false}
               aria-label={t(`widget.common.remove`, {
                 widget: t(`widget.${type}.name`)

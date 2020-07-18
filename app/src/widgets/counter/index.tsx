@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import Button, { ButtonSize } from "components/button";
+import Button from "components/button";
 import Icon from "components/icon";
 
 import { WidgetProps } from "../index";
@@ -16,7 +16,7 @@ const Counter: React.FC<Props> = ({ id, value = 0, setData }) => {
         <Button
           outline
           border={false}
-          size={ButtonSize.Small}
+          size="small"
           onClick={() => setData({ id, values: { value: value - 1 } })}
           aria-label={t("widget.counter.decrement")}
         >
@@ -25,7 +25,7 @@ const Counter: React.FC<Props> = ({ id, value = 0, setData }) => {
         <Button
           outline
           border={false}
-          size={ButtonSize.Small}
+          size="small"
           onClick={() => setData({ id, values: { value: value + 1 } })}
           aria-label={t("widget.counter.increment")}
         >

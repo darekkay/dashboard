@@ -1,7 +1,7 @@
 import WidgetCategory from "../categories";
 
 export const widgetType = "github-stats";
-export const category = WidgetCategory.Monitoring;
+export const category: WidgetCategory = "monitoring";
 export const initialHeight = 3;
 export const initialWidth = 3;
 export const initialOptions = {};

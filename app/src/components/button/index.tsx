@@ -3,26 +3,17 @@ import cn from "classnames";
 
 import "./styles.scss";
 
-export enum ButtonVariant {
-  Primary = "primary",
-  Secondary = "secondary",
-  Danger = "danger",
-  Unstyled = "unstyled"
-}
+export type ButtonVariant = "primary" | "secondary" | "danger" | "unstyled";
 
-export enum ButtonSize {
-  Regular = "regular",
-  Small = "small",
-  Auto = "auto"
-}
+export type ButtonSize = "regular" | "small" | "auto";
 
 const Button: React.FC<Props> = React.forwardRef<HTMLButtonElement, Props>(
   (
     {
       children,
       className,
-      variant = ButtonVariant.Primary,
-      size = ButtonSize.Regular,
+      variant = "primary",
+      size = "regular",
       outline,
       border = true,
       style,

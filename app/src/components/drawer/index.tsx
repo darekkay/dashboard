@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import _ from "lodash";
 
-import Button, { ButtonSize } from "components/button";
+import Button from "components/button";
 import widgets, { WidgetProperties } from "widgets";
 import { categories } from "widgets/categories";
 import Icon from "../icon";
@@ -24,7 +24,7 @@ const Drawer: React.FC<Props> = ({ addWidgetToLayout }) => {
               <div key={widget} className="flex justify-between py-2">
                 {t(`widget.${widget}.name`)}
                 <Button
-                  size={ButtonSize.Small}
+                  size="small"
                   outline
                   border={false}
                   aria-label={t("widget.common.add", {

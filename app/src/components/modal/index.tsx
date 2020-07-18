@@ -3,7 +3,7 @@ import ReactModal, { Props as ReactModalProps } from "react-modal";
 import { useTranslation } from "react-i18next";
 import { MaxWidthProperty } from "csstype";
 
-import Button, { ButtonSize, ButtonVariant } from "components/button";
+import Button from "components/button";
 import Icon from "components/icon";
 
 if (process.env.NODE_ENV !== "test") {
@@ -41,8 +41,8 @@ const Modal: React.FC<Props> = ({
       <div className="flex">
         {headline && <h2 className="text-3 font-bold mb-6">{headline}</h2>}
         <Button
-          variant={ButtonVariant.Unstyled}
-          size={ButtonSize.Small}
+          variant="unstyled"
+          size="small"
           outline
           border={false}
           className="ml-auto"

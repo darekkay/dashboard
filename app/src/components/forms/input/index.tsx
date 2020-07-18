@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import cn from "classnames";
 
-import Button, { ButtonSize, ButtonVariant } from "components/button";
+import Button from "components/button";
 import Label from "components/forms/label";
 import Icon from "components/icon";
 
@@ -58,8 +58,8 @@ const Input: React.FC<Props> = props => {
         {value && isFocused && (
           <Button
             className="absolute right-0 h-full"
-            size={ButtonSize.Small}
-            variant={ButtonVariant.Unstyled}
+            size="small"
+            variant="unstyled"
             border={false}
             onMouseDown={clearValue}
             aria-hidden

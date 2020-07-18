@@ -4,11 +4,7 @@ import { storiesOf } from "@storybook/react";
 
 import Icon from "components/icon";
 import Section from "components/section";
-import Button, {
-  ButtonVariant,
-  ButtonSize,
-  Props as ButtonProps
-} from "../index";
+import Button, { Props as ButtonProps } from "../index";
 
 const commonProps = {
   className: "mr-5"
@@ -29,13 +25,13 @@ const Row = ({
       <Button {...commonProps} {...rest}>
         {children || "Regular"}
       </Button>
-      <Button {...commonProps} {...rest} size={ButtonSize.Small}>
+      <Button {...commonProps} {...rest} size="small">
         {children || "Small"}
       </Button>
       <Button {...commonProps} {...rest} outline>
         {children || "Outline"}
       </Button>
-      <Button {...commonProps} {...rest} outline size={ButtonSize.Small}>
+      <Button {...commonProps} {...rest} outline size="small">
         {children || "Outline Small"}
       </Button>
       <Button {...commonProps} {...rest} outline border={false}>
@@ -47,21 +43,17 @@ const Row = ({
 
 storiesOf("Components.Button", module).add("Variants", () => (
   <div>
-    <Row title="Primary Button" variant={ButtonVariant.Primary} />
-    <Row title="Secondary Button" variant={ButtonVariant.Secondary} />
-    <Row title="Danger Button" variant={ButtonVariant.Danger} />
-    <Row title="Unstyled Button" variant={ButtonVariant.Unstyled} />
+    <Row title="Primary Button" variant="primary" />
+    <Row title="Secondary Button" variant="secondary" />
+    <Row title="Danger Button" variant="danger" />
+    <Row title="Unstyled Button" variant="unstyled" />
 
-    <Row title="Disabled Button" variant={ButtonVariant.Primary} disabled />
+    <Row title="Disabled Button" variant="primary" disabled />
 
-    <Row title="Icon Text Button" variant={ButtonVariant.Primary}>
+    <Row title="Icon Text Button" variant="primary">
       Button <Icon name="cog" position="right" />
     </Row>
-    <Row
-      title="Icon Button"
-      variant={ButtonVariant.Primary}
-      aria-label="Icon Button"
-    >
+    <Row title="Icon Button" variant="primary" aria-label="Icon Button">
       <Icon name="cog" />
     </Row>
   </div>
