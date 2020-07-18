@@ -2,7 +2,7 @@ import React from "react";
 import {
   useMenuState,
   Menu as ReakitMenu,
-  MenuDisclosure,
+  MenuButton,
   MenuItem,
   MenuStateReturn
 } from "reakit/Menu";
@@ -23,7 +23,7 @@ const Menu: React.FC<Props> = ({
   const menu = useMenuState();
   return (
     <>
-      <MenuDisclosure
+      <MenuButton
         {...menu}
         aria-label={title}
         className={disclosureClassName}
@@ -32,7 +32,7 @@ const Menu: React.FC<Props> = ({
         outline
       >
         <Icon name={icon} />
-      </MenuDisclosure>
+      </MenuButton>
       <ReakitMenu
         {...menu}
         aria-label={title}
