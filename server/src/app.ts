@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import logger from "morgan";
 
+import log from "./log";
 import config from "./config";
 import includeRoutes from "./router";
 
@@ -27,7 +28,7 @@ const errorHandler: ErrorRequestHandler = (error, __, res, ___) => {
   // Otherwise, return a generic 500 "Internal Server Error" code
   const responseStatusCode = axiosErrorStatusCode || 500;
 
-  console.error(error.stack);
+  log.error(error.stack);
 
   return res.status(responseStatusCode).json({
     error: responseStatusCode,

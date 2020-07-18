@@ -1,10 +1,6 @@
 {
   "extends": ["@darekkay/eslint-config/node"],
 
-  "rules": {
-    "no-console": "off" // Activate after using a logger
-  },
-
   "overrides": [
     {
       "extends": ["@darekkay/eslint-config/typescript"],
