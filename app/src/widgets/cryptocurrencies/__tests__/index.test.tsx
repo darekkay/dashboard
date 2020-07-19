@@ -16,7 +16,7 @@ describe("<Cryptocurrencies />", () => {
         currentPrice={6714}
         last24h={{
           change: 123,
-          changePercentage: 1.51
+          changePercentage: 1.51,
         }}
       />
     );
@@ -54,8 +54,8 @@ describe("<Cryptocurrencies />", () => {
       id: "cryptocurrencies-mock-id",
       params: {
         crypto: "ethereum",
-        fiat: "pln"
-      }
+        fiat: "pln",
+      },
     });
   });
 });

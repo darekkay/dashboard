@@ -7,7 +7,7 @@ import Section from "components/section";
 import Button, { Props as ButtonProps } from "../index";
 
 const commonProps = {
-  className: "mr-5"
+  className: "mr-5",
 };
 
 interface RowProps {

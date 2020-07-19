@@ -10,7 +10,7 @@ const icons = [...Object.keys(fontAwesomeIcons)] as FontAwesomeIconName[];
 
 storiesOf("Components.Icon", module).add("Kitchen Sink", () => (
   <div>
-    {icons.map(icon => (
+    {icons.map((icon) => (
       <div className="flex items-center">
         <Icon key={icon} name={icon} position="left" />
         <div>{icon}</div>

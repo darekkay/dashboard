@@ -7,7 +7,7 @@ import colors from "./colors.json";
 
 storiesOf("Common.Colors", module)
   .addParameters({
-    a11y: { disabled: true }
+    a11y: { disabled: true },
   })
   .add("Kitchen Sink", () => (
     <div>
@@ -25,7 +25,7 @@ storiesOf("Common.Colors", module)
                     style={{
                       backgroundColor: color,
                       width: "3.6rem",
-                      height: "3.6rem"
+                      height: "3.6rem",
                     }}
                     onClick={() => navigator.clipboard.writeText(`$${name}`)}
                   ></div>

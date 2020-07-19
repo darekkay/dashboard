@@ -12,7 +12,7 @@ const Text: React.FC<Props> = ({ id, content, setData }) => {
       <TextArea
         className="border-0 bg-color-panel"
         aria-label={t("widget.text.name")}
-        setValue={value => setData({ id, values: { content: value } })}
+        setValue={(value) => setData({ id, values: { content: value } })}
         value={content}
       />
     </div>

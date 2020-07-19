@@ -5,6 +5,6 @@ export const category: WidgetCategory = "tracking";
 export const initialHeight = 2;
 export const initialWidth = 2;
 export const initialOptions = {
-  headline: ""
+  headline: "",
 };
 export const initialMeta = {};

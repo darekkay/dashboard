@@ -55,7 +55,7 @@ describe("<Search />", () => {
 
     // search should be triggered on button click
     const searchButton = screen.getByRole("button", {
-      name: "widget.search.buttonAriaLabel"
+      name: "widget.search.buttonAriaLabel",
     });
     userEvent.click(searchButton);
 

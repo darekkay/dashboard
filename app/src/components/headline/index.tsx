@@ -5,7 +5,7 @@ const Headline: React.FC<Props> = ({ level = 2, className, children }) => {
   return React.createElement(
     `h${level}`,
     {
-      className: cn("font-semibold", className)
+      className: cn("font-semibold", className),
     },
     children
   );

@@ -23,7 +23,7 @@ describe("<WidgetOverlay />", () => {
   test("doesn't render anything when no overlay or menu is visible", () => {
     const { container } = renderWidgetOverlay({
       isDraggable: false,
-      isWidgetMenuVisible: false
+      isWidgetMenuVisible: false,
     });
     expect(container).toBeEmptyDOMElement();
   });

@@ -24,7 +24,7 @@ const Header: React.FC<Props> = memo(
     isLayoutEditable,
     toggleLayoutEditable,
     isFullscreen,
-    toggleFullscreen
+    toggleFullscreen,
   }) => {
     const { t } = useTranslation();
 

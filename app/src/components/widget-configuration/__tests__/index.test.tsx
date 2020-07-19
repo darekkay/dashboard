@@ -33,7 +33,7 @@ describe("<WidgetConfiguration />", () => {
     expect(setOptions).not.toHaveBeenCalled();
 
     const imageSourceInput = screen.getByRole("textbox", {
-      name: "widget.image.configuration.url"
+      name: "widget.image.configuration.url",
     });
     await userEvent.type(imageSourceInput, "https://example.com");
 
@@ -48,7 +48,7 @@ describe("<WidgetConfiguration />", () => {
     renderWidgetConfiguration({ setOptions });
 
     const imageSourceInput = screen.getByRole("textbox", {
-      name: "widget.image.configuration.url"
+      name: "widget.image.configuration.url",
     });
     await userEvent.type(imageSourceInput, "https://example.com");
 

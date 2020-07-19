@@ -2,7 +2,7 @@ import {
   Express,
   Request,
   Response,
-  NextFunction
+  NextFunction,
 } from "express-serve-static-core";
 
 import axios from "../axios";

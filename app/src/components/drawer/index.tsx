@@ -7,7 +7,7 @@ import widgets, { WidgetProperties } from "widgets";
 import { categories } from "widgets/categories";
 import Icon from "../icon";
 
-const categoriesWithWidgets = _.groupBy(widgets, widget => widget.category);
+const categoriesWithWidgets = _.groupBy(widgets, (widget) => widget.category);
 
 const Drawer: React.FC<Props> = ({ addWidgetToLayout }) => {
   const { t } = useTranslation();
@@ -28,7 +28,7 @@ const Drawer: React.FC<Props> = ({ addWidgetToLayout }) => {
                   outline
                   border={false}
                   aria-label={t("widget.common.add", {
-                    widget: t(`widget.${widget}.name`)
+                    widget: t(`widget.${widget}.name`),
                   })}
                   onClick={() => addWidgetToLayout(widget)}
                 >

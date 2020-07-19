@@ -14,7 +14,7 @@ const ChemicalElements: React.FC<Props> = ({
   symbol,
   atomicNumber,
   meta,
-  triggerUpdate
+  triggerUpdate,
 }) => {
   const { i18n } = useTranslation();
 

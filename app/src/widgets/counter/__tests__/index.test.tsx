@@ -22,7 +22,7 @@ describe("<Counter />", () => {
 
     expect(setData).toHaveBeenCalledWith({
       id: "counter-mock-id",
-      values: { value: 6 }
+      values: { value: 6 },
     });
   });
 
@@ -42,7 +42,7 @@ describe("<Counter />", () => {
 
     expect(setData).toHaveBeenCalledWith({
       id: "counter-mock-id",
-      values: { value: 4 }
+      values: { value: 4 },
     });
   });
 });

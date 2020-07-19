@@ -32,7 +32,7 @@ const errorHandler: ErrorRequestHandler = (error, __, res, ___) => {
 
   return res.status(responseStatusCode).json({
     error: responseStatusCode,
-    external: !!responseStatusCode // differentiate between internal and 3rd party errors
+    external: !!responseStatusCode, // differentiate between internal and 3rd party errors
   });
 };
 

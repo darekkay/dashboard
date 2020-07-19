@@ -27,7 +27,7 @@ const initStore = (initialState?: State) => {
   const composeEnhancers = composeWithDevTools({
     // Enable capture of stack traces for dispatched Redux actions
     trace: !IS_PRODUCTION,
-    actionsBlacklist: []
+    actionsBlacklist: [],
   });
 
   const enhancers = composeEnhancers(applyMiddleware(sagaMiddleware));
@@ -50,7 +50,7 @@ const initStore = (initialState?: State) => {
     persistor,
     purgeStore: () => {
       persistor.purge().then(() => window.location.reload());
-    }
+    },
   };
 };
 

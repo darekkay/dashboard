@@ -4,7 +4,7 @@ export const categories = [
   "knowledge",
   "tools",
   "tracking",
-  "monitoring"
+  "monitoring",
 
   // possible categories for future widgets
   // "charts"

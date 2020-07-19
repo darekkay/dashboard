@@ -4,7 +4,7 @@ import {
   Menu as ReakitMenu,
   MenuButton,
   MenuItem,
-  MenuStateReturn
+  MenuStateReturn,
 } from "reakit/Menu";
 import _ from "lodash";
 
@@ -18,7 +18,7 @@ const Menu: React.FC<Props> = ({
   children,
   title,
   icon,
-  disclosureClassName
+  disclosureClassName,
 }) => {
   const menu = useMenuState();
   return (
@@ -62,7 +62,7 @@ export const MenuAction: React.FC<MenuItemProps> = ({
   text,
   icon,
   onClick,
-  href
+  href,
 }) => {
   const menu = useMenuContext();
   return (

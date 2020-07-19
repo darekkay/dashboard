@@ -9,7 +9,7 @@ const widgets = {
     type: "date-time",
     data: {},
     options: {},
-    meta: {}
+    meta: {},
   },
   "search-01": {
     x: 12,
@@ -20,9 +20,9 @@ const widgets = {
     data: {},
     options: {
       pattern: "https://duckduckgo.com/?q=%s",
-      title: "DuckDuckGo"
+      title: "DuckDuckGo",
     },
-    meta: {}
+    meta: {},
   },
   "text-01": {
     x: 13,
@@ -32,10 +32,10 @@ const widgets = {
     type: "text",
     data: {
       content:
-        "Rule #1\n\nAlways code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live."
+        "Rule #1\n\nAlways code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
     },
     options: {},
-    meta: {}
+    meta: {},
   },
   "image-01": {
     x: 7,
@@ -46,9 +46,9 @@ const widgets = {
     data: {},
     options: {
       url:
-        "https://images.pexels.com/photos/162240/bull-calf-heifer-ko-162240.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+        "https://images.pexels.com/photos/162240/bull-calf-heifer-ko-162240.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     },
-    meta: {}
+    meta: {},
   },
   "totd-chemical-elements-01": {
     x: 11,
@@ -59,8 +59,8 @@ const widgets = {
     data: {},
     options: {},
     meta: {
-      updateCycle: { hours: 24 }
-    }
+      updateCycle: { hours: 24 },
+    },
   },
   "qr-code-01": {
     x: 10,
@@ -70,9 +70,9 @@ const widgets = {
     type: "qr-code",
     data: {},
     options: {
-      content: "https://dashboard.darekkay.com/"
+      content: "https://dashboard.darekkay.com/",
     },
-    meta: {}
+    meta: {},
   },
   "counter-01": {
     x: 11,
@@ -82,7 +82,7 @@ const widgets = {
     type: "counter",
     data: {},
     options: {},
-    meta: {}
+    meta: {},
   },
   "cryptocurrencies-01": {
     x: 4,
@@ -93,9 +93,9 @@ const widgets = {
     data: {},
     options: {
       fiat: "eur",
-      crypto: "bitcoin"
+      crypto: "bitcoin",
     },
-    meta: { updateCycle: { minutes: 15 } }
+    meta: { updateCycle: { minutes: 15 } },
   },
   "github-stats-01": {
     x: 4,
@@ -105,17 +105,17 @@ const widgets = {
     type: "github-stats",
     data: {},
     options: {
-      query: "darekkay/dashboard"
+      query: "darekkay/dashboard",
     },
     // TODO: read from "list.ts" to keep values in sync
-    meta: { updateCycle: { hours: 24 }, headlineIcon: "github" }
-  }
+    meta: { updateCycle: { hours: 24 }, headlineIcon: "github" },
+  },
 };
 
 export const exampleWidgets = Object.entries(widgets).reduce(
   (acc, [key, widget]) => ({
     ...acc,
-    [key]: _.omit(widget, ["height", "width", "x", "y"])
+    [key]: _.omit(widget, ["height", "width", "x", "y"]),
   }),
   {}
 );
@@ -126,7 +126,7 @@ export const exampleLayout = {
     x: 0,
     y: index,
     w: 1,
-    h: widget.height
+    h: widget.height,
   })),
 
   desktop: Object.entries(widgets).map(([key, widget]) => ({
@@ -134,6 +134,6 @@ export const exampleLayout = {
     x: widget.x,
     y: widget.y,
     w: widget.width,
-    h: widget.height
-  }))
+    h: widget.height,
+  })),
 };

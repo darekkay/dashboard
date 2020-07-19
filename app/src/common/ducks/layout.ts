@@ -33,19 +33,19 @@ export interface LayoutState {
 export const initialState = {
   isEditable: false,
   config: { mobile: [], desktop: [] },
-  nextWidgetId: 100
+  nextWidgetId: 100,
 };
 
 const widgetId = (type: string, id: number) => `${type}-${id}`;
 
 const newWidgetY = (state: LayoutState) => {
-  const max = _.maxBy(state.config.desktop, value => value.y + value.h);
+  const max = _.maxBy(state.config.desktop, (value) => value.y + value.h);
   if (!max) return 0;
   return max.y + max.h;
 };
 
 export const reducerWithInitialState = (state: LayoutState = initialState) =>
-  createReducer<LayoutState>(state, builder =>
+  createReducer<LayoutState>(state, (builder) =>
     builder
       .addCase(importState, (state, action) => action.payload.layout)
 
@@ -53,7 +53,7 @@ export const reducerWithInitialState = (state: LayoutState = initialState) =>
         state.config = action.payload;
       })
 
-      .addCase(toggleLayoutEditable, state => {
+      .addCase(toggleLayoutEditable, (state) => {
         state.isEditable = !state.isEditable;
       })
 
@@ -63,11 +63,11 @@ export const reducerWithInitialState = (state: LayoutState = initialState) =>
           x: 0,
           y: newWidgetY(state),
           w: widgets[action.payload].initialWidth,
-          h: widgets[action.payload].initialHeight
+          h: widgets[action.payload].initialHeight,
         };
         state.config = {
           mobile: [...state.config.mobile, newWidget],
-          desktop: [...state.config.desktop, newWidget]
+          desktop: [...state.config.desktop, newWidget],
         };
       })
 
@@ -75,11 +75,11 @@ export const reducerWithInitialState = (state: LayoutState = initialState) =>
         const byId = (widget: ReactGridLayout) => widget.i !== action.payload;
         state.config = {
           mobile: _.filter(state.config.mobile, byId),
-          desktop: _.filter(state.config.desktop, byId)
+          desktop: _.filter(state.config.desktop, byId),
         };
       })
 
-      .addCase(incrementNextWidgetId, state => {
+      .addCase(incrementNextWidgetId, (state) => {
         state.nextWidgetId = state.nextWidgetId + 1;
       })
   );
@@ -93,7 +93,7 @@ function* addWidgetSaga(action: PayloadAction<string>) {
   yield put(
     createWidget({
       type: action.payload,
-      id: widgetId(action.payload, nextWidgetId)
+      id: widgetId(action.payload, nextWidgetId),
     })
   );
   yield put(incrementNextWidgetId());
@@ -114,5 +114,5 @@ export const actionCreators = {
   toggleLayoutEditable,
   addWidgetToLayout,
   removeWidgetFromLayout,
-  incrementNextWidgetId
+  incrementNextWidgetId,
 };

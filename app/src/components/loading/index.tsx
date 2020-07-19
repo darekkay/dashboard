@@ -11,7 +11,7 @@ const Loading: React.FC<Props> = ({ className, type = "spinner" }) => {
       className={cn(
         {
           "spinner mx-auto": type === "spinner",
-          skeleton: type === "skeleton"
+          skeleton: type === "skeleton",
         },
         className
       )}

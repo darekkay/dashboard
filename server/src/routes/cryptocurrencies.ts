@@ -3,7 +3,7 @@ import {
   Express,
   Request,
   Response,
-  NextFunction
+  NextFunction,
 } from "express-serve-static-core";
 
 import axios from "../axios";
@@ -21,9 +21,9 @@ const routes = (app: Express) =>
           {
             params: {
               vs_currency: fiat,
-              ids: crypto
+              ids: crypto,
             },
-            ttl: ttlForWidgetType("cryptocurrencies")
+            ttl: ttlForWidgetType("cryptocurrencies"),
           }
         );
 
@@ -32,11 +32,11 @@ const routes = (app: Express) =>
           currentPrice: values.current_price,
           last24h: {
             change: _.round(values.price_change_24h, 2),
-            changePercentage: _.round(values.price_change_percentage_24h, 2)
+            changePercentage: _.round(values.price_change_percentage_24h, 2),
           },
           imageUrl: values.image
             ? values.image.replace("/large/", "/small/")
-            : undefined
+            : undefined,
         });
       } catch (error) {
         next(error);

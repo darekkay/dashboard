@@ -42,7 +42,7 @@ describe("<Deviation />", () => {
     const svgContents = [
       positive.querySelector("svg")?.innerHTML,
       negative.querySelector("svg")?.innerHTML,
-      zero.querySelector("svg")?.innerHTML
+      zero.querySelector("svg")?.innerHTML,
     ];
 
     expect(

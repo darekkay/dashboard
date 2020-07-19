@@ -5,7 +5,7 @@ import {
   fireEvent,
   render,
   renderConnected,
-  screen
+  screen,
 } from "common/testing";
 import { stateProps } from "common/utils/mock";
 
@@ -15,14 +15,14 @@ const createFile = (json: object) => {
   const fileContent = JSON.stringify(json);
 
   const file = new File([fileContent], "dashboard.json", {
-    type: "application/json"
+    type: "application/json",
   });
 
   // Strangely, the File/Blob API doesn't seem to provide the text() method in Node environment
   Object.defineProperty(file, "text", {
     get: function () {
-      return () => new Promise(resolve => resolve(fileContent));
-    }
+      return () => new Promise((resolve) => resolve(fileContent));
+    },
   });
 
   return file;
@@ -74,7 +74,7 @@ describe("<ImportExport />", () => {
     const fileInput = screen.getByLabelText("data.restore.default");
 
     const imageFile = new File([], "dashboard.png", {
-      type: "image/png"
+      type: "image/png",
     });
 
     await act(async () => {

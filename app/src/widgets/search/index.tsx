@@ -33,7 +33,7 @@ const Search: React.FC<Props> = ({ id, pattern }) => {
         <Input
           value={value}
           setValue={setValue}
-          onEnter={value => openSearchUrl(pattern, value, setValue)}
+          onEnter={(value) => openSearchUrl(pattern, value, setValue)}
           clearOnEscape
           type="search"
           aria-labelledby={`widget-${id}-headline`}

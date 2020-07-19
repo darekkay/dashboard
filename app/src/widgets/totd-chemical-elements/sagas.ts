@@ -9,7 +9,7 @@ import {
   updatePending,
   updateError,
   updateSuccess,
-  TriggerUpdateAction
+  TriggerUpdateAction,
 } from "components/widget/duck";
 
 import { widgetType } from "./properties";
@@ -17,7 +17,7 @@ import { widgetType } from "./properties";
 const URL = "https://tips.darekkay.com/json/chemical-elements-en.json";
 
 const fetchTipOfTheDay = () => {
-  return axios(URL).then(response => response.data);
+  return axios(URL).then((response) => response.data);
 };
 
 function* onTriggerUpdate(action: PayloadAction<TriggerUpdateAction>) {
@@ -29,8 +29,8 @@ function* onTriggerUpdate(action: PayloadAction<TriggerUpdateAction>) {
       setData({
         id,
         values: {
-          ..._.pick(data, "name", "nameDE", "symbol", "atomicNumber")
-        }
+          ..._.pick(data, "name", "nameDE", "symbol", "atomicNumber"),
+        },
       })
     );
     yield put(updateSuccess(id));

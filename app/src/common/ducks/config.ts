@@ -27,11 +27,11 @@ export const defaultTheme = (): Theme => {
 
 export const initialState = {
   theme: defaultTheme(),
-  language: "" // let i18next use the correct language
+  language: "", // let i18next use the correct language
 };
 
 export const reducerWithInitialState = (state: ConfigState = initialState) =>
-  createReducer<ConfigState>(state, builder =>
+  createReducer<ConfigState>(state, (builder) =>
     builder
       .addCase(importState, (state, action) => action.payload.config)
 
@@ -54,5 +54,5 @@ export function* saga() {
 
 export const actionCreators = {
   changeTheme,
-  changeLanguage
+  changeLanguage,
 };

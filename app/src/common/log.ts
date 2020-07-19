@@ -3,7 +3,7 @@ import logger, { LogLevelDesc } from "loglevel";
 const logLevel: { [key: string]: LogLevelDesc } = {
   development: logger.levels.TRACE,
   production: logger.levels.INFO,
-  test: logger.levels.ERROR
+  test: logger.levels.ERROR,
 };
 
 logger.setLevel(logLevel[process.env.NODE_ENV || "production"]);
@@ -14,7 +14,7 @@ const log = {
   debug: logger.debug,
   info: logger.info,
   warn: logger.warn,
-  error: logger.error
+  error: logger.error,
 };
 
 export default log;

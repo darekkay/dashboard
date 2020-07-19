@@ -18,8 +18,8 @@ const Story = () => {
         currentPrice: 6714,
         last24h: {
           change: 123,
-          changePercentage: 1.51
-        }
+          changePercentage: 1.51,
+        },
       }}
     />
   );

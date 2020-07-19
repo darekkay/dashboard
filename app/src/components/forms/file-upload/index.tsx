@@ -11,17 +11,17 @@ const FileUpload: React.FC<Props> = ({
   label,
   className,
   accept,
-  onDropAccepted
+  onDropAccepted,
 }) => {
   const {
     getRootProps,
     getInputProps,
     isDragActive,
-    acceptedFiles
+    acceptedFiles,
   } = useDropzone({
     accept,
     onDropAccepted,
-    multiple: false
+    multiple: false,
   });
 
   return (

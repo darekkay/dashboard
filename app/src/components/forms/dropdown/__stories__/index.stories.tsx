@@ -18,7 +18,7 @@ const Story = () => {
         label="Dropdown with label function"
         setValue={() => null}
         options={["", "apple", "orange", "banana"]}
-        getOptionLabel={option => option.toUpperCase()}
+        getOptionLabel={(option) => option.toUpperCase()}
       />
     </Section>
   );

@@ -22,14 +22,14 @@ import {
   faTimes,
   faUndoAlt,
   faUpload,
-  faUserFriends
+  faUserFriends,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
   faCheckCircle,
   faQuestionCircle,
   faSave,
-  faTrashAlt
+  faTrashAlt,
 } from "@fortawesome/free-regular-svg-icons";
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -90,7 +90,7 @@ const icons: Record<FontAwesomeIconName, IconDefinition> = {
   trash: faTrashAlt,
   undo: faUndoAlt,
   upload: faUpload,
-  userFriends: faUserFriends
+  userFriends: faUserFriends,
 };
 
 export default icons;

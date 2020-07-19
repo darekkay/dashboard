@@ -24,7 +24,7 @@ const Deviation: React.FC<Props> = ({ value, unit, percentage, className }) => {
         "flex items-center",
         {
           "text-color-danger": (percentage || value) < 0,
-          "text-color-success": (percentage || value) > 0
+          "text-color-success": (percentage || value) > 0,
         },
         className
       )}

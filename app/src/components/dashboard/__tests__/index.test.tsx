@@ -10,13 +10,13 @@ describe("<Dashboard />", () => {
   const defaultProps: Props = {
     layout: {
       mobile: [],
-      desktop: []
+      desktop: [],
     },
     isLayoutEditable: false,
     saveLayout: _.noop,
     removeWidgetFromLayout: _.noop,
     importWidgets: _.noop,
-    widgetIDs: ["search-01", "text-02"]
+    widgetIDs: ["search-01", "text-02"],
   };
 
   test("renders widgets", () => {
@@ -29,21 +29,21 @@ describe("<Dashboard />", () => {
             data: {},
             options: {
               pattern: "https://duckduckgo.com/?q=%s",
-              title: "DuckDuckGo"
+              title: "DuckDuckGo",
             },
-            meta: {}
+            meta: {},
           },
           "text-02": {
             type: "text",
             data: {
               content:
-                "Rule #1\n\nAlways code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live."
+                "Rule #1\n\nAlways code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
             },
             options: {},
-            meta: {}
-          }
-        }
-      }
+            meta: {},
+          },
+        },
+      },
     });
 
     expect(screen.getAllByTestId("widget")).toHaveLength(2);
@@ -60,14 +60,14 @@ describe("<Dashboard />", () => {
       shouldUpdateComponent(defaultProps, {
         ...defaultProps,
         widgetIDs: ["text-02", "search-01"],
-        saveLayout: () => 2
+        saveLayout: () => 2,
       })
     ).toBe(false);
 
     expect(
       shouldUpdateComponent(defaultProps, {
         ...defaultProps,
-        widgetIDs: ["search-01"]
+        widgetIDs: ["search-01"],
       })
     ).toBe(true);
   });

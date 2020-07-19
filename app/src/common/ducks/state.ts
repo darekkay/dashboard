@@ -7,5 +7,5 @@ import { State } from "state/store";
 export const importState = createAction<State>("state/import");
 
 export const actionCreators = {
-  importState
+  importState,
 };

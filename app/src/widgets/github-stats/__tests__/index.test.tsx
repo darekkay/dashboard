@@ -55,8 +55,8 @@ describe("<GithubStats />", () => {
     expect(triggerUpdate).toHaveBeenCalledWith({
       id: "github-stats-mock-id",
       params: {
-        query: "darekkay"
-      }
+        query: "darekkay",
+      },
     });
   });
 });

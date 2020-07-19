@@ -6,17 +6,17 @@ describe("App selector", () => {
       config: {
         grid: {
           columns: 3,
-          rows: 2
-        }
+          rows: 2,
+        },
       },
       layout: {
         config: [],
-        isEditable: false
+        isEditable: false,
       },
       widgets: {
         "id-01": {},
-        "id-02": {}
-      }
+        "id-02": {},
+      },
     });
     expect(result.widgetIDs).toEqual(["id-01", "id-02"]);
   });

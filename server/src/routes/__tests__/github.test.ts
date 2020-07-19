@@ -9,8 +9,8 @@ const userMockResponse = {
   data: {
     name: "Darek Kay",
     login: "darekkay",
-    followers: 85
-  }
+    followers: 85,
+  },
 };
 
 const useRepositoriesMockResponse = {
@@ -18,19 +18,19 @@ const useRepositoriesMockResponse = {
     {
       stargazers_count: 1,
       forks_count: 2,
-      open_issues: 3
+      open_issues: 3,
     },
     {
       stargazers_count: 2,
       forks_count: 4,
-      open_issues: 6
+      open_issues: 6,
     },
     {
       stargazers_count: 4,
       forks_count: 8,
-      open_issues: 12
-    }
-  ]
+      open_issues: 12,
+    },
+  ],
 };
 
 const repositoryMockResponse = {
@@ -42,8 +42,8 @@ const repositoryMockResponse = {
     watchers_count: 40,
     forks_count: 2,
     open_issues_count: 5,
-    subscribers_count: 6
-  }
+    subscribers_count: 6,
+  },
 };
 
 describe("github", () => {
@@ -64,31 +64,31 @@ describe("github", () => {
         // Repository
         [
           "darekkay/dashboard",
-          { id: "darekkay/dashboard", queryType: "repository" }
+          { id: "darekkay/dashboard", queryType: "repository" },
         ],
         [
           "/darekkay/dashboard",
-          { id: "darekkay/dashboard", queryType: "repository" }
+          { id: "darekkay/dashboard", queryType: "repository" },
         ],
         [
           "github.com/darekkay/dashboard",
-          { id: "darekkay/dashboard", queryType: "repository" }
+          { id: "darekkay/dashboard", queryType: "repository" },
         ],
         [
           "https://github.com/darekkay/dashboard",
-          { id: "darekkay/dashboard", queryType: "repository" }
+          { id: "darekkay/dashboard", queryType: "repository" },
         ],
         [
           "https://github.com/darekkay/dashboard/",
-          { id: "darekkay/dashboard", queryType: "repository" }
+          { id: "darekkay/dashboard", queryType: "repository" },
         ],
         [
           "HTTPS://GITHUB.COM/DAREKKAY/DASHBOARD/",
-          { id: "darekkay/dashboard", queryType: "repository" }
-        ]
+          { id: "darekkay/dashboard", queryType: "repository" },
+        ],
       ];
 
-      assertions.forEach(assertion =>
+      assertions.forEach((assertion) =>
         expect(parseQuery(assertion[0])).toEqual(assertion[1])
       );
     });
@@ -105,7 +105,7 @@ describe("github", () => {
         .query({ query: "darekkay" })
         .expect("Content-Type", /json/)
         .expect(200)
-        .then(response => {
+        .then((response) => {
           expect(response.body.name).toBe("darekkay");
           expect(response.body.followers).toBe(85);
           expect(response.body.stars).toBe(7);
@@ -123,7 +123,7 @@ describe("github", () => {
         .query({ query: "darekkay/dashboard" })
         .expect("Content-Type", /json/)
         .expect(200)
-        .then(response => {
+        .then((response) => {
           expect(response.body.name).toBe("darekkay/dashboard");
           expect(response.body.stars).toBe(35);
           expect(response.body.forks).toBe(2);

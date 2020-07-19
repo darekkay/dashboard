@@ -36,9 +36,9 @@ export const renderConnected = (
   return {
     ...render(ui, {
       wrapper: Wrapper,
-      ...renderOptions
+      ...renderOptions,
     }),
-    store
+    store,
   };
 };
 

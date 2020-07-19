@@ -7,7 +7,7 @@ export default {
     initialHeight: 2,
     initialWidth: 2,
     initialOptions: { headline: "" },
-    initialMeta: {}
+    initialMeta: {},
   },
   cryptocurrencies: {
     configurable: true,
@@ -16,7 +16,7 @@ export default {
     initialHeight: 2,
     initialWidth: 3,
     initialOptions: { fiat: "eur", crypto: "bitcoin" },
-    initialMeta: { updateCycle: { minutes: 15 } }
+    initialMeta: { updateCycle: { minutes: 15 } },
   },
   "date-time": {
     configurable: false,
@@ -25,7 +25,7 @@ export default {
     initialHeight: 2,
     initialWidth: 3,
     initialOptions: {},
-    initialMeta: {}
+    initialMeta: {},
   },
   "github-stats": {
     configurable: true,
@@ -34,7 +34,7 @@ export default {
     initialHeight: 3,
     initialWidth: 3,
     initialOptions: {},
-    initialMeta: { updateCycle: { hours: 24 }, headlineIcon: "github" }
+    initialMeta: { updateCycle: { hours: 24 }, headlineIcon: "github" },
   },
   image: {
     configurable: true,
@@ -43,7 +43,7 @@ export default {
     initialHeight: 4,
     initialWidth: 4,
     initialOptions: { url: "" },
-    initialMeta: {}
+    initialMeta: {},
   },
   "qr-code": {
     configurable: true,
@@ -52,7 +52,7 @@ export default {
     initialHeight: 2,
     initialWidth: 2,
     initialOptions: { headline: "", content: "" },
-    initialMeta: {}
+    initialMeta: {},
   },
   search: {
     configurable: true,
@@ -62,9 +62,9 @@ export default {
     initialWidth: 4,
     initialOptions: {
       title: "DuckDuckGo",
-      pattern: "https://duckduckgo.com/?q=%s"
+      pattern: "https://duckduckgo.com/?q=%s",
     },
-    initialMeta: {}
+    initialMeta: {},
   },
   text: {
     configurable: false,
@@ -73,7 +73,7 @@ export default {
     initialHeight: 4,
     initialWidth: 4,
     initialOptions: {},
-    initialMeta: {}
+    initialMeta: {},
   },
   "totd-chemical-elements": {
     configurable: false,
@@ -82,7 +82,7 @@ export default {
     initialHeight: 2,
     initialWidth: 2,
     initialOptions: {},
-    initialMeta: { updateCycle: { hours: 24 } }
+    initialMeta: { updateCycle: { hours: 24 } },
   },
   website: {
     configurable: true,
@@ -91,6 +91,6 @@ export default {
     initialHeight: 5,
     initialWidth: 5,
     initialOptions: { url: "" },
-    initialMeta: {}
-  }
+    initialMeta: {},
+  },
 };

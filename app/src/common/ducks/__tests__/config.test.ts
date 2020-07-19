@@ -1,7 +1,7 @@
 import {
   initialState,
   reducerWithInitialState,
-  actionCreators
+  actionCreators,
 } from "../config";
 
 describe("Settings duck", () => {

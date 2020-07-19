@@ -8,7 +8,7 @@ import Icon from "components/icon";
 
 import selectComponentProps from "./selectors";
 
-const themeSelectors = THEMES.map(theme => `theme-${theme}`);
+const themeSelectors = THEMES.map((theme) => `theme-${theme}`);
 
 export const updateCssVariables = (theme: Theme) => {
   document.body.classList.remove(...themeSelectors);
@@ -45,7 +45,7 @@ interface ThemeProps {
   onClick: () => void;
 }
 
-export const ThemeSelect: React.FC<Props> = props => {
+export const ThemeSelect: React.FC<Props> = (props) => {
   const { theme, changeTheme } = props;
 
   const { t } = useTranslation();
@@ -56,7 +56,7 @@ export const ThemeSelect: React.FC<Props> = props => {
 
   return (
     <>
-      {THEMES.map(themeName => {
+      {THEMES.map((themeName) => {
         return (
           <Theme
             key={themeName}

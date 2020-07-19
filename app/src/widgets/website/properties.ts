@@ -5,6 +5,6 @@ export const category: WidgetCategory = "media";
 export const initialHeight = 5;
 export const initialWidth = 5;
 export const initialOptions = {
-  url: ""
+  url: "",
 };
 export const initialMeta = {};

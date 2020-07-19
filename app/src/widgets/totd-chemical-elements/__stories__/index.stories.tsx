@@ -13,7 +13,7 @@ const Story = () => {
       data={{
         symbol: "V",
         name: "Vanadium",
-        atomicNumber: 23
+        atomicNumber: 23,
       }}
     />
   );

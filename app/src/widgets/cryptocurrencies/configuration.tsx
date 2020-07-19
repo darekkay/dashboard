@@ -14,8 +14,8 @@ const Configuration = ({ options, setOptions }: ConfigurationProps<Props>) => {
         label={t("widget.cryptocurrencies.configuration.fiat")}
         className="mb-6"
         value={options.fiat}
-        setValue={value => setOptions({ fiat: value })}
-        getOptionLabel={option => option.toUpperCase()}
+        setValue={(value) => setOptions({ fiat: value })}
+        getOptionLabel={(option) => option.toUpperCase()}
         options={[
           "eur",
           "usd",
@@ -60,15 +60,17 @@ const Configuration = ({ options, setOptions }: ConfigurationProps<Props>) => {
           "uah",
           "vef",
           "vnd",
-          "zar"
+          "zar",
         ]}
       ></Dropdown>
       <Dropdown
         label={t("widget.cryptocurrencies.configuration.crypto")}
         className="mb-6"
         value={options.crypto}
-        setValue={value => setOptions({ crypto: value })}
-        getOptionLabel={option => t(`widget.cryptocurrencies.crypto.${option}`)}
+        setValue={(value) => setOptions({ crypto: value })}
+        getOptionLabel={(option) =>
+          t(`widget.cryptocurrencies.crypto.${option}`)
+        }
         options={[
           "bitcoin",
           "bitcoin-cash",
@@ -82,7 +84,7 @@ const Configuration = ({ options, setOptions }: ConfigurationProps<Props>) => {
           "stellar",
           "tether",
           "tezos",
-          "zcash"
+          "zcash",
         ]}
       />
       <div className="text-right text-1">

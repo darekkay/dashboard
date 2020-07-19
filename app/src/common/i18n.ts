@@ -18,14 +18,14 @@ import fr from "./translations/fr.json";
 
 export const resources = {
   en: {
-    translation: DEBUG_LABELS ? {} : en
+    translation: DEBUG_LABELS ? {} : en,
   },
   de: {
-    translation: de
+    translation: de,
   },
   fr: {
-    translation: fr
-  }
+    translation: fr,
+  },
 } as Resource;
 
 /* Use browser language as default, if a translation is available */
@@ -40,8 +40,8 @@ i18n.use(initReactI18next).init({
   fallbackLng: "en",
 
   interpolation: {
-    escapeValue: false // not required for React
-  }
+    escapeValue: false, // not required for React
+  },
 });
 
 const updateLanguage = (language: string) => {

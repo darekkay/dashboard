@@ -2,7 +2,7 @@ import {
   Express,
   Request,
   Response,
-  NextFunction
+  NextFunction,
 } from "express-serve-static-core";
 
 import axios from "../axios";
@@ -36,7 +36,7 @@ export const parseQuery = (
 
   return {
     id: "unknown",
-    queryType: "unknown"
+    queryType: "unknown",
   };
 };
 
@@ -53,13 +53,13 @@ const sumUmPropertyForAllRepositories = (
 /* User stats are split in two different GitHub endpoints: users/:user for general stats and users/:user/repos for repo stats */
 const fetchUserStats = async (user: string) => {
   const userResponse = await axios.get(`https://api.github.com/users/${user}`, {
-    ttl: TTL
+    ttl: TTL,
   });
 
   const userRepositoriesResponse = await axios.get(
     `https://api.github.com/users/${user}/repos`,
     {
-      ttl: TTL
+      ttl: TTL,
     }
   );
 
@@ -77,14 +77,14 @@ const fetchUserStats = async (user: string) => {
     open_issues: sumUmPropertyForAllRepositories(
       userRepositoriesResponse.data,
       "open_issues"
-    )
+    ),
   };
 };
 
 const fetchRepositoryStats = async (repository: string) => {
   const repositoryResponse = (
     await axios.get(`https://api.github.com/repos/${repository}`, {
-      ttl: TTL
+      ttl: TTL,
     })
   ).data;
 
@@ -93,7 +93,7 @@ const fetchRepositoryStats = async (repository: string) => {
     stars: repositoryResponse.stargazers_count,
     subscribers: repositoryResponse.subscribers_count,
     forks: repositoryResponse.forks_count,
-    open_issues: repositoryResponse.open_issues_count
+    open_issues: repositoryResponse.open_issues_count,
   };
 };
 

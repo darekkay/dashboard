@@ -20,7 +20,7 @@ export const shouldUpdateComponent = (
 ) => {
   return (
     currentProps.widgetIDs.length !== nextProps.widgetIDs.length ||
-    updateProps.some(prop => currentProps[prop] !== nextProps[prop])
+    updateProps.some((prop) => currentProps[prop] !== nextProps[prop])
   );
 };
 
@@ -36,7 +36,7 @@ class Dashboard extends React.Component<Props> {
       widgetIDs,
       saveLayout,
       removeWidgetFromLayout,
-      importWidgets
+      importWidgets,
     } = this.props;
     if (widgetIDs.length === 0)
       return (
@@ -62,7 +62,7 @@ class Dashboard extends React.Component<Props> {
           // @ts-ignore
           React.createElement(makeWidgetMemoized(widgetID), {
             key: widgetID,
-            removeWidgetFromLayout
+            removeWidgetFromLayout,
           })
         )}
       </ReactGridLayout>

@@ -24,7 +24,7 @@ const WidgetOverlay: React.FC<Props> = ({
   isDraggable,
   setDraggable,
   removeWidgetFromLayout,
-  openConfigurationModal
+  openConfigurationModal,
 }) => {
   const { t } = useTranslation();
 
@@ -32,11 +32,11 @@ const WidgetOverlay: React.FC<Props> = ({
 
   const [lastMouseDownPosition, setLastMouseDownPosition] = useState({
     x: 0,
-    y: 0
+    y: 0,
   });
   const [lastMouseUpPosition, setLastMouseUpPosition] = useState({
     x: 0,
-    y: 0
+    y: 0,
   });
 
   useEffect(() => {
@@ -55,10 +55,10 @@ const WidgetOverlay: React.FC<Props> = ({
       {isDraggable && (
         <div
           className="widget-overlay absolute inset-0 cursor-move grid-draggable"
-          onMouseDown={event => {
+          onMouseDown={(event) => {
             setLastMouseDownPosition({ x: event.pageX, y: event.pageY });
           }}
-          onMouseUp={event => {
+          onMouseUp={(event) => {
             setLastMouseUpPosition({ x: event.pageX, y: event.pageY });
             setDraggable(isMouseMoved(lastMouseDownPosition, event));
           }}
@@ -82,7 +82,7 @@ const WidgetOverlay: React.FC<Props> = ({
                 border={false}
                 className="no-transition"
                 aria-label={t(`widget.common.configuration`, {
-                  widget: t(`widget.${type}.name`)
+                  widget: t(`widget.${type}.name`),
                 })}
                 onClick={openConfigurationModal}
               >
@@ -99,7 +99,7 @@ const WidgetOverlay: React.FC<Props> = ({
               variant="unstyled"
               border={false}
               aria-label={t(`widget.common.remove`, {
-                widget: t(`widget.${type}.name`)
+                widget: t(`widget.${type}.name`),
               })}
               onClick={() => removeWidgetFromLayout(id)}
             >

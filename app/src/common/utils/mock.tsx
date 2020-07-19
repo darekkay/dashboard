@@ -7,7 +7,7 @@ export const widgetProps = {
   meta: { updateCycle: { minute: 1 } },
   setData: _.noop,
   setOptions: _.noop,
-  triggerUpdate: _.noop
+  triggerUpdate: _.noop,
 };
 
 /* Default connected widget props (e.g. for stories) */
@@ -17,7 +17,7 @@ export const connectedWidgetProps = {
   removeWidgetFromLayout: _.noop,
   hasError: false,
   className: "resize",
-  ...widgetProps
+  ...widgetProps,
 };
 
 /* Default empty state */
@@ -27,6 +27,6 @@ export const stateProps: State = {
   layout: {
     isEditable: false,
     config: { mobile: [], desktop: [] },
-    nextWidgetId: 1
-  }
+    nextWidgetId: 1,
+  },
 };

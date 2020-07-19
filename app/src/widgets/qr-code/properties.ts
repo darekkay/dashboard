@@ -6,6 +6,6 @@ export const initialHeight = 2;
 export const initialWidth = 2;
 export const initialOptions = {
   headline: "",
-  content: ""
+  content: "",
 };
 export const initialMeta = {};

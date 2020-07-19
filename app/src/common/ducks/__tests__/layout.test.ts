@@ -3,7 +3,7 @@ import {
   initialState,
   reducerWithInitialState,
   actionCreators,
-  LayoutState
+  LayoutState,
 } from "../layout";
 
 const getInitialState = (widgets: ReactGridLayout[]) => {
@@ -12,14 +12,14 @@ const getInitialState = (widgets: ReactGridLayout[]) => {
       ...widget,
       x: 0,
       y: index,
-      w: 1
+      w: 1,
     })),
-    desktop: widgets
+    desktop: widgets,
   };
   return {
     isEditable: false,
     config: layout,
-    nextWidgetId: 100
+    nextWidgetId: 100,
   };
 };
 
@@ -61,18 +61,18 @@ describe("Layout duck", () => {
       );
 
     let updatedState = addWidgetToLayoutAction([
-      { i: "text-01", x: 0, y: 0, w: 1, h: 1 }
+      { i: "text-01", x: 0, y: 0, w: 1, h: 1 },
     ]);
     expect(getLastWidget(updatedState.config.desktop).y).toEqual(1);
 
     updatedState = addWidgetToLayoutAction([
-      { i: "text-01", x: 0, y: 0, w: 1, h: 3 }
+      { i: "text-01", x: 0, y: 0, w: 1, h: 3 },
     ]);
     expect(getLastWidget(updatedState.config.desktop).y).toEqual(3);
 
     updatedState = addWidgetToLayoutAction([
       { i: "text-01", x: 0, y: 0, w: 1, h: 3 },
-      { i: "text-02", x: 3, y: 3, w: 1, h: 3 }
+      { i: "text-02", x: 3, y: 3, w: 1, h: 3 },
     ]);
     expect(getLastWidget(updatedState.config.desktop).y).toEqual(6);
 
@@ -93,7 +93,7 @@ describe("Layout duck", () => {
     let updatedState = removeWidgetFromLayoutAction(
       [
         { i: "text-01", x: 0, y: 0, w: 1, h: 3 },
-        { i: "text-02", x: 3, y: 3, w: 1, h: 3 }
+        { i: "text-02", x: 3, y: 3, w: 1, h: 3 },
       ],
       "text-01"
     );
@@ -103,7 +103,7 @@ describe("Layout duck", () => {
     updatedState = removeWidgetFromLayoutAction(
       [
         { i: "text-01", x: 0, y: 0, w: 1, h: 3 },
-        { i: "text-02", x: 3, y: 3, w: 1, h: 3 }
+        { i: "text-02", x: 3, y: 3, w: 1, h: 3 },
       ],
       "text-03"
     );

@@ -7,13 +7,13 @@ import Input from "components/forms/input";
 const Configuration = ({
   options,
   setOptions,
-  save
+  save,
 }: ConfigurationProps<Props>) => {
   const { t } = useTranslation();
   return (
     <>
       <Input
-        setValue={value => setOptions({ query: value })}
+        setValue={(value) => setOptions({ query: value })}
         value={options.query}
         label={t("widget.github-stats.configuration.query")}
         className="mb-6"

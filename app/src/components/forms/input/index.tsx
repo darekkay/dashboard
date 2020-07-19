@@ -13,7 +13,7 @@ const onKeyUp = (event: any, props: Props) => {
   }
 };
 
-const Input: React.FC<Props> = props => {
+const Input: React.FC<Props> = (props) => {
   const {
     className,
     label,
@@ -43,14 +43,14 @@ const Input: React.FC<Props> = props => {
             "w-full px-4 py-1 border rounded text-color-default",
             {
               "pr-7": isFocused,
-              "bg-color-default": !className?.includes("bg-color-")
+              "bg-color-default": !className?.includes("bg-color-"),
             },
             className
           )}
-          onChange={event => {
+          onChange={(event) => {
             setValue(event.target.value);
           }}
-          onKeyUp={event => onKeyUp(event, props)}
+          onKeyUp={(event) => onKeyUp(event, props)}
           value={value}
           type="text"
           {...domProps}

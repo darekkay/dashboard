@@ -6,7 +6,7 @@ import {
   reducerWithInitialState,
   actionCreators,
   createWidget,
-  removeWidget
+  removeWidget,
 } from "../duck";
 
 const initialState = {
@@ -14,8 +14,8 @@ const initialState = {
     type: "date-time",
     options: {},
     data: {},
-    meta: {}
-  }
+    meta: {},
+  },
 };
 
 describe("Widget duck", () => {
@@ -24,7 +24,7 @@ describe("Widget duck", () => {
       initialState,
       actionCreators.setOptions({
         id: "date-time-01",
-        values: { content: "mock" }
+        values: { content: "mock" },
       })
     );
 
@@ -36,7 +36,7 @@ describe("Widget duck", () => {
       initialState,
       actionCreators.setData({
         id: "date-time-01",
-        values: { content: "mock" }
+        values: { content: "mock" },
       })
     );
 
@@ -48,7 +48,7 @@ describe("Widget duck", () => {
       initialState,
       createWidget({
         id: "date-time-01",
-        type: "date-time"
+        type: "date-time",
       })
     );
 
@@ -67,15 +67,15 @@ describe("Widget duck", () => {
         type: "search",
         options: {},
         data: {},
-        meta: {}
-      }
+        meta: {},
+      },
     };
 
     let updatedState = reducerWithInitialState()(
       initialState,
       importState({
         ...stateProps,
-        widgets
+        widgets,
       })
     );
 

@@ -33,8 +33,8 @@ const Modal: React.FC<Props> = ({
       contentLabel={headline}
       style={{
         content: {
-          maxWidth
-        }
+          maxWidth,
+        },
       }}
       {...rest}
     >

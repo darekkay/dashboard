@@ -14,8 +14,8 @@ describe("useMountEffect", () => {
       {
         initialProps: {
           callback: fn,
-          dummyProp: 1
-        }
+          dummyProp: 1,
+        },
       }
     );
 

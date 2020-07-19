@@ -13,7 +13,7 @@ const Settings: React.FC<Props> = () => {
   const { t } = useTranslation();
   return (
     <PersistorContext.Consumer>
-      {purgeStore => (
+      {(purgeStore) => (
         <>
           <Section type="modal" headline={t("theme.headline")}>
             <ThemeSelect />

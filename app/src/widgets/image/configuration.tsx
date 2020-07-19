@@ -7,13 +7,13 @@ import Input from "components/forms/input";
 const Configuration = ({
   options,
   setOptions,
-  save
+  save,
 }: ConfigurationProps<Props>) => {
   const { t } = useTranslation();
   return (
     <>
       <Input
-        setValue={value => setOptions({ url: value })}
+        setValue={(value) => setOptions({ url: value })}
         value={options.url}
         label={t("widget.image.configuration.url")}
         type="url"

@@ -14,19 +14,19 @@ const Story = () => {
           id="github-stats-01"
           type="github-stats"
           options={{
-            query: "darekkay"
+            query: "darekkay",
           }}
           data={{
             name: "darekkay",
             followers: 142,
             stars: 314,
             forks: 17,
-            open_issues: 5
+            open_issues: 5,
           }}
           meta={{
             // TODO: the meta should be rather a "static" property of a widget
             //  redefining it everywhere shouldn't be required
-            headlineIcon: "github"
+            headlineIcon: "github",
           }}
         />
       </Section>
@@ -36,17 +36,17 @@ const Story = () => {
           id="github-stats-02"
           type="github-stats"
           options={{
-            query: "darekkay/dashboard"
+            query: "darekkay/dashboard",
           }}
           data={{
             name: "darekkay/dashboard",
             stars: 314,
             subscribers: 51,
             forks: 17,
-            open_issues: 5
+            open_issues: 5,
           }}
           meta={{
-            headlineIcon: "github"
+            headlineIcon: "github",
           }}
         />
       </Section>

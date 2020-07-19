@@ -10,13 +10,13 @@ import providers from "./lib/providers";
 const Configuration = ({
   options,
   setOptions,
-  save
+  save,
 }: ConfigurationProps<Props>) => {
   const { t } = useTranslation();
   return (
     <>
       <Input
-        setValue={value => setOptions({ title: value })}
+        setValue={(value) => setOptions({ title: value })}
         value={options.title}
         label={t("widget.search.configuration.title")}
         className="mb-6"
@@ -24,7 +24,7 @@ const Configuration = ({
         onEnter={save}
       />
       <Input
-        setValue={value => setOptions({ pattern: value })}
+        setValue={(value) => setOptions({ pattern: value })}
         value={options.pattern}
         label={t("widget.search.configuration.pattern")}
         className="mb-6"
@@ -32,7 +32,7 @@ const Configuration = ({
         onEnter={save}
       />
       <div>
-        {providers.map(provider => (
+        {providers.map((provider) => (
           <Button
             key={provider.title}
             className="mr-5 mb-2"
@@ -42,7 +42,7 @@ const Configuration = ({
             onClick={() =>
               setOptions({
                 title: provider.title,
-                pattern: provider.pattern
+                pattern: provider.pattern,
               })
             }
           >

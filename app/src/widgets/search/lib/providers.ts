@@ -10,9 +10,9 @@ const providers: SearchProvider[] = [
   { title: "Bing", pattern: "https://www.bing.com/search?q=%s" },
   {
     title: "YouTube",
-    pattern: "https://www.youtube.com/results?search_query=%s"
+    pattern: "https://www.youtube.com/results?search_query=%s",
   },
-  { title: "IMDb", pattern: "https://www.imdb.com/find?s=all;q=%s" }
+  { title: "IMDb", pattern: "https://www.imdb.com/find?s=all;q=%s" },
 ];
 
 export default providers;

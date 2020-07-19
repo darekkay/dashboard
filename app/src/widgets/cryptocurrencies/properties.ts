@@ -6,8 +6,8 @@ export const initialHeight = 2;
 export const initialWidth = 3;
 export const initialOptions = {
   fiat: "eur",
-  crypto: "bitcoin"
+  crypto: "bitcoin",
 };
 export const initialMeta = {
-  updateCycle: { minutes: 15 }
+  updateCycle: { minutes: 15 },
 };

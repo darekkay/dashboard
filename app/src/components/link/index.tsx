@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Link: React.FC<Props> = props => {
+export const Link: React.FC<Props> = (props) => {
   const { external = true, ...domProps } = props;
   return (
     <a

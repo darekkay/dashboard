@@ -5,7 +5,7 @@ import Measure from "react-measure";
 import cn from "classnames";
 
 import withErrorHandling, {
-  State as ErrorProps
+  State as ErrorProps,
 } from "common/hoc/withErrorHandling";
 import useBooleanState from "common/hooks/useBooleanState";
 import Loading from "components/loading";
@@ -21,7 +21,7 @@ import { actionCreators, TriggerUpdateAction, WidgetMeta } from "./duck";
 const initialDimensions: Dimensions = { width: 1, height: 1 };
 
 /** Single widget within the dashboard */
-export const Widget: React.FC<Props & ErrorProps> = props => {
+export const Widget: React.FC<Props & ErrorProps> = (props) => {
   const {
     id,
     type,
@@ -49,13 +49,13 @@ export const Widget: React.FC<Props & ErrorProps> = props => {
     isWidgetMenuVisible,
     showWidgetMenu,
     ,
-    setWidgetMenuVisible
+    setWidgetMenuVisible,
   ] = useBooleanState(false);
 
   const [
     isConfigurationModalOpen,
     openConfigurationModal,
-    closeConfigurationModal
+    closeConfigurationModal,
   ] = useBooleanState(false);
 
   const widgetRef = useRef(null);
@@ -72,7 +72,7 @@ export const Widget: React.FC<Props & ErrorProps> = props => {
           "bg-color-panel",
           "relative",
           {
-            error: hasError
+            error: hasError,
           },
           className
         )}
@@ -81,7 +81,7 @@ export const Widget: React.FC<Props & ErrorProps> = props => {
         tabIndex={0}
         aria-label={t(`widget.${type}.name`)}
         onFocus={showWidgetMenu}
-        onBlur={event => {
+        onBlur={(event) => {
           // The widget becomes draggable if neither of its children is focused
           // NOTE: relatedTarget is "null" in Firefox, if the target is an iframe, which makes the Website widget unusable
           // https://bugzilla.mozilla.org/show_bug.cgi?id=1545573
@@ -119,7 +119,7 @@ export const Widget: React.FC<Props & ErrorProps> = props => {
         {!hasError && (
           <Measure
             bounds
-            onResize={contentRect => {
+            onResize={(contentRect) => {
               setDimensions(contentRect?.bounds || initialDimensions);
             }}
           >
@@ -136,10 +136,10 @@ export const Widget: React.FC<Props & ErrorProps> = props => {
                     triggerUpdate,
                     meta: {
                       ...meta,
-                      dimensions
+                      dimensions,
                     },
                     ...options,
-                    ...data
+                    ...data,
                   })}
                 </Suspense>
               </div>
@@ -205,5 +205,5 @@ const mapStateToProps = (id: string) => makeSelectWidget(id);
 export default (id: string) =>
   connect(mapStateToProps(id), {
     ...actionCreators,
-    triggerUpdate: actionCreators.triggerUpdate(getTypeFromId(id))
+    triggerUpdate: actionCreators.triggerUpdate(getTypeFromId(id)),
   })(withErrorHandling(Widget));

@@ -14,13 +14,15 @@ export const ImportExport: React.FC<Props> = ({ state, importState }) => {
   const { t } = useTranslation();
   const [uploadResult, setUploadResult] = useState<UpdateStatus>("pending");
   const onDropAccepted = useCallback(
-    acceptedFiles => {
+    (acceptedFiles) => {
       if (acceptedFiles.length > 0) {
-        (acceptedFiles[0] as File).text().then(data => {
+        (acceptedFiles[0] as File).text().then((data) => {
           const jsonData = JSON.parse(data);
           if (
             // basic validation - the object has to contain all existing state keys
-            STATE_PROPERTIES.every(prop => Object.keys(jsonData).includes(prop))
+            STATE_PROPERTIES.every((prop) =>
+              Object.keys(jsonData).includes(prop)
+            )
           ) {
             importState(jsonData);
             setUploadResult("success");

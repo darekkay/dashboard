@@ -10,13 +10,13 @@ import providers from "./lib/providers";
 const Configuration = ({
   options,
   setOptions,
-  save
+  save,
 }: ConfigurationProps<Props>) => {
   const { t } = useTranslation();
   return (
     <>
       <Input
-        setValue={value => setOptions({ url: value })}
+        setValue={(value) => setOptions({ url: value })}
         value={options.url}
         label={t("widget.website.configuration.url")}
         className="mb-6"
@@ -25,7 +25,7 @@ const Configuration = ({
         onEnter={save}
       />
       <div className="mb-6">
-        {providers.map(provider => (
+        {providers.map((provider) => (
           <Button
             key={provider.title}
             className="mr-5 mb-2"
@@ -34,7 +34,7 @@ const Configuration = ({
             outline
             onClick={() =>
               setOptions({
-                url: provider.url
+                url: provider.url,
               })
             }
           >

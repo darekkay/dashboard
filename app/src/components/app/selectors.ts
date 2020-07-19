@@ -8,7 +8,7 @@ const selectComponentProps = createSelector(
     layout: layout.config,
     isLayoutEditable: layout.isEditable,
     widgetIDs: Object.keys(widgets),
-    currentTheme: theme
+    currentTheme: theme,
   })
 );
 

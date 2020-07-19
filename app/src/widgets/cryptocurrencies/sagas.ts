@@ -8,7 +8,7 @@ import {
   updatePending,
   updateError,
   updateSuccess,
-  TriggerUpdateAction
+  TriggerUpdateAction,
 } from "components/widget/duck";
 
 import { widgetType } from "./properties";
@@ -27,7 +27,7 @@ function* onTriggerUpdate(action: PayloadAction<TriggerUpdateAction>) {
     yield put(
       setData({
         id,
-        values: data
+        values: data,
       })
     );
     yield put(updateSuccess(id));

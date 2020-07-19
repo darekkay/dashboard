@@ -8,7 +8,7 @@ import Section from "components/section";
 const Story = () => {
   const sharedProps = {
     type: "search",
-    options: { pattern: "https://duckduckgo.com/?q=%s", title: "DuckDuckGo" }
+    options: { pattern: "https://duckduckgo.com/?q=%s", title: "DuckDuckGo" },
   };
   return (
     <div style={{ maxWidth: "500px" }}>

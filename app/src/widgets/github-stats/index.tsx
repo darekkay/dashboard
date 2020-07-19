@@ -37,7 +37,7 @@ const GithubStats: React.FC<Props> = ({
   open_issues,
   query,
   meta,
-  triggerUpdate
+  triggerUpdate,
 }) => {
   const { t } = useTranslation();
   useTriggerUpdate({ id, params: { query }, meta, triggerUpdate }, [query]);

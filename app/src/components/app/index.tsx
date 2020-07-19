@@ -4,7 +4,7 @@ import Fullscreen from "react-full-screen";
 
 import {
   actionCreators as layoutActionCreators,
-  Layout
+  Layout,
 } from "common/ducks/layout";
 import useToggle from "common/hooks/useToggle";
 import Dashboard from "components/dashboard";
@@ -15,7 +15,7 @@ import { importWidgets, WidgetsState } from "components/widget/duck";
 
 import mapStateToProps from "./selectors";
 
-export const App: React.FC<Props> = props => {
+export const App: React.FC<Props> = (props) => {
   const {
     widgetIDs,
     layout,
@@ -25,7 +25,7 @@ export const App: React.FC<Props> = props => {
     addWidgetToLayout,
     removeWidgetFromLayout,
     importWidgets,
-    currentTheme
+    currentTheme,
   } = props;
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export const App: React.FC<Props> = props => {
   return (
     <Fullscreen
       enabled={isFullscreen}
-      onChange={isFull => toggleFullscreen(isFull)}
+      onChange={(isFull) => toggleFullscreen(isFull)}
     >
       <Header
         isLayoutEditable={isLayoutEditable}
@@ -82,5 +82,5 @@ export interface Props {
 
 export default connect(mapStateToProps, {
   ...layoutActionCreators,
-  importWidgets
+  importWidgets,
 })(App);

@@ -37,7 +37,7 @@ describe("<ChemicalElements />", () => {
     expect(triggerUpdate).toHaveBeenCalledTimes(1);
     expect(triggerUpdate).toHaveBeenCalledWith({
       id: "totd-chemical-elements-mock-id",
-      params: {}
+      params: {},
     });
   });
 });

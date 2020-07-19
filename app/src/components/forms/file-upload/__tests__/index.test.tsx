@@ -15,7 +15,7 @@ describe("<FileUpload />", () => {
 
     const fileInput = screen.getByLabelText(/upload file/i);
     const file = new File(["(⌐□_□)"], "chucknorris.png", {
-      type: "image/png"
+      type: "image/png",
     });
 
     await act(async () => {

@@ -22,7 +22,7 @@ describe("<WelcomePage />", () => {
     expect(saveLayout).not.toHaveBeenCalled();
 
     const button = screen.getByRole("button", {
-      name: "welcome.createExampleBoard"
+      name: "welcome.createExampleBoard",
     });
     userEvent.click(button);
 

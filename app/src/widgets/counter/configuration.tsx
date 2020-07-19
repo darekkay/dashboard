@@ -7,13 +7,13 @@ import Input from "components/forms/input";
 const Configuration = ({
   options,
   setOptions,
-  save
+  save,
 }: ConfigurationProps<Props>) => {
   const { t } = useTranslation();
   return (
     <>
       <Input
-        setValue={value => setOptions({ headline: value })}
+        setValue={(value) => setOptions({ headline: value })}
         value={options.headline}
         label={t("common.headline")}
         className="mb-6"

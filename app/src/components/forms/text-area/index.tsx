@@ -17,7 +17,7 @@ const TextArea: React.FC<Props> = ({
           { "bg-color-default": !className?.includes("bg-color-") },
           className
         )}
-        onChange={event => {
+        onChange={(event) => {
           setValue(event.target.value);
         }}
         {...domProps}

@@ -8,7 +8,7 @@ import "./styles.scss";
 
 export type IconName = FontAwesomeIconName;
 
-const renderIcon: React.FC<Props> = props => {
+const renderIcon: React.FC<Props> = (props) => {
   const fontAwesomeIcon = fontAwesomeIcons[props.name];
   if (fontAwesomeIcon !== undefined) {
     return <FontAwesomeIcon title={props.alt} icon={fontAwesomeIcon} />;
@@ -17,7 +17,7 @@ const renderIcon: React.FC<Props> = props => {
   throw new Error(`Unknown icon '${props.name}'`);
 };
 
-const Icon: React.FC<Props> = props => {
+const Icon: React.FC<Props> = (props) => {
   const { className, position } = props;
   return (
     <div

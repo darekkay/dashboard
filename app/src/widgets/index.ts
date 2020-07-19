@@ -9,7 +9,7 @@ import availableWidgets from "./list";
 
 export type ValueUpdateAction = ({
   id,
-  values
+  values,
 }: {
   id: string;
   values: Record<string, any>;
@@ -53,7 +53,7 @@ const importWidgets = (widgets: Record<string, WidgetProperties>) =>
       [type]: {
         ...values,
         Component: React.lazy(() =>
-          import(`widgets/${type}`).then(module => {
+          import(`widgets/${type}`).then((module) => {
             if (module.saga) {
               injectSaga(type, module.saga); // NICE: import dynamically?
             }
@@ -62,8 +62,8 @@ const importWidgets = (widgets: Record<string, WidgetProperties>) =>
         ),
         Configuration: values.configurable
           ? React.lazy(() => import(`widgets/${type}/configuration`))
-          : null
-      }
+          : null,
+      },
     }),
     {}
   ) as Record<string, WidgetProperties & WidgetElements>;

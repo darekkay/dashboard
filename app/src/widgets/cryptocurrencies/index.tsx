@@ -16,11 +16,11 @@ const Cryptocurrencies: React.FC<Props> = ({
   currentPrice,
   last24h,
   meta,
-  triggerUpdate
+  triggerUpdate,
 }) => {
   useTriggerUpdate({ id, params: { crypto, fiat }, meta, triggerUpdate }, [
     crypto,
-    fiat
+    fiat,
   ]);
 
   return (

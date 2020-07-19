@@ -9,5 +9,5 @@ export const rootReducer = (initialState?: State) =>
   combineReducers({
     config: configReducer(initialState?.config),
     widgets: widgetReducer(initialState?.widgets),
-    layout: layoutReducer(initialState?.layout)
+    layout: layoutReducer(initialState?.layout),
   });

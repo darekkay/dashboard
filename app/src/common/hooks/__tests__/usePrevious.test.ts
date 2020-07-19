@@ -4,8 +4,8 @@ import usePrevious from "../usePrevious";
 
 describe("usePrevious", () => {
   test("returns the previous value", () => {
-    const { result, rerender } = renderHook(value => usePrevious(value), {
-      initialProps: "first" as any
+    const { result, rerender } = renderHook((value) => usePrevious(value), {
+      initialProps: "first" as any,
     });
 
     // On first render, there is no previous value

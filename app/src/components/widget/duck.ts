@@ -69,7 +69,7 @@ export interface WidgetsState {
 export const initialState = {};
 
 export const reducerWithInitialState = (state: WidgetsState = initialState) =>
-  createReducer<WidgetsState>(state, builder =>
+  createReducer<WidgetsState>(state, (builder) =>
     builder
       .addCase(importState, (state, action) => action.payload.widgets)
 
@@ -99,7 +99,7 @@ export const reducerWithInitialState = (state: WidgetsState = initialState) =>
           ...state[id].meta,
           updateStatus: "success",
           errorCode: undefined,
-          lastUpdated: Date.now()
+          lastUpdated: Date.now(),
         };
       })
 
@@ -120,7 +120,7 @@ export const reducerWithInitialState = (state: WidgetsState = initialState) =>
           type,
           data: {},
           options: widgets[type].initialOptions || {},
-          meta: widgets[type].initialMeta || {}
+          meta: widgets[type].initialMeta || {},
         };
       })
 
@@ -133,5 +133,5 @@ export const reducerWithInitialState = (state: WidgetsState = initialState) =>
 export const actionCreators = {
   setOptions,
   setData,
-  triggerUpdate
+  triggerUpdate,
 };

@@ -14,7 +14,7 @@ const WidgetConfiguration: React.FC<Props> = ({
   options,
   setOptions,
   closeModal,
-  isModalOpen
+  isModalOpen,
 }) => {
   const { t } = useTranslation();
   const [values, setValues] = useState(options);
@@ -31,7 +31,7 @@ const WidgetConfiguration: React.FC<Props> = ({
   return (
     <Modal
       headline={t(`widget.common.configuration`, {
-        widget: t(`widget.${type}.name`)
+        widget: t(`widget.${type}.name`),
       })}
       closeModal={onCancel}
       isOpen={isModalOpen}
@@ -39,11 +39,11 @@ const WidgetConfiguration: React.FC<Props> = ({
       <Suspense fallback={<Loading />}>
         {React.createElement(configuration, {
           id,
-          setOptions: modalValues => {
+          setOptions: (modalValues) => {
             setValues({ ...values, ...modalValues });
           },
           options: values,
-          save: onSave
+          save: onSave,
         })}
       </Suspense>
 

@@ -12,7 +12,7 @@ const withErrorHandling = <P extends object>(
 ) => {
   return class ErrorHandling extends React.Component<P> {
     state: State = {
-      hasError: false
+      hasError: false,
     };
 
     static getDerivedStateFromError() {

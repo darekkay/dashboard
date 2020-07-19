@@ -21,19 +21,19 @@ const Dropdown: React.FC<Props> = ({
         className={cn(
           "forms-dropdown relative",
           {
-            "bg-color-default": !className?.includes("bg-color-")
+            "bg-color-default": !className?.includes("bg-color-"),
           },
           className
         )}
       >
         <select
           className="w-full pl-4 pr-7 py-1 border rounded bg-color-default text-color-default"
-          onChange={event => {
+          onChange={(event) => {
             setValue(event.target.value);
           }}
           {...domProps}
         >
-          {options.map(option => (
+          {options.map((option) => (
             <option key={option} value={option}>
               {getOptionLabel ? getOptionLabel(option) : option}
             </option>
