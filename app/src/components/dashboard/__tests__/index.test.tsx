@@ -1,7 +1,7 @@
 import React from "react";
-import { renderConnected, screen } from "common/testing";
 import _ from "lodash";
 
+import { renderConnected, screen } from "common/testing";
 import { stateProps } from "common/utils/mock";
 
 import Dashboard, { shouldUpdateComponent, Props } from "../index";

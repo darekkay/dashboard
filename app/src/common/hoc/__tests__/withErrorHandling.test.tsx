@@ -1,6 +1,6 @@
 import React from "react";
-import { render, screen } from "common/testing";
 
+import { render, screen } from "common/testing";
 import log from "common/log";
 
 import withErrorHandling, { State as ErrorProps } from "../withErrorHandling";

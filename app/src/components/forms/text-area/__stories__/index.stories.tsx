@@ -1,6 +1,5 @@
 import React from "react";
 import _ from "lodash";
-
 import { storiesOf } from "@storybook/react";
 
 import TextArea from "../index";

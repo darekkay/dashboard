@@ -1,6 +1,6 @@
 import React from "react";
-import { render, screen } from "common/testing";
 
+import { render, screen } from "common/testing";
 import Deviation from "components/stats/deviation/index";
 
 describe("<Deviation />", () => {

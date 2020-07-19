@@ -1,8 +1,8 @@
 import React from "react";
-
 import { storiesOf } from "@storybook/react";
 
 import Icon from "components/icon";
+
 import Link from "../index";
 
 const Story = () => {

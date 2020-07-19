@@ -415,10 +415,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@darekkay/eslint-config@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@darekkay/eslint-config/-/eslint-config-1.0.2.tgz#83c331b321da05ab248e5acde4f2a6ba73d1f6d6"
-  integrity sha512-NilJ/UY6d5sONVL3PRiAkNNYwv9fqeK4DvQOhHVYni/4NbNkN8vHwTd36m4r8Tg3kilV4sGEaCqD30XyQWXXTg==
+"@darekkay/eslint-config@1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@darekkay/eslint-config/-/eslint-config-1.0.3.tgz#4514b8b851d23e3b0dd29eb977d2dcbb5b82c8ab"
+  integrity sha512-bE0winknStvrojzKgzh9wbtqFYh77mrvx6LVS3RwjvkFDDXOjteTuvuw9Q0Gf7Btgch4De9/gTGnV4r0uy5EOg==
   dependencies:
     eslint-config-prettier "6.11.0"
     eslint-config-react-app "5.2.1"

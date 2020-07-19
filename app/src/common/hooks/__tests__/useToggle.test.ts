@@ -1,5 +1,6 @@
 /* Based on https://github.com/streamich/react-use/blob/master/tests/useToggle.test.ts */
 import { hookAct, renderHook } from "common/testing";
+
 import useToggle from "../useToggle";
 
 const setUp = (initialValue: boolean) =>

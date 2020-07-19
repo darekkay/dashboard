@@ -10,7 +10,6 @@ import { Store } from "redux";
 import { Provider } from "react-redux";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-
 // act differences: https://github.com/testing-library/react-hooks-testing-library/issues/173
 import { renderHook, act as hookAct } from "@testing-library/react-hooks";
 

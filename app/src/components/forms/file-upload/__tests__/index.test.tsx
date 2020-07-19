@@ -1,4 +1,5 @@
 import React from "react";
+
 import { render, screen, fireEvent, act } from "common/testing";
 
 import FileUpload from "../index";

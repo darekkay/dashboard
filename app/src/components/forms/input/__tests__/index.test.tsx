@@ -1,4 +1,5 @@
 import React from "react";
+
 import { render, screen, fireEvent, userEvent } from "common/testing";
 
 import Input from "../index";

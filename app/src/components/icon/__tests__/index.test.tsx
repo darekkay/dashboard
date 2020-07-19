@@ -1,4 +1,5 @@
 import React from "react";
+
 import { render, screen, expectToThrow } from "common/testing";
 
 import Icon from "../index";

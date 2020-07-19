@@ -1,4 +1,5 @@
 import React from "react";
+
 import Headline from "components/headline";
 
 /* Makes possible changes easier */

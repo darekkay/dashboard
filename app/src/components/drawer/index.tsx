@@ -5,6 +5,7 @@ import _ from "lodash";
 import Button from "components/button";
 import widgets, { WidgetProperties } from "widgets";
 import { categories } from "widgets/categories";
+
 import Icon from "../icon";
 
 const categoriesWithWidgets = _.groupBy(widgets, (widget) => widget.category);

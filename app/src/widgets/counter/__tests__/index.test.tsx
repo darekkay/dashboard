@@ -1,6 +1,6 @@
 import React from "react";
-import { render, screen, userEvent } from "common/testing";
 
+import { render, screen, userEvent } from "common/testing";
 import { widgetProps } from "common/utils/mock";
 
 import Counter from "../index";

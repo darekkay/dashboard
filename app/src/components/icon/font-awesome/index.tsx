@@ -1,5 +1,4 @@
 import { IconDefinition } from "@fortawesome/fontawesome-common-types";
-
 import {
   faArrowUp,
   faArrowDown,
@@ -24,14 +23,12 @@ import {
   faUpload,
   faUserFriends,
 } from "@fortawesome/free-solid-svg-icons";
-
 import {
   faCheckCircle,
   faQuestionCircle,
   faSave,
   faTrashAlt,
 } from "@fortawesome/free-regular-svg-icons";
-
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export type FontAwesomeIconName =

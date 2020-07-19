@@ -2,7 +2,6 @@ import i18n, { Resource } from "i18next";
 import { initReactI18next } from "react-i18next";
 import { PayloadAction } from "@reduxjs/toolkit";
 import { takeEvery } from "@redux-saga/core/effects";
-
 import moment from "moment";
 import "moment/locale/de";
 import "moment/locale/fr";

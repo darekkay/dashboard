@@ -2,6 +2,7 @@ import React, { memo, useState } from "react";
 import moment from "moment";
 
 import useInterval from "common/hooks/useInterval";
+
 import { WidgetProps } from "../index";
 
 export const DateTime: React.FC<WidgetProps> = memo(() => {

@@ -1,4 +1,5 @@
 import React from "react";
+
 import { render, screen } from "common/testing";
 
 import Modal, { Props as ModalProps } from "../index";

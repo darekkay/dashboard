@@ -6,7 +6,6 @@ import "components/icon/font-awesome/setup"; // Font Awesome setup
 
 import App from "components/app";
 import Loading from "components/loading";
-
 import initStore from "state/store";
 
 const { store, persistor, purgeStore } = initStore();

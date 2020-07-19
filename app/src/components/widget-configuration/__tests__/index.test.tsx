@@ -1,7 +1,7 @@
 import React from "react";
 import _ from "lodash";
-import { render, screen, userEvent } from "common/testing";
 
+import { render, screen, userEvent } from "common/testing";
 import widgets from "widgets";
 
 import WidgetConfiguration, { Props } from "../index";

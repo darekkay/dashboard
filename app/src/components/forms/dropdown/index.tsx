@@ -2,9 +2,9 @@ import React from "react";
 import cn from "classnames";
 
 import Icon from "components/icon";
+import Label from "components/forms/label";
 
 import "./styles.scss";
-import Label from "components/forms/label";
 
 const Dropdown: React.FC<Props> = ({
   className,

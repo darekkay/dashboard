@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import { storiesOf } from "@storybook/react";
 
 import Input from "../index";

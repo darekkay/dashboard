@@ -1,8 +1,8 @@
 import React from "react";
-
 import { storiesOf } from "@storybook/react";
 
 import Section from "components/section";
+
 import colors from "./colors.json";
 
 storiesOf("Common.Colors", module)

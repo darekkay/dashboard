@@ -18,7 +18,7 @@
     "morgan": "1.10.0"
   },
   "devDependencies": {
-    "@darekkay/eslint-config": "1.0.2",
+    "@darekkay/eslint-config": "1.0.3",
     "@types/cors": "2.8.6",
     "@types/express": "4.17.1",
     "@types/jest": "26.0.0",

@@ -1,4 +1,5 @@
 import React from "react";
+
 import { render, screen, userEvent, expectToThrow } from "common/testing";
 
 import Menu, { MenuAction, MenuSeparator } from "../index";

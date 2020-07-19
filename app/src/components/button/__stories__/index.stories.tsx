@@ -1,9 +1,9 @@
 import React from "react";
-
 import { storiesOf } from "@storybook/react";
 
 import Icon from "components/icon";
 import Section from "components/section";
+
 import Button, { Props as ButtonProps } from "../index";
 
 interface RowProps {

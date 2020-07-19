@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
-import { render, screen } from "common/testing";
 
+import { render, screen } from "common/testing";
 import { widgetProps } from "common/utils/mock";
 
 import { DateTime } from "../index";
