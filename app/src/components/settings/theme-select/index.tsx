@@ -55,7 +55,7 @@ export const ThemeSelect: React.FC<Props> = (props) => {
   }, [theme]);
 
   return (
-    <>
+    <div>
       {THEMES.map((themeName) => {
         return (
           <Theme
@@ -66,7 +66,7 @@ export const ThemeSelect: React.FC<Props> = (props) => {
           />
         );
       })}
-    </>
+    </div>
   );
 };
 

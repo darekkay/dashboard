@@ -12,7 +12,6 @@ const Story = () => {
         label="Dropdown"
         setValue={() => null}
         options={["", "Apple", "Orange", "Banana"]}
-        className="mb-6"
       />
       <Dropdown
         label="Dropdown with label function"

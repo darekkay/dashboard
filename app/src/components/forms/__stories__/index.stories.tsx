@@ -12,7 +12,7 @@ import Label from "components/forms/label";
 
 const Story = () => {
   return (
-    <div style={{ maxWidth: "600px" }}>
+    <div className="space-y-6" style={{ maxWidth: "600px" }}>
       <Section type="story">
         <Input setValue={_.noop} label="Input" />
       </Section>

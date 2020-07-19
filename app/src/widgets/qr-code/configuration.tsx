@@ -12,12 +12,11 @@ const Configuration = ({
 }: ConfigurationProps<Props>) => {
   const { t } = useTranslation();
   return (
-    <>
+    <div className="space-y-6">
       <Input
         setValue={(value) => setOptions({ headline: value })}
         value={options.headline}
         label={t("common.headline")}
-        className="mb-6"
         type="text"
         onEnter={save}
       />
@@ -27,7 +26,7 @@ const Configuration = ({
         label={t("widget.qr-code.configuration.content")}
         rows={5}
       />
-    </>
+    </div>
   );
 };
 

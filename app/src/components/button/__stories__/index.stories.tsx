@@ -6,10 +6,6 @@ import Icon from "components/icon";
 import Section from "components/section";
 import Button, { Props as ButtonProps } from "../index";
 
-const commonProps = {
-  className: "mr-5",
-};
-
 interface RowProps {
   title: string;
   children?: React.ReactNode;
@@ -21,28 +17,26 @@ const Row = ({
   ...rest
 }: RowProps & Omit<ButtonProps, "children">) => (
   <Section type="story" headline={title}>
-    <>
-      <Button {...commonProps} {...rest}>
-        {children || "Regular"}
-      </Button>
-      <Button {...commonProps} {...rest} size="small">
+    <div className="space-x-5 space-y-2">
+      <Button {...rest}>{children || "Regular"}</Button>
+      <Button {...rest} size="small">
         {children || "Small"}
       </Button>
-      <Button {...commonProps} {...rest} outline>
+      <Button {...rest} outline>
         {children || "Outline"}
       </Button>
-      <Button {...commonProps} {...rest} outline size="small">
+      <Button {...rest} outline size="small">
         {children || "Outline Small"}
       </Button>
-      <Button {...commonProps} {...rest} outline border={false}>
+      <Button {...rest} outline border={false}>
         {children || "Borderless"}
       </Button>
-    </>
+    </div>
   </Section>
 );
 
 storiesOf("Components.Button", module).add("Variants", () => (
-  <div>
+  <div className="space-y-6">
     <Row title="Primary Button" variant="primary" />
     <Row title="Secondary Button" variant="secondary" />
     <Row title="Danger Button" variant="danger" />

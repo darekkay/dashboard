@@ -8,11 +8,10 @@ import Link from "components/link";
 const Configuration = ({ options, setOptions }: ConfigurationProps<Props>) => {
   const { t } = useTranslation();
   return (
-    <>
+    <div className="space-y-6">
       {/* Supported currencies: https://www.coingecko.com/api/documentations/v3 */}
       <Dropdown
         label={t("widget.cryptocurrencies.configuration.fiat")}
-        className="mb-6"
         value={options.fiat}
         setValue={(value) => setOptions({ fiat: value })}
         getOptionLabel={(option) => option.toUpperCase()}
@@ -65,7 +64,6 @@ const Configuration = ({ options, setOptions }: ConfigurationProps<Props>) => {
       ></Dropdown>
       <Dropdown
         label={t("widget.cryptocurrencies.configuration.crypto")}
-        className="mb-6"
         value={options.crypto}
         setValue={(value) => setOptions({ crypto: value })}
         getOptionLabel={(option) =>
@@ -92,7 +90,7 @@ const Configuration = ({ options, setOptions }: ConfigurationProps<Props>) => {
           <Link href="https://www.coingecko.com/">{{ name: "CoinGecko" }}</Link>
         </Trans>
       </div>
-    </>
+    </div>
   );
 };
 

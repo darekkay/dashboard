@@ -11,7 +11,7 @@ const Story = () => {
     options: { pattern: "https://duckduckgo.com/?q=%s", title: "DuckDuckGo" },
   };
   return (
-    <div style={{ maxWidth: "500px" }}>
+    <div className="space-y-6" style={{ maxWidth: "500px" }}>
       <Section type="story" headline="Regular">
         <Widget id="search-01" {...connectedWidgetProps} {...sharedProps} />
       </Section>

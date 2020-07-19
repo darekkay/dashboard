@@ -4,37 +4,37 @@ module.exports = {
   separator: ":",
   theme: {
     screens: {
-      md: "768px"
+      md: "768px",
     },
 
     // Base
 
     inset: {
       "-1": "-1px",
-      "0": "0"
+      "0": "0",
     },
 
     height: {
       auto: "auto",
-      full: "100%"
+      full: "100%",
     },
 
     maxHeight: {
-      full: "100%"
+      full: "100%",
     },
 
     width: {
       auto: "auto",
-      full: "100%"
+      full: "100%",
     },
 
     minWidth: {
       "250": "250px",
-      full: "100%"
+      full: "100%",
     },
 
     maxWidth: {
-      full: "100%"
+      full: "100%",
     },
 
     // Typography
@@ -47,7 +47,7 @@ module.exports = {
       4: "2rem",
       5: "2.5rem",
       6: "3rem",
-      7: "4rem"
+      7: "4rem",
     },
 
     fontWeight: {
@@ -55,7 +55,7 @@ module.exports = {
       normal: "400",
       semibold: "600",
       bold: "700",
-      extrabold: "800"
+      extrabold: "800",
     },
 
     // Spacing
@@ -70,14 +70,17 @@ module.exports = {
       "6": "2rem",
       "7": "3rem",
       "8": "4rem",
-      "9": "8rem"
+      "9": "8rem",
     },
 
-    margin: theme => ({
+    margin: (theme) => ({
       auto: "auto",
-      ...theme("spacing")
+      ...theme("spacing"),
     }),
-    padding: theme => theme("spacing"),
+    padding: (theme) => theme("spacing"),
+    space: (theme) => ({
+      ...theme("spacing"),
+    }),
 
     // Misc
 
@@ -88,14 +91,14 @@ module.exports = {
       wait: "wait",
       text: "text",
       move: "move",
-      "not-allowed": "not-allowed"
+      "not-allowed": "not-allowed",
     },
 
     zIndex: {
       "10": 10,
       "20": 20,
-      "30": 30
-    }
+      "30": 30,
+    },
   },
   variants: {
     // Base
@@ -123,6 +126,7 @@ module.exports = {
 
     margin: ["responsive"],
     padding: ["responsive"],
+    space: ["responsive"],
 
     // Typography
 
@@ -139,7 +143,7 @@ module.exports = {
 
     cursor: [],
     wordBreak: [],
-    zIndex: []
+    zIndex: [],
   },
   corePlugins: {
     // Base
@@ -168,6 +172,7 @@ module.exports = {
 
     margin: true,
     padding: true,
+    space: true,
 
     // Typography
 
@@ -192,17 +197,22 @@ module.exports = {
     appearance: false,
     backgroundAttachment: false,
     backgroundColor: false,
+    backgroundOpacity: false,
     backgroundPosition: false,
     backgroundRepeat: false,
     backgroundSize: false,
     borderCollapse: false,
     borderColor: false,
+    borderOpacity: false,
     borderRadius: false,
     borderStyle: false,
     borderWidth: false,
     boxShadow: false,
     boxSizing: false,
     clear: false,
+    divideColor: false,
+    divideOpacity: false,
+    divideWidth: false,
     fill: false,
     flex: false,
     float: false,
@@ -229,6 +239,7 @@ module.exports = {
     order: false,
     outline: false,
     placeholderColor: false,
+    placeholderOpacity: false,
     pointerEvents: false,
     rotate: false,
     scale: false,
@@ -237,16 +248,18 @@ module.exports = {
     strokeWidth: false,
     tableLayout: false,
     textColor: false,
+    textOpacity: false,
     transitionProperty: false,
     transitionTimingFunction: false,
     transitionDuration: false,
+    transitionDelay: false,
     transform: false,
     transformOrigin: false,
     translate: false,
     userSelect: false,
     verticalAlign: false,
     visibility: false,
-    whitespace: false
+    whitespace: false,
   },
-  plugins: []
+  plugins: [],
 };

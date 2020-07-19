@@ -7,7 +7,7 @@ import Loading from "../index";
 
 const Story = () => {
   return (
-    <>
+    <div className="space-y-6">
       <Section type="story" headline="Spinner">
         <Loading type="spinner" />
       </Section>
@@ -17,7 +17,7 @@ const Story = () => {
           <Loading type="skeleton" />
         </div>
       </Section>
-    </>
+    </div>
   );
 };
 

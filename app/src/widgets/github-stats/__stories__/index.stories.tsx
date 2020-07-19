@@ -7,7 +7,7 @@ import Section from "components/section";
 
 const Story = () => {
   return (
-    <>
+    <div className="space-y-6">
       <Section type="story" headline="GitHub User">
         <Widget
           {...connectedWidgetProps}
@@ -50,7 +50,7 @@ const Story = () => {
           }}
         />
       </Section>
-    </>
+    </div>
   );
 };
 

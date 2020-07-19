@@ -14,7 +14,7 @@ const Settings: React.FC<Props> = () => {
   return (
     <PersistorContext.Consumer>
       {(purgeStore) => (
-        <>
+        <div className="space-y-6">
           <Section type="modal" headline={t("theme.headline")}>
             <ThemeSelect />
           </Section>
@@ -38,7 +38,7 @@ const Settings: React.FC<Props> = () => {
           <Section type="modal" headline={t("data.backup")}>
             <ImportExport />
           </Section>
-        </>
+        </div>
       )}
     </PersistorContext.Consumer>
   );

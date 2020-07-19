@@ -7,7 +7,7 @@ import Deviation from "../index";
 
 const Story = () => {
   return (
-    <>
+    <div className="space-y-6">
       <Section type="story" headline="Increment">
         <Deviation value={10} />
       </Section>
@@ -31,7 +31,7 @@ const Story = () => {
       <Section type="story" headline="Custom style">
         <Deviation value={-10} unit="%" className="text-5 font-bold" />
       </Section>
-    </>
+    </div>
   );
 };
 

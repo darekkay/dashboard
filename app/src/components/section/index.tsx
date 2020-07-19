@@ -6,13 +6,13 @@ export type SectionType = "modal" | "story";
 
 const Section: React.FC<Props> = ({ headline, children }) => {
   return (
-    <div className="mb-6">
+    <div>
       {headline && (
         <Headline level={3} className="mb-4 text-3 font-semibold">
           {headline}
         </Headline>
       )}
-      <div className="mx-5">{children}</div>
+      <div className="mx-5 space-y-6">{children}</div>
     </div>
   );
 };

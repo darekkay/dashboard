@@ -10,9 +10,9 @@ storiesOf("Common.Colors", module)
     a11y: { disabled: true },
   })
   .add("Kitchen Sink", () => (
-    <div>
+    <div className="space-y-6">
       {Object.entries(colors).map(([family, values]) => (
-        <div key={family} className="mb-6">
+        <div key={family} className="space-y-6">
           <Section type="story" headline={family}>
             <div className="flex flex-wrap">
               {Object.entries(values).map(([name, color]) => (

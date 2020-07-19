@@ -16,19 +16,22 @@ const WelcomePage: React.FC<Props> = ({ saveLayout, importWidgets }) => {
   };
   return (
     <div className="w-full h-full flex flex-col items-center justify-center">
-      <div className="max-w-full text-center" style={{ width: "500px" }}>
-        <p className="mb-5">
+      <div
+        className="max-w-full text-center space-y-5"
+        style={{ width: "500px" }}
+      >
+        <p>
           <Trans i18nKey="welcome.message1">
             <strong>{{ projectName: "Dashboard" }}</strong>
           </Trans>
         </p>
-        <p className="mb-5">{t("welcome.message2")}</p>
-        <p className="mb-5">
+        <p>{t("welcome.message2")}</p>
+        <p>
           <Button onClick={createExampleBoard}>
             {t("welcome.createExampleBoard")}
           </Button>
         </p>
-        <p className="mb-5">
+        <p>
           <Trans i18nKey="welcome.message3">
             <Link href="https://dashboard.darekkay.com/docs/"></Link>
           </Trans>

@@ -14,17 +14,16 @@ const Configuration = ({
 }: ConfigurationProps<Props>) => {
   const { t } = useTranslation();
   return (
-    <>
+    <div className="space-y-6">
       <Input
         setValue={(value) => setOptions({ url: value })}
         value={options.url}
         label={t("widget.website.configuration.url")}
-        className="mb-6"
         type="url"
         autoComplete="url"
         onEnter={save}
       />
-      <div className="mb-6">
+      <div>
         {providers.map((provider) => (
           <Button
             key={provider.title}
@@ -43,10 +42,12 @@ const Configuration = ({
         ))}
       </div>
       {/* NICE: Extract "Alert/Info" component */}
-      <Trans i18nKey="widget.website.configuration.disclaimer">
-        <strong></strong>
-      </Trans>
-    </>
+      <div>
+        <Trans i18nKey="widget.website.configuration.disclaimer">
+          <strong></strong>
+        </Trans>
+      </div>
+    </div>
   );
 };
 

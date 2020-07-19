@@ -14,12 +14,11 @@ const Configuration = ({
 }: ConfigurationProps<Props>) => {
   const { t } = useTranslation();
   return (
-    <>
+    <div className="space-y-6">
       <Input
         setValue={(value) => setOptions({ title: value })}
         value={options.title}
         label={t("widget.search.configuration.title")}
-        className="mb-6"
         type="text"
         onEnter={save}
       />
@@ -27,7 +26,6 @@ const Configuration = ({
         setValue={(value) => setOptions({ pattern: value })}
         value={options.pattern}
         label={t("widget.search.configuration.pattern")}
-        className="mb-6"
         type="text"
         onEnter={save}
       />
@@ -50,7 +48,7 @@ const Configuration = ({
           </Button>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

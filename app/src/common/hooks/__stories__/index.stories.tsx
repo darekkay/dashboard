@@ -15,10 +15,10 @@ storiesOf("Common.Hooks", module)
 
     return (
       <Section headline="usePrevious hook" type="story">
-        <div className="mb-3">
+        <div>
           Current value: <strong>{counter}</strong>
         </div>
-        <div className="mb-3">
+        <div>
           Previous value: <strong>{previousValue}</strong>
         </div>
         <div>
@@ -33,7 +33,7 @@ storiesOf("Common.Hooks", module)
 
     return (
       <Section headline="useInterval hook" type="story">
-        <div className="mb-3">
+        <div>
           Current value: <strong>{counter}</strong>
         </div>
       </Section>
