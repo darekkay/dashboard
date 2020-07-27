@@ -49,7 +49,7 @@
   },
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "ci": "npm run lint:check",
+    "ci": "npm run lint:check && npm run test",
     "format": "prettier --write -- \"{src,public,docs}/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "lint:check": "tsc && eslint src/**/*.{ts,tsx,js} --max-warnings=0",
     "lint:fix": "eslint --fix src/**/*.{ts,tsx,js}",
