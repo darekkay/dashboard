@@ -1,6 +1,6 @@
 import request from "supertest";
-
 import axios from "axios";
+import logger from "@darekkay/logger";
 
 import app from "../../app";
 import { parseQuery, QueryType } from "../github";
@@ -95,6 +95,10 @@ describe("github", () => {
   });
 
   describe("routes", () => {
+    afterEach(() => {
+      logger.setLevel("error");
+    });
+
     it("should recognize a user", () => {
       const mockedAxios = axios as jest.Mocked<typeof axios>;
       mockedAxios.get.mockResolvedValueOnce(userMockResponse);
@@ -140,6 +144,7 @@ describe("github", () => {
     });
 
     it("should return 404 if the username cannot be found", () => {
+      logger.setLevel("silent");
       const mockedAxios = axios as jest.Mocked<typeof axios>;
       mockedAxios.get.mockImplementation(() => {
         throw { response: { status: 404 } };

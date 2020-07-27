@@ -7,6 +7,7 @@
     "url": "https://github.com/darekkay/dashboard-server/issues"
   },
   "dependencies": {
+    "@darekkay/logger": "1.0.2",
     "axios": "0.19.2",
     "body-parser": "1.19.0",
     "cachios": "2.2.3",
