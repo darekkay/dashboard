@@ -6,16 +6,17 @@ describe("index", () => {
 
     const reactRenderSpy = jest
       .spyOn(ReactDOM, "render")
-      .mockImplementation(() => undefined);
+      .mockImplementation(() => {});
 
     const root = document.createElement("div");
     root.setAttribute("id", "root");
-    document.body.appendChild(root);
+    document.body.append(root);
 
     const themeToggle = document.createElement("theme-toggle");
     themeToggle.setAttribute("id", "theme-toggle");
-    document.body.appendChild(themeToggle);
+    document.body.append(themeToggle);
 
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     require("../index");
     expect(reactRenderSpy).toHaveBeenCalledTimes(1);
   });

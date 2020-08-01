@@ -61,7 +61,7 @@ const Configuration = ({ options, setOptions }: ConfigurationProps<Props>) => {
           "vnd",
           "zar",
         ]}
-      ></Dropdown>
+      />
       <Dropdown
         label={t("widget.cryptocurrencies.configuration.crypto")}
         value={options.crypto}

@@ -27,7 +27,7 @@ describe("useInterval", () => {
     expect(handler).toHaveBeenCalledTimes(0);
   });
 
-  test("if you pass a new `handler`, the timer will not restart ", () => {
+  test("if you pass a new `handler`, the timer will not restart", () => {
     const handler1 = jest.fn();
     const handler2 = jest.fn();
     let handler = handler1;

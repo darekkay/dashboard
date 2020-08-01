@@ -45,7 +45,7 @@ const WidgetOverlay: React.FC<Props> = ({
         lastMouseUpPosition.x,
         lastMouseUpPosition.y
       );
-      element && (element as HTMLElement).focus();
+      if (element) (element as HTMLElement).focus();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDraggable]);

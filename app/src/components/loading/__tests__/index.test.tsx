@@ -12,7 +12,7 @@ describe("<Loading />", () => {
     ).toBeInTheDocument();
   });
 
-  test("renders a spinner", () => {
+  test("renders a skeleton", () => {
     render(<Loading type="skeleton" />);
     expect(
       screen.getByRole("progressbar", { name: /common.loading/i })

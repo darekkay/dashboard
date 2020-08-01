@@ -16,7 +16,7 @@ import { widgetType } from "./properties";
 
 const URL = "https://tips.darekkay.com/json/chemical-elements-en.json";
 
-const fetchTipOfTheDay = () => {
+const fetchTipOfTheDay = async () => {
   return axios(URL).then((response) => response.data);
 };
 
@@ -24,12 +24,12 @@ function* onTriggerUpdate(action: PayloadAction<TriggerUpdateAction>) {
   const { id } = action.payload;
   yield put(updatePending(id));
   try {
-    const data = yield call(fetchTipOfTheDay);
+    const responseData = yield call(fetchTipOfTheDay);
     yield put(
       setData({
         id,
         values: {
-          ..._.pick(data, "name", "nameDE", "symbol", "atomicNumber"),
+          ..._.pick(responseData, "name", "nameDE", "symbol", "atomicNumber"),
         },
       })
     );

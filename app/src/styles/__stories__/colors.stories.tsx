@@ -20,6 +20,7 @@ storiesOf("Common.Colors", module)
                   key={name}
                   className="flex flex-col items-center justify-center mx-2 mb-4"
                 >
+                  {/* eslint-disable-next-line */}
                   <div
                     className="rounded"
                     style={{
@@ -27,8 +28,10 @@ storiesOf("Common.Colors", module)
                       width: "3.6rem",
                       height: "3.6rem",
                     }}
-                    onClick={() => navigator.clipboard.writeText(`$${name}`)}
-                  ></div>
+                    onClick={async () =>
+                      navigator.clipboard.writeText(`$${name}`)
+                    }
+                  />
                   <code className="text-2">
                     {name.substring(name.lastIndexOf("-") + 1)}
                   </code>

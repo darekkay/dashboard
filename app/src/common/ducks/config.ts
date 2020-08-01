@@ -20,7 +20,7 @@ export const defaultTheme = (): Theme => {
   if (IS_DEVELOPMENT) {
     return "default";
   }
-  return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)")
+  return window.matchMedia?.("(prefers-color-scheme: dark)")
     ? "dark"
     : "default";
 };
@@ -30,10 +30,12 @@ export const initialState = {
   language: "", // let i18next use the correct language
 };
 
-export const reducerWithInitialState = (state: ConfigState = initialState) =>
-  createReducer<ConfigState>(state, (builder) =>
+export const reducerWithInitialState = (
+  defaultState: ConfigState = initialState
+) =>
+  createReducer<ConfigState>(defaultState, (builder) =>
     builder
-      .addCase(importState, (state, action) => action.payload.config)
+      .addCase(importState, (_state, action) => action.payload.config)
 
       .addCase(changeTheme, (state, action) => {
         state.theme = action.payload;

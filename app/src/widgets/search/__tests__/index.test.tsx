@@ -20,7 +20,7 @@ describe("<Search />", () => {
   test("renders without errors", () => {
     renderSearch({});
 
-    expect(screen.getByRole("searchbox"));
+    expect(screen.getByRole("searchbox")).toBeInTheDocument();
     expect(screen.queryByText("widget.common.unconfigured")).toBeNull();
   });
 

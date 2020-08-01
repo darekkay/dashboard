@@ -11,7 +11,7 @@ import _ from "lodash";
 import Icon, { IconName } from "components/icon";
 import Button from "components/button";
 
-// @ts-ignore default value is defined in the context provider
+// @ts-expect-error default value is defined in the context provider
 const MenuContext = React.createContext<MenuStateReturn>({});
 
 const Menu: React.FC<Props> = ({

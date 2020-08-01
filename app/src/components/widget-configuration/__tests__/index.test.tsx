@@ -13,7 +13,7 @@ describe("<WidgetConfiguration />", () => {
         id="image-01"
         type="image"
         closeModal={_.noop}
-        configuration={widgets["image"].Configuration}
+        configuration={widgets.image.Configuration}
         isModalOpen
         options={{ url: "" }}
         setOptions={_.noop}

@@ -18,7 +18,7 @@ export const LanguageSelect: React.FC<Props> = (props) => {
       options={LANGUAGES}
       getOptionLabel={(languageKey) => t(`language.${languageKey}`)}
       value={language}
-      setValue={(language) => changeLanguage(language)}
+      setValue={(selectedLanguage) => changeLanguage(selectedLanguage)}
     />
   );
 };

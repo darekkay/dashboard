@@ -34,8 +34,8 @@ describe("Layout duck", () => {
       actionCreators.saveLayout({ desktop: [], mobile: [] })
     );
 
-    expect(updatedState.config.desktop.length).toBe(0);
-    expect(updatedState.config.mobile.length).toBe(0);
+    expect(updatedState.config.desktop).toHaveLength(0);
+    expect(updatedState.config.mobile).toHaveLength(0);
   });
 
   test("toggles the editing state", () => {
@@ -98,7 +98,7 @@ describe("Layout duck", () => {
       ],
       "text-01"
     );
-    expect(updatedState.config.desktop.length).toEqual(1);
+    expect(updatedState.config.desktop).toHaveLength(1);
     expect(getLastWidget(updatedState.config.desktop).i).toEqual("text-02");
 
     updatedState = removeWidgetFromLayoutAction(
@@ -108,7 +108,7 @@ describe("Layout duck", () => {
       ],
       "text-03"
     );
-    expect(updatedState.config.desktop.length).toEqual(2);
+    expect(updatedState.config.desktop).toHaveLength(2);
   });
 
   test("increments the nextWidgetId", () => {

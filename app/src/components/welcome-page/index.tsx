@@ -5,8 +5,7 @@ import Button from "components/button";
 import Link from "components/link";
 import { Layout } from "common/ducks/layout";
 import { WidgetsState } from "components/widget/duck";
-import { exampleWidgets } from "widgets/demo";
-import { exampleLayout } from "widgets/demo";
+import { exampleWidgets, exampleLayout } from "widgets/demo";
 
 const WelcomePage: React.FC<Props> = ({ saveLayout, importWidgets }) => {
   const { t } = useTranslation();
@@ -33,7 +32,7 @@ const WelcomePage: React.FC<Props> = ({ saveLayout, importWidgets }) => {
         </p>
         <p>
           <Trans i18nKey="welcome.message3">
-            <Link href="https://dashboard.darekkay.com/docs/"></Link>
+            <Link href="https://dashboard.darekkay.com/docs/" />
           </Trans>
         </p>
       </div>

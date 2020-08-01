@@ -96,6 +96,8 @@ const Header: React.FC<Props> = memo(
   }
 );
 
+Header.displayName = "Header";
+
 export interface Props {
   isLayoutEditable: boolean;
   toggleLayoutEditable: () => void;

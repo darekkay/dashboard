@@ -10,7 +10,7 @@ import { Props as ConfigurationProps } from "./configuration";
 import { widgetType } from "./properties";
 
 const getSquareSize = (dimensions?: Dimensions) => {
-  return Math.min(dimensions?.width || 0, dimensions?.height || 0);
+  return Math.min(dimensions?.width ?? 0, dimensions?.height ?? 0);
 };
 
 const QrCode: React.FC<Props> = ({ meta, content }) => {

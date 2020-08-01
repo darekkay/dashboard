@@ -3,5 +3,6 @@
   "compilerOptions": {
     "module": "commonjs",
     "jsx": "react"
-  }
+  },
+  "include": ["./"]
 }

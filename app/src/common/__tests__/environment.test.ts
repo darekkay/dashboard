@@ -8,6 +8,6 @@ describe("toBoolean", () => {
 
     expect(toBoolean("false")).toBe(false);
     expect(toBoolean("")).toBe(false);
-    expect(toBoolean(undefined)).toBe(false);
+    expect(toBoolean()).toBe(false);
   });
 });

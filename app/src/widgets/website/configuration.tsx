@@ -44,7 +44,7 @@ const Configuration = ({
       {/* NICE: Extract "Alert/Info" component */}
       <div>
         <Trans i18nKey="widget.website.configuration.disclaimer">
-          <strong></strong>
+          <strong />
         </Trans>
       </div>
     </div>

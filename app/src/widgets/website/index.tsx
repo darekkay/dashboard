@@ -11,10 +11,11 @@ const Website: React.FC<Props> = memo(
   ({ id, url }) => {
     if (_.isEmpty(url)) return <WidgetUnconfigured type={widgetType} />;
 
-    return <iframe src={url} title={id} className="h-full w-full"></iframe>;
+    return <iframe src={url} title={id} className="h-full w-full" />;
   },
-  (prevProps, nextProps) => prevProps.url === nextProps.url
+  (previousProps, nextProps) => previousProps.url === nextProps.url
 );
+Website.displayName = "Website";
 
 interface Props extends WidgetProps, ConfigurationProps {}
 

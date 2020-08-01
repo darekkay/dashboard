@@ -51,15 +51,15 @@ class Dashboard extends React.Component<Props> {
         rowHeight={GRID.ROW_HEIGHT_PX}
         compactType="vertical"
         useCSSTransforms={false}
-        isDraggable={true}
-        isResizable={true}
+        isDraggable
+        isResizable
         draggableHandle=".grid-draggable"
         onLayoutChange={(__: any, allLayouts: Layout) => {
           saveLayout(allLayouts);
         }}
       >
         {widgetIDs.map((widgetID: string) =>
-          // @ts-ignore
+          // @ts-expect-error
           React.createElement(makeWidgetMemoized(widgetID), {
             key: widgetID,
             removeWidgetFromLayout,

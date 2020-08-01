@@ -10,12 +10,10 @@ import { createWidget, removeWidget } from "components/widget/duck";
 import { importState } from "common/ducks/state";
 
 const saveLayout = createAction<Layout>("layout/save");
-const toggleLayoutEditable = createAction<void>("layout/toggle-editable");
+const toggleLayoutEditable = createAction("layout/toggle-editable");
 const addWidgetToLayout = createAction<string>("layout/add-widget");
 const removeWidgetFromLayout = createAction<string>("layout/remove-widget");
-const incrementNextWidgetId = createAction<void>(
-  "layout/increment-next-widget-id"
-);
+const incrementNextWidgetId = createAction("layout/increment-next-widget-id");
 
 export interface Layout {
   mobile: ReactGridLayout[];
@@ -44,10 +42,12 @@ const newWidgetY = (state: LayoutState) => {
   return max.y + max.h;
 };
 
-export const reducerWithInitialState = (state: LayoutState = initialState) =>
-  createReducer<LayoutState>(state, (builder) =>
+export const reducerWithInitialState = (
+  defaultState: LayoutState = initialState
+) =>
+  createReducer<LayoutState>(defaultState, (builder) =>
     builder
-      .addCase(importState, (state, action) => action.payload.layout)
+      .addCase(importState, (_state, action) => action.payload.layout)
 
       .addCase(saveLayout, (state, action) => {
         state.config = action.payload;

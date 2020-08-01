@@ -1,6 +1,21 @@
 {
   "extends": ["@darekkay/eslint-config/react"],
   "parser": "babel-eslint",
+  "rules": {
+    "import/no-unresolved": "off",
+    "react/prop-types": "off",
+
+    // currently, the dashboard is not keyboard-accessible :(
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/no-noninteractive-tabindex": "off",
+
+    // available in ESLint 7+
+    "no-loss-of-precision": "off",
+    "no-promise-executor-return": "off",
+    "no-unreachable-loop": "off",
+    "no-useless-backreference": "off",
+    "default-case-last": "off"
+  },
 
   "overrides": [
     {
@@ -8,9 +23,27 @@
       "files": ["**/*.ts", "**/*.tsx"],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
+        "project": "./tsconfig.json",
         "ecmaFeatures": {
           "jsx": true
         }
+      },
+      "rules": {
+        "@typescript-eslint/no-unnecessary-condition": "off",
+
+        // available in ESLint 7+
+        "@typescript-eslint/no-loss-of-precision": "off"
+      }
+    },
+
+    {
+      "files": ["internals/**/*.js", "internals/**/*.ts"],
+      "parserOptions": {
+        "project": "./internals/scripts/tsconfig.json"
+      },
+      "rules": {
+        "import/no-nodejs-modules": "off",
+        "@typescript-eslint/no-require-imports": "off"
       }
     }
   ]

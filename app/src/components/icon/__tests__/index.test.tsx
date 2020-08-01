@@ -11,7 +11,7 @@ describe("<Icon />", () => {
   });
 
   test("does not render unknown icons", () => {
-    // @ts-ignore
+    // @ts-expect-error
     expectToThrow(() => render(<Icon name="c01c4b" />));
   });
 });

@@ -8,7 +8,7 @@ describe("<Modal />", () => {
   const renderModal = (props: Partial<ModalProps>) =>
     render(
       <Modal
-        isOpen={true}
+        isOpen
         closeModal={() => null}
         {...props}
         // used for tests only

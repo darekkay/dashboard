@@ -58,7 +58,7 @@ const GithubStats: React.FC<Props> = ({
       {!!followers && (
         <StatsRow
           icon="userFriends"
-          value={followers!}
+          value={followers}
           labelKey="widget.github-stats.followers"
         />
       )}

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return,@typescript-eslint/restrict-plus-operands */
 import {
   Express,
   Request,
@@ -46,8 +47,8 @@ const sumUmPropertyForAllRepositories = (
 ) =>
   repositories
     .filter((repo: any) => !repo.fork)
-    .reduce((acc: any, repository: any) => {
-      return acc + repository[property];
+    .reduce((accumulator: any, repository: any) => {
+      return accumulator + repository[property];
     }, 0);
 
 /* User stats are split in two different GitHub endpoints: users/:user for general stats and users/:user/repos for repo stats */
@@ -101,21 +102,21 @@ const routes = (app: Express) =>
   /* Get the current price for a cryptocurrency */
   app.get(
     "/github/stats",
-    async (req: Request, res: Response, next: NextFunction) => {
+    async (request: Request, response: Response, next: NextFunction) => {
       try {
-        const { query } = req.query;
+        const { query } = request.query;
         const { id, queryType } = parseQuery(query);
 
-        let response;
+        let axiosResponse;
 
-        if (queryType === "user") response = await fetchUserStats(id);
+        if (queryType === "user") axiosResponse = await fetchUserStats(id);
         else if (queryType === "repository")
-          response = await fetchRepositoryStats(id);
-        else return res.status(422).end(); // unprocessable entity
+          axiosResponse = await fetchRepositoryStats(id);
+        else return response.status(422).end(); // unprocessable entity
 
-        res.json(response);
+        return response.json(axiosResponse);
       } catch (error) {
-        next(error);
+        return next(error);
       }
     }
   );

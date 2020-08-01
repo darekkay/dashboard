@@ -18,6 +18,8 @@ export const DateTime: React.FC<WidgetProps> = memo(() => {
   );
 });
 
-export interface Props extends WidgetProps {}
+DateTime.displayName = "DateTime";
+
+export type Props = WidgetProps;
 
 export default DateTime;

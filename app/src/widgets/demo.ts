@@ -113,8 +113,8 @@ const widgets = {
 };
 
 export const exampleWidgets = Object.entries(widgets).reduce(
-  (acc, [key, widget]) => ({
-    ...acc,
+  (accumulator, [key, widget]) => ({
+    ...accumulator,
     [key]: _.omit(widget, ["height", "width", "x", "y"]),
   }),
   {}

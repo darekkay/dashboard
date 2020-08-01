@@ -37,6 +37,7 @@ const Button: React.FC<Props> = React.forwardRef<HTMLButtonElement, Props>(
         className
       )}
       style={style}
+      type="button"
       {...domProps}
       ref={ref}
     >
@@ -44,6 +45,8 @@ const Button: React.FC<Props> = React.forwardRef<HTMLButtonElement, Props>(
     </button>
   )
 );
+
+Button.displayName = "Button";
 
 export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;

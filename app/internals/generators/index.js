@@ -1,10 +1,10 @@
-module.exports = plop => {
+module.exports = (plop) => {
   const componentPrompts = [
     {
       type: "input",
       name: "name",
-      message: "What should it be called?"
-    }
+      message: "What should it be called?",
+    },
   ];
 
   const widgetPrompts = [
@@ -12,22 +12,22 @@ module.exports = plop => {
     {
       type: "confirm",
       name: "configurationEnabled",
-      message: "Do you want to use a configuration modal for your widget?"
+      message: "Do you want to use a configuration modal for your widget?",
     },
     {
       type: "confirm",
       name: "useSagas",
-      message: "Does your widget use sagas (e.g. fetch external data)?"
-    }
+      message: "Does your widget use sagas (e.g. fetch external data)?",
+    },
   ];
 
-  const componentActions = type => [
+  const componentActions = (type) => [
     // Component index file
     {
       type: "add",
       path: "../../src/components/{{kebabCase name}}/index.tsx",
       templateFile: `./component/${type}.hbs`,
-      abortOnFail: false
+      abortOnFail: false,
     },
 
     // Unit tests
@@ -35,7 +35,7 @@ module.exports = plop => {
       type: "add",
       path: "../../src/components/{{kebabCase name}}/__tests__/index.test.tsx",
       templateFile: "./component/test.hbs",
-      abortOnFail: false
+      abortOnFail: false,
     },
 
     // Component story
@@ -44,18 +44,18 @@ module.exports = plop => {
       path:
         "../../src/components/{{kebabCase name}}/__stories__/index.stories.tsx",
       templateFile: "./component/story.hbs",
-      abortOnFail: false
-    }
+      abortOnFail: false,
+    },
   ];
 
-  const widgetActions = userInputs => {
-    let widgetActions = [
+  const widgetActions = (userInputs) => {
+    const actions = [
       // Widget index file
       {
         type: "add",
         path: "../../src/widgets/{{kebabCase name}}/index.tsx",
         templateFile: `./widget/index.hbs`,
-        abortOnFail: false
+        abortOnFail: false,
       },
 
       // Widget properties
@@ -63,7 +63,7 @@ module.exports = plop => {
         type: "add",
         path: "../../src/widgets/{{kebabCase name}}/properties.ts",
         templateFile: "./widget/properties.hbs",
-        abortOnFail: false
+        abortOnFail: false,
       },
 
       // Unit tests
@@ -71,7 +71,7 @@ module.exports = plop => {
         type: "add",
         path: "../../src/widgets/{{kebabCase name}}/__tests__/index.test.tsx",
         templateFile: "./widget/test.hbs",
-        abortOnFail: false
+        abortOnFail: false,
       },
 
       // Widget story
@@ -80,7 +80,7 @@ module.exports = plop => {
         path:
           "../../src/widgets/{{kebabCase name}}/__stories__/index.stories.tsx",
         templateFile: "./widget/story.hbs",
-        abortOnFail: false
+        abortOnFail: false,
       },
 
       // Readme / Documentation
@@ -88,48 +88,48 @@ module.exports = plop => {
         type: "add",
         path: "../../../docs/widgets/{{kebabCase name}}.md",
         templateFile: "./widget/readme.hbs",
-        abortOnFail: false
-      }
+        abortOnFail: false,
+      },
     ];
 
     if (userInputs.configurationEnabled) {
       // widget configuration (if selected)
-      widgetActions.push({
+      actions.push({
         type: "add",
         path: "../../src/widgets/{{kebabCase name}}/configuration.tsx",
         templateFile: "./widget/configuration.hbs",
-        abortOnFail: false
+        abortOnFail: false,
       });
     }
 
     if (userInputs.useSagas) {
       // widget saga (if selected)
-      widgetActions.push({
+      actions.push({
         type: "add",
         path: "../../src/widgets/{{kebabCase name}}/sagas.ts",
         templateFile: "./widget/sagas.hbs",
-        abortOnFail: false
+        abortOnFail: false,
       });
     }
 
-    return widgetActions;
+    return actions;
   };
 
   plop.setGenerator("Stateless component", {
     description: "Stateless React function",
     prompts: componentPrompts,
-    actions: componentActions("stateless")
+    actions: componentActions("stateless"),
   });
 
   plop.setGenerator("Class component", {
     description: "React.Component",
     prompts: componentPrompts,
-    actions: componentActions("class")
+    actions: componentActions("class"),
   });
 
   plop.setGenerator("Widget", {
     description: "Dashboard widget",
     prompts: widgetPrompts,
-    actions: widgetActions
+    actions: widgetActions,
   });
 };

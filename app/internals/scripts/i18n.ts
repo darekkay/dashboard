@@ -11,7 +11,7 @@ const I18N_FILES_PATH = "src/common/translations";
 /* For some labels it is OK to not have explicit translations */
 const ALLOWED_MISSING_TRANSLATION_PREFIXES = [
   "language",
-  "widget.cryptocurrencies.crypto"
+  "widget.cryptocurrencies.crypto",
 ];
 
 const flattenKeys = (object: any, path: string[] = []): any =>
@@ -19,32 +19,39 @@ const flattenKeys = (object: any, path: string[] = []): any =>
     ? { [path.join(".")]: object }
     : reduce(
         object,
-        (acc, next, key) => merge(acc, flattenKeys(next, [...path, key])),
+        (accumulator, next, key) =>
+          merge(accumulator, flattenKeys(next, [...path, key])),
         {}
       );
 
 const readI18nFiles = (path: string): Record<string, string[]> =>
   readdirSync(path)
     // Read all i18n files
-    .map(fileName => ({
+    .map((fileName) => ({
       lang: fileName.substring(0, fileName.length - 5),
-      labels: readFileSync(join(I18N_FILES_PATH, fileName), "utf-8")
+      labels: readFileSync(join(I18N_FILES_PATH, fileName), "utf-8"),
     }))
 
     // Convert to JSON
-    .map(file => ({
+    .map((file) => ({
       ...file,
-      labels: JSON.parse(file.labels)
+      labels: JSON.parse(file.labels),
     }))
 
     // Flatten keys
-    .map(file => ({
+    .map((file) => ({
       ...file,
-      labels: flattenKeys(file.labels)
+      labels: flattenKeys(file.labels),
     }))
 
     // Concatenate all translations into a single {lang: labels} object
-    .reduce((acc, file) => ({ ...acc, [file.lang]: keys(file.labels) }), {});
+    .reduce(
+      (accumulator, file) => ({
+        ...accumulator,
+        [file.lang]: keys(file.labels),
+      }),
+      {}
+    );
 
 const allTranslations = readI18nFiles(I18N_FILES_PATH);
 
@@ -54,9 +61,9 @@ Object.entries(allTranslations).forEach(([lang, labels]) => {
   if (lang === "en") return;
 
   /* Find labels that are defined for 'en' (= default) but missing in any other language */
-  const missingLabels = difference(allTranslations.en, labels).filter(key =>
+  const missingLabels = difference(allTranslations.en, labels).filter((key) =>
     ALLOWED_MISSING_TRANSLATION_PREFIXES.every(
-      prefix => !key.startsWith(`${prefix}.`)
+      (prefix) => !key.startsWith(`${prefix}.`)
     )
   );
 

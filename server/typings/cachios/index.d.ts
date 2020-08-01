@@ -16,6 +16,6 @@ declare module "cachios" {
 
   export function create(
     axiosInstance: AxiosInstance,
-    nodeCacheConf?: NodeCacheOptions
+    nodeCacheConfig?: NodeCacheOptions
   ): CachiosInstance;
 }

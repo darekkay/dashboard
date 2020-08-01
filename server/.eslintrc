@@ -1,11 +1,14 @@
 {
-  "extends": ["@darekkay/eslint-config/node"],
+  "extends": ["@darekkay/eslint-config/nodejs"],
 
   "overrides": [
     {
       "extends": ["@darekkay/eslint-config/typescript"],
       "files": ["**/*.ts", "**/*.tsx"],
-      "parser": "@typescript-eslint/parser"
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      }
     }
   ]
 }

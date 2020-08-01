@@ -1,7 +1,7 @@
 import React from "react";
 import ReactModal, { Props as ReactModalProps } from "react-modal";
 import { useTranslation } from "react-i18next";
-import { MaxWidthProperty } from "csstype";
+import { Property } from "csstype";
 
 import Button from "components/button";
 import Icon from "components/icon";
@@ -13,7 +13,7 @@ if (process.env.NODE_ENV !== "test") {
   // create a mock modal root
   const modalRoot = document.createElement("div");
   modalRoot.setAttribute("id", "modal-root");
-  document.body.appendChild(modalRoot);
+  document.body.append(modalRoot);
   ReactModal.setAppElement("#modal-root");
 }
 
@@ -58,7 +58,7 @@ const Modal: React.FC<Props> = ({
 
 export interface Props extends ReactModalProps {
   headline?: string;
-  maxWidth?: MaxWidthProperty<string>;
+  maxWidth?: Property.MaxWidth<string>;
   closeModal: () => void;
   children: React.ReactNode;
 }

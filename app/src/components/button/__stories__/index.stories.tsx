@@ -18,18 +18,18 @@ const Row = ({
 }: RowProps & Omit<ButtonProps, "children">) => (
   <Section type="story" headline={title}>
     <div className="space-x-5 space-y-2">
-      <Button {...rest}>{children || "Regular"}</Button>
+      <Button {...rest}>{children ?? "Regular"}</Button>
       <Button {...rest} size="small">
-        {children || "Small"}
+        {children ?? "Small"}
       </Button>
       <Button {...rest} outline>
-        {children || "Outline"}
+        {children ?? "Outline"}
       </Button>
       <Button {...rest} outline size="small">
-        {children || "Outline Small"}
+        {children ?? "Outline Small"}
       </Button>
       <Button {...rest} outline border={false}>
-        {children || "Borderless"}
+        {children ?? "Borderless"}
       </Button>
     </div>
   </Section>

@@ -72,7 +72,7 @@ describe("Widget duck", () => {
       },
     };
 
-    let updatedState = reducerWithInitialState()(
+    const updatedState = reducerWithInitialState()(
       initialState,
       importState({
         ...stateProps,

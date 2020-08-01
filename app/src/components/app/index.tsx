@@ -11,7 +11,10 @@ import Dashboard from "components/dashboard";
 import Drawer from "components/drawer";
 import Header from "components/header";
 import { updateCssVariables, Theme } from "components/settings/theme-select";
-import { importWidgets, WidgetsState } from "components/widget/duck";
+import {
+  importWidgets as importWidgetsAction,
+  WidgetsState,
+} from "components/widget/duck";
 
 import mapStateToProps from "./selectors";
 
@@ -56,9 +59,7 @@ export const App: React.FC<Props> = (props) => {
             importWidgets={importWidgets}
           />
         </main>
-        {isLayoutEditable && (
-          <Drawer addWidgetToLayout={addWidgetToLayout}></Drawer>
-        )}
+        {isLayoutEditable && <Drawer addWidgetToLayout={addWidgetToLayout} />}
       </div>
     </Fullscreen>
   );
@@ -82,5 +83,5 @@ export interface Props {
 
 export default connect(mapStateToProps, {
   ...layoutActionCreators,
-  importWidgets,
+  importWidgets: importWidgetsAction,
 })(App);

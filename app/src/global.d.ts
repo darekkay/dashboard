@@ -5,7 +5,7 @@ declare module "redux-sagas-injector" {
   export function injectSaga(key: string, saga: Saga): void;
 
   export function createInjectSagasStore(
-    { rootSaga: Saga },
+    { rootSaga },
     initialReducers,
     ...args
   ): Store;

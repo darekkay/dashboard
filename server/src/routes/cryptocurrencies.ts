@@ -13,10 +13,10 @@ const routes = (app: Express) =>
   /* Get the current price for a cryptocurrency */
   app.get(
     "/cryptocurrencies/price",
-    async (req: Request, res: Response, next: NextFunction) => {
+    async (request: Request, response: Response, next: NextFunction) => {
       try {
-        const { crypto, fiat } = req.query;
-        const response = await axios.get(
+        const { crypto, fiat } = request.query;
+        const axiosResponse = await axios.get(
           "https://api.coingecko.com/api/v3/coins/markets",
           {
             params: {
@@ -27,19 +27,20 @@ const routes = (app: Express) =>
           }
         );
 
-        const values = response.data[0];
-        res.json({
+        const values = axiosResponse.data[0];
+        return response.json({
           currentPrice: values.current_price,
           last24h: {
             change: _.round(values.price_change_24h, 2),
             changePercentage: _.round(values.price_change_percentage_24h, 2),
           },
-          imageUrl: values.image
-            ? values.image.replace("/large/", "/small/")
-            : undefined,
+          imageUrl:
+            typeof values.image === "string"
+              ? (values.image as string).replace("/large/", "/small/")
+              : undefined,
         });
       } catch (error) {
-        next(error);
+        return next(error);
       }
     }
   );

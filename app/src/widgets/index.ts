@@ -48,11 +48,11 @@ export interface WidgetElements {
 
 const importWidgets = (widgets: Record<string, WidgetProperties>) =>
   Object.entries(widgets).reduce(
-    (acc, [type, values]) => ({
-      ...acc,
+    (accumulator, [type, values]) => ({
+      ...accumulator,
       [type]: {
         ...values,
-        Component: React.lazy(() =>
+        Component: React.lazy(async () =>
           import(`widgets/${type}`).then((module) => {
             if (module.saga) {
               injectSaga(type, module.saga); // NICE: import dynamically?
@@ -61,7 +61,7 @@ const importWidgets = (widgets: Record<string, WidgetProperties>) =>
           })
         ),
         Configuration: values.configurable
-          ? React.lazy(() => import(`widgets/${type}/configuration`))
+          ? React.lazy(async () => import(`widgets/${type}/configuration`))
           : null,
       },
     }),

@@ -99,7 +99,7 @@ describe("github", () => {
       logger.setLevel("error");
     });
 
-    it("should recognize a user", () => {
+    it("should recognize a user", async () => {
       const mockedAxios = axios as jest.Mocked<typeof axios>;
       mockedAxios.get.mockResolvedValueOnce(userMockResponse);
       mockedAxios.get.mockResolvedValueOnce(useRepositoriesMockResponse);
@@ -118,7 +118,7 @@ describe("github", () => {
         });
     });
 
-    it("should recognize a repository", () => {
+    it("should recognize a repository", async () => {
       const mockedAxios = axios as jest.Mocked<typeof axios>;
       mockedAxios.get.mockResolvedValue(repositoryMockResponse);
 
@@ -136,17 +136,18 @@ describe("github", () => {
         });
     });
 
-    it("should return 422 if the query type cannot be derived", () => {
+    it("should return 422 if the query type cannot be derived", async () => {
       return request(app)
         .get("/github/stats")
         .query({ query: "da/rek/kay" })
         .expect(422);
     });
 
-    it("should return 404 if the username cannot be found", () => {
+    it("should return 404 if the username cannot be found", async () => {
       logger.setLevel("silent");
       const mockedAxios = axios as jest.Mocked<typeof axios>;
       mockedAxios.get.mockImplementation(() => {
+        // eslint-disable-next-line no-throw-literal,@typescript-eslint/no-throw-literal
         throw { response: { status: 404 } };
       });
       return request(app)

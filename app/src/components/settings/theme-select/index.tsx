@@ -16,6 +16,8 @@ export const updateCssVariables = (theme: Theme) => {
 };
 
 export const Theme: React.FC<ThemeProps> = ({ name, label, onClick }) => (
+  // TODO: make keyboard-accessible
+  // eslint-disable-next-line jsx-a11y/click-events-have-key-events
   <div
     className={`theme-${name} inline-block mr-6 mb-3 cursor-pointer`}
     style={{ width: "200px", height: "120px" }}

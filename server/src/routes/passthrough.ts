@@ -11,18 +11,18 @@ const routes = (app: Express) => {
   /* Passthrough a GET resource to bypass CORS */
   app.get(
     "/passthrough",
-    async (req: Request, res: Response, next: NextFunction) => {
+    async (request: Request, response: Response, next: NextFunction) => {
       try {
-        const { url, ttl, responseType } = req.query;
-        const response = await axios.get(url, { ttl: ttl || 5 * 60 });
+        const { url, ttl, responseType } = request.query;
+        const axiosResponse = await axios.get(url, { ttl: ttl || 5 * 60 });
 
         if (responseType === "json") {
-          res.json(response.data);
+          return response.json(axiosResponse.data);
         } else {
-          res.send(response.data);
+          return response.send(axiosResponse.data);
         }
       } catch (error) {
-        next(error);
+        return next(error);
       }
     }
   );

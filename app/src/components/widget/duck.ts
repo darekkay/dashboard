@@ -68,10 +68,12 @@ export interface WidgetsState {
 
 export const initialState = {};
 
-export const reducerWithInitialState = (state: WidgetsState = initialState) =>
-  createReducer<WidgetsState>(state, (builder) =>
+export const reducerWithInitialState = (
+  defaultState: WidgetsState = initialState
+) =>
+  createReducer<WidgetsState>(defaultState, (builder) =>
     builder
-      .addCase(importState, (state, action) => action.payload.widgets)
+      .addCase(importState, (_state, action) => action.payload.widgets)
 
       .addCase(setOptions, (state, action) => {
         const { id, values } = action.payload;
@@ -83,7 +85,7 @@ export const reducerWithInitialState = (state: WidgetsState = initialState) =>
         state[id].data = { ...state[id].data, ...values };
       })
 
-      .addCase(importWidgets, (state, action) => action.payload)
+      .addCase(importWidgets, (_state, action) => action.payload)
 
       // NICE: for each updateStatus action, check for the correct preciding updateStatus
       // https://mobile.twitter.com/devongovett/status/1256368203594264576
@@ -104,7 +106,7 @@ export const reducerWithInitialState = (state: WidgetsState = initialState) =>
       })
 
       .addCase(updateError, (state, action) => {
-        const { id, error } = action.payload as UpdateActionError;
+        const { id, error } = action.payload;
         state[id].meta.updateStatus = "error";
         state[id].meta.errorCode = error?.response?.status; // use axios response error code
       })

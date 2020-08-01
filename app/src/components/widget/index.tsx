@@ -21,6 +21,8 @@ import { actionCreators, TriggerUpdateAction, WidgetMeta } from "./duck";
 const initialDimensions: Dimensions = { width: 1, height: 1 };
 
 /** Single widget within the dashboard */
+// TODO: simplify component
+// eslint-disable-next-line max-lines-per-function
 export const Widget: React.FC<Props & ErrorProps> = (props) => {
   const {
     id,
@@ -87,7 +89,7 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
           // https://bugzilla.mozilla.org/show_bug.cgi?id=1545573
           const relatedTarget = event.relatedTarget as Element;
           if (widgetRef?.current) {
-            // @ts-ignore
+            // @ts-expect-error
             const widgetNode = widgetRef.current as Element;
             const blurWithinParent = widgetNode.contains(relatedTarget);
             setDraggable(
@@ -120,7 +122,7 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
           <Measure
             bounds
             onResize={(contentRect) => {
-              setDimensions(contentRect?.bounds || initialDimensions);
+              setDimensions(contentRect?.bounds ?? initialDimensions);
             }}
           >
             {({ measureRef }) => (

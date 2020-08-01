@@ -8,6 +8,7 @@ export default class Popper {
   static placements = PopperJs.placements;
 
   constructor() {
+    // eslint-disable-next-line no-constructor-return
     return {
       destroy: () => {},
       scheduleUpdate: () => {},
