@@ -1,13 +1,13 @@
-app-node-10:
-  image: node:10
+app-node-12:
+  image: node:12
 
   variables:
     DIR: app
 
   extends: .job
 
-app-node-12:
-  image: node:12
+app-node-14:
+  image: node:14
 
   variables:
     DIR: app

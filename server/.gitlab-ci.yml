@@ -1,5 +1,5 @@
-server-node-10:
-  image: node:10
+server-node-12:
+  image: node:12
 
   variables:
     DIR: server
@@ -9,8 +9,8 @@ server-node-10:
   script:
     - yarn ci
 
-server-node-12:
-  image: node:12
+server-node-14:
+  image: node:14
 
   variables:
     DIR: server

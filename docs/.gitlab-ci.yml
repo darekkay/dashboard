@@ -1,5 +1,5 @@
-docs-node-10:
-  image: node:10
+docs-node-12:
+  image: node:12
 
   variables:
     DIR: app
@@ -9,8 +9,8 @@ docs-node-10:
 
   extends: .job
 
-docs-node-12:
-  image: node:12
+docs-node-14:
+  image: node:14
 
   variables:
     DIR: app

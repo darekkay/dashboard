@@ -9,7 +9,7 @@ jobs:
   include:
     - name: app
       node_js:
-        - "10"
+        - "12"
       script:
         - cd app
         - yarn install --pure-lockfile --prefer-offline
@@ -17,14 +17,14 @@ jobs:
         - yarn build
     - name: server
       node_js:
-        - "10"
+        - "12"
       script:
         - cd server
         - yarn install --pure-lockfile --prefer-offline
         - yarn ci
     - name: docs
       node_js:
-        - "10"
+        - "12"
       script:
         - cd docs
         - yarn install --pure-lockfile --prefer-offline
