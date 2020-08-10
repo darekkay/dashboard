@@ -21,12 +21,12 @@ module.exports = (plop) => {
     },
   ];
 
-  const componentActions = (type) => [
+  const componentActions = [
     // Component index file
     {
       type: "add",
       path: "../../src/components/{{kebabCase name}}/index.tsx",
-      templateFile: `./component/${type}.hbs`,
+      templateFile: `./component/functional.hbs`,
       abortOnFail: false,
     },
 
@@ -115,16 +115,10 @@ module.exports = (plop) => {
     return actions;
   };
 
-  plop.setGenerator("Stateless component", {
-    description: "Stateless React function",
+  plop.setGenerator("React component", {
+    description: "Common component",
     prompts: componentPrompts,
-    actions: componentActions("stateless"),
-  });
-
-  plop.setGenerator("Class component", {
-    description: "React.Component",
-    prompts: componentPrompts,
-    actions: componentActions("class"),
+    actions: componentActions,
   });
 
   plop.setGenerator("Widget", {
