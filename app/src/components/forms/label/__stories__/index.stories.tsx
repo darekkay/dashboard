@@ -18,4 +18,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Components.Forms.Label", module).add("Variants", () => <Story />);
+storiesOf("Components/Forms/Label", module).add("Variants", () => <Story />);

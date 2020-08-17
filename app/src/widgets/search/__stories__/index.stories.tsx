@@ -15,4 +15,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Widgets.Search", module).add("Variants", () => <Story />);
+storiesOf("Widgets/Search", module).add("Variants", () => <Story />);

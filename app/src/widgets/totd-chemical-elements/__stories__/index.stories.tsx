@@ -19,7 +19,7 @@ const Story = () => {
   );
 };
 
-storiesOf("Widgets.Tip of the Day.Chemical Elements", module).add(
+storiesOf("Widgets/Tip of the Day/Chemical Elements", module).add(
   "Variants",
   () => <Story />
 );

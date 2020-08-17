@@ -15,4 +15,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Components.ThemeSelect", module).add("Variants", () => <Story />);
+storiesOf("Components/ThemeSelect", module).add("Variants", () => <Story />);

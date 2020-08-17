@@ -39,4 +39,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Components.Forms", module).add("Showcase", () => <Story />);
+storiesOf("Components/Forms", module).add("Showcase", () => <Story />);

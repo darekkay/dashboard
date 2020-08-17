@@ -17,4 +17,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Components.ImportExport", module).add("Variants", () => <Story />);
+storiesOf("Components/ImportExport", module).add("Variants", () => <Story />);

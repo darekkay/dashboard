@@ -28,4 +28,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Components.Widget", module).add("Variants", () => <Story />);
+storiesOf("Components/Widget", module).add("Variants", () => <Story />);

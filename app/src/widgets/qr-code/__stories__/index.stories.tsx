@@ -16,4 +16,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Widgets.QrCode", module).add("Variants", () => <Story />);
+storiesOf("Widgets/QrCode", module).add("Variants", () => <Story />);

@@ -25,4 +25,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Widgets.Cryptocurrencies", module).add("Variants", () => <Story />);
+storiesOf("Widgets/Cryptocurrencies", module).add("Variants", () => <Story />);

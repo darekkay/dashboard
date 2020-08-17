@@ -7,6 +7,6 @@ const Story = () => {
   return <WidgetUnconfigured type="image" />;
 };
 
-storiesOf("Components.WidgetUnconfigured", module).add("Variants", () => (
+storiesOf("Components/WidgetUnconfigured", module).add("Variants", () => (
   <Story />
 ));

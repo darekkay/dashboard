@@ -16,4 +16,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Widgets.Website", module).add("Variants", () => <Story />);
+storiesOf("Widgets/Website", module).add("Variants", () => <Story />);

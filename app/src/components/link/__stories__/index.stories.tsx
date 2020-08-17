@@ -27,4 +27,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Components.Link", module).add("Variants", () => <Story />);
+storiesOf("Components/Link", module).add("Variants", () => <Story />);

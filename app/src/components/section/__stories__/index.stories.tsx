@@ -18,4 +18,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Components.Section", module).add("Variants", () => <Story />);
+storiesOf("Components/Section", module).add("Variants", () => <Story />);

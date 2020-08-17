@@ -36,4 +36,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Components.Modal", module).add("Variants", () => <Story />);
+storiesOf("Components/Modal", module).add("Variants", () => <Story />);

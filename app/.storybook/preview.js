@@ -1,5 +1,4 @@
 import { addDecorator, addParameters } from "@storybook/react";
-import { withA11y } from "@storybook/addon-a11y";
 
 import "components/icon/font-awesome/setup"; // Font Awesome setup
 
@@ -10,9 +9,6 @@ import "../src/styles/index.scss";
 import "./storybook.scss";
 
 initStore();
-
-// Enable a11y addon
-addDecorator(withA11y);
 
 // Define UI themes
 addParameters({

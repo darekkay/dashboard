@@ -5,7 +5,7 @@ import Section from "components/section";
 
 import colors from "./colors.json";
 
-storiesOf("Common.Colors", module)
+storiesOf("Common/Colors", module)
   .addParameters({
     a11y: { disabled: true },
   })

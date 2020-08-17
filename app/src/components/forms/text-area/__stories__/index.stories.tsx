@@ -8,4 +8,4 @@ const Story = () => {
   return <TextArea setValue={_.noop} label="TextArea" />;
 };
 
-storiesOf("Components.Forms.TextArea", module).add("Variants", () => <Story />);
+storiesOf("Components/Forms/TextArea", module).add("Variants", () => <Story />);

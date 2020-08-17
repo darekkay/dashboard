@@ -23,4 +23,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Components.Forms.Dropdown", module).add("Variants", () => <Story />);
+storiesOf("Components/Forms/Dropdown", module).add("Variants", () => <Story />);

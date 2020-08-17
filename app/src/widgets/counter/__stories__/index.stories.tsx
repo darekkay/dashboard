@@ -16,4 +16,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Widgets.Counter", module).add("Variants", () => <Story />);
+storiesOf("Widgets/Counter", module).add("Variants", () => <Story />);

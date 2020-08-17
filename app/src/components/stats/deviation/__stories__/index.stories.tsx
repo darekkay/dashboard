@@ -35,6 +35,6 @@ const Story = () => {
   );
 };
 
-storiesOf("Components.Stats.Deviation", module).add("Variants", () => (
+storiesOf("Components/Stats/Deviation", module).add("Variants", () => (
   <Story />
 ));

@@ -21,4 +21,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Components.Loading", module).add("Variants", () => <Story />);
+storiesOf("Components/Loading", module).add("Variants", () => <Story />);

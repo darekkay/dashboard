@@ -11,6 +11,6 @@ const Story = () => {
   );
 };
 
-storiesOf("Components.Forms.FileUpload", module).add("Variants", () => (
+storiesOf("Components/Forms/FileUpload", module).add("Variants", () => (
   <Story />
 ));

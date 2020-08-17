@@ -35,7 +35,7 @@ const Row = ({
   </Section>
 );
 
-storiesOf("Components.Button", module).add("Variants", () => (
+storiesOf("Components/Button", module).add("Variants", () => (
   <div className="space-y-6">
     <Row title="Primary Button" variant="primary" />
     <Row title="Secondary Button" variant="secondary" />

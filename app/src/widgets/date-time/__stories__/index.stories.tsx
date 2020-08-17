@@ -10,4 +10,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Widgets.DateTime", module).add("Variants", () => <Story />);
+storiesOf("Widgets/DateTime", module).add("Variants", () => <Story />);

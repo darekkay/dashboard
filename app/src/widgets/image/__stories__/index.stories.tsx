@@ -18,4 +18,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Widgets.Image", module).add("Variants", () => <Story />);
+storiesOf("Widgets/Image", module).add("Variants", () => <Story />);

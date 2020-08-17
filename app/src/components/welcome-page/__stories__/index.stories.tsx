@@ -12,4 +12,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Components.WelcomePage", module).add("Variants", () => <Story />);
+storiesOf("Components/WelcomePage", module).add("Variants", () => <Story />);

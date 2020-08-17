@@ -11,4 +11,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Components.Headline", module).add("Variants", () => <Story />);
+storiesOf("Components/Headline", module).add("Variants", () => <Story />);

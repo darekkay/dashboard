@@ -7,7 +7,7 @@ import Section from "components/section";
 import usePrevious from "../usePrevious";
 import useInterval from "../useInterval";
 
-storiesOf("Common.Hooks", module)
+storiesOf("Common/Hooks", module)
   .add("usePrevious", () => {
     const [counter, setCounter] = useState(0);
     const previousValue = usePrevious(counter);

@@ -54,4 +54,4 @@ const Story = () => {
   );
 };
 
-storiesOf("Widgets.GithubStats", module).add("Variants", () => <Story />);
+storiesOf("Widgets/GithubStats", module).add("Variants", () => <Story />);
