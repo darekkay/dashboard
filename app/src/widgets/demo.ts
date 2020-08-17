@@ -1,5 +1,16 @@
 import _ from "lodash";
 
+import { Widget } from "components/widget/duck";
+
+import availableWidgets from "./list";
+
+interface GridProps {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+
 const widgets = {
   "date-time-01": {
     x: 7,
@@ -9,7 +20,7 @@ const widgets = {
     type: "date-time",
     data: {},
     options: {},
-    meta: {},
+    meta: availableWidgets["date-time"].initialMeta,
   },
   "search-01": {
     x: 12,
@@ -22,7 +33,7 @@ const widgets = {
       pattern: "https://duckduckgo.com/?q=%s",
       title: "DuckDuckGo",
     },
-    meta: {},
+    meta: availableWidgets.search.initialMeta,
   },
   "text-01": {
     x: 13,
@@ -35,7 +46,7 @@ const widgets = {
         "Rule #1\n\nAlways code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
     },
     options: {},
-    meta: {},
+    meta: availableWidgets.text.initialMeta,
   },
   "image-01": {
     x: 7,
@@ -48,7 +59,7 @@ const widgets = {
       url:
         "https://images.pexels.com/photos/162240/bull-calf-heifer-ko-162240.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     },
-    meta: {},
+    meta: availableWidgets.image.initialMeta,
   },
   "totd-chemical-elements-01": {
     x: 11,
@@ -58,9 +69,7 @@ const widgets = {
     type: "totd-chemical-elements",
     data: {},
     options: {},
-    meta: {
-      updateCycle: { hours: 24 },
-    },
+    meta: availableWidgets["totd-chemical-elements"].initialMeta,
   },
   "qr-code-01": {
     x: 10,
@@ -72,7 +81,7 @@ const widgets = {
     options: {
       content: "https://dashboard.darekkay.com/",
     },
-    meta: {},
+    meta: availableWidgets["qr-code"].initialMeta,
   },
   "counter-01": {
     x: 11,
@@ -82,7 +91,7 @@ const widgets = {
     type: "counter",
     data: {},
     options: {},
-    meta: {},
+    meta: availableWidgets.counter.initialMeta,
   },
   "cryptocurrencies-01": {
     x: 4,
@@ -95,7 +104,7 @@ const widgets = {
       fiat: "eur",
       crypto: "bitcoin",
     },
-    meta: { updateCycle: { minutes: 15 } },
+    meta: availableWidgets.cryptocurrencies.initialMeta,
   },
   "github-stats-01": {
     x: 4,
@@ -107,10 +116,9 @@ const widgets = {
     options: {
       query: "darekkay/dashboard",
     },
-    // TODO: read from "list.ts" to keep values in sync
-    meta: { updateCycle: { hours: 24 }, headlineIcon: "github" },
+    meta: availableWidgets["github-stats"].initialMeta,
   },
-};
+} as Record<string, Widget & GridProps>;
 
 export const exampleWidgets = Object.entries(widgets).reduce(
   (accumulator, [key, widget]) => ({

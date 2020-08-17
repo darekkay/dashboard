@@ -7,4 +7,5 @@ export const initialWidth = 2;
 export const initialOptions = {};
 export const initialMeta = {
   updateCycle: { hours: 24 },
+  updateStatus: "idle",
 };

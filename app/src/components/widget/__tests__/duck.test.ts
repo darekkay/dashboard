@@ -8,6 +8,7 @@ import {
   actionCreators,
   createWidget,
   removeWidget,
+  Widget,
 } from "../duck";
 
 const initialState = {
@@ -17,7 +18,7 @@ const initialState = {
     data: {},
     meta: {},
   },
-};
+} as Record<string, Widget>;
 
 describe("Widget duck", () => {
   test("updates the widget's option value", () => {
@@ -70,7 +71,7 @@ describe("Widget duck", () => {
         data: {},
         meta: {},
       },
-    };
+    } as Record<string, Widget>;
 
     const updatedState = reducerWithInitialState()(
       initialState,

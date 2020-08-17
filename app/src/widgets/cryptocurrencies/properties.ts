@@ -10,4 +10,5 @@ export const initialOptions = {
 };
 export const initialMeta = {
   updateCycle: { minutes: 15 },
+  updateStatus: "idle",
 };

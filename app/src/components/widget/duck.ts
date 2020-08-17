@@ -44,10 +44,10 @@ export const createWidget = createAction<{ id: string; type: string }>(
 );
 export const removeWidget = createAction<string>("widget/remove");
 
-export type UpdateStatus = "pending" | "success" | "error"; // TODO: add "idle" state as default instead of using undefined
+export type UpdateStatus = "idle" | "pending" | "success" | "error";
 
 export interface WidgetMeta {
-  updateStatus?: UpdateStatus; // TODO: Remove optional flag after introducing "idle" state
+  updateStatus?: UpdateStatus;
   lastUpdated?: number;
   updateCycle?: MomentInputObject;
   errorCode?: number;
@@ -113,7 +113,7 @@ export const reducerWithInitialState = (
 
       .addCase(updateAbort, (state, action) => {
         const id = action.payload;
-        state[id].meta.updateStatus = undefined;
+        state[id].meta.updateStatus = "idle";
       })
 
       .addCase(createWidget, (state, action) => {

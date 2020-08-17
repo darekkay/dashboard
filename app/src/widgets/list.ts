@@ -16,7 +16,7 @@ export default {
     initialHeight: 2,
     initialWidth: 3,
     initialOptions: { fiat: "eur", crypto: "bitcoin" },
-    initialMeta: { updateCycle: { minutes: 15 } },
+    initialMeta: { updateCycle: { minutes: 15 }, updateStatus: "idle" },
   },
   "date-time": {
     configurable: false,
@@ -34,7 +34,11 @@ export default {
     initialHeight: 3,
     initialWidth: 3,
     initialOptions: {},
-    initialMeta: { updateCycle: { hours: 24 }, headlineIcon: "github" },
+    initialMeta: {
+      updateCycle: { hours: 24 },
+      updateStatus: "idle",
+      headlineIcon: "github",
+    },
   },
   image: {
     configurable: true,
@@ -82,7 +86,7 @@ export default {
     initialHeight: 2,
     initialWidth: 2,
     initialOptions: {},
-    initialMeta: { updateCycle: { hours: 24 } },
+    initialMeta: { updateCycle: { hours: 24 }, updateStatus: "idle" },
   },
   website: {
     configurable: true,
