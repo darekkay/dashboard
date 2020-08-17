@@ -16,7 +16,6 @@ export const connectedWidgetProps = {
   data: {},
   removeWidgetFromLayout: _.noop,
   hasError: false,
-  className: "resize",
   ...widgetProps,
 };
 
