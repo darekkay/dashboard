@@ -58,6 +58,6 @@
     "lint": "tsc && eslint .",
     "lint:fix": "eslint --fix .",
     "start": "ts-node src/index.ts",
-    "test": "jest"
+    "test": "jest --coverage"
   }
 }
