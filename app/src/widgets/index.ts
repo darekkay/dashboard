@@ -5,7 +5,7 @@ import { TriggerUpdateAction, WidgetMeta } from "components/widget/duck";
 import { Dimensions } from "components/widget";
 import WidgetCategory from "widgets/categories";
 
-import availableWidgets, { WidgetType } from "./list";
+import widgetProperties, { widgetImports, WidgetType } from "./list";
 
 export type ValueUpdateAction = ({
   id,
@@ -41,32 +41,39 @@ export interface WidgetProperties {
   initialMeta: WidgetMeta;
 }
 
+export interface WidgetImports {
+  component: () => Promise<any>;
+  configuration: () => Promise<any>;
+}
+
 export interface WidgetElements {
   Component: React.ComponentClass<WidgetProps>;
   Configuration: React.ComponentClass<ConfigurationProps<any>>;
 }
 
-// TODO: generate explicit (dynamic?) imports, so webpack doesn't create a chunks for the whole src folder
-const importWidgets = (widgets: Record<string, WidgetProperties>) =>
-  Object.entries(widgets).reduce(
-    (accumulator, [type, values]) => ({
+const injectModuleSaga = (widgetType: WidgetType) => (module: any) => {
+  if (module.saga) {
+    injectSaga(widgetType, module.saga);
+  }
+  return module;
+};
+
+export default Object.entries(widgetProperties).reduce(
+  (accumulator, [widgetType, values]) => {
+    return {
       ...accumulator,
-      [type]: {
+      [widgetType]: {
         ...values,
         Component: React.lazy(async () =>
-          import(`widgets/${type}`).then((module) => {
-            if (module.saga) {
-              injectSaga(type, module.saga); // NICE: import dynamically?
-            }
-            return module;
-          })
+          widgetImports[widgetType as WidgetType]
+            .component()
+            .then(injectModuleSaga(widgetType as WidgetType))
         ),
         Configuration: values.configurable
-          ? React.lazy(async () => import(`widgets/${type}/configuration`))
+          ? React.lazy(widgetImports[widgetType as WidgetType].configuration)
           : null,
       },
-    }),
-    {}
-  ) as Record<string, WidgetProperties & WidgetElements>;
-
-export default importWidgets(availableWidgets);
+    };
+  },
+  {}
+) as Record<WidgetType, WidgetProperties & WidgetElements>;
