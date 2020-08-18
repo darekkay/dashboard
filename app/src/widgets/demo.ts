@@ -2,7 +2,7 @@ import _ from "lodash";
 
 import { Widget } from "components/widget/duck";
 
-import availableWidgets from "./list";
+import { initialMeta } from "./list";
 
 interface GridProps {
   x: number;
@@ -20,7 +20,7 @@ const widgets = {
     type: "date-time",
     data: {},
     options: {},
-    meta: availableWidgets["date-time"].initialMeta,
+    meta: initialMeta("date-time"),
   },
   "search-01": {
     x: 12,
@@ -33,7 +33,7 @@ const widgets = {
       pattern: "https://duckduckgo.com/?q=%s",
       title: "DuckDuckGo",
     },
-    meta: availableWidgets.search.initialMeta,
+    meta: initialMeta("search"),
   },
   "text-01": {
     x: 13,
@@ -46,7 +46,7 @@ const widgets = {
         "Rule #1\n\nAlways code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
     },
     options: {},
-    meta: availableWidgets.text.initialMeta,
+    meta: initialMeta("text"),
   },
   "image-01": {
     x: 7,
@@ -59,7 +59,7 @@ const widgets = {
       url:
         "https://images.pexels.com/photos/162240/bull-calf-heifer-ko-162240.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     },
-    meta: availableWidgets.image.initialMeta,
+    meta: initialMeta("image"),
   },
   "totd-chemical-elements-01": {
     x: 11,
@@ -69,7 +69,7 @@ const widgets = {
     type: "totd-chemical-elements",
     data: {},
     options: {},
-    meta: availableWidgets["totd-chemical-elements"].initialMeta,
+    meta: initialMeta("totd-chemical-elements"),
   },
   "qr-code-01": {
     x: 10,
@@ -81,7 +81,7 @@ const widgets = {
     options: {
       content: "https://dashboard.darekkay.com/",
     },
-    meta: availableWidgets["qr-code"].initialMeta,
+    meta: initialMeta("qr-code"),
   },
   "counter-01": {
     x: 11,
@@ -91,7 +91,7 @@ const widgets = {
     type: "counter",
     data: {},
     options: {},
-    meta: availableWidgets.counter.initialMeta,
+    meta: initialMeta("counter"),
   },
   "cryptocurrencies-01": {
     x: 4,
@@ -104,7 +104,7 @@ const widgets = {
       fiat: "eur",
       crypto: "bitcoin",
     },
-    meta: availableWidgets.cryptocurrencies.initialMeta,
+    meta: initialMeta("cryptocurrencies"),
   },
   "github-stats-01": {
     x: 4,
@@ -116,7 +116,7 @@ const widgets = {
     options: {
       query: "darekkay/dashboard",
     },
-    meta: availableWidgets["github-stats"].initialMeta,
+    meta: initialMeta("github-stats"),
   },
 } as Record<string, Widget & GridProps>;
 

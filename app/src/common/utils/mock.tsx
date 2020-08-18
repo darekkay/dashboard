@@ -5,7 +5,7 @@ import { WidgetMeta } from "components/widget/duck";
 
 /* Default widget props (e.g. for unit tests) */
 export const widgetProps = {
-  meta: { updateCycle: { minute: 1 }, updateStatus: "idle" } as WidgetMeta,
+  meta: { updateCycle: { hours: 1 }, updateStatus: "idle" } as WidgetMeta,
   setData: _.noop,
   setOptions: _.noop,
   triggerUpdate: _.noop,

@@ -4,6 +4,7 @@ import { storiesOf } from "@storybook/react";
 import { connectedWidgetProps } from "common/utils/mock";
 import { Widget } from "components/widget";
 import Section from "components/section";
+import { initialMeta } from "widgets/list";
 
 const Story = () => {
   return (
@@ -23,11 +24,7 @@ const Story = () => {
             forks: 17,
             open_issues: 5,
           }}
-          meta={{
-            // TODO: the meta should be rather a "static" property of a widget
-            //  redefining it everywhere shouldn't be required
-            headlineIcon: "github",
-          }}
+          meta={initialMeta("github-stats")}
         />
       </Section>
       <Section type="story" headline="GitHub Repository">
@@ -45,9 +42,7 @@ const Story = () => {
             forks: 17,
             open_issues: 5,
           }}
-          meta={{
-            headlineIcon: "github",
-          }}
+          meta={initialMeta("github-stats")}
         />
       </Section>
     </div>

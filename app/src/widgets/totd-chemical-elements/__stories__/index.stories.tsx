@@ -3,6 +3,7 @@ import { storiesOf } from "@storybook/react";
 
 import { connectedWidgetProps } from "common/utils/mock";
 import { Widget } from "components/widget";
+import { initialMeta } from "widgets/list";
 
 const Story = () => {
   return (
@@ -15,6 +16,7 @@ const Story = () => {
         name: "Vanadium",
         atomicNumber: 23,
       }}
+      meta={initialMeta("totd-chemical-elements")}
     />
   );
 };

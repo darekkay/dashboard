@@ -3,6 +3,7 @@ import { storiesOf } from "@storybook/react";
 
 import { connectedWidgetProps } from "common/utils/mock";
 import { Widget } from "components/widget";
+import { initialMeta } from "widgets/list";
 
 const Story = () => {
   return (
@@ -21,6 +22,7 @@ const Story = () => {
           changePercentage: 1.51,
         },
       }}
+      meta={initialMeta("cryptocurrencies")}
     />
   );
 };
