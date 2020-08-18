@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import _ from "lodash";
+import isEmpty from "lodash/isEmpty";
 
 import WidgetUnconfigured from "components/widget-unconfigured";
 
@@ -9,7 +9,7 @@ import { widgetType } from "./properties";
 
 const Website: React.FC<Props> = memo(
   ({ id, url }) => {
-    if (_.isEmpty(url)) return <WidgetUnconfigured type={widgetType} />;
+    if (isEmpty(url)) return <WidgetUnconfigured type={widgetType} />;
 
     return <iframe src={url} title={id} className="h-full w-full" />;
   },

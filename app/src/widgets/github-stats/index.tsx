@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import _ from "lodash";
+import isEmpty from "lodash/isEmpty";
 
 import useTriggerUpdate from "common/hooks/useTriggerUpdate";
 import Icon, { IconName } from "components/icon";
@@ -42,7 +42,7 @@ const GithubStats: React.FC<Props> = ({
   const { t } = useTranslation();
   useTriggerUpdate({ id, params: { query }, meta, triggerUpdate }, [query]);
 
-  if (_.isEmpty(query)) return <WidgetUnconfigured type={widgetType} />;
+  if (isEmpty(query)) return <WidgetUnconfigured type={widgetType} />;
   if (meta.errorCode === 404)
     return <WidgetError labelKey={t("widget.github-stats.error.404")} />;
 

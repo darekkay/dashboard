@@ -1,8 +1,8 @@
-import _ from "lodash";
+import toLower from "lodash/toLower";
 
 import pkg from "../../package.json";
 
-export const toBoolean = (value?: string) => _.toLower(value) === "true";
+export const toBoolean = (value?: string) => toLower(value) === "true";
 
 /** Available languages */
 export const LANGUAGES = ["en", "de", "fr"];

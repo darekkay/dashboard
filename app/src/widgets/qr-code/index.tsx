@@ -1,6 +1,6 @@
 import React from "react";
 import QRCode from "qrcode.react";
-import _ from "lodash";
+import isEmpty from "lodash/isEmpty";
 
 import WidgetUnconfigured from "components/widget-unconfigured";
 import { Dimensions } from "components/widget";
@@ -14,7 +14,7 @@ const getSquareSize = (dimensions?: Dimensions) => {
 };
 
 const QrCode: React.FC<Props> = ({ meta, content }) => {
-  if (_.isEmpty(content)) return <WidgetUnconfigured type={widgetType} />;
+  if (isEmpty(content)) return <WidgetUnconfigured type={widgetType} />;
   const imageSize = getSquareSize(meta.dimensions);
   return (
     <div className="flex items-center h-full">

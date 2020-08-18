@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import _ from "lodash";
+import isEmpty from "lodash/isEmpty";
 
 import Button from "components/button";
 import Input from "components/forms/input";
@@ -26,7 +26,7 @@ const openSearchUrl = (
 const Search: React.FC<Props> = ({ id, pattern }) => {
   const [value, setValue] = useState("");
   const { t } = useTranslation();
-  if (_.isEmpty(pattern)) return <WidgetUnconfigured type={widgetType} />;
+  if (isEmpty(pattern)) return <WidgetUnconfigured type={widgetType} />;
   return (
     <div className="max-w-full w-full p-3">
       <div className="flex items-center">

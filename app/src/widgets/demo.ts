@@ -1,4 +1,4 @@
-import _ from "lodash";
+import omit from "lodash/omit";
 
 import { Widget } from "components/widget/duck";
 
@@ -123,7 +123,7 @@ const widgets = {
 export const exampleWidgets = Object.entries(widgets).reduce(
   (accumulator, [key, widget]) => ({
     ...accumulator,
-    [key]: _.omit(widget, ["height", "width", "x", "y"]),
+    [key]: omit(widget, ["height", "width", "x", "y"]),
   }),
   {}
 );

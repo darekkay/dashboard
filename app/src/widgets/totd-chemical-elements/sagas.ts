@@ -1,7 +1,7 @@
 import { put, call, takeLatest } from "@redux-saga/core/effects";
 import { PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import _ from "lodash";
+import pick from "lodash/pick";
 
 import {
   setData,
@@ -29,7 +29,7 @@ function* onTriggerUpdate(action: PayloadAction<TriggerUpdateAction>) {
       setData({
         id,
         values: {
-          ..._.pick(responseData, "name", "nameDE", "symbol", "atomicNumber"),
+          ...pick(responseData, "name", "nameDE", "symbol", "atomicNumber"),
         },
       })
     );

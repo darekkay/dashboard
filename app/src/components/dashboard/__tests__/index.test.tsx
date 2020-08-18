@@ -1,5 +1,4 @@
 import React from "react";
-import _ from "lodash";
 
 import { renderConnected, screen } from "common/testing";
 import { stateProps } from "common/utils/mock";
@@ -13,9 +12,9 @@ describe("<Dashboard />", () => {
       desktop: [],
     },
     isLayoutEditable: false,
-    saveLayout: _.noop,
-    removeWidgetFromLayout: _.noop,
-    importWidgets: _.noop,
+    saveLayout: () => {},
+    removeWidgetFromLayout: () => {},
+    importWidgets: () => {},
     widgetIDs: ["search-01", "text-02"],
   };
 

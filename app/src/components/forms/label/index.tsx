@@ -1,9 +1,9 @@
 import React from "react";
 import cn from "classnames";
-import _ from "lodash";
+import isEmpty from "lodash/isEmpty";
 
 const Label: React.FC<Props> = ({ text, className, children, ...domProps }) => {
-  if (_.isEmpty(text)) return <>{children}</>;
+  if (isEmpty(text)) return <>{children}</>;
   return (
     <label
       className={cn("max-w-full w-full flex flex-col", className)}

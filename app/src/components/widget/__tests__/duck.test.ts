@@ -1,4 +1,4 @@
-import _ from "lodash";
+import get from "lodash/get";
 
 import { importState } from "common/ducks/state";
 import { stateProps } from "common/utils/mock";
@@ -30,7 +30,7 @@ describe("Widget duck", () => {
       })
     );
 
-    expect(_.get(updatedState, "date-time-01.options.content")).toEqual("mock");
+    expect(get(updatedState, "date-time-01.options.content")).toEqual("mock");
   });
 
   test("updates the widget's data value", () => {
@@ -42,7 +42,7 @@ describe("Widget duck", () => {
       })
     );
 
-    expect(_.get(updatedState, "date-time-01.data.content")).toEqual("mock");
+    expect(get(updatedState, "date-time-01.data.content")).toEqual("mock");
   });
 
   test("creates and removes a widget", () => {
@@ -54,13 +54,13 @@ describe("Widget duck", () => {
       })
     );
 
-    expect(_.get(updatedState, "date-time-01.data")).toBeDefined();
+    expect(get(updatedState, "date-time-01.data")).toBeDefined();
 
     updatedState = reducerWithInitialState()(
       initialState,
       removeWidget("date-time-01")
     );
-    expect(_.get(updatedState, "date-time-01.data")).toBeUndefined();
+    expect(get(updatedState, "date-time-01.data")).toBeUndefined();
   });
 
   test("imports the state", () => {

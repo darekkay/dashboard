@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import _ from "lodash";
+import groupBy from "lodash/groupBy";
 
 import Button from "components/button";
 import widgets, { WidgetProperties } from "widgets";
@@ -8,7 +8,7 @@ import { categories } from "widgets/categories";
 
 import Icon from "../icon";
 
-const categoriesWithWidgets = _.groupBy(widgets, (widget) => widget.category);
+const categoriesWithWidgets = groupBy(widgets, (widget) => widget.category);
 
 const Drawer: React.FC<Props> = ({ addWidgetToLayout }) => {
   const { t } = useTranslation();

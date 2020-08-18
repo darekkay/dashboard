@@ -1,5 +1,4 @@
 import React from "react";
-import _ from "lodash";
 import { storiesOf } from "@storybook/react";
 
 import Section from "components/section";
@@ -13,11 +12,11 @@ const Story = () => {
   return (
     <div className="space-y-6" style={{ maxWidth: "600px" }}>
       <Section type="story">
-        <Input setValue={_.noop} label="Input" />
+        <Input setValue={() => {}} label="Input" />
       </Section>
 
       <Section type="story">
-        <TextArea setValue={_.noop} label="TextArea" />
+        <TextArea setValue={() => {}} label="TextArea" />
       </Section>
 
       <Section type="story">

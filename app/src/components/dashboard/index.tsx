@@ -1,6 +1,6 @@
 import React from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
-import _ from "lodash";
+import memoize from "lodash/memoize";
 
 import { Layout } from "common/ducks/layout";
 import { GRID } from "common/environment";
@@ -12,7 +12,7 @@ const ReactGridLayout = WidthProvider(Responsive);
 
 const updateProps = ["layout", "isLayoutEditable"];
 
-const makeWidgetMemoized = _.memoize(makeWidget);
+const makeWidgetMemoized = memoize(makeWidget);
 
 export const shouldUpdateComponent = (
   currentProps: Props,

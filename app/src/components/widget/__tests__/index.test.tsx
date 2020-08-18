@@ -1,5 +1,4 @@
 import React from "react";
-import _ from "lodash";
 
 import { render, screen } from "common/testing";
 import { State as ErrorProps } from "common/hoc/withErrorHandling";
@@ -18,8 +17,8 @@ describe("<Widget />", () => {
         data={{}}
         setData={() => null}
         meta={{}}
-        triggerUpdate={_.noop}
-        removeWidgetFromLayout={_.noop}
+        triggerUpdate={() => {}}
+        removeWidgetFromLayout={() => {}}
         hasError={false}
         {...props}
       />

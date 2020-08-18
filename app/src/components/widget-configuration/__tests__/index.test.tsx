@@ -1,5 +1,4 @@
 import React from "react";
-import _ from "lodash";
 
 import { render, screen, userEvent } from "common/testing";
 import widgets from "widgets";
@@ -12,11 +11,11 @@ describe("<WidgetConfiguration />", () => {
       <WidgetConfiguration
         id="image-01"
         type="image"
-        closeModal={_.noop}
+        closeModal={() => {}}
         configuration={widgets.image.Configuration}
         isModalOpen
         options={{ url: "" }}
-        setOptions={_.noop}
+        setOptions={() => {}}
         {...props}
       />
     );

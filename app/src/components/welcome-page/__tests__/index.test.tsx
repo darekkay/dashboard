@@ -1,5 +1,4 @@
 import React from "react";
-import _ from "lodash";
 
 import { render, screen, userEvent } from "common/testing";
 
@@ -7,7 +6,7 @@ import WelcomePage from "../index";
 
 describe("<WelcomePage />", () => {
   test("renders without errors", () => {
-    render(<WelcomePage importWidgets={_.noop} saveLayout={_.noop} />);
+    render(<WelcomePage importWidgets={() => {}} saveLayout={() => {}} />);
     expect(screen.getByText("welcome.message1")).toBeInTheDocument();
   });
 

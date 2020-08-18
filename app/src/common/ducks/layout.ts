@@ -1,6 +1,7 @@
 /** Grid layout duck */
 
-import _ from "lodash";
+import maxBy from "lodash/maxBy";
+import filter from "lodash/filter";
 import { createAction, createReducer, PayloadAction } from "@reduxjs/toolkit";
 import { put, select, takeEvery } from "redux-saga/effects";
 import { Layout as ReactGridLayout } from "react-grid-layout";
@@ -37,7 +38,7 @@ export const initialState = {
 const widgetId = (type: string, id: number) => `${type}-${id}`;
 
 const newWidgetY = (state: LayoutState) => {
-  const max = _.maxBy(state.config.desktop, (value) => value.y + value.h);
+  const max = maxBy(state.config.desktop, (value) => value.y + value.h);
   if (!max) return 0;
   return max.y + max.h;
 };
@@ -74,8 +75,8 @@ export const reducerWithInitialState = (
       .addCase(removeWidgetFromLayout, (state, action) => {
         const byId = (widget: ReactGridLayout) => widget.i !== action.payload;
         state.config = {
-          mobile: _.filter(state.config.mobile, byId),
-          desktop: _.filter(state.config.desktop, byId),
+          mobile: filter(state.config.mobile, byId),
+          desktop: filter(state.config.desktop, byId),
         };
       })
 
