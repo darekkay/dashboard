@@ -3,3 +3,7 @@ GET localhost:3401/cryptocurrencies/price?fiat=eur&crypto=bitcoin
 
 ###
 
+# Missing query parameters
+GET localhost:3401/cryptocurrencies/price
+
+###

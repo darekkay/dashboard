@@ -98,11 +98,17 @@ const fetchRepositoryStats = async (repository: string) => {
   };
 };
 
+const isRequestValid = (request: Request) => !!request.query.query;
+
 const routes = (app: Express) =>
   /* Get the current price for a cryptocurrency */
   app.get(
     "/github/stats",
     async (request: Request, response: Response, next: NextFunction) => {
+      if (!isRequestValid(request)) {
+        return response.status(400).end();
+      }
+
       try {
         const { query } = request.query;
         const { id, queryType } = parseQuery(query);

@@ -4,14 +4,18 @@ module.exports = {
   testPathIgnorePatterns: ["/node_modules/", "/dist/"],
   roots: ["<rootDir>/src"],
 
-  // TODO: improve test coverage
   coverageThreshold: {
     global: {
-      statements: 75,
-      branches: 60,
-      functions: 65,
-      lines: 75,
+      statements: 85,
+      branches: 85,
+      functions: 85,
+      lines: 85,
     },
   },
-  collectCoverageFrom: ["src/**/*.{js,jsx,ts,tsx}", "!**/node_modules/**"],
+  collectCoverageFrom: [
+    "src/**/*.{js,jsx,ts,tsx}",
+    "!**/node_modules/**",
+    "!src/index.ts",
+    "!src/axios.ts",
+  ],
 };

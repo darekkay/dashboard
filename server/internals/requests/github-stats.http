@@ -8,3 +8,7 @@ GET localhost:3401/github/stats?query=darekkay/dashboard
 
 ###
 
+# Missing query parameters
+GET localhost:3401/github/stats
+
+###

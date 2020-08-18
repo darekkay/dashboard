@@ -96,6 +96,7 @@ describe("github", () => {
 
   describe("routes", () => {
     afterEach(() => {
+      jest.resetAllMocks();
       logger.setLevel("error");
     });
 
@@ -134,6 +135,10 @@ describe("github", () => {
           expect(response.body.open_issues).toBe(5);
           expect(response.body.subscribers).toBe(6);
         });
+    });
+
+    it("should return 400 if the query is missing", async () => {
+      return request(app).get("/github/stats").expect(400);
     });
 
     it("should return 422 if the query type cannot be derived", async () => {

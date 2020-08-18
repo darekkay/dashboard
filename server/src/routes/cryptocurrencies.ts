@@ -9,11 +9,17 @@ import {
 import axios from "../axios";
 import { ttlForWidgetType } from "../utils";
 
+const isRequestValid = (request: Request) =>
+  !!request.query.crypto && !!request.query.fiat;
+
 const routes = (app: Express) =>
   /* Get the current price for a cryptocurrency */
   app.get(
     "/cryptocurrencies/price",
     async (request: Request, response: Response, next: NextFunction) => {
+      if (!isRequestValid(request)) {
+        return response.status(400).end();
+      }
       try {
         const { crypto, fiat } = request.query;
         const axiosResponse = await axios.get(
