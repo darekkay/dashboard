@@ -3,6 +3,7 @@
 // custom jest matchers for testing-library
 import "@testing-library/jest-dom/extend-expect";
 
+import "setup/index";
 import "common/i18n";
 
 jest.useFakeTimers();

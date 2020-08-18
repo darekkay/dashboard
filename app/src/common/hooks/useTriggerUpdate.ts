@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import moment from "moment";
+import dayjs from "dayjs";
 
 import log from "common/log";
 import useInterval from "common/hooks/useInterval";
@@ -51,7 +51,7 @@ const useTriggerUpdate = (
       }
     },
     meta.updateCycle !== undefined
-      ? moment.duration(meta.updateCycle).asMilliseconds()
+      ? dayjs.duration(meta.updateCycle).asMilliseconds()
       : null
   );
 };

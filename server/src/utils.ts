@@ -1,4 +1,7 @@
-import moment from "moment";
+import dayjs from "dayjs";
+import duration from "dayjs/plugin/duration";
+
+dayjs.extend(duration);
 
 import { initialMeta } from "../../app/src/widgets/list";
 
@@ -8,5 +11,5 @@ export const ttlForWidgetType = (widgetType: string) => {
 
   // The server cache duration is slightly lower than the widget's update cycle
   // to account for the server processing time
-  return Math.max(0, moment.duration(updateCycle).asSeconds() - 30);
+  return Math.max(0, dayjs.duration(updateCycle).asSeconds() - 30);
 };

@@ -3,7 +3,9 @@ import "react-app-polyfill/stable";
 import React from "react";
 import ReactDOM from "react-dom";
 
+import "setup/index";
 import "common/i18n";
+
 import { updateCssVariables } from "components/settings/theme-select";
 import { defaultTheme } from "common/ducks/config";
 // import * as serviceWorker from "common/serviceWorker";

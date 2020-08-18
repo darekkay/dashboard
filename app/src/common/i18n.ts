@@ -2,9 +2,9 @@ import i18n, { Resource } from "i18next";
 import { initReactI18next } from "react-i18next";
 import { PayloadAction } from "@reduxjs/toolkit";
 import { takeEvery } from "@redux-saga/core/effects";
-import moment from "moment";
-import "moment/locale/de";
-import "moment/locale/fr";
+import dayjs from "dayjs";
+import "dayjs/locale/de";
+import "dayjs/locale/fr";
 
 import { DEBUG_LABELS } from "common/environment";
 import { changeLanguage } from "common/ducks/config";
@@ -45,7 +45,7 @@ i18n.use(initReactI18next).init({
 
 const updateLanguage = (language: string) => {
   i18n.changeLanguage(language);
-  moment.locale(language);
+  dayjs.locale(language);
 };
 
 const onChangeLanguage = (action: PayloadAction<string>) => {

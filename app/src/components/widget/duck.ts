@@ -1,11 +1,11 @@
 /** Widget duck */
 
 import { createAction, createReducer } from "@reduxjs/toolkit";
-import { MomentInputObject } from "moment";
 
 import widgets from "widgets";
 import { Dimensions } from "components/widget/index";
 import { IconName } from "components/icon";
+import { Duration } from "common/date";
 import { importState } from "common/ducks/state";
 
 interface SetValuesPayload {
@@ -48,7 +48,7 @@ export type UpdateStatus = "idle" | "pending" | "success" | "error";
 export interface WidgetMeta {
   updateStatus?: UpdateStatus;
   lastUpdated?: number;
-  updateCycle?: MomentInputObject;
+  updateCycle?: Duration;
   errorCode?: number;
   dimensions?: Dimensions;
   headlineIcon?: IconName;

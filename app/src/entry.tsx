@@ -2,8 +2,6 @@ import React from "react";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 
-import "components/icon/font-awesome/setup"; // Font Awesome setup
-
 import App from "components/app";
 import Loading from "components/loading";
 import initStore from "state/store";
