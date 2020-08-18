@@ -80,6 +80,7 @@
     "prettier": "2.0.5",
     "react-test-renderer": "16.13.1",
     "redux-devtools-extension": "2.13.8",
+    "source-map-explorer": "2.4.2",
     "storybook-addon-themes": "5.4.1",
     "tailwindcss": "1.5.1",
     "ts-node": "8.10.2",
@@ -114,6 +115,7 @@
     "url": "https://github.com/darekkay/dashboard.git"
   },
   "scripts": {
+    "analyze": "source-map-explorer \"build/static/js/*.js\"",
     "build": "react-scripts build",
     "ci": "cross-env CI=true npm run lint && npm run test",
     "format": "prettier --write .",
