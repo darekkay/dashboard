@@ -5,46 +5,9 @@ import logger from "@darekkay/logger";
 import app from "../../app";
 import { parseQuery, QueryType } from "../github";
 
-const userMockResponse = {
-  data: {
-    name: "Darek Kay",
-    login: "darekkay",
-    followers: 85,
-  },
-};
-
-const useRepositoriesMockResponse = {
-  data: [
-    {
-      stargazers_count: 1,
-      forks_count: 2,
-      open_issues: 3,
-    },
-    {
-      stargazers_count: 2,
-      forks_count: 4,
-      open_issues: 6,
-    },
-    {
-      stargazers_count: 4,
-      forks_count: 8,
-      open_issues: 12,
-    },
-  ],
-};
-
-const repositoryMockResponse = {
-  data: {
-    name: "dashboard",
-    full_name: "darekkay/dashboard",
-    description: "Customizable personal dashboard and startpage",
-    stargazers_count: 35,
-    watchers_count: 40,
-    forks_count: 2,
-    open_issues_count: 5,
-    subscribers_count: 6,
-  },
-};
+import repositoryMockResponse from "./__examples__/github-repository.json";
+import userMockResponse from "./__examples__/github-user.json";
+import userRepositoriesMockResponse from "./__examples__/github-user-repositories.json";
 
 describe("github", () => {
   describe("parseQuery", () => {
@@ -103,7 +66,7 @@ describe("github", () => {
     it("should recognize a user", async () => {
       const mockedAxios = axios as jest.Mocked<typeof axios>;
       mockedAxios.get.mockResolvedValueOnce(userMockResponse);
-      mockedAxios.get.mockResolvedValueOnce(useRepositoriesMockResponse);
+      mockedAxios.get.mockResolvedValueOnce(userRepositoriesMockResponse);
 
       return request(app)
         .get("/github/stats")
@@ -112,14 +75,14 @@ describe("github", () => {
         .expect(200)
         .then((response) => {
           expect(response.body.name).toBe("darekkay");
-          expect(response.body.followers).toBe(85);
-          expect(response.body.stars).toBe(7);
-          expect(response.body.forks).toBe(14);
-          expect(response.body.open_issues).toBe(21);
+          expect(response.body.followers).toBe(96);
+          expect(response.body.stars).toBe(68);
+          expect(response.body.forks).toBe(8);
+          expect(response.body.open_issues).toBe(9);
         });
     });
 
-    it("should recognize a repository", async () => {
+    it("recognizes a repository", async () => {
       const mockedAxios = axios as jest.Mocked<typeof axios>;
       mockedAxios.get.mockResolvedValue(repositoryMockResponse);
 
@@ -130,25 +93,25 @@ describe("github", () => {
         .expect(200)
         .then((response) => {
           expect(response.body.name).toBe("darekkay/dashboard");
-          expect(response.body.stars).toBe(35);
+          expect(response.body.stars).toBe(46);
           expect(response.body.forks).toBe(2);
-          expect(response.body.open_issues).toBe(5);
-          expect(response.body.subscribers).toBe(6);
+          expect(response.body.open_issues).toBe(6);
+          expect(response.body.subscribers).toBe(4);
         });
     });
 
-    it("should return 400 if the query is missing", async () => {
+    it("returns 400 if the query is missing", async () => {
       return request(app).get("/github/stats").expect(400);
     });
 
-    it("should return 422 if the query type cannot be derived", async () => {
+    it("returns 422 if the query type cannot be derived", async () => {
       return request(app)
         .get("/github/stats")
         .query({ query: "da/rek/kay" })
         .expect(422);
     });
 
-    it("should return 404 if the username cannot be found", async () => {
+    it("returns 404 if the username cannot be found", async () => {
       logger.setLevel("silent");
       const mockedAxios = axios as jest.Mocked<typeof axios>;
       mockedAxios.get.mockImplementation(() => {

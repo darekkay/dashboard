@@ -34,9 +34,6 @@ describe("passthrough", () => {
   });
 
   it("returns 400 if the url is missing", async () => {
-    const mockedAxios = axios as jest.Mocked<typeof axios>;
-    mockedAxios.get.mockResolvedValueOnce(mockResponse);
-
     return request(app).get("/passthrough").expect(400);
   });
 

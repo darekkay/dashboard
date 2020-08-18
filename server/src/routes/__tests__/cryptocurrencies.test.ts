@@ -4,17 +4,7 @@ import axios from "axios";
 import app from "../../app";
 import logger from "@darekkay/logger";
 
-const mockResponse = {
-  data: [
-    {
-      image:
-        "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579",
-      current_price: 6714,
-      price_change_24h: 123,
-      price_change_percentage_24h: 1.51,
-    },
-  ],
-};
+import coingeckoMockResponse from "./__examples__/cryptocurrencies.json";
 
 describe("cryptocurrencies", () => {
   afterEach(() => {
@@ -24,7 +14,7 @@ describe("cryptocurrencies", () => {
 
   it("should return a valid response", async () => {
     const mockedAxios = axios as jest.Mocked<typeof axios>;
-    mockedAxios.get.mockResolvedValueOnce(mockResponse);
+    mockedAxios.get.mockResolvedValueOnce(coingeckoMockResponse);
 
     return request(app)
       .get("/cryptocurrencies/price")
@@ -32,9 +22,9 @@ describe("cryptocurrencies", () => {
       .expect("Content-Type", /json/)
       .expect(200)
       .then((response) => {
-        expect(response.body.currentPrice).toBe(6714);
-        expect(response.body.last24h.change).toBe(123);
-        expect(response.body.last24h.changePercentage).toBe(1.51);
+        expect(response.body.currentPrice).toBe(9872.58);
+        expect(response.body.last24h.change).toBe(-407.71);
+        expect(response.body.last24h.changePercentage).toBe(-3.97);
         expect(response.body.imageUrl).toBe(
           "https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579"
         );
@@ -42,9 +32,6 @@ describe("cryptocurrencies", () => {
   });
 
   it("returns 400 if the query parameters are missing", async () => {
-    const mockedAxios = axios as jest.Mocked<typeof axios>;
-    mockedAxios.get.mockResolvedValueOnce(mockResponse);
-
     return request(app).get("/cryptocurrencies/price").expect(400);
   });
 
