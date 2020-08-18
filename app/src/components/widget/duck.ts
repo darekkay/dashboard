@@ -36,7 +36,6 @@ export const updateSuccess = createAction<string>("widget/update-success");
 export const updateError = createAction<UpdateActionError>(
   "widget/update-error"
 );
-export const updateAbort = createAction<string>("widget/update-abort"); // NICE: check if really necessary
 
 // Widget actions
 export const createWidget = createAction<{ id: string; type: string }>(
@@ -87,9 +86,6 @@ export const reducerWithInitialState = (
 
       .addCase(importWidgets, (_state, action) => action.payload)
 
-      // NICE: for each updateStatus action, check for the correct preciding updateStatus
-      // https://mobile.twitter.com/devongovett/status/1256368203594264576
-
       .addCase(updatePending, (state, action) => {
         const id = action.payload;
         state[id].meta.updateStatus = "pending";
@@ -109,11 +105,6 @@ export const reducerWithInitialState = (
         const { id, error } = action.payload;
         state[id].meta.updateStatus = "error";
         state[id].meta.errorCode = error?.response?.status; // use axios response error code
-      })
-
-      .addCase(updateAbort, (state, action) => {
-        const id = action.payload;
-        state[id].meta.updateStatus = "idle";
       })
 
       .addCase(createWidget, (state, action) => {
