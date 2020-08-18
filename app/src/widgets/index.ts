@@ -46,6 +46,8 @@ export interface WidgetElements {
   Configuration: React.ComponentClass<ConfigurationProps<any>>;
 }
 
+// TODO: generate explicit (dynamic?) imports, so webpack doesn't create a chunks for the whole src folder
+// TODO: additionally, create an explicit widgetType TS type
 const importWidgets = (widgets: Record<string, WidgetProperties>) =>
   Object.entries(widgets).reduce(
     (accumulator, [type, values]) => ({
@@ -68,6 +70,4 @@ const importWidgets = (widgets: Record<string, WidgetProperties>) =>
     {}
   ) as Record<string, WidgetProperties & WidgetElements>;
 
-export default importWidgets(
-  availableWidgets as Record<string, WidgetProperties>
-);
+export default importWidgets(availableWidgets);

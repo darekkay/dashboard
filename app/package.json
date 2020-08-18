@@ -122,7 +122,7 @@
     "i18n": "ts-node -P internals/scripts/tsconfig.json internals/scripts/i18n.ts ",
     "lint": "tsc && eslint {internals,src}/**/*.{ts,tsx,js} --max-warnings=0",
     "lint:fix": "eslint --fix {internals,src}/**/*.{ts,tsx,js}",
-    "scan-widgets": "ts-node -P internals/scripts/tsconfig.json internals/scripts/scan-widgets.ts && prettier --write src/widgets/list.ts",
+    "scan-widgets": "ts-node -P internals/scripts/tsconfig.json internals/scripts/scan-widgets.ts && prettier --write src/widgets/list.ts && prettier --write ../server/src/widgets.ts",
     "start": "react-scripts start",
     "storybook:build": "build-storybook",
     "storybook:start": "start-storybook -p 6006 -s .storybook/assets",
