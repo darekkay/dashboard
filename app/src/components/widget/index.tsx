@@ -14,6 +14,7 @@ import WidgetOverlay from "components/widget-overlay";
 import WidgetError from "components/widget-error";
 import WidgetConfiguration from "components/widget-configuration";
 import widgets, { ValueUpdateAction } from "widgets";
+import { WidgetType } from "widgets/list";
 
 import makeSelectWidget, { getTypeFromId } from "./selectors";
 import { actionCreators, TriggerUpdateAction, WidgetMeta } from "./duck";
@@ -183,7 +184,7 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
 
 export interface Props {
   id: string;
-  type: string;
+  type: WidgetType;
   options: Record<string, any>;
   data: Record<string, any>;
   meta: WidgetMeta;

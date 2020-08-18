@@ -1,6 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+import { WidgetType } from "widgets/list";
+
 /* This component is displayed if a required widget configuration is missing */
 const WidgetUnconfigured: React.FC<Props> = ({ type }) => {
   const { t } = useTranslation();
@@ -13,7 +15,7 @@ const WidgetUnconfigured: React.FC<Props> = ({ type }) => {
 };
 
 export interface Props {
-  type: string;
+  type: WidgetType;
 }
 
 export default WidgetUnconfigured;

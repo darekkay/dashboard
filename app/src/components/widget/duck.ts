@@ -7,6 +7,7 @@ import { Dimensions } from "components/widget/index";
 import { IconName } from "components/icon";
 import { Duration } from "common/date";
 import { importState } from "common/ducks/state";
+import { WidgetType } from "widgets/list";
 
 interface SetValuesPayload {
   id: string;
@@ -29,7 +30,7 @@ export const setData = createAction<SetValuesPayload>("widget/set-data-value");
 export const importWidgets = createAction<WidgetsState>("widget/importWidgets");
 
 // Update actions
-export const triggerUpdate = (widgetType: string) =>
+export const triggerUpdate = (widgetType: WidgetType) =>
   createAction<TriggerUpdateAction>(`widget/${widgetType}/update`);
 export const updatePending = createAction<string>("widget/update-pending");
 export const updateSuccess = createAction<string>("widget/update-success");
@@ -38,7 +39,7 @@ export const updateError = createAction<UpdateActionError>(
 );
 
 // Widget actions
-export const createWidget = createAction<{ id: string; type: string }>(
+export const createWidget = createAction<{ id: string; type: WidgetType }>(
   "widget/create"
 );
 export const removeWidget = createAction<string>("widget/remove");
@@ -55,7 +56,7 @@ export interface WidgetMeta {
 }
 
 export interface Widget {
-  type: string;
+  type: WidgetType;
   options: Record<string, any>;
   data: Record<string, any>;
   meta: WidgetMeta;

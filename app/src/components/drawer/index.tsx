@@ -5,6 +5,7 @@ import groupBy from "lodash/groupBy";
 import Button from "components/button";
 import widgets, { WidgetProperties } from "widgets";
 import { categories } from "widgets/categories";
+import { WidgetType } from "widgets/list";
 
 import Icon from "../icon";
 
@@ -45,7 +46,7 @@ const Drawer: React.FC<Props> = ({ addWidgetToLayout }) => {
 };
 
 export interface Props {
-  addWidgetToLayout: (widgetName: string) => void;
+  addWidgetToLayout: (widgetType: WidgetType) => void;
 }
 
 export default Drawer;

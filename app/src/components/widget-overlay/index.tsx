@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Button from "components/button";
 import Icon from "components/icon";
 import widgets, { ValueUpdateAction } from "widgets";
+import { WidgetType } from "widgets/list";
 
 import "./styles.scss";
 
@@ -114,7 +115,7 @@ const WidgetOverlay: React.FC<Props> = ({
 
 export interface Props {
   id: string;
-  type: string;
+  type: WidgetType;
   options: Record<string, any>;
   setOptions: ValueUpdateAction;
   isWidgetMenuVisible: boolean;

@@ -15,6 +15,7 @@ import {
   importWidgets as importWidgetsAction,
   WidgetsState,
 } from "components/widget/duck";
+import { WidgetType } from "widgets/list";
 
 import mapStateToProps from "./selectors";
 
@@ -74,7 +75,7 @@ export interface Props {
   isLayoutEditable: boolean;
   toggleLayoutEditable: () => void;
 
-  addWidgetToLayout: (widgetName: string) => void;
+  addWidgetToLayout: (widgetType: WidgetType) => void;
   removeWidgetFromLayout: (widgetId: string) => void;
   importWidgets: (widgets: WidgetsState) => void;
 

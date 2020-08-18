@@ -9,10 +9,11 @@ import { Layout as ReactGridLayout } from "react-grid-layout";
 import widgets from "widgets";
 import { createWidget, removeWidget } from "components/widget/duck";
 import { importState } from "common/ducks/state";
+import { WidgetType } from "widgets/list";
 
 const saveLayout = createAction<Layout>("layout/save");
 const toggleLayoutEditable = createAction("layout/toggle-editable");
-const addWidgetToLayout = createAction<string>("layout/add-widget");
+const addWidgetToLayout = createAction<WidgetType>("layout/add-widget");
 const removeWidgetFromLayout = createAction<string>("layout/remove-widget");
 const incrementNextWidgetId = createAction("layout/increment-next-widget-id");
 
@@ -35,7 +36,7 @@ export const initialState = {
   nextWidgetId: 100,
 };
 
-const widgetId = (type: string, id: number) => `${type}-${id}`;
+const widgetId = (type: WidgetType, id: number) => `${type}-${id}`;
 
 const newWidgetY = (state: LayoutState) => {
   const max = maxBy(state.config.desktop, (value) => value.y + value.h);
@@ -89,7 +90,7 @@ const selectNextWidgetId = (state: { layout: LayoutState }) =>
   state.layout.nextWidgetId;
 
 /* When a new widget is added, create the according widget data and update the widget counter */
-function* addWidgetSaga(action: PayloadAction<string>) {
+function* addWidgetSaga(action: PayloadAction<WidgetType>) {
   const nextWidgetId = yield select(selectNextWidgetId);
   yield put(
     createWidget({

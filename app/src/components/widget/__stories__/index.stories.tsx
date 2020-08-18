@@ -7,7 +7,7 @@ import Section from "components/section";
 
 const Story = () => {
   const sharedProps = {
-    type: "search",
+    type: "search" as const,
     options: { pattern: "https://duckduckgo.com/?q=%s", title: "DuckDuckGo" },
   };
   return (

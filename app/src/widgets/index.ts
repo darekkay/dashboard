@@ -5,7 +5,7 @@ import { TriggerUpdateAction, WidgetMeta } from "components/widget/duck";
 import { Dimensions } from "components/widget";
 import WidgetCategory from "widgets/categories";
 
-import availableWidgets from "./list";
+import availableWidgets, { WidgetType } from "./list";
 
 export type ValueUpdateAction = ({
   id,
@@ -33,7 +33,7 @@ export interface ConfigurationProps<T> {
 
 export interface WidgetProperties {
   configurable: boolean;
-  widgetType: string;
+  widgetType: WidgetType;
   category: WidgetCategory;
   initialHeight: number;
   initialWidth: number;
@@ -47,7 +47,6 @@ export interface WidgetElements {
 }
 
 // TODO: generate explicit (dynamic?) imports, so webpack doesn't create a chunks for the whole src folder
-// TODO: additionally, create an explicit widgetType TS type
 const importWidgets = (widgets: Record<string, WidgetProperties>) =>
   Object.entries(widgets).reduce(
     (accumulator, [type, values]) => ({

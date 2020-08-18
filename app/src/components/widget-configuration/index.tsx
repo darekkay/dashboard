@@ -5,6 +5,7 @@ import Button from "components/button";
 import Modal from "components/modal";
 import Loading from "components/loading";
 import { ConfigurationProps, ValueUpdateAction } from "widgets";
+import { WidgetType } from "widgets/list";
 
 /* Widget configuration modal */
 const WidgetConfiguration: React.FC<Props> = ({
@@ -65,7 +66,7 @@ const WidgetConfiguration: React.FC<Props> = ({
 
 export interface Props {
   id: string;
-  type: string;
+  type: WidgetType;
   options: Record<string, any>;
   setOptions: ValueUpdateAction;
   isModalOpen: boolean;
