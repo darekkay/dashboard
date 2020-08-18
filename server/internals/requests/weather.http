@@ -1,0 +1,9 @@
+# Current weather and forecast for Magdeburg
+GET localhost:3401/weather?lat=52.17&lon=11.67&unit=metric
+
+###
+
+# Missing query parameters
+GET localhost:3401/weather
+
+###

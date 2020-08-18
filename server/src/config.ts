@@ -1,8 +1,17 @@
+import dotenv from "dotenv";
+
 import logger from "@darekkay/logger";
+
+const dotenvConfigOutput = dotenv.config();
+if (dotenvConfigOutput.error) {
+  logger.error(dotenvConfigOutput.error);
+}
 
 const config = {
   port: process.env.PORT ?? 3401,
-  api: {},
+  api: {
+    openWeatherMap: process.env.API_OPEN_WEATHER_MAP,
+  },
 };
 
 // output an error if any required API key is missing
