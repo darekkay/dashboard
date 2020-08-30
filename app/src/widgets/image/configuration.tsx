@@ -16,6 +16,7 @@ const Configuration = ({
       value={options.url}
       label={t("widget.image.configuration.url")}
       type="url"
+      inputMode="url"
       autoComplete="url"
       onEnter={save}
     />

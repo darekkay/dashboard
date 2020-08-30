@@ -20,6 +20,7 @@ const Configuration = ({
         value={options.url}
         label={t("widget.website.configuration.url")}
         type="url"
+        inputMode="url"
         autoComplete="url"
         onEnter={save}
       />
