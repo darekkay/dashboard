@@ -6,6 +6,7 @@
         <option name="TAB_SIZE" value="2" />
       </value>
     </option>
+    <option name="LINE_SEPARATOR" value="&#10;" />
     <option name="RIGHT_MARGIN" value="80" />
     <CssCodeStyleSettings>
       <option name="KEEP_SINGLE_LINE_BLOCKS" value="true" />
