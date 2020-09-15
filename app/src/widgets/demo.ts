@@ -43,7 +43,7 @@ const widgets = {
     type: "text",
     data: {
       content:
-        "Rule #1\n\nAlways code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
+        "Rule #1\n\nAlways code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. 🔥",
     },
     options: {},
     meta: initialMeta("text"),
