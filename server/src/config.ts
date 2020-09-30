@@ -2,7 +2,8 @@ import dotenv from "dotenv";
 
 import logger from "@darekkay/logger";
 
-const dotenvConfigOutput = dotenv.config();
+const envFile = process.env.NODE_ENV === "test" ? `.env.test` : ".env";
+const dotenvConfigOutput = dotenv.config({ path: envFile });
 if (dotenvConfigOutput.error) {
   logger.error(dotenvConfigOutput.error);
 }
@@ -14,7 +15,7 @@ const config = {
   },
 };
 
-// output an error if any required API key is missing
+// log an error if any required API key is missing
 Object.entries(config.api).forEach(([key, value]) => {
   if (value === undefined) {
     logger.error(`Missing API key for [${key}]`);
