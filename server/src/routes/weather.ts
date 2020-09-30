@@ -8,7 +8,7 @@ import {
 
 import axios from "../axios";
 import config from "../config";
-// import { ttlForWidgetType } from "../utils";
+import { ttlForWidgetType } from "../utils";
 
 const isRequestValid = (request: Request) =>
   !!request.query.lat && !!request.query.lon && !!request.query.unit;
@@ -35,8 +35,7 @@ const routes = (app: Express) =>
               exclude: "minutely,hourly",
               appid: config.api.openWeatherMap,
             },
-            // ttl: ttlForWidgetType("weather"), // TODO: update after widget exists
-            ttl: 600,
+            ttl: ttlForWidgetType("weather"),
           }
         );
 
