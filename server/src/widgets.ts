@@ -10,6 +10,7 @@ const widgets = {
   search: {},
   text: {},
   "totd-chemical-elements": { updateCycle: { hours: 24 } },
+  "twitter-stats": { updateCycle: { hours: 24 } },
   website: {},
 } as Record<string, any>;
 export default widgets;

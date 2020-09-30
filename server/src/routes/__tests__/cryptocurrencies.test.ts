@@ -1,8 +1,8 @@
 import request from "supertest";
 import axios from "axios";
+import logger from "@darekkay/logger";
 
 import app from "../../app";
-import logger from "@darekkay/logger";
 
 import coingeckoMockResponse from "./__examples__/cryptocurrencies.json";
 

@@ -1,0 +1,3 @@
+# User information
+GET https://api.twitter.com/2/users/by/username/darek_kay?user.fields=public_metrics
+Authorization: Bearer BEARER_TOKEN

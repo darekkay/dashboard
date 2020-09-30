@@ -12,6 +12,7 @@ const config = {
   port: process.env.PORT ?? 3401,
   api: {
     openWeatherMap: process.env.API_OPEN_WEATHER_MAP,
+    twitter: process.env.API_TWITTER_BEARER,
   },
 };
 

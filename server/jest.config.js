@@ -16,6 +16,7 @@ module.exports = {
     "src/**/*.{js,jsx,ts,tsx}",
     "!**/node_modules/**",
     "!src/index.ts",
+    "!src/config.ts",
     "!src/axios.ts",
   ],
 };
