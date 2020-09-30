@@ -73,10 +73,12 @@ Here's a list of rough widget ideas and integrations. They may or may not be imp
 - [GoAccess](https://goaccess.io/) statistics
 - [PM2](https://pm2.keymetrics.io/) status
 - GitHub / GitLab integration
-- NPM statistics
+- [NPM statistics](https://github.com/npm/download-counts)
 - [YouTube Statistics](https://leerob.io/blog/youtube-api-nextjs)
 - [GoodReads API](https://www.goodreads.com/api)
   - e.g. reading progress, library size
+- [NomadList](https://nomadlist.com/@craigcarlyle.json) information
+- Last.fm
 - Calculator
 - Plex [intergration](https://github.com/Arcanemagus/plex-api/wiki/Plex-Web-API-Overview)
 - Whiteboard (for drawing)
