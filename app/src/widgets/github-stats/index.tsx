@@ -48,35 +48,35 @@ const GithubStats: React.FC<Props> = ({
 
   return (
     <div>
-      {typeof stars === 'number' && (
+      {typeof stars === "number" && (
         <StatsRow
           icon="star"
           value={stars}
           labelKey="widget.github-stats.stars"
         />
       )}
-      {typeof followers === 'number' && (
+      {typeof followers === "number" && (
         <StatsRow
           icon="userFriends"
           value={followers}
           labelKey="widget.github-stats.followers"
         />
       )}
-      {typeof subscribers === 'number' && (
+      {typeof subscribers === "number" && (
         <StatsRow
           icon="userFriends"
           value={subscribers}
           labelKey="widget.github-stats.subscribers"
         />
       )}
-      {typeof forks === 'number' && (
+      {typeof forks === "number" && (
         <StatsRow
           icon="codeBranch"
           value={forks}
           labelKey="widget.github-stats.forks"
         />
       )}
-      {typeof open_issues === 'number' && (
+      {typeof open_issues === "number" && (
         <StatsRow
           icon="error"
           value={open_issues}
