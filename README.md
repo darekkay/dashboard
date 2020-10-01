@@ -52,12 +52,12 @@ Thanks goes to these wonderful people:
 <table>
   <tr>
     <td align="center"><a href='https://darekkay.com/' title='darekkay is awesome!'><img src='https://avatars0.githubusercontent.com/u/3101914?v=4' alt='darekkay' width='50px' /></a></td>
+    <td align="center"><a href='https://github.com/faboo03' title='faboo03 is awesome!'><img src='https://avatars3.githubusercontent.com/u/421979?v=4' alt='faboo03' width='50px' /></a></td>
   </tr>
 </table>
 
-<!-- markdownlint-restore -->
+<!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://allcontributors.org) specification to acknowledge all contributions.
