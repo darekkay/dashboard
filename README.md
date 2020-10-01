@@ -1,6 +1,8 @@
 # Dashboard
 
-[![Travis](https://img.shields.io/travis/com/darekkay/dashboard?style=flat-square)](https://travis-ci.com/darekkay/dashboard) [![Gitter](https://img.shields.io/gitter/room/darekkay/dashboard?style=flat-square)](https://gitter.im/darekkay-dashboard/community) [![license](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/darekkay/dashboard/blob/master/LICENSE)
+[![Travis](https://img.shields.io/travis/com/darekkay/dashboard?style=flat-square)](https://travis-ci.com/darekkay/dashboard)
+[![Gitter](https://img.shields.io/gitter/room/darekkay/dashboard?style=flat-square)](https://gitter.im/darekkay-dashboard/community)
+[![license](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/darekkay/dashboard/blob/master/LICENSE)
 
 ![](docs/assets/img/1.3.0.png)
 
@@ -39,6 +41,27 @@ A new project is also a great opportunity to learn new concepts.
 Contributions are always welcome, no matter how large or small. Before contributing, please read the [Code of Conduct](./CODE_OF_CONDUCT.md). When contributing to this repository, please first discuss the change you wish to make via [GitHub Issue](https://github.com/darekkay/dashboard/issues/new) or join our community chat on [Gitter](https://gitter.im/darekkay-dashboard/community).
 
 To get started with the project code, please read the [development documentation](https://dashboard.darekkay.com/docs/development/).
+
+## Contributors
+
+Thanks goes to these wonderful people:
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href='https://darekkay.com/' title='darekkay is awesome!'><img src='https://avatars0.githubusercontent.com/u/3101914?v=4' alt='darekkay' width='50px' /></a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://allcontributors.org) specification to acknowledge all contributions.
+
 
 ## License
 

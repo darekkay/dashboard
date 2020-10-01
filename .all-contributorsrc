@@ -1,0 +1,25 @@
+{
+  "projectName": "dashboard",
+  "projectOwner": "darekkay",
+  "files": [
+    "README.md"
+  ],
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "imageSize": 50,
+  "contributorsPerLine": 12,
+  "contributorTemplate": "<a href='<%= contributor.profile %>' title='<%= contributor.login %> is awesome!'><img src='<%= contributor.avatar_url %>' alt='<%= contributor.login %>' width='<%= options.imageSize %>px' /></a>",
+  "commitConvention": "none",
+  "skipCi": true,
+  "contributors": [
+    {
+      "login": "darekkay",
+      "name": "Darek Kay",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3101914?v=4",
+      "profile": "https://darekkay.com/",
+      "contributions": [
+        "maintenance"
+      ]
+    }
+  ]
+}

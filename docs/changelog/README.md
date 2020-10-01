@@ -3,6 +3,8 @@
 ## Current
 
 - :bug: Truncate widget headline.
+- :bug: Fix GitHub Stats not rendering if they have a value of zero ([@TateKennington](https://github.com/TateKennington))
+- :hammer: Add contributors list, with automated `all-contributors` support.
 
 ## 1.3.0 (2020-04-22)
 
