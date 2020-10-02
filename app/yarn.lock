@@ -1261,6 +1261,15 @@
   dependencies:
     eslint-config-prettier "6.11.0"
 
+"@darekkay/logger@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@darekkay/logger/-/logger-1.0.2.tgz#8981f9cfb7b3bb6a27563148eecc1ccdb778f336"
+  integrity sha512-ojA4gw1DjdtbzJTFPkJzi+S8pgpGOe2JHtSF3ktM3ZMN12hfBTB/RKqhh4KFMb+hrvW9aXSmOCHz7XBCNC7S7w==
+  dependencies:
+    kleur "4.0.2"
+    log-symbols "4.0.0"
+    loglevel "1.6.8"
+
 "@darekkay/styles@1.0.7":
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/@darekkay/styles/-/styles-1.0.7.tgz#986d4d4c5c6cd7dc964c3378d46bd966aca01e8f"
@@ -9641,6 +9650,11 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
+kleur@4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.0.2.tgz#57b36cc5235601f824c33e6e45db10cd5493dbf5"
+  integrity sha512-FGCCxczbrZuF5CtMeO0xfnjhzkVZSXfcWK90IPLucDWZwskrpYN7pmRIgvd8muU0mrPrzy4A2RBGuwCjLHI+nw==
+
 kleur@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
@@ -9911,6 +9925,13 @@ lodash@^4.0.1:
   version "4.17.20"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
+
+log-symbols@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-4.0.0.tgz#69b3cc46d20f448eccdb75ea1fa733d9e821c920"
+  integrity sha512-FN8JBzLx6CzeMrB0tg6pqlGU1wCrXW+ZXGH481kfsBqer0hToTIiHdjH4Mq8xJUbvATujKCvaREGWpGUionraA==
+  dependencies:
+    chalk "^4.0.0"
 
 log-symbols@^2.1.0, log-symbols@^2.2.0:
   version "2.2.0"

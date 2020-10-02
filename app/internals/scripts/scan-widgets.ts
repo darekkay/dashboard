@@ -1,5 +1,7 @@
 import { readdirSync, existsSync, writeFileSync } from "fs";
 
+import logger from "@darekkay/logger";
+
 import { WidgetProperties } from "widgets";
 import { WidgetType } from "widgets/list";
 
@@ -20,20 +22,34 @@ const isConfigurable = (widget: string) =>
   existsSync(`${CLIENT_PATH}/${widget}/${FILE_CONFIGURATION}`);
 
 /* Widget properties are defined in a separate file */
-const properties = (widget: string) =>
-  require(`../../${CLIENT_PATH}/${widget}/${FILE_PROPERTIES}`);
+const getWidgetProperties = (widget: string) => {
+  try {
+    return require(`../../${CLIENT_PATH}/${widget}/${FILE_PROPERTIES}`);
+  } catch {
+    logger.error(`Missing properties.ts file for module '${widget}'`);
+    return null;
+  }
+};
+
+logger.info("Scanning available widgets.");
 
 const allWidgets = directoriesForPath(CLIENT_PATH);
-const widgetProperties = allWidgets.reduce(
-  (accumulator, widget) => ({
-    ...accumulator,
-    [widget]: {
-      configurable: isConfigurable(widget),
-      ...properties(widget),
-    },
-  }),
-  {}
-) as Record<WidgetType, WidgetProperties>;
+const widgetProperties = allWidgets
+  .map((widget) => ({
+    widget,
+    properties: getWidgetProperties(widget),
+  }))
+  .filter(({ properties }) => properties !== null)
+  .reduce(
+    (accumulator, { widget, properties }) => ({
+      ...accumulator,
+      [widget]: {
+        configurable: isConfigurable(widget),
+        ...properties,
+      },
+    }),
+    {}
+  ) as Record<WidgetType, WidgetProperties>;
 
 /* Client */
 
@@ -91,3 +107,5 @@ export default widgets;
 `;
 
 writeFileSync(`${SERVER_PATH}/widgets.ts`, serverTemplate(updateCycleWidgets));
+
+logger.success("Scan finished.");

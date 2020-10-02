@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "@darekkay/eslint-config": "2.1.1",
+    "@darekkay/logger": "1.0.2",
     "@storybook/addon-a11y": "6.0.10",
     "@storybook/addons": "6.0.10",
     "@storybook/preset-create-react-app": "3.1.4",
@@ -121,7 +122,7 @@
     "format": "prettier --write .",
     "generate": "plop --plopfile internals/generators/index.js",
     "i18n": "ts-node -P internals/scripts/tsconfig.json internals/scripts/i18n.ts ",
-    "lint": "tsc && eslint {internals,src}/**/*.{ts,tsx,js} --max-warnings=0",
+    "lint": "tsc && eslint {internals,src}/**/*.{ts,tsx,js}",
     "lint:fix": "eslint --fix {internals,src}/**/*.{ts,tsx,js}",
     "scan-widgets": "ts-node -P internals/scripts/tsconfig.json internals/scripts/scan-widgets.ts && prettier --write src/widgets/list.ts && prettier --write ../server/src/widgets.ts",
     "start": "react-scripts start",
