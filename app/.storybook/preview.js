@@ -1,6 +1,6 @@
 import { addDecorator, addParameters } from "@storybook/react";
 
-import "components/icon/font-awesome/setup"; // Font Awesome setup
+import "setup/index";
 
 import initStore from "state/store";
 import "common/i18n";
