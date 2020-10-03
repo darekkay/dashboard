@@ -15,6 +15,7 @@ import {
   faHome,
   faMinus,
   faPalette,
+  faPencilAlt,
   faPlus,
   faSearch,
   faStar,
@@ -25,11 +26,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faCheckCircle,
+  faEye,
+  faFileAlt,
   faQuestionCircle,
   faSave,
   faTrashAlt,
 } from "@fortawesome/free-regular-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 export type FontAwesomeIconName =
   | "arrowDown"
@@ -44,10 +47,13 @@ export type FontAwesomeIconName =
   | "equals"
   | "error"
   | "expand"
+  | "eye"
+  | "file"
   | "github"
   | "home"
   | "minus"
   | "palette"
+  | "pencil"
   | "plus"
   | "question"
   | "save"
@@ -56,6 +62,7 @@ export type FontAwesomeIconName =
   | "success"
   | "times"
   | "trash"
+  | "twitter"
   | "undo"
   | "upload"
   | "userFriends";
@@ -73,10 +80,13 @@ const icons: Record<FontAwesomeIconName, IconDefinition> = {
   equals: faEquals,
   error: faExclamationCircle,
   expand: faExpand,
+  eye: faEye,
+  file: faFileAlt,
   github: faGithub,
   home: faHome,
   minus: faMinus,
   palette: faPalette,
+  pencil: faPencilAlt,
   plus: faPlus,
   question: faQuestionCircle,
   save: faSave,
@@ -85,6 +95,7 @@ const icons: Record<FontAwesomeIconName, IconDefinition> = {
   success: faCheckCircle,
   times: faTimes,
   trash: faTrashAlt,
+  twitter: faTwitter,
   undo: faUndoAlt,
   upload: faUpload,
   userFriends: faUserFriends,

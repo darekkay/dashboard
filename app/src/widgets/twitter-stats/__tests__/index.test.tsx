@@ -1,40 +1,38 @@
 import React from "react";
+import { render, screen } from "@testing-library/react";
 
-import { render, screen } from "common/testing";
 import { widgetProps } from "common/utils/mock";
 
-import GithubStats from "../index";
+import TwitterStats from "../index";
 
-describe("<GithubStats />", () => {
+describe("<TwitterStats />", () => {
   test("renders without errors", () => {
     render(
-      <GithubStats
+      <TwitterStats
         {...widgetProps}
-        id="github-stats-mock-id"
-        query="darekkay"
-        stars={1}
-        followers={2}
-        subscribers={3}
-        forks={4}
-        open_issues={0}
+        id="twitter-stats-mock-id"
+        username="darek_kay"
+        followers={4962}
+        following={191}
+        tweets={984289}
+        listed={0}
       />
     );
-
     expect(screen.queryByText("widget.common.unconfigured")).toBeNull();
     expect(screen.queryByTestId("widget-error")).toBeNull();
   });
 
   test("doesn't render if the query is missing", () => {
-    render(<GithubStats {...widgetProps} id="github-stats-mock-id" />);
+    render(<TwitterStats {...widgetProps} id="twitter-stats-mock-id" />);
     expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 
   test("renders an error if the server returns 404", () => {
     render(
-      <GithubStats
+      <TwitterStats
         {...widgetProps}
-        id="github-stats-mock-id"
-        query="darekkay"
+        id="twitter-stats-mock-id"
+        username="darek_kay"
         meta={{ ...widgetProps.meta, errorCode: 404 }}
       />
     );
@@ -44,18 +42,18 @@ describe("<GithubStats />", () => {
   test("triggers an update", () => {
     const triggerUpdate = jest.fn();
     render(
-      <GithubStats
+      <TwitterStats
         {...widgetProps}
-        id="github-stats-mock-id"
-        query="darekkay"
+        id="twitter-stats-mock-id"
+        username="darek_kay"
         triggerUpdate={triggerUpdate}
       />
     );
     expect(triggerUpdate).toHaveBeenCalledTimes(1);
     expect(triggerUpdate).toHaveBeenCalledWith({
-      id: "github-stats-mock-id",
+      id: "twitter-stats-mock-id",
       params: {
-        query: "darekkay",
+        username: "darek_kay",
       },
     });
   });

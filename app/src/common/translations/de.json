@@ -122,6 +122,20 @@
       "name": "Chemische Elemente",
       "headline": ""
     },
+    "twitter-stats": {
+      "name": "Twitter Stats",
+      "headline": "{{username}}",
+      "followers": "Follower",
+      "following": "Following",
+      "tweets": "Tweets",
+      "listed": "Listen",
+      "configuration": {
+        "query": "Twitter Benutzername"
+      },
+      "error": {
+        "404": "Benutzername unbekannt"
+      }
+    },
     "website": {
       "name": "Webseite",
       "headline": "",

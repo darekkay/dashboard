@@ -13,63 +13,54 @@ import { widgetType } from "./properties";
 
 export { saga } from "./sagas";
 
-const GithubStats: React.FC<Props> = ({
+const TwitterStats: React.FC<Props> = ({
   id,
-  stars,
+  username,
   followers,
-  subscribers,
-  forks,
-  open_issues,
-  query,
+  following,
+  tweets,
+  listed,
   meta,
   triggerUpdate,
 }) => {
   const { t } = useTranslation();
-  useTriggerUpdate({ id, params: { query }, meta, triggerUpdate }, [query]);
-
-  if (isEmpty(query)) return <WidgetUnconfigured type={widgetType} />;
+  useTriggerUpdate({ id, params: { username }, meta, triggerUpdate }, [
+    username,
+  ]);
+  if (isEmpty(username)) return <WidgetUnconfigured type={widgetType} />;
   if (meta.errorCode === 404)
-    return <WidgetError labelKey={t("widget.github-stats.error.404")} />;
-
+    return <WidgetError labelKey={t("widget.twitter-stats.error.404")} />;
   return (
     <div>
       <StatsRow
-        icon="star"
-        value={stars}
-        labelKey="widget.github-stats.stars"
-      />
-      <StatsRow
         icon="userFriends"
         value={followers}
-        labelKey="widget.github-stats.followers"
+        labelKey="widget.twitter-stats.followers"
       />
       <StatsRow
-        icon="userFriends"
-        value={subscribers}
-        labelKey="widget.github-stats.subscribers"
+        icon="eye"
+        value={following}
+        labelKey="widget.twitter-stats.following"
       />
       <StatsRow
-        icon="codeBranch"
-        value={forks}
-        labelKey="widget.github-stats.forks"
+        icon="pencil"
+        value={tweets}
+        labelKey="widget.twitter-stats.tweets"
       />
       <StatsRow
-        icon="error"
-        value={open_issues}
-        labelKey="widget.github-stats.openIssues"
+        icon="file"
+        value={listed}
+        labelKey="widget.twitter-stats.listed"
       />
     </div>
   );
 };
 
 interface Props extends WidgetProps, ConfigurationProps {
-  name?: string;
-
   followers?: number;
-  stars?: number;
-  subscribers?: number;
-  forks?: number;
-  open_issues?: number;
+  following?: number;
+  tweets?: number;
+  listed?: number;
 }
 
-export default GithubStats;
+export default TwitterStats;

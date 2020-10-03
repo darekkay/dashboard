@@ -1,9 +1,11 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { WidgetProps } from "../index";
 {{#if configurationEnabled}}
 import { Props as ConfigurationProps } from "./configuration";
 {{/if}}
+import { widgetType } from "./properties";
 {{#if useSagas}}
 export { saga } from "./sagas";
 {{/if}}

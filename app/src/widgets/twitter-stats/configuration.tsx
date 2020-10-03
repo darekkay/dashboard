@@ -13,9 +13,9 @@ const Configuration = ({
   return (
     <>
       <Input
-        setValue={(value) => setOptions({ query: value })}
-        value={options.query}
-        label={t("widget.github-stats.configuration.query")}
+        setValue={(value) => setOptions({ username: value })}
+        value={options.username}
+        label={t("widget.twitter-stats.configuration.username")}
         className="mb-6"
         type="text"
         onEnter={save}
@@ -25,7 +25,7 @@ const Configuration = ({
 };
 
 export interface Props {
-  query?: string;
+  username?: string;
 }
 
 export default Configuration;

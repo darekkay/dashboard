@@ -7,6 +7,8 @@ export const CRYPTOCURRENCIES_PRICE = "/cryptocurrencies/price";
 
 export const GITHUB_STATS = "/github/stats";
 
+export const TWITTER_STATS = "/twitter/user";
+
 export default axios.create({
   baseURL: API_BASE_URL,
   timeout: 10000,

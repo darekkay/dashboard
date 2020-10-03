@@ -11,6 +11,7 @@ interface GridProps {
   height: number;
 }
 
+// TODO: use an exported JSON backup instead to make updates easier
 const widgets = {
   "date-time-01": {
     x: 7,
@@ -95,7 +96,7 @@ const widgets = {
   },
   "cryptocurrencies-01": {
     x: 4,
-    y: 0,
+    y: 4,
     width: 3,
     height: 2,
     type: "cryptocurrencies",
@@ -108,7 +109,7 @@ const widgets = {
   },
   "github-stats-01": {
     x: 4,
-    y: 2,
+    y: 0,
     width: 3,
     height: 3,
     type: "github-stats",
@@ -117,6 +118,18 @@ const widgets = {
       query: "darekkay/dashboard",
     },
     meta: initialMeta("github-stats"),
+  },
+  "twitter-stats-01": {
+    x: 1,
+    y: 0,
+    width: 3,
+    height: 3,
+    type: "twitter-stats",
+    data: {},
+    options: {
+      username: "darek_kay",
+    },
+    meta: initialMeta("twitter-stats"),
   },
 } as Record<string, Widget & GridProps>;
 

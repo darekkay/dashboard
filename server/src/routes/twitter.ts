@@ -11,6 +11,12 @@ import { ttlForWidgetType } from "../utils";
 
 const isRequestValid = (request: Request) => !!request.query.username;
 
+export const normalizeUsername = (username: string) => {
+  let result = username.trim();
+  if (result.startsWith("@")) result = result.substring(1);
+  return result;
+};
+
 const routes = (app: Express) =>
   /* Get the current price for a cryptocurrency */
   app.get(
@@ -21,7 +27,7 @@ const routes = (app: Express) =>
       }
 
       try {
-        const { username } = request.query;
+        const username = normalizeUsername(request.query?.username);
         const axiosResponse = await axios.get(
           `https://api.twitter.com/2/users/by/username/${username}`,
           {

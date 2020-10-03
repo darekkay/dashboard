@@ -5,7 +5,9 @@ import {{ properCase name }} from "../index";
 
 describe("<{{ properCase name }} />", () => {
   test("renders without errors", () => {
-    render(<{{ properCase name }} /);
-    expect(screen.getByRole("TODO", { name: /TODO text/i })).toBeInTheDocument();
+    render(<{{ properCase name }} />);
+    expect(
+      screen.getByRole("TODO", { name: /todo text/i })
+    ).toBeInTheDocument();
   });
 });

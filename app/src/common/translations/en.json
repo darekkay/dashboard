@@ -143,6 +143,20 @@
       "name": "Chemical elements",
       "headline": ""
     },
+    "twitter-stats": {
+      "name": "Twitter Stats",
+      "headline": "{{username}}",
+      "followers": "followers",
+      "following": "following",
+      "tweets": "tweets",
+      "listed": "listed",
+      "configuration": {
+        "username": "Twitter username (handle)"
+      },
+      "error": {
+        "404": "Unknown username"
+      }
+    },
     "website": {
       "name": "Website",
       "headline": "",

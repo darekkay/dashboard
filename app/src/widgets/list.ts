@@ -11,6 +11,7 @@ export type WidgetType =
   | "search"
   | "text"
   | "totd-chemical-elements"
+  | "twitter-stats"
   | "website";
 
 const widgetProperties = {
@@ -102,6 +103,19 @@ const widgetProperties = {
     initialOptions: {},
     initialMeta: { updateCycle: { hours: 24 }, updateStatus: "idle" },
   },
+  "twitter-stats": {
+    configurable: true,
+    widgetType: "twitter-stats",
+    category: "monitoring",
+    initialHeight: 3,
+    initialWidth: 3,
+    initialOptions: {},
+    initialMeta: {
+      updateCycle: { hours: 24 },
+      updateStatus: "idle",
+      headlineIcon: "twitter",
+    },
+  },
   website: {
     configurable: true,
     widgetType: "website",
@@ -147,6 +161,10 @@ export const widgetImports = {
   },
   "totd-chemical-elements": {
     component: async () => import("widgets/totd-chemical-elements"),
+  },
+  "twitter-stats": {
+    component: async () => import("widgets/twitter-stats"),
+    configuration: async () => import("widgets/twitter-stats/configuration"),
   },
   website: {
     component: async () => import("widgets/website"),

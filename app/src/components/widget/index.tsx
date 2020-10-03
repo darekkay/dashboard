@@ -133,6 +133,8 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
               >
                 <Suspense fallback={<Loading type="skeleton" />}>
                   {React.createElement(widgets[type].Component, {
+                    ...data,
+                    ...options,
                     id,
                     setOptions,
                     setData,
@@ -141,8 +143,6 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
                       ...meta,
                       dimensions,
                     },
-                    ...options,
-                    ...data,
                   })}
                 </Suspense>
               </div>

@@ -5,6 +5,7 @@ import logger from "@darekkay/logger";
 import app from "../../app";
 
 import twitterUserMockResponse from "./__examples__/twitter-user.json";
+import { normalizeUsername } from "../twitter";
 
 describe("twitter", () => {
   afterEach(() => {
@@ -25,6 +26,10 @@ describe("twitter", () => {
         expect(response.body.name).toBe("Darek Kay");
         // TODO: finish test
       });
+  });
+
+  it("handles @ and spaces in username", () => {
+    expect(normalizeUsername("  @darek_kay  ")).toBe("darek_kay");
   });
 
   it("returns 400 if the query parameters are missing", async () => {
