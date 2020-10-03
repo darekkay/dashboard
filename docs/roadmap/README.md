@@ -76,7 +76,8 @@ Here's a list of rough widget ideas and integrations. They may or may not be imp
 - [NPM statistics](https://github.com/npm/download-counts)
 - [Instagram statistics](https://developers.facebook.com/docs/instagram-api/guides/business-discovery)
 - [Mastodon statistics](https://docs.joinmastodon.org/methods/accounts/)
-- [YouTube Statistics](https://leerob.io/blog/youtube-api-nextjs)
+- [YouTube statistics](https://leerob.io/blog/youtube-api-nextjs)
+- [StackExchange staticstics](https://api.stackexchange.com/docs)
 - [GoodReads API](https://www.goodreads.com/api)
   - e.g. reading progress, library size
 - [NomadList](https://nomadlist.com/@craigcarlyle.json) information
