@@ -4,7 +4,7 @@
 import "@testing-library/jest-dom/extend-expect";
 
 import "setup/index";
-import "common/i18n";
+import "common/i18n"; // Note: i18next is mocked to return the label key in tests
 
 jest.useFakeTimers();
 

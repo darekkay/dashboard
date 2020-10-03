@@ -21,7 +21,7 @@ describe("<Cryptocurrencies />", () => {
       />
     );
     expect(screen.getByTestId("widget-cryptocurrencies")).toHaveTextContent(
-      "6714 pln"
+      "numberpln"
     );
   });
 

@@ -1,4 +1,6 @@
 {
+  "number": "{{value, number}}",
+
   "common": {
     "edit": "Edit",
     "save": "Save",

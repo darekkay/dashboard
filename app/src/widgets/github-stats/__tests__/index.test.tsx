@@ -16,7 +16,7 @@ describe("<GithubStats />", () => {
         followers={2}
         subscribers={3}
         forks={4}
-        open_issues={5}
+        open_issues={0}
       />
     );
 

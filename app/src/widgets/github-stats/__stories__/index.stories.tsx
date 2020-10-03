@@ -19,10 +19,10 @@ const Story = () => {
           }}
           data={{
             name: "darekkay",
-            followers: 142,
-            stars: 314,
-            forks: 17,
-            open_issues: 5,
+            stars: 90213,
+            followers: 11442,
+            forks: 1705,
+            open_issues: 0,
           }}
           meta={initialMeta("github-stats")}
         />

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import useTriggerUpdate from "common/hooks/useTriggerUpdate";
 import Deviation from "components/stats/deviation";
@@ -22,7 +23,7 @@ const Cryptocurrencies: React.FC<Props> = ({
     crypto,
     fiat,
   ]);
-
+  const { t } = useTranslation();
   return (
     <div
       className="flex flex-col items-center text-center"
@@ -35,7 +36,8 @@ const Cryptocurrencies: React.FC<Props> = ({
       )}
       {currentPrice && (
         <div className="text-4 font-semibold">
-          {currentPrice} <span className="text-2 uppercase">{fiat}</span>
+          {t("number", { value: currentPrice })}
+          <span className="ml-2 text-2 uppercase">{fiat}</span>
         </div>
       )}
       {last24h && (

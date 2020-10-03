@@ -22,7 +22,7 @@ const StatsRow: React.FC<{
   return (
     <div className="flex items-center">
       <Icon name={icon} position="left" />
-      <div className="font-semibold text-3 mx-2">{value}</div>
+      <div className="font-semibold text-3 mx-2">{t("number", { value })}</div>
       <div className="text-2">{t(labelKey)}</div>
     </div>
   );

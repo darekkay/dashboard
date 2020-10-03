@@ -40,6 +40,12 @@ i18n.use(initReactI18next).init({
 
   interpolation: {
     escapeValue: false, // not required for React
+    format: (value, format, language) => {
+      if (format === "number") {
+        return new Intl.NumberFormat(language).format(value);
+      }
+      return value;
+    },
   },
 });
 

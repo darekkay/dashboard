@@ -10,6 +10,7 @@ const I18N_FILES_PATH = "src/common/translations";
 
 /* For some labels it is OK to not have explicit translations */
 const ALLOWED_MISSING_TRANSLATION_PREFIXES = [
+  "number",
   "language",
   "widget.cryptocurrencies.crypto",
 ];

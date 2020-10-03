@@ -101,6 +101,8 @@ The label keys can be viewed in a `debug` mode by adding `debug:labels` to the U
 
 Default UI language is based on the browser language and can be changed by the user in the settings dialog.
 
+Numbers are localized using a custom [i18next formatter](https://www.i18next.com/translation-function/formatting): `t("number", { value }`.
+
 To find missing label translations, run `yarn i18n` in the `app` module.
 
 ## Typography
