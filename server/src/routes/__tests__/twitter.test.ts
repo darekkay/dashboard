@@ -24,7 +24,10 @@ describe("twitter", () => {
       .expect(200)
       .then((response) => {
         expect(response.body.name).toBe("Darek Kay");
-        // TODO: finish test
+        expect(response.body.followers).toBe(99);
+        expect(response.body.following).toBe(73);
+        expect(response.body.tweets).toBe(215);
+        expect(response.body.listed).toBe(5);
       });
   });
 
