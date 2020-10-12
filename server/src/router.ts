@@ -8,13 +8,13 @@ import weather from "./routes/weather";
 import unsplash from "./routes/unsplash";
 
 const routes = (app: core.Express) => {
-    // NICE: use an API documentation framework
-    cryptocurrencies(app);
-    github(app);
-    passthrough(app);
-    twitter(app);
-    weather(app);
-    unsplash(app);
+  // NICE: use an API documentation framework
+  cryptocurrencies(app);
+  github(app);
+  passthrough(app);
+  twitter(app);
+  weather(app);
+  unsplash(app);
 };
 
 export default routes;
