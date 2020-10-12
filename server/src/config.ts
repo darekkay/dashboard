@@ -13,6 +13,7 @@ const config = {
   api: {
     openWeatherMap: process.env.API_OPEN_WEATHER_MAP,
     twitter: process.env.API_TWITTER_BEARER,
+    unsplash: process.env.API_UNSPLASH,
   },
 };
 
