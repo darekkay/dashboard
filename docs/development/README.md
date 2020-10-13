@@ -103,6 +103,11 @@ The `master` branch is (manually) deployed to [dashboard.darekkay.com](https://d
 4. Add mandatory widget labels (at least `name`) to all translation files under `common/translations`.
 5. Edit documentation under `docs/widgets`.
 
+### Creating a new server endpoint
+
+1. Run the file generator (`yarn generate`) in the `server` module.
+2. Add the new route to `server/src/router.ts`
+
 ### Auto-updating data
 
 Many widgets depend on external data. To keep this data up-to-date, each widget defines an update cycle in its `properties.ts` file:

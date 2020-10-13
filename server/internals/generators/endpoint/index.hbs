@@ -1,0 +1,49 @@
+import {
+  Express,
+  Request,
+  Response,
+  NextFunction,
+} from "express-serve-static-core";
+
+import axios from "../axios";
+import config from "../config";
+import { ttlForWidgetType } from "../utils";
+
+// TODO: validate query parameters or remove
+const isRequestValid = (request: Request) => true;
+
+const routes = (app: Express) =>
+  /* TODO: description */
+  app.get(
+    "{{ route }}",
+    async (request: Request, response: Response, next: NextFunction) => {
+      if (!isRequestValid(request)) {
+        return response.status(400).end();
+      }
+
+      try {
+        const axiosResponse = await axios.get(
+          `https://`,
+          {
+            params: {
+
+            },
+            headers: {
+
+            },
+            ttl: ttlForWidgetType("{{ dashCase name }}"), // TODO: check TTL
+          }
+        );
+
+        const { data } = axiosResponse;
+
+        return response.json({
+          // TODO
+        });
+      } catch (error) {
+        return next(error);
+      }
+    }
+  );
+
+export default routes;
