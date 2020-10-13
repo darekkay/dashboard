@@ -1,16 +1,25 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { WidgetProps } from "../index";
-{{#if configurationEnabled}}
-import { Props as ConfigurationProps } from "./configuration";
-{{/if}}
-import { widgetType } from "./properties";
-{{#if useSagas}}
-export { saga } from "./sagas";
-{{/if}}
+{{#if useSagas}}import useTriggerUpdate from "common/hooks/useTriggerUpdate";{{/if}}
+import WidgetUnconfigured from "components/widget-unconfigured";
+import WidgetError from "components/widget-error";
 
-const {{ properCase name }}: React.FC<Props> = ({ id, setData }) => {
+import { WidgetProps } from "../index";
+{{#if configurationEnabled}}import { Props as ConfigurationProps } from "./configuration";{{/if}}
+import { widgetType } from "./properties";
+
+{{#if useSagas}}export { saga } from "./sagas";{{/if}}
+
+const {{ properCase name }}: React.FC<Props> = ({ id, meta, triggerUpdate, setData }) => {
+  const { t } = useTranslation();
+{{#if useSagas}}
+  useTriggerUpdate({ id, params: { myAwesomeRequestParam }, meta, triggerUpdate }, [
+    myAwesomeRequestParam, // TODO: remove or change the required request params
+  ]);
+{{/if}}
+  if (isEmpty(query)) return <WidgetUnconfigured type={widgetType} />;
+
   return (<div></div>);
 };
 
