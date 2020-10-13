@@ -20,6 +20,7 @@ const routes = (app: Express) =>
             headers: {
               Authorization: `Client-ID ${config.api.unsplash}`,
             },
+            ttl: 3, // use a short TTL to prevent request flooding
           }
         );
 
