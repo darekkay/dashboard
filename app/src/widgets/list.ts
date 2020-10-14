@@ -81,7 +81,7 @@ const widgetProperties = {
     initialHeight: 4,
     initialWidth: 4,
     initialOptions: {},
-    initialMeta: { updateCyle: { hours: 24 }, updateStatus: "idle" },
+    initialMeta: { updateCycle: { hours: 24 }, updateStatus: "idle" },
   },
   search: {
     configurable: true,
