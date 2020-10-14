@@ -79,7 +79,7 @@ const widgetProperties = {
     widgetType: "random-image",
     category: "media",
     initialHeight: 4,
-    initialWidth: 4,
+    initialWidth: 6,
     initialOptions: {},
     initialMeta: { updateCycle: { hours: 24 }, updateStatus: "idle" },
   },
