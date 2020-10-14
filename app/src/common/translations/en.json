@@ -119,6 +119,10 @@
         "url": "Image URL"
       }
     },
+    "random-image": {
+      "name": "Random Image",
+      "headline": ""
+    },
     "qr-code": {
       "name": "QR Code",
       "headline": "{{headline}}",

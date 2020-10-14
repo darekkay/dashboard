@@ -98,6 +98,10 @@
         "url": "Bild URL"
       }
     },
+    "random-image": {
+      "name": "Zufälliges Bild",
+      "headline": ""
+    },
     "qr-code": {
       "name": "QR-Code",
       "headline": "{{headline}}",
