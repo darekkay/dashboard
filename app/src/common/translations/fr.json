@@ -158,6 +158,18 @@
         "url": "URL du site web",
         "disclaimer": "<0>Attention:</0> Malheureusement, beaucoup de site n'autorise pas d'être inclue dans une iframe. Si un site ne peux pas être afficher, c'est vraissemblablement pour cela."
       }
+    },
+    "youtube-stats": {
+      "name": "Youtube Stats",
+      "headline": "{{channelTitle}}",
+      "subscriberCount": "abonnés",
+      "viewCount": "voir",
+      "configuration": {
+        "url": "URL de la chaîne"
+      },
+      "error": {
+        "404": "Chaîne YouTube inconnue"
+      }
     }
   }
 }
