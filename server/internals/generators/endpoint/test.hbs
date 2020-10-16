@@ -1,0 +1,25 @@
+import request from "supertest";
+import axios from "axios";
+
+import app from "../../app";
+
+import {{ camelCase name }}MockResponse from "./__examples__/{{ dashCase name }}.json";
+
+describe("unsplash", () => {
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
+
+  it("TODO", async () => {
+    const mockedAxios = axios as jest.Mocked<typeof axios>;
+    mockedAxios.get.mockResolvedValueOnce(unsplashImageMockResponse);
+
+    return request(app)
+      .get("{{ route }}")
+      .expect("Content-Type", /json/)
+      .expect(200)
+      .then((response) => {
+        expect(response.body.TODO).toBe("TODO");
+      });
+  });
+});

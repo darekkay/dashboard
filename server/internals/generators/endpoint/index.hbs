@@ -7,29 +7,38 @@ import {
 
 import axios from "../axios";
 import config from "../config";
+import { ttlForWidgetType } from "../utils";
+
+// TODO: validate query parameters or remove
+const isRequestValid = (request: Request) => true;
 
 const routes = (app: Express) =>
-  /* get random image from unsplash */
+  /* TODO: description */
   app.get(
-    "/unsplash/random",
-    async (_request: Request, response: Response, next: NextFunction) => {
+    "{{ route }}",
+    async (request: Request, response: Response, next: NextFunction) => {
+      if (!isRequestValid(request)) {
+        return response.status(400).end();
+      }
+
       try {
         const axiosResponse = await axios.get(
-          `https://api.unsplash.com/photos/random`,
+          `https://`,
           {
-            headers: {
-              Authorization: `Client-ID ${config.api.unsplash}`,
+            params: {
+
             },
-            ttl: 3, // use a short TTL to prevent request flooding
+            headers: {
+
+            },
+            ttl: ttlForWidgetType("{{ dashCase name }}"), // TODO: check TTL
           }
         );
 
         const { data } = axiosResponse;
 
         return response.json({
-          imageUrl: data.urls.regular,
-          authorName: data.user.name,
-          authorUrl: data.user.links.html,
+          // TODO
         });
       } catch (error) {
         return next(error);

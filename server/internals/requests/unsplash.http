@@ -1,0 +1,2 @@
+# Random image from Unsplash
+GET localhost:3401/unsplash/random

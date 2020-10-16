@@ -49,10 +49,10 @@ const routes = (app: Express) =>
 
         return response.json({
           name: data.data.name,
-          followers: data.data.public_metrics?.followers_count,
-          following: data.data.public_metrics?.following_count,
-          tweets: data.data.public_metrics?.tweet_count,
-          listed: data.data.public_metrics?.listed_count,
+          followers: data.data.public_metrics.followers_count,
+          following: data.data.public_metrics.following_count,
+          tweets: data.data.public_metrics.tweet_count,
+          listed: data.data.public_metrics.listed_count,
         });
       } catch (error) {
         return next(error);
