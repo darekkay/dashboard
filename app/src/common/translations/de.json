@@ -126,6 +126,10 @@
       "name": "Chemische Elemente",
       "headline": ""
     },
+    "totd-world-countries": {
+      "name": "Länder",
+      "headline": ""
+    },
     "twitter-stats": {
       "name": "Twitter Stats",
       "headline": "{{username}}",
