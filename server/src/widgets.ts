@@ -7,6 +7,7 @@ const widgets = {
   "github-stats": { updateCycle: { hours: 24 } },
   image: {},
   "qr-code": {},
+  "random-image": { updateCycle: { hours: 24 } },
   search: {},
   text: {},
   "totd-chemical-elements": { updateCycle: { hours: 24 } },

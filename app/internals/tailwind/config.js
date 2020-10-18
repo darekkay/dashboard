@@ -41,6 +41,7 @@ module.exports = {
 
     // Update styles/typography.scss as well
     fontSize: {
+      0: "1rem",
       1: "1.2rem",
       2: "1.4rem",
       3: "1.8rem",

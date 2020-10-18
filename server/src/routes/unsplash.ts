@@ -7,6 +7,7 @@ import {
 
 import axios from "../axios";
 import config from "../config";
+import { ttlForWidgetType } from "../utils";
 
 const routes = (app: Express) =>
   /* get random image from unsplash */
@@ -20,7 +21,7 @@ const routes = (app: Express) =>
             headers: {
               Authorization: `Client-ID ${config.api.unsplash}`,
             },
-            ttl: 3, // use a short TTL to prevent request flooding
+            ttl: ttlForWidgetType("random-image"), // use a short TTL to prevent request flooding
           }
         );
 
@@ -30,6 +31,7 @@ const routes = (app: Express) =>
           imageUrl: data.urls.regular,
           authorName: data.user.name,
           authorUrl: data.user.links.html,
+          altText: data.alt_description,
         });
       } catch (error) {
         return next(error);

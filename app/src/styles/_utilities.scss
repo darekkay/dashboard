@@ -71,6 +71,13 @@
   background-color: var(--backdrop-color);
 }
 
+.background-overlay {
+  --text-color: var(--background-overlay-text-color);
+  --text-color-highlight: var(--background-overlay-highlight-color);
+
+  background-color: var(--background-overlay-color);
+}
+
 // Misc
 
 .object-fit-cover {
