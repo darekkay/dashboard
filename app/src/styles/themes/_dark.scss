@@ -16,6 +16,10 @@
   --focus-ring-color: #{$green-warm-50};
   --backdrop-color: rgba(0, 0, 0, 0.6);
 
+  --background-overlay-color: rgba(0, 0, 0, 0.6);
+  --background-overlay-text-color: #{$white};
+  --background-overlay-highlight-color: #{$green-warm-20};
+
   --button-primary-color: #{$green-warm-vivid-30};
   --button-primary-event-bg: #{$green-warm-30};
   --button-primary-focus-ring: #{$green-warm-50};

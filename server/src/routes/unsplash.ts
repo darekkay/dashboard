@@ -31,6 +31,7 @@ const routes = (app: Express) =>
           imageUrl: data.urls.regular,
           authorName: data.user.name,
           authorUrl: data.user.links.html,
+          altText: data.alt_description,
         });
       } catch (error) {
         return next(error);

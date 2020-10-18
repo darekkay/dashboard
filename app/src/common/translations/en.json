@@ -121,7 +121,8 @@
     },
     "random-image": {
       "name": "Random Image",
-      "headline": ""
+      "headline": "",
+      "attribution": "Photo by <0>{{authorName}}</0> on <1>Unsplash</1>"
     },
     "qr-code": {
       "name": "QR Code",
