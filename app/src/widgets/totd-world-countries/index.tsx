@@ -47,7 +47,7 @@ const TotdWorldCountries: React.FC<Props> = ({
         {tld}
       </div>
       {flag !== null && (
-        <img className="w-100" src={flag} alt={"Flag of " + name} />
+        <img className="w-100" src={flag} alt={`Flag of ${name}`} />
       )}
     </div>
   );

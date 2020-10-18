@@ -21,7 +21,7 @@ describe("<TotdWorldCountries />", () => {
       />
     );
     expect(
-      screen.getByRole("TODO", { name: /TODO text/i })
+      screen.getByRole("TODO", { name: /todo text/i })
     ).toBeInTheDocument();
   });
 });

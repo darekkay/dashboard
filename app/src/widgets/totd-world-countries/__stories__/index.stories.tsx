@@ -18,4 +18,6 @@ const Story = () => {
   );
 };
 
-storiesOf("Widgets/TotdWorldCountries", module).add("Variants", () => <Story />);
+storiesOf("Widgets/TotdWorldCountries", module).add("Variants", () => (
+  <Story />
+));
