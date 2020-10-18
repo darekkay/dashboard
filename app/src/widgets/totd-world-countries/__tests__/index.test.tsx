@@ -11,8 +11,17 @@ describe("<TotdWorldCountries />", () => {
       <TotdWorldCountries
         {...widgetProps}
         id="totd-world-countries-mock-id"
+        name="Germany"
+        capital="Berlin"
+        currency="EUR"
+        languages="German"
+        countryCode="DE"
+        tld=".de"
+        flag="null"
       />
     );
-    expect(screen.getByRole("TODO", { name: /TODO text/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("TODO", { name: /TODO text/i })
+    ).toBeInTheDocument();
   });
 });
