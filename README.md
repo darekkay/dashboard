@@ -55,6 +55,7 @@ Thanks goes to these wonderful people:
     <td align="center"><a href='https://github.com/faboo03' title='faboo03 is awesome!'><img src='https://avatars3.githubusercontent.com/u/421979?v=4' alt='faboo03' width='50px' /></a></td>
     <td align="center"><a href='https://github.com/TateKennington' title='TateKennington is awesome!'><img src='https://avatars0.githubusercontent.com/u/27887751?v=4' alt='TateKennington' width='50px' /></a></td>
     <td align="center"><a href='http://adrianriosweb.com/' title='adrianrios25 is awesome!'><img src='https://avatars1.githubusercontent.com/u/12592624?v=4' alt='adrianrios25' width='50px' /></a></td>
+    <td align="center"><a href='https://github.com/syentix' title='syentix is awesome!'><img src='https://avatars3.githubusercontent.com/u/43079612?v=4' alt='syentix' width='50px' /></a></td>
   </tr>
 </table>
 
