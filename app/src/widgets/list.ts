@@ -8,6 +8,7 @@ export type WidgetType =
   | "github-stats"
   | "image"
   | "qr-code"
+  | "random-image"
   | "search"
   | "text"
   | "totd-chemical-elements"
@@ -73,6 +74,15 @@ const widgetProperties = {
     initialWidth: 2,
     initialOptions: { headline: "", content: "" },
     initialMeta: {},
+  },
+  "random-image": {
+    configurable: false,
+    widgetType: "random-image",
+    category: "media",
+    initialHeight: 4,
+    initialWidth: 6,
+    initialOptions: {},
+    initialMeta: { updateCycle: { hours: 24 }, updateStatus: "idle" },
   },
   search: {
     configurable: true,
@@ -165,6 +175,9 @@ export const widgetImports = {
   "qr-code": {
     component: async () => import("widgets/qr-code"),
     configuration: async () => import("widgets/qr-code/configuration"),
+  },
+  "random-image": {
+    component: async () => import("widgets/random-image"),
   },
   search: {
     component: async () => import("widgets/search"),

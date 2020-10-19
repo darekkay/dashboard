@@ -98,6 +98,11 @@
         "url": "Bild URL"
       }
     },
+    "random-image": {
+      "name": "Zufälliges Bild",
+      "headline": "",
+      "attribution": "Photo von <0>{{authorName}}</0> auf <1>Unsplash</1>"
+    },
     "qr-code": {
       "name": "QR-Code",
       "headline": "{{headline}}",

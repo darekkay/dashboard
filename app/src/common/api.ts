@@ -9,6 +9,8 @@ export const GITHUB_STATS = "/github/stats";
 
 export const TWITTER_STATS = "/twitter/user";
 
+export const UNSPLASH_RANDOM_PHOTO = "/unsplash/random";
+
 export const YOUTUBE_STATS = "/youtube";
 
 export default axios.create({
