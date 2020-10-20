@@ -19,9 +19,4 @@ describe("<YoutubeStats />", () => {
     expect(screen.queryByText("widget.common.unconfigured")).toBeNull();
     expect(screen.queryByTestId("widget-error")).toBeNull();
   });
-
-  test("doesn't render if the url is missing", () => {
-    render(<YoutubeStats {...widgetProps} id="github-stats-mock-id" />);
-    expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
-  });
 });
