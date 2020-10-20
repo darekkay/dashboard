@@ -7,9 +7,21 @@ import YoutubeStats from "../index";
 
 describe("<YoutubeStats />", () => {
   test("renders without errors", () => {
-    render(<YoutubeStats {...widgetProps} id="youtube-stats-mock-id" />);
-    expect(
-      screen.getByRole("TODO", { name: /todo text/i })
-    ).toBeInTheDocument();
+    render(
+      <YoutubeStats 
+        {...widgetProps} 
+        id="youtube-stats-mock-id" 
+        subscriberCount={1}
+        viewCount={2}
+        url="https://www.youtube.com/c/mkbhd" 
+      />);
+
+    expect(screen.queryByText("widget.common.unconfigured")).toBeNull();
+    expect(screen.queryByTestId("widget-error")).toBeNull();
+  });
+
+  test("doesn't render if the url is missing", () => {
+    render(<YoutubeStats {...widgetProps} id="github-stats-mock-id" />);
+    expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 });
