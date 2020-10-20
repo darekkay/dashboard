@@ -25,8 +25,8 @@ const routes = (app: Express) =>
         const youtubeResponse = await youtube.channels.get(channel);
         const { statistics } = youtubeResponse;
         const { brandingSettings } = youtubeResponse;
-        const viewCount = parseInt(statistics.viewCount);
-        const subscriberCount = parseInt(statistics.subscriberCount);
+        const viewCount = parseInt(statistics.viewCount, 10);
+        const subscriberCount = parseInt(statistics.subscriberCount, 10);
         const channelTitle = brandingSettings.channel.title;
 
         return response.json({
