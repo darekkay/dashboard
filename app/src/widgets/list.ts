@@ -13,7 +13,8 @@ export type WidgetType =
   | "text"
   | "totd-chemical-elements"
   | "twitter-stats"
-  | "website";
+  | "website"
+  | "youtube-stats";
 
 const widgetProperties = {
   counter: {
@@ -135,6 +136,19 @@ const widgetProperties = {
     initialOptions: { url: "" },
     initialMeta: {},
   },
+  "youtube-stats": {
+    configurable: true,
+    widgetType: "youtube-stats",
+    category: "monitoring",
+    initialHeight: 3,
+    initialWidth: 3,
+    initialOptions: {},
+    initialMeta: {
+      updateCycle: { hours: 24 },
+      updateStatus: "idle",
+      headlineIcon: "youtube",
+    },
+  },
 } as Record<WidgetType, WidgetProperties>;
 export default widgetProperties;
 
@@ -182,6 +196,10 @@ export const widgetImports = {
   website: {
     component: async () => import("widgets/website"),
     configuration: async () => import("widgets/website/configuration"),
+  },
+  "youtube-stats": {
+    component: async () => import("widgets/youtube-stats"),
+    configuration: async () => import("widgets/youtube-stats/configuration"),
   },
 } as Record<WidgetType, WidgetImports>;
 

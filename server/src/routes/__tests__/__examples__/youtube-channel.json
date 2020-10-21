@@ -1,0 +1,24 @@
+{
+  "data": {
+    "kind": "youtube#channelListResponse",
+    "etag": "HGKmtn0WpCtwDpIwth2xcSTKZgc",
+    "items": [
+      {
+        "kind": "youtube#channel",
+        "etag": "zwMrw7jAVYC87F2Cc6skyeMv6Bw",
+        "id": "UCdTs-47tRqaos6LpKeDxx7w",
+        "statistics": {
+          "viewCount": "17897",
+          "commentCount": "0",
+          "subscriberCount": "58",
+          "videoCount": "7"
+        },
+        "brandingSettings": {
+          "channel": {
+            "title": "Darek Kay"
+          }
+        }
+      }
+    ]
+  }
+}

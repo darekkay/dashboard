@@ -23,6 +23,7 @@ import {
   faUndoAlt,
   faUpload,
   faUserFriends,
+  faFileVideo,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faCheckCircle,
@@ -32,7 +33,11 @@ import {
   faSave,
   faTrashAlt,
 } from "@fortawesome/free-regular-svg-icons";
-import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGithub,
+  faTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 export type FontAwesomeIconName =
   | "arrowDown"
@@ -65,7 +70,9 @@ export type FontAwesomeIconName =
   | "twitter"
   | "undo"
   | "upload"
-  | "userFriends";
+  | "userFriends"
+  | "videoFile"
+  | "youtube";
 
 const icons: Record<FontAwesomeIconName, IconDefinition> = {
   arrowDown: faArrowDown,
@@ -99,6 +106,8 @@ const icons: Record<FontAwesomeIconName, IconDefinition> = {
   undo: faUndoAlt,
   upload: faUpload,
   userFriends: faUserFriends,
+  videoFile: faFileVideo,
+  youtube: faYoutube,
 };
 
 export default icons;

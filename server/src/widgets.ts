@@ -13,5 +13,6 @@ const widgets = {
   "totd-chemical-elements": { updateCycle: { hours: 24 } },
   "twitter-stats": { updateCycle: { hours: 24 } },
   website: {},
+  "youtube-stats": { updateCycle: { hours: 24 } },
 } as Record<string, any>;
 export default widgets;

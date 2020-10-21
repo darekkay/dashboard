@@ -14,6 +14,7 @@ const config = {
     openWeatherMap: process.env.API_OPEN_WEATHER_MAP,
     twitter: process.env.API_TWITTER_BEARER,
     unsplash: process.env.API_UNSPLASH,
+    youtube: process.env.API_YOUTUBE,
   },
 };
 

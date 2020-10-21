@@ -6,6 +6,7 @@ import passthrough from "./routes/passthrough";
 import twitter from "./routes/twitter";
 import weather from "./routes/weather";
 import unsplash from "./routes/unsplash";
+import youtube from "./routes/youtube";
 
 const routes = (app: core.Express) => {
   // NICE: use an API documentation framework
@@ -15,6 +16,7 @@ const routes = (app: core.Express) => {
   twitter(app);
   weather(app);
   unsplash(app);
+  youtube(app);
 };
 
 export default routes;

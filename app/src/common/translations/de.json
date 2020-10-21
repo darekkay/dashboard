@@ -148,6 +148,19 @@
         "url": "Webseite URL",
         "disclaimer": "<0>Info:</0> Leider verbieten viele Webseiten die Einbindung in einem Iframe. Falls eine Seite nicht angezeigt werden kann, ist dies wahrscheinlich der Grund dafür."
       }
+    },
+    "youtube-stats": {
+      "name": "YouTube Stats",
+      "headline": "{{channelTitle}}",
+      "subscriberCount": "Abonnenten",
+      "viewCount": "Aufrufe",
+      "videoCount": "Videos",
+      "configuration": {
+        "query": "Kanal Name oder URL"
+      },
+      "error": {
+        "404": "Unbekannter YouTube-Kanal"
+      }
     }
   }
 }

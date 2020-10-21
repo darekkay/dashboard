@@ -53,6 +53,7 @@ Some widgets require a 3rd-party API key which needs to be stored at `server/.en
 - [Unsplash](https://unsplash.com/documentation)
 - [Twitter](https://developer.twitter.com/en/docs/twitter-api)
 - [OpenWeatherMap](https://openweathermap.org/api)
+- [YouTube](https://developers.google.com/youtube/v3/getting-started)
 
 The project will run with missing API keys, but the affected widgets will not work.
 

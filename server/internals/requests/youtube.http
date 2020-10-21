@@ -1,0 +1,27 @@
+###
+# Channel URL
+GET localhost:3401/youtube/stats?query=https://www.youtube.com/channel/UCdTs-47tRqaos6LpKeDxx7w
+
+###
+# Channel URL alias
+GET localhost:3401/youtube/stats?query=https://www.youtube.com/c/darekkay
+
+###
+# Channel user URL
+GET localhost:3401/youtube/stats?query=https://www.youtube.com/user/darekkay
+
+###
+# User name
+GET localhost:3401/youtube/stats?query=darekkay
+
+###
+# User name
+GET localhost:3401/youtube/stats?query=UCdTs-47tRqaos6LpKeDxx7w
+
+###
+# Unknown user
+GET localhost:3401/youtube/stats?query=jfjew2ksdfh38
+
+###
+# Raw YouTube query
+GET https://www.googleapis.com/youtube/v3/channels?part=statistics&forUsername=darekkay&key=APIKEY
