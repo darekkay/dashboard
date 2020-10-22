@@ -46,9 +46,7 @@ const TotdWorldCountries: React.FC<Props> = ({
         <strong>Top-Level-Domain: </strong>
         {tld}
       </div>
-      {flag && (
-        <img className="w-100" src={flag} alt={`Flag of ${name}`} />
-      )}
+      {flag && <img className="w-100" src={flag} alt={`Flag of ${name}`} />}
     </div>
   );
 };
