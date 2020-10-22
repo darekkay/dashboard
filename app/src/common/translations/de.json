@@ -129,7 +129,7 @@
     },
     "totd-world-countries": {
       "name": "Länder",
-      "headline": ""
+      "headline": "{{name}}"
     },
     "twitter-stats": {
       "name": "Twitter Stats",

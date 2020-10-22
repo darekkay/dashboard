@@ -22,11 +22,6 @@ const TotdWorldCountries: React.FC<Props> = ({
 
   return (
     <div>
-      <div className="text-3 w-100 p-2 text-center">
-        <u>
-          <strong>{name}</strong>
-        </u>
-      </div>
       <div className="text-2">
         <strong>Capital: </strong>
         {capital}
