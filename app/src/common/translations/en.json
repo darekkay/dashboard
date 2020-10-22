@@ -148,6 +148,10 @@
       "name": "Chemical elements",
       "headline": ""
     },
+    "totd-world-countries": {
+      "name": "World Countries",
+      "headline": "{{name}}"
+    },
     "twitter-stats": {
       "name": "Twitter Stats",
       "headline": "{{username}}",

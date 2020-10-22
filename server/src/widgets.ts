@@ -11,6 +11,7 @@ const widgets = {
   search: {},
   text: {},
   "totd-chemical-elements": { updateCycle: { hours: 24 } },
+  "totd-world-countries": { updateCycle: { hours: 24 } },
   "twitter-stats": { updateCycle: { hours: 24 } },
   website: {},
   "youtube-stats": { updateCycle: { hours: 24 } },

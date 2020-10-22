@@ -12,6 +12,7 @@ export type WidgetType =
   | "search"
   | "text"
   | "totd-chemical-elements"
+  | "totd-world-countries"
   | "twitter-stats"
   | "website"
   | "youtube-stats";
@@ -114,6 +115,15 @@ const widgetProperties = {
     initialOptions: {},
     initialMeta: { updateCycle: { hours: 24 }, updateStatus: "idle" },
   },
+  "totd-world-countries": {
+    configurable: false,
+    widgetType: "totd-world-countries",
+    category: "knowledge",
+    initialHeight: 4,
+    initialWidth: 4,
+    initialOptions: {},
+    initialMeta: { updateCycle: { hours: 24 }, updateStatus: "idle" },
+  },
   "twitter-stats": {
     configurable: true,
     widgetType: "twitter-stats",
@@ -188,6 +198,9 @@ export const widgetImports = {
   },
   "totd-chemical-elements": {
     component: async () => import("widgets/totd-chemical-elements"),
+  },
+  "totd-world-countries": {
+    component: async () => import("widgets/totd-world-countries"),
   },
   "twitter-stats": {
     component: async () => import("widgets/twitter-stats"),
