@@ -2,13 +2,14 @@ import i18n, { Resource } from "i18next";
 import { initReactI18next } from "react-i18next";
 import { PayloadAction } from "@reduxjs/toolkit";
 import { takeEvery } from "@redux-saga/core/effects";
-import dayjs from "dayjs";
-import "dayjs/locale/de";
-import "dayjs/locale/fr";
 
+import dayjs from "common/date";
 import { DEBUG_LABELS } from "common/environment";
 import { changeLanguage } from "common/ducks/config";
 import { State } from "state/store";
+
+import "dayjs/locale/de";
+import "dayjs/locale/fr";
 
 // NICE: import only the language that is being used
 import de from "./translations/de.json";

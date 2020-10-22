@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import dayjs from "dayjs";
 
+import dayjs from "common/date";
 import log from "common/log";
 import useInterval from "common/hooks/useInterval";
 import { TriggerUpdateAction, WidgetMeta } from "components/widget/duck";
