@@ -60,7 +60,7 @@ interface Props extends WidgetProps {
   currency: string;
   languages: string;
   tld: string;
-  flag: string;
+  flag?: string;
 }
 
 export default TotdWorldCountries;
