@@ -14,10 +14,11 @@ describe("App selector", () => {
         isEditable: false,
       },
       widgets: {
-        "id-01": {},
-        "id-02": {},
+        "text-01": {},
+        "image-02": {},
+        "unknown-widget-03": {},
       },
     });
-    expect(result.widgetIDs).toEqual(["id-01", "id-02"]);
+    expect(result.widgetIDs).toEqual(["text-01", "image-02"]);
   });
 });
