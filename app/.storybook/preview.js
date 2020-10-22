@@ -1,7 +1,5 @@
 import { addDecorator, addParameters } from "@storybook/react";
 
-import "setup/index";
-
 import initStore from "state/store";
 import "common/i18n";
 
