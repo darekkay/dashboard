@@ -20,6 +20,8 @@ describe("<TotdWorldCountries />", () => {
         flag="null"
       />
     );
-    expect(screen.getByText("Germany")).toBeInTheDocument();
+    expect(screen.getByText("Berlin")).toBeInTheDocument();
+    expect(screen.getByText("EUR")).toBeInTheDocument();
+    expect(screen.getByText("DE")).toBeInTheDocument();
   });
 });
