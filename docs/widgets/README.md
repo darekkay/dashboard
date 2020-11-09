@@ -10,11 +10,13 @@ This is a list of all currently implemented widgets. The [roadmap](../roadmap/RE
 ## Media
 
 - [Image](image.md): External image.
+- [Random Image](random-image.md): Random image of the day..
 - [Website](website.md): External website (iframe).
 
 ## Knowledge
 
 - [Chemical Element of the Day](totd-chemical-elements.md): Information about chemical elements.
+- [World Country of the Day](totd-world-countries.md): Information about world countries.
 
 ## Tools
 
@@ -30,3 +32,4 @@ This is a list of all currently implemented widgets. The [roadmap](../roadmap/RE
 - [Cryptocurrencies](cryptocurrencies.md): Current market price for various cryptocurrencies.
 - [GitHub Stats](github-stats.md): Display various GitHub user stats.
 - [Twitter Stats](twitter-stats.md): Display various Twitter user stats.
+- [YouTube Stats](youtube-stats.md): Display various YouTube channel stats.
