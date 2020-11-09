@@ -18,7 +18,7 @@ A user test has shown that users like using a custom background image to persona
 
 ### Redesign widget drawer
 
-The current widget drawer is not practical. Here are some ideas:
+The current widget drawer is impractical. Here are some ideas:
 
 - Widget search/filter to quickly find a widget.
 - Widget description should be added, because the name alone might not tell the user what the widget does.
@@ -27,7 +27,7 @@ The current widget drawer is not practical. Here are some ideas:
 - With more and more widgets, the categories should be reworked as well.
 - Maybe highlight "most used" widgets.
 
-### Multiboard support
+### Multi-board support
 
 Currently, only one fixed board can be used. Adding more boards to be able to switch between multiple views would be great. Automatically switching between the boards after x seconds might be a nice addition.
 
@@ -63,6 +63,7 @@ Here's a list of rough widget ideas and integrations. They may or may not be imp
 - Animations
 - Soundboard, Background Sounds ([Noisli](https://www.noisli.com/), [MyNoise](https://mynoise.net/))
 - Quote (daily or slideshow)
+  - [Inspirational Quotes](https://github.com/vinitshahdeo/inspirational-quotes/)
 - RSS Feeds
 - Daily tips
   - "Chemical Element of the day" already exists

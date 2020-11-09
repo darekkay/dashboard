@@ -36,6 +36,12 @@ Most popular apps are neither open-source nor customizable to a degree I'd like 
 
 A new project is also a great opportunity to learn new concepts.
 
+## Features
+
+- ☑ 14 [widgets](https://dashboard.darekkay.com/docs/widgets/) as of November 2020.
+- ☑ Themes support. Because no one will bat an eye without a Dark Mode™.
+- ☑ Multi-language support (English, German and French already provided).
+
 ## Contribution
 
 Contributions are always welcome, no matter how large or small. Before contributing, please read the [Code of Conduct](./CODE_OF_CONDUCT.md). When contributing to this repository, please first discuss the change you wish to make via [GitHub Issue](https://github.com/darekkay/dashboard/issues/new) or join our community chat on [Gitter](https://gitter.im/darekkay-dashboard/community).

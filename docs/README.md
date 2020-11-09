@@ -2,19 +2,23 @@
 
 ![](./assets/img/1.3.0.png)
 
+## Project status
+
+The project is under active development. While it is [live](https://dashboard.darekkay.com) already, I consider the status **late alpha** due to possible changes and the minimal amount of widgets.
+
 ## Goal
 
 The goal of this project is a fully customizable and extendable dashboard, with modules like clock, weather, todo tasks, bookmarks, calendar, etc. The user should be able to view all important information on a single page.
 
 - Create a browser start page with some common widgets.
-- Create public information displays.
 - Display company-related information on TVs around the office.
 - Display marketing information at an exhibition stand.
 - Brainstorm ideas using notes and images.
 - Monitor systems to ensure their availability and efficiency.
 - Visualize your Internet of Things (IoT) devices.
+- Create a [life engine](https://github.com/samsquire/ideas#5-life-engine).
 
-Usually, I wait for a MVP before releasing a project. This project is being [developed in public](https://github.com/darekkay/dashboard) from Day 1. I document my progress and (knowledge) insights in the blog, while the changelog describes the actual project features.
+Usually, I wait for a MVP before releasing a project. This project is being developed in public from Day 1. I document my progress and (knowledge) insights in the [blog](https://dashboard.darekkay.com/docs/blog/), while the [changelog](https://dashboard.darekkay.com/docs/changelog/) describes the actual project features.
 
 The current state of the project is available at [dashboard.darekkay.com](https://dashboard.darekkay.com).
 
@@ -28,18 +32,15 @@ A new project is also a great opportunity to learn new concepts.
 
 ## Features
 
-- ☑ Themes support. Because noone will bat an eye without a Dark Mode™.
-- ☑ Multi-language support (English and German already provided).
-
-## Widgets
-
-All available widgets and widget ideas are listed [here](widgets/README.md).
+- ☑ 14 [widgets](widgets/README.md) as of November 2020.
+- ☑ Themes support. Because no one will bat an eye without a Dark Mode™.
+- ☑ Multi-language support (English, German and French already provided).
 
 ## Contribution
 
-All contributors are highly welcome. If you want to collaborate on this project, just give me a [note](mailto:hello@darekkay.com) or create a [GitHub Issue](https://github.com/darekkay/dashboard/issues/new).
+Contributions are always welcome, no matter how large or small. Before contributing, please read the [Code of Conduct](https://github.com/darekkay/dashboard/blob/master/CODE_OF_CONDUCT.md). When contributing to this repository, please first discuss the change you wish to make via [GitHub Issue](https://github.com/darekkay/dashboard/issues/new) or join our community chat on [Gitter](https://gitter.im/darekkay-dashboard/community).
 
-View the [development documentation](development/README.md) for more information.
+To get started with the project code, please read the [development documentation](development/README.md).
 
 ## License
 
