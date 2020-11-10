@@ -6,7 +6,7 @@ import { Layout } from "common/ducks/layout";
 import { GRID } from "common/environment";
 import makeWidget from "components/widget";
 import WelcomePage from "components/welcome-page";
-import { WidgetsState } from "components/widget/duck";
+import { State } from "state/store";
 
 const ReactGridLayout = WidthProvider(Responsive);
 
@@ -36,12 +36,10 @@ class Dashboard extends React.Component<Props> {
       widgetIDs,
       saveLayout,
       removeWidgetFromLayout,
-      importWidgets,
+      importState,
     } = this.props;
     if (widgetIDs.length === 0)
-      return (
-        <WelcomePage saveLayout={saveLayout} importWidgets={importWidgets} />
-      );
+      return <WelcomePage importState={importState} />;
     return (
       <ReactGridLayout
         className="layout"
@@ -76,7 +74,7 @@ export interface Props {
   widgetIDs: string[];
   saveLayout: (layout: Layout) => void;
   removeWidgetFromLayout: (widgetId: string) => void;
-  importWidgets: (widgets: WidgetsState) => void;
+  importState: (state: State) => void;
   [key: string]: any; // required for shouldComponentUpdate
 }
 

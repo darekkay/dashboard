@@ -6,16 +6,14 @@ import {
   actionCreators as layoutActionCreators,
   Layout,
 } from "common/ducks/layout";
+import { actionCreators as stateActionCreators } from "common/ducks/state";
 import useToggle from "common/hooks/useToggle";
 import Dashboard from "components/dashboard";
 import Drawer from "components/drawer";
 import Header from "components/header";
 import { updateCssVariables, Theme } from "components/settings/theme-select";
-import {
-  importWidgets as importWidgetsAction,
-  WidgetsState,
-} from "components/widget/duck";
 import { WidgetType } from "widgets/list";
+import { State } from "state/store";
 
 import mapStateToProps from "./selectors";
 
@@ -28,7 +26,7 @@ export const App: React.FC<Props> = (props) => {
     toggleLayoutEditable,
     addWidgetToLayout,
     removeWidgetFromLayout,
-    importWidgets,
+    importState,
     currentTheme,
   } = props;
 
@@ -57,7 +55,7 @@ export const App: React.FC<Props> = (props) => {
             widgetIDs={widgetIDs}
             saveLayout={saveLayout}
             removeWidgetFromLayout={removeWidgetFromLayout}
-            importWidgets={importWidgets}
+            importState={importState}
           />
         </main>
         {isLayoutEditable && <Drawer addWidgetToLayout={addWidgetToLayout} />}
@@ -77,12 +75,12 @@ export interface Props {
 
   addWidgetToLayout: (widgetType: WidgetType) => void;
   removeWidgetFromLayout: (widgetId: string) => void;
-  importWidgets: (widgets: WidgetsState) => void;
+  importState: (state: State) => void;
 
   currentTheme: Theme;
 }
 
 export default connect(mapStateToProps, {
   ...layoutActionCreators,
-  importWidgets: importWidgetsAction,
+  ...stateActionCreators,
 })(App);

@@ -3,15 +3,13 @@ import { Trans, useTranslation } from "react-i18next";
 
 import Button from "components/button";
 import Link from "components/link";
-import { Layout } from "common/ducks/layout";
-import { WidgetsState } from "components/widget/duck";
-import { exampleWidgets, exampleLayout } from "widgets/demo";
+import { State } from "state/store";
+import demoTemplate from "templates/demo.json";
 
-const WelcomePage: React.FC<Props> = ({ saveLayout, importWidgets }) => {
+const WelcomePage: React.FC<Props> = ({ importState }) => {
   const { t } = useTranslation();
   const createExampleBoard = () => {
-    importWidgets(exampleWidgets);
-    saveLayout(exampleLayout);
+    importState(demoTemplate as State);
   };
   return (
     <div className="w-full h-full flex flex-col items-center justify-center">
@@ -41,8 +39,7 @@ const WelcomePage: React.FC<Props> = ({ saveLayout, importWidgets }) => {
 };
 
 export interface Props {
-  saveLayout: (layout: Layout) => void;
-  importWidgets: (widgets: WidgetsState) => void;
+  importState: (state: State) => void;
 }
 
 export default WelcomePage;

@@ -27,7 +27,6 @@ export interface UpdateActionError {
 // Data actions
 export const setOptions = createAction<SetValuesPayload>("widget/set-options");
 export const setData = createAction<SetValuesPayload>("widget/set-data-value");
-export const importWidgets = createAction<WidgetsState>("widget/importWidgets");
 
 // Update actions
 export const triggerUpdate = (widgetType: WidgetType) =>
@@ -84,8 +83,6 @@ export const reducerWithInitialState = (
         const { id, values } = action.payload;
         state[id].data = { ...state[id].data, ...values };
       })
-
-      .addCase(importWidgets, (_state, action) => action.payload)
 
       .addCase(updatePending, (state, action) => {
         const id = action.payload;

@@ -1,0 +1,211 @@
+{
+  "config": { "theme": "default", "language": "" },
+  "widgets": {
+    "date-time-01": {
+      "type": "date-time",
+      "data": {},
+      "options": {},
+      "meta": {}
+    },
+    "search-01": {
+      "type": "search",
+      "data": {},
+      "options": {
+        "pattern": "https://duckduckgo.com/?q=%s",
+        "title": "DuckDuckGo"
+      },
+      "meta": {}
+    },
+    "text-01": {
+      "type": "text",
+      "data": {
+        "content": "Rule #1\n\nAlways code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. \uD83D\uDD25"
+      },
+      "options": {},
+      "meta": {}
+    },
+    "image-01": {
+      "type": "image",
+      "data": {},
+      "options": {
+        "url": "https://images.pexels.com/photos/162240/bull-calf-heifer-ko-162240.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+      },
+      "meta": {}
+    },
+    "totd-chemical-elements-01": {
+      "type": "totd-chemical-elements",
+      "data": {
+        "name": "Cerium",
+        "nameDE": "Zer",
+        "symbol": "Ce",
+        "atomicNumber": 58
+      },
+      "options": {},
+      "meta": {
+        "updateCycle": { "hours": 24 },
+        "updateStatus": "success",
+        "lastUpdated": 1587566450217
+      }
+    },
+    "qr-code-01": {
+      "type": "qr-code",
+      "data": {},
+      "options": { "content": "https://dashboard.darekkay.com/" },
+      "meta": {}
+    },
+    "counter-01": {
+      "type": "counter",
+      "data": { "value": 5 },
+      "options": {},
+      "meta": {}
+    },
+    "cryptocurrencies-01": {
+      "type": "cryptocurrencies",
+      "data": {
+        "currentPrice": 6541.75,
+        "last24h": { "change": 217.6, "changePercentage": 3.44 },
+        "imageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579"
+      },
+      "options": { "fiat": "eur", "crypto": "bitcoin" },
+      "meta": {
+        "updateCycle": { "minutes": 15 },
+        "updateStatus": "success",
+        "lastUpdated": 1587566450196
+      }
+    },
+    "github-stats-101": {
+      "type": "github-stats",
+      "data": {
+        "name": "darekkay/dashboard",
+        "stars": 36,
+        "subscribers": 4,
+        "forks": 2,
+        "open_issues": 5
+      },
+      "options": { "query": "darekkay/dashboard" },
+      "meta": {
+        "updateCycle": { "hours": 24 },
+        "headlineIcon": "github",
+        "updateStatus": "success",
+        "lastUpdated": 1587566461011
+      }
+    },
+    "website-102": {
+      "type": "website",
+      "data": {},
+      "options": { "url": "https://en.m.wikipedia.org/wiki/Main_Page" },
+      "meta": {}
+    }
+  },
+  "layout": {
+    "isEditable": false,
+    "config": {
+      "mobile": [
+        { "i": "date-time-01", "x": 0, "y": 0, "w": 1, "h": 2 },
+        { "i": "search-01", "x": 0, "y": 1, "w": 1, "h": 2 },
+        { "i": "text-01", "x": 0, "y": 2, "w": 1, "h": 4 },
+        { "i": "image-01", "x": 0, "y": 3, "w": 1, "h": 4 },
+        { "i": "totd-chemical-elements-01", "x": 0, "y": 4, "w": 1, "h": 2 },
+        { "i": "qr-code-01", "x": 0, "y": 5, "w": 1, "h": 2 },
+        { "i": "counter-01", "x": 0, "y": 6, "w": 1, "h": 2 },
+        { "i": "cryptocurrencies-01", "x": 0, "y": 7, "w": 1, "h": 2 },
+        { "i": "github-stats-101", "x": 0, "y": 6, "w": 3, "h": 3 },
+        { "i": "website-102", "x": 0, "y": 7, "w": 5, "h": 5 }
+      ],
+      "desktop": [
+        {
+          "w": 4,
+          "h": 2,
+          "x": 6,
+          "y": 2,
+          "i": "date-time-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 6,
+          "h": 2,
+          "x": 10,
+          "y": 0,
+          "i": "search-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 4,
+          "h": 5,
+          "x": 16,
+          "y": 3,
+          "i": "text-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 6,
+          "h": 2,
+          "x": 10,
+          "y": 2,
+          "i": "image-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 2,
+          "h": 2,
+          "x": 8,
+          "y": 4,
+          "i": "totd-chemical-elements-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 2,
+          "h": 2,
+          "x": 6,
+          "y": 4,
+          "i": "qr-code-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "x": 6,
+          "y": 6,
+          "i": "counter-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "x": 6,
+          "y": 0,
+          "i": "cryptocurrencies-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 4,
+          "h": 3,
+          "x": 16,
+          "y": 0,
+          "i": "github-stats-101",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "x": 10,
+          "y": 4,
+          "i": "website-102",
+          "moved": false,
+          "static": false
+        }
+      ]
+    },
+    "nextWidgetId": 103
+  },
+  "_persist": { "version": -1, "rehydrated": true }
+}

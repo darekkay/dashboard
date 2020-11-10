@@ -6,7 +6,7 @@ import WelcomePage from "../index";
 const Story = () => {
   return (
     <div>
-      <WelcomePage importWidgets={() => {}} saveLayout={() => {}} />
+      <WelcomePage importState={() => {}} />
     </div>
   );
 };

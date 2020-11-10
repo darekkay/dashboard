@@ -14,7 +14,7 @@ describe("<Dashboard />", () => {
     isLayoutEditable: false,
     saveLayout: () => {},
     removeWidgetFromLayout: () => {},
-    importWidgets: () => {},
+    importState: () => {},
     widgetIDs: ["search-01", "text-02"],
   };
 
