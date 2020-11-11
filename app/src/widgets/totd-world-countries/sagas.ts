@@ -14,8 +14,7 @@ import {
 
 import { widgetType } from "./properties";
 
-// const URL = "https://tips.darekkay.com/json/countries-en.json";
-const URL = "http://127.0.0.1:8080/json/countries-en.json";
+const URL = "https://tips.darekkay.com/json/countries-en.json";
 
 const fetchTipOfTheDay = async () => {
   return axios(URL).then((response) => response.data);
