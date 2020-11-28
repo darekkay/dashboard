@@ -1,6 +1,6 @@
 # Dashboard
 
-![](./assets/img/1.3.0.png)
+![](./assets/img/1.4.0.png)
 
 ## Project status
 

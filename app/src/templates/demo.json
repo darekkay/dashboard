@@ -1,5 +1,5 @@
 {
-  "config": { "theme": "default", "language": "" },
+  "config": { "theme": "default", "language": "en" },
   "widgets": {
     "date-time-01": {
       "type": "date-time",
@@ -19,7 +19,7 @@
     "text-01": {
       "type": "text",
       "data": {
-        "content": "Rule #1\n\nAlways code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. \uD83D\uDD25"
+        "content": "Always code as if the person who ends up maintaining your code will be a violent psychopath who knows where you live. ðŸ”¥"
       },
       "options": {},
       "meta": {}
@@ -35,65 +35,90 @@
     "totd-chemical-elements-01": {
       "type": "totd-chemical-elements",
       "data": {
-        "name": "Cerium",
-        "nameDE": "Zer",
-        "symbol": "Ce",
-        "atomicNumber": 58
+        "name": "Copper",
+        "nameDE": "Kupfer",
+        "symbol": "Cu",
+        "atomicNumber": 29
       },
       "options": {},
       "meta": {
         "updateCycle": { "hours": 24 },
         "updateStatus": "success",
-        "lastUpdated": 1587566450217
+        "lastUpdated": 1605098021426
       }
     },
-    "qr-code-01": {
-      "type": "qr-code",
-      "data": {},
-      "options": { "content": "https://dashboard.darekkay.com/" },
-      "meta": {}
-    },
-    "counter-01": {
-      "type": "counter",
-      "data": { "value": 5 },
-      "options": {},
-      "meta": {}
-    },
+    "counter-01": { "type": "counter", "data": {}, "options": {}, "meta": {} },
     "cryptocurrencies-01": {
       "type": "cryptocurrencies",
       "data": {
-        "currentPrice": 6541.75,
-        "last24h": { "change": 217.6, "changePercentage": 3.44 },
+        "currentPrice": 13248.06,
+        "last24h": { "change": 257.24, "changePercentage": 1.98 },
         "imageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579"
       },
       "options": { "fiat": "eur", "crypto": "bitcoin" },
       "meta": {
         "updateCycle": { "minutes": 15 },
         "updateStatus": "success",
-        "lastUpdated": 1587566450196
+        "lastUpdated": 1605098021378
       }
     },
-    "github-stats-101": {
+    "github-stats-01": {
       "type": "github-stats",
       "data": {
         "name": "darekkay/dashboard",
-        "stars": 36,
-        "subscribers": 4,
-        "forks": 2,
-        "open_issues": 5
+        "stars": 56,
+        "subscribers": 5,
+        "forks": 8,
+        "open_issues": 9
       },
       "options": { "query": "darekkay/dashboard" },
       "meta": {
         "updateCycle": { "hours": 24 },
-        "headlineIcon": "github",
         "updateStatus": "success",
-        "lastUpdated": 1587566461011
+        "headlineIcon": "github",
+        "lastUpdated": 1605098021357
       }
     },
-    "website-102": {
-      "type": "website",
+    "youtube-stats-105": {
+      "type": "youtube-stats",
+      "data": {
+        "viewCount": 17909,
+        "subscriberCount": 58,
+        "videoCount": 7,
+        "channelTitle": "Darek Kay"
+      },
+      "options": { "query": "darekkay" },
+      "meta": {
+        "updateCycle": { "hours": 24 },
+        "updateStatus": "success",
+        "headlineIcon": "youtube",
+        "lastUpdated": 1605098021335
+      }
+    },
+    "twitter-stats-112": {
+      "type": "twitter-stats",
+      "data": {
+        "name": "Darek Kay",
+        "followers": 109,
+        "following": 91,
+        "tweets": 245,
+        "listed": 5
+      },
+      "options": { "username": "darek_kay" },
+      "meta": {
+        "updateCycle": { "hours": 24 },
+        "updateStatus": "success",
+        "headlineIcon": "twitter",
+        "lastUpdated": 1605098021313
+      }
+    },
+    "qr-code-117": {
+      "type": "qr-code",
       "data": {},
-      "options": { "url": "https://en.m.wikipedia.org/wiki/Main_Page" },
+      "options": {
+        "headline": "",
+        "content": "https://dashboard.darekkay.com/"
+      },
       "meta": {}
     }
   },
@@ -101,50 +126,114 @@
     "isEditable": false,
     "config": {
       "mobile": [
-        { "i": "date-time-01", "x": 0, "y": 0, "w": 1, "h": 2 },
-        { "i": "search-01", "x": 0, "y": 1, "w": 1, "h": 2 },
-        { "i": "text-01", "x": 0, "y": 2, "w": 1, "h": 4 },
-        { "i": "image-01", "x": 0, "y": 3, "w": 1, "h": 4 },
-        { "i": "totd-chemical-elements-01", "x": 0, "y": 4, "w": 1, "h": 2 },
-        { "i": "qr-code-01", "x": 0, "y": 5, "w": 1, "h": 2 },
-        { "i": "counter-01", "x": 0, "y": 6, "w": 1, "h": 2 },
-        { "i": "cryptocurrencies-01", "x": 0, "y": 7, "w": 1, "h": 2 },
-        { "i": "github-stats-101", "x": 0, "y": 6, "w": 3, "h": 3 },
-        { "i": "website-102", "x": 0, "y": 7, "w": 5, "h": 5 }
-      ],
-      "desktop": [
         {
-          "w": 4,
+          "w": 1,
           "h": 2,
-          "x": 6,
-          "y": 2,
+          "x": 0,
+          "y": 0,
           "i": "date-time-01",
           "moved": false,
           "static": false
         },
         {
-          "w": 6,
+          "w": 1,
           "h": 2,
-          "x": 10,
-          "y": 0,
+          "x": 0,
+          "y": 2,
           "i": "search-01",
           "moved": false,
           "static": false
         },
         {
-          "w": 4,
-          "h": 5,
-          "x": 16,
-          "y": 3,
+          "w": 1,
+          "h": 4,
+          "x": 0,
+          "y": 4,
           "i": "text-01",
           "moved": false,
           "static": false
         },
         {
-          "w": 6,
+          "w": 1,
+          "h": 4,
+          "x": 0,
+          "y": 12,
+          "i": "image-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 1,
           "h": 2,
-          "x": 10,
-          "y": 2,
+          "x": 0,
+          "y": 16,
+          "i": "totd-chemical-elements-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 1,
+          "h": 2,
+          "x": 0,
+          "y": 20,
+          "i": "counter-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 1,
+          "h": 2,
+          "x": 0,
+          "y": 29,
+          "i": "cryptocurrencies-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 1,
+          "h": 3,
+          "x": 0,
+          "y": 31,
+          "i": "github-stats-01",
+          "moved": false,
+          "static": false
+        },
+        { "i": "twitter-stats-112", "x": 0, "y": 7, "w": 3, "h": 3 },
+        { "i": "qr-code-117", "x": 0, "y": 10, "w": 2, "h": 2 }
+      ],
+      "desktop": [
+        {
+          "w": 3,
+          "h": 2,
+          "x": 6,
+          "y": 0,
+          "i": "date-time-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 5,
+          "h": 2,
+          "x": 13,
+          "y": 3,
+          "i": "search-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 6,
+          "h": 3,
+          "x": 12,
+          "y": 0,
+          "i": "text-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "x": 9,
+          "y": 3,
           "i": "image-01",
           "moved": false,
           "static": false
@@ -152,8 +241,8 @@
         {
           "w": 2,
           "h": 2,
-          "x": 8,
-          "y": 4,
+          "x": 16,
+          "y": 5,
           "i": "totd-chemical-elements-01",
           "moved": false,
           "static": false
@@ -161,51 +250,60 @@
         {
           "w": 2,
           "h": 2,
-          "x": 6,
-          "y": 4,
-          "i": "qr-code-01",
-          "moved": false,
-          "static": false
-        },
-        {
-          "w": 4,
-          "h": 2,
-          "x": 6,
-          "y": 6,
+          "x": 12,
+          "y": 5,
           "i": "counter-01",
           "moved": false,
           "static": false
         },
         {
-          "w": 4,
+          "w": 3,
           "h": 2,
-          "x": 6,
-          "y": 0,
+          "x": 9,
+          "y": 5,
           "i": "cryptocurrencies-01",
           "moved": false,
           "static": false
         },
         {
-          "w": 4,
+          "w": 3,
           "h": 3,
-          "x": 16,
+          "x": 9,
           "y": 0,
-          "i": "github-stats-101",
+          "i": "github-stats-01",
           "moved": false,
           "static": false
         },
         {
-          "w": 6,
-          "h": 4,
-          "x": 10,
-          "y": 4,
-          "i": "website-102",
+          "w": 3,
+          "h": 2,
+          "x": 6,
+          "y": 5,
+          "i": "youtube-stats-105",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 3,
+          "x": 6,
+          "y": 2,
+          "i": "twitter-stats-112",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 2,
+          "h": 2,
+          "x": 14,
+          "y": 5,
+          "i": "qr-code-117",
           "moved": false,
           "static": false
         }
       ]
     },
-    "nextWidgetId": 103
+    "nextWidgetId": 118
   },
   "_persist": { "version": -1, "rehydrated": true }
 }

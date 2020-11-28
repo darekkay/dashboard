@@ -5,14 +5,14 @@
 - :sparkles: New widget: [Country of the Day](https://dashboard.darekkay.com/docs/widgets/totd-world-countries.html).
 - :sparkles: New widget: [Twitter Stats](https://dashboard.darekkay.com/docs/widgets/twitter-stats.html).
 - :sparkles: New widget: [YouTube Stats](https://dashboard.darekkay.com/docs/widgets/youtube-stats.html).
+- :sparkles: New widget: [Random Image](https://dashboard.darekkay.com/docs/widgets/random-image.html).
 - :gem: Localize numbers.
 - :gem: Don't render unavailable widgets. 
 - :bug: Truncate widget headline.
 - :bug: Make the Website widget usable in Firefox.
 - :bug: Fix GitHub Stats not rendering if they have a value of zero ([@TateKennington](https://github.com/TateKennington)).
 - :bug: Fix main menu focus ring.
-- :hammer: Add contributors list, with automated `all-contributors` support.
-- :hammer: Rewrite `enzyme` tests with `react-testing-library`.
+- :hammer: Addwte `enzyme` tests with `react-testing-library`.
 - :hammer: Replace TravisCI with GitHub Actions.
 - :hammer: Replace `moment` with `dayjs`.
 - :hammer: Enable `lodash` tree-shaking.
