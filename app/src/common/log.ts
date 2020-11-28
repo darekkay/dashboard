@@ -1,6 +1,6 @@
 import logger, { LogLevelDesc } from "loglevel";
 
-const logLevel: { [key: string]: LogLevelDesc } = {
+const logLevel: Record<string, LogLevelDesc> = {
   development: logger.levels.TRACE,
   production: logger.levels.INFO,
   test: logger.levels.ERROR,

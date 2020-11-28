@@ -14,7 +14,9 @@
     "no-promise-executor-return": "off",
     "no-unreachable-loop": "off",
     "no-useless-backreference": "off",
-    "default-case-last": "off"
+    "default-case-last": "off",
+
+    "unicorn/prevent-abbreviations": "off"
   },
 
   "overrides": [

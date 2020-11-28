@@ -11,7 +11,7 @@ module.exports = {
 
     inset: {
       "-1": "-1px",
-      "0": "0",
+      0: "0",
     },
 
     height: {
@@ -29,7 +29,7 @@ module.exports = {
     },
 
     minWidth: {
-      "250": "250px",
+      250: "250px",
       full: "100%",
     },
 
@@ -62,16 +62,16 @@ module.exports = {
     // Spacing
 
     spacing: {
-      "0": "0",
-      "1": "0.2rem",
-      "2": "0.5rem",
-      "3": "0.8rem",
-      "4": "1rem",
-      "5": "1.5rem",
-      "6": "2rem",
-      "7": "3rem",
-      "8": "4rem",
-      "9": "8rem",
+      0: "0",
+      1: "0.2rem",
+      2: "0.5rem",
+      3: "0.8rem",
+      4: "1rem",
+      5: "1.5rem",
+      6: "2rem",
+      7: "3rem",
+      8: "4rem",
+      9: "8rem",
     },
 
     margin: (theme) => ({
@@ -96,9 +96,9 @@ module.exports = {
     },
 
     zIndex: {
-      "10": 10,
-      "20": 20,
-      "30": 30,
+      10: 10,
+      20: 20,
+      30: 30,
     },
   },
   variants: {

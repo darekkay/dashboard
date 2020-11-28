@@ -14,5 +14,6 @@ package-lock.json
 
 ### Misc ###
 
+.eslintcache
 *.log
 .DS_Store

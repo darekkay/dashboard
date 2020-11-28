@@ -16,6 +16,7 @@
 - :hammer: Replace TravisCI with GitHub Actions.
 - :hammer: Replace `moment` with `dayjs`.
 - :hammer: Enable `lodash` tree-shaking.
+- :hammer: Update dependencies.
 
 ## 1.3.0 (2020-04-22)
 

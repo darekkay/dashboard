@@ -12,10 +12,9 @@ import userRepositoriesMockResponse from "./__examples__/github-user-repositorie
 describe("github", () => {
   describe("parseQuery", () => {
     it("should differentiate between user and repository automatically", () => {
-      const assertions: Array<[
-        string,
-        { id: string; queryType: QueryType }
-      ]> = [
+      const assertions: Array<
+        [string, { id: string; queryType: QueryType }]
+      > = [
         // User
         ["darekkay", { id: "darekkay", queryType: "user" }],
         ["/darekkay", { id: "darekkay", queryType: "user" }],

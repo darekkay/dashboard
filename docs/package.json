@@ -6,11 +6,11 @@
   "dependencies": {},
   "devDependencies": {
     "chalk": "4.1.0",
-    "copyfiles": "2.4.0",
+    "copyfiles": "2.4.1",
     "fs-extra": "9.0.1",
     "rimraf": "3.0.2",
     "rss": "1.2.2",
-    "vuepress": "1.6.0"
+    "vuepress": "1.7.1"
   },
   "homepage": "https://dashboard.darekkay.com",
   "license": "MIT",

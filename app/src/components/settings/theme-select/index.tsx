@@ -15,7 +15,7 @@ export const updateCssVariables = (theme: Theme) => {
   document.body.classList.add(`theme-${theme}`);
 };
 
-export const Theme: React.FC<ThemeProps> = ({ name, label, onClick }) => (
+export const ThemeOption: React.FC<ThemeProps> = ({ name, label, onClick }) => (
   // TODO: make keyboard-accessible
   // eslint-disable-next-line jsx-a11y/click-events-have-key-events
   <div
@@ -60,7 +60,7 @@ export const ThemeSelect: React.FC<Props> = (props) => {
     <div>
       {THEMES.map((themeName) => {
         return (
-          <Theme
+          <ThemeOption
             key={themeName}
             name={themeName}
             label={t(`theme.${themeName}`)}

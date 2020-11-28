@@ -61,9 +61,7 @@ export interface Widget {
   meta: WidgetMeta;
 }
 
-export interface WidgetsState {
-  [key: string]: Widget;
-}
+export type WidgetsState = Record<string, Widget>;
 
 export const initialState = {};
 
