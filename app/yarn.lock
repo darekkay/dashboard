@@ -1947,10 +1947,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
-"@darekkay/eslint-config@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@darekkay/eslint-config/-/eslint-config-2.3.0.tgz#e03e34589d47697b29cb8db778d49a137baffc14"
-  integrity sha512-YYOte0LQ65NOYPf3Te+txZoDmnX2RsEEBfSOT5qBFz84ruuN+gvUX7W4Myv38TiH7ZPzzN1ZkRD/tOxe7MajFQ==
+"@darekkay/eslint-config@2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@darekkay/eslint-config/-/eslint-config-2.3.1.tgz#5423435b8146e2219e649692ad71969ef19d995b"
+  integrity sha512-CBbsCvYuoWiwuulEHIjk2f6CSVzKayf8c89Qwm3ZyQSBugpa54NopnvezB/jSoXm+8B1Au8TX/wSYTDjAehcAA==
   dependencies:
     eslint-config-prettier "6.14.0"
 

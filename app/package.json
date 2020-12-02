@@ -41,7 +41,7 @@
     "selectorator": "4.0.3"
   },
   "devDependencies": {
-    "@darekkay/eslint-config": "2.3.0",
+    "@darekkay/eslint-config": "2.3.1",
     "@darekkay/logger": "1.0.2",
     "@storybook/addon-a11y": "6.1.8",
     "@storybook/addons": "6.1.8",

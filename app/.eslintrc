@@ -7,16 +7,7 @@
 
     // currently, the dashboard is not keyboard-accessible :(
     "jsx-a11y/no-static-element-interactions": "off",
-    "jsx-a11y/no-noninteractive-tabindex": "off",
-
-    // available in ESLint 7+
-    "no-loss-of-precision": "off",
-    "no-promise-executor-return": "off",
-    "no-unreachable-loop": "off",
-    "no-useless-backreference": "off",
-    "default-case-last": "off",
-
-    "unicorn/prevent-abbreviations": "off"
+    "jsx-a11y/no-noninteractive-tabindex": "off"
   },
 
   "overrides": [
@@ -31,10 +22,7 @@
         }
       },
       "rules": {
-        "@typescript-eslint/no-unnecessary-condition": "off",
-
-        // available in ESLint 7+
-        "@typescript-eslint/no-loss-of-precision": "off"
+        "@typescript-eslint/no-unnecessary-condition": "off"
       }
     },
 

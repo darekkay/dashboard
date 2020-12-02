@@ -21,7 +21,7 @@ const createFile = (json: object) => {
   // Strangely, the File/Blob API doesn't seem to provide the text() method in Node environment
   Object.defineProperty(file, "text", {
     get: function () {
-      return async () => new Promise((resolve) => resolve(fileContent));
+      return async () => Promise.resolve(fileContent);
     },
   });
 
