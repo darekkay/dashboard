@@ -1,27 +1,3 @@
-// Borders
-
-.border {
-  border: 1px solid var(--border-color);
-}
-
-.border-0 {
-  border: none;
-}
-
-@each $direction in (top, right, bottom, left) {
-  .border-#{$direction} {
-    border-#{$direction}: 1px solid var(--border-color);
-  }
-}
-
-.rounded {
-  border-radius: 0.4rem;
-}
-
-.outline-none {
-  outline: 0;
-}
-
 // Colors
 
 .text-color-default {
@@ -91,17 +67,6 @@
 .transform-center {
   top: 50%;
   transform: translateY(-50%);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
 }
 
 // Conditional visibility
