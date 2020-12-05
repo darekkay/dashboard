@@ -82,7 +82,7 @@
     "redux-devtools-extension": "2.13.8",
     "source-map-explorer": "2.5.1",
     "storybook-addon-themes": "6.0.0",
-    "tailwindcss": "1.5.1",
+    "@tailwindcss/postcss7-compat": "2.0.1",
     "ts-node": "9.0.0",
     "typescript": "4.1.2"
   },
