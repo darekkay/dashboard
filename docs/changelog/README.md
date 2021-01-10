@@ -1,6 +1,6 @@
 # Changelog
 
-## Current
+## 1.4.0 (2021-01-10)
 
 - :sparkles: New widget: [Country of the Day](https://dashboard.darekkay.com/docs/widgets/totd-world-countries.html).
 - :sparkles: New widget: [Twitter Stats](https://dashboard.darekkay.com/docs/widgets/twitter-stats.html).
@@ -12,7 +12,7 @@
 - :bug: Make the Website widget usable in Firefox.
 - :bug: Fix GitHub Stats not rendering if they have a value of zero ([@TateKennington](https://github.com/TateKennington)).
 - :bug: Fix main menu focus ring.
-- :hammer: Addwte `enzyme` tests with `react-testing-library`.
+- :hammer: Replace `enzyme` tests with `react-testing-library`.
 - :hammer: Replace TravisCI with GitHub Actions.
 - :hammer: Replace `moment` with `dayjs`.
 - :hammer: Enable `lodash` tree-shaking.
