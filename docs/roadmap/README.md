@@ -35,6 +35,10 @@ Currently, only one fixed board can be used. Adding more boards to be able to sw
 
 All data is being stored on the user's device. This is really nice from privacy perspective, but inconvenient for syncing between devices.
 
+### Custom widget color
+
+Changing the (background) color of each widget would be a nice personalization feature. Either the UI offers a selection of colors, or any possible color is allowed (color picker). The second solution requires a good foreground color handling to ensure a sufficient contrast ratio.
+
 ## Widget ideas
 
 Here's a list of rough widget ideas and integrations. They may or may not be implemented in the future.
@@ -76,7 +80,7 @@ Here's a list of rough widget ideas and integrations. They may or may not be imp
 - GitHub / GitLab integration
 - [NPM statistics](https://github.com/npm/download-counts)
 - [Instagram statistics](https://developers.facebook.com/docs/instagram-api/guides/business-discovery)
-- [Mastodon statistics](https://docs.joinmastodon.org/methods/accounts/)
+- [Mastodon statistics](https://docs.joinmastodon.org/methods/accounts/) ([example](https://fosstodon.org/api/v1/accounts/242470@mastodon.social))
 - [StackExchange staticstics](https://api.stackexchange.com/docs)
 - [GoodReads API](https://www.goodreads.com/api)
   - e.g. reading progress, library size
@@ -101,6 +105,8 @@ Here's a list of rough widget ideas and integrations. They may or may not be imp
 - Mini Games
   - Cookie Clicker
   - Tamagotchi
+- Current IP address
+- IMDB Watchlist/Rated list
 
 Many more integrations ideas can be found in other products, e.g.:
 
