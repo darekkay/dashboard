@@ -16,7 +16,7 @@ describe("<Input />", () => {
     const input = screen.getByRole("textbox");
 
     expect(setValue).not.toHaveBeenCalled();
-    await fireEvent.keyUp(input, { which: 13, key: "Enter" });
+    fireEvent.keyUp(input, { which: 13, key: "Enter" });
     expect(setValue).toHaveBeenCalled();
   });
 
@@ -26,7 +26,7 @@ describe("<Input />", () => {
     const input = screen.getByRole("textbox");
 
     expect(setValue).not.toHaveBeenCalled();
-    await fireEvent.keyUp(input, { which: 27, key: "Escape" });
+    fireEvent.keyUp(input, { which: 27, key: "Escape" });
     expect(setValue).toHaveBeenCalled();
   });
 
@@ -34,16 +34,20 @@ describe("<Input />", () => {
     const setValue = jest.fn();
     render(<Input value="text" setValue={setValue} clearOnEscape />);
 
-    expect(screen.queryByRole("button", { hidden: true })).toBeNull();
+    expect(
+      screen.queryByRole("button", { hidden: true })
+    ).not.toBeInTheDocument();
 
     const input = screen.getByRole("textbox");
-    await fireEvent.focus(input);
+    fireEvent.focus(input);
     expect(screen.getByRole("button", { hidden: true })).toBeInTheDocument();
 
-    await fireEvent.blur(input);
-    expect(screen.queryByRole("button", { hidden: true })).toBeNull();
+    fireEvent.blur(input);
+    expect(
+      screen.queryByRole("button", { hidden: true })
+    ).not.toBeInTheDocument();
 
-    await fireEvent.focus(input);
+    fireEvent.focus(input);
 
     // clicking the clear button should clear the input value
     expect(setValue).not.toHaveBeenCalled();

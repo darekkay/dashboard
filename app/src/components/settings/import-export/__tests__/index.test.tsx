@@ -44,12 +44,13 @@ describe("<ImportExport />", () => {
     const file = createFile(stateProps);
 
     await act(async () => {
+      // eslint-disable-next-line testing-library/no-await-sync-events
       await fireEvent.drop(fileInput, { target: { files: [file] } });
     });
 
     expect(importStateSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText("data.restore.success")).toBeInTheDocument();
-    expect(screen.queryByText("data.restore.error")).toBeNull();
+    expect(screen.queryByText("data.restore.error")).not.toBeInTheDocument();
   });
 
   test("doesn't import invalid files", async () => {
@@ -60,12 +61,13 @@ describe("<ImportExport />", () => {
     const file = createFile({ a: 2 });
 
     await act(async () => {
+      // eslint-disable-next-line testing-library/no-await-sync-events
       await fireEvent.drop(fileInput, { target: { files: [file] } });
     });
 
     expect(importStateSpy).toHaveBeenCalledTimes(0);
     expect(screen.getByText("data.restore.error")).toBeInTheDocument();
-    expect(screen.queryByText("data.restore.success")).toBeNull();
+    expect(screen.queryByText("data.restore.success")).not.toBeInTheDocument();
   });
 
   test("rejects non-JSON files", async () => {
@@ -78,11 +80,12 @@ describe("<ImportExport />", () => {
     });
 
     await act(async () => {
+      // eslint-disable-next-line testing-library/no-await-sync-events
       await fireEvent.drop(fileInput, { target: { files: [imageFile] } });
     });
 
     expect(importStateSpy).toHaveBeenCalledTimes(0);
-    expect(screen.queryByText("data.restore.error")).toBeNull();
-    expect(screen.queryByText("data.restore.success")).toBeNull();
+    expect(screen.queryByText("data.restore.error")).not.toBeInTheDocument();
+    expect(screen.queryByText("data.restore.success")).not.toBeInTheDocument();
   });
 });

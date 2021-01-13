@@ -16,7 +16,7 @@ describe("<Counter />", () => {
         value={5}
       />
     );
-    await userEvent.click(
+    userEvent.click(
       screen.getByRole("button", { name: "widget.counter.increment" })
     );
 
@@ -36,7 +36,7 @@ describe("<Counter />", () => {
         value={5}
       />
     );
-    await userEvent.click(
+    userEvent.click(
       screen.getByRole("button", { name: "widget.counter.decrement" })
     );
 

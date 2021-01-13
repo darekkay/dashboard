@@ -22,6 +22,7 @@ describe("<FileUpload />", () => {
     await act(async () => {
       // Somehow this one broke on user-event@12.0.0
       // userEvent.upload(fileInput, file);
+      // eslint-disable-next-line testing-library/no-await-sync-events
       await fireEvent.change(fileInput, { target: { files: [file] } });
     });
 

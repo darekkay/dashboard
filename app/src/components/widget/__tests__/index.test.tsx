@@ -26,7 +26,7 @@ describe("<Widget />", () => {
 
   test("renders without errors", () => {
     renderWidget({});
-    expect(screen.queryByText("common.error")).toBeNull();
+    expect(screen.queryByText("common.error")).not.toBeInTheDocument();
   });
 
   test("renders errors", () => {

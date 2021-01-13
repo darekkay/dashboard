@@ -34,7 +34,7 @@ describe("<WidgetConfiguration />", () => {
     const imageSourceInput = screen.getByRole("textbox", {
       name: "widget.image.configuration.url",
     });
-    await userEvent.type(imageSourceInput, "https://example.com");
+    userEvent.type(imageSourceInput, "https://example.com");
 
     const saveButton = screen.getByRole("button", { name: "common.save" });
     userEvent.click(saveButton);
@@ -49,7 +49,7 @@ describe("<WidgetConfiguration />", () => {
     const imageSourceInput = screen.getByRole("textbox", {
       name: "widget.image.configuration.url",
     });
-    await userEvent.type(imageSourceInput, "https://example.com");
+    userEvent.type(imageSourceInput, "https://example.com");
 
     const cancelButton = screen.getByRole("button", { name: "common.cancel" });
     userEvent.click(cancelButton);

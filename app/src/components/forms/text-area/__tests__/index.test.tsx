@@ -13,7 +13,7 @@ describe("<TextArea />", () => {
   test("fires an event on change", async () => {
     const setValueSpy = jest.fn();
     render(<TextArea setValue={setValueSpy} />);
-    await userEvent.type(screen.getByRole("textbox"), "hello");
+    userEvent.type(screen.getByRole("textbox"), "hello");
     expect(setValueSpy).toHaveBeenCalledTimes(5);
   });
 });

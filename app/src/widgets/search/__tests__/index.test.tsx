@@ -21,7 +21,9 @@ describe("<Search />", () => {
     renderSearch({});
 
     expect(screen.getByRole("searchbox")).toBeInTheDocument();
-    expect(screen.queryByText("widget.common.unconfigured")).toBeNull();
+    expect(
+      screen.queryByText("widget.common.unconfigured")
+    ).not.toBeInTheDocument();
   });
 
   test("doesn't render if the pattern is missing", () => {
@@ -51,7 +53,7 @@ describe("<Search />", () => {
     renderSearch({});
 
     const searchInput = screen.getByRole("searchbox");
-    await userEvent.type(searchInput, "moo");
+    userEvent.type(searchInput, "moo");
 
     // search should be triggered on button click
     const searchButton = screen.getByRole("button", {
@@ -70,12 +72,12 @@ describe("<Search />", () => {
     expect(searchInput).toHaveValue("");
 
     // pressing Enter in an empty field doesn't trigger a search
-    await fireEvent.keyUp(searchInput, { which: 13, key: "Enter" });
+    fireEvent.keyUp(searchInput, { which: 13, key: "Enter" });
     expect(windowOpenSpy).toHaveBeenCalledTimes(1);
 
     // pressing Enter in a non-empty field triggers a search
-    await userEvent.type(searchInput, "moo");
-    await fireEvent.keyUp(searchInput, { which: 13, key: "Enter" });
+    userEvent.type(searchInput, "moo");
+    fireEvent.keyUp(searchInput, { which: 13, key: "Enter" });
     expect(windowOpenSpy).toHaveBeenCalledTimes(2);
   });
 });

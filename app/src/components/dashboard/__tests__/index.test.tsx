@@ -46,7 +46,7 @@ describe("<Dashboard />", () => {
     });
 
     expect(screen.getAllByTestId("widget")).toHaveLength(2);
-    expect(screen.queryByText("welcome.message1")).toBeNull();
+    expect(screen.queryByText("welcome.message1")).not.toBeInTheDocument();
   });
 
   test("renders a welcome page", () => {

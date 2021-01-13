@@ -16,7 +16,7 @@ describe("<Text />", () => {
     );
     const textbox = screen.getByRole("textbox", { name: "widget.text.name" });
 
-    await userEvent.type(textbox, "new");
+    userEvent.type(textbox, "new");
     expect(setDataSpy).toHaveBeenCalledTimes(3);
   });
 });

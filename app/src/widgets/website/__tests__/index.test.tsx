@@ -15,7 +15,9 @@ describe("<Website />", () => {
       />
     );
     expect(screen.getByTitle("website-mock-id")).toBeInTheDocument();
-    expect(screen.queryByText("widget.common.unconfigured")).toBeNull();
+    expect(
+      screen.queryByText("widget.common.unconfigured")
+    ).not.toBeInTheDocument();
   });
 
   test("doesn't render if the url is missing", () => {

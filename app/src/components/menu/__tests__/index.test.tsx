@@ -14,14 +14,14 @@ describe("<Menu />", () => {
       </Menu>
     );
 
-    expect(screen.queryByRole("menu")).toBeNull();
+    expect(screen.queryByRole("menu")).not.toBeInTheDocument();
 
     // open the menu
-    await userEvent.click(screen.getByRole("button"));
+    userEvent.click(screen.getByRole("button"));
 
-    expect(screen.getAllByRole("menu")).toHaveLength(1);
+    expect(screen.getByRole("menu")).toBeInTheDocument();
     expect(screen.getAllByRole("menuitem")).toHaveLength(2);
-    expect(screen.getAllByRole("separator")).toHaveLength(1);
+    expect(screen.getByRole("separator")).toBeInTheDocument();
   });
 
   test("doesn't allow MenuAction to be used outside of a Menu", () => {
@@ -37,7 +37,7 @@ describe("<Menu />", () => {
     );
 
     // open the menu
-    await userEvent.click(screen.getByRole("button"));
+    userEvent.click(screen.getByRole("button"));
 
     const menuButton = screen.getByRole("menuitem");
     expect(onClick).toHaveBeenCalledTimes(0);
@@ -45,7 +45,7 @@ describe("<Menu />", () => {
     expect(onClick).toHaveBeenCalledTimes(1);
 
     // the menu should close on click
-    expect(screen.queryByRole("menuitem")).toBeNull();
+    expect(screen.queryByRole("menuitem")).not.toBeInTheDocument();
   });
 
   test("handles menu links", async () => {
@@ -60,7 +60,7 @@ describe("<Menu />", () => {
     );
 
     // open the menu
-    await userEvent.click(screen.getByRole("button"));
+    userEvent.click(screen.getByRole("button"));
 
     const menuLink = screen.getByRole("menuitem");
     expect(windowOpenSpy).toHaveBeenCalledTimes(0);
@@ -71,6 +71,6 @@ describe("<Menu />", () => {
     expect(windowOpenSpy).toHaveBeenCalledWith("https://example.com", "_blank");
 
     // the menu should close on click
-    expect(screen.queryByRole("menuitem")).toBeNull();
+    expect(screen.queryByRole("menuitem")).not.toBeInTheDocument();
   });
 });

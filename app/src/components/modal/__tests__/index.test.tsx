@@ -20,7 +20,7 @@ describe("<Modal />", () => {
 
   test("doesn't render a headline when not provided", () => {
     renderModal({});
-    expect(screen.queryByRole("heading")).toBeNull();
+    expect(screen.queryByRole("heading")).not.toBeInTheDocument();
   });
 
   test("renders a headline when provided", () => {

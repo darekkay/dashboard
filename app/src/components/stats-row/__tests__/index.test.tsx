@@ -17,6 +17,6 @@ describe("<StatsRow />", () => {
 
   test("doesn't render stats when no value is provided", () => {
     render(<StatsRow icon="star" labelKey="widget.github-stats.stars" />);
-    expect(screen.queryByTestId("stats-row")).toBeNull();
+    expect(screen.queryByTestId("stats-row")).not.toBeInTheDocument();
   });
 });

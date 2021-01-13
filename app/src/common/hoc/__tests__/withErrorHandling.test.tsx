@@ -23,7 +23,7 @@ describe("withErrorHandling", () => {
   test("handles no errors", () => {
     render(<NoErrors />);
     expect(screen.getByText(/success/i)).toBeInTheDocument();
-    expect(screen.queryByText(/error/i)).toBeNull();
+    expect(screen.queryByText(/error/i)).not.toBeInTheDocument();
   });
 
   test("handles errors", () => {

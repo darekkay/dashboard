@@ -14,7 +14,9 @@ describe("<Image />", () => {
         url="https://example.com/example.jpg"
       />
     );
-    expect(screen.queryByText("widget.common.unconfigured")).toBeNull();
+    expect(
+      screen.queryByText("widget.common.unconfigured")
+    ).not.toBeInTheDocument();
   });
 
   test("doesn't render if the url is missing", () => {

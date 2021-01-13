@@ -17,8 +17,10 @@ describe("<YoutubeStats />", () => {
       />
     );
 
-    expect(screen.queryByText("widget.common.unconfigured")).toBeNull();
-    expect(screen.queryByTestId("widget-error")).toBeNull();
+    expect(
+      screen.queryByText("widget.common.unconfigured")
+    ).not.toBeInTheDocument();
+    expect(screen.queryByTestId("widget-error")).not.toBeInTheDocument();
   });
 
   test("doesn't render if the query is missing", () => {
