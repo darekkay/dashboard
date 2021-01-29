@@ -16,7 +16,7 @@ export const LanguageSelect: React.FC<Props> = (props) => {
   return (
     <Dropdown
       options={LANGUAGES}
-      getOptionLabel={(languageKey) => t(`language.${languageKey}`)}
+      getOptionLabel={(languageKey) => t(`config.language.${languageKey}`)}
       value={language}
       setValue={(selectedLanguage) => changeLanguage(selectedLanguage)}
     />

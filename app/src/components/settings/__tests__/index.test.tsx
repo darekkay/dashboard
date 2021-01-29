@@ -7,6 +7,6 @@ import Settings from "../index";
 describe("<Settings />", () => {
   test("renders without errors", () => {
     renderConnected(<Settings />);
-    expect(screen.getAllByRole("heading")).toHaveLength(4);
+    expect(screen.getAllByRole("heading")).toHaveLength(5);
   });
 });

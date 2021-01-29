@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { PersistorContext } from "entry";
+import BackgroundSelect from "components/settings/background-select";
 import ThemeSelect from "components/settings/theme-select";
 import LanguageSelect from "components/settings/language-select";
 import ImportExport from "components/settings/import-export";
@@ -15,15 +16,19 @@ const Settings: React.FC<Props> = () => {
     <PersistorContext.Consumer>
       {(purgeStore) => (
         <div className="space-y-6">
-          <Section type="modal" headline={t("theme.headline")}>
+          <Section type="modal" headline={t("config.theme.headline")}>
             <ThemeSelect />
           </Section>
 
-          <Section type="modal" headline={t("language.headline")}>
+          <Section type="modal" headline={t("config.background.headline")}>
+            <BackgroundSelect />
+          </Section>
+
+          <Section type="modal" headline={t("config.language.headline")}>
             <LanguageSelect />
           </Section>
 
-          <Section type="modal" headline={t("data.purge")}>
+          <Section type="modal" headline={t("config.data.purge")}>
             <Button
               className="mr-6 mb-3"
               outline
@@ -31,11 +36,11 @@ const Settings: React.FC<Props> = () => {
               onClick={purgeStore}
             >
               <Icon name="trash" position="left" />
-              {t("data.purge")}
+              {t("config.data.purge")}
             </Button>
           </Section>
 
-          <Section type="modal" headline={t("data.backup")}>
+          <Section type="modal" headline={t("config.data.backup")}>
             <ImportExport />
           </Section>
         </div>

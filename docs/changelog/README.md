@@ -1,5 +1,9 @@
 # Changelog
 
+## Current development
+
+- :sparkles: Make background image configurable.
+
 ## 1.4.0 (2021-01-10)
 
 - :sparkles: New widget: [Country of the Day](https://dashboard.darekkay.com/docs/widgets/totd-world-countries.html).

@@ -63,7 +63,7 @@ export const ThemeSelect: React.FC<Props> = (props) => {
           <ThemeOption
             key={themeName}
             name={themeName}
-            label={t(`theme.${themeName}`)}
+            label={t(`config.theme.${themeName}`)}
             onClick={() => changeTheme(themeName)}
           />
         );

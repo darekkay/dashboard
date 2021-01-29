@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import Fullscreen from "react-full-screen";
+import isEmpty from "lodash/isEmpty";
 
 import {
   actionCreators as layoutActionCreators,
@@ -28,6 +29,7 @@ export const App: React.FC<Props> = (props) => {
     removeWidgetFromLayout,
     importState,
     currentTheme,
+    backgroundUrl,
   } = props;
 
   useEffect(() => {
@@ -41,24 +43,35 @@ export const App: React.FC<Props> = (props) => {
       enabled={isFullscreen}
       onChange={(isFull) => toggleFullscreen(isFull)}
     >
-      <Header
-        isLayoutEditable={isLayoutEditable}
-        toggleLayoutEditable={toggleLayoutEditable}
-        isFullscreen={isFullscreen}
-        toggleFullscreen={toggleFullscreen}
-      />
-      <div className="flex h-full flex-col md:flex-row overflow-y-auto bg-color-default text-color-default">
-        <main className="flex-grow w-full p-1 md:p-6">
-          <Dashboard
-            layout={layout}
-            isLayoutEditable={isLayoutEditable}
-            widgetIDs={widgetIDs}
-            saveLayout={saveLayout}
-            removeWidgetFromLayout={removeWidgetFromLayout}
-            importState={importState}
-          />
-        </main>
-        {isLayoutEditable && <Drawer addWidgetToLayout={addWidgetToLayout} />}
+      <div className="flex flex-col absolute inset-0 bg-cover bg-fixed">
+        <Header
+          isLayoutEditable={isLayoutEditable}
+          toggleLayoutEditable={toggleLayoutEditable}
+          isFullscreen={isFullscreen}
+          toggleFullscreen={toggleFullscreen}
+        />
+        <div
+          className="flex h-full flex-col md:flex-row overflow-y-auto bg-color-transparent text-color-default bg-cover bg-fixed"
+          style={
+            isEmpty(backgroundUrl)
+              ? undefined
+              : {
+                  backgroundImage: `url("${backgroundUrl}")`,
+                }
+          }
+        >
+          <main className="flex-grow w-full p-1 md:p-6">
+            <Dashboard
+              layout={layout}
+              isLayoutEditable={isLayoutEditable}
+              widgetIDs={widgetIDs}
+              saveLayout={saveLayout}
+              removeWidgetFromLayout={removeWidgetFromLayout}
+              importState={importState}
+            />
+          </main>
+          {isLayoutEditable && <Drawer addWidgetToLayout={addWidgetToLayout} />}
+        </div>
       </div>
     </Fullscreen>
   );
@@ -78,6 +91,7 @@ export interface Props {
   importState: (state: State) => void;
 
   currentTheme: Theme;
+  backgroundUrl: string;
 }
 
 export default connect(mapStateToProps, {

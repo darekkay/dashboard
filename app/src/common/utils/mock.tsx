@@ -20,7 +20,7 @@ export const connectedWidgetProps = {
 
 /* Default empty state */
 export const stateProps: State = {
-  config: { theme: "", language: "" },
+  config: { theme: "", language: "", backgroundUrl: "" },
   widgets: {},
   layout: {
     isEditable: false,

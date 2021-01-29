@@ -18,23 +18,30 @@
       "exit": "Vollbildmodus beenden"
     }
   },
-  "theme": {
-    "headline": "Farbschema",
-    "default": "Standard",
-    "dark": "Dunkel"
-  },
-  "language": {
-    "headline": "Sprache"
-  },
-  "data": {
-    "purge": "Alle daten löschen",
-    "backup": "Daten sichern",
-    "restore": {
-      "default": "Daten wiederherstellen",
-      "success": "Backup wiederhergestellt",
-      "error": "Backup konnte nicht wiederhergestellt werden"
+
+  "config": {
+    "theme": {
+      "headline": "Farbschema",
+      "default": "Standard",
+      "dark": "Dunkel"
+    },
+    "language": {
+      "headline": "Sprache"
+    },
+    "background": {
+      "headline": "Hintergrundbild URL"
+    },
+    "data": {
+      "purge": "Alle daten löschen",
+      "backup": "Daten sichern",
+      "restore": {
+        "default": "Daten wiederherstellen",
+        "success": "Backup wiederhergestellt",
+        "error": "Backup konnte nicht wiederhergestellt werden"
+      }
     }
   },
+
   "welcome": {
     "message1": "Willkommen im <0>{{projectName}}</0> — Deiner digitalen Infoanzeige",
     "message2": "Pass den Inhalt an, indem du neue Komponenten hinzufügst, oder verwende die folgende Vorlage mit häufig genutzten Komponenten.",

@@ -9,11 +9,13 @@ describe("<ThemeSelect />", () => {
     const changeThemeSpy = jest.fn();
     render(<ThemeSelect theme="default" changeTheme={changeThemeSpy} />);
 
-    const defaultTheme = screen.getByRole("button", { name: "theme.default" });
+    const defaultTheme = screen.getByRole("button", {
+      name: "config.theme.default",
+    });
     userEvent.click(defaultTheme);
     expect(changeThemeSpy).toHaveBeenCalledWith("default");
 
-    const darkTheme = screen.getByRole("button", { name: "theme.dark" });
+    const darkTheme = screen.getByRole("button", { name: "config.theme.dark" });
     userEvent.click(darkTheme);
     expect(changeThemeSpy).toHaveBeenCalledWith("dark");
   });

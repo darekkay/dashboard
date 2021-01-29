@@ -1,5 +1,5 @@
 {
-  "config": { "theme": "default", "language": "en" },
+  "config": { "theme": "default", "language": "en", "backgroundUrl": "" },
   "widgets": {
     "date-time-01": {
       "type": "date-time",

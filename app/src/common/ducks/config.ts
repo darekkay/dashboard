@@ -11,8 +11,12 @@ import { IS_DEVELOPMENT } from "common/environment";
 export interface ConfigState {
   theme: string;
   language: string;
+  backgroundUrl: string;
 }
 
+const changeBackgroundUrl = createAction<string>(
+  "config/change-background-url"
+);
 const changeTheme = createAction<string>("config/change-theme");
 export const changeLanguage = createAction<string>("config/change-language");
 
@@ -25,9 +29,10 @@ export const defaultTheme = (): Theme => {
     : "default";
 };
 
-export const initialState = {
+export const initialState: ConfigState = {
   theme: defaultTheme(),
   language: "", // let i18next use the correct language
+  backgroundUrl: "",
 };
 
 export const reducerWithInitialState = (
@@ -36,6 +41,10 @@ export const reducerWithInitialState = (
   createReducer<ConfigState>(defaultState, (builder) =>
     builder
       .addCase(importState, (_state, action) => action.payload.config)
+
+      .addCase(changeBackgroundUrl, (state, action) => {
+        state.backgroundUrl = action.payload;
+      })
 
       .addCase(changeTheme, (state, action) => {
         state.theme = action.payload;
@@ -55,6 +64,7 @@ export function* saga() {
 }
 
 export const actionCreators = {
+  changeBackgroundUrl,
   changeTheme,
   changeLanguage,
 };

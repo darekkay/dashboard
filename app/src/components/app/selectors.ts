@@ -6,8 +6,8 @@ import { getTypeFromId } from "components/widget/selectors";
 /* TODO: use a hash to prevent re-rendering */
 
 const selectComponentProps = createSelector(
-  ["config.theme", "layout", "widgets"],
-  (theme, layout, widgets) => ({
+  ["layout", "widgets", "config.theme", "config.backgroundUrl"],
+  (layout, widgets, theme, backgroundUrl) => ({
     layout: layout.config,
     isLayoutEditable: layout.isEditable,
     widgetIDs: Object.keys(widgets).filter(
@@ -15,6 +15,7 @@ const selectComponentProps = createSelector(
       (widgetId: string) => availableWidgets[getTypeFromId(widgetId)]
     ),
     currentTheme: theme,
+    backgroundUrl,
   })
 );
 

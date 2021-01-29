@@ -1,0 +1,9 @@
+{
+  "name": "dashboard-monorepo",
+  "description": "Package for the dashboard monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "ci": "cd app && yarn ci && cd ../server && yarn ci"
+  }
+}

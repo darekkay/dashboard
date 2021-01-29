@@ -39,7 +39,7 @@ describe("<ImportExport />", () => {
   test("imports valid files", async () => {
     const importStateSpy = jest.fn();
     render(<ImportExport state={stateProps} importState={importStateSpy} />);
-    const fileInput = screen.getByLabelText("data.restore.default");
+    const fileInput = screen.getByLabelText("config.data.restore.default");
 
     const file = createFile(stateProps);
 
@@ -49,14 +49,16 @@ describe("<ImportExport />", () => {
     });
 
     expect(importStateSpy).toHaveBeenCalledTimes(1);
-    expect(screen.getByText("data.restore.success")).toBeInTheDocument();
-    expect(screen.queryByText("data.restore.error")).not.toBeInTheDocument();
+    expect(screen.getByText("config.data.restore.success")).toBeInTheDocument();
+    expect(
+      screen.queryByText("config.data.restore.error")
+    ).not.toBeInTheDocument();
   });
 
   test("doesn't import invalid files", async () => {
     const importStateSpy = jest.fn();
     render(<ImportExport state={stateProps} importState={importStateSpy} />);
-    const fileInput = screen.getByLabelText("data.restore.default");
+    const fileInput = screen.getByLabelText("config.data.restore.default");
 
     const file = createFile({ a: 2 });
 
@@ -66,14 +68,16 @@ describe("<ImportExport />", () => {
     });
 
     expect(importStateSpy).toHaveBeenCalledTimes(0);
-    expect(screen.getByText("data.restore.error")).toBeInTheDocument();
-    expect(screen.queryByText("data.restore.success")).not.toBeInTheDocument();
+    expect(screen.getByText("config.data.restore.error")).toBeInTheDocument();
+    expect(
+      screen.queryByText("config.data.restore.success")
+    ).not.toBeInTheDocument();
   });
 
   test("rejects non-JSON files", async () => {
     const importStateSpy = jest.fn();
     render(<ImportExport state={stateProps} importState={importStateSpy} />);
-    const fileInput = screen.getByLabelText("data.restore.default");
+    const fileInput = screen.getByLabelText("config.data.restore.default");
 
     const imageFile = new File([], "dashboard.png", {
       type: "image/png",
@@ -85,7 +89,11 @@ describe("<ImportExport />", () => {
     });
 
     expect(importStateSpy).toHaveBeenCalledTimes(0);
-    expect(screen.queryByText("data.restore.error")).not.toBeInTheDocument();
-    expect(screen.queryByText("data.restore.success")).not.toBeInTheDocument();
+    expect(
+      screen.queryByText("config.data.restore.error")
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText("config.data.restore.success")
+    ).not.toBeInTheDocument();
   });
 });

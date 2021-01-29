@@ -1,3 +1,4 @@
+import express from "express";
 import * as core from "express-serve-static-core";
 
 import cryptocurrencies from "./routes/cryptocurrencies";
@@ -9,6 +10,8 @@ import unsplash from "./routes/unsplash";
 import youtube from "./routes/youtube";
 
 const routes = (app: core.Express) => {
+  app.use(express.static("public"));
+
   // NICE: use an API documentation framework
   cryptocurrencies(app);
   github(app);

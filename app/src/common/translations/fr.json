@@ -18,23 +18,26 @@
       "exit": "Quitter le mode plein écran"
     }
   },
-  "theme": {
-    "headline": "Thème",
-    "default": "Défaut",
-    "dark": "Sombre"
-  },
-  "language": {
-    "headline": "Langage"
-  },
-  "data": {
-    "purge": "Supprimer les données",
-    "backup": "Faire une sauvegarde",
-    "restore": {
-      "default": "Restaurer une sauvegarde",
-      "success": "Sauvegarde a été restaurée",
-      "error": "Sauvegarde n'a pas été restaurée"
+  "config": {
+    "theme": {
+      "headline": "Thème",
+      "default": "Défaut",
+      "dark": "Sombre"
+    },
+    "language": {
+      "headline": "Langage"
+    },
+    "data": {
+      "purge": "Supprimer les données",
+      "backup": "Faire une sauvegarde",
+      "restore": {
+        "default": "Restaurer une sauvegarde",
+        "success": "Sauvegarde a été restaurée",
+        "error": "Sauvegarde n'a pas été restaurée"
+      }
     }
   },
+
   "welcome": {
     "message1": "Bienvenue à <0>{{projectName}}</0> — Votre tableau de bord digital",
     "message2": "Personnalisez le contenu en ajoutant de nouveaux composants depuis le menu ou utilisez les modèles suivants de composants.",
