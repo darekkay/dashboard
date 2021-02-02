@@ -1,4 +1,5 @@
-import React, { MouseEvent, useEffect, useState } from "react";
+/* istanbul ignore file */
+import React, { MouseEvent, TouchEvent, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import Button from "components/button";
@@ -13,10 +14,29 @@ const MOUSE_MOVE_THRESHOLD = 3;
 /* Minimal movement should trigger a click instead of a move event */
 const isMouseMoved = (
   lastMouseDownPosition: { x: number; y: number },
-  event: MouseEvent
-) =>
-  Math.abs(event.pageX - lastMouseDownPosition.x) > MOUSE_MOVE_THRESHOLD ||
-  Math.abs(event.pageY - lastMouseDownPosition.y) > MOUSE_MOVE_THRESHOLD;
+  coordinates: { x: number; y: number }
+) => {
+  return (
+    Math.abs(coordinates.x - lastMouseDownPosition.x) > MOUSE_MOVE_THRESHOLD ||
+    Math.abs(coordinates.y - lastMouseDownPosition.y) > MOUSE_MOVE_THRESHOLD
+  );
+};
+
+/* Handle both mobile and desktop devices */
+const eventCoordinates = (event: MouseEvent<any> | TouchEvent<any>) => {
+  if ("pageX" in event)
+    return {
+      x: event.pageX,
+      y: event.pageY,
+    };
+  if ("changedTouches" in event && event.changedTouches.length > 0) {
+    return {
+      x: event.changedTouches[0].pageX,
+      y: event.changedTouches[0].pageY,
+    };
+  }
+  return { x: 0, y: 0 };
+};
 
 const WidgetOverlay: React.FC<Props> = ({
   id,
@@ -51,18 +71,24 @@ const WidgetOverlay: React.FC<Props> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDraggable]);
 
+  const onHoldDown = (event: MouseEvent<any> | TouchEvent<any>) => {
+    setLastMouseDownPosition(eventCoordinates(event));
+  };
+  const onHoldUp = (event: MouseEvent<any> | TouchEvent<any>) => {
+    const coordinates = eventCoordinates(event);
+    setLastMouseUpPosition(coordinates);
+    setDraggable(isMouseMoved(lastMouseDownPosition, coordinates));
+  };
+
   return (
     <>
       {isDraggable && (
         <div
           className="widget-overlay absolute inset-0 cursor-move grid-draggable"
-          onMouseDown={(event) => {
-            setLastMouseDownPosition({ x: event.pageX, y: event.pageY });
-          }}
-          onMouseUp={(event) => {
-            setLastMouseUpPosition({ x: event.pageX, y: event.pageY });
-            setDraggable(isMouseMoved(lastMouseDownPosition, event));
-          }}
+          onMouseDown={onHoldDown}
+          onMouseUp={onHoldUp}
+          onTouchStart={onHoldDown}
+          onTouchEnd={onHoldUp}
         />
       )}
 
