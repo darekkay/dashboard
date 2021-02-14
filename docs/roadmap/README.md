@@ -75,6 +75,8 @@ Here's a list of rough widget ideas and integrations. They may or may not be imp
   - IMDB movie tips
 - Server Administration
   - Status Page, Uptime
+- Status Page for external services
+  - See [StatusDash](https://statusdash.dev/) and [Statuspage](https://www.atlassian.com/software/statuspage)
 - [GoAccess](https://goaccess.io/) statistics
 - [PM2](https://pm2.keymetrics.io/) status
 - GitHub / GitLab integration
