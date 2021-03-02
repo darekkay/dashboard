@@ -1,5 +1,6 @@
 import React from "react";
-import { Responsive, WidthProvider } from "react-grid-layout";
+import { Responsive } from "react-grid-layout";
+import { SizeMe } from "react-sizeme";
 import memoize from "lodash/memoize";
 
 import { Layout } from "common/ducks/layout";
@@ -8,7 +9,7 @@ import makeWidget from "components/widget";
 import WelcomePage from "components/welcome-page";
 import { State } from "state/store";
 
-const ReactGridLayout = WidthProvider(Responsive);
+const ReactGridLayout = Responsive;
 
 const updateProps = ["layout", "isLayoutEditable"];
 
@@ -41,29 +42,34 @@ class Dashboard extends React.Component<Props> {
     if (widgetIDs.length === 0)
       return <WelcomePage importState={importState} />;
     return (
-      <ReactGridLayout
-        className="layout"
-        layouts={layout}
-        breakpoints={{ mobile: 0, desktop: 768 }}
-        cols={{ mobile: 1, desktop: GRID.COLUMNS_COUNT }}
-        rowHeight={GRID.ROW_HEIGHT_PX}
-        compactType="vertical"
-        useCSSTransforms={false}
-        isDraggable
-        isResizable
-        draggableHandle=".grid-draggable"
-        onLayoutChange={(__: any, allLayouts: Layout) => {
-          saveLayout(allLayouts);
-        }}
-      >
-        {widgetIDs.map((widgetID: string) =>
-          // @ts-expect-error
-          React.createElement(makeWidgetMemoized(widgetID), {
-            key: widgetID,
-            removeWidgetFromLayout,
-          })
+      <SizeMe refreshMode="debounce">
+        {({ size }) => (
+          <ReactGridLayout
+            className="layout"
+            layouts={layout}
+            breakpoints={{ mobile: 0, desktop: 768 }}
+            cols={{ mobile: 1, desktop: GRID.COLUMNS_COUNT }}
+            rowHeight={GRID.ROW_HEIGHT_PX}
+            compactType="vertical"
+            useCSSTransforms={false}
+            isDraggable
+            isResizable
+            draggableHandle=".grid-draggable"
+            onLayoutChange={(__: any, allLayouts: Layout) => {
+              saveLayout(allLayouts);
+            }}
+            width={size.width ?? 0}
+          >
+            {widgetIDs.map((widgetID: string) =>
+              // @ts-expect-error
+              React.createElement(makeWidgetMemoized(widgetID), {
+                key: widgetID,
+                removeWidgetFromLayout,
+              })
+            )}
+          </ReactGridLayout>
         )}
-      </ReactGridLayout>
+      </SizeMe>
     );
   }
 }

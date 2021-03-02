@@ -5,6 +5,7 @@
 - :sparkles: Make background image configurable.
 - :rocket: Display widget resize handle when focused. 
 - :bug: Make widgets configurable on mobile again.
+- :bug: Recalculate grid width on toggling the widget drawer.
 - :hammer: Update dependencies.
 
 ## 1.4.0 (2021-01-10)
