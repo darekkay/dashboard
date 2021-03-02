@@ -3,6 +3,7 @@
 ## Current development
 
 - :sparkles: Make background image configurable.
+- :rocket: Display widget resize handle when focused. 
 - :bug: Make widgets configurable on mobile again.
 - :hammer: Update dependencies.
 

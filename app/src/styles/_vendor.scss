@@ -1,10 +1,12 @@
-.react-grid-item > .react-resizable-handle::after {
-  border-color: var(--text-color);
-}
-
 .react-resizable-handle {
   background-image: none !important;
   &::after {
-    border: none !important;
+    border-color: transparent !important;
+  }
+}
+
+.is-focused {
+  .react-resizable-handle::after {
+    border-color: var(--text-color) !important;
   }
 }

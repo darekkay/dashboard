@@ -75,9 +75,8 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
           "rounded",
           "bg-color-panel",
           "relative",
-          {
-            error: hasError,
-          },
+          { error: hasError },
+          { "is-focused": isWidgetMenuVisible },
           className
         )}
         data-testid="widget"
