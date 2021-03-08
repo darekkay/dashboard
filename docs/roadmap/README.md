@@ -104,11 +104,14 @@ Here's a list of rough widget ideas and integrations. They may or may not be imp
 - Advent calendar
   - Place 24 widgets with different hidden goodies (links, images, ...).
 - Conway's Game of Life
+- [Bonsai](https://news.ycombinator.com/item?id=26336396) simulation
 - Mini Games
   - Cookie Clicker
   - Tamagotchi
 - Current IP address
 - IMDB Watchlist/Rated list
+- CI dashboard
+  - [GitHub Actions](https://github.com/chriskinsman/github-action-dashboard)
 
 Many more integrations ideas can be found in other products, e.g.:
 
