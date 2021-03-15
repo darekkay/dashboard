@@ -78,6 +78,7 @@ const Configuration = ({ options, setOptions }: ConfigurationProps<Props>) => {
           "link",
           "litecoin",
           "monero",
+          "nano",
           "ripple",
           "stellar",
           "tether",

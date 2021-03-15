@@ -3,7 +3,8 @@
 ## Current development
 
 - :sparkles: Make background image configurable.
-- :rocket: Display widget resize handle when focused. 
+- :rocket: Display widget resize handle when focused.
+- :rocket: Add Nano cryptocurrency.
 - :bug: Make widgets configurable on mobile again.
 - :bug: Recalculate grid width on toggling the widget drawer.
 - :hammer: Update dependencies.
