@@ -4,7 +4,8 @@
 
 - :sparkles: Make background image configurable.
 - :rocket: Display widget resize handle when focused.
-- :rocket: Add Nano cryptocurrency.
+- :rocket: Add Nano cryptocurrency
+- :rocket: Add Dogecoin cryptocurrency.
 - :bug: Make widgets configurable on mobile again.
 - :bug: Recalculate grid width on toggling the widget drawer.
 - :hammer: Update dependencies.

@@ -73,6 +73,7 @@ const Configuration = ({ options, setOptions }: ConfigurationProps<Props>) => {
           "bitcoin",
           "bitcoin-cash",
           "dash",
+          "dogecoin",
           "eos",
           "ethereum",
           "link",
