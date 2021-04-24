@@ -1,5 +1,9 @@
 {
-  "config": { "theme": "default", "language": "en", "backgroundUrl": "" },
+  "config": {
+    "theme": "default",
+    "language": "en",
+    "backgroundUrl": "/backgrounds/bg-05.jpg"
+  },
   "widgets": {
     "date-time-01": {
       "type": "date-time",
@@ -19,7 +23,7 @@
     "text-01": {
       "type": "text",
       "data": {
-        "content": "Always code as if the person who ends up maintaining your code will be a violent psychopath who knows where you live. ðŸ”¥"
+        "content": "Always code as if the person who ends up maintaining your code will be a violent psychopath who knows where you live."
       },
       "options": {},
       "meta": {}
@@ -35,55 +39,55 @@
     "totd-chemical-elements-01": {
       "type": "totd-chemical-elements",
       "data": {
-        "name": "Copper",
-        "nameDE": "Kupfer",
-        "symbol": "Cu",
-        "atomicNumber": 29
+        "name": "Barium",
+        "nameDE": "Barium",
+        "symbol": "Ba",
+        "atomicNumber": 56
       },
       "options": {},
       "meta": {
         "updateCycle": { "hours": 24 },
         "updateStatus": "success",
-        "lastUpdated": 1605098021426
+        "lastUpdated": 1619360156543
       }
     },
     "counter-01": { "type": "counter", "data": {}, "options": {}, "meta": {} },
     "cryptocurrencies-01": {
       "type": "cryptocurrencies",
       "data": {
-        "currentPrice": 13248.06,
-        "last24h": { "change": 257.24, "changePercentage": 1.98 },
+        "currentPrice": 41202,
+        "last24h": { "change": 343.26, "changePercentage": 0.84 },
         "imageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579"
       },
       "options": { "fiat": "eur", "crypto": "bitcoin" },
       "meta": {
         "updateCycle": { "minutes": 15 },
         "updateStatus": "success",
-        "lastUpdated": 1605098021378
+        "lastUpdated": 1619360156482
       }
     },
     "github-stats-01": {
       "type": "github-stats",
       "data": {
         "name": "darekkay/dashboard",
-        "stars": 56,
-        "subscribers": 5,
-        "forks": 8,
-        "open_issues": 9
+        "stars": 73,
+        "subscribers": 6,
+        "forks": 11,
+        "open_issues": 10
       },
       "options": { "query": "darekkay/dashboard" },
       "meta": {
         "updateCycle": { "hours": 24 },
         "updateStatus": "success",
         "headlineIcon": "github",
-        "lastUpdated": 1605098021357
+        "lastUpdated": 1619360156497
       }
     },
     "youtube-stats-105": {
       "type": "youtube-stats",
       "data": {
-        "viewCount": 17909,
-        "subscriberCount": 58,
+        "viewCount": 18057,
+        "subscriberCount": 57,
         "videoCount": 7,
         "channelTitle": "Darek Kay"
       },
@@ -92,24 +96,24 @@
         "updateCycle": { "hours": 24 },
         "updateStatus": "success",
         "headlineIcon": "youtube",
-        "lastUpdated": 1605098021335
+        "lastUpdated": 1619360156515
       }
     },
     "twitter-stats-112": {
       "type": "twitter-stats",
       "data": {
         "name": "Darek Kay",
-        "followers": 109,
-        "following": 91,
-        "tweets": 245,
-        "listed": 5
+        "followers": 294,
+        "following": 235,
+        "tweets": 420,
+        "listed": 9
       },
       "options": { "username": "darek_kay" },
       "meta": {
         "updateCycle": { "hours": 24 },
         "updateStatus": "success",
         "headlineIcon": "twitter",
-        "lastUpdated": 1605098021313
+        "lastUpdated": 1619360156530
       }
     },
     "qr-code-117": {
@@ -120,6 +124,58 @@
         "content": "https://dashboard.darekkay.com/"
       },
       "meta": {}
+    },
+    "chart-118": {
+      "type": "chart",
+      "data": {
+        "start": "2021-03-26",
+        "end": "2021-04-24",
+        "package": "release-it",
+        "downloads": [
+          { "downloads": 16087, "day": "2021-03-26" },
+          { "downloads": 5777, "day": "2021-03-27" },
+          { "downloads": 5919, "day": "2021-03-28" },
+          { "downloads": 23107, "day": "2021-03-29" },
+          { "downloads": 19940, "day": "2021-03-30" },
+          { "downloads": 17468, "day": "2021-03-31" },
+          { "downloads": 18091, "day": "2021-04-01" },
+          { "downloads": 12704, "day": "2021-04-02" },
+          { "downloads": 5234, "day": "2021-04-03" },
+          { "downloads": 4341, "day": "2021-04-04" },
+          { "downloads": 12925, "day": "2021-04-05" },
+          { "downloads": 15646, "day": "2021-04-06" },
+          { "downloads": 17239, "day": "2021-04-07" },
+          { "downloads": 17217, "day": "2021-04-08" },
+          { "downloads": 17223, "day": "2021-04-09" },
+          { "downloads": 5206, "day": "2021-04-10" },
+          { "downloads": 6591, "day": "2021-04-11" },
+          { "downloads": 21576, "day": "2021-04-12" },
+          { "downloads": 17358, "day": "2021-04-13" },
+          { "downloads": 16444, "day": "2021-04-14" },
+          { "downloads": 18055, "day": "2021-04-15" },
+          { "downloads": 16366, "day": "2021-04-16" },
+          { "downloads": 5208, "day": "2021-04-17" },
+          { "downloads": 5869, "day": "2021-04-18" },
+          { "downloads": 18149, "day": "2021-04-19" },
+          { "downloads": 17671, "day": "2021-04-20" },
+          { "downloads": 17505, "day": "2021-04-21" },
+          { "downloads": 19799, "day": "2021-04-22" },
+          { "downloads": 15991, "day": "2021-04-23" },
+          { "downloads": 7339, "day": "2021-04-24" }
+        ]
+      },
+      "options": {
+        "headline": "npm download stats: release-it",
+        "url": "https://api.npmjs.org/downloads/range/last-month/release-it",
+        "dataPath": "downloads",
+        "dataKeyX": "day",
+        "dataKeyY": "downloads"
+      },
+      "meta": {
+        "updateCycle": { "hours": 24 },
+        "updateStatus": "success",
+        "lastUpdated": 1619360200119
+      }
     }
   },
   "layout": {
@@ -199,7 +255,8 @@
           "static": false
         },
         { "i": "twitter-stats-112", "x": 0, "y": 7, "w": 3, "h": 3 },
-        { "i": "qr-code-117", "x": 0, "y": 10, "w": 2, "h": 2 }
+        { "i": "qr-code-117", "x": 0, "y": 10, "w": 2, "h": 2 },
+        { "i": "chart-118", "x": 0, "y": 7, "w": 7, "h": 3 }
       ],
       "desktop": [
         {
@@ -214,25 +271,25 @@
         {
           "w": 5,
           "h": 2,
-          "x": 13,
-          "y": 3,
+          "x": 9,
+          "y": 6,
           "i": "search-01",
           "moved": false,
           "static": false
         },
         {
-          "w": 6,
+          "w": 4,
           "h": 3,
-          "x": 12,
-          "y": 0,
+          "x": 14,
+          "y": 3,
           "i": "text-01",
           "moved": false,
           "static": false
         },
         {
-          "w": 4,
-          "h": 2,
-          "x": 9,
+          "w": 3,
+          "h": 3,
+          "x": 11,
           "y": 3,
           "i": "image-01",
           "moved": false,
@@ -241,17 +298,17 @@
         {
           "w": 2,
           "h": 2,
-          "x": 16,
-          "y": 5,
+          "x": 14,
+          "y": 6,
           "i": "totd-chemical-elements-01",
           "moved": false,
           "static": false
         },
         {
-          "w": 2,
+          "w": 3,
           "h": 2,
-          "x": 12,
-          "y": 5,
+          "x": 6,
+          "y": 6,
           "i": "counter-01",
           "moved": false,
           "static": false
@@ -259,8 +316,8 @@
         {
           "w": 3,
           "h": 2,
-          "x": 9,
-          "y": 5,
+          "x": 6,
+          "y": 4,
           "i": "cryptocurrencies-01",
           "moved": false,
           "static": false
@@ -278,16 +335,16 @@
           "w": 3,
           "h": 2,
           "x": 6,
-          "y": 5,
+          "y": 2,
           "i": "youtube-stats-105",
           "moved": false,
           "static": false
         },
         {
-          "w": 3,
+          "w": 2,
           "h": 3,
-          "x": 6,
-          "y": 2,
+          "x": 9,
+          "y": 3,
           "i": "twitter-stats-112",
           "moved": false,
           "static": false
@@ -295,15 +352,24 @@
         {
           "w": 2,
           "h": 2,
-          "x": 14,
-          "y": 5,
+          "x": 16,
+          "y": 6,
           "i": "qr-code-117",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 6,
+          "h": 3,
+          "x": 12,
+          "y": 0,
+          "i": "chart-118",
           "moved": false,
           "static": false
         }
       ]
     },
-    "nextWidgetId": 118
+    "nextWidgetId": 121
   },
   "_persist": { "version": -1, "rehydrated": true }
 }

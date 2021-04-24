@@ -2,6 +2,7 @@
 import { WidgetProperties, WidgetImports } from "widgets";
 
 export type WidgetType =
+  | "chart"
   | "counter"
   | "cryptocurrencies"
   | "date-time"
@@ -18,6 +19,15 @@ export type WidgetType =
   | "youtube-stats";
 
 const widgetProperties = {
+  chart: {
+    configurable: true,
+    widgetType: "chart",
+    category: "tracking",
+    initialHeight: 3,
+    initialWidth: 7,
+    initialOptions: { headline: "" },
+    initialMeta: { updateCycle: { hours: 24 }, updateStatus: "idle" },
+  },
   counter: {
     configurable: true,
     widgetType: "counter",
@@ -163,6 +173,10 @@ const widgetProperties = {
 export default widgetProperties;
 
 export const widgetImports = {
+  chart: {
+    component: async () => import("widgets/chart"),
+    configuration: async () => import("widgets/chart/configuration"),
+  },
   counter: {
     component: async () => import("widgets/counter"),
     configuration: async () => import("widgets/counter/configuration"),

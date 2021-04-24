@@ -70,6 +70,19 @@
       "monitoring": "Monitoring"
     },
 
+    "chart": {
+      "name": "Chart / Graph",
+      "headline": "{{headline}}",
+      "configuration": {
+        "url": "Data URL",
+        "dataPath": "JSON path to the data array",
+        "dataKeyX": "JSON path for the key (x-axis)",
+        "dataKeyY": "JSON path for the value (y-axis)"
+      },
+      "error": {
+        "noArrayData": "The current configuration doesn't return any array data."
+      }
+    },
     "counter": {
       "name": "Counter",
       "headline": "{{headline}}",

@@ -2,6 +2,7 @@
 
 ## Current development
 
+- :sparkles: New widget: [Chart / Graph](https://dashboard.darekkay.com/docs/widgets/chart.html).
 - :sparkles: Make background image configurable.
 - :rocket: Display widget resize handle when focused.
 - :rocket: Add Nano cryptocurrency

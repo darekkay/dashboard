@@ -59,8 +59,6 @@ Here's a list of rough widget ideas and integrations. They may or may not be imp
 - Video
   - YouTube, Vimeo, ...
   - This widget should be interchangeable with the Website widget. Something like [Iframely](https://iframely.com/) could be used to get the Iframe URL for any URL.
-- Graphs/Charts
-  - They should support any (external) data source and a simple way to define a data:graph mapping.
 - Map
   - [React map library comparison](https://blog.logrocket.com/react-map-library-comparison/)
   - [Maps with React and Leaflet](https://www.smashingmagazine.com/2020/02/javascript-maps-react-leaflet/)
