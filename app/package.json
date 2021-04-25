@@ -130,7 +130,7 @@
     "format": "prettier --write .",
     "generate": "plop --plopfile internals/generators/index.js",
     "i18n": "ts-node -P internals/scripts/tsconfig.json internals/scripts/i18n.ts ",
-    "lint": "tsc && eslint {internals,src}/**/*.{ts,tsx,js}",
+    "lint": "tsc && eslint {internals,src}/**/*.{ts,tsx,js} --no-error-on-unmatched-pattern",
     "lint:fix": "eslint --fix {internals,src}/**/*.{ts,tsx,js}",
     "scan-widgets": "ts-node -P internals/scripts/tsconfig.json internals/scripts/scan-widgets.ts && prettier --write src/widgets/list.ts && prettier --write ../server/src/widgets.ts",
     "start": "react-scripts start",
