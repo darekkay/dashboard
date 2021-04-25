@@ -1,11 +1,14 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import Section from "components/section";
 
 import Dropdown from "../index";
 
-const Story = () => {
+export default {
+  title: "Components/Forms/Dropdown",
+};
+
+export const Variants = () => {
   return (
     <Section type="story">
       <Dropdown
@@ -22,5 +25,3 @@ const Story = () => {
     </Section>
   );
 };
-
-storiesOf("Components/Forms/Dropdown", module).add("Variants", () => <Story />);

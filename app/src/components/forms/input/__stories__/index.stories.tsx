@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { storiesOf } from "@storybook/react";
 
 import Input from "../index";
 
-const Story = () => {
+export default {
+  title: "Components/Forms/Input",
+};
+
+export const Variants = () => {
   const [value, setValue] = useState("Hello World");
   return (
     <div className="space-y-6">
@@ -12,5 +15,3 @@ const Story = () => {
     </div>
   );
 };
-
-storiesOf("Components/Forms/Input", module).add("Variants", () => <Story />);

@@ -1,10 +1,13 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import { connectedWidgetProps } from "common/utils/mock";
 import { Widget } from "components/widget";
 
-const Story = () => {
+export default {
+  title: "Widgets/Image",
+};
+
+export const Variants = () => {
   return (
     <Widget
       {...connectedWidgetProps}
@@ -17,5 +20,3 @@ const Story = () => {
     />
   );
 };
-
-storiesOf("Widgets/Image", module).add("Variants", () => <Story />);

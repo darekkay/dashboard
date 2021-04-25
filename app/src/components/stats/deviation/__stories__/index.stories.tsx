@@ -1,11 +1,14 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import Section from "components/section";
 
 import Deviation from "../index";
 
-const Story = () => {
+export default {
+  title: "Components/Stats/Deviation",
+};
+
+export const Variants = () => {
   return (
     <div className="space-y-6">
       <Section type="story" headline="Increment">
@@ -34,7 +37,3 @@ const Story = () => {
     </div>
   );
 };
-
-storiesOf("Components/Stats/Deviation", module).add("Variants", () => (
-  <Story />
-));

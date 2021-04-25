@@ -1,9 +1,12 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import Label from "../index";
 
-const Story = () => {
+export default {
+  title: "Components/Forms/Label",
+};
+
+export const Variants = () => {
   return (
     <>
       <div>
@@ -17,5 +20,3 @@ const Story = () => {
     </>
   );
 };
-
-storiesOf("Components/Forms/Label", module).add("Variants", () => <Story />);

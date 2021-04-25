@@ -9,6 +9,7 @@
 - :rocket: Add Dogecoin cryptocurrency.
 - :bug: Make widgets configurable on mobile again.
 - :bug: Recalculate grid width on toggling the widget drawer.
+- :hammer: Migrate stories to the Component Story Format.
 - :hammer: Update dependencies.
 
 ## 1.4.0 (2021-01-10)

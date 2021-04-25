@@ -1,10 +1,11 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import TextArea from "../index";
 
-const Story = () => {
-  return <TextArea setValue={() => {}} label="TextArea" />;
+export default {
+  title: "Components/Forms/TextArea",
 };
 
-storiesOf("Components/Forms/TextArea", module).add("Variants", () => <Story />);
+export const Variants = () => {
+  return <TextArea setValue={() => {}} label="TextArea" />;
+};

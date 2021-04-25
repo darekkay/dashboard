@@ -1,12 +1,11 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import WidgetUnconfigured from "../index";
 
-const Story = () => {
-  return <WidgetUnconfigured type="image" />;
+export default {
+  title: "Components/WidgetUnconfigured",
 };
 
-storiesOf("Components/WidgetUnconfigured", module).add("Variants", () => (
-  <Story />
-));
+export const Variants = () => {
+  return <WidgetUnconfigured type="image" />;
+};

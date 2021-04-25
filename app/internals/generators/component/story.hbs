@@ -1,16 +1,16 @@
 import React from "react";
 
-import { storiesOf } from "@storybook/react";
-
 import Section from "components/section";
 import {{ properCase name }} from "../index";
 
-const Story = () => {
+export default {
+  title: "Components/{{ properCase name }}",
+};
+
+export const Variants = () => {
   return (
     <Section type="story">
       <{{ properCase name }} />
     </Section>
   );
 };
-
-storiesOf("Components/{{ properCase name }}", module).add("Variants", () => <Story />);

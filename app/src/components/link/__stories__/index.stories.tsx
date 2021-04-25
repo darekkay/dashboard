@@ -1,11 +1,14 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import Icon from "components/icon";
 
 import Link from "../index";
 
-const Story = () => {
+export default {
+  title: "Components/Link",
+};
+
+export const Variants = () => {
   return (
     <>
       <div>
@@ -26,5 +29,3 @@ const Story = () => {
     </>
   );
 };
-
-storiesOf("Components/Link", module).add("Variants", () => <Story />);

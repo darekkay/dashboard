@@ -1,5 +1,4 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import Section from "components/section";
 import Input from "components/forms/input";
@@ -8,7 +7,11 @@ import Dropdown from "components/forms/dropdown";
 import FileUpload from "components/forms/file-upload";
 import Label from "components/forms/label";
 
-const Story = () => {
+export default {
+  title: "Components/Forms",
+};
+
+export const Showcase = () => {
   return (
     <div className="space-y-6" style={{ maxWidth: "600px" }}>
       <Section type="story">
@@ -37,5 +40,3 @@ const Story = () => {
     </div>
   );
 };
-
-storiesOf("Components/Forms", module).add("Showcase", () => <Story />);

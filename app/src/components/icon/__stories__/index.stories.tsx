@@ -1,12 +1,11 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import Icon from "../index";
 import fontAwesomeIcons, { FontAwesomeIconName } from "../font-awesome";
 
 const icons = [...Object.keys(fontAwesomeIcons)] as FontAwesomeIconName[];
 
-storiesOf("Components/Icon", module).add("Kitchen Sink", () => (
+export const KitchenSink = () => (
   <div>
     {icons.map((icon) => (
       <div key={icon} className="flex items-center">
@@ -15,4 +14,12 @@ storiesOf("Components/Icon", module).add("Kitchen Sink", () => (
       </div>
     ))}
   </div>
-));
+);
+
+export default {
+  title: "Components/Icon",
+};
+
+KitchenSink.story = {
+  name: "Kitchen Sink",
+};

@@ -1,12 +1,15 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { storiesOf } from "@storybook/react";
 
 import initStore from "state/store";
 
 import ThemeSelect from "../index";
 
-const Story = () => {
+export default {
+  title: "Components/ThemeSelect",
+};
+
+export const Variants = () => {
   const { store } = initStore();
   return (
     <Provider store={store}>
@@ -14,5 +17,3 @@ const Story = () => {
     </Provider>
   );
 };
-
-storiesOf("Components/ThemeSelect", module).add("Variants", () => <Story />);

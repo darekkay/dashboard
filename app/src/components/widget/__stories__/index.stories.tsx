@@ -1,11 +1,14 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import { connectedWidgetProps } from "common/utils/mock";
 import { Widget } from "components/widget";
 import Section from "components/section";
 
-const Story = () => {
+export default {
+  title: "Components/Widget",
+};
+
+export const Variants = () => {
   const sharedProps = {
     type: "search" as const,
     options: { pattern: "https://duckduckgo.com/?q=%s", title: "DuckDuckGo" },
@@ -27,5 +30,3 @@ const Story = () => {
     </div>
   );
 };
-
-storiesOf("Components/Widget", module).add("Variants", () => <Story />);

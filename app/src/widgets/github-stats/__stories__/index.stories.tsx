@@ -1,12 +1,15 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import { connectedWidgetProps } from "common/utils/mock";
 import { Widget } from "components/widget";
 import Section from "components/section";
 import { initialMeta } from "widgets/list";
 
-const Story = () => {
+export default {
+  title: "Widgets/GithubStats",
+};
+
+export const Variants = () => {
   return (
     <div className="space-y-6">
       <Section type="story" headline="GitHub User">
@@ -48,5 +51,3 @@ const Story = () => {
     </div>
   );
 };
-
-storiesOf("Widgets/GithubStats", module).add("Variants", () => <Story />);

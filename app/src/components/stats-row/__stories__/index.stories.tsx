@@ -1,11 +1,14 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import Section from "components/section";
 
 import StatsRow from "../index";
 
-const Story = () => {
+export default {
+  title: "Components/StatsRow",
+};
+
+export const Variants = () => {
   return (
     <Section type="story">
       <StatsRow
@@ -16,5 +19,3 @@ const Story = () => {
     </Section>
   );
 };
-
-storiesOf("Components/StatsRow", module).add("Variants", () => <Story />);

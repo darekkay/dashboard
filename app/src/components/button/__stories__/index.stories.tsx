@@ -1,5 +1,4 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import Icon from "components/icon";
 import Section from "components/section";
@@ -35,7 +34,11 @@ const Row = ({
   </Section>
 );
 
-storiesOf("Components/Button", module).add("Variants", () => (
+export default {
+  title: "Components/Button",
+};
+
+export const Variants = () => (
   <div className="space-y-6">
     <Row title="Primary Button" variant="primary" />
     <Row title="Secondary Button" variant="secondary" />
@@ -51,4 +54,4 @@ storiesOf("Components/Button", module).add("Variants", () => (
       <Icon name="cog" />
     </Row>
   </div>
-));
+);

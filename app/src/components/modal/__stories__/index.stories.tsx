@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { storiesOf } from "@storybook/react";
 
 import Button from "components/button";
 
 import Modal from "../index";
 
-const Story = () => {
+export default {
+  title: "Components/Modal",
+};
+
+export const Variants = () => {
   const [isOpen, setOpen] = useState(false);
   return (
     <>
@@ -35,5 +38,3 @@ const Story = () => {
     </>
   );
 };
-
-storiesOf("Components/Modal", module).add("Variants", () => <Story />);

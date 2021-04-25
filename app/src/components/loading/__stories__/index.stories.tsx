@@ -1,11 +1,14 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import Section from "components/section";
 
 import Loading from "../index";
 
-const Story = () => {
+export default {
+  title: "Components/Loading",
+};
+
+export const Variants = () => {
   return (
     <div className="space-y-6">
       <Section type="story" headline="Spinner">
@@ -20,5 +23,3 @@ const Story = () => {
     </div>
   );
 };
-
-storiesOf("Components/Loading", module).add("Variants", () => <Story />);

@@ -1,11 +1,14 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import { connectedWidgetProps } from "common/utils/mock";
 import { Widget } from "components/widget";
 import { initialMeta } from "widgets/list";
 
-const Story = () => {
+export default {
+  title: "Widgets/Tip of the Day/Chemical Elements",
+};
+
+export const Variants = () => {
   return (
     <Widget
       {...connectedWidgetProps}
@@ -20,8 +23,3 @@ const Story = () => {
     />
   );
 };
-
-storiesOf("Widgets/Tip of the Day/Chemical Elements", module).add(
-  "Variants",
-  () => <Story />
-);

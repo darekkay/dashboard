@@ -1,9 +1,12 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import Section from "../index";
 
-const Story = () => {
+export default {
+  title: "Components/Section",
+};
+
+export const Variants = () => {
   return (
     <div>
       <Section type="modal" headline="Section headline">
@@ -17,5 +20,3 @@ const Story = () => {
     </div>
   );
 };
-
-storiesOf("Components/Section", module).add("Variants", () => <Story />);
