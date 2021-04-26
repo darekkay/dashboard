@@ -7,6 +7,7 @@
 - :rocket: Display widget resize handle when focused.
 - :rocket: Add Nano cryptocurrency
 - :rocket: Add Dogecoin cryptocurrency.
+- :rocket: Make theme selection keyboard-accessible.
 - :bug: Make widgets configurable on mobile again.
 - :bug: Recalculate grid width on toggling the widget drawer.
 - :hammer: Migrate stories to the Component Story Format.

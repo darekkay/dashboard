@@ -16,14 +16,11 @@ export const updateCssVariables = (theme: Theme) => {
 };
 
 export const ThemeOption: React.FC<ThemeProps> = ({ name, label, onClick }) => (
-  // TODO: make keyboard-accessible
-  // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-  <div
-    className={`theme-${name} inline-block mr-6 mb-3 cursor-pointer`}
+  <button
+    className={`theme-${name} inline-block mr-6 mb-3 p-0 border-0 cursor-pointer`}
     style={{ width: "200px", height: "120px" }}
-    tabIndex={0}
-    role="button"
     onClick={onClick}
+    type="button"
   >
     <div className="flex flex-col w-full h-full relative p-2 border text-color-default bg-color-default">
       <div className="flex items-center mx-3">
@@ -38,7 +35,7 @@ export const ThemeOption: React.FC<ThemeProps> = ({ name, label, onClick }) => (
         <div className="bg-color-panel m-4" style={{ width: "60%" }} />
       </div>
     </div>
-  </div>
+  </button>
 );
 
 interface ThemeProps {
