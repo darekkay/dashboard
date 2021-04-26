@@ -1,6 +1,7 @@
 /** Widget duck */
 
 import { createAction, createReducer } from "@reduxjs/toolkit";
+import mapValues from "lodash/mapValues";
 
 import widgets from "widgets";
 import { Dimensions } from "components/widget/index";
@@ -70,7 +71,26 @@ export const reducerWithInitialState = (
 ) =>
   createReducer<WidgetsState>(defaultState, (builder) =>
     builder
-      .addCase(importState, (_state, action) => action.payload.widgets)
+      .addCase(importState, (_state, action) => {
+        return mapValues(action.payload.widgets, (widgetState) => {
+          /** Reset data for widgets that update themselves */
+          const forceUpdate = widgetState.meta.updateCycle
+            ? {
+                data: {},
+                meta: {
+                  ...widgetState.meta,
+                  updateCycle: widgetState.meta.updateCycle,
+                  updateStatus: "idle" as const,
+                  lastUpdated: undefined,
+                },
+              }
+            : {};
+          return {
+            ...widgetState,
+            ...forceUpdate,
+          };
+        });
+      })
 
       .addCase(setOptions, (state, action) => {
         const { id, values } = action.payload;

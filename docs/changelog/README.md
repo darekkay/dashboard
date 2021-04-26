@@ -7,6 +7,7 @@
 - :rocket: Display widget resize handle when focused.
 - :rocket: Add Nano cryptocurrency
 - :rocket: Add Dogecoin cryptocurrency.
+- :rocket: Reset outdated data when restoring a backup. 
 - :rocket: Make theme selection keyboard-accessible.
 - :rocket: Close settings modal by pressing Enter within the input field.
 - :bug: Make widgets configurable on mobile again.

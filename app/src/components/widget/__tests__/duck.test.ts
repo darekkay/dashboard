@@ -81,6 +81,63 @@ describe("Widget duck", () => {
       })
     );
 
-    expect(updatedState).toBe(widgets);
+    expect(updatedState).toEqual(widgets);
+  });
+
+  test("resets data for widgets that update themselves", () => {
+    const textWidget = {
+      "text-01": {
+        type: "text",
+        data: {
+          content:
+            "Always code as if the person who ends up maintaining your code will be a violent psychopath who knows where you live.",
+        },
+        options: {},
+        meta: {},
+      },
+    };
+
+    const widgets = {
+      // example widget without update handling
+      ...textWidget,
+
+      // example widget with update handling
+      "github-stats-01": {
+        type: "github-stats",
+        data: {
+          name: "darekkay/dashboard",
+          stars: 73,
+        },
+        options: { query: "darekkay/dashboard" },
+        meta: {
+          updateCycle: { hours: 24 },
+          updateStatus: "success",
+          headlineIcon: "github",
+          lastUpdated: 1619360156497,
+        },
+      },
+    } as Record<string, Widget>;
+
+    const updatedState = reducerWithInitialState()(
+      initialState,
+      importState({
+        ...stateProps,
+        widgets,
+      })
+    );
+
+    expect(updatedState).toEqual({
+      ...textWidget,
+      "github-stats-01": {
+        type: "github-stats",
+        data: {},
+        options: { query: "darekkay/dashboard" },
+        meta: {
+          updateCycle: { hours: 24 },
+          updateStatus: "idle",
+          headlineIcon: "github",
+        },
+      },
+    });
   });
 });
