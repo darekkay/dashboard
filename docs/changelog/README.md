@@ -8,6 +8,7 @@
 - :rocket: Add Nano cryptocurrency
 - :rocket: Add Dogecoin cryptocurrency.
 - :rocket: Make theme selection keyboard-accessible.
+- :rocket: Close settings modal by pressing Enter within the input field.
 - :bug: Make widgets configurable on mobile again.
 - :bug: Recalculate grid width on toggling the widget drawer.
 - :hammer: Migrate stories to the Component Story Format.

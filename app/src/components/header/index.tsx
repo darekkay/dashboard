@@ -81,7 +81,7 @@ const Header: React.FC<Props> = memo(
           closeModal={closeSettingsModal}
           isOpen={isSettingsModalOpen}
         >
-          <Settings />
+          <Settings closeModal={closeSettingsModal} />
           <div className="mt-6 text-right">
             <Button
               className="w-full md:w-auto md:ml-5 mt-5"

@@ -10,7 +10,7 @@ import Button from "components/button";
 import Icon from "components/icon";
 import Section from "components/section";
 
-const Settings: React.FC<Props> = () => {
+const Settings: React.FC<Props> = ({ closeModal }) => {
   const { t } = useTranslation();
   return (
     <PersistorContext.Consumer>
@@ -21,7 +21,7 @@ const Settings: React.FC<Props> = () => {
           </Section>
 
           <Section type="modal" headline={t("config.background.headline")}>
-            <BackgroundSelect />
+            <BackgroundSelect onEnter={closeModal} />
           </Section>
 
           <Section type="modal" headline={t("config.language.headline")}>
@@ -50,7 +50,7 @@ const Settings: React.FC<Props> = () => {
 };
 
 export interface Props {
-  //
+  closeModal: () => void;
 }
 
 export default Settings;
