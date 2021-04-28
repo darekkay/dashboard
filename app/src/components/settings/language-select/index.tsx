@@ -28,4 +28,6 @@ export interface Props {
   changeLanguage: (payload: string) => void;
 }
 
-export default connect(selectComponentProps, actionCreators)(LanguageSelect);
+export default connect(selectComponentProps, {
+  changeLanguage: actionCreators.changeLanguage,
+})(LanguageSelect);

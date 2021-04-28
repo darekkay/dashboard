@@ -76,4 +76,6 @@ export interface Props {
   changeTheme: (payload: string) => void;
 }
 
-export default connect(selectComponentProps, actionCreators)(ThemeSelect);
+export default connect(selectComponentProps, {
+  changeTheme: actionCreators.changeTheme,
+})(ThemeSelect);

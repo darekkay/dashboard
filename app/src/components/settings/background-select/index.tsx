@@ -22,4 +22,6 @@ export interface Props extends Omit<InputProps, "value" | "setValue"> {
   changeBackgroundUrl: (payload: string) => void;
 }
 
-export default connect(selectComponentProps, actionCreators)(BackgroundSelect);
+export default connect(selectComponentProps, {
+  changeBackgroundUrl: actionCreators.changeBackgroundUrl,
+})(BackgroundSelect);
