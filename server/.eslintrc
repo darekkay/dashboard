@@ -1,13 +1,29 @@
 {
-  "extends": ["@darekkay/eslint-config/nodejs"],
+  "extends": [
+    "@darekkay/eslint-config/nodejs",
+    "@darekkay/eslint-config/plugins/import",
+    "@darekkay/eslint-config/typescript"
+  ],
+
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+
+  "ignorePatterns": ["jest.config.js"],
 
   "overrides": [
     {
-      "extends": ["@darekkay/eslint-config/typescript"],
-      "files": ["**/*.ts", "**/*.tsx"],
-      "parser": "@typescript-eslint/parser",
-      "parserOptions": {
-        "project": "./tsconfig.json"
+      // Enable testing rules only for test files
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": [
+        "@darekkay/eslint-config/plugins/jest"
+      ],
+      "rules": {
+        "jest/no-test-return-statement": "off"
       }
     }
   ]

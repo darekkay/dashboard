@@ -1,6 +1,7 @@
 declare module "cachios" {
-  import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
   import { Options as NodeCacheOptions } from "node-cache";
+
+  import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
   interface CachiosRequestConfig extends AxiosRequestConfig {
     ttl?: number;

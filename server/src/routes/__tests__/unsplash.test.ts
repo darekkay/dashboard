@@ -1,9 +1,9 @@
 import request from "supertest";
-import axios from "axios";
 import logger from "@darekkay/logger";
 
-import app from "../../app";
+import axios from "axios";
 
+import app from "../../app";
 import unsplashImageMockResponse from "./__examples__/unsplash-image.json";
 
 describe("unsplash", () => {
@@ -12,7 +12,7 @@ describe("unsplash", () => {
     logger.setLevel("error");
   });
 
-  it("should return a random image", async () => {
+  test("should return a random image", async () => {
     const mockedAxios = axios as jest.Mocked<typeof axios>;
     mockedAxios.get.mockResolvedValueOnce(unsplashImageMockResponse);
 
@@ -31,7 +31,7 @@ describe("unsplash", () => {
       });
   });
 
-  it("returns 500 if the 3rd party response is invalid", async () => {
+  test("returns 500 if the 3rd party response is invalid", async () => {
     logger.setLevel("silent");
     const mockedAxios = axios as jest.Mocked<typeof axios>;
     mockedAxios.get.mockResolvedValueOnce({});

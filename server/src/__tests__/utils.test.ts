@@ -1,4 +1,5 @@
 import logger from "@darekkay/logger";
+
 import { ttlForWidgetType, TTL_OFFSET, DEFAULT_TTL } from "../utils";
 
 describe("utils", () => {

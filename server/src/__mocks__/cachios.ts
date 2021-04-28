@@ -1,6 +1,6 @@
 import axios, { AxiosStatic } from "axios";
 
-const cachios = jest.genMockFromModule<AxiosStatic>("cachios");
+const cachios = jest.createMockFromModule<AxiosStatic>("cachios");
 
 const create = () => axios;
 

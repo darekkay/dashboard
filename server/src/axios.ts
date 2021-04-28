@@ -1,6 +1,8 @@
-import axios from "axios";
 import cachios from "cachios";
 import logger from "@darekkay/logger";
+
+// eslint-disable-next-line import/no-self-import
+import axios from "axios";
 
 const axiosInstance = axios.create({
   timeout: 10000,

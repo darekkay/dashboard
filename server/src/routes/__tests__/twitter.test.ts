@@ -1,9 +1,9 @@
 import request from "supertest";
-import axios from "axios";
 import logger from "@darekkay/logger";
 
-import app from "../../app";
+import axios from "axios";
 
+import app from "../../app";
 import twitterUserMockResponse from "./__examples__/twitter-user.json";
 import { normalizeUsername } from "../twitter";
 
@@ -13,7 +13,7 @@ describe("twitter", () => {
     logger.setLevel("error");
   });
 
-  it("should return a valid response", async () => {
+  test("should return a valid response", async () => {
     const mockedAxios = axios as jest.Mocked<typeof axios>;
     mockedAxios.get.mockResolvedValueOnce(twitterUserMockResponse);
 
@@ -31,15 +31,15 @@ describe("twitter", () => {
       });
   });
 
-  it("handles @ and spaces in username", () => {
+  test("handles @ and spaces in username", () => {
     expect(normalizeUsername("  @darek_kay  ")).toBe("darek_kay");
   });
 
-  it("returns 400 if the query parameters are missing", async () => {
+  test("returns 400 if the query parameters are missing", async () => {
     return request(app).get("/twitter/user").expect(400);
   });
 
-  it("returns 404 if the 3rd party BE returns a 200 error", async () => {
+  test("returns 404 if the 3rd party BE returns a 200 error", async () => {
     const mockedAxios = axios as jest.Mocked<typeof axios>;
     mockedAxios.get.mockResolvedValueOnce({
       data: {
@@ -52,7 +52,7 @@ describe("twitter", () => {
       .expect(404);
   });
 
-  it("returns 500 if the 3rd party response is invalid", async () => {
+  test("returns 500 if the 3rd party response is invalid", async () => {
     logger.setLevel("silent");
     const mockedAxios = axios as jest.Mocked<typeof axios>;
     mockedAxios.get.mockResolvedValueOnce({});

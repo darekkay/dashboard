@@ -1,17 +1,17 @@
 import request from "supertest";
-import axios from "axios";
 import logger from "@darekkay/logger";
+
+import axios from "axios";
 
 import app from "../../app";
 import { parseQuery, QueryType } from "../github";
-
 import repositoryMockResponse from "./__examples__/github-repository.json";
 import userMockResponse from "./__examples__/github-user.json";
 import userRepositoriesMockResponse from "./__examples__/github-user-repositories.json";
 
 describe("github", () => {
   describe("parseQuery", () => {
-    it("should differentiate between user and repository automatically", () => {
+    test("should differentiate between user and repository automatically", () => {
       const assertions: Array<
         [string, { id: string; queryType: QueryType }]
       > = [
@@ -62,7 +62,7 @@ describe("github", () => {
       logger.setLevel("error");
     });
 
-    it("should recognize a user", async () => {
+    test("should recognize a user", async () => {
       const mockedAxios = axios as jest.Mocked<typeof axios>;
       mockedAxios.get.mockResolvedValueOnce(userMockResponse);
       mockedAxios.get.mockResolvedValueOnce(userRepositoriesMockResponse);
@@ -81,7 +81,7 @@ describe("github", () => {
         });
     });
 
-    it("recognizes a repository", async () => {
+    test("recognizes a repository", async () => {
       const mockedAxios = axios as jest.Mocked<typeof axios>;
       mockedAxios.get.mockResolvedValue(repositoryMockResponse);
 
@@ -99,18 +99,18 @@ describe("github", () => {
         });
     });
 
-    it("returns 400 if the query is missing", async () => {
+    test("returns 400 if the query is missing", async () => {
       return request(app).get("/github/stats").expect(400);
     });
 
-    it("returns 422 if the query type cannot be derived", async () => {
+    test("returns 422 if the query type cannot be derived", async () => {
       return request(app)
         .get("/github/stats")
         .query({ query: "da/rek/kay" })
         .expect(422);
     });
 
-    it("returns 404 if the username cannot be found", async () => {
+    test("returns 404 if the username cannot be found", async () => {
       logger.setLevel("silent");
       const mockedAxios = axios as jest.Mocked<typeof axios>;
       mockedAxios.get.mockImplementation(() => {

@@ -1,9 +1,9 @@
 import request from "supertest";
-import axios from "axios";
 import logger from "@darekkay/logger";
 
-import app from "../../app";
+import axios from "axios";
 
+import app from "../../app";
 import openweatherMockResponse from "./__examples__/weather.json";
 
 describe("weather", () => {
@@ -12,7 +12,7 @@ describe("weather", () => {
     logger.setLevel("error");
   });
 
-  it("should return a valid response", async () => {
+  test("should return a valid response", async () => {
     const mockedAxios = axios as jest.Mocked<typeof axios>;
     mockedAxios.get.mockResolvedValueOnce(openweatherMockResponse);
 
@@ -29,11 +29,11 @@ describe("weather", () => {
       });
   });
 
-  it("returns 400 if the query parameters are missing", async () => {
+  test("returns 400 if the query parameters are missing", async () => {
     return request(app).get("/weather").expect(400);
   });
 
-  it("returns 500 if the 3rd party response is invalid", async () => {
+  test("returns 500 if the 3rd party response is invalid", async () => {
     logger.setLevel("silent");
     const mockedAxios = axios as jest.Mocked<typeof axios>;
     mockedAxios.get.mockResolvedValueOnce({ data: {} });

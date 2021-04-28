@@ -1,9 +1,9 @@
 import request from "supertest";
-import axios from "axios";
 import logger from "@darekkay/logger";
 
-import app from "../../app";
+import axios from "axios";
 
+import app from "../../app";
 import youtubeChannelMockResponse from "./__examples__/youtube-channel.json";
 
 describe("youtube", () => {
@@ -12,7 +12,7 @@ describe("youtube", () => {
     logger.setLevel("error");
   });
 
-  it("should return a valid response", async () => {
+  test("should return a valid response", async () => {
     const mockedAxios = axios as jest.Mocked<typeof axios>;
     mockedAxios.get.mockResolvedValueOnce(youtubeChannelMockResponse);
 
@@ -29,7 +29,7 @@ describe("youtube", () => {
       });
   });
 
-  it("handles channel URLs", async () => {
+  test("handles channel URLs", async () => {
     const mockedAxios = axios as jest.Mocked<typeof axios>;
     mockedAxios.get.mockResolvedValueOnce(youtubeChannelMockResponse);
 
@@ -42,7 +42,7 @@ describe("youtube", () => {
       .expect(200);
   });
 
-  it("handles URL aliases", async () => {
+  test("handles URL aliases", async () => {
     const mockedAxios = axios as jest.Mocked<typeof axios>;
     mockedAxios.get.mockResolvedValueOnce(youtubeChannelMockResponse);
 
@@ -53,7 +53,7 @@ describe("youtube", () => {
       .expect(200);
   });
 
-  it("handles user URLs", async () => {
+  test("handles user URLs", async () => {
     const mockedAxios = axios as jest.Mocked<typeof axios>;
     mockedAxios.get.mockResolvedValueOnce(youtubeChannelMockResponse);
 
@@ -64,7 +64,7 @@ describe("youtube", () => {
       .expect(200);
   });
 
-  it("handles channel IDs", async () => {
+  test("handles channel IDs", async () => {
     const mockedAxios = axios as jest.Mocked<typeof axios>;
     mockedAxios.get.mockResolvedValueOnce(youtubeChannelMockResponse);
 
@@ -75,11 +75,11 @@ describe("youtube", () => {
       .expect(200);
   });
 
-  it("returns 400 if the query parameters are missing", async () => {
+  test("returns 400 if the query parameters are missing", async () => {
     return request(app).get("/youtube/stats").expect(400);
   });
 
-  it("returns 404 if the 3rd party BE doesn't return any items", async () => {
+  test("returns 404 if the 3rd party BE doesn't return any items", async () => {
     const mockedAxios = axios as jest.Mocked<typeof axios>;
     mockedAxios.get.mockResolvedValueOnce({
       data: {},
@@ -90,7 +90,7 @@ describe("youtube", () => {
       .expect(404);
   });
 
-  it("returns 500 if the 3rd party response is invalid", async () => {
+  test("returns 500 if the 3rd party response is invalid", async () => {
     logger.setLevel("silent");
     const mockedAxios = axios as jest.Mocked<typeof axios>;
     mockedAxios.get.mockResolvedValueOnce({

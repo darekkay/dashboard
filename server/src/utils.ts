@@ -2,9 +2,9 @@ import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
 import logger from "@darekkay/logger";
 
-dayjs.extend(duration);
-
 import widgets from "./widgets";
+
+dayjs.extend(duration);
 
 export const DEFAULT_TTL = 600;
 export const TTL_OFFSET = 30;
