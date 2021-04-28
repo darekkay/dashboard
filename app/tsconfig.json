@@ -18,5 +18,5 @@
     "typeRoots": ["./node_modules/@types", "./typings"],
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src", "internals"]
 }

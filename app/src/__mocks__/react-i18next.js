@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 const reactI18next = require("react-i18next");
 
 /*
