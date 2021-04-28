@@ -16,7 +16,7 @@ describe("<Input />", () => {
     const input = screen.getByRole("textbox");
 
     expect(setValue).not.toHaveBeenCalled();
-    fireEvent.keyUp(input, { which: 13, key: "Enter" });
+    userEvent.type(input, "{enter}");
     expect(setValue).toHaveBeenCalled();
   });
 
@@ -26,7 +26,7 @@ describe("<Input />", () => {
     const input = screen.getByRole("textbox");
 
     expect(setValue).not.toHaveBeenCalled();
-    fireEvent.keyUp(input, { which: 27, key: "Escape" });
+    userEvent.type(input, "{escape}");
     expect(setValue).toHaveBeenCalled();
   });
 

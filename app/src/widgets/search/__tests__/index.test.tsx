@@ -1,6 +1,6 @@
 import React from "react";
 
-import { render, screen, fireEvent, userEvent } from "common/testing";
+import { render, screen, userEvent } from "common/testing";
 import { widgetProps } from "common/utils/mock";
 
 import Search, { Props } from "../index";
@@ -72,12 +72,12 @@ describe("<Search />", () => {
     expect(searchInput).toHaveValue("");
 
     // pressing Enter in an empty field doesn't trigger a search
-    fireEvent.keyUp(searchInput, { which: 13, key: "Enter" });
+    userEvent.type(searchInput, "{enter}");
     expect(windowOpenSpy).toHaveBeenCalledTimes(1);
 
     // pressing Enter in a non-empty field triggers a search
     userEvent.type(searchInput, "moo");
-    fireEvent.keyUp(searchInput, { which: 13, key: "Enter" });
+    userEvent.type(searchInput, "{enter}");
     expect(windowOpenSpy).toHaveBeenCalledTimes(2);
   });
 });
