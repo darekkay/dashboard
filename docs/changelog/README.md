@@ -12,6 +12,9 @@
 - :rocket: Close settings modal by pressing Enter within the input field.
 - :bug: Make widgets configurable on mobile again.
 - :bug: Recalculate grid width on toggling the widget drawer.
+- :hammer: Switch npm scripts to [@darekkay/scripts](https://github.com/darekkay/darekkay-scripts).
+- :hammer: Update ESlint rules.
+- :hammer: Replace babel parser with ts-parser for ESlint.
 - :hammer: Migrate stories to the Component Story Format.
 - :hammer: Update dependencies.
 

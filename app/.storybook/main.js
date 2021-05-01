@@ -3,6 +3,6 @@ module.exports = {
   addons: [
     "@storybook/addon-a11y",
     "storybook-addon-themes",
-    "@storybook/preset-create-react-app"
-  ]
+    "@storybook/preset-create-react-app",
+  ],
 };

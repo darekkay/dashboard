@@ -1,22 +1,14 @@
-module.exports = {
-  preset: "ts-jest",
-  testEnvironment: "node",
-  testPathIgnorePatterns: ["/node_modules/", "/dist/"],
-  roots: ["<rootDir>/src"],
+const commonConfig = require("@darekkay/scripts/src/config/jest.config");
 
-  coverageThreshold: {
-    global: {
-      statements: 85,
-      branches: 85,
-      functions: 85,
-      lines: 85,
-    },
-  },
-  collectCoverageFrom: [
-    "src/**/*.{js,jsx,ts,tsx}",
-    "!**/node_modules/**",
-    "!src/index.ts",
-    "!src/config.ts",
-    "!src/axios.ts",
+module.exports = {
+  ...commonConfig,
+
+  preset: "ts-jest",
+
+  coveragePathIgnorePatterns: [
+    ...commonConfig.coveragePathIgnorePatterns,
+    "src/index.ts",
+    "src/config.ts",
+    "src/axios.ts",
   ],
 };

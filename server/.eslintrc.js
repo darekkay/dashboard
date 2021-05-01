@@ -1,0 +1,6 @@
+module.exports = {
+  extends: [
+    "@darekkay/eslint-config/nodejs",
+    "@darekkay/eslint-config/typescript",
+  ],
+};

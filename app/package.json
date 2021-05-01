@@ -44,8 +44,8 @@
     "selectorator": "4.0.3"
   },
   "devDependencies": {
-    "@darekkay/eslint-config": "2.5.1",
     "@darekkay/logger": "1.1.2",
+    "@darekkay/scripts": "1.0.1",
     "@storybook/addon-a11y": "6.1.8",
     "@storybook/addons": "6.1.8",
     "@storybook/preset-create-react-app": "3.1.5",
@@ -66,28 +66,15 @@
     "@types/react-measure": "2.0.6",
     "@types/react-modal": "3.10.6",
     "@types/react-redux": "7.1.11",
-    "@typescript-eslint/eslint-plugin": "4.13.0",
-    "@typescript-eslint/parser": "4.13.0",
     "babel-eslint": "10.1.0",
-    "cross-env": "7.0.2",
-    "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-jest": "24.3.6",
-    "eslint-plugin-jest-dom": "3.8.1",
-    "eslint-plugin-jsx-a11y": "6.4.1",
-    "eslint-plugin-prettier": "3.4.0",
-    "eslint-plugin-react": "7.23.2",
-    "eslint-plugin-react-hooks": "4.2.0",
-    "eslint-plugin-testing-library": "4.1.2",
-    "eslint-plugin-unicorn": "31.0.0",
     "node-sass": "4.14.1",
     "plop": "2.7.4",
-    "prettier": "2.2.1",
     "react-test-renderer": "17.0.1",
     "redux-devtools-extension": "2.13.8",
     "source-map-explorer": "2.5.1",
     "storybook-addon-themes": "6.0.0",
-    "ts-node": "9.0.0",
-    "typescript": "4.1.2"
+    "ts-node": "9.1.1",
+    "typescript": "4.1.5"
   },
   "homepage": "https://dashboard.darekkay.com",
   "jest": {
@@ -121,22 +108,23 @@
   },
   "resolutions": {
     "eslint": "7.25.0",
-    "eslint-plugin-react": "7.23.2"
+    "eslint-plugin-react": "7.23.2",
+    "eslint-plugin-testing-library": "4.1.2"
   },
   "scripts": {
     "analyze": "source-map-explorer \"build/static/js/*.js\"",
     "build": "react-scripts build",
-    "ci": "cross-env CI=true npm run lint && npm run test",
-    "format": "prettier --write .",
+    "ci": "dks ci",
+    "format": "dks format",
     "generate": "plop --plopfile internals/generators/index.js",
     "i18n": "ts-node -P internals/scripts/tsconfig.json internals/scripts/i18n.ts ",
-    "lint": "tsc && eslint {internals,src}/**/*.{ts,tsx,js} --no-error-on-unmatched-pattern",
-    "lint:fix": "eslint --fix {internals,src}/**/*.{ts,tsx,js}",
+    "lint": "dks lint",
     "scan-widgets": "ts-node -P internals/scripts/tsconfig.json internals/scripts/scan-widgets.ts && prettier --write src/widgets/list.ts && prettier --write ../server/src/widgets.ts",
     "start": "react-scripts start",
     "storybook:build": "build-storybook",
     "storybook:start": "start-storybook -p 6006 -s .storybook/assets",
     "tailwind": "tailwind build internals/tailwind/tailwind.css -c internals/tailwind/config.js --no-autoprefixer -o src/styles/_tailwind.scss && prettier --write src/styles/_tailwind.scss",
-    "test": "react-scripts test --modulePaths=src --coverage"
+    "test": "react-scripts test --modulePaths=src --coverage",
+    "typecheck": "dks typecheck"
   }
 }

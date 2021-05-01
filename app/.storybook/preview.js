@@ -15,8 +15,8 @@ addParameters({
       name: "Default",
       color: "#f5f7fb",
       class: "theme-default",
-      default: true
+      default: true,
     },
-    { name: "Dark", color: "#1c1c1c", class: "theme-dark" }
-  ]
+    { name: "Dark", color: "#1c1c1c", class: "theme-dark" },
+  ],
 });

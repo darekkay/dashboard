@@ -7,10 +7,7 @@
   "name": "Nitrogen",
   "period": 2,
   "symbol": "N",
-  "electronsPerShell": [
-    2,
-    5
-  ],
+  "electronsPerShell": [2, 5],
   "discoveryDate": 1772,
   "context": "Apart from its use in fertilisers and energy-stores, nitrogen is a constituent of organic compounds as diverse as Kevlar used in high-strength fabric and cyanoacrylate used in superglue. Nitrogen is a constituent of every major pharmacological drug class, including antibiotics.",
   "nameLatin": "Nitrogenium",

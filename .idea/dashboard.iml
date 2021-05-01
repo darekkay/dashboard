@@ -9,8 +9,10 @@
       <excludeFolder url="file://$MODULE_DIR$/app/coverage" />
       <excludeFolder url="file://$MODULE_DIR$/app/storybook-static" />
       <excludeFolder url="file://$MODULE_DIR$/docs/.vuepress/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/.vuepress/public" />
       <excludeFolder url="file://$MODULE_DIR$/server/coverage" />
       <excludeFolder url="file://$MODULE_DIR$/server/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/httpRequests" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
