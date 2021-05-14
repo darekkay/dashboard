@@ -12,43 +12,51 @@ import userRepositoriesMockResponse from "./__examples__/github-user-repositorie
 describe("github", () => {
   describe("parseQuery", () => {
     test("should differentiate between user and repository automatically", () => {
-      const assertions: Array<
-        [string, { id: string; queryType: QueryType }]
-      > = [
-        // User
-        ["darekkay", { id: "darekkay", queryType: "user" }],
-        ["/darekkay", { id: "darekkay", queryType: "user" }],
-        ["github.com/darekkay", { id: "darekkay", queryType: "user" }],
-        ["https://github.com/darekkay", { id: "darekkay", queryType: "user" }],
-        ["https://github.com/darekkay/", { id: "darekkay", queryType: "user" }],
-        ["HTTPS://GITHUB.COM/DAREKKAY/", { id: "darekkay", queryType: "user" }],
+      const assertions: Array<[string, { id: string; queryType: QueryType }]> =
+        [
+          // User
+          ["darekkay", { id: "darekkay", queryType: "user" }],
+          ["/darekkay", { id: "darekkay", queryType: "user" }],
+          ["github.com/darekkay", { id: "darekkay", queryType: "user" }],
+          [
+            "https://github.com/darekkay",
+            { id: "darekkay", queryType: "user" },
+          ],
+          [
+            "https://github.com/darekkay/",
+            { id: "darekkay", queryType: "user" },
+          ],
+          [
+            "HTTPS://GITHUB.COM/DAREKKAY/",
+            { id: "darekkay", queryType: "user" },
+          ],
 
-        // Repository
-        [
-          "darekkay/dashboard",
-          { id: "darekkay/dashboard", queryType: "repository" },
-        ],
-        [
-          "/darekkay/dashboard",
-          { id: "darekkay/dashboard", queryType: "repository" },
-        ],
-        [
-          "github.com/darekkay/dashboard",
-          { id: "darekkay/dashboard", queryType: "repository" },
-        ],
-        [
-          "https://github.com/darekkay/dashboard",
-          { id: "darekkay/dashboard", queryType: "repository" },
-        ],
-        [
-          "https://github.com/darekkay/dashboard/",
-          { id: "darekkay/dashboard", queryType: "repository" },
-        ],
-        [
-          "HTTPS://GITHUB.COM/DAREKKAY/DASHBOARD/",
-          { id: "darekkay/dashboard", queryType: "repository" },
-        ],
-      ];
+          // Repository
+          [
+            "darekkay/dashboard",
+            { id: "darekkay/dashboard", queryType: "repository" },
+          ],
+          [
+            "/darekkay/dashboard",
+            { id: "darekkay/dashboard", queryType: "repository" },
+          ],
+          [
+            "github.com/darekkay/dashboard",
+            { id: "darekkay/dashboard", queryType: "repository" },
+          ],
+          [
+            "https://github.com/darekkay/dashboard",
+            { id: "darekkay/dashboard", queryType: "repository" },
+          ],
+          [
+            "https://github.com/darekkay/dashboard/",
+            { id: "darekkay/dashboard", queryType: "repository" },
+          ],
+          [
+            "HTTPS://GITHUB.COM/DAREKKAY/DASHBOARD/",
+            { id: "darekkay/dashboard", queryType: "repository" },
+          ],
+        ];
 
       assertions.forEach((assertion) =>
         expect(parseQuery(assertion[0])).toEqual(assertion[1])

@@ -41,8 +41,7 @@ module.exports = (plop) => {
     // Component story
     {
       type: "add",
-      path:
-        "../../src/components/{{kebabCase name}}/__stories__/index.stories.tsx",
+      path: "../../src/components/{{kebabCase name}}/__stories__/index.stories.tsx",
       templateFile: "./component/story.hbs",
       abortOnFail: false,
     },
@@ -77,8 +76,7 @@ module.exports = (plop) => {
       // Widget story
       {
         type: "add",
-        path:
-          "../../src/widgets/{{kebabCase name}}/__stories__/index.stories.tsx",
+        path: "../../src/widgets/{{kebabCase name}}/__stories__/index.stories.tsx",
         templateFile: "./widget/story.hbs",
         abortOnFail: false,
       },

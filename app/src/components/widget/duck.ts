@@ -39,9 +39,8 @@ export const updateError = createAction<UpdateActionError>(
 );
 
 // Widget actions
-export const createWidget = createAction<{ id: string; type: WidgetType }>(
-  "widget/create"
-);
+export const createWidget =
+  createAction<{ id: string; type: WidgetType }>("widget/create");
 export const removeWidget = createAction<string>("widget/remove");
 
 export type UpdateStatus = "idle" | "pending" | "success" | "error";

@@ -48,12 +48,8 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
   const [dimensions, setDimensions] = useState<Dimensions>(initialDimensions);
   const [isDraggable, setDraggable] = useState(true);
 
-  const [
-    isWidgetMenuVisible,
-    showWidgetMenu,
-    ,
-    setWidgetMenuVisible,
-  ] = useBooleanState(false);
+  const [isWidgetMenuVisible, showWidgetMenu, , setWidgetMenuVisible] =
+    useBooleanState(false);
 
   const [
     isConfigurationModalOpen,

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { render, screen, userEvent, act } from "common/testing";
+import { render, screen, userEvent } from "common/testing";
 
 import FileUpload from "../index";
 
@@ -19,10 +19,9 @@ describe("<FileUpload />", () => {
       type: "image/png",
     });
 
-    await act(async () => {
-      userEvent.upload(fileInput, file);
-    });
+    userEvent.upload(fileInput, file);
 
-    expect(screen.getByText(/chucknorris\.png/)).toBeInTheDocument();
+    const uploadedImage = await screen.findByText(/chucknorris\.png/);
+    expect(uploadedImage).toBeInTheDocument();
   });
 });

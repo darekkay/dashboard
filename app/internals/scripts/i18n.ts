@@ -1,10 +1,10 @@
 /** Find missing i18n translations */
 
-/* eslint-disable no-console */
 import { readdirSync, readFileSync } from "fs";
 import { join } from "path";
 
 import { isObject, reduce, merge, keys, difference } from "lodash";
+import logger from "@darekkay/logger";
 
 const I18N_FILES_PATH = "src/common/translations";
 
@@ -69,9 +69,8 @@ Object.entries(allTranslations).forEach(([lang, labels]) => {
   );
 
   if (missingLabels.length > 0) {
-    console.error(`Missing '${lang}' translations for the following keys:`);
-    console.info(missingLabels);
-    console.info();
+    logger.error(`Missing '${lang}' translations for the following keys:`);
+    logger.log(missingLabels);
     containsMissingKeys = true;
   }
 
@@ -79,15 +78,14 @@ Object.entries(allTranslations).forEach(([lang, labels]) => {
   const unknownLabels = difference(labels, allTranslations.en);
 
   if (unknownLabels.length > 0) {
-    console.warn(`Unknown labels for '${lang}':`);
-    console.info(unknownLabels);
-    console.info();
+    logger.warn(`Unknown labels for '${lang}':`);
+    logger.log(unknownLabels);
   }
 });
 
 if (!containsMissingKeys) {
-  console.info("✓ All labels are translated.");
+  logger.success("All labels are translated.");
 } else {
-  console.error("✗ Label translations are missing.");
+  logger.error("Label translations are missing.");
   process.exit(1);
 }

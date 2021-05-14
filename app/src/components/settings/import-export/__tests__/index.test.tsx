@@ -43,16 +43,16 @@ describe("<ImportExport />", () => {
 
     const file = createFile(stateProps);
 
-    await act(async () => {
-      // eslint-disable-next-line testing-library/no-await-sync-events
-      await fireEvent.drop(fileInput, { target: { files: [file] } });
-    });
+    fireEvent.drop(fileInput, { target: { files: [file] } });
 
-    expect(importStateSpy).toHaveBeenCalledTimes(1);
-    expect(screen.getByText("config.data.restore.success")).toBeInTheDocument();
+    const successMessage = await screen.findByText(
+      "config.data.restore.success"
+    );
+    expect(successMessage).toBeInTheDocument();
     expect(
       screen.queryByText("config.data.restore.error")
     ).not.toBeInTheDocument();
+    expect(importStateSpy).toHaveBeenCalledTimes(1);
   });
 
   test("doesn't import invalid files", async () => {
@@ -62,13 +62,11 @@ describe("<ImportExport />", () => {
 
     const file = createFile({ a: 2 });
 
-    await act(async () => {
-      // eslint-disable-next-line testing-library/no-await-sync-events
-      await fireEvent.drop(fileInput, { target: { files: [file] } });
-    });
+    fireEvent.drop(fileInput, { target: { files: [file] } });
 
     expect(importStateSpy).toHaveBeenCalledTimes(0);
-    expect(screen.getByText("config.data.restore.error")).toBeInTheDocument();
+    const errorMessage = await screen.findByText("config.data.restore.error");
+    expect(errorMessage).toBeInTheDocument();
     expect(
       screen.queryByText("config.data.restore.success")
     ).not.toBeInTheDocument();
@@ -83,6 +81,7 @@ describe("<ImportExport />", () => {
       type: "image/png",
     });
 
+    // eslint-disable-next-line testing-library/no-unnecessary-act
     await act(async () => {
       // eslint-disable-next-line testing-library/no-await-sync-events
       await fireEvent.drop(fileInput, { target: { files: [imageFile] } });

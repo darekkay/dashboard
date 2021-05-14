@@ -19,15 +19,5 @@
     // currently, the dashboard is not keyboard-accessible :(
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/no-noninteractive-tabindex": "off"
-  },
-
-  "overrides": [
-    {
-      "files": ["internals/**/*.js", "internals/**/*.ts"],
-      "rules": {
-        "import/no-nodejs-modules": "off",
-        "@typescript-eslint/no-require-imports": "off"
-      }
-    }
-  ]
+  }
 }

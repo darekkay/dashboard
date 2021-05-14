@@ -24,7 +24,7 @@
     "i18next": "19.8.4",
     "lodash": "4.17.20",
     "loglevel": "1.7.1",
-    "qrcode.react": "1.0.0",
+    "qrcode.react": "1.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-dropzone": "11.2.4",
@@ -45,11 +45,10 @@
   },
   "devDependencies": {
     "@darekkay/logger": "1.1.2",
-    "@darekkay/scripts": "1.0.1",
-    "@storybook/addon-a11y": "6.1.8",
-    "@storybook/addons": "6.1.8",
-    "@storybook/preset-create-react-app": "3.1.5",
-    "@storybook/react": "6.1.8",
+    "@darekkay/scripts": "1.2.0",
+    "@storybook/addons": "6.2.9",
+    "@storybook/preset-create-react-app": "3.1.7",
+    "@storybook/react": "6.2.9",
     "@tailwindcss/postcss7-compat": "2.0.1",
     "@testing-library/jest-dom": "5.11.6",
     "@testing-library/react": "11.2.2",
@@ -72,9 +71,12 @@
     "react-test-renderer": "17.0.1",
     "redux-devtools-extension": "2.13.8",
     "source-map-explorer": "2.5.1",
-    "storybook-addon-themes": "6.0.0",
+    "storybook-addon-themes": "6.1.0",
     "ts-node": "9.1.1",
     "typescript": "4.1.5"
+  },
+  "engines": {
+    "node": ">=12.0.0"
   },
   "homepage": "https://dashboard.darekkay.com",
   "jest": {
@@ -107,9 +109,10 @@
     "url": "https://github.com/darekkay/dashboard.git"
   },
   "resolutions": {
+    "babel-loader": "8.1.0",
     "eslint": "7.25.0",
     "eslint-plugin-react": "7.23.2",
-    "eslint-plugin-testing-library": "4.1.2"
+    "eslint-plugin-testing-library": "4.3.0"
   },
   "scripts": {
     "analyze": "source-map-explorer \"build/static/js/*.js\"",
