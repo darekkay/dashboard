@@ -1,6 +1,12 @@
+@import "./mixins";
+
 html {
   /* font-size 1em = 10px on default browser settings */
   font-size: 62.5%;
+}
+
+* {
+  @include focus-ring(var(--focus-ring-color));
 }
 
 body {
@@ -57,5 +63,3 @@ hr {
   border: 0;
   padding: 0;
 }
-
-@include focus-ring(var(--focus-ring-color));
