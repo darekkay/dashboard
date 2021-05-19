@@ -18,6 +18,10 @@
 
     // currently, the dashboard is not keyboard-accessible :(
     "jsx-a11y/no-static-element-interactions": "off",
-    "jsx-a11y/no-noninteractive-tabindex": "off"
+    "jsx-a11y/no-noninteractive-tabindex": "off",
+
+    // currently something is broken in typescript-eslint
+    // TODO: re-enable when it's working again
+    "@typescript-eslint/no-unused-vars": "off"
   }
 }

@@ -1,7 +1,7 @@
 import i18n, { Resource } from "i18next";
 import { initReactI18next } from "react-i18next";
 import { PayloadAction } from "@reduxjs/toolkit";
-import { takeEvery } from "@redux-saga/core/effects";
+import { takeEvery } from "typed-redux-saga";
 
 import dayjs from "common/date";
 import { DEBUG_LABELS } from "common/environment";
@@ -66,8 +66,8 @@ const onRehydrate = (action: PayloadAction<State>) => {
 };
 
 export function* saga() {
-  yield takeEvery(changeLanguage.toString(), onChangeLanguage);
-  yield takeEvery("persist/REHYDRATE", onRehydrate);
+  yield* takeEvery(changeLanguage.toString(), onChangeLanguage);
+  yield* takeEvery("persist/REHYDRATE", onRehydrate);
 }
 
 export default i18n;

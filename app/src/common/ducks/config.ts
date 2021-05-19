@@ -1,7 +1,7 @@
 /** Application settings */
 
 import { createAction, createReducer, PayloadAction } from "@reduxjs/toolkit";
-import { put, takeEvery } from "redux-saga/effects";
+import { put, takeEvery } from "typed-redux-saga";
 
 import { State } from "state/store";
 import { Theme } from "components/settings/theme-select";
@@ -56,11 +56,11 @@ export const reducerWithInitialState = (
   );
 
 function* updateLanguage(action: PayloadAction<State>) {
-  yield put(changeLanguage(action.payload.config.language));
+  yield* put(changeLanguage(action.payload.config.language));
 }
 
 export function* saga() {
-  yield takeEvery(importState.toString(), updateLanguage);
+  yield* takeEvery(importState.toString(), updateLanguage);
 }
 
 export const actionCreators = {

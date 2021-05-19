@@ -1,4 +1,4 @@
-import { put, call } from "@redux-saga/core/effects";
+import { put, call } from "typed-redux-saga";
 import { PayloadAction } from "@reduxjs/toolkit";
 
 import {
@@ -9,21 +9,23 @@ import {
   TriggerUpdateAction,
 } from "components/widget/duck";
 
-const triggerUpdateHandler = (apiCall: (...args: any[]) => any) => {
+type ApiCall = (params: Record<string, any>) => Record<string, any>;
+
+const triggerUpdateHandler = (apiCall: ApiCall) => {
   return function* onTriggerUpdate(action: PayloadAction<TriggerUpdateAction>) {
     const { id, params } = action.payload;
-    yield put(updatePending(id));
+    yield* put(updatePending(id));
     try {
-      const data = yield call(apiCall, params);
-      yield put(
+      const data = yield* call(apiCall, params);
+      yield* put(
         setData({
           id,
           values: data,
         })
       );
-      yield put(updateSuccess(id));
+      yield* put(updateSuccess(id));
     } catch (error) {
-      yield put(updateError({ id, error }));
+      yield* put(updateError({ id, error }));
     }
   };
 };

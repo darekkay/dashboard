@@ -1,4 +1,4 @@
-import { takeEvery } from "@redux-saga/core/effects";
+import { takeEvery } from "typed-redux-saga";
 
 import api, { CRYPTOCURRENCIES_PRICE } from "common/api";
 import triggerUpdateHandler from "common/utils/triggerUpdateHandler";
@@ -12,7 +12,7 @@ const fetchCryptocurrencyPrice = async (params: Record<string, any>) => {
 };
 
 export function* saga() {
-  yield takeEvery(
+  yield* takeEvery(
     triggerUpdate(widgetType).type,
     triggerUpdateHandler(fetchCryptocurrencyPrice)
   );

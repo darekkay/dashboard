@@ -3,7 +3,7 @@
 import maxBy from "lodash/maxBy";
 import filter from "lodash/filter";
 import { createAction, createReducer, PayloadAction } from "@reduxjs/toolkit";
-import { put, select, takeEvery } from "redux-saga/effects";
+import { put, select, takeEvery } from "typed-redux-saga";
 import { Layout as ReactGridLayout } from "react-grid-layout";
 
 import widgets from "widgets";
@@ -91,24 +91,24 @@ const selectNextWidgetId = (state: { layout: LayoutState }) =>
 
 /* When a new widget is added, create the according widget data and update the widget counter */
 function* addWidgetSaga(action: PayloadAction<WidgetType>) {
-  const nextWidgetId = yield select(selectNextWidgetId);
-  yield put(
+  const nextWidgetId = yield* select(selectNextWidgetId);
+  yield* put(
     createWidget({
       type: action.payload,
       id: widgetId(action.payload, nextWidgetId),
     })
   );
-  yield put(incrementNextWidgetId());
+  yield* put(incrementNextWidgetId());
 }
 
 /* When a widget is removed from the layout, the according widget data should be deleted as well */
 function* removeWidgetSaga(action: PayloadAction<string>) {
-  yield put(removeWidget(action.payload));
+  yield* put(removeWidget(action.payload));
 }
 
 export function* saga() {
-  yield takeEvery(addWidgetToLayout.toString(), addWidgetSaga);
-  yield takeEvery(removeWidgetFromLayout.toString(), removeWidgetSaga);
+  yield* takeEvery(addWidgetToLayout.toString(), addWidgetSaga);
+  yield* takeEvery(removeWidgetFromLayout.toString(), removeWidgetSaga);
 }
 
 export const actionCreators = {

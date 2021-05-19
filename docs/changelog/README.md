@@ -15,6 +15,7 @@
 - :hammer: Switch npm scripts to [@darekkay/scripts](https://github.com/darekkay/darekkay-scripts).
 - :hammer: Update ESlint rules.
 - :hammer: Replace babel parser with ts-parser for ESlint.
+- :hammer: Replace redux-saga with typed-redux-saga to support latest TypeScript version.
 - :hammer: Migrate stories to the Component Story Format.
 - :hammer: Update dependencies.
 

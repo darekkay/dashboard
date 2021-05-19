@@ -1,4 +1,4 @@
-import { takeEvery } from "@redux-saga/core/effects";
+import { takeEvery } from "typed-redux-saga";
 
 import api, { PASSTHROUGH } from "common/api";
 import triggerUpdateHandler from "common/utils/triggerUpdateHandler";
@@ -12,7 +12,7 @@ const fetchData = async (params: Record<string, any>) => {
 };
 
 export function* saga() {
-  yield takeEvery(
+  yield* takeEvery(
     triggerUpdate(widgetType).type,
     triggerUpdateHandler(fetchData)
   );
