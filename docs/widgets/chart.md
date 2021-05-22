@@ -2,6 +2,8 @@
 
 A generic component for displaying JSON data in a chart. Currently, only a line chart is supported.
 
+![](./img/chart.png)
+
 ## Configuration
 
 An external source is defined in the URL field. It must return a valid JSON document.

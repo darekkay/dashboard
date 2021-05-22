@@ -25,6 +25,7 @@ This is a list of all currently implemented widgets. The [roadmap](../roadmap/RE
 
 ## Tracking
 
+- [Chart / Graph](chart.md): A generic component for displaying JSON data in a chart.
 - [Counter](counter.md): Number counter.
 
 ## Monitoring
