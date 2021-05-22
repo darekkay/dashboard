@@ -10,6 +10,7 @@
 - :rocket: Reset outdated data when restoring a backup. 
 - :rocket: Make theme selection keyboard-accessible.
 - :rocket: Close settings modal by pressing Enter within the input field.
+- :gem: Increase base widget height.
 - :bug: Make widgets configurable on mobile again.
 - :bug: Recalculate grid width on toggling the widget drawer.
 - :hammer: Switch npm scripts to [@darekkay/scripts](https://github.com/darekkay/darekkay-scripts).
