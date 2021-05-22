@@ -59,6 +59,15 @@ module.exports = {
       extrabold: "800",
     },
 
+    lineHeight: {
+      none: "1",
+      tight: "1.25",
+      snug: "1.375",
+      normal: "1.5",
+      relaxed: "1.625",
+      loose: "2",
+    },
+
     // Spacing
 
     spacing: {
@@ -137,9 +146,10 @@ module.exports = {
 
     fontSize: [],
     fontWeight: [],
+    fontStyle: [],
+    lineHeight: [],
     textColor: [],
     backgroundColor: [],
-    fontStyle: [],
     textAlign: ["responsive"],
     textDecoration: ["hover", "focus"],
     textTransform: [],
@@ -184,6 +194,7 @@ module.exports = {
     fontSize: true,
     fontWeight: true,
     fontStyle: true,
+    lineHeight: true,
     textAlign: true,
     textDecoration: true,
     textTransform: true,
@@ -244,7 +255,6 @@ module.exports = {
     justifyItems: false,
     justifySelf: false,
     letterSpacing: false,
-    lineHeight: false,
     listStylePosition: false,
     listStyleType: false,
     minHeight: false,
