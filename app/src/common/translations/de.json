@@ -91,7 +91,10 @@
     },
     "date-time": {
       "name": "Datum und Uhrzeit",
-      "headline": ""
+      "headline": "{{headline}}",
+      "configuration": {
+        "timezone": "Zeitzone"
+      }
     },
     "github-stats": {
       "name": "GitHub Stats",

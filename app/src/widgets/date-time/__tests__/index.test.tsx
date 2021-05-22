@@ -8,7 +8,22 @@ import { DateTime } from "../index";
 
 describe("<DateTime />", () => {
   test("renders the current date", () => {
-    render(<DateTime {...widgetProps} id="date-time-mock-id" />);
+    render(
+      <DateTime {...widgetProps} id="date-time-mock-id" timezone="auto" />
+    );
     expect(screen.getByText(dayjs().format("dddd"))).toBeInTheDocument();
+  });
+
+  test("renders the current date for other timezones", () => {
+    render(
+      <DateTime
+        {...widgetProps}
+        id="date-time-mock-id"
+        timezone="Asia/Calcutta"
+      />
+    );
+    expect(
+      screen.getByText(dayjs().tz("Asia/Calcutta").format("HH:mm"))
+    ).toBeInTheDocument();
   });
 });

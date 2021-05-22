@@ -4,9 +4,10 @@
 
 - :sparkles: New widget: [Chart / Graph](https://dashboard.darekkay.com/docs/widgets/chart.html).
 - :sparkles: Make background image configurable.
+- :rocket: **[Date & Time]** Add headline and timezone configuration.
+- :rocket: **[Cryptocurrencies]** Add Nano currency
+- :rocket: **[Cryptocurrencies]** Add Dogecoin currency.
 - :rocket: Display widget resize handle when focused.
-- :rocket: Add Nano cryptocurrency
-- :rocket: Add Dogecoin cryptocurrency.
 - :rocket: Reset outdated data when restoring a backup. 
 - :rocket: Make theme selection keyboard-accessible.
 - :rocket: Close settings modal by pressing Enter within the input field.

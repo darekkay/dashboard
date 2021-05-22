@@ -1,3 +1,5 @@
 # Date & Time
 
-Current date and time.
+Display current date and time. Supports various timezones.
+
+![](./img/date-time.png)

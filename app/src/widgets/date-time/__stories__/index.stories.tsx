@@ -9,6 +9,14 @@ export default {
 
 export const Variants = () => {
   return (
-    <Widget {...connectedWidgetProps} id="date-time-01" type="date-time" />
+    <Widget
+      {...connectedWidgetProps}
+      id="date-time-01"
+      type="date-time"
+      data={{
+        headline: "",
+        timezone: "auto",
+      }}
+    />
   );
 };

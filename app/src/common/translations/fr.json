@@ -92,7 +92,7 @@
     },
     "date-time": {
       "name": "Date et Heure",
-      "headline": ""
+      "headline": "{{headline}}"
     },
     "github-stats": {
       "name": "GitHub Stats",

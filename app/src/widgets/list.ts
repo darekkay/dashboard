@@ -47,12 +47,12 @@ const widgetProperties = {
     initialMeta: { updateCycle: { minutes: 15 }, updateStatus: "idle" },
   },
   "date-time": {
-    configurable: false,
+    configurable: true,
     widgetType: "date-time",
     category: "general",
     initialHeight: 2,
     initialWidth: 3,
-    initialOptions: {},
+    initialOptions: { headline: "", timezone: "auto" },
     initialMeta: {},
   },
   "github-stats": {
@@ -187,6 +187,7 @@ export const widgetImports = {
   },
   "date-time": {
     component: async () => import("widgets/date-time"),
+    configuration: async () => import("widgets/date-time/configuration"),
   },
   "github-stats": {
     component: async () => import("widgets/github-stats"),
