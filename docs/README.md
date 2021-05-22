@@ -32,7 +32,7 @@ A new project is also a great opportunity to learn new concepts.
 
 ## Features
 
-- ☑ 14 [widgets](widgets/README.md) as of November 2020.
+- ☑ 15 [widgets](widgets/README.md) as of May 2021.
 - ☑ Themes support. Because no one will bat an eye without a Dark Mode™.
 - ☑ Multi-language support (English, German and French already provided).
 
