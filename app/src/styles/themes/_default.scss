@@ -2,6 +2,8 @@
 
 .theme-default {
   --text-color: #{$blue-80};
+  --text-color-offset: #{$dk-gray-55};
+  --text-color-primary: #{$indigo-warm-60};
   --text-color-highlight: #{$blue-vivid-50};
 
   --text-color-danger: #{$red-50};

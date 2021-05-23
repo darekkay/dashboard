@@ -16,10 +16,12 @@ export const DateTime: React.FC<Props> = memo(({ timezone }) => {
       className="text-center pt-3 pb-4 px-4"
       dateTime={timeZoneDate.toISOString()}
     >
-      <div className="text-5 leading-tight font-semibold">
+      <div className="text-6 leading-tight font-semibold">
         {timeZoneDate.format("HH:mm")}
       </div>
-      <div className="text-3">{timeZoneDate.format("dddd")}</div>
+      <div className="text-4 text-color-offset">
+        {timeZoneDate.format("dddd")}
+      </div>
       <div className="text-2">{timeZoneDate.format("LL")}</div>
     </time>
   );

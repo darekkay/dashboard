@@ -36,7 +36,7 @@ const Menu: React.FC<Props> = ({
       <ReakitMenu
         {...menu}
         aria-label={title}
-        className="z-20 min-w-250 bg-color-panel border outline-none no-focus"
+        className="z-20 min-w-250 mt-2 overflow-hidden bg-color-panel border rounded-lg shadow-xl outline-none no-focus"
       >
         <MenuContext.Provider value={menu}>{children}</MenuContext.Provider>
       </ReakitMenu>
@@ -69,7 +69,7 @@ export const MenuAction: React.FC<MenuItemProps> = ({
     <MenuItem
       {...menu}
       key={text}
-      className="block w-full flex items-center p-4 text-left text-2 text-color-default bg-color-panel border-0 no-focus outline-none hover event:bg-color-dim cursor-pointer"
+      className="block w-full flex items-center px-5 py-4 text-left text-2 text-color-default bg-color-panel border-0 no-focus outline-none hover event:bg-color-dim cursor-pointer"
       onClick={() => {
         if (onClick) onClick();
         if (href) window.open(href, "_blank");

@@ -32,7 +32,7 @@ export const Variants = () => {
       </Section>
 
       <Section type="story" headline="Custom style">
-        <Deviation value={-10} unit="%" className="text-5 font-bold" />
+        <Deviation value={-10} unit="%" className="text-6 font-bold" />
       </Section>
     </div>
   );

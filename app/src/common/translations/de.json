@@ -9,7 +9,7 @@
     "loading": "Lade...",
     "settings": "Einstellungen",
     "help": "Hilfe",
-    "error": "Fehler",
+    "error": "Unerwarteter Fehler",
     "documentation": "Dokumentation",
     "poweredBy": "Powered by <0>{{name}}</0>",
     "headline": "Überschrift",

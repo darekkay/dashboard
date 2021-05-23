@@ -11,6 +11,7 @@
 - :rocket: Reset outdated data when restoring a backup. 
 - :rocket: Make theme selection keyboard-accessible.
 - :rocket: Close settings modal by pressing Enter within the input field.
+- :gem: Harmonize design.
 - :gem: Increase base widget height.
 - :bug: Make widgets configurable on mobile again.
 - :bug: Recalculate grid width on toggling the widget drawer.

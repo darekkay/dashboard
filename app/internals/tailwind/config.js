@@ -1,3 +1,7 @@
+/* Default config: https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js */
+
+// TODO: move into @darekkay/styles and inherit
+
 module.exports = {
   prefix: "",
   important: false,
@@ -39,16 +43,16 @@ module.exports = {
 
     // Typography
 
-    // Update styles/typography.scss as well
+    // Update styles/_variables.scss as well
     fontSize: {
       0: "1rem",
       1: "1.2rem",
       2: "1.4rem",
-      3: "1.8rem",
-      4: "2rem",
-      5: "2.5rem",
-      6: "3rem",
-      7: "4rem",
+      3: "1.6rem",
+      4: "1.8rem",
+      5: "2rem",
+      6: "2.4rem",
+      7: "3rem",
     },
 
     fontWeight: {
@@ -66,6 +70,13 @@ module.exports = {
       normal: "1.5",
       relaxed: "1.625",
       loose: "2",
+    },
+
+    letterSpacing: {
+      tighter: "-0.05em",
+      tight: "-0.025em",
+      normal: "0em",
+      wide: "0.025em",
     },
 
     // Spacing
@@ -98,6 +109,12 @@ module.exports = {
 
     // Misc
 
+    boxShadow: {
+      sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+      md: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+      lg: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      xl: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+    },
     cursor: {
       auto: "auto",
       default: "default",
@@ -150,12 +167,14 @@ module.exports = {
     lineHeight: [],
     textColor: [],
     backgroundColor: [],
+    letterSpacing: [],
     textAlign: ["responsive"],
     textDecoration: ["hover", "focus"],
     textTransform: [],
 
     // Misc
 
+    boxShadow: [],
     cursor: [],
     wordBreak: [],
     zIndex: [],
@@ -201,6 +220,7 @@ module.exports = {
 
     // Misc
 
+    boxShadow: true,
     cursor: true,
     wordBreak: true,
     zIndex: true,
@@ -226,7 +246,6 @@ module.exports = {
     borderRadius: false,
     borderStyle: false,
     borderWidth: false,
-    boxShadow: false,
     boxSizing: false,
     clear: false,
     divideColor: false,

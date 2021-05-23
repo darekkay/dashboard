@@ -97,9 +97,9 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
         {...rest}
       >
         {headline && (
-          <h3
+          <h2
             id={`widget-${id}-headline`}
-            className="flex items-center m-0 py-1 px-2 text-2 font-semibold"
+            className="flex items-center justify-start m-0 py-2 px-3 text-2 font-semibold text-color-offset"
           >
             {meta.headlineIcon && (
               <Icon
@@ -109,7 +109,7 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
               />
             )}
             <span className="truncate">{headline}</span>
-          </h3>
+          </h2>
         )}
 
         {hasError && <WidgetError />}

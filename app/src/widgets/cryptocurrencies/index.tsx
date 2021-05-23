@@ -30,14 +30,16 @@ const Cryptocurrencies: React.FC<Props> = ({
       data-testid="widget-cryptocurrencies"
     >
       {imageUrl && (
-        <div style={{ width: "2rem", height: "2rem" }}>
+        <div className="mb-1" style={{ width: "2rem", height: "2rem" }}>
           <img src={imageUrl} alt={crypto} />
         </div>
       )}
       {currentPrice && (
-        <div className="text-4 font-semibold">
+        <div className="text-5 font-semibold">
           {t("number", { value: currentPrice })}
-          <span className="ml-2 text-2 uppercase">{fiat}</span>
+          <span className="ml-2 text-2 uppercase text-color-offset">
+            {fiat}
+          </span>
         </div>
       )}
       {last24h && (

@@ -68,7 +68,6 @@ const Header: React.FC<Props> = memo(
             icon="question"
             href="https://dashboard.darekkay.com/docs"
           />
-          <MenuSeparator />
           <MenuAction
             text={t("common.settings")}
             icon="cog"

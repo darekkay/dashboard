@@ -39,7 +39,7 @@ const Modal: React.FC<Props> = ({
       {...rest}
     >
       <div className="flex">
-        {headline && <h2 className="text-3 font-bold mb-6">{headline}</h2>}
+        {headline && <h2 className="text-4 font-bold mb-6">{headline}</h2>}
         <Button
           variant="unstyled"
           size="small"

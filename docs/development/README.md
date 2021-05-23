@@ -140,7 +140,7 @@ To find missing label translations, run `yarn i18n` in the `app` module.
 
 ### Typography
 
-Use CSS utility classes `text-1` to `text-7` to adjust font sizes. To preserve a consistent look across all widgets, use `text-3` as the base size.
+Use CSS utility classes `text-1` to `text-7` to adjust font sizes. To preserve a consistent look across all widgets, use `text-4` as the base size. Check out the [Style Guide](https://dashboard.darekkay.com/storybook/?path=/story/common--style-guide) for more information.
 
 ### Color palette
 

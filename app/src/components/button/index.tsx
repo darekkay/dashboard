@@ -32,7 +32,7 @@ const Button: React.FC<Props> = React.forwardRef<HTMLButtonElement, Props>(
         "justify-center",
         "rounded",
         "cursor-pointer",
-        "text-3",
+        "text-4",
         "no-underline",
         className
       )}

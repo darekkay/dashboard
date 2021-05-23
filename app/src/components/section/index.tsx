@@ -9,7 +9,7 @@ const Section: React.FC<Props> = ({ headline, children }) => {
   return (
     <div>
       {headline && (
-        <Headline level={3} className="mb-4 text-3 font-semibold">
+        <Headline level={3} className="mb-4 text-4 font-semibold">
           {headline}
         </Headline>
       )}
