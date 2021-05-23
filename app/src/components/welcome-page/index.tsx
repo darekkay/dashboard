@@ -6,6 +6,8 @@ import Link from "components/link";
 import { State } from "state/store";
 import demoTemplate from "templates/demo.json";
 
+import illustration from "./illustration.svg";
+
 const WelcomePage: React.FC<Props> = ({ importState }) => {
   const { t } = useTranslation();
   const createExampleBoard = () => {
@@ -17,6 +19,9 @@ const WelcomePage: React.FC<Props> = ({ importState }) => {
         className="max-w-full text-center space-y-5"
         style={{ width: "500px" }}
       >
+        <p>
+          <img src={illustration} alt="" style={{ maxWidth: "250px" }} />
+        </p>
         <p>
           <Trans i18nKey="welcome.message1">
             <strong>{{ projectName: "Dashboard" }}</strong>
