@@ -1,13 +1,15 @@
 import { takeEvery } from "typed-redux-saga";
 
-import api, { CRYPTOCURRENCIES_PRICE } from "common/api";
+import api, { Cryptocurrencies } from "api/index";
 import triggerUpdateHandler from "common/utils/triggerUpdateHandler";
 import { triggerUpdate } from "components/widget/duck";
 
 import { widgetType } from "./properties";
 
-const fetchCryptocurrencyPrice = async (params: Record<string, any>) => {
-  const response = await api.get(CRYPTOCURRENCIES_PRICE, { params });
+const fetchCryptocurrencyPrice = async (
+  params: Cryptocurrencies.GetCryptocurrencyPrice.RequestQuery
+) => {
+  const response = await api.cryptocurrencies.getCryptocurrencyPrice(params);
   return response.data;
 };
 

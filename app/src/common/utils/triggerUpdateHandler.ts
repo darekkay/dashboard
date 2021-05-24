@@ -9,7 +9,7 @@ import {
   TriggerUpdateAction,
 } from "components/widget/duck";
 
-type ApiCall = (params: Record<string, any>) => Record<string, any>;
+type ApiCall = (params: any) => Record<string, any>;
 
 const triggerUpdateHandler = (apiCall: ApiCall) => {
   return function* onTriggerUpdate(action: PayloadAction<TriggerUpdateAction>) {

@@ -1,0 +1,443 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"CryptocurrencyPrice": {
+				"properties": {
+					"currentPrice": {
+						"type": "number",
+						"format": "double"
+					},
+					"last24h": {
+						"properties": {
+							"changePercentage": {
+								"type": "number",
+								"format": "double"
+							},
+							"change": {
+								"type": "number",
+								"format": "double"
+							}
+						},
+						"required": [
+							"changePercentage",
+							"change"
+						],
+						"type": "object"
+					},
+					"imageUrl": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"currentPrice",
+					"last24h"
+				],
+				"type": "object",
+				"additionalProperties": true
+			},
+			"GitHubStats": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"followers": {
+						"type": "number",
+						"format": "double"
+					},
+					"stars": {
+						"type": "number",
+						"format": "double"
+					},
+					"subscribers": {
+						"type": "number",
+						"format": "double"
+					},
+					"forks": {
+						"type": "number",
+						"format": "double"
+					},
+					"open_issues": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"type": "object",
+				"additionalProperties": true
+			},
+			"TwitterUser": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"followers": {
+						"type": "number",
+						"format": "double"
+					},
+					"following": {
+						"type": "number",
+						"format": "double"
+					},
+					"tweets": {
+						"type": "number",
+						"format": "double"
+					},
+					"listed": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"type": "object",
+				"additionalProperties": true
+			},
+			"UnsplashImage": {
+				"properties": {
+					"imageUrl": {
+						"type": "string"
+					},
+					"authorName": {
+						"type": "string"
+					},
+					"authorUrl": {
+						"type": "string"
+					},
+					"altText": {
+						"type": "string"
+					}
+				},
+				"type": "object",
+				"additionalProperties": true
+			},
+			"WeatherData": {
+				"properties": {
+					"current": {
+						"properties": {
+							"temperature": {
+								"type": "number",
+								"format": "double"
+							}
+						},
+						"required": [
+							"temperature"
+						],
+						"type": "object"
+					},
+					"forecast": {
+						"items": {
+							"properties": {
+								"temperatureMax": {
+									"type": "number",
+									"format": "double"
+								},
+								"temperatureMin": {
+									"type": "number",
+									"format": "double"
+								}
+							},
+							"required": [
+								"temperatureMax",
+								"temperatureMin"
+							],
+							"type": "object"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"current",
+					"forecast"
+				],
+				"type": "object",
+				"additionalProperties": true
+			},
+			"YoutubeStats": {
+				"properties": {
+					"channelTitle": {
+						"type": "string"
+					},
+					"subscriberCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"viewCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"videoCount": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"type": "object",
+				"additionalProperties": true
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "dashboard-server",
+		"version": "1.4.0",
+		"description": "A server for the dashboard app",
+		"license": {
+			"name": "MIT"
+		},
+		"contact": {
+			"name": "Darek Kay ",
+			"email": "hello@darekkay.com",
+			"url": "https://darekkay.com/"
+		}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/cryptocurrencies/price": {
+			"get": {
+				"operationId": "GetCryptocurrencyPrice",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CryptocurrencyPrice"
+								}
+							}
+						}
+					}
+				},
+				"description": "Returns the current price for a cryptocurrency.",
+				"security": [],
+				"parameters": [
+					{
+						"description": "cryptocurrency code, e.g. \"bitcoin\"",
+						"in": "query",
+						"name": "crypto",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "fiat currency code, e.g. \"eur\"",
+						"in": "query",
+						"name": "fiat",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/github/stats": {
+			"get": {
+				"operationId": "GetGitHubStats",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/GitHubStats"
+								}
+							}
+						}
+					},
+					"422": {
+						"description": "Unprocessable entity",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"reason": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"reason"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"description": "Returns stats for a GitHub user or repository.",
+				"security": [],
+				"parameters": [
+					{
+						"description": "GitHub user or repository",
+						"in": "query",
+						"name": "query",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/twitter/user": {
+			"get": {
+				"operationId": "GetTwitterStats",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/TwitterUser"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {},
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"description": "Returns stats for a Twitter user.",
+				"security": [],
+				"parameters": [
+					{
+						"description": "Twitter username",
+						"in": "query",
+						"name": "username",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/unsplash/random": {
+			"get": {
+				"operationId": "GetRandomImage",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UnsplashImage"
+								}
+							}
+						}
+					}
+				},
+				"description": "Returns a random Unsplash image.",
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/weather": {
+			"get": {
+				"operationId": "GetWeatherData",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/WeatherData"
+								}
+							}
+						}
+					}
+				},
+				"description": "Returns weather data.",
+				"security": [],
+				"parameters": [
+					{
+						"description": "Latitude",
+						"in": "query",
+						"name": "lat",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Longtitude",
+						"in": "query",
+						"name": "lon",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Unit",
+						"in": "query",
+						"name": "unit",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"imperial",
+								"metric"
+							]
+						}
+					}
+				]
+			}
+		},
+		"/youtube/stats": {
+			"get": {
+				"operationId": "GetYoutubeStats",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/YoutubeStats"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {},
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"description": "Returns stats for a YouTube account.",
+				"security": [],
+				"parameters": [
+					{
+						"description": "Youtube id or username",
+						"in": "query",
+						"name": "query",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "http://localhost:3401/"
+		}
+	]
+}

@@ -1,13 +1,16 @@
 import { takeEvery } from "typed-redux-saga";
 
-import api, { ENDPOINT } from "common/api";
+import api, { {{ properCase name }} } from "api/index";
 import triggerUpdateHandler from "common/utils/triggerUpdateHandler";
 import { triggerUpdate } from "components/widget/duck";
 
 import { widgetType } from "./properties";
 
-const fetchData = async (params: Record<string, any>) => {
-  const response = await api.get(ENDPOINT, { params });
+const fetchData = async (
+  /** Adjust params to match the backend service */
+  params: {{ properCase name }}.Get{{ properCase name }}.RequestQuery
+) => {
+  const response = await api.endpoint.route(params);
   return response.data;
 };
 

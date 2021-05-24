@@ -1,13 +1,15 @@
 import { takeEvery } from "typed-redux-saga";
 
-import api, { TWITTER_STATS } from "common/api";
+import api, { Twitter } from "api/index";
 import triggerUpdateHandler from "common/utils/triggerUpdateHandler";
 import { triggerUpdate } from "components/widget/duck";
 
 import { widgetType } from "./properties";
 
-const fetchTwitterStats = async (params: Record<string, any>) => {
-  const response = await api.get(TWITTER_STATS, { params });
+const fetchTwitterStats = async (
+  params: Twitter.GetTwitterStats.RequestQuery
+) => {
+  const response = await api.twitter.getTwitterStats(params);
   return response.data;
 };
 

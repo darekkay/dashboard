@@ -1,10 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return,@typescript-eslint/restrict-plus-operands */
-import {
-  Express,
-  Request,
-  Response,
-  NextFunction,
-} from "express-serve-static-core";
+import { Controller, Get, Query, Res, Route, TsoaResponse } from "tsoa";
 
 import axios from "../axios";
 import { ttlForWidgetType } from "../utils";
@@ -98,33 +93,40 @@ const fetchRepositoryStats = async (repository: string) => {
   };
 };
 
-const isRequestValid = (request: Request) => !!request.query.query;
+interface GitHubStats {
+  name?: string;
+  followers?: number;
+  stars?: number;
+  subscribers?: number;
+  forks?: number;
+  open_issues?: number;
+}
 
-const routes = (app: Express) =>
-  /* Get the current price for a cryptocurrency */
-  app.get(
-    "/github/stats",
-    async (request: Request, response: Response, next: NextFunction) => {
-      if (!isRequestValid(request)) {
-        return response.status(400).end();
-      }
+@Route("/github")
+export class GitHubController extends Controller {
+  /**
+   * Returns stats for a GitHub user or repository.
+   *
+   * @param query GitHub user or repository
+   * @param unprocessableEntity Unprocessable entity
+   */
+  @Get("/stats")
+  public async getGitHubStats(
+    @Query() query: string,
+    @Res() unprocessableEntity: TsoaResponse<422, { reason: string }>
+  ): Promise<GitHubStats> {
+    const { id, queryType } = parseQuery(query);
 
-      try {
-        const { query } = request.query;
-        const { id, queryType } = parseQuery(query);
+    let axiosResponse;
 
-        let axiosResponse;
+    if (queryType === "user") axiosResponse = await fetchUserStats(id);
+    else if (queryType === "repository")
+      axiosResponse = await fetchRepositoryStats(id);
+    else
+      return unprocessableEntity(422, {
+        reason: "Could not infer query type (user vs. repository).",
+      });
 
-        if (queryType === "user") axiosResponse = await fetchUserStats(id);
-        else if (queryType === "repository")
-          axiosResponse = await fetchRepositoryStats(id);
-        else return response.status(422).end(); // unprocessable entity
-
-        return response.json(axiosResponse);
-      } catch (error) {
-        return next(error);
-      }
-    }
-  );
-
-export default routes;
+    return axiosResponse;
+  }
+}

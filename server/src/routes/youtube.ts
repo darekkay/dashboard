@@ -1,15 +1,8 @@
-import {
-  Express,
-  Request,
-  Response,
-  NextFunction,
-} from "express-serve-static-core";
+import { Controller, Get, Query, Res, Route, TsoaResponse } from "tsoa";
 
 import axios from "../axios";
 import config from "../config";
 import { ttlForWidgetType } from "../utils";
-
-const isRequestValid = (request: Request) => !!request.query.query;
 
 /* Based on: https://github.com/Tenpi/youtube.ts/blob/master/entities/Util.ts */
 const resolveQuery = async (query: string) => {
@@ -34,49 +27,54 @@ const resolveQuery = async (query: string) => {
   return { id, forUsername: username };
 };
 
-const routes = (app: Express) =>
-  /* get channel statistics */
-  app.get(
-    "/youtube/stats",
-    async (request: Request, response: Response, next: NextFunction) => {
-      if (!isRequestValid(request)) {
-        return response.status(400).end();
+interface YoutubeStats {
+  channelTitle?: string;
+  subscriberCount?: number;
+  viewCount?: number;
+  videoCount?: number;
+}
+
+@Route("/youtube")
+export class YoutubeController extends Controller {
+  /**
+   * Returns stats for a YouTube account.
+   *
+   * @param query Youtube id or username
+   * @param notFound Not found
+   */
+  @Get("/stats")
+  public async getYoutubeStats(
+    @Query() query: string,
+    @Res() notFound: TsoaResponse<404, {}>
+  ): Promise<YoutubeStats> {
+    const params = await resolveQuery(query);
+
+    const axiosResponse = await axios.get(
+      `https://www.googleapis.com/youtube/v3/channels`,
+      {
+        params: {
+          part: "brandingSettings,statistics",
+          key: config.api.youtube,
+          ...params,
+        },
+        ttl: ttlForWidgetType("youtube-stats"),
       }
+    );
 
-      try {
-        const params = await resolveQuery(request.query.query);
+    const { data } = axiosResponse;
 
-        const axiosResponse = await axios.get(
-          `https://www.googleapis.com/youtube/v3/channels`,
-          {
-            params: {
-              part: "brandingSettings,statistics",
-              key: config.api.youtube,
-              ...params,
-            },
-            ttl: ttlForWidgetType("youtube-stats"),
-          }
-        );
-
-        const { data } = axiosResponse;
-
-        if (!data.items || !data.items.length) {
-          // no results found
-          return response.status(404).end();
-        }
-
-        const { brandingSettings, statistics } = data.items[0];
-
-        return response.json({
-          viewCount: parseInt(statistics.viewCount, 10),
-          subscriberCount: parseInt(statistics.subscriberCount, 10),
-          videoCount: parseInt(statistics.videoCount, 10),
-          channelTitle: brandingSettings.channel.title,
-        });
-      } catch (error) {
-        return next(error);
-      }
+    if (!data.items || !data.items.length) {
+      // no results found
+      return notFound(404, {});
     }
-  );
 
-export default routes;
+    const { brandingSettings, statistics } = data.items[0];
+
+    return {
+      viewCount: parseInt(statistics.viewCount, 10),
+      subscriberCount: parseInt(statistics.subscriberCount, 10),
+      videoCount: parseInt(statistics.videoCount, 10),
+      channelTitle: brandingSettings.channel.title,
+    };
+  }
+}

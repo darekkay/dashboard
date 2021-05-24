@@ -10,5 +10,6 @@ module.exports = {
     "src/index.ts",
     "src/config.ts",
     "src/axios.ts",
+    "src/api/routes.ts",
   ],
 };

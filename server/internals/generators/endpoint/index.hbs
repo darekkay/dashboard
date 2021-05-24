@@ -1,49 +1,37 @@
-import {
-  Express,
-  Request,
-  Response,
-  NextFunction,
-} from "express-serve-static-core";
+import { Controller, Get, Query, Route } from "tsoa";
 
 import axios from "../axios";
 import config from "../config";
 import { ttlForWidgetType } from "../utils";
 
-// TODO: validate query parameters or remove
-const isRequestValid = (request: Request) => true;
+interface {{ properCase name }}Response {
 
-const routes = (app: Express) =>
-  /* TODO: description */
-  app.get(
-    "{{ route }}",
-    async (request: Request, response: Response, next: NextFunction) => {
-      if (!isRequestValid(request)) {
-        return response.status(400).end();
+}
+
+@Route({{ route }})
+export class {{ properCase name }}Controller extends Controller {
+
+  @Get("/price")
+  public async get{{ properCase name }}(
+    /** @Query() param: string, **/
+  ): Promise<{{ properCase name }}Response> {
+    const axiosResponse = await axios.get(
+      `https://`,
+      {
+        params: {
+
+        },
+        headers: {
+
+        },
+        ttl: ttlForWidgetType("{{ dashCase name }}"), // TODO: check TTL
       }
+    );
 
-      try {
-        const axiosResponse = await axios.get(
-          `https://`,
-          {
-            params: {
+    const { data } = axiosResponse;
 
-            },
-            headers: {
-
-            },
-            ttl: ttlForWidgetType("{{ dashCase name }}"), // TODO: check TTL
-          }
-        );
-
-        const { data } = axiosResponse;
-
-        return response.json({
-          // TODO
-        });
-      } catch (error) {
-        return next(error);
-      }
-    }
-  );
-
-export default routes;
+    return {
+      // TODO
+    };
+  }
+}

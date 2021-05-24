@@ -1,13 +1,15 @@
 import { takeEvery } from "typed-redux-saga";
 
-import api, { UNSPLASH_RANDOM_PHOTO } from "common/api";
+import api, { Unsplash } from "api/index";
 import triggerUpdateHandler from "common/utils/triggerUpdateHandler";
 import { triggerUpdate } from "components/widget/duck";
 
 import { widgetType } from "./properties";
 
-const fetchUnsplashRandomPhoto = async (params: Record<string, any>) => {
-  const response = await api.get(UNSPLASH_RANDOM_PHOTO, { params });
+const fetchUnsplashRandomPhoto = async (
+  params: Unsplash.GetRandomImage.RequestQuery
+) => {
+  const response = await api.unsplash.getRandomImage(params);
   return response.data;
 };
 

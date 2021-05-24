@@ -1,42 +1,40 @@
-import {
-  Express,
-  Request,
-  Response,
-  NextFunction,
-} from "express-serve-static-core";
+import { Controller, Get, Route } from "tsoa";
 
 import axios from "../axios";
 import config from "../config";
 import { ttlForWidgetType } from "../utils";
 
-const routes = (app: Express) =>
-  /* get random image from unsplash */
-  app.get(
-    "/unsplash/random",
-    async (_request: Request, response: Response, next: NextFunction) => {
-      try {
-        const axiosResponse = await axios.get(
-          `https://api.unsplash.com/photos/random`,
-          {
-            headers: {
-              Authorization: `Client-ID ${config.api.unsplash}`,
-            },
-            ttl: ttlForWidgetType("random-image"), // use a short TTL to prevent request flooding
-          }
-        );
+interface UnsplashImage {
+  imageUrl?: string;
+  authorName?: string;
+  authorUrl?: string;
+  altText?: string;
+}
 
-        const { data } = axiosResponse;
-
-        return response.json({
-          imageUrl: data.urls.regular,
-          authorName: data.user.name,
-          authorUrl: data.user.links.html,
-          altText: data.alt_description,
-        });
-      } catch (error) {
-        return next(error);
+@Route("/unsplash")
+export class UnsplashController extends Controller {
+  /**
+   * Returns a random Unsplash image.
+   */
+  @Get("/random")
+  public async getRandomImage(): Promise<UnsplashImage> {
+    const axiosResponse = await axios.get(
+      `https://api.unsplash.com/photos/random`,
+      {
+        headers: {
+          Authorization: `Client-ID ${config.api.unsplash}`,
+        },
+        ttl: ttlForWidgetType("random-image"), // use a short TTL to prevent request flooding
       }
-    }
-  );
+    );
 
-export default routes;
+    const { data } = axiosResponse;
+
+    return {
+      imageUrl: data.urls.regular,
+      authorName: data.user.name,
+      authorUrl: data.user.links.html,
+      altText: data.alt_description,
+    };
+  }
+}

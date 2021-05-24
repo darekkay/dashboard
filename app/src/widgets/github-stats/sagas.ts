@@ -1,13 +1,13 @@
 import { takeEvery } from "typed-redux-saga";
 
-import api, { GITHUB_STATS } from "common/api";
+import api, { Github } from "api/index";
 import triggerUpdateHandler from "common/utils/triggerUpdateHandler";
 import { triggerUpdate } from "components/widget/duck";
 
 import { widgetType } from "./properties";
 
-const fetchGitHubStats = async (params: Record<string, any>) => {
-  const response = await api.get(GITHUB_STATS, { params });
+const fetchGitHubStats = async (params: Github.GetGitHubStats.RequestQuery) => {
+  const response = await api.github.getGitHubStats(params);
   return response.data;
 };
 

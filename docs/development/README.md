@@ -100,14 +100,15 @@ The `master` branch is (manually) deployed to [dashboard.darekkay.com](https://d
 
 1. Run the file generator (`yarn generate Widget`) in the `app` module.
 2. Adjust the widget's `properties.ts` file with sane initial values.
-3. Re-scan the available widgets (`yarn scan-widgets`).
+3. Re-scan the available widgets (`yarn scan:widgets`).
 4. Add mandatory widget labels (at least `name`) to all translation files under `common/translations`.
 5. Edit documentation under `docs/widgets`.
 
 ### Creating a new server endpoint
 
 1. Run the file generator (`yarn generate`) in the `server` module.
-2. Add the new route to `server/src/router.ts`
+2. Implement endpoint 
+2. Run `yarn build-api` (or `yarn build-api:dev` for live reload) to generate OpenAPI/Swagger definition using [tsoa](https://tsoa-community.github.io/docs/).
 
 ### Auto-updating data
 

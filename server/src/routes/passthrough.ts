@@ -25,6 +25,7 @@ const routes = (app: Express) => {
 
         if (axiosResponse.headers?.["content-type"]) {
           // pass through the content-type header
+          // this block a migration to tsoa: https://github.com/lukeautry/tsoa/issues/968
           response.setHeader(
             "content-type",
             axiosResponse.headers["content-type"]
