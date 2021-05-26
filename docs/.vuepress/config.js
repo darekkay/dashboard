@@ -2,6 +2,20 @@ module.exports = {
   title: "Dashboard Documentation",
   description: "Customizable personal dashboard and startpage",
   base: "/docs/",
+
+  head: [
+    [
+      "meta",
+      {
+        property: "og:image",
+        content: "https://dashboard.darekkay.com/docs/assets/img/dashboard.jpg",
+      },
+    ],
+    ["meta", { property: "og:title", content: "Dashboard blog" }],
+    ["meta", { name: "twitter:site", content: "@darek_kay" }],
+    ["meta", { name: "twitter:card", content: "summary_large_image" }],
+  ],
+
   themeConfig: {
     repo: "https://github.com/darekkay/dashboard",
     docsDir: "docs",
@@ -13,29 +27,29 @@ module.exports = {
       { text: "Development", link: "/development/" },
       { text: "Changelog", link: "/changelog/" },
       { text: "Blog", link: "/blog/" },
-      { text: "RSS", link: "https://dashboard.darekkay.com/docs/rss.xml" }
+      { text: "RSS", link: "https://dashboard.darekkay.com/docs/rss.xml" },
     ],
     sidebar: {
       "/widgets/": [
         {
           title: "",
           collapsable: false,
-          children: [""]
-        }
+          children: [""],
+        },
       ],
       "/roadmap/": [
         {
           title: "",
           collapsable: false,
-          children: [""]
-        }
+          children: [""],
+        },
       ],
       "/development/": [
         {
           title: "",
           collapsable: false,
-          children: [""]
-        }
+          children: [""],
+        },
       ],
       "/blog/": [
         {
@@ -64,11 +78,11 @@ module.exports = {
             "2019-03-21",
             "2019-03-20",
             "2019-03-17",
-            "2019-03-14"
-          ]
-        }
-      ]
-    }
+            "2019-03-14",
+          ],
+        },
+      ],
+    },
   },
   plugins: [
     [
@@ -76,8 +90,8 @@ module.exports = {
       {
         base_url: "/docs",
         site_url: "https://dashboard.darekkay.com",
-        count: 20
-      }
-    ]
-  ]
+        count: 20,
+      },
+    ],
+  ],
 };
