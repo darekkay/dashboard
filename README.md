@@ -4,7 +4,11 @@
 [![Gitter](https://img.shields.io/gitter/room/darekkay/dashboard?style=flat-square)](https://gitter.im/darekkay-dashboard/community)
 [![license](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/darekkay/dashboard/blob/master/LICENSE)
 
-![](docs/assets/img/1.4.0.png)
+<div align="center">
+
+![](docs/assets/img/dashboard.jpg)
+
+</div>
 
 ## Project status
 

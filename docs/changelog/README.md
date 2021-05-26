@@ -2,6 +2,8 @@
 
 ## Current development
 
+## 1.5.0  (2021-05-26)
+
 - :sparkles: New widget: [Chart / Graph](https://dashboard.darekkay.com/docs/widgets/chart.html).
 - :sparkles: Make background image configurable.
 - :rocket: **[Date & Time]** Add headline and timezone configuration.
