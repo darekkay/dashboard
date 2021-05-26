@@ -67,8 +67,9 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
           "widget",
           "flex",
           "flex-col",
-          "border",
+          "border-0",
           "rounded",
+          "shadow-md",
           "bg-color-panel",
           "relative",
           { error: hasError },
@@ -124,7 +125,7 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
             {({ measureRef }) => (
               <div
                 ref={measureRef}
-                className="flex flex-col items-center justify-center h-full overflow-hidden"
+                className="flex flex-col items-center justify-center h-full overflow-hidden rounded"
               >
                 <Suspense fallback={<Loading type="skeleton" />}>
                   {React.createElement(widgets[type].Component, {
