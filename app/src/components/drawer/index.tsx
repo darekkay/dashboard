@@ -18,7 +18,7 @@ const Drawer: React.FC<Props> = ({ addWidgetToLayout }) => {
       <div className="visually-hidden">{t("widget.common.headline")}</div>
       {categories.map((category: string) => (
         <div key={category} className="mb-6">
-          <div className="p-2 text-center uppercase font-bold text-2">
+          <div className="p-2 text-center uppercase font-bold text-2 tracking-wide">
             {t(`widget.category.${category}`)}
           </div>
           {categoriesWithWidgets[category].map(

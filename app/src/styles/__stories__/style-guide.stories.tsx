@@ -25,7 +25,6 @@ export const StyleGuide = () => (
         <li className="font-normal">.font-normal</li>
         <li className="font-semibold">.font-semibold</li>
         <li className="font-bold">.font-bold</li>
-        <li className="font-extrabold">.font-extrabold</li>
       </ul>
     </Section>
 

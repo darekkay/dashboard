@@ -45,7 +45,7 @@ const Cryptocurrencies: React.FC<Props> = ({
       {last24h && (
         <Deviation
           value={last24h.change}
-          className="text-2 font-semibold"
+          className="text-3 font-semibold"
           percentage={last24h.changePercentage}
         />
       )}

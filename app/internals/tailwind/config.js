@@ -60,7 +60,6 @@ module.exports = {
       normal: "400",
       semibold: "600",
       bold: "700",
-      extrabold: "800",
     },
 
     lineHeight: {
@@ -214,6 +213,7 @@ module.exports = {
     fontWeight: true,
     fontStyle: true,
     lineHeight: true,
+    letterSpacing: true,
     textAlign: true,
     textDecoration: true,
     textTransform: true,
@@ -273,7 +273,6 @@ module.exports = {
     gridRowEnd: false,
     justifyItems: false,
     justifySelf: false,
-    letterSpacing: false,
     listStylePosition: false,
     listStyleType: false,
     minHeight: false,

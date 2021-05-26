@@ -12,6 +12,7 @@
 - :rocket: Make theme selection keyboard-accessible.
 - :rocket: Close settings modal by pressing Enter within the input field.
 - :gem: Harmonize design.
+- :gem: Use a web font: Assistant.
 - :gem: Increase base widget height.
 - :gem: Add a decorative illustration to the welcome page.
 - :bug: Make widgets configurable on mobile again.

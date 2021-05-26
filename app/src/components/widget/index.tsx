@@ -99,7 +99,7 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
         {headline && (
           <h2
             id={`widget-${id}-headline`}
-            className="flex items-center justify-start m-0 py-2 px-3 text-2 font-semibold text-color-offset"
+            className="flex items-center justify-start m-0 py-2 px-3 text-2 font-semibold text-color-offset tracking-tight"
           >
             {meta.headlineIcon && (
               <Icon

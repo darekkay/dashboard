@@ -69,7 +69,7 @@ export const MenuAction: React.FC<MenuItemProps> = ({
     <MenuItem
       {...menu}
       key={text}
-      className="block w-full flex items-center px-5 py-4 text-left text-2 text-color-default bg-color-panel border-0 no-focus outline-none hover event:bg-color-dim cursor-pointer"
+      className="block w-full flex items-center px-5 py-4 text-left text-3 text-color-default bg-color-panel border-0 no-focus outline-none hover event:bg-color-dim cursor-pointer"
       onClick={() => {
         if (onClick) onClick();
         if (href) window.open(href, "_blank");
