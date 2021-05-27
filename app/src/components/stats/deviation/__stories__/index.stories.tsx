@@ -31,6 +31,10 @@ export const Variants = () => {
         <Deviation value={27} unit="€" percentage={1.6} />
       </Section>
 
+      <Section type="story" headline="No change, with percentage">
+        <Deviation value={0} unit="$" percentage={0} />
+      </Section>
+
       <Section type="story" headline="Custom style">
         <Deviation value={-10} unit="%" className="text-6 font-bold" />
       </Section>

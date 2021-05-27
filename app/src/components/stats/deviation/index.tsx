@@ -23,16 +23,16 @@ const Deviation: React.FC<Props> = ({ value, unit, percentage, className }) => {
       className={cn(
         "flex items-center",
         {
-          "text-color-danger": (percentage ?? value) < 0,
-          "text-color-success": (percentage ?? value) > 0,
+          "text-color-danger": (value ?? percentage) < 0,
+          "text-color-success": (value ?? percentage) > 0,
         },
         className
       )}
       aria-label={ariaLabel(value, unit, percentage)}
     >
-      <Icon name={iconName(percentage ?? value)} position="left" />{" "}
+      <Icon name={iconName(value ?? percentage)} position="left" />{" "}
       {Math.abs(value)} {unit}
-      {percentage && <> / {Math.abs(percentage)}%</>}
+      {percentage !== undefined && <> / {Math.abs(percentage)}%</>}
     </div>
   );
 };

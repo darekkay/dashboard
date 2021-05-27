@@ -2,6 +2,7 @@
 
 ## Current development
 
+- :bug: **[Cryptocurrencies]** Fix deviation display for unchanged values.
 - :hammer: Provide root-level npm tasks to run `app` and `server` modules in parallel.
 
 ## 1.5.0  (2021-05-26)
