@@ -4,7 +4,9 @@ import logger from "@darekkay/logger";
 const envFile = process.env.NODE_ENV === "test" ? `.env.test` : ".env";
 const dotenvConfigOutput = dotenv.config({ path: envFile });
 if (dotenvConfigOutput.error) {
-  logger.error(dotenvConfigOutput.error);
+  logger.warn(
+    "File '.env' not found in the 'server' module. This file is used to store API keys for 3rd-party services. You can ignore this warning, but affected widgets will not work properly."
+  );
 }
 
 const config = {
@@ -17,10 +19,10 @@ const config = {
   },
 };
 
-// log an error if any required API key is missing
+// log a warning if any required API key is missing
 Object.entries(config.api).forEach(([key, value]) => {
   if (value === undefined) {
-    logger.error(`Missing API key for [${key}]`);
+    logger.warn(`Missing API key for [${key}].`);
   }
 });
 

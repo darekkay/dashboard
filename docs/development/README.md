@@ -2,6 +2,83 @@
 
 This is the technical overview of the project.
 
+## Getting started
+
+### Prerequisites
+
+Required:
+
+- Node.js 12+
+- `yarn` (preferred) or `npm`
+
+Recommended:
+
+- React Developer Tools (AddOn for [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) / [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/))
+- Redux DevTools (AddOn for [Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) / [Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/))
+
+Some widgets require a 3rd-party API key:
+
+- [Unsplash](https://unsplash.com/documentation)
+- [Twitter](https://developer.twitter.com/en/docs/twitter-api)
+- [OpenWeatherMap](https://openweathermap.org/api)
+- [YouTube](https://developers.google.com/youtube/v3/getting-started)
+
+Those keys need to be stored at `server/.env` (copy `server/.env.example` as a template). The project will run with missing API keys, but the affected widgets will not work.
+
+### Installation
+
+Clone the Git repository, change the directory and run the setup script:
+
+```bash
+git clone git@github.com:darekkay/dashboard.git
+cd dashboard
+yarn setup
+```
+
+Note: You may also use `npm` instead of `yarn`.
+
+The `setup` task will install dependencies in all available modules (`app`, `server`, `docs`).
+
+### Quick start
+
+- Run `start` in the root folder to run the `app` and `server` modules in parallel:
+
+```bash
+yarn start
+```
+
+- Open [http://localhost:42007](http://localhost:42007) to view the app in the browser.
+
+Alternatively, check out available npm tasks in each of the module's `package.json` file. For example, you can start the `app` and `server` modules in separate terminal sessions:
+
+```shell
+# Shell 1
+cd app
+yarn start
+
+# Shell 2
+cd server
+yarn dev
+```
+
+Notice: The `server` module offers the `yarn dev` task that uses `nodemon`. It will restart the server every time a file is changed (hot reload). The `app` module uses hot reload by default.
+
+## Available tasks
+
+The `package.json` files contain other useful scripts, which you can execute using `yarn <command>` or `npm run <command>`:
+
+| Command         | Description                                          |
+| --------------- | ---------------------------------------------------- |
+| build           | Builds the app for production to the `build` folder. |
+| ci              | Runs linter, typescript compiler and tests.          |
+| format          | Reformat all files with `prettier`.                  |
+| generate        | Generate boilerplate code (components, widgets).     |
+| lint            | Run ESLint, apply automatic fixes if possible.       |
+| storybook:start | Start Storybook                                      |
+| test            | Run tests and check test coverage.                   |
+
+The `master` branch is (manually) deployed to [dashboard.darekkay.com](https://dashboard.darekkay.com).
+
 ## Technology Stack
 
 The project consists of three different modules: `client`, `server` and `docs`.
@@ -34,65 +111,6 @@ The server module is an [Express](https://expressjs.com/) application. Currently
 ### Documentation
 
 The documentation is created with [VuePress](https://vuepress.vuejs.org/). It is hosted at [dashboard.darekkay.com/docs/](https://dashboard.darekkay.com/docs/).
-
-## Setup
-
-### Prerequisites
-
-Required:
-
-- Node.js 12+
-
-Recommended:
-
-- React Developer Tools (AddOn for [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) / [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/))
-- Redux DevTools (AddOn for [Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) / [Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/))
-
-Some widgets require a 3rd-party API key which needs to be stored at `server/.env`:
-
-- [Unsplash](https://unsplash.com/documentation)
-- [Twitter](https://developer.twitter.com/en/docs/twitter-api)
-- [OpenWeatherMap](https://openweathermap.org/api)
-- [YouTube](https://developers.google.com/youtube/v3/getting-started)
-
-The project will run with missing API keys, but the affected widgets will not work.
-
-### Installation
-
-Depending on the module(s) that you want to work on, you have to repeat those steps for each subfolder.
-
-Notice: You may also use `npm` instead of `yarn`.
-
-1. Install all dependencies:
-
-```bash
-yarn install
-```
-
-2. Start app:
-
-```bash
-yarn start
-```
-
-3. Open [http://localhost:42007](http://localhost:42007) to view the app in the browser.
-
-Notice: The `server` module offers the `yarn dev` task which uses `nodemon`. It will restart the server every time a file is changed.
-
-## Available tasks
-
-The `package.json` files contain other useful scripts, which you can execute using `yarn <command>` or `npm run <command>`:
-
-| Command         | Description                                          |
-| --------------- | ---------------------------------------------------- |
-| build           | Builds the app for production to the `build` folder. |
-| format          | Reformat all files with `prettier`.                  |
-| generate        | Generate boilerplate code (components, widgets).     |
-| lint:fix        | Run ESLint, apply automatic fixes if possible.       |
-| storybook:start | Start Storybook                                      |
-| test            | Run tests and check test coverage.                   |
-
-The `master` branch is (manually) deployed to [dashboard.darekkay.com](https://dashboard.darekkay.com).
 
 ## Architecture
 
