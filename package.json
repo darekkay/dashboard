@@ -4,6 +4,15 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "ci": "cd app && yarn ci && cd ../server && yarn ci"
+    "ci": "server/node_modules/.bin/run-s ci:*",
+    "ci:app": "cd app && yarn ci",
+    "ci:server": "cd server && yarn ci",
+    "setup": "server/node_modules/.bin/run-s setup:*",
+    "setup:app": "cd app && yarn install",
+    "setup:server": "cd server && yarn install",
+    "setup:docs": "cd docs && yarn install",
+    "start": "server/node_modules/.bin/run-p start:*",
+    "start:app": "cd app && yarn start",
+    "start:server": "cd server && yarn dev"
   }
 }

@@ -2,6 +2,8 @@
 
 ## Current development
 
+- :hammer: Provide root-level npm tasks to run `app` and `server` modules in parallel.
+
 ## 1.5.0  (2021-05-26)
 
 - :sparkles: New widget: [Chart / Graph](https://dashboard.darekkay.com/docs/widgets/chart.html).
