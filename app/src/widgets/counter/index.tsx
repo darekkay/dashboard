@@ -5,7 +5,7 @@ import Button from "components/button";
 import Icon from "components/icon";
 
 import { WidgetProps } from "../index";
-import { Props as ConfigurationProps } from "./configuration";
+import { WidgetOptions } from "./configuration";
 
 const Counter: React.FC<Props> = ({ id, value = 0, setData }) => {
   const { t } = useTranslation();
@@ -36,7 +36,7 @@ const Counter: React.FC<Props> = ({ id, value = 0, setData }) => {
   );
 };
 
-interface Props extends WidgetProps, ConfigurationProps {
+interface Props extends WidgetProps, WidgetOptions {
   value?: number;
 }
 

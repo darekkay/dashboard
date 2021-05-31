@@ -8,7 +8,7 @@ import WidgetError from "components/widget-error";
 import StatsRow from "components/stats-row";
 
 import { WidgetProps } from "../index";
-import { Props as ConfigurationProps } from "./configuration";
+import { WidgetOptions } from "./configuration";
 import { widgetType } from "./properties";
 
 export { saga } from "./sagas";
@@ -56,7 +56,7 @@ const TwitterStats: React.FC<Props> = ({
   );
 };
 
-interface Props extends WidgetProps, ConfigurationProps {
+interface Props extends WidgetProps, WidgetOptions {
   followers?: number;
   following?: number;
   tweets?: number;

@@ -4,7 +4,7 @@ import isEmpty from "lodash/isEmpty";
 import WidgetUnconfigured from "components/widget-unconfigured";
 
 import { WidgetProps } from "../index";
-import { Props as ConfigurationProps } from "./configuration";
+import { WidgetOptions } from "./configuration";
 import { widgetType } from "./properties";
 
 const Image: React.FC<Props> = ({ url }) => {
@@ -12,6 +12,6 @@ const Image: React.FC<Props> = ({ url }) => {
   return <img src={url} className="h-full w-full object-fit-cover" alt="" />;
 };
 
-interface Props extends WidgetProps, ConfigurationProps {}
+interface Props extends WidgetProps, WidgetOptions {}
 
 export default Image;

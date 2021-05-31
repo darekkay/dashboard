@@ -8,7 +8,7 @@ const Configuration = ({
   options,
   setOptions,
   save,
-}: ConfigurationProps<Props>) => {
+}: ConfigurationProps<WidgetOptions>) => {
   const { t } = useTranslation();
   return (
     <Input
@@ -22,7 +22,7 @@ const Configuration = ({
   );
 };
 
-export interface Props {
+export interface WidgetOptions {
   headline?: string;
 }
 

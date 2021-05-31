@@ -5,7 +5,7 @@ import useTriggerUpdate from "common/hooks/useTriggerUpdate";
 import Deviation from "components/stats/deviation";
 
 import { WidgetProps } from "../index";
-import { Props as ConfigurationProps } from "./configuration";
+import { WidgetOptions } from "./configuration";
 
 export { saga } from "./sagas";
 
@@ -53,7 +53,7 @@ const Cryptocurrencies: React.FC<Props> = ({
   );
 };
 
-interface Props extends WidgetProps, ConfigurationProps {
+interface Props extends WidgetProps, WidgetOptions {
   imageUrl?: string;
   currentPrice?: number;
   last24h?: {

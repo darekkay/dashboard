@@ -9,7 +9,7 @@ const Configuration = ({
   options,
   setOptions,
   save,
-}: ConfigurationProps<Props>) => {
+}: ConfigurationProps<WidgetOptions>) => {
   const { t } = useTranslation();
   return (
     <div className="space-y-6">
@@ -30,7 +30,7 @@ const Configuration = ({
   );
 };
 
-export interface Props {
+export interface WidgetOptions {
   content: string;
   headline?: string;
 }

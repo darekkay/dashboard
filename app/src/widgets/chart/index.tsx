@@ -9,7 +9,7 @@ import LineChart from "components/charts/line-chart";
 import Loading from "components/loading";
 
 import { WidgetProps } from "../index";
-import { Props as ConfigurationProps } from "./configuration";
+import { WidgetOptions } from "./configuration";
 import { widgetType } from "./properties";
 
 export { saga } from "./sagas";
@@ -50,7 +50,7 @@ const Chart: React.FC<Props> = ({
   );
 };
 
-interface Props extends WidgetProps, ConfigurationProps {
+interface Props extends WidgetProps, WidgetOptions {
   url: string;
 }
 

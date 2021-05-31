@@ -5,7 +5,10 @@ import { ConfigurationProps } from "widgets/index";
 import Dropdown from "components/forms/dropdown";
 import Link from "components/link";
 
-const Configuration = ({ options, setOptions }: ConfigurationProps<Props>) => {
+const Configuration = ({
+  options,
+  setOptions,
+}: ConfigurationProps<WidgetOptions>) => {
   const { t } = useTranslation();
   return (
     <div className="space-y-6">
@@ -96,7 +99,7 @@ const Configuration = ({ options, setOptions }: ConfigurationProps<Props>) => {
   );
 };
 
-export interface Props {
+export interface WidgetOptions {
   crypto: string;
   fiat: string;
 }

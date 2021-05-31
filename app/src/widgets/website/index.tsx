@@ -4,7 +4,7 @@ import isEmpty from "lodash/isEmpty";
 import WidgetUnconfigured from "components/widget-unconfigured";
 
 import { WidgetProps } from "../index";
-import { Props as ConfigurationProps } from "./configuration";
+import { WidgetOptions } from "./configuration";
 import { widgetType } from "./properties";
 
 const Website: React.FC<Props> = memo(
@@ -17,6 +17,6 @@ const Website: React.FC<Props> = memo(
 );
 Website.displayName = "Website";
 
-interface Props extends WidgetProps, ConfigurationProps {}
+interface Props extends WidgetProps, WidgetOptions {}
 
 export default Website;

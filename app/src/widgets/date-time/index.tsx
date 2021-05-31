@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 import useInterval from "common/hooks/useInterval";
 
 import { WidgetProps } from "../index";
-import { Props as ConfigurationProps } from "./configuration";
+import { WidgetOptions } from "./configuration";
 
 export const DateTime: React.FC<Props> = memo(({ timezone }) => {
   const [date, setDate] = useState(dayjs());
@@ -29,6 +29,6 @@ export const DateTime: React.FC<Props> = memo(({ timezone }) => {
 
 DateTime.displayName = "DateTime";
 
-interface Props extends WidgetProps, ConfigurationProps {}
+interface Props extends WidgetProps, WidgetOptions {}
 
 export default DateTime;
