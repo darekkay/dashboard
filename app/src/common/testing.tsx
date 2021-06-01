@@ -6,14 +6,17 @@
  * */
 
 import React from "react";
-import { Store } from "redux";
+import { Action, AnyAction, Store } from "redux";
 import { Provider } from "react-redux";
+import { runSaga } from "redux-saga";
+import { Saga } from "@redux-saga/types";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 // act differences: https://github.com/testing-library/react-hooks-testing-library/issues/173
 import { renderHook, act as hookAct } from "@testing-library/react-hooks";
 
 import initStore, { State } from "../state/store";
+import { stateProps } from "./utils/mock";
 
 // Re-export utilities from @testing-library
 export * from "@testing-library/react";
@@ -50,4 +53,30 @@ export const expectToThrow = (func: Function) => {
 
   expect(consoleErrorSpy).toHaveBeenCalledTimes(2);
   jest.clearAllMocks();
+};
+
+/** Executes a redux-saga and returns dispatched actions */
+export const executeSaga = async (
+  saga: Saga,
+  action: AnyAction,
+  state: State = stateProps
+) => {
+  const dispatchedActions: Array<Action> = [];
+
+  await runSaga(
+    {
+      dispatch(dispatchedAction: Action) {
+        dispatchedActions.push(dispatchedAction);
+      },
+      getState() {
+        return state;
+      },
+    },
+    saga,
+    action
+  );
+
+  return {
+    dispatchedActions,
+  };
 };

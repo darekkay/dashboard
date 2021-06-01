@@ -40,7 +40,17 @@ export const data = [
 ];
 
 describe("<LineChart />", () => {
-  test("renders without errors", () => {
+  test("handles default data keys x and y", () => {
+    render(
+      <div style={{ height: "300px", width: "300px" }}>
+        <LineChart data={[{ x: 1, y: 2 }]}>Example</LineChart>
+      </div>
+    );
+
+    expect(screen.getByTestId("chart")).toBeInTheDocument();
+  });
+
+  test("handles custom data keys", () => {
     render(
       <div style={{ height: "300px", width: "300px" }}>
         <LineChart data={data} dataKeyX="time" dataKeyY="visitors">

@@ -12,7 +12,7 @@ export const Variants = () => {
   return (
     <Widget
       {...connectedWidgetProps}
-      id="cryptocurrencies-mock-id"
+      id="cryptocurrencies-01"
       type="cryptocurrencies"
       data={{
         crypto: "bitcoin",

@@ -10,7 +10,6 @@ describe("<YoutubeStats />", () => {
     render(
       <YoutubeStats
         {...widgetProps}
-        id="youtube-stats-mock-id"
         subscriberCount={1642}
         viewCount={2047174}
         query="https://www.youtube.com/c/darekkay"
@@ -24,9 +23,7 @@ describe("<YoutubeStats />", () => {
   });
 
   test("doesn't render if the query is missing", () => {
-    render(
-      <YoutubeStats {...widgetProps} query="" id="youtube-stats-mock-id" />
-    );
+    render(<YoutubeStats {...widgetProps} query="" />);
     expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 
@@ -34,7 +31,6 @@ describe("<YoutubeStats />", () => {
     render(
       <YoutubeStats
         {...widgetProps}
-        id="youtube-stats-mock-id"
         query="https://www.youtube.com/c/darekkay"
         meta={{ ...widgetProps.meta, errorCode: 404 }}
       />
@@ -47,14 +43,14 @@ describe("<YoutubeStats />", () => {
     render(
       <YoutubeStats
         {...widgetProps}
-        id="youtube-stats-mock-id"
+        id="widget-mock-id"
         query="https://www.youtube.com/c/darekkay"
         triggerUpdate={triggerUpdate}
       />
     );
     expect(triggerUpdate).toHaveBeenCalledTimes(1);
     expect(triggerUpdate).toHaveBeenCalledWith({
-      id: "youtube-stats-mock-id",
+      id: "widget-mock-id",
       params: {
         query: "https://www.youtube.com/c/darekkay",
       },

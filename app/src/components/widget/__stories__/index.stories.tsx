@@ -16,14 +16,14 @@ export const Variants = () => {
   return (
     <div className="space-y-6" style={{ maxWidth: "500px" }}>
       <Section type="story" headline="Regular">
-        <Widget id="search-01" {...connectedWidgetProps} {...sharedProps} />
+        <Widget {...connectedWidgetProps} {...sharedProps} id="search-01" />
       </Section>
 
       <Section type="story" headline="Error">
         <Widget
-          id="search-02"
           {...connectedWidgetProps}
           {...sharedProps}
+          id="search-02"
           hasError
         />
       </Section>

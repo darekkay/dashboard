@@ -1,42 +1,31 @@
 import React from "react";
+import i18n from "i18next";
 
 import { render, screen } from "common/testing";
 import { widgetProps } from "common/utils/mock";
 
 import ChemicalElements from "../index";
 
-describe("<ChemicalElements />", () => {
-  test("renders without errors", () => {
-    render(
-      <ChemicalElements
-        {...widgetProps}
-        id="totd-chemical-elements-mock-id"
-        symbol="V"
-        atomicNumber="23"
-        name="Vanadium"
-        nameDE="Vanadium"
-      />
-    );
+const commonProps = {
+  ...widgetProps,
+  symbol: "H",
+  atomicNumber: 1,
+  name: "Hydrogen",
+  nameDE: "Wasserstoff",
+};
 
-    expect(screen.getByText("Vanadium")).toBeInTheDocument();
+describe("<ChemicalElements />", () => {
+  test("renders a chemical element", () => {
+    render(<ChemicalElements {...commonProps} />);
+    expect(screen.getByText("Hydrogen")).toBeInTheDocument();
   });
 
   test("triggers an update", () => {
     const triggerUpdate = jest.fn();
-    render(
-      <ChemicalElements
-        {...widgetProps}
-        id="totd-chemical-elements-mock-id"
-        symbol="V"
-        atomicNumber="23"
-        name="Vanadium"
-        nameDE="Vanadium"
-        triggerUpdate={triggerUpdate}
-      />
-    );
+    render(<ChemicalElements {...commonProps} triggerUpdate={triggerUpdate} />);
     expect(triggerUpdate).toHaveBeenCalledTimes(1);
     expect(triggerUpdate).toHaveBeenCalledWith({
-      id: "totd-chemical-elements-mock-id",
+      id: "widget-mock-id",
       params: {},
     });
   });

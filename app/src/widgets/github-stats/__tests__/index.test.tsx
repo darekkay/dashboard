@@ -10,7 +10,6 @@ describe("<GithubStats />", () => {
     render(
       <GithubStats
         {...widgetProps}
-        id="github-stats-mock-id"
         query="darekkay"
         stars={1}
         followers={2}
@@ -27,7 +26,7 @@ describe("<GithubStats />", () => {
   });
 
   test("doesn't render if the query is missing", () => {
-    render(<GithubStats {...widgetProps} query="" id="github-stats-mock-id" />);
+    render(<GithubStats {...widgetProps} query="" />);
     expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 
@@ -35,7 +34,6 @@ describe("<GithubStats />", () => {
     render(
       <GithubStats
         {...widgetProps}
-        id="github-stats-mock-id"
         query="darekkay"
         meta={{ ...widgetProps.meta, errorCode: 404 }}
       />
@@ -48,14 +46,13 @@ describe("<GithubStats />", () => {
     render(
       <GithubStats
         {...widgetProps}
-        id="github-stats-mock-id"
         query="darekkay"
         triggerUpdate={triggerUpdate}
       />
     );
     expect(triggerUpdate).toHaveBeenCalledTimes(1);
     expect(triggerUpdate).toHaveBeenCalledWith({
-      id: "github-stats-mock-id",
+      id: "widget-mock-id",
       params: {
         query: "darekkay",
       },

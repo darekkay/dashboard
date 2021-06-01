@@ -10,7 +10,6 @@ describe("<{{ properCase name }} />", () => {
     render(
       <{{ properCase name }}
         {...widgetProps}
-        id="{{ kebabCase name }}-mock-id"
       />
     );
     expect(screen.getByRole("TODO", { name: /TODO text/i })).toBeInTheDocument();

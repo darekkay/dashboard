@@ -10,7 +10,6 @@ describe("<Search />", () => {
     render(
       <Search
         {...widgetProps}
-        id="search-mock-id"
         title="Search"
         pattern="https://example.com?s=%s"
         {...props}

@@ -7,20 +7,14 @@ import Image from "../index";
 
 describe("<Image />", () => {
   test("renders without errors", () => {
-    render(
-      <Image
-        {...widgetProps}
-        id="image-mock-id"
-        url="https://example.com/example.jpg"
-      />
-    );
+    render(<Image {...widgetProps} url="https://example.com/example.jpg" />);
     expect(
       screen.queryByText("widget.common.unconfigured")
     ).not.toBeInTheDocument();
   });
 
   test("doesn't render if the url is missing", () => {
-    render(<Image {...widgetProps} id="image-mock-id" url="" />);
+    render(<Image {...widgetProps} url="" />);
     expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 });

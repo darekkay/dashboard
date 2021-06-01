@@ -7,21 +7,15 @@ import Website from "../index";
 
 describe("<Website />", () => {
   test("renders without errors", () => {
-    render(
-      <Website
-        {...widgetProps}
-        id="website-mock-id"
-        url="https://example.com"
-      />
-    );
-    expect(screen.getByTitle("website-mock-id")).toBeInTheDocument();
+    render(<Website {...widgetProps} url="https://example.com" />);
+    expect(screen.getByTitle("widget-mock-id")).toBeInTheDocument();
     expect(
       screen.queryByText("widget.common.unconfigured")
     ).not.toBeInTheDocument();
   });
 
   test("doesn't render if the url is missing", () => {
-    render(<Website {...widgetProps} id="website-mock-id" url="" />);
+    render(<Website {...widgetProps} url="" />);
     expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 });

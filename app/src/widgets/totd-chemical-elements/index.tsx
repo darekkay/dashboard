@@ -33,7 +33,7 @@ interface Props extends WidgetProps {
   name: string;
   nameDE: string;
   symbol: string;
-  atomicNumber: string;
+  atomicNumber: number;
 }
 
 export default ChemicalElements;

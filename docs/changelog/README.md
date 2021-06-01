@@ -3,6 +3,7 @@
 ## Current development
 
 - :bug: **[Cryptocurrencies]** Fix deviation display for unchanged values.
+- :hammer: Improve test coverage.
 - :hammer: Improve TypeScript types.
 - :hammer: Provide root-level npm tasks to run `app` and `server` modules in parallel.
 

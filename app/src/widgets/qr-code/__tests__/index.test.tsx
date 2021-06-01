@@ -7,7 +7,7 @@ import QrCode from "../index";
 
 describe("<QrCode />", () => {
   test("renders without errors", () => {
-    render(<QrCode {...widgetProps} id="qr-code-mock-id" content="example" />);
+    render(<QrCode {...widgetProps} content="example" />);
 
     expect(
       screen.queryByText("widget.common.unconfigured")
@@ -15,7 +15,7 @@ describe("<QrCode />", () => {
   });
 
   test("doesn't render if the query is missing", () => {
-    render(<QrCode {...widgetProps} id="qr-code-mock-id" content="" />);
+    render(<QrCode {...widgetProps} content="" />);
     expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 });

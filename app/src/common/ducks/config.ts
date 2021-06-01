@@ -21,6 +21,7 @@ const changeTheme = createAction<string>("config/change-theme");
 export const changeLanguage = createAction<string>("config/change-language");
 
 export const defaultTheme = (): Theme => {
+  /* istanbul ignore next */
   if (IS_DEVELOPMENT) {
     return "default";
   }

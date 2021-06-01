@@ -22,7 +22,7 @@ describe("<Deviation />", () => {
     expect(screen.getByText("5 eur")).toBeInTheDocument();
   });
 
-  test("renders a percentage", () => {
+  test("renders a value with percentage", () => {
     render(<Deviation value={-5} percentage={-12} />);
     expect(screen.getByLabelText("-5 (-12%)")).toBeInTheDocument();
     expect(screen.getByText("5 / 12%")).toBeInTheDocument();

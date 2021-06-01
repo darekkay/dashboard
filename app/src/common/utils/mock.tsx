@@ -2,6 +2,7 @@ import { State } from "state/store";
 import { WidgetProps } from "widgets";
 
 interface MockWidgetProps extends Omit<WidgetProps, "id"> {
+  id: string;
   headline: string;
 }
 
@@ -13,6 +14,7 @@ export const widgetProps: MockWidgetProps = {
   triggerUpdate: () => {},
 
   // common widget props
+  id: "widget-mock-id",
   headline: "",
 };
 

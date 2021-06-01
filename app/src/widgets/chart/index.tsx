@@ -29,7 +29,7 @@ const Chart: React.FC<Props> = ({
   if (isEmpty(url) || isEmpty(dataPath))
     return <WidgetUnconfigured type={properties.widgetType} />;
 
-  const data = get(rest, dataPath as string);
+  const data = get(rest, dataPath);
 
   if (!data || !Array.isArray(data)) {
     if (meta.updateStatus === "pending") {
@@ -52,6 +52,9 @@ const Chart: React.FC<Props> = ({
 
 interface Props extends WidgetProps, WidgetOptions {
   url: string;
+
+  // dynamic data
+  [key: string]: any;
 }
 
 export default Chart;

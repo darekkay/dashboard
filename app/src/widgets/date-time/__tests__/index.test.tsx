@@ -8,20 +8,12 @@ import { DateTime } from "../index";
 
 describe("<DateTime />", () => {
   test("renders the current date", () => {
-    render(
-      <DateTime {...widgetProps} id="date-time-mock-id" timezone="auto" />
-    );
+    render(<DateTime {...widgetProps} timezone="auto" />);
     expect(screen.getByText(dayjs().format("dddd"))).toBeInTheDocument();
   });
 
   test("renders the current date for other timezones", () => {
-    render(
-      <DateTime
-        {...widgetProps}
-        id="date-time-mock-id"
-        timezone="Asia/Calcutta"
-      />
-    );
+    render(<DateTime {...widgetProps} timezone="Asia/Calcutta" />);
     expect(
       screen.getByText(dayjs().tz("Asia/Calcutta").format("HH:mm"))
     ).toBeInTheDocument();

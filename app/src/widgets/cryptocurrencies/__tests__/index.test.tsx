@@ -10,7 +10,6 @@ describe("<Cryptocurrencies />", () => {
     render(
       <Cryptocurrencies
         {...widgetProps}
-        id="cryptocurrencies-mock-id"
         crypto="ethereum"
         fiat="pln"
         currentPrice={6714}
@@ -29,7 +28,6 @@ describe("<Cryptocurrencies />", () => {
     render(
       <Cryptocurrencies
         {...widgetProps}
-        id="cryptocurrencies-mock-id"
         crypto="ethereum"
         fiat="pln"
         imageUrl="https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579"
@@ -43,7 +41,6 @@ describe("<Cryptocurrencies />", () => {
     render(
       <Cryptocurrencies
         {...widgetProps}
-        id="cryptocurrencies-mock-id"
         crypto="ethereum"
         fiat="pln"
         triggerUpdate={triggerUpdate}
@@ -51,7 +48,7 @@ describe("<Cryptocurrencies />", () => {
     );
     expect(triggerUpdate).toHaveBeenCalledTimes(1);
     expect(triggerUpdate).toHaveBeenCalledWith({
-      id: "cryptocurrencies-mock-id",
+      id: "widget-mock-id",
       params: {
         crypto: "ethereum",
         fiat: "pln",

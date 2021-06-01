@@ -10,7 +10,6 @@ describe("<TwitterStats />", () => {
     render(
       <TwitterStats
         {...widgetProps}
-        id="twitter-stats-mock-id"
         username="darek_kay"
         followers={4962}
         following={191}
@@ -25,9 +24,7 @@ describe("<TwitterStats />", () => {
   });
 
   test("doesn't render if the username is missing", () => {
-    render(
-      <TwitterStats {...widgetProps} username="" id="twitter-stats-mock-id" />
-    );
+    render(<TwitterStats {...widgetProps} username="" />);
     expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 
@@ -35,7 +32,6 @@ describe("<TwitterStats />", () => {
     render(
       <TwitterStats
         {...widgetProps}
-        id="twitter-stats-mock-id"
         username="darek_kay"
         meta={{ ...widgetProps.meta, errorCode: 404 }}
       />
@@ -48,14 +44,14 @@ describe("<TwitterStats />", () => {
     render(
       <TwitterStats
         {...widgetProps}
-        id="twitter-stats-mock-id"
+        id="widget-mock-id"
         username="darek_kay"
         triggerUpdate={triggerUpdate}
       />
     );
     expect(triggerUpdate).toHaveBeenCalledTimes(1);
     expect(triggerUpdate).toHaveBeenCalledWith({
-      id: "twitter-stats-mock-id",
+      id: "widget-mock-id",
       params: {
         username: "darek_kay",
       },

@@ -7,13 +7,10 @@ import Text from "../index";
 
 describe("<Text />", () => {
   test("updates the content on change", async () => {
-    const id = "text-mock-id";
     const content = "hello world";
     const setDataSpy = jest.fn();
 
-    render(
-      <Text {...widgetProps} id={id} content={content} setData={setDataSpy} />
-    );
+    render(<Text {...widgetProps} content={content} setData={setDataSpy} />);
     const textbox = screen.getByRole("textbox", { name: "widget.text.name" });
 
     userEvent.type(textbox, "new");
