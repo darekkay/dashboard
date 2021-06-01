@@ -1,10 +1,15 @@
-import WidgetCategory from "../categories";
+import { WidgetProperties } from "widgets/index";
 
-export const widgetType = "website";
-export const category: WidgetCategory = "media";
-export const initialHeight = 5;
-export const initialWidth = 5;
-export const initialOptions = {
-  url: "",
-};
-export const initialMeta = {};
+import { WidgetOptions } from "./configuration";
+
+export default {
+  widgetType: "website",
+  category: "media",
+  configurable: true,
+  initialHeight: 5,
+  initialWidth: 5,
+  initialOptions: {
+    url: "",
+  },
+  initialMeta: {},
+} as WidgetProperties<WidgetOptions>;

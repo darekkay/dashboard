@@ -27,7 +27,7 @@ describe("<GithubStats />", () => {
   });
 
   test("doesn't render if the query is missing", () => {
-    render(<GithubStats {...widgetProps} id="github-stats-mock-id" />);
+    render(<GithubStats {...widgetProps} query="" id="github-stats-mock-id" />);
     expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 

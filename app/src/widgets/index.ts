@@ -31,13 +31,13 @@ export interface ConfigurationProps<T> {
   save: () => void;
 }
 
-export interface WidgetProperties {
+export interface WidgetProperties<T = Record<string, any>> {
   configurable: boolean;
   widgetType: WidgetType;
   category: WidgetCategory;
   initialHeight: number;
   initialWidth: number;
-  initialOptions: Record<string, any>;
+  initialOptions: T;
   initialMeta: WidgetMeta;
 }
 

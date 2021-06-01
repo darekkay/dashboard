@@ -25,7 +25,7 @@ const Configuration = ({
 };
 
 export interface WidgetOptions {
-  query?: string;
+  query: string;
 }
 
 export default Configuration;

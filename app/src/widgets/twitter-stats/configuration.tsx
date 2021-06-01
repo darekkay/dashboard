@@ -25,7 +25,7 @@ const Configuration = ({
 };
 
 export interface WidgetOptions {
-  username?: string;
+  username: string;
 }
 
 export default Configuration;

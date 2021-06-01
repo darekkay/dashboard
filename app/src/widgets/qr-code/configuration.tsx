@@ -31,8 +31,8 @@ const Configuration = ({
 };
 
 export interface WidgetOptions {
+  headline: string;
   content: string;
-  headline?: string;
 }
 
 export default Configuration;

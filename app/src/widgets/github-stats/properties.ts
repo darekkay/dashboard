@@ -1,12 +1,19 @@
-import WidgetCategory from "../categories";
+import { WidgetProperties } from "widgets/index";
 
-export const widgetType = "github-stats";
-export const category: WidgetCategory = "monitoring";
-export const initialHeight = 3;
-export const initialWidth = 3;
-export const initialOptions = {};
-export const initialMeta = {
-  updateCycle: { hours: 24 },
-  updateStatus: "idle",
-  headlineIcon: "github",
-};
+import { WidgetOptions } from "./configuration";
+
+export default {
+  widgetType: "github-stats",
+  category: "monitoring",
+  configurable: true,
+  initialHeight: 3,
+  initialWidth: 3,
+  initialOptions: {
+    query: "",
+  },
+  initialMeta: {
+    updateCycle: { hours: 24 },
+    updateStatus: "idle",
+    headlineIcon: "github",
+  },
+} as WidgetProperties<WidgetOptions>;

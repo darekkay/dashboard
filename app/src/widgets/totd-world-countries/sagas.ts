@@ -5,7 +5,7 @@ import pick from "lodash/pick";
 import triggerUpdateHandler from "common/utils/triggerUpdateHandler";
 import { triggerUpdate } from "components/widget/duck";
 
-import { widgetType } from "./properties";
+import properties from "./properties";
 
 const URL = "https://tips.darekkay.com/json/countries-en.json";
 
@@ -23,7 +23,7 @@ const fetchTipOfTheDay = async () => {
 
 export function* saga() {
   yield* takeEvery(
-    triggerUpdate(widgetType).type,
+    triggerUpdate(properties.widgetType).type,
     triggerUpdateHandler(fetchTipOfTheDay)
   );
 }

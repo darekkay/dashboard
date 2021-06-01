@@ -58,12 +58,12 @@ const Configuration = ({
 };
 
 export interface WidgetOptions {
-  headline?: string;
-  url?: string;
+  headline: string;
+  url: string;
 
-  dataPath?: string;
-  dataKeyX?: string;
-  dataKeyY?: string;
+  dataPath: string;
+  dataKeyX: string;
+  dataKeyY: string;
 }
 
 export default Configuration;

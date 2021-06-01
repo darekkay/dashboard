@@ -4,7 +4,7 @@ import { passthrough, PassthroughParams } from "api/index";
 import triggerUpdateHandler from "common/utils/triggerUpdateHandler";
 import { triggerUpdate } from "components/widget/duck";
 
-import { widgetType } from "./properties";
+import properties from "./properties";
 
 const fetchData = async (params: PassthroughParams) => {
   const response = await passthrough(params);
@@ -13,7 +13,7 @@ const fetchData = async (params: PassthroughParams) => {
 
 export function* saga() {
   yield* takeEvery(
-    triggerUpdate(widgetType).type,
+    triggerUpdate(properties.widgetType).type,
     triggerUpdateHandler(fetchData)
   );
 }

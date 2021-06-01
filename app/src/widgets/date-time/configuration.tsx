@@ -91,7 +91,7 @@ const Configuration = ({
 };
 
 export interface WidgetOptions {
-  headline?: string;
+  headline: string;
   timezone: Timezone;
 }
 

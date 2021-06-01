@@ -1,14 +1,23 @@
-import WidgetCategory from "../categories";
+import { WidgetProperties } from "widgets/index";
 
-export const widgetType = "chart";
-export const category: WidgetCategory = "tracking";
-export const initialHeight = 3;
-export const initialWidth = 7;
-export const initialOptions = {
-  headline: "",
-};
-export const initialMeta = {
-  // NICE: make update cycle configurable
-  updateCycle: { hours: 24 },
-  updateStatus: "idle",
-};
+import { WidgetOptions } from "./configuration";
+
+export default {
+  widgetType: "chart",
+  category: "tracking",
+  configurable: true,
+  initialHeight: 3,
+  initialWidth: 7,
+  initialOptions: {
+    headline: "",
+    url: "",
+    dataPath: "",
+    dataKeyX: "",
+    dataKeyY: "",
+  },
+  initialMeta: {
+    // NICE: make update cycle configurable
+    updateCycle: { hours: 24 },
+    updateStatus: "idle",
+  },
+} as WidgetProperties<WidgetOptions>;

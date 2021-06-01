@@ -1,11 +1,14 @@
-import WidgetCategory from "../categories";
+import { WidgetProperties } from "widgets/index";
 
-export const widgetType = "random-image";
-export const category: WidgetCategory = "media";
-export const initialHeight = 4;
-export const initialWidth = 6;
-export const initialOptions = {};
-export const initialMeta = {
-  updateCycle: { hours: 24 },
-  updateStatus: "idle",
-};
+export default {
+  widgetType: "random-image",
+  category: "media",
+  configurable: false,
+  initialHeight: 4,
+  initialWidth: 6,
+  initialOptions: {},
+  initialMeta: {
+    updateCycle: { hours: 24 },
+    updateStatus: "idle",
+  },
+} as WidgetProperties;

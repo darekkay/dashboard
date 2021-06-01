@@ -1,11 +1,14 @@
-import WidgetCategory from "../categories";
+import { WidgetProperties } from "widgets/index";
 
-export const widgetType = "totd-chemical-elements";
-export const category: WidgetCategory = "knowledge";
-export const initialHeight = 2;
-export const initialWidth = 2;
-export const initialOptions = {};
-export const initialMeta = {
-  updateCycle: { hours: 24 },
-  updateStatus: "idle",
-};
+export default {
+  widgetType: "totd-chemical-elements",
+  category: "knowledge",
+  configurable: false,
+  initialHeight: 2,
+  initialWidth: 2,
+  initialOptions: {},
+  initialMeta: {
+    updateCycle: { hours: 24 },
+    updateStatus: "idle",
+  },
+} as WidgetProperties;

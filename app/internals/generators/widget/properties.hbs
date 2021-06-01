@@ -1,8 +1,14 @@
-import WidgetCategory from "../categories";
+import { WidgetProperties } from "widgets/index";
 
-export const widgetType = "{{kebabCase name}}";
-export const category: WidgetCategory = "general"; // TODO: check category
-export const initialHeight = 1;
-export const initialWidth = 1;
-export const initialOptions = {};
-export const initialMeta = {};
+{{#if configurationEnabled}}import { WidgetOptions } from "./configuration";{{/if}}
+
+export default {
+  // TODO: adjust properties and run yarn scan:widgets
+  widgetType: "{{kebabCase name}}",
+  category: "general", // TODO: check category
+  configurable: {{configurationEnabled}},
+  initialHeight: 1,
+  initialWidth: 1,
+  initialOptions: {},
+  initialMeta: {},
+} as WidgetProperties{{#if configurationEnabled}}<WidgetOptions>{{/if}};

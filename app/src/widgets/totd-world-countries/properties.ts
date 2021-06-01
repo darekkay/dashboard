@@ -1,11 +1,14 @@
-import WidgetCategory from "../categories";
+import { WidgetProperties } from "widgets/index";
 
-export const widgetType = "totd-world-countries";
-export const category: WidgetCategory = "knowledge";
-export const initialHeight = 4;
-export const initialWidth = 4;
-export const initialOptions = {};
-export const initialMeta = {
-  updateCycle: { hours: 24 },
-  updateStatus: "idle",
-};
+export default {
+  widgetType: "totd-world-countries",
+  category: "knowledge",
+  configurable: false,
+  initialHeight: 4,
+  initialWidth: 4,
+  initialOptions: {},
+  initialMeta: {
+    updateCycle: { hours: 24 },
+    updateStatus: "idle",
+  },
+} as WidgetProperties;

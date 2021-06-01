@@ -4,7 +4,7 @@ import api, { Unsplash } from "api/index";
 import triggerUpdateHandler from "common/utils/triggerUpdateHandler";
 import { triggerUpdate } from "components/widget/duck";
 
-import { widgetType } from "./properties";
+import properties from "./properties";
 
 const fetchUnsplashRandomPhoto = async (
   params: Unsplash.GetRandomImage.RequestQuery
@@ -15,7 +15,7 @@ const fetchUnsplashRandomPhoto = async (
 
 export function* saga() {
   yield* takeEvery(
-    triggerUpdate(widgetType).type,
+    triggerUpdate(properties.widgetType).type,
     triggerUpdateHandler(fetchUnsplashRandomPhoto)
   );
 }

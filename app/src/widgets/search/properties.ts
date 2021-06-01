@@ -1,9 +1,14 @@
-import WidgetCategory from "../categories";
+import { WidgetProperties } from "widgets/index";
+
+import { WidgetOptions } from "./configuration";
 import providers from "./lib/providers";
 
-export const widgetType = "search";
-export const category: WidgetCategory = "tools";
-export const initialHeight = 2;
-export const initialWidth = 4;
-export const initialOptions = providers[0];
-export const initialMeta = {};
+export default {
+  widgetType: "search",
+  category: "tools",
+  configurable: true,
+  initialHeight: 2,
+  initialWidth: 4,
+  initialOptions: providers[0],
+  initialMeta: {},
+} as WidgetProperties<WidgetOptions>;

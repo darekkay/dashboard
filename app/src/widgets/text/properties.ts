@@ -1,8 +1,11 @@
-import WidgetCategory from "../categories";
+import { WidgetProperties } from "widgets/index";
 
-export const widgetType = "text";
-export const category: WidgetCategory = "general";
-export const initialHeight = 4;
-export const initialWidth = 4;
-export const initialOptions = {};
-export const initialMeta = {};
+export default {
+  widgetType: "text",
+  category: "general",
+  configurable: false,
+  initialHeight: 4,
+  initialWidth: 4,
+  initialOptions: {},
+  initialMeta: {},
+} as WidgetProperties;

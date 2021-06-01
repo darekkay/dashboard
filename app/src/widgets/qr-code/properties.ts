@@ -1,11 +1,16 @@
-import WidgetCategory from "../categories";
+import { WidgetProperties } from "widgets/index";
 
-export const widgetType = "qr-code";
-export const category: WidgetCategory = "tools";
-export const initialHeight = 2;
-export const initialWidth = 2;
-export const initialOptions = {
-  headline: "",
-  content: "",
-};
-export const initialMeta = {};
+import { WidgetOptions } from "./configuration";
+
+export default {
+  widgetType: "qr-code",
+  category: "tools",
+  configurable: true,
+  initialHeight: 2,
+  initialWidth: 2,
+  initialOptions: {
+    headline: "",
+    content: "",
+  },
+  initialMeta: {},
+} as WidgetProperties<WidgetOptions>;

@@ -12,11 +12,19 @@ export const data = [
   },
 ];
 
+const commonProps = {
+  ...widgetProps,
+  url: "",
+  dataPath: "",
+  dataKeyX: "",
+  dataKeyY: "",
+};
+
 describe("<Chart />", () => {
   test("renders without errors", () => {
     render(
       <Chart
-        {...widgetProps}
+        {...commonProps}
         id="chart-mock-id"
         url="https://example.com"
         // @ts-expect-error
@@ -33,14 +41,14 @@ describe("<Chart />", () => {
   });
 
   test("doesn't render if the url is missing", () => {
-    render(<Chart {...widgetProps} id="chart-mock-id" url="" />);
+    render(<Chart {...commonProps} id="chart-mock-id" url="" />);
     expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 
   test("doesn't render if the dataPath is missing", () => {
     render(
       <Chart
-        {...widgetProps}
+        {...commonProps}
         id="chart-mock-id"
         url="https://example.com"
         dataPath=""
@@ -52,7 +60,7 @@ describe("<Chart />", () => {
   test("renders an error if the configured data is not an array", () => {
     render(
       <Chart
-        {...widgetProps}
+        {...commonProps}
         id="chart-mock-id"
         url="https://example.com"
         // @ts-expect-error

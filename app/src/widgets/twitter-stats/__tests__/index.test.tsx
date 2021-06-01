@@ -24,8 +24,10 @@ describe("<TwitterStats />", () => {
     expect(screen.queryByTestId("widget-error")).not.toBeInTheDocument();
   });
 
-  test("doesn't render if the query is missing", () => {
-    render(<TwitterStats {...widgetProps} id="twitter-stats-mock-id" />);
+  test("doesn't render if the username is missing", () => {
+    render(
+      <TwitterStats {...widgetProps} username="" id="twitter-stats-mock-id" />
+    );
     expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 

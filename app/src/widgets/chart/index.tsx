@@ -10,7 +10,7 @@ import Loading from "components/loading";
 
 import { WidgetProps } from "../index";
 import { WidgetOptions } from "./configuration";
-import { widgetType } from "./properties";
+import properties from "./properties";
 
 export { saga } from "./sagas";
 
@@ -27,7 +27,7 @@ const Chart: React.FC<Props> = ({
   useTriggerUpdate({ id, params: { url }, meta, triggerUpdate }, [url]);
 
   if (isEmpty(url) || isEmpty(dataPath))
-    return <WidgetUnconfigured type={widgetType} />;
+    return <WidgetUnconfigured type={properties.widgetType} />;
 
   const data = get(rest, dataPath as string);
 

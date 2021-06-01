@@ -1,11 +1,16 @@
-import WidgetCategory from "../categories";
+import { WidgetProperties } from "widgets/index";
 
-export const widgetType = "date-time";
-export const category: WidgetCategory = "general";
-export const initialHeight = 2;
-export const initialWidth = 3;
-export const initialOptions = {
-  headline: "",
-  timezone: "auto",
-};
-export const initialMeta = {};
+import { WidgetOptions } from "./configuration";
+
+export default {
+  widgetType: "date-time",
+  category: "general",
+  configurable: true,
+  initialHeight: 2,
+  initialWidth: 3,
+  initialOptions: {
+    headline: "",
+    timezone: "auto",
+  },
+  initialMeta: {},
+} as WidgetProperties<WidgetOptions>;

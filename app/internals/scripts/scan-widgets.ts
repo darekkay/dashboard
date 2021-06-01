@@ -1,4 +1,4 @@
-import { readdirSync, existsSync, writeFileSync } from "fs";
+import { readdirSync, writeFileSync } from "fs";
 
 import logger from "@darekkay/logger";
 
@@ -9,7 +9,6 @@ import { WidgetType } from "widgets/list";
 
 const CLIENT_PATH = "src/widgets";
 const SERVER_PATH = "../server/src";
-const FILE_CONFIGURATION = "configuration.tsx";
 const FILE_PROPERTIES = "properties.ts";
 
 const directoriesForPath = (path: string) =>
@@ -17,14 +16,11 @@ const directoriesForPath = (path: string) =>
     .filter((dirent) => dirent.isDirectory())
     .map((dirent) => dirent.name);
 
-/* A widget is configurable if a configuration file exists */
-const isConfigurable = (widget: string) =>
-  existsSync(`${CLIENT_PATH}/${widget}/${FILE_CONFIGURATION}`);
-
 /* Widget properties are defined in a separate file */
 const getWidgetProperties = (widget: string) => {
   try {
-    return require(`../../${CLIENT_PATH}/${widget}/${FILE_PROPERTIES}`);
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    return require(`../../${CLIENT_PATH}/${widget}/${FILE_PROPERTIES}`).default;
   } catch {
     logger.error(`Missing properties.ts file for module '${widget}'`);
     return null;
@@ -43,10 +39,7 @@ const widgetProperties = allWidgets
   .reduce(
     (accumulator, { widget, properties }) => ({
       ...accumulator,
-      [widget]: {
-        configurable: isConfigurable(widget),
-        ...properties,
-      },
+      [widget]: properties,
     }),
     {}
   ) as Record<WidgetType, WidgetProperties>;

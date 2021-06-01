@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="[app] scan-widgets" type="js.build_tools.npm">
+  <configuration default="false" name="[app] scan:widgets" type="js.build_tools.npm">
     <package-json value="$PROJECT_DIR$/app/package.json" />
     <command value="run" />
     <scripts>
-      <script value="scan-widgets" />
+      <script value="scan:widgets" />
     </scripts>
     <node-interpreter value="project" />
     <envs />

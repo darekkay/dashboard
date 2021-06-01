@@ -8,8 +8,7 @@ import WidgetError from "components/widget-error";
 
 import { WidgetProps } from "../index";
 {{#if configurationEnabled}}import { WidgetOptions } from "./configuration";{{/if}}
-import { widgetType } from "./properties";
-
+import properties from "./properties";
 {{#if useSagas}}export { saga } from "./sagas";{{/if}}
 
 const {{ properCase name }}: React.FC<Props> = ({ id, myAwesomeRequestParam, meta, triggerUpdate, setData }) => {
@@ -19,7 +18,8 @@ const {{ properCase name }}: React.FC<Props> = ({ id, myAwesomeRequestParam, met
     myAwesomeRequestParam, // TODO: remove or change the required request params
   ]);
 {{/if}}
-  if (isEmpty(myAwesomeRequestParam)) return <WidgetUnconfigured type={widgetType} />;
+  if (isEmpty(myAwesomeRequestParam))
+    return <WidgetUnconfigured type={properties.widgetType} />;
 
   return (<div></div>);
 };

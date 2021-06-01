@@ -7,6 +7,9 @@ export const widgetProps = {
   setData: () => {},
   setOptions: () => {},
   triggerUpdate: () => {},
+
+  // common widget props
+  headline: "",
 };
 
 /* Default connected widget props (e.g. for stories) */

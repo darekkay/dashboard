@@ -1,14 +1,19 @@
-import WidgetCategory from "../categories";
+import { WidgetProperties } from "widgets/index";
 
-export const widgetType = "cryptocurrencies";
-export const category: WidgetCategory = "monitoring";
-export const initialHeight = 2;
-export const initialWidth = 3;
-export const initialOptions = {
-  fiat: "eur",
-  crypto: "bitcoin",
-};
-export const initialMeta = {
-  updateCycle: { minutes: 15 },
-  updateStatus: "idle",
-};
+import { WidgetOptions } from "./configuration";
+
+export default {
+  widgetType: "cryptocurrencies",
+  category: "monitoring",
+  configurable: true,
+  initialHeight: 2,
+  initialWidth: 3,
+  initialOptions: {
+    fiat: "eur",
+    crypto: "bitcoin",
+  },
+  initialMeta: {
+    updateCycle: { minutes: 15 },
+    updateStatus: "idle",
+  },
+} as WidgetProperties<WidgetOptions>;

@@ -9,7 +9,7 @@ import StatsRow from "components/stats-row";
 
 import { WidgetProps } from "../index";
 import { WidgetOptions } from "./configuration";
-import { widgetType } from "./properties";
+import properties from "./properties";
 
 export { saga } from "./sagas";
 
@@ -27,7 +27,8 @@ const GithubStats: React.FC<Props> = ({
   const { t } = useTranslation();
   useTriggerUpdate({ id, params: { query }, meta, triggerUpdate }, [query]);
 
-  if (isEmpty(query)) return <WidgetUnconfigured type={widgetType} />;
+  if (isEmpty(query))
+    return <WidgetUnconfigured type={properties.widgetType} />;
   if (meta.errorCode === 404)
     return <WidgetError labelKey={t("widget.github-stats.error.404")} />;
 

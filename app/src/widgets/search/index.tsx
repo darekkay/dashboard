@@ -9,7 +9,7 @@ import WidgetUnconfigured from "components/widget-unconfigured";
 
 import { WidgetProps } from "../index";
 import { WidgetOptions } from "./configuration";
-import { widgetType } from "./properties";
+import properties from "./properties";
 
 const openSearchUrl = (
   pattern: string,
@@ -26,7 +26,8 @@ const openSearchUrl = (
 const Search: React.FC<Props> = ({ id, pattern }) => {
   const [value, setValue] = useState("");
   const { t } = useTranslation();
-  if (isEmpty(pattern)) return <WidgetUnconfigured type={widgetType} />;
+  if (isEmpty(pattern))
+    return <WidgetUnconfigured type={properties.widgetType} />;
   return (
     <div className="max-w-full w-full p-3">
       <div className="flex items-center">

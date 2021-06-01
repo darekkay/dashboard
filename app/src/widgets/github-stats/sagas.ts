@@ -4,7 +4,7 @@ import api, { Github } from "api/index";
 import triggerUpdateHandler from "common/utils/triggerUpdateHandler";
 import { triggerUpdate } from "components/widget/duck";
 
-import { widgetType } from "./properties";
+import properties from "./properties";
 
 const fetchGitHubStats = async (params: Github.GetGitHubStats.RequestQuery) => {
   const response = await api.github.getGitHubStats(params);
@@ -13,7 +13,7 @@ const fetchGitHubStats = async (params: Github.GetGitHubStats.RequestQuery) => {
 
 export function* saga() {
   yield* takeEvery(
-    triggerUpdate(widgetType).type,
+    triggerUpdate(properties.widgetType).type,
     triggerUpdateHandler(fetchGitHubStats)
   );
 }

@@ -24,7 +24,9 @@ describe("<YoutubeStats />", () => {
   });
 
   test("doesn't render if the query is missing", () => {
-    render(<YoutubeStats {...widgetProps} id="youtube-stats-mock-id" />);
+    render(
+      <YoutubeStats {...widgetProps} query="" id="youtube-stats-mock-id" />
+    );
     expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 
