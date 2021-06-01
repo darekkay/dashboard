@@ -1,9 +1,13 @@
 import { State } from "state/store";
-import { WidgetMeta } from "components/widget/duck";
+import { WidgetProps } from "widgets";
+
+interface MockWidgetProps extends Omit<WidgetProps, "id"> {
+  headline: string;
+}
 
 /* Default widget props (e.g. for unit tests) */
-export const widgetProps = {
-  meta: { updateCycle: { hours: 1 }, updateStatus: "idle" } as WidgetMeta,
+export const widgetProps: MockWidgetProps = {
+  meta: { updateCycle: { hours: 1 }, updateStatus: "idle" },
   setData: () => {},
   setOptions: () => {},
   triggerUpdate: () => {},

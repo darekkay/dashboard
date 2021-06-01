@@ -43,7 +43,7 @@ export interface WidgetProperties<T = Record<string, any>> {
 
 export interface WidgetImports {
   component: () => Promise<any>;
-  configuration: () => Promise<any>;
+  configuration?: () => Promise<any>;
 }
 
 export interface WidgetElements {
@@ -60,6 +60,7 @@ const injectModuleSaga = (widgetType: WidgetType) => (module: any) => {
 
 export default Object.entries(widgetProperties).reduce(
   (accumulator, [widgetType, values]) => {
+    const { configuration } = widgetImports[widgetType as WidgetType];
     return {
       ...accumulator,
       [widgetType]: {
@@ -69,9 +70,7 @@ export default Object.entries(widgetProperties).reduce(
             .component()
             .then(injectModuleSaga(widgetType as WidgetType))
         ),
-        Configuration: values.configurable
-          ? React.lazy(widgetImports[widgetType as WidgetType].configuration)
-          : null,
+        Configuration: configuration ? React.lazy(configuration) : null,
       },
     };
   },

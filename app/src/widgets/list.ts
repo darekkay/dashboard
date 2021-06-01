@@ -18,7 +18,7 @@ export type WidgetType =
   | "website"
   | "youtube-stats";
 
-const widgetProperties = {
+const widgetProperties: Record<WidgetType, WidgetProperties> = {
   chart: {
     widgetType: "chart",
     category: "tracking",
@@ -175,10 +175,10 @@ const widgetProperties = {
       headlineIcon: "youtube",
     },
   },
-} as Record<WidgetType, WidgetProperties>;
+};
 export default widgetProperties;
 
-export const widgetImports = {
+export const widgetImports: Record<WidgetType, WidgetImports> = {
   chart: {
     component: async () => import("widgets/chart"),
     configuration: async () => import("widgets/chart/configuration"),
@@ -235,7 +235,7 @@ export const widgetImports = {
     component: async () => import("widgets/youtube-stats"),
     configuration: async () => import("widgets/youtube-stats/configuration"),
   },
-} as Record<WidgetType, WidgetImports>;
+};
 
 export const initialMeta = (widgetType: WidgetType) =>
   widgetProperties[widgetType].initialMeta;

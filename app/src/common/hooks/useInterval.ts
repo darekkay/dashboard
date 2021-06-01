@@ -2,9 +2,7 @@ import { useEffect, useRef } from "react";
 
 /* Based on: https://overreacted.io/making-setinterval-declarative-with-react-hooks/ */
 const useInterval = (callback: Function, delay: number | null) => {
-  const savedCallback = useRef() as { current: Function };
-
-  // remember the latest callback
+  const savedCallback = useRef<Function>(); // remember the latest callback
   useEffect(() => {
     savedCallback.current = callback;
   }, [callback, savedCallback]);
@@ -12,7 +10,7 @@ const useInterval = (callback: Function, delay: number | null) => {
   // set up the interval
   // eslint-disable-next-line consistent-return
   useEffect(() => {
-    const tick = () => savedCallback.current();
+    const tick = () => (savedCallback.current ? savedCallback.current() : null);
 
     if (delay !== null) {
       const id = setInterval(tick, delay);

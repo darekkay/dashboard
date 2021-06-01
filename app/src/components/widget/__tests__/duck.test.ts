@@ -8,17 +8,17 @@ import {
   actionCreators,
   createWidget,
   removeWidget,
-  Widget,
+  WidgetsState,
 } from "../duck";
 
-const initialState = {
+const initialState: WidgetsState = {
   "date-time-01": {
     type: "date-time",
     options: {},
     data: {},
     meta: {},
   },
-} as Record<string, Widget>;
+};
 
 describe("Widget duck", () => {
   test("updates the widget's option value", () => {
@@ -64,14 +64,14 @@ describe("Widget duck", () => {
   });
 
   test("imports the state", () => {
-    const widgets = {
+    const widgets: WidgetsState = {
       "search-01": {
         type: "search",
         options: {},
         data: {},
         meta: {},
       },
-    } as Record<string, Widget>;
+    };
 
     const updatedState = reducerWithInitialState()(
       initialState,
@@ -87,7 +87,7 @@ describe("Widget duck", () => {
   test("resets data for widgets that update themselves", () => {
     const textWidget = {
       "text-01": {
-        type: "text",
+        type: "text" as const,
         data: {
           content:
             "Always code as if the person who ends up maintaining your code will be a violent psychopath who knows where you live.",
@@ -97,13 +97,13 @@ describe("Widget duck", () => {
       },
     };
 
-    const widgets = {
+    const widgets: WidgetsState = {
       // example widget without update handling
       ...textWidget,
 
       // example widget with update handling
       "github-stats-01": {
-        type: "github-stats",
+        type: "github-stats" as const,
         data: {
           name: "darekkay/dashboard",
           stars: 73,
@@ -116,7 +116,7 @@ describe("Widget duck", () => {
           lastUpdated: 1619360156497,
         },
       },
-    } as Record<string, Widget>;
+    };
 
     const updatedState = reducerWithInitialState()(
       initialState,

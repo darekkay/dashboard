@@ -5,7 +5,7 @@ import usePrevious from "../usePrevious";
 describe("usePrevious", () => {
   test("returns the previous value", () => {
     const { result, rerender } = renderHook((value) => usePrevious(value), {
-      initialProps: "first" as any,
+      initialProps: "first" as string | null,
     });
 
     // On first render, there is no previous value

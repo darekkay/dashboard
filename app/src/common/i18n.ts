@@ -16,7 +16,7 @@ import de from "./translations/de.json";
 import en from "./translations/en.json";
 import fr from "./translations/fr.json";
 
-export const resources = {
+export const resources: Resource = {
   en: {
     translation: DEBUG_LABELS ? {} : en,
   },
@@ -26,7 +26,7 @@ export const resources = {
   fr: {
     translation: fr,
   },
-} as Resource;
+};
 
 /* Use browser language as default, if a translation is available */
 export const defaultLanguage = () => {

@@ -26,23 +26,16 @@ describe("<Counter />", () => {
     });
   });
 
-  test("decrements the value", async () => {
+  test("decrements a default value", async () => {
     const setData = jest.fn();
-    render(
-      <Counter
-        {...widgetProps}
-        id="counter-mock-id"
-        setData={setData}
-        value={5}
-      />
-    );
+    render(<Counter {...widgetProps} id="counter-mock-id" setData={setData} />);
     userEvent.click(
       screen.getByRole("button", { name: "widget.counter.decrement" })
     );
 
     expect(setData).toHaveBeenCalledWith({
       id: "counter-mock-id",
-      values: { value: 4 },
+      values: { value: -1 },
     });
   });
 });
