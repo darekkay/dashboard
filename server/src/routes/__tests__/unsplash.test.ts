@@ -8,7 +8,6 @@ import unsplashImageMockResponse from "./__examples__/unsplash-image.json";
 
 describe("unsplash", () => {
   afterEach(() => {
-    jest.resetAllMocks();
     logger.setLevel("error");
   });
 

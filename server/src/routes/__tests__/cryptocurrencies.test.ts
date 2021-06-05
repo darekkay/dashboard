@@ -8,7 +8,6 @@ import coingeckoMockResponse from "./__examples__/cryptocurrencies.json";
 
 describe("cryptocurrencies", () => {
   afterEach(() => {
-    jest.resetAllMocks();
     logger.setLevel("error");
   });
 

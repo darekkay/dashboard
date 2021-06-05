@@ -9,7 +9,6 @@ import { normalizeUsername } from "../twitter";
 
 describe("twitter", () => {
   afterEach(() => {
-    jest.resetAllMocks();
     logger.setLevel("error");
   });
 

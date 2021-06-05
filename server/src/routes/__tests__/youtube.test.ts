@@ -8,7 +8,6 @@ import youtubeChannelMockResponse from "./__examples__/youtube-channel.json";
 
 describe("youtube", () => {
   afterEach(() => {
-    jest.resetAllMocks();
     logger.setLevel("error");
   });
 

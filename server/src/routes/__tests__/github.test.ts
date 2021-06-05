@@ -66,7 +66,6 @@ describe("github", () => {
 
   describe("routes", () => {
     afterEach(() => {
-      jest.resetAllMocks();
       logger.setLevel("error");
     });
 

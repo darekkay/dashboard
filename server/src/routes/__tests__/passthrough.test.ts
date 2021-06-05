@@ -16,7 +16,6 @@ const mockResponse = {
 
 describe("passthrough", () => {
   afterEach(() => {
-    jest.resetAllMocks();
     logger.setLevel("error");
   });
 

@@ -8,7 +8,6 @@ import openweatherMockResponse from "./__examples__/weather.json";
 
 describe("weather", () => {
   afterEach(() => {
-    jest.resetAllMocks();
     logger.setLevel("error");
   });
 
