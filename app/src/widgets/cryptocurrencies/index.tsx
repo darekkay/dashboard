@@ -37,9 +37,7 @@ const Cryptocurrencies: React.FC<Props> = ({
       {currentPrice && (
         <div className="text-5 font-semibold">
           {t("number", { value: currentPrice })}
-          <span className="ml-2 text-2 uppercase text-color-offset">
-            {fiat}
-          </span>
+          <span className="ml-2 text-2 uppercase text-offset">{fiat}</span>
         </div>
       )}
       {last24h && (

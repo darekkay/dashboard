@@ -95,13 +95,13 @@ const WidgetOverlay: React.FC<Props> = ({
       {isWidgetMenuVisible && (
         <div
           role="menubar"
-          className="button-bar absolute z-20 flex px-2 bg-color-panel border rounded"
+          className="button-bar absolute z-20 flex px-2 bg-default border rounded shadow-lg"
           aria-label={t("widget.common.headline")}
           aria-orientation="horizontal"
         >
           {/* Configuration button */}
           {isWidgetConfigurable && (
-            <div className="bg-color-panel mr-1">
+            <div className="bg-default mr-1">
               <Button
                 role="menuitem"
                 size="auto"
@@ -119,7 +119,7 @@ const WidgetOverlay: React.FC<Props> = ({
           )}
 
           {/* Remove button */}
-          <div className="bg-color-panel">
+          <div className="bg-default">
             <Button
               role="menuitem"
               size="auto"
@@ -130,7 +130,7 @@ const WidgetOverlay: React.FC<Props> = ({
               })}
               onClick={() => removeWidgetFromLayout(id)}
             >
-              <Icon name="trash" className="text-color-danger" />
+              <Icon name="trash" className="text-danger" />
             </Button>
           </div>
         </div>

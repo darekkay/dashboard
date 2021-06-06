@@ -18,7 +18,7 @@
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background: var(--background-color-dim);
+  background: var(--color-background-offset);
 }
 
 .skeleton::after {
@@ -31,7 +31,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    var(--background-color-panel),
+    var(--color-background-default),
     transparent
   );
   animation: skeleton 1.5s infinite;

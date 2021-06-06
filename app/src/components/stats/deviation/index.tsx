@@ -23,8 +23,8 @@ const Deviation: React.FC<Props> = ({ value, unit, percentage, className }) => {
       className={cn(
         "flex items-center",
         {
-          "text-color-danger": value < 0,
-          "text-color-success": value > 0,
+          "text-danger": value < 0,
+          "text-success": value > 0,
         },
         className
       )}

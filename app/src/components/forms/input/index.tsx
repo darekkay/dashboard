@@ -40,10 +40,10 @@ const Input: React.FC<Props> = (props) => {
       >
         <input
           className={cn(
-            "w-full px-4 py-1 border rounded text-color-default",
+            "w-full px-4 py-1 border rounded text-default",
             {
               "pr-7": isFocused,
-              "bg-color-default": !className?.includes("bg-color-"),
+              "bg-offset": !className?.includes("bg-color-"),
             },
             className
           )}

@@ -21,13 +21,13 @@ const Dropdown = <T extends string>({
         className={cn(
           "forms-dropdown relative",
           {
-            "bg-color-default": !className?.includes("bg-color-"),
+            "bg-offset": !className?.includes("bg-color-"),
           },
           className
         )}
       >
         <select
-          className="w-full pl-4 pr-7 py-1 border rounded bg-color-default text-color-default"
+          className="w-full pl-4 pr-7 py-1 border rounded bg-offset text-default"
           onChange={(event) => {
             setValue(event.target.value as T);
           }}
@@ -42,7 +42,7 @@ const Dropdown = <T extends string>({
         </select>
         <Icon
           name="chevronDown"
-          className="absolute transform-center bg-color-inherit pointer-events-none"
+          className="absolute transform-center bg-inherit pointer-events-none"
         />
       </div>
     </Label>

@@ -1,26 +1,25 @@
 @import "~@darekkay/styles/src/base/colors";
 
 .theme-default {
-  --text-color: #{$blue-80};
-  --text-color-offset: #{$dk-gray-55};
-  --text-color-primary: #{$indigo-warm-60};
-  --text-color-highlight: #{$blue-vivid-50};
+  --color-text-default: #{$blue-80};
+  --color-text-offset: #{$dk-gray-55};
+  --color-text-accent: #{$violet-vivid-60};
+  --color-text-interaction: #{$blue-vivid-50};
+  --color-text-success: #{$green-50};
+  --color-text-danger: #{$red-50};
 
-  --text-color-danger: #{$red-50};
-  --text-color-success: #{$green-50};
+  --color-background-default: #{$white};
+  --color-background-offset: #{$gray-cool-3};
 
-  --background-color: #{$gray-cool-3};
-  --background-color-panel: #{$white};
-  --background-color-dim: rgba(0, 0, 0, 0.05);
+  --color-border: #{$gray-cool-10};
+  --color-focus-ring: #{$blue-30};
 
-  --border-color: #{$gray-cool-10};
-  --box-shadow-color: rgba(0, 0, 0, 0.1);
-  --focus-ring-color: #{$blue-30};
-  --backdrop-color: rgba(255, 255, 255, 0.6);
+  --color-box-shadow: rgba(0, 0, 0, 0.1);
+  --color-backdrop: rgba(255, 255, 255, 0.6);
 
-  --background-overlay-color: rgba(255, 255, 255, 0.5);
-  --background-overlay-text-color: #{$black};
-  --background-overlay-highlight-color: #{$violet-vivid-70};
+  --overlay-color-background-default: rgba(255, 255, 255, 0.5);
+  --overlay-color-text-default: #{$black};
+  --overlay-color-text-interaction: #{$violet-vivid-70};
 
   --button-primary-color: #{$blue-vivid-50};
   --button-primary-event-bg: #{$blue-vivid-60};
@@ -30,7 +29,7 @@
   --button-secondary-event-bg: #{$violet-60};
   --button-secondary-focus-ring: #{$violet-vivid-30};
 
-  --button-danger-color: var(--text-color-danger);
+  --button-danger-color: var(--color-text-danger);
   --button-danger-event-bg: #{$red-60};
   --button-danger-focus-ring: #{$red-30};
 

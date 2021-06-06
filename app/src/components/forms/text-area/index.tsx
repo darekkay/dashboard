@@ -14,7 +14,7 @@ const TextArea: React.FC<Props> = ({
       <textarea
         className={cn(
           "py-1 px-4 w-full h-full border rounded resize-none",
-          { "bg-color-default": !className?.includes("bg-color-") },
+          { "bg-offset": !className?.includes("bg-") },
           { "text-4": !className?.includes("text-") },
           className
         )}

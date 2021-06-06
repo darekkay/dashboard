@@ -1,15 +1,15 @@
 .file-upload {
-  border: 2px dashed var(--border-color);
+  border: 2px dashed var(--color-border);
 
   &.drag-active {
-    border-color: var(--focus-ring-color);
+    border-color: var(--color-focus-ring);
   }
 
   &.success {
-    border-color: var(--text-color-success);
+    border-color: var(--color-text-success);
   }
 
   &.error {
-    border-color: var(--text-color-danger);
+    border-color: var(--color-text-danger);
   }
 }

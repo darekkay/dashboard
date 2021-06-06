@@ -2524,10 +2524,12 @@
     which "2.0.2"
     yargs-parser "20.2.7"
 
-"@darekkay/styles@2.3.5":
-  version "2.3.5"
-  resolved "https://registry.yarnpkg.com/@darekkay/styles/-/styles-2.3.5.tgz#c343bb56114a30dec0bde2c709a13e519f31842c"
-  integrity sha512-Eflydbx/bvSwZL47qkO4vSyIdQlrWh+6NYyo813XB6jYIjTAP7eCzKsqRkY4J9TjehRLr2wRvGC8s+n5OtbfGw==
+"@darekkay/styles@2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@darekkay/styles/-/styles-2.4.0.tgz#980cd30013e8dd33c090abbf2f791aa32759dfcb"
+  integrity sha512-53XsDZvzNQvf3WTy5jt98L/nP1PuSRy4mKGoiKAiNXXZ0ZGFvu4pDGUVozZOhAc6iHzWa6AWdsQqBuKrHRORew==
+  dependencies:
+    "@types/tailwindcss" "2.0.5"
 
 "@emotion/cache@^10.0.27":
   version "10.0.29"
@@ -4403,6 +4405,11 @@
   version "2.0.21"
   resolved "https://registry.yarnpkg.com/@types/swagger-schema-official/-/swagger-schema-official-2.0.21.tgz#56812a86dcd57ba60e5c51705ee96a2b2dc9b374"
   integrity sha512-n9BbLOjR4Hre7B4TSGGMPohOgOg8tcp00uxqsIE00uuWQC0QuX57G1bqC1csLsk2DpTGtHkd0dEb3ipsCZ9dAA==
+
+"@types/tailwindcss@2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@types/tailwindcss/-/tailwindcss-2.0.5.tgz#25cbab7861049f046c13868ad3cd1ed8c09ff7c5"
+  integrity sha512-njEtRtBGkY1pGalpV2hoT6nOgb+GNir7AaNIjCJlpnEYKAChIOn9QoN1sLE3A/67fD5R5jf3bdGW+3m5qCGCkQ==
 
 "@types/tapable@*", "@types/tapable@^1.0.5":
   version "1.0.6"

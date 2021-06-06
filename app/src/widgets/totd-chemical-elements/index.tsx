@@ -23,7 +23,7 @@ const ChemicalElements: React.FC<Props> = ({
   return (
     <div className="w-100 p-4 text-center">
       <div className="text-3">{atomicNumber}</div>
-      <div className="text-6 font-semibold text-color-primary">{symbol}</div>
+      <div className="text-6 font-semibold text-accent">{symbol}</div>
       <div className="text-4">{i18n.language === "de" ? nameDE : name}</div>
     </div>
   );

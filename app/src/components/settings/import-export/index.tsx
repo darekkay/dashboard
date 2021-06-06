@@ -54,13 +54,13 @@ export const ImportExport: React.FC<Props> = ({ state, importState }) => {
         onDropAccepted={onDropAccepted}
       />
       {uploadResult === "error" && (
-        <div className="flex items-center text-color-danger">
+        <div className="flex items-center text-danger">
           <Icon name="error" position="left" />
           {t("config.data.restore.error")}
         </div>
       )}
       {uploadResult === "success" && (
-        <div className="flex items-center text-color-success">
+        <div className="flex items-center text-success">
           <Icon name="success" position="left" />
           {t("config.data.restore.success")}
         </div>

@@ -70,7 +70,7 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
           "border-0",
           "rounded",
           "shadow-md",
-          "bg-color-panel",
+          "bg-default",
           "relative",
           { error: hasError },
           { "is-focused": isWidgetMenuVisible },
@@ -100,7 +100,7 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
         {headline && (
           <h2
             id={`widget-${id}-headline`}
-            className="flex items-center justify-start m-0 py-2 px-3 text-2 font-semibold text-color-offset tracking-tight"
+            className="flex items-center justify-start m-0 py-2 px-3 text-2 font-semibold text-offset tracking-tight"
           >
             {meta.headlineIcon && (
               <Icon

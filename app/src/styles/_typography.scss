@@ -6,7 +6,7 @@ html {
 }
 
 * {
-  @include focus-ring(var(--focus-ring-color));
+  @include focus-ring(var(--color-focus-ring));
 }
 
 body {
@@ -17,13 +17,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  color: var(--text-color);
-  background-color: var(--background-color);
+  color: var(--color-text-default);
+  background-color: var(--color-background-offset);
 }
 
 a,
 a:visited {
-  color: var(--text-color-highlight);
+  color: var(--color-text-interaction);
   text-decoration: none;
 }
 
@@ -55,7 +55,7 @@ h6 {
 
 hr {
   border: none;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--color-border);
 }
 
 ::-moz-focus-inner {

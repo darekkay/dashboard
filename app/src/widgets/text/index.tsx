@@ -10,7 +10,7 @@ const Text: React.FC<Props> = ({ id, content, setData }) => {
   return (
     <div className="flex w-full h-full p-1 items-stretch">
       <TextArea
-        className="border-0 bg-color-panel text-3"
+        className="border-0 bg-default text-3"
         aria-label={t("widget.text.name")}
         setValue={(value) => setData({ id, values: { content: value } })}
         value={content}

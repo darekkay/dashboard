@@ -29,7 +29,7 @@ const Modal: React.FC<Props> = ({
     <ReactModal
       onRequestClose={closeModal}
       overlayClassName="fixed inset-0 z-30 flex justify-center items-center p-2 backdrop"
-      className="w-full my-8 mx-auto p-6 text-color-default bg-color-panel border rounded outline-none max-h-full overflow-auto"
+      className="w-full my-8 mx-auto p-6 text-default bg-default border rounded outline-none max-h-full overflow-auto"
       contentLabel={headline}
       style={{
         content: {

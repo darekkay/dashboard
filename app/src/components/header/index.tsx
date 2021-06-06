@@ -33,7 +33,7 @@ const Header: React.FC<Props> = memo(
     const closeSettingsModal = () => setSettingsModalOpen(false);
 
     return (
-      <header className="flex items-center justify-between px-7 py-2 border-bottom bg-color-panel">
+      <header className="flex items-center justify-between px-7 py-2 border-bottom bg-default">
         <div className="mr-auto">
           <Version />
         </div>

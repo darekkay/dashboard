@@ -1,26 +1,25 @@
 @import "~@darekkay/styles/src/base/colors";
 
 .theme-dark {
-  --text-color: #{$white};
-  --text-color-offset: #{$gray-20};
-  --text-color-primary: #{$blue-20};
-  --text-color-highlight: #{$green-warm-vivid-30};
+  --color-text-default: #{$white};
+  --color-text-offset: #{$gray-20};
+  --color-text-accent: #{$blue-20};
+  --color-text-interaction: #{$green-warm-vivid-30};
+  --color-text-success: #{$green-cool-vivid-30};
+  --color-text-danger: #{$gold-vivid-30};
 
-  --text-color-danger: #{$gold-vivid-30};
-  --text-color-success: #{$green-cool-vivid-30};
+  --color-background-default: #{$gray-cool-80};
+  --color-background-offset: #{$gray-warm-90};
 
-  --background-color: #{$gray-warm-90};
-  --background-color-panel: #{$gray-cool-80};
-  --background-color-dim: rgba(0, 0, 0, 0.5);
+  --color-border: #{$gray-warm-60};
+  --color-focus-ring: #{$green-warm-50};
 
-  --border-color: #{$gray-warm-60};
-  --box-shadow-color: rgba(0, 0, 0, 0.5);
-  --focus-ring-color: #{$green-warm-50};
-  --backdrop-color: rgba(0, 0, 0, 0.6);
+  --color-box-shadow: rgba(0, 0, 0, 0.5);
+  --color-backdrop: rgba(0, 0, 0, 0.6);
 
-  --background-overlay-color: rgba(0, 0, 0, 0.6);
-  --background-overlay-text-color: #{$white};
-  --background-overlay-highlight-color: #{$green-warm-20};
+  --overlay-color-background-default: rgba(0, 0, 0, 0.6);
+  --overlay-color-text-default: #{$white};
+  --overlay-color-text-interaction: #{$green-warm-20};
 
   --button-primary-color: #{$green-warm-vivid-30};
   --button-primary-event-bg: #{$green-warm-30};
@@ -30,7 +29,7 @@
   --button-secondary-event-bg: #{$blue-30};
   --button-secondary-focus-ring: #{$blue-60};
 
-  --button-danger-color: var(--text-color-danger);
+  --button-danger-color: var(--color-text-danger);
   --button-danger-event-bg: #{$gold-vivid-20};
   --button-danger-focus-ring: #{$gold-vivid-50};
 

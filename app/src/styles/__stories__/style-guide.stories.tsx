@@ -10,12 +10,12 @@ export const StyleGuide = () => (
   <div className="space-y-6 pl-3">
     <Section headline="Text colors" type="story">
       <ul className="ml-5 list-style-none">
-        <li className="text-color-default">.text-color-default</li>
-        <li className="text-color-offset">.text-color-offset</li>
-        <li className="text-color-primary">.text-color-primary</li>
-        <li className="text-color-highlight">.text-color-highlight</li>
-        <li className="text-color-danger">.text-color-danger</li>
-        <li className="text-color-success">.text-color-success</li>
+        <li className="text-default">.text-default</li>
+        <li className="text-offset">.text-offset</li>
+        <li className="text-accent">.text-accent</li>
+        <li className="text-interaction">.text-interaction</li>
+        <li className="text-danger">.text-danger</li>
+        <li className="text-success">.text-success</li>
       </ul>
     </Section>
 

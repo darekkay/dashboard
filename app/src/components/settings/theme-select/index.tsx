@@ -22,17 +22,17 @@ export const ThemeOption: React.FC<ThemeProps> = ({ name, label, onClick }) => (
     onClick={onClick}
     type="button"
   >
-    <div className="flex flex-col w-full h-full relative p-2 border text-color-default bg-color-default">
+    <div className="flex flex-col w-full h-full relative p-2 border text-default bg-offset">
       <div className="flex items-center mx-3">
         <span>{label}</span>
-        <div className="ml-auto text-color-highlight">
+        <div className="ml-auto text-interaction">
           <Icon name="bars" />
         </div>
       </div>
 
       <div className="flex flex-grow">
-        <div className="bg-color-panel m-4" style={{ width: "40%" }} />
-        <div className="bg-color-panel m-4" style={{ width: "60%" }} />
+        <div className="bg-default m-4" style={{ width: "40%" }} />
+        <div className="bg-default m-4" style={{ width: "60%" }} />
       </div>
     </div>
   </button>

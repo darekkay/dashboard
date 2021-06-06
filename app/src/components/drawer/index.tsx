@@ -14,7 +14,7 @@ const categoriesWithWidgets = groupBy(widgets, (widget) => widget.category);
 const Drawer: React.FC<Props> = ({ addWidgetToLayout }) => {
   const { t } = useTranslation();
   return (
-    <div className="p-4 bg-color-panel border-left" style={{ width: "280px" }}>
+    <div className="p-4 bg-default border-left" style={{ width: "280px" }}>
       <div className="visually-hidden">{t("widget.common.headline")}</div>
       {categories.map((category: string) => (
         <div key={category} className="mb-6">

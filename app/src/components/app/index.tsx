@@ -51,7 +51,7 @@ export const App: React.FC<Props> = (props) => {
           toggleFullscreen={toggleFullscreen}
         />
         <div
-          className="flex h-full flex-col md:flex-row overflow-y-auto bg-color-transparent text-color-default bg-cover bg-fixed"
+          className="flex h-full flex-col md:flex-row overflow-y-auto bg-transparent text-default bg-cover bg-fixed"
           style={
             isEmpty(backgroundUrl)
               ? undefined

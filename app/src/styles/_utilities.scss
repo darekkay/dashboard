@@ -1,72 +1,4 @@
-// Colors
-
-.text-color-default {
-  color: var(--text-color);
-}
-
-.text-color-offset {
-  color: var(--text-color-offset);
-}
-
-.text-color-primary {
-  color: var(--text-color-primary);
-}
-
-.text-color-highlight {
-  color: var(--text-color-highlight);
-}
-
-.text-color-danger {
-  color: var(--text-color-danger);
-}
-
-.text-color-success {
-  color: var(--text-color-success);
-}
-
-.bg-color-inherit {
-  background-color: inherit;
-}
-
-.bg-color-default {
-  background-color: var(--background-color);
-}
-
-.bg-color-panel {
-  background-color: var(--background-color-panel);
-}
-
-.bg-color-transparent {
-  background-color: transparent;
-}
-
-.bg-color-dim {
-  background-color: var(--background-color-dim);
-}
-
-.event\:bg-color-dim {
-  &:focus,
-  &:hover,
-  &:active {
-    background-color: var(--background-color-dim);
-  }
-}
-
 // Border
-
-.border {
-  border: 1px solid var(--border-color);
-}
-
-.border-0 {
-  border: none;
-}
-
-@each $direction in (top, right, bottom, left) {
-  .border-#{$direction} {
-    border-#{$direction}: 1px solid var(--border-color);
-  }
-}
 
 .rounded {
   border-radius: 0.5rem;
@@ -76,26 +8,18 @@
   border-radius: 0.8rem;
 }
 
-.rounded-full {
-  border-radius: 9999px;
-}
-
-.outline-none {
-  outline: 2px solid transparent;
-}
-
 // Effects
 
 .backdrop {
   backdrop-filter: blur(5px);
-  background-color: var(--backdrop-color);
+  background-color: var(--color-backdrop);
 }
 
 .background-overlay {
-  --text-color: var(--background-overlay-text-color);
-  --text-color-highlight: var(--background-overlay-highlight-color);
+  --color-text-default: var(--overlay-color-text-default);
+  --color-text-interaction: var(--overlay-color-text-interaction);
 
-  background-color: var(--background-overlay-color);
+  background-color: var(--overlay-color-background-default);
 }
 
 // Misc

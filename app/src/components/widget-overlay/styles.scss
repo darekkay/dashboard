@@ -10,8 +10,8 @@
   border-top-right-radius: 0.7rem;
 
   border-bottom: 3px solid var(--button-secondary-color);
-  box-shadow: 3px -2px 5px 0 var(--box-shadow-color),
-    -3px -2px 5px 0 var(--box-shadow-color);
+  box-shadow: 3px -2px 5px 0 var(--color-box-shadow),
+    -3px -2px 5px 0 var(--color-box-shadow);
 
   .btn {
     height: #{$button-bar-height - 0.6rem};
