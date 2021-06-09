@@ -2,6 +2,7 @@
 
 import maxBy from "lodash/maxBy";
 import filter from "lodash/filter";
+import clone from "lodash/clone";
 import { createAction, createReducer, PayloadAction } from "@reduxjs/toolkit";
 import { put, select, takeEvery } from "typed-redux-saga";
 import { Layout as ReactGridLayout } from "react-grid-layout";
@@ -44,6 +45,17 @@ const newWidgetY = (state: LayoutState) => {
   return max.y + max.h;
 };
 
+const widgetSortOrder = (
+  widgetA: ReactGridLayout.Layout,
+  widgetB: ReactGridLayout.Layout
+) => {
+  if (widgetA.y === widgetB.y) {
+    return widgetA.x - widgetB.x;
+  } else {
+    return widgetA.y - widgetB.y;
+  }
+};
+
 export const reducerWithInitialState = (
   defaultState: LayoutState = initialState
 ) =>
@@ -52,7 +64,14 @@ export const reducerWithInitialState = (
       .addCase(importState, (_state, action) => action.payload.layout)
 
       .addCase(saveLayout, (state, action) => {
-        state.config = action.payload;
+        state.config = {
+          ...action.payload,
+
+          // sort widgets by columns/rows (meaningful focus order)
+          // we need to clone the array, as the array is immutable and sort is mutating
+          // mobile isn't sorted, as we're not using its order
+          desktop: clone(action.payload.desktop).sort(widgetSortOrder),
+        };
       })
 
       .addCase(toggleLayoutEditable, (state) => {

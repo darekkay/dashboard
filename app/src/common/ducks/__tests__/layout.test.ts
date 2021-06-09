@@ -28,7 +28,7 @@ const getLastWidget = (widgets: ReactGridLayout[]) =>
   widgets[widgets.length - 1];
 
 describe("Layout duck", () => {
-  test("saves the layout", () => {
+  test("saves an empty layout", () => {
     const updatedState = reducerWithInitialState()(
       initialState,
       actionCreators.saveLayout({ desktop: [], mobile: [] })
@@ -36,6 +36,26 @@ describe("Layout duck", () => {
 
     expect(updatedState.config.desktop).toHaveLength(0);
     expect(updatedState.config.mobile).toHaveLength(0);
+  });
+
+  test("sorts the widgets by meaningful focus order", () => {
+    const updatedState = reducerWithInitialState()(
+      initialState,
+      actionCreators.saveLayout({
+        desktop: [
+          { i: "text-03", x: 0, y: 1, w: 1, h: 1 },
+          { i: "text-02", x: 3, y: 0, w: 1, h: 1 },
+          { i: "text-01", x: 0, y: 0, w: 1, h: 1 },
+        ],
+        mobile: [],
+      })
+    );
+
+    expect(updatedState.config.desktop).toEqual([
+      { i: "text-01", x: 0, y: 0, w: 1, h: 1 },
+      { i: "text-02", x: 3, y: 0, w: 1, h: 1 },
+      { i: "text-03", x: 0, y: 1, w: 1, h: 1 },
+    ]);
   });
 
   test("toggles the editing state", () => {

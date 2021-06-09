@@ -2,6 +2,7 @@
 
 ## Current development
 
+- :rocket: Use a meaningful widget focus order.
 - :bug: **[Cryptocurrencies]** Fix deviation display for unchanged values.
 - :hammer: Improve test coverage.
 - :hammer: Improve TypeScript types.

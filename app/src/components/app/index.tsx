@@ -77,21 +77,20 @@ export const App: React.FC<Props> = (props) => {
   );
 };
 
-export interface Props {
+export interface SelectedProps {
   widgetIDs: string[];
-
   layout: Layout;
-  saveLayout: (layout: Layout) => void;
-
   isLayoutEditable: boolean;
-  toggleLayoutEditable: () => void;
+  currentTheme: Theme;
+  backgroundUrl: string;
+}
 
+export interface Props extends SelectedProps {
+  saveLayout: (layout: Layout) => void;
+  toggleLayoutEditable: () => void;
   addWidgetToLayout: (widgetType: WidgetType) => void;
   removeWidgetFromLayout: (widgetId: string) => void;
   importState: (state: State) => void;
-
-  currentTheme: Theme;
-  backgroundUrl: string;
 }
 
 export default connect(mapStateToProps, {
