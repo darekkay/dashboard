@@ -127,7 +127,7 @@
     "lint": "dks lint",
     "scan": "run-p scan:*",
     "scan:api": "swagger-typescript-api --axios --route-types --js -p ../server/src/api/swagger.json -o src/api -n routes.ts",
-    "scan:widgets": "ts-node -P internals/scripts/tsconfig.json internals/scripts/scan-widgets.ts && prettier --write src/widgets/list.ts && prettier --write ../server/src/widgets.ts",
+    "scan:widgets": "ts-node --transpile-only -P internals/scripts/tsconfig.json internals/scripts/scan-widgets.ts && prettier --write src/widgets/list.ts && prettier --write ../server/src/widgets.ts",
     "start": "react-scripts start",
     "storybook:build": "build-storybook",
     "storybook:start": "start-storybook -p 6006 -s .storybook/assets",
