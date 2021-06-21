@@ -53,9 +53,6 @@ Here's a list of rough widget ideas and integrations. They may or may not be imp
 - Pomodoro Timer
 - Time tracking
 - Bookmarks, [Static Marks](https://darekkay.com/static-marks/)
-- Random image
-  - As a standalone widget or as part of the existing Image widget
-  - [Unsplash API](https://unsplash.com/developers)
 - Video
   - YouTube, Vimeo, ...
   - This widget should be interchangeable with the Website widget. Something like [Iframely](https://iframely.com/) could be used to get the Iframe URL for any URL.
@@ -75,13 +72,12 @@ Here's a list of rough widget ideas and integrations. They may or may not be imp
   - Status Page, Uptime
 - Status Page for external services
   - See [StatusDash](https://statusdash.dev/) and [Statuspage](https://www.atlassian.com/software/statuspage)
-- [GoAccess](https://goaccess.io/) statistics
 - [PM2](https://pm2.keymetrics.io/) status
 - GitHub / GitLab integration
 - [NPM statistics](https://github.com/npm/download-counts)
 - [Instagram statistics](https://developers.facebook.com/docs/instagram-api/guides/business-discovery)
 - [Mastodon statistics](https://docs.joinmastodon.org/methods/accounts/) ([example](https://fosstodon.org/api/v1/accounts/242470@mastodon.social))
-- [StackExchange staticstics](https://api.stackexchange.com/docs)
+- [StackExchange statistics](https://api.stackexchange.com/docs)
 - [GoodReads API](https://www.goodreads.com/api)
   - e.g. reading progress, library size
 - [NomadList](https://nomadlist.com/@craigcarlyle.json) information
