@@ -22,7 +22,7 @@ describe("weather", () => {
       .expect(200)
       .then((response) => {
         expect(response.body.current.temperature).toBe(24);
-        expect(response.body.forecast).toHaveLength(8);
+        expect(response.body.forecast).toHaveLength(5);
         expect(response.body.forecast[0].temperatureMin).toBe(18);
         expect(response.body.forecast[0].temperatureMax).toBe(25);
       });

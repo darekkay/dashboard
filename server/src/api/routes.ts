@@ -65,11 +65,20 @@ const models: TsoaRoute.Models = {
         "additionalProperties": true,
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "WeatherCondition": {
+        "dataType": "refObject",
+        "properties": {
+            "description": {"dataType":"string","required":true},
+            "icon": {"dataType":"union","subSchemas":[{"dataType":"enum","enums":["01d"]},{"dataType":"enum","enums":["02d"]},{"dataType":"enum","enums":["03d"]},{"dataType":"enum","enums":["04d"]},{"dataType":"enum","enums":["09d"]},{"dataType":"enum","enums":["10d"]},{"dataType":"enum","enums":["11d"]},{"dataType":"enum","enums":["13d"]},{"dataType":"enum","enums":["50d"]},{"dataType":"enum","enums":["01n"]},{"dataType":"enum","enums":["02n"]},{"dataType":"enum","enums":["03n"]},{"dataType":"enum","enums":["04n"]},{"dataType":"enum","enums":["09n"]},{"dataType":"enum","enums":["10n"]},{"dataType":"enum","enums":["11n"]},{"dataType":"enum","enums":["13n"]},{"dataType":"enum","enums":["50n"]}],"required":true},
+        },
+        "additionalProperties": true,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     "WeatherData": {
         "dataType": "refObject",
         "properties": {
-            "current": {"dataType":"nestedObjectLiteral","nestedProperties":{"temperature":{"dataType":"double","required":true}},"required":true},
-            "forecast": {"dataType":"array","array":{"dataType":"nestedObjectLiteral","nestedProperties":{"temperatureMax":{"dataType":"double","required":true},"temperatureMin":{"dataType":"double","required":true}}},"required":true},
+            "current": {"dataType":"nestedObjectLiteral","nestedProperties":{"condition":{"ref":"WeatherCondition","required":true},"temperature":{"dataType":"double","required":true}},"required":true},
+            "forecast": {"dataType":"array","array":{"dataType":"nestedObjectLiteral","nestedProperties":{"condition":{"ref":"WeatherCondition","required":true},"temperatureMax":{"dataType":"double","required":true},"temperatureMin":{"dataType":"double","required":true},"date":{"dataType":"double","required":true}}},"required":true},
         },
         "additionalProperties": true,
     },

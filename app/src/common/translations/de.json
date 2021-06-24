@@ -19,6 +19,11 @@
     }
   },
 
+  "error": {
+    "unknown": "Unexpected error",
+    "connectionError": "Verbindungsfehler"
+  },
+
   "config": {
     "theme": {
       "headline": "Farbschema",
@@ -163,6 +168,16 @@
       },
       "error": {
         "404": "Benutzername unbekannt"
+      }
+    },
+    "weather": {
+      "name": "Wetter",
+      "headline": "{{headline}}",
+      "configuration": {
+        "lat": "Breitengrad",
+        "lon": "Längengrad",
+        "latLonNotice": "Finde den <0>Breiten- und Längengrad</0> für deinen Ort oder <1>teste</1> deine aktuelle Eingabe.",
+        "unit": "Einheit"
       }
     },
     "website": {

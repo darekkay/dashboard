@@ -21,6 +21,11 @@
     }
   },
 
+  "error": {
+    "unknown": "Unexpected error",
+    "connectionError": "Connection error"
+  },
+
   "config": {
     "theme": {
       "headline": "Theme",
@@ -243,6 +248,20 @@
       },
       "error": {
         "404": "Unknown username"
+      }
+    },
+    "weather": {
+      "name": "Weather",
+      "headline": "{{headline}}",
+      "configuration": {
+        "lat": "Latitude",
+        "lon": "Longitude",
+        "latLonNotice": "Find the <0>latitude and longitude</0> for your location or <1>test</1> your current input.",
+        "unit": "Unit",
+        "units": {
+          "metric": "°C",
+          "imperial": "°F"
+        }
       }
     },
     "website": {

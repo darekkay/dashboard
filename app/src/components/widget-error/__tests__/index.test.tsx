@@ -7,6 +7,6 @@ import WidgetError from "../index";
 describe("<WidgetError />", () => {
   test("renders without errors", () => {
     render(<WidgetError />);
-    expect(screen.getByText(/common.error/i)).toBeInTheDocument();
+    expect(screen.getByText(/error.unknown/i)).toBeInTheDocument();
   });
 });

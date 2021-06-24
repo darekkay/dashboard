@@ -6,6 +6,7 @@ This is a list of all currently implemented widgets. The [roadmap](../roadmap/RE
 
 - [Date & Time](date-time.md): Current date and time.
 - [Text](text.md): Editable text field, e.g for notes.
+- [Weather](weather.md): Current weather and weather forecast.
 
 ## Media
 

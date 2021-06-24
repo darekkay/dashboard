@@ -11,7 +11,7 @@ const Counter: React.FC<Props> = ({ id, value = 0, setData }) => {
   const { t } = useTranslation();
   return (
     <div className="w-full h-full flex flex-col justify-center">
-      <div className="mb-1 text-6 font-bold text-center">
+      <div className="mb-1 text-6 font-semibold text-center">
         {t("number", { value })}
       </div>
       <div className="w-full flex items-center justify-around">

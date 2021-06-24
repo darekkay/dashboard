@@ -9,7 +9,6 @@
     "loading": "Chargement...",
     "settings": "Paramètres",
     "help": "Aide",
-    "error": "Erreur",
     "documentation": "Documentation",
     "poweredBy": "Powered by <0>{{name}}</0>",
     "headline": "Entête",
@@ -18,6 +17,11 @@
       "exit": "Quitter le mode plein écran"
     }
   },
+
+  "error": {
+    "unknown": "Erreur"
+  },
+
   "config": {
     "theme": {
       "headline": "Thème",
@@ -152,6 +156,14 @@
       },
       "error": {
         "404": "Pseudo Twitter inconnu"
+      }
+    },
+    "weather": {
+      "name": "Météo",
+      "configuration": {
+        "lat": "Latitude",
+        "lon": "Longitude",
+        "unit": "Unité"
       }
     },
     "website": {

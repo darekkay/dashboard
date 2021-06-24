@@ -26,11 +26,11 @@ describe("<Widget />", () => {
 
   test("renders without errors", () => {
     renderWidget({});
-    expect(screen.queryByText("common.error")).not.toBeInTheDocument();
+    expect(screen.queryByText("error.unknown")).not.toBeInTheDocument();
   });
 
   test("renders errors", () => {
     renderWidget({ hasError: true });
-    expect(screen.getByText("common.error")).toBeInTheDocument();
+    expect(screen.getByText("error.unknown")).toBeInTheDocument();
   });
 });

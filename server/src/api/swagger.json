@@ -112,16 +112,56 @@
 				"type": "object",
 				"additionalProperties": true
 			},
+			"WeatherCondition": {
+				"properties": {
+					"description": {
+						"type": "string"
+					},
+					"icon": {
+						"type": "string",
+						"enum": [
+							"01d",
+							"02d",
+							"03d",
+							"04d",
+							"09d",
+							"10d",
+							"11d",
+							"13d",
+							"50d",
+							"01n",
+							"02n",
+							"03n",
+							"04n",
+							"09n",
+							"10n",
+							"11n",
+							"13n",
+							"50n"
+						]
+					}
+				},
+				"required": [
+					"description",
+					"icon"
+				],
+				"type": "object",
+				"additionalProperties": true
+			},
 			"WeatherData": {
 				"properties": {
 					"current": {
 						"properties": {
+							"condition": {
+								"$ref": "#/components/schemas/WeatherCondition"
+							},
 							"temperature": {
 								"type": "number",
 								"format": "double"
 							}
 						},
 						"required": [
+							"condition",
 							"temperature"
 						],
 						"type": "object"
@@ -129,6 +169,9 @@
 					"forecast": {
 						"items": {
 							"properties": {
+								"condition": {
+									"$ref": "#/components/schemas/WeatherCondition"
+								},
 								"temperatureMax": {
 									"type": "number",
 									"format": "double"
@@ -136,11 +179,17 @@
 								"temperatureMin": {
 									"type": "number",
 									"format": "double"
+								},
+								"date": {
+									"type": "number",
+									"format": "double"
 								}
 							},
 							"required": [
+								"condition",
 								"temperatureMax",
-								"temperatureMin"
+								"temperatureMin",
+								"date"
 							],
 							"type": "object"
 						},

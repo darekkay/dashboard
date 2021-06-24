@@ -1,16 +1,13 @@
 import { takeEvery } from "typed-redux-saga";
 
-import api, { {{ properCase name }} } from "api/index";
+import api, { Weather } from "api/index";
 import triggerUpdateHandler from "common/utils/triggerUpdateHandler";
 import { triggerUpdate } from "components/widget/duck";
 
 import properties from "./properties";
 
-const fetchData = async (
-  /* TODO: Adjust params to match the backend service */
-  params: {{ properCase name }}.Get{{ properCase name }}.RequestQuery
-) => {
-  const response = await api.endpoint.route(params);
+const fetchData = async (params: Weather.GetWeatherData.RequestQuery) => {
+  const response = await api.weather.getWeatherData(params);
   return response.data;
 };
 

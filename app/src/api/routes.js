@@ -72,7 +72,7 @@ export class HttpClient {
 }
 /**
  * @title dashboard-server
- * @version 1.4.0
+ * @version 1.5.0
  * @license MIT
  * @baseUrl http://localhost:3401/
  * @contact Darek Kay  <hello@darekkay.com> (https://darekkay.com/)

@@ -47,7 +47,6 @@ Here's a list of rough widget ideas and integrations. They may or may not be imp
   - Local
   - 3rd Party (Todoist, Trello, GitHub Issues, ...)
 - Calendar, Next events
-- Weather forecast
 - Countdown
 - Timer
 - Pomodoro Timer
