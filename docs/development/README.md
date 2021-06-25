@@ -145,11 +145,13 @@ When creating a new widget (using `yarn generate`), make sure to choose the opti
 - Whenever a dependent prop changes (e.g. when adjusting the settings)
 - On page reload
 
+The server module uses the `updateCycle` value as a TTL, i.e., a 3rd-party service call is being cached for the time defined in `updateCycle`. This means, when the user reloads a page, the server module will be called, but the data might be cached.
+
 ### Internationalization
 
 The [react-i18next](https://react.i18next.com/) library handles internationalization. Translations are located under `src/common/translations`, one file per language. Currently, English (`en.json`) and German (`de.json`) translations are available. If a label translation is missing, the English label will be used as fallback.
 
-The label keys can be viewed in a `debug` mode by adding `debug:labels` to the URL, e.g. [https://dashboard.darekkay.com/?debug:labels](https://dashboard.darekkay.com/?debug:labels).
+The label keys can be viewed in a `debug` mode by adding `debug.labels` to the URL, e.g. [https://dashboard.darekkay.com/?debug.labels](https://dashboard.darekkay.com/?debug.labels).
 
 Default UI language is based on the browser language and can be changed by the user in the settings dialog.
 
@@ -195,6 +197,13 @@ The actual dashboard/grid functionality is implemented with the [react-grid-layo
 ### Browser support
 
 All current browsers are supported (Chrome, Firefox, Safari, Edge). IE11 is **not** supported, mostly due to the usage of [CSS Custom Properties](https://caniuse.com/#search=custom%20properties). I've tried using [a polyfill](https://github.com/nuxodin/ie11CustomProperties), but the results weren't great.
+
+### Debugging
+
+To debug certain issues, include the following string in the URL as a query parameter or hash:
+
+- `debug.labels`: Show label IDs.
+- `debug.delay`: Delay server module responses by a random time between 1 and 5 seconds.
 
 ## Contributing
 

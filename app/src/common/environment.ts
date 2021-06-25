@@ -40,4 +40,4 @@ export const IS_STORAGE_PAUSED = toBoolean(
 );
 
 /** If the URL contains the specified string, label IDs are displayed instead of English translations */
-export const DEBUG_LABELS = window.location.href.includes("debug:labels");
+export const DEBUG_LABELS = window.location.href.includes("debug.labels");

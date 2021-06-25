@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 
-import { API_BASE_URL } from "common/environment";
+import { API_BASE_URL, IS_DEVELOPMENT } from "common/environment";
 
 import { Api } from "./routes";
 
@@ -9,9 +9,12 @@ export * from "./routes";
 
 export const PASSTHROUGH = "/passthrough";
 
-const axiosConfig = {
+const axiosConfig: AxiosRequestConfig = {
   baseURL: API_BASE_URL,
   timeout: 10000,
+  headers: {
+    ...(IS_DEVELOPMENT ? { "x-dashboard-referrer": window.location.href } : {}),
+  },
 };
 
 export type PassthroughParams = {

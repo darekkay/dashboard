@@ -1,3 +1,4 @@
+import { Request } from "express";
 import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
 import logger from "@darekkay/logger";
@@ -26,4 +27,12 @@ export const ttlForWidgetType = (widgetType: string) => {
   // The server cache duration is slightly lower than the widget's update cycle
   // to account for the server processing time
   return Math.max(0, dayjs.duration(updateCycle).asSeconds() - TTL_OFFSET);
+};
+
+export const requestContains = (req: Request, value: string) => {
+  return [
+    req.headers["x-dashboard-referrer"],
+    req.headers.referer,
+    req.url,
+  ].some((url) => url?.includes(value));
 };
