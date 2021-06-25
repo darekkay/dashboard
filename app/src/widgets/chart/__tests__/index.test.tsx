@@ -31,18 +31,6 @@ describe("<Chart />", () => {
     ).not.toBeInTheDocument();
   });
 
-  test("renders a loading indicator while fetching data", () => {
-    render(
-      <Chart
-        {...commonProps}
-        data={data}
-        dataPath="unknownDataPath"
-        meta={{ updateCycle: { hours: 1 }, updateStatus: "pending" }}
-      />
-    );
-    expect(screen.getByLabelText("common.loading")).toBeInTheDocument();
-  });
-
   test("doesn't render if the url is missing", () => {
     render(<Chart {...commonProps} url="" />);
     expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();

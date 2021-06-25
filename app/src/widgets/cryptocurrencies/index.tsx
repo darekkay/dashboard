@@ -18,12 +18,16 @@ const Cryptocurrencies: React.FC<Props> = ({
   last24h,
   meta,
   triggerUpdate,
+  widgetStatusDisplay,
 }) => {
+  const { t } = useTranslation();
   useTriggerUpdate({ id, params: { crypto, fiat }, meta, triggerUpdate }, [
     crypto,
     fiat,
   ]);
-  const { t } = useTranslation();
+
+  if (widgetStatusDisplay) return widgetStatusDisplay;
+
   return (
     <div
       className="flex flex-col items-center text-center"

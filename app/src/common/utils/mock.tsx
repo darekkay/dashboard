@@ -8,13 +8,15 @@ interface MockWidgetProps extends Omit<WidgetProps, "id"> {
 
 /* Default widget props (e.g. for unit tests) */
 export const widgetProps: MockWidgetProps = {
-  meta: { updateCycle: { hours: 1 }, updateStatus: "idle" },
+  meta: { updateCycle: { hours: 1 }, updateStatus: "success" },
   setData: () => {},
   setOptions: () => {},
   triggerUpdate: () => {},
+  widgetStatusDisplay: null,
 
   // common widget props
   id: "widget-mock-id",
+  type: "text",
   headline: "",
 };
 

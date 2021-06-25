@@ -1,5 +1,6 @@
 import React, { Suspense, useState } from "react";
 import Measure from "react-measure";
+import isEmpty from "lodash/isEmpty";
 
 import Icon from "components/icon";
 import WidgetError from "components/widget-error";
@@ -7,6 +8,7 @@ import Loading from "components/loading";
 import widgets, { ValueUpdateAction } from "widgets";
 import { TriggerUpdateAction, WidgetMeta } from "components/widget/duck";
 import { Dimensions } from "components/widget";
+import { getWidgetStatusDisplay } from "components/widget-status-display";
 import withErrorHandling, {
   State as ErrorProps,
 } from "common/hoc/withErrorHandling";
@@ -31,6 +33,11 @@ export const WidgetContent: React.FC<Props & ErrorProps> = ({
   if (hasRenderError) {
     return <WidgetError />;
   }
+
+  const widgetStatusDisplay = getWidgetStatusDisplay({
+    meta,
+    isDataEmpty: isEmpty(data),
+  });
 
   return (
     <>
@@ -66,9 +73,11 @@ export const WidgetContent: React.FC<Props & ErrorProps> = ({
                 ...data,
                 ...options,
                 id,
+                type,
                 setOptions,
                 setData,
                 triggerUpdate,
+                widgetStatusDisplay,
                 meta: {
                   ...meta,
                   dimensions,

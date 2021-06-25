@@ -18,15 +18,6 @@ export const Variants = () => {
       <Section type="story" headline="Regular">
         <Widget {...connectedWidgetProps} {...sharedProps} id="search-01" />
       </Section>
-
-      <Section type="story" headline="Error">
-        <Widget
-          {...connectedWidgetProps}
-          {...sharedProps}
-          id="search-02"
-          hasRenderError
-        />
-      </Section>
     </div>
   );
 };

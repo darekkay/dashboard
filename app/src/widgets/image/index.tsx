@@ -5,10 +5,9 @@ import WidgetUnconfigured from "components/widget-unconfigured";
 
 import { WidgetProps } from "../index";
 import { WidgetOptions } from "./configuration";
-import properties from "./properties";
 
-const Image: React.FC<Props> = ({ url }) => {
-  if (isEmpty(url)) return <WidgetUnconfigured type={properties.widgetType} />;
+const Image: React.FC<Props> = ({ type, url }) => {
+  if (isEmpty(url)) return <WidgetUnconfigured type={type} />;
   return <img src={url} className="h-full w-full object-fit-cover" alt="" />;
 };
 

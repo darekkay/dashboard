@@ -7,15 +7,13 @@ import { Dimensions } from "components/widget";
 
 import { WidgetProps } from "../index";
 import { WidgetOptions } from "./configuration";
-import properties from "./properties";
 
 const getSquareSize = (dimensions?: Dimensions) => {
   return Math.min(dimensions?.width ?? 0, dimensions?.height ?? 0);
 };
 
-const QrCode: React.FC<Props> = ({ meta, content }) => {
-  if (isEmpty(content))
-    return <WidgetUnconfigured type={properties.widgetType} />;
+const QrCode: React.FC<Props> = ({ type, meta, content }) => {
+  if (isEmpty(content)) return <WidgetUnconfigured type={type} />;
   const imageSize = getSquareSize(meta.dimensions);
   return (
     <div className="flex items-center h-full">

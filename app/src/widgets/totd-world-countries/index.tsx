@@ -15,8 +15,11 @@ const TotdWorldCountries: React.FC<Props> = ({
   flag,
   meta,
   triggerUpdate,
+  widgetStatusDisplay,
 }) => {
   useTriggerUpdate({ id, params: {}, meta, triggerUpdate }, []);
+
+  if (widgetStatusDisplay) return widgetStatusDisplay;
 
   return (
     <dl>

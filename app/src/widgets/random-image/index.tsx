@@ -16,8 +16,11 @@ const RandomImage: React.FC<Props> = ({
   authorName,
   authorUrl,
   altText,
+  widgetStatusDisplay,
 }) => {
   useTriggerUpdate({ id, params: {}, meta, triggerUpdate }, []);
+
+  if (widgetStatusDisplay) return widgetStatusDisplay;
 
   return (
     <figure className="relative h-full w-full">

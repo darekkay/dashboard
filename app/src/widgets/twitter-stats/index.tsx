@@ -3,18 +3,18 @@ import { useTranslation } from "react-i18next";
 import isEmpty from "lodash/isEmpty";
 
 import useTriggerUpdate from "common/hooks/useTriggerUpdate";
-import WidgetUnconfigured from "components/widget-unconfigured";
-import WidgetError from "components/widget-error";
 import StatsRow from "components/stats-row";
+import WidgetError from "components/widget-error";
+import WidgetUnconfigured from "components/widget-unconfigured";
 
 import { WidgetProps } from "../index";
 import { WidgetOptions } from "./configuration";
-import properties from "./properties";
 
 export { saga } from "./sagas";
 
 const TwitterStats: React.FC<Props> = ({
   id,
+  type,
   username,
   followers,
   following,
@@ -22,15 +22,20 @@ const TwitterStats: React.FC<Props> = ({
   listed,
   meta,
   triggerUpdate,
+  widgetStatusDisplay,
 }) => {
   const { t } = useTranslation();
   useTriggerUpdate({ id, params: { username }, meta, triggerUpdate }, [
     username,
   ]);
-  if (isEmpty(username))
-    return <WidgetUnconfigured type={properties.widgetType} />;
+
+  if (isEmpty(username)) return <WidgetUnconfigured type={type} />;
+
+  if (widgetStatusDisplay) return widgetStatusDisplay;
+
   if (meta.errorCode === 404)
     return <WidgetError labelKey={t("widget.twitter-stats.error.404")} />;
+
   return (
     <div>
       <StatsRow

@@ -61,7 +61,6 @@ class Dashboard extends React.Component<Props> {
             width={size.width ?? 0}
           >
             {widgetIDs.map((widgetID: string) =>
-              // @ts-expect-error
               React.createElement(makeWidgetMemoized(widgetID), {
                 key: widgetID,
                 removeWidgetFromLayout,

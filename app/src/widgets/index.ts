@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { injectSaga } from "redux-sagas-injector";
 
 import { TriggerUpdateAction, WidgetMeta } from "components/widget/duck";
@@ -17,11 +17,13 @@ export type ValueUpdateAction = ({
 
 export interface WidgetProps {
   id: string;
+  type: WidgetType;
   meta: WidgetMeta;
   dimensions?: Dimensions;
   setData: ValueUpdateAction;
   setOptions: ValueUpdateAction;
   triggerUpdate: (action: TriggerUpdateAction) => void;
+  widgetStatusDisplay: ReactElement | null;
 }
 
 export interface ConfigurationProps<T> {

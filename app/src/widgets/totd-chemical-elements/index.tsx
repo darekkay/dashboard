@@ -15,10 +15,13 @@ const ChemicalElements: React.FC<Props> = ({
   atomicNumber,
   meta,
   triggerUpdate,
+  widgetStatusDisplay,
 }) => {
   const { i18n } = useTranslation();
 
   useTriggerUpdate({ id, params: {}, meta, triggerUpdate }, []);
+
+  if (widgetStatusDisplay) return widgetStatusDisplay;
 
   return (
     <div className="w-100 p-4 text-center">

@@ -1,23 +1,20 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import isEmpty from "lodash/isEmpty";
 import dayjs from "dayjs";
 
 import { WeatherData } from "api";
 import useTriggerUpdate from "common/hooks/useTriggerUpdate";
-import WidgetUnconfigured from "components/widget-unconfigured";
 import Icon from "components/icon";
-import Loading from "components/loading";
-import WidgetError from "components/widget-error";
+import WidgetUnconfigured from "components/widget-unconfigured";
 
 import { WidgetProps } from "../index";
 import { WidgetOptions } from "./configuration";
-import properties from "./properties";
 
 export { saga } from "./sagas";
 
 const Weather: React.FC<Props> = ({
   id,
+  type,
   lat,
   lon,
   current,
@@ -25,23 +22,16 @@ const Weather: React.FC<Props> = ({
   unit,
   meta,
   triggerUpdate,
+  widgetStatusDisplay,
 }) => {
-  const { t } = useTranslation();
   useTriggerUpdate({ id, params: { lat, lon, unit }, meta, triggerUpdate }, [
     lat,
     lon,
     unit,
   ]);
-  if (isEmpty(lat) || isEmpty(lon))
-    return <WidgetUnconfigured type={properties.widgetType} />;
+  if (isEmpty(lat) || isEmpty(lon)) return <WidgetUnconfigured type={type} />;
 
-  if (!current) {
-    if (meta.updateStatus === "pending") {
-      return <Loading />;
-    } else {
-      return <WidgetError labelKey="error.connectionError" />;
-    }
-  }
+  if (widgetStatusDisplay) return widgetStatusDisplay;
 
   return (
     <div className="flex items-center">

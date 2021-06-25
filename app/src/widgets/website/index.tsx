@@ -5,12 +5,10 @@ import WidgetUnconfigured from "components/widget-unconfigured";
 
 import { WidgetProps } from "../index";
 import { WidgetOptions } from "./configuration";
-import properties from "./properties";
 
 const Website: React.FC<Props> = memo(
-  ({ id, url }) => {
-    if (isEmpty(url))
-      return <WidgetUnconfigured type={properties.widgetType} />;
+  ({ id, type, url }) => {
+    if (isEmpty(url)) return <WidgetUnconfigured type={type} />;
 
     return <iframe src={url} title={id} className="h-full w-full" />;
   },

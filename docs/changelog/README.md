@@ -2,10 +2,13 @@
 
 ## Current development
 
+- :sparkles: New widget: [Weather](https://dashboard.darekkay.com/docs/widgets/weather.html).
 - :rocket: Use a meaningful widget focus order.
+- :rocket: Unify loading and error behavior.
 - :bug: **[Cryptocurrencies]** Fix deviation display for unchanged values.
 - :hammer: Improve test coverage.
 - :hammer: Improve TypeScript types.
+- :hammer: Add delay and error middlewares for debugging.
 - :hammer: Provide root-level npm tasks to run `app` and `server` modules in parallel.
 
 ## 1.5.0  (2021-05-26)
