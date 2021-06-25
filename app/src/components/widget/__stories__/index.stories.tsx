@@ -24,7 +24,7 @@ export const Variants = () => {
           {...connectedWidgetProps}
           {...sharedProps}
           id="search-02"
-          hasError
+          hasRenderError
         />
       </Section>
     </div>

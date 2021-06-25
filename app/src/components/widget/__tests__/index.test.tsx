@@ -19,7 +19,7 @@ describe("<Widget />", () => {
         meta={{}}
         triggerUpdate={() => {}}
         removeWidgetFromLayout={() => {}}
-        hasError={false}
+        hasRenderError={false}
         {...props}
       />
     );
@@ -30,7 +30,7 @@ describe("<Widget />", () => {
   });
 
   test("renders errors", () => {
-    renderWidget({ hasError: true });
+    renderWidget({ hasRenderError: true });
     expect(screen.getByText("error.unknown")).toBeInTheDocument();
   });
 });

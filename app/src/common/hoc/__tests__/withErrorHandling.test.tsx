@@ -7,14 +7,14 @@ import withErrorHandling, { State as ErrorProps } from "../withErrorHandling";
 
 const ComponentWithoutErrors = (props: {} & ErrorProps) => (
   <div>
-    {props.hasError && <span>Error</span>}
-    {!props.hasError && <span>Success</span>}
+    {props.hasRenderError && <span>Error</span>}
+    {!props.hasRenderError && <span>Success</span>}
   </div>
 );
 const NoErrors = withErrorHandling(ComponentWithoutErrors);
 
 const ComponentWithErrors = (props: {} & ErrorProps) => {
-  if (!props.hasError) throw new Error("💣️");
+  if (!props.hasRenderError) throw new Error("💣️");
   else return <span>Error</span>;
 };
 const Errors = withErrorHandling(ComponentWithErrors);

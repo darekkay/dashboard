@@ -23,7 +23,7 @@ export const connectedWidgetProps = {
   options: {},
   data: {},
   removeWidgetFromLayout: () => {},
-  hasError: false,
+  hasRenderError: false,
   ...widgetProps,
 };
 

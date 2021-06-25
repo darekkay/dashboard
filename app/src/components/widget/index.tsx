@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, useState } from "react";
+import React, { FocusEventHandler, Suspense, useRef, useState } from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 import Measure from "react-measure";
@@ -31,7 +31,7 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
     options,
     data,
     meta,
-    hasError,
+    hasRenderError,
     setOptions,
     setData,
     triggerUpdate,
@@ -59,6 +59,20 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
 
   const widgetRef = useRef(null);
 
+  const onBlur: FocusEventHandler = (event) => {
+    // The widget becomes draggable if neither of its children is focused
+    // NOTE: relatedTarget is "null" in Firefox, if the target is an iframe, which makes the Website widget unusable
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=1545573
+    const relatedTarget = event.relatedTarget as Element;
+    if (widgetRef?.current) {
+      // @ts-expect-error
+      const widgetNode = widgetRef.current as Element;
+      const blurWithinParent = widgetNode.contains(relatedTarget);
+      setDraggable(!blurWithinParent && !(type === widgets.website.widgetType));
+      setWidgetMenuVisible(blurWithinParent);
+    }
+  };
+
   return (
     <>
       <div
@@ -72,7 +86,6 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
           "shadow-md",
           "bg-default",
           "relative",
-          { error: hasError },
           { "is-focused": isWidgetMenuVisible },
           className
         )}
@@ -80,21 +93,7 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
         tabIndex={0}
         aria-label={t(`widget.${type}.name`)}
         onFocus={showWidgetMenu}
-        onBlur={(event) => {
-          // The widget becomes draggable if neither of its children is focused
-          // NOTE: relatedTarget is "null" in Firefox, if the target is an iframe, which makes the Website widget unusable
-          // https://bugzilla.mozilla.org/show_bug.cgi?id=1545573
-          const relatedTarget = event.relatedTarget as Element;
-          if (widgetRef?.current) {
-            // @ts-expect-error
-            const widgetNode = widgetRef.current as Element;
-            const blurWithinParent = widgetNode.contains(relatedTarget);
-            setDraggable(
-              !blurWithinParent && !(type === widgets.website.widgetType)
-            );
-            setWidgetMenuVisible(blurWithinParent);
-          }
-        }}
+        onBlur={onBlur}
         {...rest}
       >
         {headline && (
@@ -113,9 +112,9 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
           </h2>
         )}
 
-        {hasError && <WidgetError />}
+        {hasRenderError && <WidgetError />}
 
-        {!hasError && (
+        {!hasRenderError && (
           <Measure
             bounds
             onResize={(contentRect) => {

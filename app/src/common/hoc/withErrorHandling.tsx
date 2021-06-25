@@ -3,20 +3,20 @@ import React from "react";
 import log from "common/log";
 
 export interface State {
-  hasError: boolean;
+  hasRenderError: boolean;
 }
 
-/** Catches errors within the wrapped component and passes "hasError" down */
+/** Catches errors within the wrapped component and passes "hasRenderError" down */
 const withErrorHandling = <P extends object>(
   WrappedComponent: React.ComponentType<P & State>
 ) => {
   return class ErrorHandling extends React.Component<P> {
     state: State = {
-      hasError: false,
+      hasRenderError: false,
     };
 
     static getDerivedStateFromError() {
-      return { hasError: true };
+      return { hasRenderError: true };
     }
 
     componentDidCatch(error: Error) {
@@ -27,7 +27,7 @@ const withErrorHandling = <P extends object>(
       return (
         <WrappedComponent
           {...(this.props as P)}
-          hasError={this.state.hasError}
+          hasRenderError={this.state.hasRenderError}
         />
       );
     }
