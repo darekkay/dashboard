@@ -38,112 +38,68 @@
     },
     "totd-chemical-elements-01": {
       "type": "totd-chemical-elements",
-      "data": {
-        "name": "Samarium",
-        "nameDE": "Samarium",
-        "symbol": "Sm",
-        "atomicNumber": 62
-      },
+      "data": {},
       "options": {},
       "meta": {
-        "updateCycle": { "hours": 24 },
-        "updateStatus": "success",
-        "lastUpdated": 1624603072653
+        "updateCycle": {
+          "hours": 24
+        },
+        "updateStatus": "idle"
       }
     },
     "counter-01": {
       "type": "counter",
-      "data": { "value": 1 },
+      "data": {
+        "value": 1
+      },
       "options": {},
       "meta": {}
     },
     "cryptocurrencies-01": {
       "type": "cryptocurrencies",
-      "data": {
-        "currentPrice": 28486,
-        "last24h": { "change": 663.52, "changePercentage": 2.38 },
-        "imageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579"
+      "data": {},
+      "options": {
+        "fiat": "eur",
+        "crypto": "bitcoin"
       },
-      "options": { "fiat": "eur", "crypto": "bitcoin" },
       "meta": {
-        "updateCycle": { "minutes": 15 },
-        "updateStatus": "success",
-        "lastUpdated": 1624606674474
+        "updateCycle": {
+          "minutes": 15
+        },
+        "updateStatus": "idle"
       }
     },
     "github-stats-01": {
       "type": "github-stats",
-      "data": {
-        "name": "darekkay/dashboard",
-        "stars": 80,
-        "subscribers": 5,
-        "forks": 11,
-        "open_issues": 7
+      "data": {},
+      "options": {
+        "query": "darekkay/dashboard"
       },
-      "options": { "query": "darekkay/dashboard" },
       "meta": {
-        "updateCycle": { "hours": 24 },
-        "updateStatus": "success",
-        "headlineIcon": "github",
-        "lastUpdated": 1624603071930
+        "updateCycle": {
+          "hours": 24
+        },
+        "updateStatus": "idle",
+        "headlineIcon": "github"
       }
     },
     "twitter-stats-112": {
       "type": "twitter-stats",
-      "data": {
-        "name": "Darek Kay",
-        "followers": 323,
-        "following": 139,
-        "tweets": 416,
-        "listed": 9
+      "data": {},
+      "options": {
+        "username": "darek_kay"
       },
-      "options": { "username": "darek_kay" },
       "meta": {
-        "updateCycle": { "hours": 24 },
-        "updateStatus": "success",
-        "headlineIcon": "twitter",
-        "lastUpdated": 1624603071967
+        "updateCycle": {
+          "hours": 24
+        },
+        "updateStatus": "idle",
+        "headlineIcon": "twitter"
       }
     },
     "chart-118": {
       "type": "chart",
-      "data": {
-        "start": "2021-05-26",
-        "end": "2021-06-24",
-        "package": "release-it",
-        "downloads": [
-          { "downloads": 24204, "day": "2021-05-26" },
-          { "downloads": 24122, "day": "2021-05-27" },
-          { "downloads": 20147, "day": "2021-05-28" },
-          { "downloads": 6581, "day": "2021-05-29" },
-          { "downloads": 6399, "day": "2021-05-30" },
-          { "downloads": 21066, "day": "2021-05-31" },
-          { "downloads": 28638, "day": "2021-06-01" },
-          { "downloads": 23360, "day": "2021-06-02" },
-          { "downloads": 20409, "day": "2021-06-03" },
-          { "downloads": 22082, "day": "2021-06-04" },
-          { "downloads": 7456, "day": "2021-06-05" },
-          { "downloads": 9561, "day": "2021-06-06" },
-          { "downloads": 29333, "day": "2021-06-07" },
-          { "downloads": 28379, "day": "2021-06-08" },
-          { "downloads": 29883, "day": "2021-06-09" },
-          { "downloads": 28457, "day": "2021-06-10" },
-          { "downloads": 23509, "day": "2021-06-11" },
-          { "downloads": 8477, "day": "2021-06-12" },
-          { "downloads": 6766, "day": "2021-06-13" },
-          { "downloads": 24414, "day": "2021-06-14" },
-          { "downloads": 28012, "day": "2021-06-15" },
-          { "downloads": 26395, "day": "2021-06-16" },
-          { "downloads": 25935, "day": "2021-06-17" },
-          { "downloads": 23191, "day": "2021-06-18" },
-          { "downloads": 5335, "day": "2021-06-19" },
-          { "downloads": 6976, "day": "2021-06-20" },
-          { "downloads": 31303, "day": "2021-06-21" },
-          { "downloads": 26131, "day": "2021-06-22" },
-          { "downloads": 24839, "day": "2021-06-23" },
-          { "downloads": 21318, "day": "2021-06-24" }
-        ]
-      },
+      "data": {},
       "options": {
         "headline": "npm download stats: release-it",
         "url": "https://api.npmjs.org/downloads/range/last-month/release-it",
@@ -152,102 +108,39 @@
         "dataKeyY": "downloads"
       },
       "meta": {
-        "updateCycle": { "hours": 24 },
-        "updateStatus": "success",
-        "lastUpdated": 1624603072988
+        "updateCycle": {
+          "hours": 24
+        },
+        "updateStatus": "idle"
       }
     },
     "weather-121": {
       "type": "weather",
-      "data": {
-        "current": {
-          "temperature": 17,
-          "condition": {
-            "id": 804,
-            "main": "Clouds",
-            "description": "overcast clouds",
-            "icon": "04d"
-          }
-        },
-        "forecast": [
-          {
-            "date": 1624618800,
-            "temperatureMin": 13,
-            "temperatureMax": 22,
-            "condition": {
-              "id": 500,
-              "main": "Rain",
-              "description": "light rain",
-              "icon": "10d"
-            }
-          },
-          {
-            "date": 1624705200,
-            "temperatureMin": 12,
-            "temperatureMax": 24,
-            "condition": {
-              "id": 801,
-              "main": "Clouds",
-              "description": "few clouds",
-              "icon": "02d"
-            }
-          },
-          {
-            "date": 1624791600,
-            "temperatureMin": 14,
-            "temperatureMax": 26,
-            "condition": {
-              "id": 802,
-              "main": "Clouds",
-              "description": "scattered clouds",
-              "icon": "03d"
-            }
-          },
-          {
-            "date": 1624878000,
-            "temperatureMin": 16,
-            "temperatureMax": 28,
-            "condition": {
-              "id": 803,
-              "main": "Clouds",
-              "description": "broken clouds",
-              "icon": "04d"
-            }
-          },
-          {
-            "date": 1624964400,
-            "temperatureMin": 18,
-            "temperatureMax": 23,
-            "condition": {
-              "id": 500,
-              "main": "Rain",
-              "description": "light rain",
-              "icon": "10d"
-            }
-          }
-        ]
+      "data": {},
+      "options": {
+        "lat": "52.17",
+        "lon": "11.67",
+        "unit": "metric"
       },
-      "options": { "lat": "52.17", "lon": "11.67", "unit": "metric" },
       "meta": {
-        "updateCycle": { "hours": 4 },
-        "updateStatus": "success",
-        "lastUpdated": 1624603072893
+        "updateCycle": {
+          "hours": 4
+        },
+        "updateStatus": "idle"
       }
     },
     "youtube-stats-124": {
       "type": "youtube-stats",
-      "data": {
-        "viewCount": 18147,
-        "subscriberCount": 57,
-        "videoCount": 7,
-        "channelTitle": "Darek Kay"
+      "data": {},
+      "options": {
+        "query": "DarekKay"
       },
-      "options": { "query": "DarekKay" },
       "meta": {
-        "updateCycle": { "hours": 24 },
-        "updateStatus": "success",
-        "headlineIcon": "youtube",
-        "lastUpdated": 1624605049918
+        "updateCycle": {
+          "hours": 24
+        },
+        "updateStatus": "idle",
+        "headlineIcon": "youtube"
       }
     }
   },
@@ -345,8 +238,20 @@
           "moved": false,
           "static": false
         },
-        { "i": "weather-121", "x": 0, "y": 8, "w": 7, "h": 3 },
-        { "i": "youtube-stats-124", "x": 0, "y": 8, "w": 3, "h": 3 }
+        {
+          "i": "weather-121",
+          "x": 0,
+          "y": 8,
+          "w": 7,
+          "h": 3
+        },
+        {
+          "i": "youtube-stats-124",
+          "x": 0,
+          "y": 8,
+          "w": 3,
+          "h": 3
+        }
       ],
       "desktop": [
         {
@@ -460,6 +365,5 @@
       ]
     },
     "nextWidgetId": 125
-  },
-  "_persist": { "version": -1, "rehydrated": true }
+  }
 }

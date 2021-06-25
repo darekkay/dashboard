@@ -1,3 +1,5 @@
+/** Scans available widgets and creates a "list" file for the application */
+
 import { readdirSync, writeFileSync } from "fs";
 
 import logger from "@darekkay/logger";

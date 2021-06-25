@@ -121,6 +121,7 @@
     "analyze": "source-map-explorer \"build/static/js/*.js\"",
     "build": "react-scripts build",
     "ci": "dks ci",
+    "clean-demo": "ts-node -P internals/scripts/tsconfig.json internals/scripts/clean-demo.ts",
     "format": "dks format",
     "generate": "plop --plopfile internals/generators/index.js",
     "i18n": "ts-node -P internals/scripts/tsconfig.json internals/scripts/i18n.ts ",
