@@ -7,7 +7,7 @@ const WidgetError: React.FC<Props> = ({ labelKey = "error.unknown" }) => {
   const { t } = useTranslation();
   return (
     <div
-      className="flex flex-col items-center justify-center text-center h-full text-danger text-3"
+      className="flex flex-col items-center justify-center h-full overflow-hidden text-center text-danger text-3"
       data-testid="widget-error"
     >
       <Icon name="error" className="mb-2" />

@@ -1,14 +1,15 @@
 import React from "react";
 
 import { render, screen } from "common/testing";
+import { State as ErrorProps } from "common/hoc/withErrorHandling";
 import { WidgetProps } from "widgets";
 
-import { Widget } from "../index";
+import { WidgetContent } from "../index";
 
-describe("<Widget />", () => {
-  const renderWidget = (props: Partial<WidgetProps>) =>
+describe("<WidgetContent />", () => {
+  const renderWidget = (props: Partial<WidgetProps & ErrorProps>) =>
     render(
-      <Widget
+      <WidgetContent
         id="mock-widget"
         type="text"
         options={{}}
@@ -17,7 +18,7 @@ describe("<Widget />", () => {
         setData={() => null}
         meta={{}}
         triggerUpdate={() => {}}
-        removeWidgetFromLayout={() => {}}
+        hasRenderError={false}
         {...props}
       />
     );
@@ -25,5 +26,10 @@ describe("<Widget />", () => {
   test("renders without errors", () => {
     renderWidget({});
     expect(screen.queryByText("error.unknown")).not.toBeInTheDocument();
+  });
+
+  test("renders errors", () => {
+    renderWidget({ hasRenderError: true });
+    expect(screen.getByText("error.unknown")).toBeInTheDocument();
   });
 });

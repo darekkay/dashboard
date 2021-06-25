@@ -1,37 +1,26 @@
-import React, { FocusEventHandler, Suspense, useRef, useState } from "react";
+import React, { FocusEventHandler, useRef, useState } from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
-import Measure from "react-measure";
 import cn from "classnames";
 
-import withErrorHandling, {
-  State as ErrorProps,
-} from "common/hoc/withErrorHandling";
 import useBooleanState from "common/hooks/useBooleanState";
-import Loading from "components/loading";
-import Icon from "components/icon";
 import WidgetOverlay from "components/widget-overlay";
-import WidgetError from "components/widget-error";
 import WidgetConfiguration from "components/widget-configuration";
 import widgets, { ValueUpdateAction } from "widgets";
 import { WidgetType } from "widgets/list";
+import WidgetContent from "components/widget-content";
 
 import makeSelectWidget, { getTypeFromId } from "./selectors";
 import { actionCreators, TriggerUpdateAction, WidgetMeta } from "./duck";
 
-const initialDimensions: Dimensions = { width: 1, height: 1 };
-
 /** Single widget within the dashboard */
-// TODO: simplify component
-// eslint-disable-next-line max-lines-per-function
-export const Widget: React.FC<Props & ErrorProps> = (props) => {
+export const Widget: React.FC<Props> = (props) => {
   const {
     id,
     type,
     options,
     data,
     meta,
-    hasRenderError,
     setOptions,
     setData,
     triggerUpdate,
@@ -45,7 +34,6 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
   const headline = t(`widget.${type}.headline`, { ...options, ...data });
   const isWidgetConfigurable = widgets[type].configurable;
 
-  const [dimensions, setDimensions] = useState<Dimensions>(initialDimensions);
   const [isDraggable, setDraggable] = useState(true);
 
   const [isWidgetMenuVisible, showWidgetMenu, , setWidgetMenuVisible] =
@@ -96,54 +84,17 @@ export const Widget: React.FC<Props & ErrorProps> = (props) => {
         onBlur={onBlur}
         {...rest}
       >
-        {headline && (
-          <h2
-            id={`widget-${id}-headline`}
-            className="flex items-center justify-start m-0 py-2 px-3 text-2 font-semibold text-offset tracking-tight"
-          >
-            {meta.headlineIcon && (
-              <Icon
-                name={meta.headlineIcon}
-                position="left"
-                className="flex-shrink-0"
-              />
-            )}
-            <span className="truncate">{headline}</span>
-          </h2>
-        )}
-
-        {hasRenderError && <WidgetError />}
-
-        {!hasRenderError && (
-          <Measure
-            bounds
-            onResize={(contentRect) => {
-              setDimensions(contentRect?.bounds ?? initialDimensions);
-            }}
-          >
-            {({ measureRef }) => (
-              <div
-                ref={measureRef}
-                className="flex flex-col items-center justify-center h-full overflow-hidden rounded"
-              >
-                <Suspense fallback={<Loading type="skeleton" />}>
-                  {React.createElement(widgets[type].Component, {
-                    ...data,
-                    ...options,
-                    id,
-                    setOptions,
-                    setData,
-                    triggerUpdate,
-                    meta: {
-                      ...meta,
-                      dimensions,
-                    },
-                  })}
-                </Suspense>
-              </div>
-            )}
-          </Measure>
-        )}
+        <WidgetContent
+          id={id}
+          type={type}
+          headline={headline}
+          data={data}
+          options={options}
+          meta={meta}
+          setOptions={setOptions}
+          setData={setData}
+          triggerUpdate={triggerUpdate}
+        />
 
         <WidgetOverlay
           id={id}
@@ -204,4 +155,4 @@ export default (id: string) =>
   connect(mapStateToProps(id), {
     ...actionCreators,
     triggerUpdate: actionCreators.triggerUpdate(getTypeFromId(id)),
-  })(withErrorHandling(Widget));
+  })(Widget);
