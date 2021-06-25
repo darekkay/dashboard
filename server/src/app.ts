@@ -7,7 +7,8 @@ import logger from "@darekkay/logger";
 import { ValidateError } from "@tsoa/runtime";
 
 import config from "./config";
-import delayMiddleware from "./middlewares/delay";
+import debugDelayMiddleware from "./middlewares/debugDelay";
+import debugErrorMiddleware from "./middlewares/debugErrors";
 import swaggerDocument from "./api/swagger.json";
 import { RegisterRoutes as registerRoutes } from "./api/routes";
 import registerPassthroughRoute from "./routes/passthrough";
@@ -17,7 +18,10 @@ export const app = express();
 app.use(cors());
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(delayMiddleware);
+
+// debug middlewares
+app.use(debugDelayMiddleware);
+app.use(debugErrorMiddleware);
 
 app.get("/", (_request, response) => {
   response.send("(づ｡◕‿‿◕｡)づ");

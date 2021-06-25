@@ -204,6 +204,7 @@ To debug certain issues, include the following string in the URL as a query para
 
 - `debug.labels`: Show label IDs.
 - `debug.delay`: Delay server module responses by a random time between 1 and 5 seconds.
+- `debug.error`: Let the server always return error responses.
 
 ## Contributing
 
