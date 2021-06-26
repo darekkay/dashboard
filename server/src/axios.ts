@@ -1,18 +1,41 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+import { writeFileSync } from "fs";
+import { join } from "path";
+
+import dayjs from "dayjs";
 import cachios from "cachios";
 import logger from "@darekkay/logger";
 
 // eslint-disable-next-line import/no-self-import
 import axios from "axios";
 
+import config from "./config";
+
 const axiosInstance = axios.create({
   timeout: 10000,
 });
 
-// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+/* Log axios requests to verify caching */
 axiosInstance?.interceptors.request.use((config) => {
-  /* Log axios requests to verify caching */
   logger.info(`[Axios Request] ${config.method?.toUpperCase()} ${config.url}`);
   return config;
 });
+
+if (config.saveAxiosResponses) {
+  /* Save axios response in a temporary file */
+  axiosInstance?.interceptors.response.use((value) => {
+    const fileName = dayjs().valueOf();
+    writeFileSync(
+      join(__dirname, "__temp__", `${fileName}.json`),
+      JSON.stringify(value?.data, null, 2)
+    );
+
+    logger.info(
+      `[Axios Response] ${value?.config?.url} saved to ${fileName}.json`
+    );
+
+    return value;
+  });
+}
 
 export default cachios.create(axiosInstance);
