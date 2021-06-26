@@ -2,7 +2,7 @@ import React from "react";
 import i18n from "i18next";
 
 import { render, screen } from "common/testing";
-import { widgetProps } from "common/utils/mock";
+import { widgetProps, widgetStatusDisplay } from "common/utils/mock";
 
 import ChemicalElements from "../index";
 
@@ -28,5 +28,15 @@ describe("<ChemicalElements />", () => {
       id: "widget-mock-id",
       params: {},
     });
+  });
+
+  test("renders a widgetStatusDisplay when available", () => {
+    render(
+      <ChemicalElements
+        {...commonProps}
+        widgetStatusDisplay={widgetStatusDisplay}
+      />
+    );
+    expect(screen.getByTestId("widget-status-display")).toBeInTheDocument();
   });
 });

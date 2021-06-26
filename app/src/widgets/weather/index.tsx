@@ -18,7 +18,7 @@ const Weather: React.FC<Props> = ({
   lat,
   lon,
   current,
-  forecast = [],
+  forecast,
   unit,
   meta,
   triggerUpdate,

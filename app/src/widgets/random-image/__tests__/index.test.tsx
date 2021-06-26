@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 
-import { widgetProps } from "common/utils/mock";
+import { widgetProps, widgetStatusDisplay } from "common/utils/mock";
 
 import RandomImage from "../index";
 
@@ -18,5 +18,12 @@ describe("<RandomImage />", () => {
     );
     expect(screen.getByRole("figure")).toBeInTheDocument();
     expect(screen.getByRole("img")).toBeInTheDocument();
+  });
+
+  test("renders a widgetStatusDisplay when available", () => {
+    render(
+      <RandomImage {...widgetProps} widgetStatusDisplay={widgetStatusDisplay} />
+    );
+    expect(screen.getByTestId("widget-status-display")).toBeInTheDocument();
   });
 });

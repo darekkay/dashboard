@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 
-import { widgetProps } from "common/utils/mock";
+import { widgetProps, widgetStatusDisplay } from "common/utils/mock";
 
 import Chart from "../index";
 
@@ -54,5 +54,17 @@ describe("<Chart />", () => {
     expect(
       screen.getByText("widget.chart.error.noArrayData")
     ).toBeInTheDocument();
+  });
+
+  test("renders a widgetStatusDisplay when available", () => {
+    render(
+      <Chart
+        {...commonProps}
+        data={data}
+        dataPath="data"
+        widgetStatusDisplay={widgetStatusDisplay}
+      />
+    );
+    expect(screen.getByTestId("widget-status-display")).toBeInTheDocument();
   });
 });

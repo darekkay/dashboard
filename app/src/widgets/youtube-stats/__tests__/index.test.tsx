@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 
-import { widgetProps } from "common/utils/mock";
+import { widgetProps, widgetStatusDisplay } from "common/utils/mock";
 
 import YoutubeStats from "../index";
 
@@ -55,5 +55,16 @@ describe("<YoutubeStats />", () => {
         query: "https://www.youtube.com/c/darekkay",
       },
     });
+  });
+
+  test("renders a widgetStatusDisplay when available", () => {
+    render(
+      <YoutubeStats
+        {...widgetProps}
+        query="https://www.youtube.com/c/darekkay"
+        widgetStatusDisplay={widgetStatusDisplay}
+      />
+    );
+    expect(screen.getByTestId("widget-status-display")).toBeInTheDocument();
   });
 });

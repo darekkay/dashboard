@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 
-import { widgetProps } from "common/utils/mock";
+import { widgetProps, widgetStatusDisplay } from "common/utils/mock";
 
 import TwitterStats from "../index";
 
@@ -56,5 +56,16 @@ describe("<TwitterStats />", () => {
         username: "darek_kay",
       },
     });
+  });
+
+  test("renders a widgetStatusDisplay when available", () => {
+    render(
+      <TwitterStats
+        {...widgetProps}
+        username="darek_kay"
+        widgetStatusDisplay={widgetStatusDisplay}
+      />
+    );
+    expect(screen.getByTestId("widget-status-display")).toBeInTheDocument();
   });
 });

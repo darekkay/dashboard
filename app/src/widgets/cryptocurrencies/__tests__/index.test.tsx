@@ -1,7 +1,7 @@
 import React from "react";
 
 import { render, screen } from "common/testing";
-import { widgetProps } from "common/utils/mock";
+import { widgetProps, widgetStatusDisplay } from "common/utils/mock";
 
 import Cryptocurrencies from "../index";
 
@@ -54,5 +54,17 @@ describe("<Cryptocurrencies />", () => {
         fiat: "pln",
       },
     });
+  });
+
+  test("renders a widgetStatusDisplay when available", () => {
+    render(
+      <Cryptocurrencies
+        {...widgetProps}
+        crypto="ethereum"
+        fiat="pln"
+        widgetStatusDisplay={widgetStatusDisplay}
+      />
+    );
+    expect(screen.getByTestId("widget-status-display")).toBeInTheDocument();
   });
 });

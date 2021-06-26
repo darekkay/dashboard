@@ -1,3 +1,5 @@
+import React from "react";
+
 import { State } from "state/store";
 import { WidgetProps } from "widgets";
 
@@ -19,6 +21,8 @@ export const widgetProps: MockWidgetProps = {
   type: "text",
   headline: "",
 };
+
+export const widgetStatusDisplay = <div data-testid="widget-status-display" />;
 
 /* Default connected widget props (e.g. for stories) */
 export const connectedWidgetProps = {

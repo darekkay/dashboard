@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 
-import { widgetProps } from "common/utils/mock";
+import { widgetProps, widgetStatusDisplay } from "common/utils/mock";
 
 import TotdWorldCountries from "../index";
 
@@ -36,5 +36,15 @@ describe("<TotdWorldCountries />", () => {
       id: "widget-mock-id",
       params: {},
     });
+  });
+
+  test("renders a widgetStatusDisplay when available", () => {
+    render(
+      <TotdWorldCountries
+        {...commonProps}
+        widgetStatusDisplay={widgetStatusDisplay}
+      />
+    );
+    expect(screen.getByTestId("widget-status-display")).toBeInTheDocument();
   });
 });
