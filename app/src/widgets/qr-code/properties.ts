@@ -2,7 +2,7 @@ import { WidgetProperties } from "widgets/index";
 
 import { WidgetOptions } from "./configuration";
 
-export default {
+const properties: WidgetProperties<WidgetOptions> = {
   widgetType: "qr-code",
   category: "tools",
   configurable: true,
@@ -13,4 +13,6 @@ export default {
     content: "",
   },
   initialMeta: {},
-} as WidgetProperties<WidgetOptions>;
+};
+
+export default properties;

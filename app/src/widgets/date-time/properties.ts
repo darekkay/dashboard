@@ -2,7 +2,7 @@ import { WidgetProperties } from "widgets/index";
 
 import { WidgetOptions } from "./configuration";
 
-export default {
+const properties: WidgetProperties<WidgetOptions> = {
   widgetType: "date-time",
   category: "general",
   configurable: true,
@@ -13,4 +13,6 @@ export default {
     timezone: "auto",
   },
   initialMeta: {},
-} as WidgetProperties<WidgetOptions>;
+};
+
+export default properties;

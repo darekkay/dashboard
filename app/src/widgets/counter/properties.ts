@@ -2,7 +2,7 @@ import { WidgetProperties } from "widgets/index";
 
 import { WidgetOptions } from "./configuration";
 
-export default {
+const properties: WidgetProperties<WidgetOptions> = {
   widgetType: "counter",
   category: "tracking",
   configurable: true,
@@ -12,4 +12,6 @@ export default {
     headline: "",
   },
   initialMeta: {},
-} as WidgetProperties<WidgetOptions>;
+};
+
+export default properties;

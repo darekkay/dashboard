@@ -2,7 +2,7 @@ import { WidgetProperties } from "widgets/index";
 
 import { WidgetOptions } from "./configuration";
 
-export default {
+const properties: WidgetProperties<WidgetOptions> = {
   widgetType: "chart",
   category: "tracking",
   configurable: true,
@@ -20,4 +20,6 @@ export default {
     updateCycle: { hours: 24 },
     updateStatus: "idle",
   },
-} as WidgetProperties<WidgetOptions>;
+};
+
+export default properties;

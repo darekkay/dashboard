@@ -3,7 +3,7 @@ import { WidgetProperties } from "widgets/index";
 import { WidgetOptions } from "./configuration";
 import providers from "./lib/providers";
 
-export default {
+const properties: WidgetProperties<WidgetOptions> = {
   widgetType: "search",
   category: "tools",
   configurable: true,
@@ -11,4 +11,6 @@ export default {
   initialWidth: 4,
   initialOptions: providers[0],
   initialMeta: {},
-} as WidgetProperties<WidgetOptions>;
+};
+
+export default properties;

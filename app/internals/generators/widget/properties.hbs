@@ -2,7 +2,7 @@ import { WidgetProperties } from "widgets/index";
 
 {{#if configurationEnabled}}import { WidgetOptions } from "./configuration";{{/if}}
 
-export default {
+const properties: WidgetProperties{{#if configurationEnabled}}<WidgetOptions>{{/if}} = {
   // TODO: adjust properties and run yarn scan:widgets
   widgetType: "{{kebabCase name}}",
   category: "general", // TODO: check category
@@ -11,4 +11,6 @@ export default {
   initialWidth: 1,
   initialOptions: {},
   initialMeta: {},
-} as WidgetProperties{{#if configurationEnabled}}<WidgetOptions>{{/if}};
+};
+
+export default properties;

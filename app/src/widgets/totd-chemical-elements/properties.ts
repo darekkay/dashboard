@@ -1,6 +1,6 @@
 import { WidgetProperties } from "widgets/index";
 
-export default {
+const properties: WidgetProperties = {
   widgetType: "totd-chemical-elements",
   category: "knowledge",
   configurable: false,
@@ -11,4 +11,6 @@ export default {
     updateCycle: { hours: 24 },
     updateStatus: "idle",
   },
-} as WidgetProperties;
+};
+
+export default properties;

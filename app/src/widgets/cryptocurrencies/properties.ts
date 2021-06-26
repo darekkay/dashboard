@@ -2,7 +2,7 @@ import { WidgetProperties } from "widgets/index";
 
 import { WidgetOptions } from "./configuration";
 
-export default {
+const properties: WidgetProperties<WidgetOptions> = {
   widgetType: "cryptocurrencies",
   category: "monitoring",
   configurable: true,
@@ -16,4 +16,6 @@ export default {
     updateCycle: { minutes: 15 },
     updateStatus: "idle",
   },
-} as WidgetProperties<WidgetOptions>;
+};
+
+export default properties;

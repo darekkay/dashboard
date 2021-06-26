@@ -2,7 +2,7 @@ import { WidgetProperties } from "widgets/index";
 
 import { WidgetOptions } from "./configuration";
 
-export default {
+const properties: WidgetProperties<WidgetOptions> = {
   widgetType: "image",
   category: "media",
   configurable: true,
@@ -12,4 +12,6 @@ export default {
     url: "",
   },
   initialMeta: {},
-} as WidgetProperties<WidgetOptions>;
+};
+
+export default properties;

@@ -1,6 +1,6 @@
 import { WidgetProperties } from "widgets/index";
 
-export default {
+const properties: WidgetProperties = {
   widgetType: "text",
   category: "general",
   configurable: false,
@@ -8,4 +8,6 @@ export default {
   initialWidth: 4,
   initialOptions: {},
   initialMeta: {},
-} as WidgetProperties;
+};
+
+export default properties;
