@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 
-import { widgetProps, widgetStatusDisplay } from "common/utils/mock";
+import { widgetContentProps, widgetStatusDisplay } from "common/utils/mock";
 
 import YoutubeStats from "../index";
 
@@ -9,7 +9,7 @@ describe("<YoutubeStats />", () => {
   test("renders without errors", () => {
     render(
       <YoutubeStats
-        {...widgetProps}
+        {...widgetContentProps}
         subscriberCount={1642}
         viewCount={2047174}
         query="https://www.youtube.com/c/darekkay"
@@ -23,16 +23,16 @@ describe("<YoutubeStats />", () => {
   });
 
   test("doesn't render if the query is missing", () => {
-    render(<YoutubeStats {...widgetProps} query="" />);
+    render(<YoutubeStats {...widgetContentProps} query="" />);
     expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 
   test("renders an error if the server returns 404", () => {
     render(
       <YoutubeStats
-        {...widgetProps}
+        {...widgetContentProps}
         query="https://www.youtube.com/c/darekkay"
-        meta={{ ...widgetProps.meta, errorCode: 404 }}
+        meta={{ ...widgetContentProps.meta, errorCode: 404 }}
       />
     );
     expect(screen.getByTestId("widget-error")).toBeInTheDocument();
@@ -42,7 +42,7 @@ describe("<YoutubeStats />", () => {
     const triggerUpdate = jest.fn();
     render(
       <YoutubeStats
-        {...widgetProps}
+        {...widgetContentProps}
         id="widget-mock-id"
         query="https://www.youtube.com/c/darekkay"
         triggerUpdate={triggerUpdate}
@@ -60,7 +60,7 @@ describe("<YoutubeStats />", () => {
   test("renders a widgetStatusDisplay when available", () => {
     render(
       <YoutubeStats
-        {...widgetProps}
+        {...widgetContentProps}
         query="https://www.youtube.com/c/darekkay"
         widgetStatusDisplay={widgetStatusDisplay}
       />

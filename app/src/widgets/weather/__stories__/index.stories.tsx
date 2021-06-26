@@ -2,7 +2,7 @@ import React from "react";
 import dayjs from "dayjs";
 import random from "lodash/random";
 
-import { connectedWidgetProps } from "common/utils/mock";
+import { widgetProps } from "common/utils/mock";
 import { Widget } from "components/widget";
 import Section from "components/section";
 import { initialMeta } from "widgets/list";
@@ -56,7 +56,7 @@ export const Variants = () => {
     <>
       <Section type="story" headline="Weather widget">
         <Widget
-          {...connectedWidgetProps}
+          {...widgetProps}
           id="weather-01"
           type="weather"
           options={{

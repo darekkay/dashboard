@@ -7,9 +7,5 @@ export default {
 };
 
 export const Variants = () => {
-  return (
-    <div style={{ maxWidth: "700px" }}>
-      <FileUpload label="Drag and drop files" />
-    </div>
-  );
+  return <FileUpload label="Drag and drop files" />;
 };

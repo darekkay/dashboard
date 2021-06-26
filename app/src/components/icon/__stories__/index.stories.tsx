@@ -20,6 +20,4 @@ export default {
   title: "Components/Icon",
 };
 
-KitchenSink.story = {
-  name: "Kitchen Sink",
-};
+KitchenSink.storyName = "Kitchen Sink";

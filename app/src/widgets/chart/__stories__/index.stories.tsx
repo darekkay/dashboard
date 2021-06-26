@@ -1,6 +1,6 @@
 import React from "react";
 
-import { connectedWidgetProps } from "common/utils/mock";
+import { widgetProps } from "common/utils/mock";
 import { Widget } from "components/widget";
 import { initialMeta } from "widgets/list";
 
@@ -11,7 +11,7 @@ export default {
 export const Variants = () => {
   return (
     <Widget
-      {...connectedWidgetProps}
+      {...widgetProps}
       id="chart-01"
       type="chart"
       options={{

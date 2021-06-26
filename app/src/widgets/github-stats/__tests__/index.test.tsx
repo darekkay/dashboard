@@ -1,7 +1,7 @@
 import React from "react";
 
 import { render, screen } from "common/testing";
-import { widgetProps, widgetStatusDisplay } from "common/utils/mock";
+import { widgetContentProps, widgetStatusDisplay } from "common/utils/mock";
 
 import GithubStats from "../index";
 
@@ -9,7 +9,7 @@ describe("<GithubStats />", () => {
   test("renders without errors", () => {
     render(
       <GithubStats
-        {...widgetProps}
+        {...widgetContentProps}
         query="darekkay"
         stars={1}
         followers={2}
@@ -26,16 +26,16 @@ describe("<GithubStats />", () => {
   });
 
   test("doesn't render if the query is missing", () => {
-    render(<GithubStats {...widgetProps} query="" />);
+    render(<GithubStats {...widgetContentProps} query="" />);
     expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 
   test("renders an error if the server returns 404", () => {
     render(
       <GithubStats
-        {...widgetProps}
+        {...widgetContentProps}
         query="darekkay"
-        meta={{ ...widgetProps.meta, errorCode: 404 }}
+        meta={{ ...widgetContentProps.meta, errorCode: 404 }}
       />
     );
     expect(screen.getByTestId("widget-error")).toBeInTheDocument();
@@ -45,7 +45,7 @@ describe("<GithubStats />", () => {
     const triggerUpdate = jest.fn();
     render(
       <GithubStats
-        {...widgetProps}
+        {...widgetContentProps}
         query="darekkay"
         triggerUpdate={triggerUpdate}
       />
@@ -62,7 +62,7 @@ describe("<GithubStats />", () => {
   test("renders a widgetStatusDisplay when available", () => {
     render(
       <GithubStats
-        {...widgetProps}
+        {...widgetContentProps}
         query="darekkay"
         widgetStatusDisplay={widgetStatusDisplay}
       />

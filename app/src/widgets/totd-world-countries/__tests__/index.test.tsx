@@ -1,12 +1,12 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 
-import { widgetProps, widgetStatusDisplay } from "common/utils/mock";
+import { widgetContentProps, widgetStatusDisplay } from "common/utils/mock";
 
 import TotdWorldCountries from "../index";
 
 const commonProps = {
-  ...widgetProps,
+  ...widgetContentProps,
   name: "Germany",
   capital: "Berlin",
   currency: "EUR",

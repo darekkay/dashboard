@@ -1,13 +1,13 @@
 import React from "react";
 
 import { render, screen } from "common/testing";
-import { widgetProps } from "common/utils/mock";
+import { widgetContentProps } from "common/utils/mock";
 
 import QrCode from "../index";
 
 describe("<QrCode />", () => {
   test("renders without errors", () => {
-    render(<QrCode {...widgetProps} content="example" />);
+    render(<QrCode {...widgetContentProps} content="example" />);
 
     expect(
       screen.queryByText("widget.common.unconfigured")
@@ -15,7 +15,7 @@ describe("<QrCode />", () => {
   });
 
   test("doesn't render if the query is missing", () => {
-    render(<QrCode {...widgetProps} content="" />);
+    render(<QrCode {...widgetContentProps} content="" />);
     expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 });

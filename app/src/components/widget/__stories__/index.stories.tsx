@@ -1,6 +1,6 @@
 import React from "react";
 
-import { connectedWidgetProps } from "common/utils/mock";
+import { widgetProps } from "common/utils/mock";
 import { Widget } from "components/widget";
 import Section from "components/section";
 
@@ -14,9 +14,9 @@ export const Variants = () => {
     options: { pattern: "https://duckduckgo.com/?q=%s", title: "DuckDuckGo" },
   };
   return (
-    <div className="space-y-6" style={{ maxWidth: "500px" }}>
+    <div className="space-y-6">
       <Section type="story" headline="Regular">
-        <Widget {...connectedWidgetProps} {...sharedProps} id="search-01" />
+        <Widget {...widgetProps} {...sharedProps} id="search-01" />
       </Section>
     </div>
   );

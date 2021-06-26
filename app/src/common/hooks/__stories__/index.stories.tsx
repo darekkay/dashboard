@@ -29,9 +29,7 @@ export const UsePrevious = () => {
   );
 };
 
-UsePrevious.story = {
-  name: "usePrevious",
-};
+UsePrevious.storyName = "usePrevious";
 
 export const UseInterval = () => {
   const [counter, setCounter] = useState(0);
@@ -46,6 +44,4 @@ export const UseInterval = () => {
   );
 };
 
-UseInterval.story = {
-  name: "useInterval",
-};
+UseInterval.storyName = "useInterval";

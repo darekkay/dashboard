@@ -1,7 +1,7 @@
 import React from "react";
 
 import { render, screen, userEvent } from "common/testing";
-import { widgetProps } from "common/utils/mock";
+import { widgetContentProps } from "common/utils/mock";
 
 import Search, { Props } from "../index";
 
@@ -9,7 +9,7 @@ describe("<Search />", () => {
   const renderSearch = (props: Partial<Props>) =>
     render(
       <Search
-        {...widgetProps}
+        {...widgetContentProps}
         title="Search"
         pattern="https://example.com?s=%s"
         {...props}

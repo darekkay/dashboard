@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 
-import { widgetProps, widgetStatusDisplay } from "common/utils/mock";
+import { widgetContentProps, widgetStatusDisplay } from "common/utils/mock";
 
 import Chart from "../index";
 
@@ -13,7 +13,7 @@ export const data = [
 ] as const;
 
 const commonProps = {
-  ...widgetProps,
+  ...widgetContentProps,
   url: "https://example.com",
   dataPath: "",
   dataKeyX: "",

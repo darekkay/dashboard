@@ -13,9 +13,7 @@ export const Variants = () => {
   const { store } = initStore();
   return (
     <Provider store={store}>
-      <div style={{ maxWidth: "400px" }}>
-        <ImportExport />
-      </div>
+      <ImportExport />
     </Provider>
   );
 };

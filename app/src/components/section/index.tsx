@@ -1,15 +1,22 @@
 import React from "react";
+import cn from "classnames";
 
 import Headline from "components/headline";
 
 /* Makes possible changes easier */
 export type SectionType = "modal" | "story";
 
-const Section: React.FC<Props> = ({ headline, children }) => {
+const Section: React.FC<Props> = ({ headline, type, children }) => {
   return (
     <div>
       {headline && (
-        <Headline level={3} className="mb-4 text-4 font-semibold">
+        <Headline
+          level={3}
+          className={cn("mb-4 text-4", {
+            "font-semibold": type === "modal",
+            "mt-7 text-center font-bold": type === "story",
+          })}
+        >
           {headline}
         </Headline>
       )}

@@ -13,7 +13,7 @@ export default {
 
 export const Showcase = () => {
   return (
-    <div className="space-y-6" style={{ maxWidth: "600px" }}>
+    <div className="space-y-6">
       <Section type="story">
         <Input setValue={() => {}} label="Input" />
       </Section>
@@ -31,11 +31,9 @@ export const Showcase = () => {
       </Section>
 
       <Section type="story">
-        <div style={{ maxWidth: "700px" }}>
-          <Label text="FileUpload">
-            <FileUpload label="Drag and drop files" />
-          </Label>
-        </div>
+        <Label text="FileUpload">
+          <FileUpload label="Drag and drop files" />
+        </Label>
       </Section>
     </div>
   );

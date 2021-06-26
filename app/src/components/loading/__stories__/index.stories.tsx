@@ -16,7 +16,7 @@ export const Variants = () => {
       </Section>
 
       <Section type="story" headline="Skeleton">
-        <div style={{ height: "200px", width: "100%" }}>
+        <div style={{ height: "200px" }}>
           <Loading type="skeleton" />
         </div>
       </Section>

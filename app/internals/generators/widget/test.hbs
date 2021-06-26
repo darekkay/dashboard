@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 
-import { widgetProps {{#if useSagas}}, widgetStatusDisplay {{/if}}} from "common/utils/mock";
+import { widgetContentProps {{#if useSagas}}, widgetStatusDisplay {{/if}}} from "common/utils/mock";
 
 import {{ properCase name }} from "../index";
 
@@ -9,7 +9,7 @@ describe("<{{ properCase name }} />", () => {
   test("renders without errors", () => {
     render(
       <{{ properCase name }}
-        {...widgetProps}
+        {...widgetContentProps}
       />
     );
     expect(screen.getByRole("TODO", { name: /TODO text/i })).toBeInTheDocument();
@@ -18,7 +18,7 @@ describe("<{{ properCase name }} />", () => {
   test("renders a widgetStatusDisplay when available", () => {
     render(
       <{{ properCase name }}
-        {...widgetProps}
+        {...widgetContentProps}
         widgetStatusDisplay={widgetStatusDisplay}
       />
     );

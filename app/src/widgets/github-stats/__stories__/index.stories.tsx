@@ -1,6 +1,6 @@
 import React from "react";
 
-import { connectedWidgetProps } from "common/utils/mock";
+import { widgetProps } from "common/utils/mock";
 import { Widget } from "components/widget";
 import Section from "components/section";
 import { initialMeta } from "widgets/list";
@@ -14,7 +14,7 @@ export const Variants = () => {
     <div className="space-y-6">
       <Section type="story" headline="GitHub User">
         <Widget
-          {...connectedWidgetProps}
+          {...widgetProps}
           id="github-stats-01"
           type="github-stats"
           options={{
@@ -32,7 +32,7 @@ export const Variants = () => {
       </Section>
       <Section type="story" headline="GitHub Repository">
         <Widget
-          {...connectedWidgetProps}
+          {...widgetProps}
           id="github-stats-02"
           type="github-stats"
           options={{

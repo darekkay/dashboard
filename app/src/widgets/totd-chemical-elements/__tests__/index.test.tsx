@@ -2,12 +2,12 @@ import React from "react";
 import i18n from "i18next";
 
 import { render, screen } from "common/testing";
-import { widgetProps, widgetStatusDisplay } from "common/utils/mock";
+import { widgetContentProps, widgetStatusDisplay } from "common/utils/mock";
 
 import ChemicalElements from "../index";
 
 const commonProps = {
-  ...widgetProps,
+  ...widgetContentProps,
   symbol: "H",
   atomicNumber: 1,
   name: "Hydrogen",

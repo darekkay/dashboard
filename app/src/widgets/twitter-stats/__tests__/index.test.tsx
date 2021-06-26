@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 
-import { widgetProps, widgetStatusDisplay } from "common/utils/mock";
+import { widgetContentProps, widgetStatusDisplay } from "common/utils/mock";
 
 import TwitterStats from "../index";
 
@@ -9,7 +9,7 @@ describe("<TwitterStats />", () => {
   test("renders without errors", () => {
     render(
       <TwitterStats
-        {...widgetProps}
+        {...widgetContentProps}
         username="darek_kay"
         followers={4962}
         following={191}
@@ -24,16 +24,16 @@ describe("<TwitterStats />", () => {
   });
 
   test("doesn't render if the username is missing", () => {
-    render(<TwitterStats {...widgetProps} username="" />);
+    render(<TwitterStats {...widgetContentProps} username="" />);
     expect(screen.getByText("widget.common.unconfigured")).toBeInTheDocument();
   });
 
   test("renders an error if the server returns 404", () => {
     render(
       <TwitterStats
-        {...widgetProps}
+        {...widgetContentProps}
         username="darek_kay"
-        meta={{ ...widgetProps.meta, errorCode: 404 }}
+        meta={{ ...widgetContentProps.meta, errorCode: 404 }}
       />
     );
     expect(screen.getByTestId("widget-error")).toBeInTheDocument();
@@ -43,7 +43,7 @@ describe("<TwitterStats />", () => {
     const triggerUpdate = jest.fn();
     render(
       <TwitterStats
-        {...widgetProps}
+        {...widgetContentProps}
         id="widget-mock-id"
         username="darek_kay"
         triggerUpdate={triggerUpdate}
@@ -61,7 +61,7 @@ describe("<TwitterStats />", () => {
   test("renders a widgetStatusDisplay when available", () => {
     render(
       <TwitterStats
-        {...widgetProps}
+        {...widgetContentProps}
         username="darek_kay"
         widgetStatusDisplay={widgetStatusDisplay}
       />

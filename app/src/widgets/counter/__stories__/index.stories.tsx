@@ -1,6 +1,6 @@
 import React from "react";
 
-import { connectedWidgetProps } from "common/utils/mock";
+import { widgetProps } from "common/utils/mock";
 import { Widget } from "components/widget";
 
 export default {
@@ -10,7 +10,7 @@ export default {
 export const Variants = () => {
   return (
     <Widget
-      {...connectedWidgetProps}
+      {...widgetProps}
       id="counter-01"
       type="counter"
       options={{}}

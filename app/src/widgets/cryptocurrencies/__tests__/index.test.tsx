@@ -1,7 +1,7 @@
 import React from "react";
 
 import { render, screen } from "common/testing";
-import { widgetProps, widgetStatusDisplay } from "common/utils/mock";
+import { widgetContentProps, widgetStatusDisplay } from "common/utils/mock";
 
 import Cryptocurrencies from "../index";
 
@@ -9,7 +9,7 @@ describe("<Cryptocurrencies />", () => {
   test("renders without errors", () => {
     render(
       <Cryptocurrencies
-        {...widgetProps}
+        {...widgetContentProps}
         crypto="ethereum"
         fiat="pln"
         currentPrice={6714}
@@ -27,7 +27,7 @@ describe("<Cryptocurrencies />", () => {
   test("renders the currency icon", () => {
     render(
       <Cryptocurrencies
-        {...widgetProps}
+        {...widgetContentProps}
         crypto="ethereum"
         fiat="pln"
         imageUrl="https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579"
@@ -40,7 +40,7 @@ describe("<Cryptocurrencies />", () => {
     const triggerUpdate = jest.fn();
     render(
       <Cryptocurrencies
-        {...widgetProps}
+        {...widgetContentProps}
         crypto="ethereum"
         fiat="pln"
         triggerUpdate={triggerUpdate}
@@ -59,7 +59,7 @@ describe("<Cryptocurrencies />", () => {
   test("renders a widgetStatusDisplay when available", () => {
     render(
       <Cryptocurrencies
-        {...widgetProps}
+        {...widgetContentProps}
         crypto="ethereum"
         fiat="pln"
         widgetStatusDisplay={widgetStatusDisplay}

@@ -12,7 +12,9 @@ export const Variants = () => {
   const [isOpen, setOpen] = useState(false);
   return (
     <>
-      <Button onClick={() => setOpen(true)}>Open Modal</Button>
+      <div className="text-center">
+        <Button onClick={() => setOpen(true)}>Open Modal</Button>
+      </div>
       <Modal
         isOpen={isOpen}
         closeModal={() => setOpen(false)}

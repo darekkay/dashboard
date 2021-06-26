@@ -1,14 +1,14 @@
 import React from "react";
 
 import { render, screen, userEvent } from "common/testing";
-import { widgetProps } from "common/utils/mock";
+import { widgetContentProps } from "common/utils/mock";
 
 import Counter from "../index";
 
 describe("<Counter />", () => {
   test("increments the value", async () => {
     const setData = jest.fn();
-    render(<Counter {...widgetProps} setData={setData} value={5} />);
+    render(<Counter {...widgetContentProps} setData={setData} value={5} />);
     userEvent.click(
       screen.getByRole("button", { name: "widget.counter.increment" })
     );
@@ -21,7 +21,7 @@ describe("<Counter />", () => {
 
   test("decrements a default value", async () => {
     const setData = jest.fn();
-    render(<Counter {...widgetProps} setData={setData} />);
+    render(<Counter {...widgetContentProps} setData={setData} />);
     userEvent.click(
       screen.getByRole("button", { name: "widget.counter.decrement" })
     );
