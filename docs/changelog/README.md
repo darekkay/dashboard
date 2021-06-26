@@ -6,12 +6,13 @@
 - :rocket: Use a meaningful widget focus order.
 - :rocket: Unify loading and error behavior.
 - :bug: **[Cryptocurrencies]** Fix deviation display for unchanged values.
+- :bug: Preserve theme and language settings when using a demo template.
 - :hammer: Improve test coverage.
 - :hammer: Improve TypeScript types.
 - :hammer: Add delay and error middlewares for debugging.
 - :hammer: Provide root-level npm tasks to run `app` and `server` modules in parallel.
 
-## 1.5.0  (2021-05-26)
+## 1.5.0 (2021-05-26)
 
 - :sparkles: New widget: [Chart / Graph](https://dashboard.darekkay.com/docs/widgets/chart.html).
 - :sparkles: Make background image configurable.

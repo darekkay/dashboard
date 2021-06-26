@@ -1,7 +1,7 @@
 {
   "config": {
-    "theme": "default",
-    "language": "en",
+    "theme": "",
+    "language": "",
     "backgroundUrl": "/backgrounds/bg-03.jpg"
   },
   "widgets": {

@@ -20,8 +20,8 @@ const demo = JSON.parse(readFileSync(demoFilePath, "utf-8")) as State;
 delete demo._persist;
 
 // configuration
-// delete demo.config.theme;
-// delete demo.config.language;
+demo.config.language = "";
+demo.config.theme = "";
 
 // widgets
 demo.widgets = Object.entries(demo.widgets).reduce((acc, [id, widget]) => {

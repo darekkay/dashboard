@@ -1,3 +1,5 @@
+import { importState } from "common/ducks/state";
+
 import {
   initialState,
   reducerWithInitialState,
@@ -21,5 +23,45 @@ describe("Settings duck", () => {
     );
 
     expect(updatedState.language).toEqual("mock");
+  });
+
+  test("imports all settings when available", () => {
+    const updatedState = reducerWithInitialState()(
+      initialState,
+      // @ts-expect-error
+      importState({
+        config: {
+          theme: "dark",
+          language: "de",
+          backgroundUrl: "image.png",
+        },
+      })
+    );
+
+    expect(updatedState.theme).toEqual("dark");
+    expect(updatedState.language).toEqual("de");
+    expect(updatedState.backgroundUrl).toEqual("image.png");
+  });
+
+  test("doesn't import empty language or theme", () => {
+    const updatedState = reducerWithInitialState()(
+      {
+        theme: "default",
+        language: "en",
+        backgroundUrl: "image.png",
+      },
+      // @ts-expect-error
+      importState({
+        config: {
+          theme: "",
+          language: "",
+          backgroundUrl: "",
+        },
+      })
+    );
+
+    expect(updatedState.theme).toEqual("default");
+    expect(updatedState.language).toEqual("en");
+    expect(updatedState.backgroundUrl).toEqual("");
   });
 });

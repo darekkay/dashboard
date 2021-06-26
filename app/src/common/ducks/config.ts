@@ -2,6 +2,7 @@
 
 import { createAction, createReducer, PayloadAction } from "@reduxjs/toolkit";
 import { put, takeEvery } from "typed-redux-saga";
+import isEmpty from "lodash/isEmpty";
 
 import { State } from "state/store";
 import { Theme } from "components/settings/theme-select";
@@ -41,7 +42,15 @@ export const reducerWithInitialState = (
 ) =>
   createReducer<ConfigState>(defaultState, (builder) =>
     builder
-      .addCase(importState, (_state, action) => action.payload.config)
+      .addCase(importState, (state, action) => {
+        // preserve current user settings if they are missing in the imported state
+        if (!isEmpty(action.payload.config.theme))
+          state.theme = action.payload.config.theme;
+        if (!isEmpty(action.payload.config.language))
+          state.language = action.payload.config.language;
+
+        state.backgroundUrl = action.payload.config.backgroundUrl;
+      })
 
       .addCase(changeBackgroundUrl, (state, action) => {
         state.backgroundUrl = action.payload;
