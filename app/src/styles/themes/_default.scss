@@ -1,10 +1,12 @@
 @import "~@darekkay/styles/src/base/colors";
 
+$blue-vivid-55: #0072ce;
+
 .theme-default {
   --color-text-default: #{$blue-80};
   --color-text-offset: #{$dk-gray-55};
   --color-text-accent: #{$violet-vivid-60};
-  --color-text-interaction: #{$blue-vivid-50};
+  --color-text-interaction: #{$blue-vivid-55};
   --color-text-success: #{$green-50};
   --color-text-danger: #{$red-50};
 
@@ -21,7 +23,7 @@
   --overlay-color-text-default: #{$black};
   --overlay-color-text-interaction: #{$violet-vivid-70};
 
-  --button-primary-color: #{$blue-vivid-50};
+  --button-primary-color: #{$blue-vivid-55};
   --button-primary-event-bg: #{$blue-vivid-60};
   --button-primary-focus-ring: #{$blue-30};
 

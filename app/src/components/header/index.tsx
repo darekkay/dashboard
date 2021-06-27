@@ -5,7 +5,7 @@ import { APP_VERSION } from "common/environment";
 import Link from "components/link";
 import Button from "components/button";
 import Icon from "components/icon";
-import Menu, { MenuAction, MenuSeparator } from "components/menu";
+import Menu, { MenuAction } from "components/menu";
 import Modal from "components/modal";
 import Settings from "components/settings";
 
@@ -79,16 +79,13 @@ const Header: React.FC<Props> = memo(
           headline={t(`common.settings`)}
           closeModal={closeSettingsModal}
           isOpen={isSettingsModalOpen}
-        >
-          <Settings closeModal={closeSettingsModal} />
-          <div className="mt-6 text-right">
-            <Button
-              className="w-full md:w-auto md:ml-5 mt-5"
-              onClick={closeSettingsModal}
-            >
+          renderFooter={() => (
+            <Button className="w-full md:w-auto" onClick={closeSettingsModal}>
               {t("common.close")}
             </Button>
-          </div>
+          )}
+        >
+          <Settings closeModal={closeSettingsModal} />
         </Modal>
       </header>
     );

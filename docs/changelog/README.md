@@ -5,6 +5,7 @@
 - :sparkles: New widget: [Weather](https://dashboard.darekkay.com/docs/widgets/weather.html).
 - :rocket: Use a meaningful widget focus order.
 - :rocket: Unify loading and error behavior.
+- :gem: Redesign modals.
 - :bug: **[Cryptocurrencies]** Fix deviation display for unchanged values.
 - :bug: Preserve theme and language settings when using a demo template.
 - :hammer: Improve test coverage.

@@ -36,6 +36,16 @@ const WidgetConfiguration: React.FC<Props> = ({
       })}
       closeModal={onCancel}
       isOpen={isModalOpen}
+      renderFooter={() => (
+        <>
+          <Button className="w-full md:w-auto" outline onClick={onCancel}>
+            {t("common.cancel")}
+          </Button>
+          <Button className="w-full md:w-auto" onClick={onSave}>
+            {t("common.save")}
+          </Button>
+        </>
+      )}
     >
       <Suspense fallback={<Loading />}>
         {React.createElement(configuration, {
@@ -47,19 +57,6 @@ const WidgetConfiguration: React.FC<Props> = ({
           save: onSave,
         })}
       </Suspense>
-
-      <div className="mt-6 text-right">
-        <Button
-          className="w-full md:w-auto md:ml-5 mt-5"
-          outline
-          onClick={onCancel}
-        >
-          {t("common.cancel")}
-        </Button>
-        <Button className="w-full md:w-auto md:ml-5 mt-5" onClick={onSave}>
-          {t("common.save")}
-        </Button>
-      </div>
     </Modal>
   );
 };
