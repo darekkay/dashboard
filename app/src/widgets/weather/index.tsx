@@ -37,12 +37,11 @@ const Weather: React.FC<Props> = ({
     <div className="flex items-center">
       <div className="flex flex-col items-center mr-6">
         <div className="text-6 font-semibold">{current.temperature}°</div>
-        <div className="text-7 leading-tight">
-          <Icon
-            name={current.condition.icon}
-            alt={current.condition.description}
-          />
-        </div>
+        <Icon
+          className="text-7 leading-tight"
+          name={current.condition.icon}
+          alt={current.condition.description}
+        />
       </div>
 
       <div className="flex space-x-5">
@@ -51,12 +50,11 @@ const Weather: React.FC<Props> = ({
             <div className="mb-2 text-2 font-semibold text-offset uppercase">
               {dayjs.unix(singleForecast.date).format("ddd")}
             </div>
-            <div className="text-6 leading-tight">
-              <Icon
-                name={singleForecast.condition.icon}
-                alt={singleForecast.condition.description}
-              />
-            </div>
+            <Icon
+              className="mb-1 text-6 leading-tight"
+              name={singleForecast.condition.icon}
+              alt={singleForecast.condition.description}
+            />
             <div className="text-3 leading-tight">
               {singleForecast.temperatureMax}°
             </div>

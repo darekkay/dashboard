@@ -6,9 +6,9 @@ $icon-size: 1.6rem;
   width: $icon-size;
   height: $icon-size;
 
-  /* Derive icon size from the surrounding text size */
   @each $name, $font-size in $font-sizes {
-    .text-#{$name} & {
+    /* Use font-size classes to set icon size */
+    &.text-#{$name} {
       height: $font-size;
       width: $font-size;
     }
