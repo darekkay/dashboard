@@ -14,7 +14,10 @@ import {
   faExclamationCircle,
   faExpand,
   faHome,
+  faLanguage,
+  faMapMarkerAlt,
   faMinus,
+  faMoneyBillWave,
   faPalette,
   faPencilAlt,
   faPlus,
@@ -57,7 +60,10 @@ export type FontAwesomeIconName =
   | "file"
   | "github"
   | "home"
+  | "language"
+  | "mapMarker"
   | "minus"
+  | "moneyBill"
   | "palette"
   | "pencil"
   | "plus"
@@ -98,7 +104,10 @@ const icons: Record<FontAwesomeIconName, IconDefinition> = {
   file: faFileAlt,
   github: faGithub,
   home: faHome,
+  language: faLanguage,
+  mapMarker: faMapMarkerAlt,
   minus: faMinus,
+  moneyBill: faMoneyBillWave,
   palette: faPalette,
   pencil: faPencilAlt,
   plus: faPlus,

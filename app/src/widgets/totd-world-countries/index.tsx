@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import useTriggerUpdate from "common/hooks/useTriggerUpdate";
+import Icon from "components/icon";
 
 import { WidgetProps } from "../index";
 
@@ -17,33 +19,52 @@ const TotdWorldCountries: React.FC<Props> = ({
   triggerUpdate,
   widgetStatusDisplay,
 }) => {
+  const { t } = useTranslation();
   useTriggerUpdate({ id, params: {}, meta, triggerUpdate }, []);
 
   if (widgetStatusDisplay) return widgetStatusDisplay;
 
   return (
-    <dl>
+    <div>
       {flag && (
         <img
-          className="block mb-4 mx-auto"
+          className="block mb-3 mx-auto p-1 border rounded"
           src={flag}
           alt={`Flag of ${name}`}
-          width={90}
+          style={{ height: "50px" }}
         />
       )}
-      <div className="flex items-center">
-        <dt className="mr-2 ">Capital:</dt>
-        <dd className="font-semibold">{capital}</dd>
+
+      <div className="flex items-center" data-testid="stats-row">
+        <Icon
+          name="mapMarker"
+          alt={t("widget.totd-world-countries.capital")}
+          position="left"
+          className="text-offset"
+        />
+        <div className="text-3 mx-2">{capital}</div>
       </div>
-      <div className="flex items-center">
-        <dt className="mr-2 ">Currency:</dt>
-        <dd className="font-semibold">{currency}</dd>
+
+      <div className="flex items-center" data-testid="stats-row">
+        <Icon
+          name="moneyBill"
+          alt={t("widget.totd-world-countries.currency")}
+          position="left"
+          className="text-offset"
+        />
+        <div className="text-3 mx-2">{currency}</div>
       </div>
-      <div className="flex items-center">
-        <dt className="mr-2 ">Languages:</dt>
-        <dd className="font-semibold">{languages}</dd>
+
+      <div className="flex items-center" data-testid="stats-row">
+        <Icon
+          name="language"
+          alt={t("widget.totd-world-countries.languages")}
+          position="left"
+          className="text-offset"
+        />
+        <div className="text-3 mx-2">{languages}</div>
       </div>
-    </dl>
+    </div>
   );
 };
 

@@ -154,7 +154,10 @@
     },
     "totd-world-countries": {
       "name": "Länder",
-      "headline": "{{name}}"
+      "headline": "{{name}}",
+      "capital": "Hauptstadt",
+      "currency": "Währung",
+      "languages": "Sprachen"
     },
     "twitter-stats": {
       "name": "Twitter Stats",

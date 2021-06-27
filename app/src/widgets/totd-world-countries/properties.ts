@@ -4,8 +4,8 @@ const properties: WidgetProperties = {
   widgetType: "totd-world-countries",
   category: "knowledge",
   configurable: false,
-  initialHeight: 4,
-  initialWidth: 4,
+  initialHeight: 3,
+  initialWidth: 3,
   initialOptions: {},
   initialMeta: {
     updateCycle: { hours: 24 },
