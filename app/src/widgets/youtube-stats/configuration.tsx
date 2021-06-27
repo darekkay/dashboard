@@ -11,16 +11,13 @@ const Configuration = ({
 }: ConfigurationProps<WidgetOptions>) => {
   const { t } = useTranslation();
   return (
-    <>
-      <Input
-        setValue={(value) => setOptions({ query: value })}
-        value={options.query}
-        label={t("widget.youtube-stats.configuration.query")}
-        className="mb-6"
-        type="text"
-        onEnter={save}
-      />
-    </>
+    <Input
+      setValue={(value) => setOptions({ query: value })}
+      value={options.query}
+      label={t("widget.youtube-stats.configuration.query")}
+      type="text"
+      onEnter={save}
+    />
   );
 };
 

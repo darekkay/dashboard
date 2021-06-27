@@ -23,7 +23,7 @@ const FileUpload: React.FC<Props> = ({
   return (
     <div
       className={cn(
-        "file-upload flex flex-col items-center p-3 text-center bg-offset",
+        "file-upload flex flex-col items-center p-3 text-center bg-default",
         { "drag-active": isDragActive },
         className
       )}

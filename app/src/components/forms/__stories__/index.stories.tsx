@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Section from "components/section";
 import Input from "components/forms/input";
@@ -12,10 +12,11 @@ export default {
 };
 
 export const Showcase = () => {
+  const [inputValue, setInputValue] = useState("");
   return (
     <div className="space-y-6">
       <Section type="story">
-        <Input setValue={() => {}} label="Input" />
+        <Input value={inputValue} setValue={setInputValue} label="Input" />
       </Section>
 
       <Section type="story">

@@ -30,6 +30,7 @@ const Search: React.FC<Props> = ({ id, type, pattern }) => {
     <div className="max-w-full w-full p-3">
       <div className="flex items-center">
         <Input
+          className="text-3 leading-none"
           value={value}
           setValue={setValue}
           onEnter={(currentValue) =>

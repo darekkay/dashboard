@@ -15,7 +15,6 @@ const Configuration = ({
       setValue={(value) => setOptions({ headline: value })}
       value={options.headline}
       label={t("common.headline")}
-      className="mb-6"
       type="text"
       onEnter={save}
     />

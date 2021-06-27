@@ -28,7 +28,7 @@ const Input: React.FC<Props> = (props) => {
   return (
     <Label text={label}>
       <div
-        className="w-full relative"
+        className="flex items-center w-full relative"
         // replace with onFocusIn / onFocusOut when implemented in React:
         // https://github.com/facebook/react/issues/6410
         onFocus={() => {
@@ -40,10 +40,9 @@ const Input: React.FC<Props> = (props) => {
       >
         <input
           className={cn(
-            "w-full px-4 py-1 border rounded text-default",
+            "w-full px-4 py-2 border rounded bg-default text-default",
             {
               "pr-7": isFocused,
-              "bg-offset": !className?.includes("bg-color-"),
             },
             className
           )}

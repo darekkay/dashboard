@@ -11,16 +11,13 @@ const Configuration = ({
 }: ConfigurationProps<WidgetOptions>) => {
   const { t } = useTranslation();
   return (
-    <>
-      <Input
-        setValue={(value) => setOptions({ username: value })}
-        value={options.username}
-        label={t("widget.twitter-stats.configuration.username")}
-        className="mb-6"
-        type="text"
-        onEnter={save}
-      />
-    </>
+    <Input
+      setValue={(value) => setOptions({ username: value })}
+      value={options.username}
+      label={t("widget.twitter-stats.configuration.username")}
+      type="text"
+      onEnter={save}
+    />
   );
 };
 

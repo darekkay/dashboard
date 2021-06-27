@@ -11,12 +11,11 @@ const Configuration = ({
 }: ConfigurationProps<WidgetOptions>) => {
   const { t } = useTranslation();
   return (
-    <>
+    <div className="space-y-6">
       <Input
         setValue={(value) => setOptions({ headline: value })}
         value={options.headline}
         label={t("common.headline")}
-        className="mb-6"
         type="text"
         onEnter={save}
       />
@@ -24,7 +23,6 @@ const Configuration = ({
         setValue={(value) => setOptions({ url: value })}
         value={options.url}
         label={t("widget.chart.configuration.url")}
-        className="mb-6"
         type="url"
         inputMode="url"
         autoComplete="url"
@@ -34,7 +32,6 @@ const Configuration = ({
         setValue={(value) => setOptions({ dataPath: value })}
         value={options.dataPath}
         label={t("widget.chart.configuration.dataPath")}
-        className="mb-6"
         type="text"
         onEnter={save}
       />
@@ -42,7 +39,6 @@ const Configuration = ({
         setValue={(value) => setOptions({ dataKeyX: value })}
         value={options.dataKeyX}
         label={t("widget.chart.configuration.dataKeyX")}
-        className="mb-6"
         type="text"
         onEnter={save}
       />
@@ -53,7 +49,7 @@ const Configuration = ({
         type="text"
         onEnter={save}
       />
-    </>
+    </div>
   );
 };
 

@@ -17,17 +17,9 @@ const Dropdown = <T extends string>({
 }: Props<T>) => {
   return (
     <Label text={label}>
-      <div
-        className={cn(
-          "forms-dropdown relative",
-          {
-            "bg-offset": !className?.includes("bg-color-"),
-          },
-          className
-        )}
-      >
+      <div className={cn("forms-dropdown relative bg-default", className)}>
         <select
-          className="w-full pl-4 pr-7 py-1 border rounded bg-offset text-default"
+          className="w-full pl-4 pr-7 py-2 border rounded bg-default text-default"
           onChange={(event) => {
             setValue(event.target.value as T);
           }}
