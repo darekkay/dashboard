@@ -28,13 +28,10 @@ const Settings: React.FC<Props> = ({ closeModal }) => {
             <LanguageSelect />
           </Section>
 
+          <hr />
+
           <Section type="modal" headline={t("config.data.purge")}>
-            <Button
-              className="mr-6 mb-3"
-              outline
-              variant="danger"
-              onClick={purgeStore}
-            >
+            <Button outline variant="danger" onClick={purgeStore}>
               <Icon name="trash" position="left" />
               {t("config.data.purge")}
             </Button>

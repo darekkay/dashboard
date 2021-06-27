@@ -18,7 +18,7 @@ export const updateCssVariables = (theme: Theme) => {
 export const ThemeOption: React.FC<ThemeProps> = ({ name, label, onClick }) => (
   <button
     className={`theme-${name} inline-block mr-6 mb-3 p-0 border-0 cursor-pointer`}
-    style={{ width: "200px", height: "120px" }}
+    style={{ width: "150px", height: "100px" }}
     onClick={onClick}
     type="button"
   >

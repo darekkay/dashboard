@@ -10,17 +10,15 @@ const Section: React.FC<Props> = ({ headline, type, children }) => {
   return (
     <div>
       {headline && (
-        <Headline
-          level={3}
-          className={cn("mb-4 text-4", {
-            "font-semibold": type === "modal",
-            "mt-7 text-center font-bold": type === "story",
+        <h3
+          className={cn("mb-4 text-4 font-bold", {
+            "mt-7 text-center": type === "story",
           })}
         >
           {headline}
-        </Headline>
+        </h3>
       )}
-      <div className="mx-5 space-y-6">{children}</div>
+      <div className="space-y-6">{children}</div>
     </div>
   );
 };
