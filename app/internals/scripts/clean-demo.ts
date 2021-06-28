@@ -38,7 +38,4 @@ demo.widgets = Object.entries(demo.widgets).reduce((acc, [id, widget]) => {
   };
 }, {});
 
-// layout
-demo.layout.isEditable = false;
-
 writeFileSync(demoFilePath, JSON.stringify(demo, null, 2));

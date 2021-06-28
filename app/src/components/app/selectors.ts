@@ -12,7 +12,6 @@ const selectComponentProps = createSelector<State, AppProps>(
   ["layout", "config.theme", "config.backgroundUrl"],
   (layout: LayoutState, theme, backgroundUrl) => ({
     layout: layout.config,
-    isLayoutEditable: layout.isEditable,
 
     // mobile and desktop layouts are independent
     // as this selector is non-responsive, we take the desktop focus order

@@ -13,7 +13,6 @@ import { importState } from "common/ducks/state";
 import { WidgetType } from "widgets/list";
 
 const saveLayout = createAction<Layout>("layout/save");
-const toggleLayoutEditable = createAction("layout/toggle-editable");
 const addWidgetToLayout = createAction<WidgetType>("layout/add-widget");
 const removeWidgetFromLayout = createAction<string>("layout/remove-widget");
 const incrementNextWidgetId = createAction("layout/increment-next-widget-id");
@@ -26,13 +25,11 @@ export interface Layout {
 }
 
 export interface LayoutState {
-  isEditable: boolean;
   config: Layout;
   nextWidgetId: number;
 }
 
 export const initialState = {
-  isEditable: false,
   config: { mobile: [], desktop: [] },
   nextWidgetId: 100,
 };
@@ -72,10 +69,6 @@ export const reducerWithInitialState = (
           // mobile isn't sorted, as we're not using its order
           desktop: clone(action.payload.desktop).sort(widgetSortOrder),
         };
-      })
-
-      .addCase(toggleLayoutEditable, (state) => {
-        state.isEditable = !state.isEditable;
       })
 
       .addCase(addWidgetToLayout, (state, action) => {
@@ -132,7 +125,6 @@ export function* saga() {
 
 export const actionCreators = {
   saveLayout,
-  toggleLayoutEditable,
   addWidgetToLayout,
   removeWidgetFromLayout,
   incrementNextWidgetId,

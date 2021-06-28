@@ -77,6 +77,7 @@
 
     "chart": {
       "name": "Chart / Graph",
+      "description": "Line chart for displaying generic JSON data.",
       "headline": "{{headline}}",
       "configuration": {
         "url": "Data URL",
@@ -90,12 +91,14 @@
     },
     "counter": {
       "name": "Counter",
+      "description": "Number counter with increment/decrement buttons.",
       "headline": "{{headline}}",
       "increment": "Increment",
       "decrement": "Decrement"
     },
     "cryptocurrencies": {
       "name": "Cryptocurrencies",
+      "description": "Current market price and 24h trend for various cryptocurrencies.",
       "headline": "",
       "configuration": {
         "fiat": "Fiat currency",
@@ -121,6 +124,7 @@
     },
     "date-time": {
       "name": "Date and Time",
+      "description": "Clock and date display with support for various timezones.",
       "headline": "{{headline}}",
       "configuration": {
         "timezone": "Timezone",
@@ -183,6 +187,7 @@
     },
     "github-stats": {
       "name": "GitHub Stats",
+      "description": "Various statistics for GitHub users and repositories.",
       "headline": "{{name}}",
       "stars": "stars",
       "subscribers": "subscribers",
@@ -198,6 +203,7 @@
     },
     "image": {
       "name": "Image",
+      "description": "Custom image display.",
       "headline": "",
       "configuration": {
         "url": "Image URL"
@@ -205,11 +211,13 @@
     },
     "random-image": {
       "name": "Random Image",
+      "description": "Daily image from Unsplash.",
       "headline": "",
       "attribution": "Photo by <0>{{authorName}}</0> on <1>Unsplash</1>"
     },
     "qr-code": {
       "name": "QR Code",
+      "description": "QR code of any text content.",
       "headline": "{{headline}}",
       "configuration": {
         "content": "Content"
@@ -217,6 +225,7 @@
     },
     "search": {
       "name": "Web Search",
+      "description": "Search input field for external sites.",
       "headline": "{{title}} Search",
       "buttonAriaLabel": "Open search results",
       "configuration": {
@@ -226,14 +235,17 @@
     },
     "text": {
       "name": "Notes",
+      "description": "Text field.",
       "headline": ""
     },
     "totd-chemical-elements": {
-      "name": "Chemical elements",
+      "name": "Chemical Elements",
+      "description": "Chemical element of the day.",
       "headline": ""
     },
     "totd-world-countries": {
       "name": "World Countries",
+      "description": "World country of the day.",
       "headline": "{{name}}",
       "capital": "Capital",
       "currency": "Currency",
@@ -241,6 +253,7 @@
     },
     "twitter-stats": {
       "name": "Twitter Stats",
+      "description": "Various statistics for Twitter users.",
       "headline": "{{username}}",
       "followers": "followers",
       "following": "following",
@@ -255,6 +268,7 @@
     },
     "weather": {
       "name": "Weather",
+      "description": "Current weather and weather forecast.",
       "headline": "{{headline}}",
       "configuration": {
         "lat": "Latitude",
@@ -269,6 +283,7 @@
     },
     "website": {
       "name": "Website",
+      "description": "Iframe for displaying external websites.",
       "headline": "",
       "configuration": {
         "url": "Website URL",
@@ -277,6 +292,7 @@
     },
     "youtube-stats": {
       "name": "YouTube Stats",
+      "description": "Various statistics for YouTube users and channels.",
       "headline": "{{channelTitle}}",
       "subscriberCount": "subscribers",
       "viewCount": "views",

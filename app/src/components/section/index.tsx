@@ -1,10 +1,8 @@
 import React from "react";
 import cn from "classnames";
 
-import Headline from "components/headline";
-
 /* Makes possible changes easier */
-export type SectionType = "modal" | "story";
+export type SectionType = "app" | "story";
 
 const Section: React.FC<Props> = ({ headline, type, children }) => {
   return (

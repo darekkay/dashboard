@@ -18,7 +18,6 @@ const getInitialState = (widgets: ReactGridLayout[]) => {
     desktop: widgets,
   };
   return {
-    isEditable: false,
     config: layout,
     nextWidgetId: 100,
   };
@@ -56,22 +55,6 @@ describe("Layout duck", () => {
       { i: "text-02", x: 3, y: 0, w: 1, h: 1 },
       { i: "text-03", x: 0, y: 1, w: 1, h: 1 },
     ]);
-  });
-
-  test("toggles the editing state", () => {
-    let updatedState = reducerWithInitialState()(
-      initialState,
-      actionCreators.toggleLayoutEditable()
-    );
-
-    expect(updatedState.isEditable).toEqual(true);
-
-    updatedState = reducerWithInitialState()(
-      updatedState,
-      actionCreators.toggleLayoutEditable()
-    );
-
-    expect(updatedState.isEditable).toEqual(false);
   });
 
   test("places a new widget in the next available row", () => {

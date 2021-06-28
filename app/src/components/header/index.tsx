@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { APP_VERSION } from "common/environment";
@@ -8,6 +8,9 @@ import Icon from "components/icon";
 import Menu, { MenuAction } from "components/menu";
 import Modal from "components/modal";
 import Settings from "components/settings";
+import useBooleanState from "common/hooks/useBooleanState";
+import Drawer from "components/drawer";
+import { WidgetType } from "widgets/list";
 
 const Version: React.FC = () => (
   <div>
@@ -18,85 +21,104 @@ const Version: React.FC = () => (
   </div>
 );
 
-// NICE: check React.memo usage after widget drawer redesign
-const Header: React.FC<Props> = memo(
-  ({
-    isLayoutEditable,
-    toggleLayoutEditable,
-    isFullscreen,
-    toggleFullscreen,
-  }) => {
-    const { t } = useTranslation();
+const Header: React.FC<Props> = ({
+  addWidgetToLayout,
+  isFullscreen,
+  toggleFullscreen,
+}) => {
+  const { t } = useTranslation();
 
-    const [isSettingsModalOpen, setSettingsModalOpen] = useState(false);
-    const openSettingsModal = () => setSettingsModalOpen(true);
-    const closeSettingsModal = () => setSettingsModalOpen(false);
+  const [isSettingsModalOpen, openSettingsModal, closeSettingsModal] =
+    useBooleanState(false);
 
-    return (
-      <header className="flex items-center justify-between px-7 py-2 border-bottom bg-default">
-        <div className="mr-auto">
-          <Version />
-        </div>
+  const [isWidgetDrawerOpen, openWidgetDrawer, closeWidgetDrawer] =
+    useBooleanState(false);
 
-        <Button
-          className="mr-6 my-2"
-          variant="primary"
-          outline
-          size="small"
-          onClick={toggleLayoutEditable}
-        >
-          <Icon name={isLayoutEditable ? "save" : "edit"} position="left" />
-          {t(isLayoutEditable ? "common.save" : "common.edit")}
-        </Button>
+  return (
+    <header className="flex items-center justify-between px-7 py-2 border-bottom bg-default">
+      <div className="mr-auto">
+        <Version />
+      </div>
 
-        <Button
-          className="mr-6 my-2"
-          variant="primary"
-          outline
-          size="small"
-          onClick={toggleFullscreen}
-          aria-label={t(
-            isFullscreen ? "common.fullscreen.exit" : "common.fullscreen.start"
-          )}
-        >
-          <Icon name={isFullscreen ? "compress" : "expand"} />
-        </Button>
+      <Button
+        className="mr-6 my-2"
+        variant="primary"
+        outline
+        size="small"
+        onClick={openWidgetDrawer}
+      >
+        <Icon name="plus" position="left" />
+        Add widget
+      </Button>
 
-        <Menu icon="bars" title="Main menu" disclosureClassName="my-2">
-          <MenuAction
-            text={t("common.documentation")}
-            icon="question"
-            href="https://dashboard.darekkay.com/docs"
-          />
-          <MenuAction
-            text={t("common.settings")}
-            icon="cog"
-            onClick={openSettingsModal}
-          />
-        </Menu>
+      <Button
+        className="mr-6 my-2"
+        variant="primary"
+        outline
+        size="small"
+        onClick={toggleFullscreen}
+        aria-label={t(
+          isFullscreen ? "common.fullscreen.exit" : "common.fullscreen.start"
+        )}
+      >
+        <Icon name={isFullscreen ? "compress" : "expand"} />
+      </Button>
 
-        <Modal
-          headline={t(`common.settings`)}
-          closeModal={closeSettingsModal}
-          isOpen={isSettingsModalOpen}
-          renderFooter={() => (
-            <Button className="w-full md:w-auto" onClick={closeSettingsModal}>
-              {t("common.close")}
-            </Button>
-          )}
-        >
-          <Settings closeModal={closeSettingsModal} />
-        </Modal>
-      </header>
-    );
-  }
-);
+      <Menu icon="bars" title="Main menu" disclosureClassName="my-2">
+        <MenuAction
+          text={t("common.documentation")}
+          icon="question"
+          href="https://dashboard.darekkay.com/docs"
+        />
+        <MenuAction
+          text={t("common.settings")}
+          icon="cog"
+          onClick={openSettingsModal}
+        />
+      </Menu>
+
+      {/* Widget drawer */}
+      <Modal
+        headline="Add widget to dashboard"
+        maxWidth="500px"
+        closeModal={closeWidgetDrawer}
+        isOpen={isWidgetDrawerOpen}
+        renderFooter={() => (
+          <Button
+            className="w-full md:w-auto md:ml-5 mt-5"
+            onClick={closeWidgetDrawer}
+          >
+            {t("common.close")}
+          </Button>
+        )}
+      >
+        <Drawer
+          addWidgetToLayout={addWidgetToLayout}
+          onWidgetAdded={closeWidgetDrawer}
+        />
+      </Modal>
+
+      {/* Settings modal */}
+      <Modal
+        headline={t(`common.settings`)}
+        closeModal={closeSettingsModal}
+        isOpen={isSettingsModalOpen}
+        renderFooter={() => (
+          <Button className="w-full md:w-auto" onClick={closeSettingsModal}>
+            {t("common.close")}
+          </Button>
+        )}
+      >
+        <Settings closeModal={closeSettingsModal} />
+      </Modal>
+    </header>
+  );
+};
 
 Header.displayName = "Header";
 
 export interface Props {
-  isLayoutEditable: boolean;
-  toggleLayoutEditable: () => void;
+  addWidgetToLayout: (widgetType: WidgetType) => void;
 
   isFullscreen: boolean;
   toggleFullscreen: () => void;

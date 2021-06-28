@@ -6,9 +6,9 @@ import Section from "../index";
 
 describe("<Section />", () => {
   test("renders a headline when provided", () => {
-    const { rerender } = render(<Section type="modal" />);
+    const { rerender } = render(<Section type="app" />);
     expect(screen.queryByRole("heading")).not.toBeInTheDocument();
-    rerender(<Section type="modal" headline="Section headline" />);
+    rerender(<Section type="app" headline="Section headline" />);
     expect(
       screen.getByRole("heading", { name: /section headline/i })
     ).toBeInTheDocument();

@@ -10,7 +10,6 @@ import {
 import { actionCreators as stateActionCreators } from "common/ducks/state";
 import useToggle from "common/hooks/useToggle";
 import Dashboard from "components/dashboard";
-import Drawer from "components/drawer";
 import Header from "components/header";
 import { updateCssVariables, Theme } from "components/settings/theme-select";
 import { WidgetType } from "widgets/list";
@@ -23,8 +22,6 @@ export const App: React.FC<Props> = (props) => {
     widgetIDs,
     layout,
     saveLayout,
-    isLayoutEditable,
-    toggleLayoutEditable,
     addWidgetToLayout,
     removeWidgetFromLayout,
     importState,
@@ -45,10 +42,9 @@ export const App: React.FC<Props> = (props) => {
     >
       <div className="flex flex-col absolute inset-0 bg-cover bg-fixed">
         <Header
-          isLayoutEditable={isLayoutEditable}
-          toggleLayoutEditable={toggleLayoutEditable}
           isFullscreen={isFullscreen}
           toggleFullscreen={toggleFullscreen}
+          addWidgetToLayout={addWidgetToLayout}
         />
         <div
           className="flex h-full flex-col md:flex-row overflow-y-auto bg-transparent text-default bg-cover bg-fixed"
@@ -63,14 +59,12 @@ export const App: React.FC<Props> = (props) => {
           <main className="flex-grow w-full p-1 md:p-6">
             <Dashboard
               layout={layout}
-              isLayoutEditable={isLayoutEditable}
               widgetIDs={widgetIDs}
               saveLayout={saveLayout}
               removeWidgetFromLayout={removeWidgetFromLayout}
               importState={importState}
             />
           </main>
-          {isLayoutEditable && <Drawer addWidgetToLayout={addWidgetToLayout} />}
         </div>
       </div>
     </Fullscreen>
@@ -80,14 +74,12 @@ export const App: React.FC<Props> = (props) => {
 export interface SelectedProps {
   widgetIDs: string[];
   layout: Layout;
-  isLayoutEditable: boolean;
   currentTheme: Theme;
   backgroundUrl: string;
 }
 
 export interface Props extends SelectedProps {
   saveLayout: (layout: Layout) => void;
-  toggleLayoutEditable: () => void;
   addWidgetToLayout: (widgetType: WidgetType) => void;
   removeWidgetFromLayout: (widgetId: string) => void;
   importState: (state: State) => void;

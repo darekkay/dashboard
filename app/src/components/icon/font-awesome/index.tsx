@@ -21,6 +21,7 @@ import {
   faPalette,
   faPencilAlt,
   faPlus,
+  faPlusSquare,
   faSearch,
   faStar,
   faTimes,
@@ -67,6 +68,7 @@ export type FontAwesomeIconName =
   | "palette"
   | "pencil"
   | "plus"
+  | "plusSquare"
   | "question"
   | "save"
   | "search"
@@ -111,6 +113,7 @@ const icons: Record<FontAwesomeIconName, IconDefinition> = {
   palette: faPalette,
   pencil: faPencilAlt,
   plus: faPlus,
+  plusSquare: faPlusSquare,
   question: faQuestionCircle,
   save: faSave,
   search: faSearch,

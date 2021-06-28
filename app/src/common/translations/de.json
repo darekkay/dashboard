@@ -72,6 +72,7 @@
 
     "chart": {
       "name": "Diagramm / Graph",
+      "description": "Liniendiagramm für beliebige JSON-Daten.",
       "headline": "{{headline}}",
       "configuration": {
         "url": "Daten URL"
@@ -82,12 +83,14 @@
     },
     "counter": {
       "name": "Zähler",
+      "description": "Zähler für Zahlen mit Buttons zum In- und Dekrementieren.",
       "headline": "{{headline}}",
       "increment": "Um eins erhöhen",
       "decrement": "Um eins verringern"
     },
     "cryptocurrencies": {
       "name": "Kryptowährung",
+      "description": "Aktueller Preis und 24h-Trend für Kryptowährungen.",
       "headline": "",
       "configuration": {
         "fiat": "Fiatwährung",
@@ -96,6 +99,7 @@
     },
     "date-time": {
       "name": "Datum und Uhrzeit",
+      "description": "Eine Uhr und Datumsanzeige mit Unterstützung von Zeitzonen.",
       "headline": "{{headline}}",
       "configuration": {
         "timezone": "Zeitzone"
@@ -103,6 +107,7 @@
     },
     "github-stats": {
       "name": "GitHub Stats",
+      "description": "Statistiken für GitHub Nutzer und Repositories.",
       "headline": "{{name}}",
       "stars": "Sterne",
       "subscribers": "Subscriber",
@@ -118,6 +123,7 @@
     },
     "image": {
       "name": "Bild",
+      "description": "Bildanzeige.",
       "headline": "",
       "configuration": {
         "url": "Bild URL"
@@ -125,11 +131,13 @@
     },
     "random-image": {
       "name": "Zufälliges Bild",
+      "description": "Täglich wechselndes Bild.",
       "headline": "",
       "attribution": "Photo von <0>{{authorName}}</0> auf <1>Unsplash</1>"
     },
     "qr-code": {
       "name": "QR-Code",
+      "description": "QR-Code für einen beliebigen Text.",
       "headline": "{{headline}}",
       "configuration": {
         "content": "Inhalt"
@@ -137,6 +145,7 @@
     },
     "search": {
       "name": "Websuche",
+      "description": "Suchfeld für externe Seiten.",
       "headline": "{{title}} Suche",
       "buttonAriaLabel": "Suchergebnisse öffnen",
       "configuration": {
@@ -146,14 +155,17 @@
     },
     "text": {
       "name": "Notizen",
+      "description": "Textfeld.",
       "headline": ""
     },
     "totd-chemical-elements": {
       "name": "Chemische Elemente",
+      "description": "Chemisches Element des Tages.",
       "headline": ""
     },
     "totd-world-countries": {
       "name": "Länder",
+      "description": "Land des Tages.",
       "headline": "{{name}}",
       "capital": "Hauptstadt",
       "currency": "Währung",
@@ -161,6 +173,7 @@
     },
     "twitter-stats": {
       "name": "Twitter Stats",
+      "description": "Statistiken für Twitter Nutzer.",
       "headline": "{{username}}",
       "followers": "Follower",
       "following": "Following",
@@ -175,6 +188,7 @@
     },
     "weather": {
       "name": "Wetter",
+      "description": "Aktuelles Wetter und Wettervorhersage.",
       "headline": "{{headline}}",
       "configuration": {
         "lat": "Breitengrad",
@@ -185,6 +199,7 @@
     },
     "website": {
       "name": "Webseite",
+      "description": "Iframe zur Anzeige von externen Webseiten.",
       "headline": "",
       "configuration": {
         "url": "Webseite URL",
@@ -193,6 +208,7 @@
     },
     "youtube-stats": {
       "name": "YouTube Stats",
+      "description": "Statistiken für YouTube Nutzer und Kanäle.",
       "headline": "{{channelTitle}}",
       "subscriberCount": "Abonnenten",
       "viewCount": "Aufrufe",

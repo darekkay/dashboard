@@ -164,6 +164,42 @@
   background-color: var(--inverted-color-background-default);
 }
 
+.focus\:bg-transparent:focus {
+  background-color: transparent;
+}
+
+.focus\:bg-inherit:focus {
+  background-color: inherit;
+}
+
+.focus\:bg-default:focus {
+  background-color: var(--color-background-default);
+}
+
+.focus\:bg-offset:focus {
+  background-color: var(--color-background-offset);
+}
+
+.focus\:bg-success:focus {
+  background-color: var(--color-background-success);
+}
+
+.focus\:bg-warning:focus {
+  background-color: var(--color-background-warning);
+}
+
+.focus\:bg-danger:focus {
+  background-color: var(--color-background-danger);
+}
+
+.focus\:bg-info:focus {
+  background-color: var(--color-background-info);
+}
+
+.focus\:bg-inverted:focus {
+  background-color: var(--inverted-color-background-default);
+}
+
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }

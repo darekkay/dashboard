@@ -8,9 +8,8 @@ describe("<Header />", () => {
   test("renders without errors", () => {
     const { container } = render(
       <Header
-        isLayoutEditable={false}
-        toggleLayoutEditable={() => null}
         isFullscreen={false}
+        addWidgetToLayout={() => null}
         toggleFullscreen={() => null}
       />
     );

@@ -26,7 +26,6 @@ describe("App selector", () => {
           ],
           mobile: [],
         },
-        isEditable: false,
         nextWidgetId: 1,
       },
       widgets: {

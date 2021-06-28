@@ -12,21 +12,6 @@ This project is neither meant as a startup, nor do I have any plans to monetize 
 
 ## Features and improvements
 
-### Custom background image
-
-A user test has shown that users like using a custom background image to personalize the board. It should be possible to both select an external URL and upload an image. A predefined selection of some images (or even [patterns](http://www.heropatterns.com/)) would be nice.
-
-### Redesign widget drawer
-
-The current widget drawer is impractical. Here are some ideas:
-
-- Widget search/filter to quickly find a widget.
-- Widget description should be added, because the name alone might not tell the user what the widget does.
-- Add a link to the documentation page for even more information.
-- It's probably a good idea to use the new [Drag from outside](https://strml.github.io/react-grid-layout/examples/15-drag-from-outside.html) feature for simply Drag&Dropping new widgets onto the board.
-- With more and more widgets, the categories should be reworked as well.
-- Maybe highlight "most used" widgets.
-
 ### Multi-board support
 
 Currently, only one fixed board can be used. Adding more boards to be able to switch between multiple views would be great. Automatically switching between the boards after x seconds might be a nice addition.

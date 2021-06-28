@@ -36,7 +36,6 @@ export const stateProps: State = {
   config: { theme: "", language: "", backgroundUrl: "" },
   widgets: {},
   layout: {
-    isEditable: false,
     config: { mobile: [], desktop: [] },
     nextWidgetId: 1,
   },

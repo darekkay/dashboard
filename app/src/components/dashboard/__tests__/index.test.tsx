@@ -11,7 +11,6 @@ describe("<Dashboard />", () => {
       mobile: [],
       desktop: [],
     },
-    isLayoutEditable: false,
     saveLayout: () => {},
     removeWidgetFromLayout: () => {},
     importState: () => {},

@@ -11,7 +11,7 @@ import { State } from "state/store";
 
 const ReactGridLayout = Responsive;
 
-const updateProps = ["layout", "isLayoutEditable"];
+const updateProps = ["layout"];
 
 const makeWidgetMemoized = memoize(makeWidget);
 
@@ -75,7 +75,6 @@ class Dashboard extends React.Component<Props> {
 
 export interface Props {
   layout: Layout;
-  isLayoutEditable: boolean;
   widgetIDs: string[];
   saveLayout: (layout: Layout) => void;
   removeWidgetFromLayout: (widgetId: string) => void;
