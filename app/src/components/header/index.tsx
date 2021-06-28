@@ -1,8 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { APP_VERSION } from "common/environment";
-import Link from "components/link";
 import Button from "components/button";
 import Icon from "components/icon";
 import Menu, { MenuAction } from "components/menu";
@@ -12,12 +10,9 @@ import useBooleanState from "common/hooks/useBooleanState";
 import Drawer from "components/drawer";
 import { WidgetType } from "widgets/list";
 
-const Version: React.FC = () => (
-  <div>
-    <Link href="/" external={false}>
-      Dashboard
-    </Link>{" "}
-    {APP_VERSION}
+const Logo: React.FC = () => (
+  <div className="text-4 font-semibold tracking-wide cursor-default">
+    Dashboard
   </div>
 );
 
@@ -37,7 +32,7 @@ const Header: React.FC<Props> = ({
   return (
     <header className="flex items-center justify-between px-7 py-2 border-bottom bg-default">
       <div className="mr-auto">
-        <Version />
+        <Logo />
       </div>
 
       <Button
