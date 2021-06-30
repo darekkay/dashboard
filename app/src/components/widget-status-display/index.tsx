@@ -21,12 +21,12 @@ export const getWidgetStatusDisplay = ({ meta, isDataEmpty }: Props) => {
     meta.updateStatus === "success"
   )
     return null;
-  return <WidgetStatusDisplay meta={meta} />;
+  return <WidgetStatusDisplay meta={meta} isDataEmpty={isDataEmpty} />;
 };
 
 export interface Props {
   meta: WidgetMeta;
-  isDataEmpty?: boolean;
+  isDataEmpty: boolean;
 }
 
 export default WidgetStatusDisplay;

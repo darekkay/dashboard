@@ -14,7 +14,7 @@ const Button: React.FC<Props> = React.forwardRef<HTMLButtonElement, Props>(
       className,
       variant = "primary",
       size = "regular",
-      outline,
+      outline = false,
       border = true,
       style,
       ...domProps

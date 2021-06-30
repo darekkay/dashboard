@@ -19,7 +19,7 @@ const Input: React.FC<Props> = (props) => {
     label,
     value,
     setValue,
-    clearOnEscape,
+    clearOnEscape = false,
     onEnter,
     ...domProps
   } = props;

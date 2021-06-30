@@ -10,8 +10,8 @@ describe("<WidgetOverlay />", () => {
       <WidgetOverlay
         id="text-01"
         type="text"
-        isWidgetMenuVisible={!!props.isWidgetMenuVisible}
-        isDraggable={!!props.isDraggable}
+        isWidgetMenuVisible={props.isWidgetMenuVisible ?? false}
+        isDraggable={props.isDraggable ?? false}
         setDraggable={() => null}
         options={{}}
         setOptions={() => null}

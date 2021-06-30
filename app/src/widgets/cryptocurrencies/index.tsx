@@ -38,7 +38,7 @@ const Cryptocurrencies: React.FC<Props> = ({
           <img src={imageUrl} alt={crypto} />
         </div>
       )}
-      {currentPrice && (
+      {currentPrice !== undefined && (
         <div className="text-5 font-semibold">
           {t("number", { value: currentPrice })}
           <span className="ml-2 text-2 uppercase text-offset">{fiat}</span>

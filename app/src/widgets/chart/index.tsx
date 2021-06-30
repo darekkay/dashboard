@@ -32,7 +32,7 @@ const Chart: React.FC<Props> = ({
   if (widgetStatusDisplay) return widgetStatusDisplay;
 
   const data = get(rest, dataPath);
-  if (!data || !Array.isArray(data))
+  if (!Array.isArray(data))
     return <WidgetError labelKey="widget.chart.error.noArrayData" />;
 
   return (

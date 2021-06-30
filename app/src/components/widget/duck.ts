@@ -127,8 +127,8 @@ export const reducerWithInitialState = (
         state[id] = {
           type,
           data: {},
-          options: widgets[type].initialOptions || {},
-          meta: widgets[type].initialMeta || {},
+          options: widgets[type].initialOptions,
+          meta: widgets[type].initialMeta,
         };
       })
 
