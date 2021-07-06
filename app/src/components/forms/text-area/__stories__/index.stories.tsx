@@ -7,5 +7,9 @@ export default {
 };
 
 export const Variants = () => {
-  return <TextArea setValue={() => {}} label="TextArea" />;
+  return (
+    <div className="space-y-6">
+      <TextArea setValue={() => {}} label="TextArea" />
+    </div>
+  );
 };

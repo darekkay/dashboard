@@ -4,6 +4,7 @@ import Section from "components/section";
 import Input from "components/forms/input";
 import TextArea from "components/forms/text-area";
 import Dropdown from "components/forms/dropdown";
+import DatePicker from "components/forms/date-picker";
 import FileUpload from "components/forms/file-upload";
 import Label from "components/forms/label";
 
@@ -29,6 +30,10 @@ export const Showcase = () => {
           setValue={() => null}
           options={["", "Apple", "Orange", "Banana"]}
         />
+      </Section>
+
+      <Section type="story">
+        <DatePicker label="Date picker" setValue={() => null} />
       </Section>
 
       <Section type="story">
