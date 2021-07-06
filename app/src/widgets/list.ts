@@ -6,6 +6,7 @@ export type WidgetType =
   | "counter"
   | "cryptocurrencies"
   | "date-time"
+  | "day-countdown"
   | "github-stats"
   | "image"
   | "qr-code"
@@ -60,6 +61,15 @@ const widgetProperties: Record<WidgetType, WidgetProperties> = {
     initialHeight: 2,
     initialWidth: 3,
     initialOptions: { headline: "", timezone: "auto" },
+    initialMeta: {},
+  },
+  "day-countdown": {
+    widgetType: "day-countdown",
+    category: "tracking",
+    configurable: true,
+    initialHeight: 2,
+    initialWidth: 3,
+    initialOptions: { eventName: "" },
     initialMeta: {},
   },
   "github-stats": {
@@ -204,6 +214,10 @@ export const widgetImports: Record<WidgetType, WidgetImports> = {
   "date-time": {
     component: async () => import("widgets/date-time"),
     configuration: async () => import("widgets/date-time/configuration"),
+  },
+  "day-countdown": {
+    component: async () => import("widgets/day-countdown"),
+    configuration: async () => import("widgets/day-countdown/configuration"),
   },
   "github-stats": {
     component: async () => import("widgets/github-stats"),

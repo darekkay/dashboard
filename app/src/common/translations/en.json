@@ -190,6 +190,23 @@
         }
       }
     },
+    "day-countdown": {
+      "name": "Day Countdown",
+      "description": "Day tracking since/until an event.",
+      "headline": "",
+      "day": "day",
+      "days": "days",
+      "today": "Today",
+      "transition": {
+        "since": "since",
+        "until": "until",
+        "is": "is"
+      },
+      "configuration": {
+        "eventName": "Event name",
+        "eventDate": "Event date"
+      }
+    },
     "github-stats": {
       "name": "GitHub Stats",
       "description": "Various GitHub user and repository statistics.",

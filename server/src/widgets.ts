@@ -5,6 +5,7 @@ const widgets: Record<string, any> = {
   counter: {},
   cryptocurrencies: { updateCycle: { minutes: 15 } },
   "date-time": {},
+  "day-countdown": {},
   "github-stats": { updateCycle: { hours: 24 } },
   image: {},
   "qr-code": {},

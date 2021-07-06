@@ -110,6 +110,23 @@
         "timezone": "Zeitzone"
       }
     },
+    "day-countdown": {
+      "name": "Tag Countdown",
+      "description": "Tagerechner seit/bis zu einem Event.",
+      "headline": "",
+      "day": "Tag",
+      "days": "Tage",
+      "today": "Heute",
+      "transition": {
+        "since": "seit",
+        "until": "bis",
+        "is": "ist"
+      },
+      "configuration": {
+        "eventName": "Eventname",
+        "eventDate": "Eventdatum"
+      }
+    },
     "github-stats": {
       "name": "GitHub Stats",
       "description": "Statistiken für GitHub Nutzer und Repositories.",

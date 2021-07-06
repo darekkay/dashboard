@@ -28,6 +28,7 @@ This is a list of all currently implemented widgets. The [roadmap](../roadmap/RE
 
 - [Chart / Graph](chart.md): A generic component for displaying JSON data in a chart.
 - [Counter](counter.md): Generic number counter.
+- [Day Countdown](day-countdown.md): Day tracking since/until an event.
 
 ## Monitoring
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Section from "components/section";
 
@@ -9,10 +9,14 @@ export default {
 };
 
 export const Variants = () => {
+  const [date, setDate] = useState("");
   return (
     <div className="space-y-6">
       <Section type="story">
-        <DatePicker setValue={() => null} />
+        <div>
+          <DatePicker setValue={setDate} />
+        </div>
+        <div>Selected date: {date}</div>
       </Section>
     </div>
   );

@@ -3,6 +3,7 @@
 ## Current development
 
 - :sparkles: New widget: [Weather](https://dashboard.darekkay.com/docs/widgets/weather.html).
+- :sparkles: New widget: [Day Countdown](https://dashboard.darekkay.com/docs/widgets/day-countdown.html).
 - :rocket: Use a meaningful widget focus order.
 - :rocket: Unify loading and error behavior.
 - :gem: Make header transparent.
