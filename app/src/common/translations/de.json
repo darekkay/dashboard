@@ -37,6 +37,7 @@
       "headline": "Hintergrundbild URL"
     },
     "data": {
+      "headline": "Deine Daten",
       "purge": "Alle daten löschen",
       "backup": "Daten sichern",
       "restore": {

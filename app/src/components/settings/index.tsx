@@ -16,29 +16,18 @@ const Settings: React.FC<Props> = ({ closeModal }) => {
     <PersistorContext.Consumer>
       {(purgeStore) => (
         <div className="space-y-6">
-          <Section type="app" headline={t("config.theme.headline")}>
-            <ThemeSelect />
-          </Section>
-
-          <Section type="app" headline={t("config.background.headline")}>
-            <BackgroundSelect onEnter={closeModal} />
-          </Section>
-
-          <Section type="app" headline={t("config.language.headline")}>
-            <LanguageSelect />
-          </Section>
+          <ThemeSelect />
+          <BackgroundSelect onEnter={closeModal} />
+          <LanguageSelect />
 
           <hr />
 
-          <Section type="app" headline={t("config.data.purge")}>
+          <Section type="app" headline={t("config.data.headline")}>
+            <ImportExport />
             <Button outline variant="danger" onClick={purgeStore}>
               <Icon name="trash" position="left" />
               {t("config.data.purge")}
             </Button>
-          </Section>
-
-          <Section type="app" headline={t("config.data.backup")}>
-            <ImportExport />
           </Section>
         </div>
       )}

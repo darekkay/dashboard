@@ -32,6 +32,7 @@
       "headline": "Langage"
     },
     "data": {
+      "headline": "Vos données",
       "purge": "Supprimer les données",
       "backup": "Faire une sauvegarde",
       "restore": {

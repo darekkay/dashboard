@@ -32,7 +32,7 @@ describe("<ImportExport />", () => {
   test("renders without errors", () => {
     renderConnected(<ImportExportConnected />);
     expect(
-      screen.getByRole("link", { name: "common.download" })
+      screen.getByRole("link", { name: "config.data.backup" })
     ).toBeInTheDocument();
   });
 

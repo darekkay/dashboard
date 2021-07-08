@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import { actionCreators } from "common/ducks/config";
 import Input, { Props as InputProps } from "components/forms/input";
@@ -8,8 +9,10 @@ import selectComponentProps from "./selectors";
 
 export const BackgroundSelect: React.FC<Props> = (props) => {
   const { backgroundUrl, changeBackgroundUrl, ...rest } = props;
+  const { t } = useTranslation();
   return (
     <Input
+      label={t("config.background.headline")}
       value={backgroundUrl}
       setValue={(backgroundUrlValue) => changeBackgroundUrl(backgroundUrlValue)}
       {...rest}

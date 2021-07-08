@@ -3,17 +3,17 @@ import { Provider } from "react-redux";
 
 import initStore from "state/store";
 
-import ImportExport from "../index";
+import Settings from "../index";
 
 export default {
-  title: "Components/Settings/ImportExport",
+  title: "Components/Settings",
 };
 
 export const Variants = () => {
   const { store } = initStore();
   return (
     <Provider store={store}>
-      <ImportExport />
+      <Settings closeModal={() => null} />
     </Provider>
   );
 };

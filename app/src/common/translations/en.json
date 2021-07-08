@@ -42,6 +42,7 @@
       "headline": "Background image URL"
     },
     "data": {
+      "headline": "Your data",
       "purge": "Delete all data",
       "backup": "Backup data",
       "restore": {

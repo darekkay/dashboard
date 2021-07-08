@@ -17,14 +17,14 @@ export const updateCssVariables = (theme: Theme) => {
 
 export const ThemeOption: React.FC<ThemeProps> = ({ name, label, onClick }) => (
   <button
-    className={`theme-${name} inline-block mr-6 mb-3 p-0 border-0 cursor-pointer`}
+    className={`theme-${name} inline-block mr-6 p-0 border-0 cursor-pointer`}
     style={{ width: "150px", height: "100px" }}
     onClick={onClick}
     type="button"
   >
     <div className="flex flex-col w-full h-full relative p-2 border text-default bg-offset">
       <div className="flex items-center mx-3">
-        <span>{label}</span>
+        <span className="text-3 font-bold">{label}</span>
         <div className="ml-auto text-interaction">
           <Icon name="bars" />
         </div>
@@ -55,6 +55,9 @@ export const ThemeSelect: React.FC<Props> = (props) => {
 
   return (
     <div>
+      <div className="mb-2 text-3 font-semibold">
+        {t("config.theme.headline")}
+      </div>
       {THEMES.map((themeName) => {
         return (
           <ThemeOption

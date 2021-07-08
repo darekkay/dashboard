@@ -36,20 +36,22 @@ export const ImportExport: React.FC<Props> = ({ state, importState }) => {
   );
   return (
     <div>
-      <Link
-        className="inline-flex items-center mr-6 mb-3"
-        href={`data:text/plain;charset=utf-8,${encodeURIComponent(
-          JSON.stringify(state)
-        )}`}
-        external
-        download="dashboard.json"
-      >
-        <Icon position="left" name="download" />
-        {t("common.download")}
-      </Link>
+      <div className="w-full flex justify-center mb-5">
+        <Link
+          className="inline-flex items-center justify-center"
+          href={`data:text/plain;charset=utf-8,${encodeURIComponent(
+            JSON.stringify(state)
+          )}`}
+          external
+          download="dashboard.json"
+        >
+          <Icon position="left" name="download" />
+          {t("config.data.backup")}
+        </Link>
+      </div>
       <FileUpload
         label={t("config.data.restore.default")}
-        className={cn("mb-2", uploadResult)}
+        className={cn("w-full mb-2", uploadResult)}
         accept=".json"
         onDropAccepted={onDropAccepted}
       />

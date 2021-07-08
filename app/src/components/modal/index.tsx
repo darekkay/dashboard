@@ -56,7 +56,8 @@ const Modal: React.FC<Props> = ({
           className="ml-auto"
           onClick={closeModal}
         >
-          <Icon name="times" alt={t("common.close")} />
+          <div className="sr-only">{t("common.close")}</div>
+          <Icon name="times" />
         </Button>
       </div>
 

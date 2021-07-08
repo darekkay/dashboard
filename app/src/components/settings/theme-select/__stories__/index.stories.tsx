@@ -6,7 +6,7 @@ import initStore from "state/store";
 import ThemeSelect from "../index";
 
 export default {
-  title: "Components/ThemeSelect",
+  title: "Components/Settings/ThemeSelect",
 };
 
 export const Variants = () => {
