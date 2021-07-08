@@ -40,7 +40,7 @@ export const App: React.FC<Props> = (props) => {
       enabled={isFullscreen}
       onChange={(isFull) => toggleFullscreen(isFull)}
     >
-      <div className="flex flex-col absolute inset-0 bg-cover bg-fixed">
+      <div className="flex flex-col absolute inset-0 bg-cover bg-fixed bg-offset">
         <Header
           isFullscreen={isFullscreen}
           toggleFullscreen={toggleFullscreen}

@@ -13,6 +13,7 @@
 - :gem: Remove link and version from header.
 - :bug: **[Cryptocurrencies]** Fix deviation display for unchanged values.
 - :bug: Preserve theme and language settings when using a demo template.
+- :bug: Fix black background color in fullscreen mode.
 - :hammer: Improve test coverage.
 - :hammer: Improve TypeScript types.
 - :hammer: Add delay and error middlewares for debugging.
