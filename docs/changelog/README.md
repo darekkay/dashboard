@@ -5,6 +5,7 @@
 - :sparkles: New widget: [Weather](https://dashboard.darekkay.com/docs/widgets/weather.html).
 - :rocket: Use a meaningful widget focus order.
 - :rocket: Unify loading and error behavior.
+- :gem: Make header transparent.
 - :gem: Redesign widget drawer.
 - :gem: Redesign form components.
 - :gem: Redesign modal components.

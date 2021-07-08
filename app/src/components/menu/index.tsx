@@ -29,7 +29,7 @@ const Menu: React.FC<Props> = ({
         className={disclosureClassName}
         as={Button}
         size="small"
-        outline
+        variant="secondary"
       >
         <Icon name={icon} />
       </MenuButton>

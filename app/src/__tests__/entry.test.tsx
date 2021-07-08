@@ -5,6 +5,6 @@ import Entry from "../entry";
 describe("entry", () => {
   test("renders entry point", () => {
     render(<Entry />);
-    expect(screen.getByText("Dashboard")).toBeInTheDocument();
+    expect(screen.getByText("welcome.message1")).toBeInTheDocument();
   });
 });

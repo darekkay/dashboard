@@ -40,22 +40,23 @@ export const App: React.FC<Props> = (props) => {
       enabled={isFullscreen}
       onChange={(isFull) => toggleFullscreen(isFull)}
     >
-      <div className="flex flex-col absolute inset-0 bg-cover bg-fixed bg-offset">
+      <div
+        className="flex flex-col absolute inset-0 bg-cover bg-fixed bg-offset"
+        style={
+          isEmpty(backgroundUrl)
+            ? undefined
+            : {
+                backgroundImage: `url("${backgroundUrl}")`,
+              }
+        }
+      >
         <Header
           isFullscreen={isFullscreen}
           toggleFullscreen={toggleFullscreen}
           addWidgetToLayout={addWidgetToLayout}
         />
-        <div
-          className="flex h-full flex-col md:flex-row overflow-y-auto bg-transparent text-default bg-cover bg-fixed"
-          style={
-            isEmpty(backgroundUrl)
-              ? undefined
-              : {
-                  backgroundImage: `url("${backgroundUrl}")`,
-                }
-          }
-        >
+
+        <div className="flex h-full flex-col md:flex-row overflow-y-auto bg-transparent text-default bg-cover bg-fixed">
           <main className="flex-grow w-full p-1 md:p-6">
             <Dashboard
               layout={layout}

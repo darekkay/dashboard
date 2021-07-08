@@ -10,12 +10,6 @@ import useBooleanState from "common/hooks/useBooleanState";
 import Drawer from "components/drawer";
 import { WidgetType } from "widgets/list";
 
-const Logo: React.FC = () => (
-  <div className="text-4 font-semibold tracking-wide cursor-default">
-    Dashboard
-  </div>
-);
-
 const Header: React.FC<Props> = ({
   addWidgetToLayout,
   isFullscreen,
@@ -30,15 +24,10 @@ const Header: React.FC<Props> = ({
     useBooleanState(false);
 
   return (
-    <header className="flex items-center justify-between px-7 py-2 border-bottom bg-default">
-      <div className="mr-auto">
-        <Logo />
-      </div>
-
+    <header className="flex items-center justify-end px-7 pt-2 bg-transparent">
       <Button
         className="mr-6 my-2"
         variant="primary"
-        outline
         size="small"
         onClick={openWidgetDrawer}
       >
@@ -49,7 +38,6 @@ const Header: React.FC<Props> = ({
       <Button
         className="mr-6 my-2"
         variant="primary"
-        outline
         size="small"
         onClick={toggleFullscreen}
         aria-label={t(
