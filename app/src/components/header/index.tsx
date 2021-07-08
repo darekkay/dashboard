@@ -42,8 +42,8 @@ const Header: React.FC<Props> = ({
         size="small"
         onClick={openWidgetDrawer}
       >
-        <Icon name="plus" position="left" />
-        Add widget
+        <Icon name="plus" />
+        <div className="sr-only">{t("widget.drawer.open")}</div>
       </Button>
 
       <Button
@@ -74,7 +74,7 @@ const Header: React.FC<Props> = ({
 
       {/* Widget drawer */}
       <Modal
-        headline="Add widget to dashboard"
+        headline={t("widget.drawer.headline")}
         maxWidth="500px"
         closeModal={closeWidgetDrawer}
         isOpen={isWidgetDrawerOpen}

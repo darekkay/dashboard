@@ -70,6 +70,10 @@
       "tracking": "Tracking",
       "monitoring": "Monitoring"
     },
+    "drawer": {
+      "open": "Widget hinzufügen",
+      "headline": "Widget zum Dashboard hinzufügen"
+    },
 
     "chart": {
       "name": "Diagramm / Graph",

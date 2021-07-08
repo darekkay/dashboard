@@ -75,6 +75,10 @@
       "tracking": "Tracking",
       "monitoring": "Monitoring"
     },
+    "drawer": {
+      "open": "Add widget",
+      "headline": "Add widget to dashboard"
+    },
 
     "chart": {
       "name": "Chart / Graph",
