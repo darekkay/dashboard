@@ -1,3 +1,3 @@
-# Text
+# Notes
 
-Editable text field, e.g. for notes.
+Editable text field for taking notes.

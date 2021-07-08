@@ -4,34 +4,34 @@ This is a list of all currently implemented widgets. The [roadmap](../roadmap/RE
 
 ## General
 
-- [Date & Time](date-time.md): Current date and time.
-- [Text](text.md): Editable text field, e.g for notes.
+- [Date and Time](date-time.md): Clock and date display with support for various timezones.
+- [Notes](text.md): Editable text field for taking notes.
 - [Weather](weather.md): Current weather and weather forecast.
 
 ## Media
 
-- [Image](image.md): External image.
-- [Random Image](random-image.md): Random image of the day.
-- [Website](website.md): External website (iframe).
+- [Image](image.md): Custom external image.
+- [Random Image](random-image.md): Daily image from Unsplash.
+- [Website](website.md): Iframe for displaying external websites.
 
 ## Knowledge
 
-- [Chemical Element of the Day](totd-chemical-elements.md): Information about chemical elements.
-- [World Country of the Day](totd-world-countries.md): Information about world countries.
+- [Chemical Elements](totd-chemical-elements.md): Chemical element of the day (name, symbol, atomic number).
+- [World Countries](totd-world-countries.md): World country of the day (flag, capital, currency, languages).
 
 ## Tools
 
 - [Search](search.md): Search input field for external sites.
-- [QR Code](qr-code.md).
+- [QR Code](qr-code.md). QR code of any text content.
 
 ## Tracking
 
 - [Chart / Graph](chart.md): A generic component for displaying JSON data in a chart.
-- [Counter](counter.md): Number counter.
+- [Counter](counter.md): Generic number counter.
 
 ## Monitoring
 
-- [Cryptocurrencies](cryptocurrencies.md): Current market price for various cryptocurrencies.
-- [GitHub Stats](github-stats.md): Display various GitHub user/repository stats.
-- [Twitter Stats](twitter-stats.md): Display various Twitter user stats.
-- [YouTube Stats](youtube-stats.md): Display various YouTube channel stats.
+- [Cryptocurrencies](cryptocurrencies.md): Current market price and 24h trend for various cryptocurrencies.
+- [GitHub Stats](github-stats.md): Various GitHub user and repository statistics.
+- [Twitter Stats](twitter-stats.md): Various Twitter user statistics.
+- [YouTube Stats](youtube-stats.md): Various YouTube user and channel statistics.

@@ -1,6 +1,6 @@
 # Twitter Stats
 
-Display various Twitter user stats:
+Various Twitter user statistics:
 
 - Number of followers
 - Number of people who are following the user

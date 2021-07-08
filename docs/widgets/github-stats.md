@@ -1,5 +1,5 @@
-# Github Stats
+# GitHub Stats
 
-Display various GitHub Stats for a user or a repository.
+Various GitHub user and repository statistics.
 
 ![](./img/github-stats.png)

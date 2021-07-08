@@ -96,7 +96,7 @@
     },
     "counter": {
       "name": "Counter",
-      "description": "Number counter with increment/decrement buttons.",
+      "description": "Generic number counter.",
       "headline": "{{headline}}",
       "increment": "Increment",
       "decrement": "Decrement"
@@ -192,7 +192,7 @@
     },
     "github-stats": {
       "name": "GitHub Stats",
-      "description": "Various statistics for GitHub users and repositories.",
+      "description": "Various GitHub user and repository statistics.",
       "headline": "{{name}}",
       "stars": "stars",
       "subscribers": "subscribers",
@@ -208,7 +208,7 @@
     },
     "image": {
       "name": "Image",
-      "description": "Custom image display.",
+      "description": "Custom external image.",
       "headline": "",
       "configuration": {
         "url": "Image URL"
@@ -240,17 +240,17 @@
     },
     "text": {
       "name": "Notes",
-      "description": "Text field.",
+      "description": "Editable text field for taking notes.",
       "headline": ""
     },
     "totd-chemical-elements": {
       "name": "Chemical Elements",
-      "description": "Chemical element of the day.",
+      "description": "Chemical element of the day (name, symbol, atomic number).",
       "headline": ""
     },
     "totd-world-countries": {
       "name": "World Countries",
-      "description": "World country of the day.",
+      "description": "World country of the day (flag, capital, currency, languages).",
       "headline": "{{name}}",
       "capital": "Capital",
       "currency": "Currency",
@@ -258,7 +258,7 @@
     },
     "twitter-stats": {
       "name": "Twitter Stats",
-      "description": "Various statistics for Twitter users.",
+      "description": "Various Twitter user statistics.",
       "headline": "{{username}}",
       "followers": "followers",
       "following": "following",
@@ -297,7 +297,7 @@
     },
     "youtube-stats": {
       "name": "YouTube Stats",
-      "description": "Various statistics for YouTube users and channels.",
+      "description": "Various YouTube user and channel statistics.",
       "headline": "{{channelTitle}}",
       "subscriberCount": "subscribers",
       "viewCount": "views",

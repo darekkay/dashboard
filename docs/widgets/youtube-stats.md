@@ -1,6 +1,6 @@
 # YouTube Stats
 
-Display various Youtube channel stats:
+Various YouTube user and channel statistics:
 
 - Number of views
 - Number of subscribers
