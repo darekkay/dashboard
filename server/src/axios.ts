@@ -16,9 +16,11 @@ const axiosInstance = axios.create({
 });
 
 /* Log axios requests to verify caching */
-axiosInstance?.interceptors.request.use((config) => {
-  logger.info(`[Axios Request] ${config.method?.toUpperCase()} ${config.url}`);
-  return config;
+axiosInstance?.interceptors.request.use((axiosConfig) => {
+  logger.info(
+    `[Axios Request] ${axiosConfig.method?.toUpperCase()} ${axiosConfig.url}`
+  );
+  return axiosConfig;
 });
 
 if (config.saveAxiosResponses) {
