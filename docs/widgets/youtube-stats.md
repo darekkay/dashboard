@@ -13,3 +13,5 @@ Allowed query formats:
 - User URL, e.g. https://www.youtube.com/user/darekkay
 - Channel ID, e.g. `UCdTs-47tRqaos6LpKeDxx7w`
 - User name, e.g. `darekkay`
+
+![](./img/youtube-stats.png)
