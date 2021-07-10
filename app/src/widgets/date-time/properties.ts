@@ -6,6 +6,7 @@ const properties: WidgetProperties<WidgetOptions> = {
   widgetType: "date-time",
   category: "general",
   configurable: true,
+  hasSaga: false,
   initialHeight: 2,
   initialWidth: 3,
   initialOptions: {

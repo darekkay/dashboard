@@ -6,6 +6,7 @@ const properties: WidgetProperties<WidgetOptions> = {
   widgetType: "counter",
   category: "tracking",
   configurable: true,
+  hasSaga: false,
   initialHeight: 2,
   initialWidth: 2,
   initialOptions: {

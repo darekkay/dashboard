@@ -7,7 +7,6 @@ import isEmpty from "lodash/isEmpty";
 
 import { WidgetProps } from "../index";
 {{#if configurationEnabled}}import { WidgetOptions } from "./configuration";{{/if}}
-{{#if useSagas}}export { saga } from "./sagas";{{/if}}
 
 const {{ properCase name }}: React.FC<Props> = ({ id, type {{#if useSagas}}, myAwesomeRequestParam, triggerUpdate, widgetStatusDisplay{{/if}}, meta }) => {
   const { t } = useTranslation();

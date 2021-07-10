@@ -1,5 +1,6 @@
+import { createStore } from "@reduxjs/toolkit";
 import { applyMiddleware } from "redux";
-import { createInjectSagasStore, sagaMiddleware } from "redux-sagas-injector";
+import createSagaMiddleware from "redux-saga";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import { IS_PRODUCTION, IS_STORAGE_PAUSED } from "common/environment";
@@ -30,15 +31,17 @@ const initStore = (initialState?: State) => {
     actionsBlacklist: [],
   });
 
+  const sagaMiddleware = createSagaMiddleware();
+
   const enhancers = composeEnhancers(applyMiddleware(sagaMiddleware));
-  const store = createInjectSagasStore(
-    { rootSaga },
+  const store = createStore(
     persistReducer(rootReducer(initialState)),
-    {},
     enhancers
   );
 
   const persistor = persistStore(store);
+
+  sagaMiddleware.run(rootSaga);
 
   /* istanbul ignore next */
   if (IS_STORAGE_PAUSED) {

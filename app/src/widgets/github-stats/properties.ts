@@ -6,6 +6,7 @@ const properties: WidgetProperties<WidgetOptions> = {
   widgetType: "github-stats",
   category: "monitoring",
   configurable: true,
+  hasSaga: true,
   initialHeight: 3,
   initialWidth: 3,
   initialOptions: {

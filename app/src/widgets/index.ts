@@ -1,5 +1,4 @@
 import React, { ReactElement } from "react";
-import { injectSaga } from "redux-sagas-injector";
 
 import { TriggerUpdateAction, WidgetMeta } from "components/widget/duck";
 import { Dimensions } from "components/widget";
@@ -35,6 +34,7 @@ export interface ConfigurationProps<T> {
 
 export interface WidgetProperties<T = Record<string, any>> {
   configurable: boolean;
+  hasSaga: boolean;
   widgetType: WidgetType;
   category: WidgetCategory;
   initialHeight: number;
@@ -53,13 +53,6 @@ export interface WidgetElements {
   Configuration: React.ComponentClass<ConfigurationProps<any>>;
 }
 
-const injectModuleSaga = (widgetType: WidgetType) => (module: any) => {
-  if (module.saga) {
-    injectSaga(widgetType, module.saga);
-  }
-  return module;
-};
-
 export default Object.entries(widgetProperties).reduce(
   (accumulator, [widgetType, values]) => {
     const { configuration } = widgetImports[widgetType as WidgetType];
@@ -68,9 +61,7 @@ export default Object.entries(widgetProperties).reduce(
       [widgetType]: {
         ...values,
         Component: React.lazy(async () =>
-          widgetImports[widgetType as WidgetType]
-            .component()
-            .then(injectModuleSaga(widgetType as WidgetType))
+          widgetImports[widgetType as WidgetType].component()
         ),
         Configuration: configuration ? React.lazy(configuration) : null,
       },
