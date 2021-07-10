@@ -8,8 +8,7 @@
 import React from "react";
 import { Action, AnyAction, Store } from "redux";
 import { Provider } from "react-redux";
-import { runSaga } from "redux-saga";
-import { Saga } from "@redux-saga/types";
+import { runSaga, Saga } from "redux-saga";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 // act differences: https://github.com/testing-library/react-hooks-testing-library/issues/173

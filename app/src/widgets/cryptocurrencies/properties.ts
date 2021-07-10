@@ -6,6 +6,7 @@ const properties: WidgetProperties<WidgetOptions> = {
   widgetType: "cryptocurrencies",
   category: "monitoring",
   configurable: true,
+  hasSaga: true,
   initialHeight: 2,
   initialWidth: 3,
   initialOptions: {

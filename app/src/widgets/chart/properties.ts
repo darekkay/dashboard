@@ -6,6 +6,7 @@ const properties: WidgetProperties<WidgetOptions> = {
   widgetType: "chart",
   category: "tracking",
   configurable: true,
+  hasSaga: true,
   initialHeight: 3,
   initialWidth: 7,
   initialOptions: {

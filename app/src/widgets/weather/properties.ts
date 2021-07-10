@@ -6,6 +6,7 @@ const properties: WidgetProperties<WidgetOptions> = {
   widgetType: "weather",
   category: "general",
   configurable: true,
+  hasSaga: true,
   initialHeight: 2,
   initialWidth: 4,
   initialOptions: {

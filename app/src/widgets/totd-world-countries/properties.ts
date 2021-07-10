@@ -4,6 +4,7 @@ const properties: WidgetProperties = {
   widgetType: "totd-world-countries",
   category: "knowledge",
   configurable: false,
+  hasSaga: true,
   initialHeight: 3,
   initialWidth: 3,
   initialOptions: {},

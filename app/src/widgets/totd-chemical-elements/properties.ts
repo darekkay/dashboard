@@ -4,6 +4,7 @@ const properties: WidgetProperties = {
   widgetType: "totd-chemical-elements",
   category: "knowledge",
   configurable: false,
+  hasSaga: true,
   initialHeight: 2,
   initialWidth: 2,
   initialOptions: {},
