@@ -68,7 +68,6 @@
     "babel-eslint": "10.1.0",
     "plop": "2.7.4",
     "react-test-renderer": "17.0.1",
-    "redux-devtools-extension": "2.13.9",
     "sass": "1.32.13",
     "source-map-explorer": "2.5.1",
     "storybook-addon-themes": "6.1.0",

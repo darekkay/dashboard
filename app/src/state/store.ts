@@ -1,9 +1,7 @@
-import { createStore } from "@reduxjs/toolkit";
-import { applyMiddleware } from "redux";
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
-import { composeWithDevTools } from "redux-devtools-extension";
 
-import { IS_PRODUCTION, IS_STORAGE_PAUSED } from "common/environment";
+import { IS_STORAGE_PAUSED } from "common/environment";
 import { ConfigState } from "common/ducks/config";
 import { LayoutState } from "common/ducks/layout";
 import { WidgetsState } from "components/widget/duck";
@@ -23,21 +21,22 @@ export interface State {
 }
 
 const initStore = (initialState?: State) => {
-  // TODO: replace with "configureStore"?
-  // https://redux.js.org/recipes/configuring-your-store#simplifying-setup-with-redux-toolkit
-  const composeEnhancers = composeWithDevTools({
-    // Enable capture of stack traces for dispatched Redux actions
-    trace: !IS_PRODUCTION,
-    actionsBlacklist: [],
-  });
-
   const sagaMiddleware = createSagaMiddleware();
 
-  const enhancers = composeEnhancers(applyMiddleware(sagaMiddleware));
-  const store = createStore(
-    persistReducer(rootReducer(initialState)),
-    enhancers
-  );
+  const store = configureStore({
+    reducer: persistReducer(rootReducer(initialState)),
+    middleware: [
+      sagaMiddleware,
+      ...getDefaultMiddleware({
+        thunk: false,
+        immutableCheck: true,
+        serializableCheck: true,
+      }),
+    ],
+    devTools: {
+      actionsBlacklist: [],
+    },
+  });
 
   const persistor = persistStore(store);
 
