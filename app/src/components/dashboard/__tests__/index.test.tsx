@@ -12,7 +12,6 @@ describe("<Dashboard />", () => {
       desktop: [],
     },
     saveLayout: () => {},
-    removeWidgetFromLayout: () => {},
     importState: () => {},
     widgetIDs: ["search-01", "text-02"],
   };

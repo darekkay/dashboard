@@ -6,6 +6,7 @@ import cn from "classnames";
 import useBooleanState from "common/hooks/useBooleanState";
 import WidgetOverlay from "components/widget-overlay";
 import WidgetConfiguration from "components/widget-configuration";
+import { actions as layoutActions } from "common/ducks/layout";
 import widgets, { ValueUpdateAction } from "widgets";
 import { WidgetType } from "widgets/list";
 import WidgetContent from "components/widget-content";
@@ -159,5 +160,6 @@ const mapStateToProps = (id: string) => makeSelectWidget(id);
 export default (id: string) =>
   connect(mapStateToProps(id), {
     ...actions,
+    removeWidgetFromLayout: layoutActions.removeWidgetFromLayout,
     triggerUpdate: createTriggerUpdate(getTypeFromId(id)),
   })(Widget);
