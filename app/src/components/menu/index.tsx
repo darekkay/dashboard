@@ -36,7 +36,9 @@ const Menu: React.FC<Props> = ({
       <ReakitMenu
         {...menu}
         aria-label={title}
-        className="z-20 min-w-250 mt-2 overflow-hidden bg-default border rounded-lg shadow-xl outline-none no-focus"
+        className="z-20 min-w-250 overflow-hidden bg-default border rounded-lg shadow-xl outline-none no-focus"
+        // Fixes Popper warning: https://github.com/react-bootstrap/react-bootstrap/issues/5081
+        style={{ top: "5px" }}
       >
         <MenuContext.Provider value={menu}>{children}</MenuContext.Provider>
       </ReakitMenu>
