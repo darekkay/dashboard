@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 import { LANGUAGES } from "common/environment";
-import { actionCreators } from "common/ducks/config";
+import { actions } from "common/ducks/config";
 import Dropdown from "components/forms/dropdown";
 
 import selectComponentProps from "./selectors";
@@ -29,5 +29,5 @@ export interface Props {
 }
 
 export default connect(selectComponentProps, {
-  changeLanguage: actionCreators.changeLanguage,
+  changeLanguage: actions.changeLanguage,
 })(LanguageSelect);

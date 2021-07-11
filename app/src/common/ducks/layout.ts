@@ -3,19 +3,14 @@
 import maxBy from "lodash/maxBy";
 import filter from "lodash/filter";
 import clone from "lodash/clone";
-import { createAction, createReducer, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { put, select, takeEvery } from "typed-redux-saga";
 import { Layout as ReactGridLayout } from "react-grid-layout";
 
 import widgets from "widgets";
-import { createWidget, removeWidget } from "components/widget/duck";
+import { actions as widgetActions } from "components/widget/duck";
 import { importState } from "common/ducks/state";
 import { WidgetType } from "widgets/list";
-
-const saveLayout = createAction<Layout>("layout/save");
-const addWidgetToLayout = createAction<WidgetType>("layout/add-widget");
-const removeWidgetFromLayout = createAction<string>("layout/remove-widget");
-const incrementNextWidgetId = createAction("layout/increment-next-widget-id");
 
 export interface Layout {
   mobile: ReactGridLayout[];
@@ -29,7 +24,7 @@ export interface LayoutState {
   nextWidgetId: number;
 }
 
-export const initialState = {
+export const initialState: LayoutState = {
   config: { mobile: [], desktop: [] },
   nextWidgetId: 100,
 };
@@ -53,49 +48,50 @@ const widgetSortOrder = (
   }
 };
 
-export const reducerWithInitialState = createReducer<LayoutState>(
+const layoutSlice = createSlice({
+  name: "layout",
   initialState,
-  (builder) =>
-    builder
-      .addCase(importState, (_state, action) => action.payload.layout)
+  reducers: {
+    saveLayout(state, action: PayloadAction<Layout>) {
+      state.config = {
+        ...action.payload,
 
-      .addCase(saveLayout, (state, action) => {
-        state.config = {
-          ...action.payload,
+        // sort widgets by columns/rows (meaningful focus order)
+        // we need to clone the array, as the array is immutable and sort is mutating
+        // mobile isn't sorted, as we're not using its order
+        desktop: clone(action.payload.desktop).sort(widgetSortOrder),
+      };
+    },
+    addWidgetToLayout(state, action: PayloadAction<WidgetType>) {
+      const newWidget = {
+        i: widgetId(action.payload, state.nextWidgetId),
+        x: 0,
+        y: newWidgetY(state),
+        w: widgets[action.payload].initialWidth,
+        h: widgets[action.payload].initialHeight,
+      };
+      state.config = {
+        mobile: [...state.config.mobile, newWidget],
+        desktop: [...state.config.desktop, newWidget],
+      };
+    },
+    removeWidgetFromLayout(state, action: PayloadAction<string>) {
+      const byId = (widget: ReactGridLayout) => widget.i !== action.payload;
+      state.config = {
+        mobile: filter(state.config.mobile, byId),
+        desktop: filter(state.config.desktop, byId),
+      };
+    },
+    incrementNextWidgetId(state) {
+      state.nextWidgetId = state.nextWidgetId + 1;
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(importState, (_state, action) => action.payload.layout);
+  },
+});
 
-          // sort widgets by columns/rows (meaningful focus order)
-          // we need to clone the array, as the array is immutable and sort is mutating
-          // mobile isn't sorted, as we're not using its order
-          desktop: clone(action.payload.desktop).sort(widgetSortOrder),
-        };
-      })
-
-      .addCase(addWidgetToLayout, (state, action) => {
-        const newWidget = {
-          i: widgetId(action.payload, state.nextWidgetId),
-          x: 0,
-          y: newWidgetY(state),
-          w: widgets[action.payload].initialWidth,
-          h: widgets[action.payload].initialHeight,
-        };
-        state.config = {
-          mobile: [...state.config.mobile, newWidget],
-          desktop: [...state.config.desktop, newWidget],
-        };
-      })
-
-      .addCase(removeWidgetFromLayout, (state, action) => {
-        const byId = (widget: ReactGridLayout) => widget.i !== action.payload;
-        state.config = {
-          mobile: filter(state.config.mobile, byId),
-          desktop: filter(state.config.desktop, byId),
-        };
-      })
-
-      .addCase(incrementNextWidgetId, (state) => {
-        state.nextWidgetId = state.nextWidgetId + 1;
-      })
-);
+export const { reducer, actions } = layoutSlice;
 
 const selectNextWidgetId = (state: { layout: LayoutState }) =>
   state.layout.nextWidgetId;
@@ -104,27 +100,20 @@ const selectNextWidgetId = (state: { layout: LayoutState }) =>
 function* addWidgetSaga(action: PayloadAction<WidgetType>) {
   const nextWidgetId = yield* select(selectNextWidgetId);
   yield* put(
-    createWidget({
+    widgetActions.createWidget({
       type: action.payload,
       id: widgetId(action.payload, nextWidgetId),
     })
   );
-  yield* put(incrementNextWidgetId());
+  yield* put(actions.incrementNextWidgetId());
 }
 
 /* When a widget is removed from the layout, the according widget data should be deleted as well */
 function* removeWidgetSaga(action: PayloadAction<string>) {
-  yield* put(removeWidget(action.payload));
+  yield* put(widgetActions.removeWidget(action.payload));
 }
 
 export function* saga() {
-  yield* takeEvery(addWidgetToLayout.toString(), addWidgetSaga);
-  yield* takeEvery(removeWidgetFromLayout.toString(), removeWidgetSaga);
+  yield* takeEvery(actions.addWidgetToLayout.toString(), addWidgetSaga);
+  yield* takeEvery(actions.removeWidgetFromLayout.toString(), removeWidgetSaga);
 }
-
-export const actionCreators = {
-  saveLayout,
-  addWidgetToLayout,
-  removeWidgetFromLayout,
-  incrementNextWidgetId,
-};

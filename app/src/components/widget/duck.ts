@@ -1,6 +1,6 @@
 /** Widget duck */
 
-import { createAction, createReducer } from "@reduxjs/toolkit";
+import { createAction, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import mapValues from "lodash/mapValues";
 
 import widgets from "widgets";
@@ -25,23 +25,8 @@ export interface UpdateActionError {
   error: any;
 }
 
-// Data actions
-export const setOptions = createAction<SetValuesPayload>("widget/set-options");
-export const setData = createAction<SetValuesPayload>("widget/set-data-value");
-
-// Update actions
 export const triggerUpdate = (widgetType: WidgetType) =>
   createAction<TriggerUpdateAction>(`widget/${widgetType}/update`);
-export const updatePending = createAction<string>("widget/update-pending");
-export const updateSuccess = createAction<string>("widget/update-success");
-export const updateError = createAction<UpdateActionError>(
-  "widget/update-error"
-);
-
-// Widget actions
-export const createWidget =
-  createAction<{ id: string; type: WidgetType }>("widget/create");
-export const removeWidget = createAction<string>("widget/remove");
 
 export type UpdateStatus = "idle" | "pending" | "success" | "error";
 
@@ -63,82 +48,77 @@ export interface Widget {
 
 export type WidgetsState = Record<string, Widget>;
 
-export const initialState = {};
+export const initialState: WidgetsState = {};
 
-export const reducerWithInitialState = createReducer<WidgetsState>(
+const widgetSlice = createSlice({
+  name: "widget",
   initialState,
-  (builder) =>
-    builder
-      .addCase(importState, (_state, action) => {
-        return mapValues(action.payload.widgets, (widgetState) => {
-          /** Reset data for widgets that update themselves */
-          const forceUpdate = widgetState.meta.updateCycle
-            ? {
-                data: {},
-                meta: {
-                  ...widgetState.meta,
-                  updateCycle: widgetState.meta.updateCycle,
-                  updateStatus: "idle" as const,
-                  lastUpdated: undefined,
-                },
-              }
-            : {};
-          return {
-            ...widgetState,
-            ...forceUpdate,
-          };
-        });
-      })
-
-      .addCase(setOptions, (state, action) => {
-        const { id, values } = action.payload;
-        state[id].options = { ...state[id].options, ...values };
-      })
-
-      .addCase(setData, (state, action) => {
-        const { id, values } = action.payload;
-        state[id].data = { ...state[id].data, ...values };
-      })
-
-      .addCase(updatePending, (state, action) => {
-        const id = action.payload;
-        state[id].meta.updateStatus = "pending";
-      })
-
-      .addCase(updateSuccess, (state, action) => {
-        const id = action.payload;
-        state[id].meta = {
-          ...state[id].meta,
-          updateStatus: "success",
-          errorCode: undefined,
-          lastUpdated: Date.now(),
+  reducers: {
+    setOptions(state, action: PayloadAction<SetValuesPayload>) {
+      const { id, values } = action.payload;
+      state[id].options = { ...state[id].options, ...values };
+    },
+    setData(state, action: PayloadAction<SetValuesPayload>) {
+      const { id, values } = action.payload;
+      state[id].data = { ...state[id].data, ...values };
+    },
+    updatePending(state, action: PayloadAction<string>) {
+      const id = action.payload;
+      state[id].meta.updateStatus = "pending";
+    },
+    updateSuccess(state, action: PayloadAction<string>) {
+      const id = action.payload;
+      state[id].meta = {
+        ...state[id].meta,
+        updateStatus: "success",
+        errorCode: undefined,
+        lastUpdated: Date.now(),
+      };
+    },
+    updateError(state, action: PayloadAction<UpdateActionError>) {
+      const { id, error } = action.payload;
+      state[id].meta.updateStatus = "error";
+      state[id].meta.errorCode = error?.response?.status; // use axios response error code
+    },
+    createWidget(
+      state,
+      action: PayloadAction<{ id: string; type: WidgetType }>
+    ) {
+      const { id, type } = action.payload;
+      state[id] = {
+        type,
+        data: {},
+        options: widgets[type].initialOptions,
+        meta: widgets[type].initialMeta,
+      };
+    },
+    removeWidget(state, action: PayloadAction<string>) {
+      const id = action.payload;
+      delete state[id];
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(importState, (state, action) => {
+      return mapValues(action.payload.widgets, (widgetState) => {
+        /** Reset data for widgets that update themselves */
+        const forceUpdate = widgetState.meta.updateCycle
+          ? {
+              data: {},
+              meta: {
+                ...widgetState.meta,
+                updateCycle: widgetState.meta.updateCycle,
+                updateStatus: "idle" as const,
+                lastUpdated: undefined,
+              },
+            }
+          : {};
+        return {
+          ...widgetState,
+          ...forceUpdate,
         };
-      })
+      });
+    });
+  },
+});
 
-      .addCase(updateError, (state, action) => {
-        const { id, error } = action.payload;
-        state[id].meta.updateStatus = "error";
-        state[id].meta.errorCode = error?.response?.status; // use axios response error code
-      })
-
-      .addCase(createWidget, (state, action) => {
-        const { id, type } = action.payload;
-        state[id] = {
-          type,
-          data: {},
-          options: widgets[type].initialOptions,
-          meta: widgets[type].initialMeta,
-        };
-      })
-
-      .addCase(removeWidget, (state, action) => {
-        const id = action.payload;
-        delete state[id];
-      })
-);
-
-export const actionCreators = {
-  setOptions,
-  setData,
-  triggerUpdate,
-};
+export const { reducer, actions } = widgetSlice;

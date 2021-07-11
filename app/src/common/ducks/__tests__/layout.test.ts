@@ -1,11 +1,6 @@
 import { Layout as ReactGridLayout } from "react-grid-layout";
 
-import {
-  initialState,
-  reducerWithInitialState,
-  actionCreators,
-  LayoutState,
-} from "../layout";
+import { initialState, reducer, actions, LayoutState } from "../layout";
 
 const getInitialState = (widgets: ReactGridLayout[]) => {
   const layout = {
@@ -28,9 +23,9 @@ const getLastWidget = (widgets: ReactGridLayout[]) =>
 
 describe("Layout duck", () => {
   test("saves an empty layout", () => {
-    const updatedState = reducerWithInitialState(
+    const updatedState = reducer(
       initialState,
-      actionCreators.saveLayout({ desktop: [], mobile: [] })
+      actions.saveLayout({ desktop: [], mobile: [] })
     );
 
     expect(updatedState.config.desktop).toHaveLength(0);
@@ -38,9 +33,9 @@ describe("Layout duck", () => {
   });
 
   test("sorts the widgets by meaningful focus order", () => {
-    const updatedState = reducerWithInitialState(
+    const updatedState = reducer(
       initialState,
-      actionCreators.saveLayout({
+      actions.saveLayout({
         desktop: [
           { i: "text-03", x: 0, y: 1, w: 1, h: 1 },
           { i: "text-02", x: 3, y: 0, w: 1, h: 1 },
@@ -59,10 +54,7 @@ describe("Layout duck", () => {
 
   test("places a new widget in the next available row", () => {
     const addWidgetToLayoutAction = (widgets: ReactGridLayout[]) =>
-      reducerWithInitialState(
-        getInitialState(widgets),
-        actionCreators.addWidgetToLayout("text")
-      );
+      reducer(getInitialState(widgets), actions.addWidgetToLayout("text"));
 
     let updatedState = addWidgetToLayoutAction([
       { i: "text-01", x: 0, y: 0, w: 1, h: 1 },
@@ -88,11 +80,7 @@ describe("Layout duck", () => {
     const removeWidgetFromLayoutAction = (
       widgets: ReactGridLayout[],
       id: string
-    ) =>
-      reducerWithInitialState(
-        getInitialState(widgets),
-        actionCreators.removeWidgetFromLayout(id)
-      );
+    ) => reducer(getInitialState(widgets), actions.removeWidgetFromLayout(id));
 
     let updatedState = removeWidgetFromLayoutAction(
       [
@@ -116,7 +104,7 @@ describe("Layout duck", () => {
 
   test("increments the nextWidgetId", () => {
     const incrementNextWidgetIdAction = (state: LayoutState) =>
-      reducerWithInitialState(state, actionCreators.incrementNextWidgetId());
+      reducer(state, actions.incrementNextWidgetId());
 
     const updatedState = incrementNextWidgetIdAction(getInitialState([]));
     expect(updatedState.nextWidgetId).toEqual(101);

@@ -6,6 +6,6 @@ import { State } from "state/store";
  * Hence, every reducer has to handle its substate separately when importing a full state. */
 export const importState = createAction<State>("state/import");
 
-export const actionCreators = {
+export const actions = {
   importState,
 };

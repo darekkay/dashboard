@@ -1,5 +1,5 @@
 import { executeSaga } from "common/testing";
-import { updateError, updateSuccess } from "components/widget/duck";
+import { actions as widgetActions } from "components/widget/duck";
 
 import triggerUpdateHandler from "../triggerUpdateHandler";
 
@@ -19,7 +19,7 @@ describe("triggerUpdateHandler", () => {
     expect(apiCall).toHaveBeenCalledWith(123);
     expect(dispatchedActions).toHaveLength(3);
     expect(dispatchedActions[dispatchedActions.length - 1].type).toEqual(
-      updateSuccess.type
+      widgetActions.updateSuccess.type
     );
   });
   test("handles failed updates", async () => {
@@ -39,7 +39,7 @@ describe("triggerUpdateHandler", () => {
     expect(apiCall).toHaveBeenCalledWith(123);
     expect(dispatchedActions).toHaveLength(2);
     expect(dispatchedActions[dispatchedActions.length - 1].type).toEqual(
-      updateError.type
+      widgetActions.updateError.type
     );
   });
 });

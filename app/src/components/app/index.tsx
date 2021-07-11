@@ -3,11 +3,8 @@ import { connect } from "react-redux";
 import Fullscreen from "react-full-screen";
 import isEmpty from "lodash/isEmpty";
 
-import {
-  actionCreators as layoutActionCreators,
-  Layout,
-} from "common/ducks/layout";
-import { actionCreators as stateActionCreators } from "common/ducks/state";
+import { actions as layoutActions, Layout } from "common/ducks/layout";
+import { actions as stateActions } from "common/ducks/state";
 import useToggle from "common/hooks/useToggle";
 import Dashboard from "components/dashboard";
 import Header from "components/header";
@@ -87,6 +84,6 @@ export interface Props extends SelectedProps {
 }
 
 export default connect(mapStateToProps, {
-  ...layoutActionCreators,
-  ...stateActionCreators,
+  ...layoutActions,
+  ...stateActions,
 })(App);

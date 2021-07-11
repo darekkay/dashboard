@@ -5,7 +5,7 @@ import { takeEvery } from "typed-redux-saga";
 
 import dayjs from "common/date";
 import { DEBUG_LABELS } from "common/environment";
-import { changeLanguage } from "common/ducks/config";
+import { actions as configActions } from "common/ducks/config";
 import { State } from "state/store";
 
 import "dayjs/locale/de";
@@ -66,7 +66,7 @@ const onRehydrate = (action: PayloadAction<State>) => {
 };
 
 export function* saga() {
-  yield* takeEvery(changeLanguage.toString(), onChangeLanguage);
+  yield* takeEvery(configActions.changeLanguage.toString(), onChangeLanguage);
   yield* takeEvery("persist/REHYDRATE", onRehydrate);
 }
 

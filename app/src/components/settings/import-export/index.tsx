@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
 import { State, STATE_PROPERTIES } from "state/store";
-import { actionCreators } from "common/ducks/state";
+import { actions as stateActions } from "common/ducks/state";
 import Link from "components/link";
 import Icon from "components/icon";
 import FileUpload from "components/forms/file-upload";
@@ -78,5 +78,5 @@ export interface Props {
 
 export default connect(
   (state: State) => ({ state }),
-  actionCreators
+  stateActions
 )(ImportExport);
