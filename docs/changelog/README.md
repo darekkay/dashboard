@@ -21,6 +21,7 @@
 - :hammer: Modernize Redux code.
 - :hammer: Add delay and error middlewares for debugging.
 - :hammer: Provide root-level npm tasks to run `app` and `server` modules in parallel.
+- :hammer: Update dependencies.
 
 ## 1.5.0 (2021-05-26)
 
