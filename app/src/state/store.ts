@@ -1,5 +1,13 @@
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
+import {
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
 
 import { IS_STORAGE_PAUSED } from "common/environment";
 import { ConfigState } from "common/ducks/config";
@@ -31,7 +39,9 @@ const initStore = (preloadedState?: State) => {
       ...getDefaultMiddleware({
         thunk: false,
         immutableCheck: true,
-        serializableCheck: true,
+        serializableCheck: {
+          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        },
       }),
     ],
     devTools: {

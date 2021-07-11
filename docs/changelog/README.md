@@ -18,6 +18,7 @@
 - :bug: Fix black background color in fullscreen mode.
 - :hammer: Improve test coverage.
 - :hammer: Improve TypeScript types.
+- :hammer: Modernize Redux code.
 - :hammer: Add delay and error middlewares for debugging.
 - :hammer: Provide root-level npm tasks to run `app` and `server` modules in parallel.
 
