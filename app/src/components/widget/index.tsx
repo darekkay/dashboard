@@ -159,7 +159,8 @@ const mapStateToProps = (id: string) => makeSelectWidget(id);
 
 export default (id: string) =>
   connect(mapStateToProps(id), {
-    ...actions,
+    setOptions: actions.setOptions,
+    setData: actions.setData,
     removeWidgetFromLayout: layoutActions.removeWidgetFromLayout,
     triggerUpdate: createTriggerUpdate(getTypeFromId(id)),
   })(Widget);

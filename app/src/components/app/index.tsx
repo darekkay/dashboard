@@ -81,6 +81,7 @@ export interface Props extends SelectedProps {
 }
 
 export default connect(mapStateToProps, {
-  ...layoutActions,
-  ...stateActions,
+  saveLayout: layoutActions.saveLayout,
+  addWidgetToLayout: layoutActions.addWidgetToLayout,
+  importState: stateActions.importState,
 })(App);
