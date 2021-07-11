@@ -53,10 +53,9 @@ const widgetSortOrder = (
   }
 };
 
-export const reducerWithInitialState = (
-  defaultState: LayoutState = initialState
-) =>
-  createReducer<LayoutState>(defaultState, (builder) =>
+export const reducerWithInitialState = createReducer<LayoutState>(
+  initialState,
+  (builder) =>
     builder
       .addCase(importState, (_state, action) => action.payload.layout)
 
@@ -96,7 +95,7 @@ export const reducerWithInitialState = (
       .addCase(incrementNextWidgetId, (state) => {
         state.nextWidgetId = state.nextWidgetId + 1;
       })
-  );
+);
 
 const selectNextWidgetId = (state: { layout: LayoutState }) =>
   state.layout.nextWidgetId;

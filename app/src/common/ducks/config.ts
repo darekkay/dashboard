@@ -37,10 +37,9 @@ export const initialState: ConfigState = {
   backgroundUrl: "",
 };
 
-export const reducerWithInitialState = (
-  defaultState: ConfigState = initialState
-) =>
-  createReducer<ConfigState>(defaultState, (builder) =>
+export const reducerWithInitialState = createReducer<ConfigState>(
+  initialState,
+  (builder) =>
     builder
       .addCase(importState, (state, action) => {
         // preserve current user settings if they are missing in the imported state
@@ -63,7 +62,7 @@ export const reducerWithInitialState = (
       .addCase(changeLanguage, (state, action) => {
         state.language = action.payload;
       })
-  );
+);
 
 function* updateLanguage(action: PayloadAction<State>) {
   yield* put(changeLanguage(action.payload.config.language));

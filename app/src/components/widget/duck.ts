@@ -65,10 +65,9 @@ export type WidgetsState = Record<string, Widget>;
 
 export const initialState = {};
 
-export const reducerWithInitialState = (
-  defaultState: WidgetsState = initialState
-) =>
-  createReducer<WidgetsState>(defaultState, (builder) =>
+export const reducerWithInitialState = createReducer<WidgetsState>(
+  initialState,
+  (builder) =>
     builder
       .addCase(importState, (_state, action) => {
         return mapValues(action.payload.widgets, (widgetState) => {
@@ -136,7 +135,7 @@ export const reducerWithInitialState = (
         const id = action.payload;
         delete state[id];
       })
-  );
+);
 
 export const actionCreators = {
   setOptions,
