@@ -32,13 +32,7 @@ class Dashboard extends React.Component<Props> {
   }
 
   render() {
-    const {
-      layout,
-      widgetIDs,
-      saveLayout,
-      removeWidgetFromLayout,
-      importState,
-    } = this.props;
+    const { layout, widgetIDs, saveLayout, importState } = this.props;
     if (widgetIDs.length === 0)
       return <WelcomePage importState={importState} />;
     return (
@@ -63,7 +57,6 @@ class Dashboard extends React.Component<Props> {
             {widgetIDs.map((widgetID: string) =>
               React.createElement(makeWidgetMemoized(widgetID), {
                 key: widgetID,
-                removeWidgetFromLayout,
               })
             )}
           </ReactGridLayout>
@@ -77,7 +70,6 @@ export interface Props {
   layout: Layout;
   widgetIDs: string[];
   saveLayout: (layout: Layout) => void;
-  removeWidgetFromLayout: (widgetId: string) => void;
   importState: (state: State) => void;
   [key: string]: any; // required for shouldComponentUpdate
 }

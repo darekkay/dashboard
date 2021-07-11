@@ -20,7 +20,6 @@ export const App: React.FC<Props> = (props) => {
     layout,
     saveLayout,
     addWidgetToLayout,
-    removeWidgetFromLayout,
     importState,
     currentTheme,
     backgroundUrl,
@@ -59,7 +58,6 @@ export const App: React.FC<Props> = (props) => {
               layout={layout}
               widgetIDs={widgetIDs}
               saveLayout={saveLayout}
-              removeWidgetFromLayout={removeWidgetFromLayout}
               importState={importState}
             />
           </main>
@@ -79,7 +77,6 @@ export interface SelectedProps {
 export interface Props extends SelectedProps {
   saveLayout: (layout: Layout) => void;
   addWidgetToLayout: (widgetType: WidgetType) => void;
-  removeWidgetFromLayout: (widgetId: string) => void;
   importState: (state: State) => void;
 }
 
