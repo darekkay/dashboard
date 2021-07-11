@@ -28,7 +28,7 @@ const getLastWidget = (widgets: ReactGridLayout[]) =>
 
 describe("Layout duck", () => {
   test("saves an empty layout", () => {
-    const updatedState = reducerWithInitialState()(
+    const updatedState = reducerWithInitialState(
       initialState,
       actionCreators.saveLayout({ desktop: [], mobile: [] })
     );
@@ -38,7 +38,7 @@ describe("Layout duck", () => {
   });
 
   test("sorts the widgets by meaningful focus order", () => {
-    const updatedState = reducerWithInitialState()(
+    const updatedState = reducerWithInitialState(
       initialState,
       actionCreators.saveLayout({
         desktop: [
@@ -59,7 +59,7 @@ describe("Layout duck", () => {
 
   test("places a new widget in the next available row", () => {
     const addWidgetToLayoutAction = (widgets: ReactGridLayout[]) =>
-      reducerWithInitialState()(
+      reducerWithInitialState(
         getInitialState(widgets),
         actionCreators.addWidgetToLayout("text")
       );
@@ -89,7 +89,7 @@ describe("Layout duck", () => {
       widgets: ReactGridLayout[],
       id: string
     ) =>
-      reducerWithInitialState()(
+      reducerWithInitialState(
         getInitialState(widgets),
         actionCreators.removeWidgetFromLayout(id)
       );
@@ -116,7 +116,7 @@ describe("Layout duck", () => {
 
   test("increments the nextWidgetId", () => {
     const incrementNextWidgetIdAction = (state: LayoutState) =>
-      reducerWithInitialState()(state, actionCreators.incrementNextWidgetId());
+      reducerWithInitialState(state, actionCreators.incrementNextWidgetId());
 
     const updatedState = incrementNextWidgetIdAction(getInitialState([]));
     expect(updatedState.nextWidgetId).toEqual(101);

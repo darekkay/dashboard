@@ -22,7 +22,7 @@ const initialState: WidgetsState = {
 
 describe("Widget duck", () => {
   test("updates the widget's option value", () => {
-    const updatedState = reducerWithInitialState()(
+    const updatedState = reducerWithInitialState(
       initialState,
       actionCreators.setOptions({
         id: "date-time-01",
@@ -34,7 +34,7 @@ describe("Widget duck", () => {
   });
 
   test("updates the widget's data value", () => {
-    const updatedState = reducerWithInitialState()(
+    const updatedState = reducerWithInitialState(
       initialState,
       actionCreators.setData({
         id: "date-time-01",
@@ -46,7 +46,7 @@ describe("Widget duck", () => {
   });
 
   test("creates and removes a widget", () => {
-    let updatedState = reducerWithInitialState()(
+    let updatedState = reducerWithInitialState(
       initialState,
       createWidget({
         id: "date-time-01",
@@ -56,7 +56,7 @@ describe("Widget duck", () => {
 
     expect(get(updatedState, "date-time-01.data")).toBeDefined();
 
-    updatedState = reducerWithInitialState()(
+    updatedState = reducerWithInitialState(
       initialState,
       removeWidget("date-time-01")
     );
@@ -73,7 +73,7 @@ describe("Widget duck", () => {
       },
     };
 
-    const updatedState = reducerWithInitialState()(
+    const updatedState = reducerWithInitialState(
       initialState,
       importState({
         ...stateProps,
@@ -118,7 +118,7 @@ describe("Widget duck", () => {
       },
     };
 
-    const updatedState = reducerWithInitialState()(
+    const updatedState = reducerWithInitialState(
       initialState,
       importState({
         ...stateProps,

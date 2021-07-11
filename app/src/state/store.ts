@@ -20,11 +20,12 @@ export interface State {
   readonly [key: string]: any;
 }
 
-const initStore = (initialState?: State) => {
+const initStore = (preloadedState?: State) => {
   const sagaMiddleware = createSagaMiddleware();
 
   const store = configureStore({
-    reducer: persistReducer(rootReducer(initialState)),
+    reducer: persistReducer(rootReducer),
+    preloadedState,
     middleware: [
       sagaMiddleware,
       ...getDefaultMiddleware({

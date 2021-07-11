@@ -8,7 +8,7 @@ import {
 
 describe("Settings duck", () => {
   test("updates the color theme", () => {
-    const updatedState = reducerWithInitialState()(
+    const updatedState = reducerWithInitialState(
       initialState,
       actionCreators.changeTheme("mock")
     );
@@ -17,7 +17,7 @@ describe("Settings duck", () => {
   });
 
   test("changes the language", () => {
-    const updatedState = reducerWithInitialState()(
+    const updatedState = reducerWithInitialState(
       initialState,
       actionCreators.changeLanguage("mock")
     );
@@ -26,7 +26,7 @@ describe("Settings duck", () => {
   });
 
   test("imports all settings when available", () => {
-    const updatedState = reducerWithInitialState()(
+    const updatedState = reducerWithInitialState(
       initialState,
       // @ts-expect-error
       importState({
@@ -44,7 +44,7 @@ describe("Settings duck", () => {
   });
 
   test("doesn't import empty language or theme", () => {
-    const updatedState = reducerWithInitialState()(
+    const updatedState = reducerWithInitialState(
       {
         theme: "default",
         language: "en",
