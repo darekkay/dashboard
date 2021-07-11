@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 import { THEMES } from "common/environment";
-import { actionCreators } from "common/ducks/config";
+import { actions } from "common/ducks/config";
 import Icon from "components/icon";
 
 import selectComponentProps from "./selectors";
@@ -80,5 +80,5 @@ export interface Props {
 }
 
 export default connect(selectComponentProps, {
-  changeTheme: actionCreators.changeTheme,
+  changeTheme: actions.changeTheme,
 })(ThemeSelect);

@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 
-import { reducerWithInitialState as configReducer } from "common/ducks/config";
-import { reducerWithInitialState as layoutReducer } from "common/ducks/layout";
-import { reducerWithInitialState as widgetReducer } from "components/widget/duck";
+import { reducer as configReducer } from "common/ducks/config";
+import { reducer as layoutReducer } from "common/ducks/layout";
+import { reducer as widgetReducer } from "components/widget/duck";
 
 export const rootReducer = combineReducers({
   config: configReducer,

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 
-import { actionCreators } from "common/ducks/config";
+import { actions } from "common/ducks/config";
 import Input, { Props as InputProps } from "components/forms/input";
 
 import selectComponentProps from "./selectors";
@@ -26,5 +26,5 @@ export interface Props extends Omit<InputProps, "value" | "setValue"> {
 }
 
 export default connect(selectComponentProps, {
-  changeBackgroundUrl: actionCreators.changeBackgroundUrl,
+  changeBackgroundUrl: actions.changeBackgroundUrl,
 })(BackgroundSelect);

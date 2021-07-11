@@ -1,32 +1,31 @@
 import { importState } from "common/ducks/state";
 
-import {
-  initialState,
-  reducerWithInitialState,
-  actionCreators,
-} from "../config";
+import { initialState, reducer, actions } from "../config";
 
 describe("Settings duck", () => {
-  test("updates the color theme", () => {
-    const updatedState = reducerWithInitialState(
+  test("updates the background URL", () => {
+    const updatedState = reducer(
       initialState,
-      actionCreators.changeTheme("mock")
+      actions.changeBackgroundUrl("mock")
     );
+
+    expect(updatedState.backgroundUrl).toEqual("mock");
+  });
+
+  test("updates the color theme", () => {
+    const updatedState = reducer(initialState, actions.changeTheme("mock"));
 
     expect(updatedState.theme).toEqual("mock");
   });
 
   test("changes the language", () => {
-    const updatedState = reducerWithInitialState(
-      initialState,
-      actionCreators.changeLanguage("mock")
-    );
+    const updatedState = reducer(initialState, actions.changeLanguage("mock"));
 
     expect(updatedState.language).toEqual("mock");
   });
 
   test("imports all settings when available", () => {
-    const updatedState = reducerWithInitialState(
+    const updatedState = reducer(
       initialState,
       // @ts-expect-error
       importState({
@@ -44,7 +43,7 @@ describe("Settings duck", () => {
   });
 
   test("doesn't import empty language or theme", () => {
-    const updatedState = reducerWithInitialState(
+    const updatedState = reducer(
       {
         theme: "default",
         language: "en",

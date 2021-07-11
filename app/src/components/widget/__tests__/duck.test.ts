@@ -3,13 +3,7 @@ import get from "lodash/get";
 import { importState } from "common/ducks/state";
 import { stateProps } from "common/utils/mock";
 
-import {
-  reducerWithInitialState,
-  actionCreators,
-  createWidget,
-  removeWidget,
-  WidgetsState,
-} from "../duck";
+import { reducer, actions, WidgetsState } from "../duck";
 
 const initialState: WidgetsState = {
   "date-time-01": {
@@ -22,9 +16,9 @@ const initialState: WidgetsState = {
 
 describe("Widget duck", () => {
   test("updates the widget's option value", () => {
-    const updatedState = reducerWithInitialState(
+    const updatedState = reducer(
       initialState,
-      actionCreators.setOptions({
+      actions.setOptions({
         id: "date-time-01",
         values: { content: "mock" },
       })
@@ -34,9 +28,9 @@ describe("Widget duck", () => {
   });
 
   test("updates the widget's data value", () => {
-    const updatedState = reducerWithInitialState(
+    const updatedState = reducer(
       initialState,
-      actionCreators.setData({
+      actions.setData({
         id: "date-time-01",
         values: { content: "mock" },
       })
@@ -46,9 +40,9 @@ describe("Widget duck", () => {
   });
 
   test("creates and removes a widget", () => {
-    let updatedState = reducerWithInitialState(
+    let updatedState = reducer(
       initialState,
-      createWidget({
+      actions.createWidget({
         id: "date-time-01",
         type: "date-time",
       })
@@ -56,10 +50,7 @@ describe("Widget duck", () => {
 
     expect(get(updatedState, "date-time-01.data")).toBeDefined();
 
-    updatedState = reducerWithInitialState(
-      initialState,
-      removeWidget("date-time-01")
-    );
+    updatedState = reducer(initialState, actions.removeWidget("date-time-01"));
     expect(get(updatedState, "date-time-01.data")).toBeUndefined();
   });
 
@@ -73,7 +64,7 @@ describe("Widget duck", () => {
       },
     };
 
-    const updatedState = reducerWithInitialState(
+    const updatedState = reducer(
       initialState,
       importState({
         ...stateProps,
@@ -118,7 +109,7 @@ describe("Widget duck", () => {
       },
     };
 
-    const updatedState = reducerWithInitialState(
+    const updatedState = reducer(
       initialState,
       importState({
         ...stateProps,

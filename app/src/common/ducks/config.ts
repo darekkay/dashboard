@@ -1,6 +1,6 @@
 /** Application settings */
 
-import { createAction, createReducer, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { put, takeEvery } from "typed-redux-saga";
 import isEmpty from "lodash/isEmpty";
 
@@ -14,12 +14,6 @@ export interface ConfigState {
   language: string;
   backgroundUrl: string;
 }
-
-const changeBackgroundUrl = createAction<string>(
-  "config/change-background-url"
-);
-const changeTheme = createAction<string>("config/change-theme");
-export const changeLanguage = createAction<string>("config/change-language");
 
 export const defaultTheme = (): Theme => {
   /* istanbul ignore next */
@@ -37,43 +31,42 @@ export const initialState: ConfigState = {
   backgroundUrl: "",
 };
 
-export const reducerWithInitialState = createReducer<ConfigState>(
+const configSlice = createSlice({
+  name: "config",
   initialState,
-  (builder) =>
-    builder
-      .addCase(importState, (state, action) => {
-        // preserve current user settings if they are missing in the imported state
-        if (!isEmpty(action.payload.config.theme))
-          state.theme = action.payload.config.theme;
-        if (!isEmpty(action.payload.config.language))
-          state.language = action.payload.config.language;
+  reducers: {
+    changeBackgroundUrl(state, action: PayloadAction<string>) {
+      state.backgroundUrl = action.payload;
+    },
 
-        state.backgroundUrl = action.payload.config.backgroundUrl;
-      })
+    changeTheme(state, action: PayloadAction<string>) {
+      state.theme = action.payload;
+    },
 
-      .addCase(changeBackgroundUrl, (state, action) => {
-        state.backgroundUrl = action.payload;
-      })
+    changeLanguage(state, action: PayloadAction<string>) {
+      state.language = action.payload;
+    },
+  },
 
-      .addCase(changeTheme, (state, action) => {
-        state.theme = action.payload;
-      })
+  extraReducers: (builder) => {
+    builder.addCase(importState, (state, action) => {
+      // preserve current user settings if they are missing in the imported state
+      if (!isEmpty(action.payload.config.theme))
+        state.theme = action.payload.config.theme;
+      if (!isEmpty(action.payload.config.language))
+        state.language = action.payload.config.language;
 
-      .addCase(changeLanguage, (state, action) => {
-        state.language = action.payload;
-      })
-);
+      state.backgroundUrl = action.payload.config.backgroundUrl;
+    });
+  },
+});
+
+export const { reducer, actions } = configSlice;
 
 function* updateLanguage(action: PayloadAction<State>) {
-  yield* put(changeLanguage(action.payload.config.language));
+  yield* put(actions.changeLanguage(action.payload.config.language));
 }
 
 export function* saga() {
   yield* takeEvery(importState.toString(), updateLanguage);
 }
-
-export const actionCreators = {
-  changeBackgroundUrl,
-  changeTheme,
-  changeLanguage,
-};

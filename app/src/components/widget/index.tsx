@@ -11,7 +11,12 @@ import { WidgetType } from "widgets/list";
 import WidgetContent from "components/widget-content";
 
 import makeSelectWidget, { getTypeFromId } from "./selectors";
-import { actionCreators, TriggerUpdateAction, WidgetMeta } from "./duck";
+import {
+  actions,
+  triggerUpdate as createTriggerUpdate,
+  TriggerUpdateAction,
+  WidgetMeta,
+} from "./duck";
 
 /** Single widget within the dashboard */
 export const Widget: React.FC<Props> = (props) => {
@@ -153,6 +158,6 @@ const mapStateToProps = (id: string) => makeSelectWidget(id);
 
 export default (id: string) =>
   connect(mapStateToProps(id), {
-    ...actionCreators,
-    triggerUpdate: actionCreators.triggerUpdate(getTypeFromId(id)),
+    ...actions,
+    triggerUpdate: createTriggerUpdate(getTypeFromId(id)),
   })(Widget);
