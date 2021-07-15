@@ -1,5 +1,4 @@
 import React from "react";
-import i18n from "i18next";
 
 import { render, screen } from "common/testing";
 import { widgetContentProps, widgetStatusDisplay } from "common/utils/mock";
