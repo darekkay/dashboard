@@ -16,6 +16,7 @@
 - :bug: **[Cryptocurrencies]** Fix deviation display for unchanged values.
 - :bug: Preserve theme and language settings when using a demo template.
 - :bug: Fix black background color in fullscreen mode.
+- :bug: Reset pending widget status on state persist.
 - :hammer: Improve test coverage.
 - :hammer: Improve TypeScript types.
 - :hammer: Modernize Redux code.
