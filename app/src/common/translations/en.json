@@ -11,6 +11,7 @@
     "loading": "Loading...",
     "settings": "Settings",
     "help": "Help",
+    "random": "Random",
     "error": "Unexpected error",
     "documentation": "Documentation",
     "poweredBy": "Powered by <0>{{name}}</0>",

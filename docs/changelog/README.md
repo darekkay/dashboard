@@ -7,6 +7,7 @@
 - :rocket: Use a meaningful widget focus order.
 - :rocket: Unify loading and error behavior.
 - :rocket: Update built-in background images.
+- :rocket: Add a button to toggle through built-in background images.
 - :gem: Make header transparent.
 - :gem: Redesign widget drawer.
 - :gem: Redesign form components.

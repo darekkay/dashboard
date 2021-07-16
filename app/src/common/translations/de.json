@@ -9,6 +9,7 @@
     "loading": "Lade...",
     "settings": "Einstellungen",
     "help": "Hilfe",
+    "random": "Zufall",
     "error": "Unerwarteter Fehler",
     "documentation": "Dokumentation",
     "poweredBy": "Powered by <0>{{name}}</0>",
