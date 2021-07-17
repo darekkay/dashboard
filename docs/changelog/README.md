@@ -17,6 +17,7 @@
 - :gem: Redesign settings modal.
 - :gem: **[Country of the Day]** Redesign widget.
 - :gem: Remove link and version from header.
+- :gem: Add base print styles.
 - :bug: **[Cryptocurrencies]** Fix deviation display for unchanged values.
 - :bug: Preserve theme and language settings when using a demo template.
 - :bug: Fix black background color in fullscreen mode.

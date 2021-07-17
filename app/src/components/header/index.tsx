@@ -24,7 +24,7 @@ const Header: React.FC<Props> = ({
     useBooleanState(false);
 
   return (
-    <header className="flex items-center justify-end px-7 pt-2 bg-transparent">
+    <header className="flex items-center justify-end px-7 pt-2 bg-transparent print-hidden">
       <Button
         className="mr-6 my-2"
         variant="primary"
