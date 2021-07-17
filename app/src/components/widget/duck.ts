@@ -22,7 +22,8 @@ export interface TriggerUpdateAction {
 
 export interface UpdateActionError {
   id: string;
-  error: any;
+  message?: string;
+  statusCode?: number;
 }
 
 export const triggerUpdate = (widgetType: WidgetType) =>
@@ -76,9 +77,9 @@ const widgetSlice = createSlice({
       };
     },
     updateError(state, action: PayloadAction<UpdateActionError>) {
-      const { id, error } = action.payload;
+      const { id, statusCode } = action.payload;
       state[id].meta.updateStatus = "error";
-      state[id].meta.errorCode = error?.response?.status; // use axios response error code
+      state[id].meta.errorCode = statusCode;
     },
     createWidget(
       state,

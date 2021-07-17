@@ -22,7 +22,13 @@ const triggerUpdateHandler = (apiCall: ApiCall) => {
       );
       yield* put(widgetActions.updateSuccess(id));
     } catch (error) {
-      yield* put(widgetActions.updateError({ id, error }));
+      yield* put(
+        widgetActions.updateError({
+          id,
+          message: error?.message,
+          statusCode: error?.response?.status, // use axios response error code
+        })
+      );
     }
   };
 };
