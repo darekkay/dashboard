@@ -134,7 +134,7 @@
       "headline": "{{headline}}",
       "configuration": {
         "timezone": "Timezone",
-        "timezones":{
+        "timezones": {
           "auto": "Default",
           "Pacific/Midway": "(GMT-11:00) Midway Island",
           "Pacific/Samoa": "(GMT-11:00) Samoa",
