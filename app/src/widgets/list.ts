@@ -137,11 +137,11 @@ const widgetProperties: Record<WidgetType, WidgetProperties> = {
   text: {
     widgetType: "text",
     category: "general",
-    configurable: false,
+    configurable: true,
     hasSaga: false,
     initialHeight: 4,
     initialWidth: 4,
-    initialOptions: {},
+    initialOptions: { headline: "" },
     initialMeta: {},
   },
   "totd-chemical-elements": {
@@ -257,6 +257,7 @@ export const widgetImports: Record<WidgetType, WidgetImports> = {
   },
   text: {
     component: async () => import("widgets/text"),
+    configuration: async () => import("widgets/text/configuration"),
   },
   "totd-chemical-elements": {
     component: async () => import("widgets/totd-chemical-elements"),

@@ -139,7 +139,7 @@
     },
     "text": {
       "name": "Notes",
-      "headline": ""
+      "headline": "{{headline}}"
     },
     "totd-chemical-elements": {
       "name": "Eléments chimiques",

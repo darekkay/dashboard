@@ -259,7 +259,7 @@
     "text": {
       "name": "Notes",
       "description": "Editable text field for taking notes.",
-      "headline": ""
+      "headline": "{{headline}}"
     },
     "totd-chemical-elements": {
       "name": "Chemical Elements",

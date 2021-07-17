@@ -179,7 +179,7 @@
     "text": {
       "name": "Notizen",
       "description": "Textfeld.",
-      "headline": ""
+      "headline": "{{headline}}"
     },
     "totd-chemical-elements": {
       "name": "Chemische Elemente",
