@@ -202,6 +202,7 @@ All current browsers are supported (Chrome, Firefox, Safari, Edge). IE11 is **no
 
 To debug certain issues, include the following string in the URL as a query parameter or hash:
 
+- `debug.log`: Enable debug logs.
 - `debug.labels`: Show label IDs.
 - `debug.delay`: Delay server module responses by a random time between 1 and 5 seconds.
 - `debug.error`: Let the server always return error responses.

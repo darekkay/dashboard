@@ -23,6 +23,7 @@
 - :hammer: Improve TypeScript types.
 - :hammer: Modernize Redux code.
 - :hammer: Add delay and error middlewares for debugging.
+- :hammer: Hide debug logs behind a query parameter flag.
 - :hammer: Provide root-level npm tasks to run `app` and `server` modules in parallel.
 - :hammer: Update dependencies.
 

@@ -1,13 +1,15 @@
-import logger, { LogLevelDesc } from "loglevel";
+/* istanbul ignore file */
+import logger from "loglevel";
 
-const logLevel: Record<string, LogLevelDesc> = {
-  development: logger.levels.TRACE,
-  production: logger.levels.INFO,
-  test: logger.levels.ERROR,
+import { IS_TEST } from "common/environment";
+
+const getLogLevel = () => {
+  if (IS_TEST) return logger.levels.ERROR;
+  if (window.location.href.includes("debug.log")) return logger.levels.TRACE;
+  return logger.levels.INFO;
 };
 
-/* istanbul ignore next */
-logger.setDefaultLevel(logLevel[process.env.NODE_ENV || "production"]);
+logger.setDefaultLevel(getLogLevel());
 
 /* Custom logger facade */
 const log = {
