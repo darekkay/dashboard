@@ -131,7 +131,7 @@
     "scan:widgets": "ts-node --transpile-only -P internals/scripts/tsconfig.json internals/scripts/scan-widgets.ts && prettier --write src/widgets/list.ts && prettier --write ../server/src/widgets.ts",
     "start": "react-scripts start",
     "storybook:build": "build-storybook",
-    "storybook:start": "start-storybook -p 6006 -s .storybook/assets",
+    "storybook:start": "start-storybook -p 6006 -s .storybook/assets --no-version-updates",
     "tailwind": "tailwind build internals/tailwind/tailwind.css -c internals/tailwind/config.js --no-autoprefixer -o src/styles/_tailwind.scss && prettier --write src/styles/_tailwind.scss",
     "test": "react-scripts test --modulePaths=src --coverage",
     "typecheck": "dks typecheck"
