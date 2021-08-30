@@ -97,3 +97,5 @@ Many more integrations ideas can be found in other products, e.g.:
 - [n8n.io](https://n8n.io/integrations)
 - [MagicMirror](https://github.com/MichMich/MagicMirror/wiki/3rd-Party-Modules)
 - [unofficial-apis](https://github.com/Rolstenhouse/unofficial-apis)
+- [Public APIs](https://public-apis.io/)
+- [public-apis](https://github.com/public-apis/public-apis)
