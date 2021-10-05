@@ -10,10 +10,13 @@ export interface State {
 const withErrorHandling = <P extends object>(
   WrappedComponent: React.ComponentType<P & State>
 ) => {
-  return class ErrorHandling extends React.Component<P> {
-    state: State = {
-      hasRenderError: false,
-    };
+  return class ErrorHandling extends React.Component<P, State> {
+    constructor(props: P) {
+      super(props);
+      this.state = {
+        hasRenderError: false,
+      };
+    }
 
     static getDerivedStateFromError() {
       return { hasRenderError: true };

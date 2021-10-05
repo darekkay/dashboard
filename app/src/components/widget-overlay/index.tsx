@@ -1,4 +1,5 @@
 /* istanbul ignore file */
+
 import React, { MouseEvent, TouchEvent, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 

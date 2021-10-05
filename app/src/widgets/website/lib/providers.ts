@@ -1,4 +1,5 @@
 /* istanbul ignore file */
+
 export interface WebsiteProvider {
   title: string;
   url: string;

@@ -18,7 +18,9 @@ export const rootSaga = function* rootSaga() {
   // dynamic loading approaches (redux-sagas-injector, redux-dynamic-modules) bring a higher maintenance trade-off
   const widgetSagaModules = yield* all(
     widgetsWithSagas.map((widget) =>
-      call(async () => import(`widgets/${widget}/sagas`))
+      call(
+        async () => import(/* @vite-ignore */ `../widgets/${widget}/sagas.ts`)
+      )
     )
   );
   yield* all(

@@ -28,6 +28,8 @@ const createFile = (json: object) => {
   return file;
 };
 
+// TODO: check alternatives, see also file-upload test
+/* eslint-disable testing-library/no-unnecessary-act,testing-library/no-await-sync-events */
 describe("<ImportExport />", () => {
   test("renders without errors", () => {
     renderConnected(<ImportExportConnected />);
@@ -43,7 +45,9 @@ describe("<ImportExport />", () => {
 
     const file = createFile(stateProps);
 
-    fireEvent.drop(fileInput, { target: { files: [file] } });
+    await act(async () => {
+      await fireEvent.drop(fileInput, { target: { files: [file] } });
+    });
 
     const successMessage = await screen.findByText(
       "config.data.restore.success"
@@ -62,7 +66,9 @@ describe("<ImportExport />", () => {
 
     const file = createFile({ a: 2 });
 
-    fireEvent.drop(fileInput, { target: { files: [file] } });
+    await act(async () => {
+      await fireEvent.drop(fileInput, { target: { files: [file] } });
+    });
 
     expect(importStateSpy).toHaveBeenCalledTimes(0);
     const errorMessage = await screen.findByText("config.data.restore.error");
@@ -81,9 +87,7 @@ describe("<ImportExport />", () => {
       type: "image/png",
     });
 
-    // eslint-disable-next-line testing-library/no-unnecessary-act
     await act(async () => {
-      // eslint-disable-next-line testing-library/no-await-sync-events
       await fireEvent.drop(fileInput, { target: { files: [imageFile] } });
     });
 

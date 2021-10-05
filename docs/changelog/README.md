@@ -22,6 +22,7 @@
 - :bug: Preserve theme and language settings when using a demo template.
 - :bug: Fix black background color in fullscreen mode.
 - :bug: Reset pending widget status on state persist.
+- :hammer: [Migrate](https://darekkay.com/blog/create-react-app-to-vite/) from Create React App to Vite.
 - :hammer: Improve test coverage.
 - :hammer: Improve TypeScript types.
 - :hammer: Modernize Redux code.

@@ -1,6 +1,6 @@
-import toLower from "lodash/toLower";
+/* eslint-disable prefer-destructuring */
 
-import pkg from "../../package.json";
+import toLower from "lodash/toLower";
 
 export const toBoolean = (value?: string) => toLower(value) === "true";
 
@@ -29,14 +29,15 @@ export const IS_DEVELOPMENT = process.env.NODE_ENV === "development";
 export const IS_TEST = process.env.NODE_ENV === "test";
 
 /** The application version, derived from package.json */
-export const APP_VERSION = pkg.version;
+export const APP_VERSION = process.env.APP_VERSION;
 
 /** Base URL for all internal API requests */
-export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+export const API_BASE_URL =
+  process.env.DASHBOARD_API_BASE_URL ?? "http://localhost:3401/";
 
 /** Pause saving the application state, used for testing purposes */
 export const IS_STORAGE_PAUSED = toBoolean(
-  process.env.REACT_APP_IS_STORAGE_PAUSED
+  process.env.DASHBOARD_IS_STORAGE_PAUSED
 );
 
 /** If the URL contains the specified string, label IDs are displayed instead of English translations */

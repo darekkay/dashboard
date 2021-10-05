@@ -1,4 +1,7 @@
-// create-react-app: test setup file
+// jest setup file
+
+// NICE: check why some tests fail if this import is removed
+import "regenerator-runtime";
 
 // custom jest matchers for testing-library
 import "@testing-library/jest-dom/extend-expect";

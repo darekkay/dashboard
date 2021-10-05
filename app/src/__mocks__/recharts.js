@@ -1,3 +1,5 @@
+import React from "react";
+
 /*
  * Recharts Mock
  * Based on: https://github.com/recharts/recharts/issues/727

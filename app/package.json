@@ -20,7 +20,6 @@
     "axios": "0.21.0",
     "classnames": "2.2.6",
     "dayjs": "1.9.6",
-    "eslint": "7.30.0",
     "i18next": "19.8.4",
     "lodash": "4.17.20",
     "loglevel": "1.7.1",
@@ -34,7 +33,6 @@
     "react-measure": "2.5.2",
     "react-modal": "3.12.1",
     "react-redux": "7.2.4",
-    "react-scripts": "4.0.2",
     "react-sizeme": "3.0.1",
     "reakit": "1.3.1",
     "recharts": "2.0.9",
@@ -46,9 +44,8 @@
   "devDependencies": {
     "@darekkay/logger": "1.1.2",
     "@darekkay/scripts": "1.4.1",
-    "@storybook/addons": "6.3.6",
-    "@storybook/preset-create-react-app": "3.2.0",
-    "@storybook/react": "6.3.6",
+    "@storybook/addons": "6.4.8",
+    "@storybook/react": "6.4.8",
     "@tailwindcss/postcss7-compat": "2.0.1",
     "@testing-library/jest-dom": "5.11.6",
     "@testing-library/react": "11.2.2",
@@ -65,43 +62,28 @@
     "@types/react-measure": "2.0.6",
     "@types/react-modal": "3.10.6",
     "@types/react-redux": "7.1.18",
+    "@vitejs/plugin-react": "1.1.1",
     "babel-eslint": "10.1.0",
     "plop": "2.7.4",
     "react-test-renderer": "17.0.1",
+    "regenerator-runtime": "0.13.9",
     "sass": "1.32.13",
+    "sass-loader": "10.2.0",
     "source-map-explorer": "2.5.1",
     "storybook-addon-themes": "6.1.0",
     "swagger-typescript-api": "9.1.0",
+    "ts-jest": "27.0.6",
     "ts-node": "10.1.0",
-    "typescript": "4.3.5"
+    "tsconfig-paths-webpack-plugin": "3.5.2",
+    "typescript": "4.3.5",
+    "vite": "2.7.0",
+    "vite-plugin-svgr": "0.6.0",
+    "vite-tsconfig-paths": "3.3.17"
   },
   "engines": {
     "node": ">=12.0.0"
   },
   "homepage": "https://dashboard.darekkay.com",
-  "jest": {
-    "coverageThreshold": {
-      "global": {
-        "statements": 90,
-        "branches": 84,
-        "functions": 86,
-        "lines": 90
-      }
-    },
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!**/node_modules/**",
-      "!**/__stories__/**",
-      "!**/react-app-env.d.ts",
-      "!src/api/routes*",
-      "!src/components/**/selectors.ts",
-      "!src/common/utils/mock.tsx",
-      "!src/widgets/list.ts",
-      "!src/widgets/**/properties.ts",
-      "!src/widgets/**/configuration.tsx",
-      "!src/widgets/**/sagas.ts"
-    ]
-  },
   "license": "MIT",
   "main": "src/index.tsx",
   "private": true,
@@ -109,17 +91,9 @@
     "type": "git",
     "url": "https://github.com/darekkay/dashboard.git"
   },
-  "resolutions": {
-    "@typescript-eslint/eslint-plugin": "4.28.3",
-    "@typescript-eslint/parser": "4.28.3",
-    "babel-loader": "8.1.0",
-    "eslint": "7.30.0",
-    "eslint-plugin-react": "7.24.0",
-    "eslint-plugin-testing-library": "4.9.0"
-  },
   "scripts": {
     "analyze": "source-map-explorer \"build/static/js/*.js\"",
-    "build": "react-scripts build",
+    "build": "vite build",
     "ci": "dks ci",
     "clean-demo": "ts-node -P internals/scripts/tsconfig.json internals/scripts/clean-demo.ts",
     "format": "dks format",
@@ -129,11 +103,11 @@
     "scan": "run-p scan:*",
     "scan:api": "swagger-typescript-api --axios --route-types --js -p ../server/src/api/swagger.json -o src/api -n routes.ts",
     "scan:widgets": "ts-node --transpile-only -P internals/scripts/tsconfig.json internals/scripts/scan-widgets.ts && prettier --write src/widgets/list.ts && prettier --write ../server/src/widgets.ts",
-    "start": "react-scripts start",
+    "start": "vite",
     "storybook:build": "build-storybook",
-    "storybook:start": "start-storybook -p 6006 -s .storybook/assets --no-version-updates",
+    "storybook:start": "start-storybook -p 6006 --no-version-updates",
     "tailwind": "tailwind build internals/tailwind/tailwind.css -c internals/tailwind/config.js --no-autoprefixer -o src/styles/_tailwind.scss && prettier --write src/styles/_tailwind.scss",
-    "test": "react-scripts test --modulePaths=src --coverage",
+    "test": "dks test --coverage",
     "typecheck": "dks typecheck"
   }
 }
