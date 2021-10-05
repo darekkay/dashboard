@@ -1,8 +1,8 @@
+/* Based on: https://github.com/donavon/use-interval */
 import { renderHook } from "common/testing";
 
 import useInterval from "../useInterval";
 
-/* Based on: https://github.com/donavon/use-interval */
 describe("useInterval", () => {
   test("is passed a `handler` and a `delay`", () => {
     const handler = jest.fn();

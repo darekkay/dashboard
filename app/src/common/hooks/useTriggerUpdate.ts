@@ -12,8 +12,8 @@ interface UseTriggerUpdate {
   triggerUpdate: (action: TriggerUpdateAction) => void;
 }
 
-/*
- * Hook to trigger widget updates.
+/**
+ * React hook to trigger widget updates.
  *
  * An update should be triggered
  *  - After each update cycle (defined per widget type)

@@ -1,9 +1,8 @@
+/* Based on https://usehooks.com/usePrevious/ */
 import { useEffect, useRef } from "react";
 
-/*
- * Returns a value from the last render cycle.
- *
- * Based on https://usehooks.com/usePrevious/
+/**
+ * React hook to store and return a value from the last render cycle.
  */
 const usePrevious = <T>(value: T): T | undefined => {
   // The ref object is a generic container whose current property is mutable
