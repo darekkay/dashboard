@@ -1,9 +1,14 @@
+// @ts-nocheck
+
 import { addDecorator, addParameters } from "@storybook/react";
 
-import initStore from "state/store";
-import "common/i18n";
+import initStore from "../../app/src/state/store";
+import "../../app/src/common/i18n";
 
 import "../../app/src/styles/index.scss";
+
+// TODO: check if required, causes issues with vite-storybook
+// import "../src/styles/index.scss";
 import "./storybook.scss";
 
 initStore();

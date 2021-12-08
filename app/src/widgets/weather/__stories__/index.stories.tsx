@@ -39,7 +39,8 @@ const createForecast = () => {
     const temperatureMin = random(40) - 15;
     const temperatureMax = temperatureMin + random(20);
     forecast.push({
-      date: today.add(i, "day").unix(),
+      // https://github.com/storybookjs/storybook/issues/12208
+      date: today.subtract(-i, "day").unix(),
       condition: {
         description: "clear sky",
         icon: weatherIcons[random(weatherIcons.length - 1)],

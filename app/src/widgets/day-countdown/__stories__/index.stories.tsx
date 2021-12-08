@@ -26,7 +26,8 @@ export const Variants = () => {
           id="day-countdown-01"
           options={{
             eventName: "Christmas",
-            eventDate: now.add(1, "day").format("YYYY-MM-DD"),
+            // https://github.com/storybookjs/storybook/issues/12208
+            eventDate: now.subtract(-1, "day").format("YYYY-MM-DD"),
           }}
           data={{}}
         />

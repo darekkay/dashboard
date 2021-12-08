@@ -6,8 +6,10 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "7.20.12",
+    "@mdx-js/react": "2.1.1",
     "@storybook/addons": "6.5.16",
     "@storybook/react": "6.5.16",
+    "@storybook/builder-vite": "0.1.36",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "1.58.1",
@@ -15,7 +17,10 @@
     "storybook-addon-themes": "6.1.0",
     "tsconfig-paths-webpack-plugin": "3.5.2",
     "typescript": "4.9.5",
-    "webpack": "4.46.0"
+    "ts-node": "10.8.1",
+    "vite": "2.9.10",
+    "vite-plugin-svgr": "2.1.0",
+    "vite-tsconfig-paths": "3.5.0"
   },
   "engines": {
     "node": ">=14.0.0"
