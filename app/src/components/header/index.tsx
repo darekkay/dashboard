@@ -47,7 +47,7 @@ const Header: React.FC<Props> = ({
         <Icon name={isFullscreen ? "compress" : "expand"} />
       </Button>
 
-      <Menu icon="bars" title="Main menu" disclosureClassName="my-2">
+      <Menu icon="bars" title={t("common.menu")} disclosureClassName="my-2">
         <MenuAction
           text={t("common.documentation")}
           icon="question"
