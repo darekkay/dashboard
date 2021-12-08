@@ -104,8 +104,8 @@
     "scan:api": "swagger-typescript-api --axios --route-types --js -p ../server/src/api/swagger.json -o src/api -n routes.ts",
     "scan:widgets": "ts-node --transpile-only -P internals/scripts/tsconfig.json internals/scripts/scan-widgets.ts && prettier --write src/widgets/list.ts && prettier --write ../server/src/widgets.ts",
     "start": "vite",
-    "storybook:build": "build-storybook",
-    "storybook:start": "start-storybook -p 6006 --no-version-updates",
+    "storybook:build": "build-storybook --quiet",
+    "storybook:start": "start-storybook -p 6006 --no-version-updates --quiet",
     "tailwind": "tailwind build internals/tailwind/tailwind.css -c internals/tailwind/config.js --no-autoprefixer -o src/styles/_tailwind.scss && prettier --write src/styles/_tailwind.scss",
     "test": "dks test --coverage",
     "typecheck": "dks typecheck"

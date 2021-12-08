@@ -2,6 +2,7 @@ const path = require("path");
 
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
+/** @type {import("@storybook/core-common").StorybookConfig} */
 module.exports = {
   stories: ["../src/**/__stories__/*.stories.tsx"],
 
