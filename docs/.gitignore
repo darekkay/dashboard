@@ -2,3 +2,5 @@
 
 .vuepress/public
 .vuepress/dist
+.vuepress/.cache
+.vuepress/.temp

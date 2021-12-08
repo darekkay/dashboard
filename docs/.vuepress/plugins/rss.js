@@ -18,21 +18,23 @@ const processMarkdown = (content, siteUrl) =>
 
 const processHtml = content => content.replace(/<OutboundLink\/>/g, "");
 
-const renderHtml = (page, siteUrl) =>
-  processHtml(
-    page._context.markdown.render(
-      processMarkdown(page._strippedContent, siteUrl)
-    ).html
+const renderHtml = (page, siteUrl, markdown) => {
+  const [, ...rest] = page.content.split("\n");
+  const contentWithoutHeadline = rest.join("\n");
+
+  return processHtml(
+    markdown.render(processMarkdown(contentWithoutHeadline, siteUrl))
   );
+};
 
 module.exports = (pluginOptions, ctx) => {
   return {
     name: "rss",
 
-    generated() {
-      const { pages, sourceDir } = ctx;
+    onGenerated() {
+      const { pages, markdown } = ctx;
       const { filter = () => true, count = 20 } = pluginOptions;
-      const siteData = require(path.resolve(sourceDir, ".vuepress/config.js"));
+      const siteData = require(path.resolve(ctx.dir.source(), ".vuepress/config.js"));
       const siteUrl = `${pluginOptions.site_url}${pluginOptions.base_url}`;
 
       const feed = new RSS({
@@ -58,14 +60,14 @@ module.exports = (pluginOptions, ctx) => {
         .sort((a, b) => b.title.localeCompare(a.title))
         .map(page => ({
           title: page.title,
-          description: renderHtml(page, siteUrl),
+          description: renderHtml(page, siteUrl, markdown),
           url: `${siteUrl}${page.path}`,
           date: page.date
         }))
         .slice(0, count)
         .forEach(page => feed.item(page));
 
-      fs.writeFile(path.resolve(ctx.outDir, "rss.xml"), feed.xml());
+      fs.writeFile(path.resolve(ctx.dir.dest(), "rss.xml"), feed.xml());
       console.log(chalk.green.bold("RSS has been generated!"));
     }
   };

@@ -30,6 +30,7 @@
 - :hammer: Hide debug logs behind a query parameter flag.
 - :hammer: Provide root-level npm tasks to run `app` and `server` modules in parallel.
 - :hammer: Update dependencies.
+- :book: Update VuePress to v2.
 
 ## 1.5.0 (2021-05-26)
 

@@ -19,8 +19,11 @@ module.exports = {
   themeConfig: {
     repo: "https://github.com/darekkay/dashboard",
     docsDir: "docs",
+    docsBranch: "master",
     editLinks: true,
-    nav: [
+    lastUpdated: false,
+    contributors: false,
+    navbar: [
       { text: "Home", link: "/" },
       { text: "Widgets", link: "/widgets/" },
       { text: "Roadmap", link: "/roadmap/" },
@@ -32,30 +35,25 @@ module.exports = {
     sidebar: {
       "/widgets/": [
         {
-          title: "",
-          collapsable: false,
+          text: "",
           children: [""],
         },
       ],
       "/roadmap/": [
         {
-          title: "",
-          collapsable: false,
+          text: "",
           children: [""],
         },
       ],
       "/development/": [
         {
-          title: "",
-          collapsable: false,
+          text: "",
           children: [""],
         },
       ],
       "/blog/": [
         {
-          title: "Blog",
-          collapsable: false,
-          sidebarDepth: 0,
+          text: "Blog",
           children: [
             "2021-05-26",
             "2021-01-10",
@@ -83,6 +81,7 @@ module.exports = {
         },
       ],
     },
+    sidebarDepth: 1,
   },
   plugins: [
     [
@@ -93,5 +92,8 @@ module.exports = {
         count: 20,
       },
     ],
+    ["@vuepress/plugin-search", {
+      hotKeys: []
+    }],
   ],
 };
