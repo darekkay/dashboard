@@ -1,6 +1,6 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
 
+import { render, screen } from "common/testing";
 import { widgetContentProps, widgetStatusDisplay } from "common/utils/mock";
 
 import TotdWorldCountries from "../index";

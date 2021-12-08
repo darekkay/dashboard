@@ -1,7 +1,7 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
 import dayjs from "dayjs";
 
+import { render, screen } from "common/testing";
 import { widgetContentProps } from "common/utils/mock";
 
 import DayCountdown from "../index";
