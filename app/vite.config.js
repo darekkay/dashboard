@@ -6,16 +6,17 @@ import react from "@vitejs/plugin-react";
 import svgr from "vite-plugin-svgr";
 import tsconfigPaths from "vite-tsconfig-paths";
 
+const loadEnvFiles = (mode) => {
+  // similar approach to how Vite handles env files
+  const envFiles = [`.env.${mode}.local`, `.env.${mode}`, `.env.local`, `.env`];
+  for (const file of envFiles) {
+    dotenv.config({ path: file });
+  }
+};
+
 // https://vitejs.dev/config/
 export default ({ mode }) => {
-  // TODO: solve in a generic way
-  // http://localhost:8080/blog/create-react-app-to-vite/#environmental-variables
-  // https://github.com/motdotla/dotenv#should-i-have-multiple-env-files
-  dotenv.config({ path: ".env.local" });
-  if (mode === "development") {
-    dotenv.config({ path: ".env.development" });
-  }
-  dotenv.config({ path: ".env" });
+  loadEnvFiles(mode);
 
   return defineConfig({
     server: {
@@ -32,6 +33,7 @@ export default ({ mode }) => {
     },
 
     define: {
+      // explanation: https://darekkay.com/blog/create-react-app-to-vite/#environmental-variables
       "process.env.NODE_ENV": `"${mode}"`,
       "process.env.APP_VERSION": `"${process.env.npm_package_version}"`,
       "process.env.DASHBOARD_API_BASE_URL": `"${process.env.DASHBOARD_API_BASE_URL}"`,
