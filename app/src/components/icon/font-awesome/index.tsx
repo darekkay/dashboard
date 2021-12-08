@@ -13,6 +13,7 @@ import {
   faEquals,
   faExclamationCircle,
   faExpand,
+  faGlobeEurope,
   faHome,
   faLanguage,
   faMapMarkerAlt,
@@ -60,6 +61,7 @@ export type FontAwesomeIconName =
   | "eye"
   | "file"
   | "github"
+  | "globe"
   | "home"
   | "language"
   | "mapMarker"
@@ -105,6 +107,7 @@ const icons: Record<FontAwesomeIconName, IconDefinition> = {
   eye: faEye,
   file: faFileAlt,
   github: faGithub,
+  globe: faGlobeEurope,
   home: faHome,
   language: faLanguage,
   mapMarker: faMapMarkerAlt,

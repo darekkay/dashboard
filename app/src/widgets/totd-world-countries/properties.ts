@@ -11,6 +11,7 @@ const properties: WidgetProperties = {
   initialMeta: {
     updateCycle: { hours: 24 },
     updateStatus: "idle",
+    headlineIcon: "globe",
   },
 };
 

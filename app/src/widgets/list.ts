@@ -162,7 +162,11 @@ const widgetProperties: Record<WidgetType, WidgetProperties> = {
     initialHeight: 3,
     initialWidth: 3,
     initialOptions: {},
-    initialMeta: { updateCycle: { hours: 24 }, updateStatus: "idle" },
+    initialMeta: {
+      updateCycle: { hours: 24 },
+      updateStatus: "idle",
+      headlineIcon: "globe",
+    },
   },
   "twitter-stats": {
     widgetType: "twitter-stats",
