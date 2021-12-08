@@ -3,6 +3,8 @@ module.exports = {
   description: "Customizable personal dashboard and startpage",
   base: "/docs/",
 
+  bundler: "@vuepress/bundler-vite",
+
   head: [
     [
       "meta",
@@ -92,8 +94,11 @@ module.exports = {
         count: 20,
       },
     ],
-    ["@vuepress/plugin-search", {
-      hotKeys: []
-    }],
+    [
+      "@vuepress/plugin-search",
+      {
+        hotKeys: [],
+      },
+    ],
   ],
 };
