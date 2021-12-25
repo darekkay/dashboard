@@ -2,7 +2,7 @@
   <configuration default="false" name="[app] test" type="JavaScriptTestRunnerJest">
     <node-interpreter value="project" />
     <node-options value="" />
-    <jest-package value="$PROJECT_DIR$/app/node_modules/react-scripts" />
+    <jest-package value="$PROJECT_DIR$/app/node_modules/jest" />
     <working-dir value="$PROJECT_DIR$/app" />
     <jest-options value="--watch" />
     <envs />

@@ -3,7 +3,7 @@ import React from "react";
 import { renderConnected, screen } from "common/testing";
 import { stateProps } from "common/utils/mock";
 
-import Dashboard, { shouldUpdateComponent, Props } from "../index";
+import Dashboard, { Props } from "../index";
 
 describe("<Dashboard />", () => {
   const defaultProps: Props = {
@@ -50,22 +50,5 @@ describe("<Dashboard />", () => {
   test("renders a welcome page", () => {
     renderConnected(<Dashboard {...defaultProps} widgetIDs={[]} />);
     expect(screen.getByText("welcome.message1")).toBeInTheDocument();
-  });
-
-  test("does not perform unnecessary re-renders", () => {
-    expect(
-      shouldUpdateComponent(defaultProps, {
-        ...defaultProps,
-        widgetIDs: ["text-02", "search-01"],
-        saveLayout: () => 2,
-      })
-    ).toBe(false);
-
-    expect(
-      shouldUpdateComponent(defaultProps, {
-        ...defaultProps,
-        widgetIDs: ["search-01"],
-      })
-    ).toBe(true);
   });
 });
