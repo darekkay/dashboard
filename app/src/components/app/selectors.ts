@@ -6,8 +6,6 @@ import { getTypeFromId } from "components/widget/selectors";
 import { State } from "state/store";
 import { SelectedProps as AppProps } from "components/app/index";
 
-/* TODO: use a hash to prevent re-rendering */
-
 const selectComponentProps = createSelector<State, AppProps>(
   ["layout", "config.theme", "config.backgroundUrl"],
   (layout: LayoutState, theme, backgroundUrl) => ({

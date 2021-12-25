@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useMemo, useRef } from "react";
 import { Responsive as ReactGridLayout } from "react-grid-layout";
 import { useResizeDetector } from "react-resize-detector";
 import memoize from "lodash/memoize";
@@ -18,7 +18,21 @@ const Dashboard: React.FC<Props> = (props) => {
   const targetRef = useRef(null);
   const { width } = useResizeDetector({ targetRef });
 
+  // memoize widgets to utilize RGL's rerender optimization: https://github.com/react-grid-layout/react-grid-layout#performance
+  const widgets = useMemo(
+    () =>
+      widgetIDs.map((widgetID: string) =>
+        React.createElement(makeWidgetMemoized(widgetID), {
+          key: widgetID,
+        })
+      ),
+    // https://github.com/facebook/react/issues/14476#issuecomment-471199055
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [JSON.stringify(widgetIDs)]
+  );
+
   if (widgetIDs.length === 0) return <WelcomePage importState={importState} />;
+
   return (
     <ReactGridLayout
       innerRef={targetRef}
@@ -37,11 +51,7 @@ const Dashboard: React.FC<Props> = (props) => {
       }}
       width={width ?? 0}
     >
-      {widgetIDs.map((widgetID: string) =>
-        React.createElement(makeWidgetMemoized(widgetID), {
-          key: widgetID,
-        })
-      )}
+      {widgets}
     </ReactGridLayout>
   );
 };
