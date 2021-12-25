@@ -10,13 +10,15 @@ const { store, persistor, purgeStore } = initStore();
 export const PersistorContext = React.createContext(purgeStore);
 
 const Entry: React.FC = () => (
-  <Provider store={store}>
-    <PersistGate loading={<Loading className="mt-8" />} persistor={persistor}>
-      <PersistorContext.Provider value={purgeStore}>
-        <App />
-      </PersistorContext.Provider>
-    </PersistGate>
-  </Provider>
+  <React.StrictMode>
+    <Provider store={store}>
+      <PersistGate loading={<Loading className="mt-8" />} persistor={persistor}>
+        <PersistorContext.Provider value={purgeStore}>
+          <App />
+        </PersistorContext.Provider>
+      </PersistGate>
+    </Provider>
+  </React.StrictMode>
 );
 
 export default Entry;
