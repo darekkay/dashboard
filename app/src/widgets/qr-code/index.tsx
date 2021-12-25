@@ -1,5 +1,5 @@
 import React from "react";
-import QRCode from "qrcode.react";
+import QrCodeLib from "react-qr-code";
 import isEmpty from "lodash/isEmpty";
 
 import WidgetUnconfigured from "components/widget-unconfigured";
@@ -17,7 +17,7 @@ const QrCode: React.FC<Props> = ({ type, meta, content }) => {
   const imageSize = getSquareSize(meta.dimensions);
   return (
     <div className="flex items-center h-full">
-      <QRCode size={imageSize - 10} value={content} />
+      <QrCodeLib size={imageSize - 10} value={content} />
     </div>
   );
 };
