@@ -38,6 +38,7 @@ const Search: React.FC<Props> = ({ id, type, pattern }) => {
           }
           clearOnEscape
           type="search"
+          enterKeyHint="search"
           aria-labelledby={`widget-${id}-headline`}
         />
         <Button
