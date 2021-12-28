@@ -21,7 +21,7 @@ const triggerUpdateHandler = (apiCall: ApiCall) => {
         })
       );
       yield* put(widgetActions.updateSuccess(id));
-    } catch (error) {
+    } catch (error: any) {
       yield* put(
         widgetActions.updateError({
           id,

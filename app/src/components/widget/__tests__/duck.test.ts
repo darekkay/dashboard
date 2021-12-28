@@ -24,7 +24,7 @@ describe("Widget duck", () => {
       })
     );
 
-    expect(get(updatedState, "date-time-01.options.content")).toEqual("mock");
+    expect(get(updatedState, "date-time-01.options.content")).toBe("mock");
   });
 
   test("updates the widget's data value", () => {
@@ -36,7 +36,7 @@ describe("Widget duck", () => {
       })
     );
 
-    expect(get(updatedState, "date-time-01.data.content")).toEqual("mock");
+    expect(get(updatedState, "date-time-01.data.content")).toBe("mock");
   });
 
   test("creates and removes a widget", () => {

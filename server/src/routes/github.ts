@@ -78,11 +78,12 @@ const fetchUserStats = async (user: string) => {
 };
 
 const fetchRepositoryStats = async (repository: string) => {
-  const repositoryResponse = (
-    await axios.get(`https://api.github.com/repos/${repository}`, {
+  const { data: repositoryResponse } = await axios.get(
+    `https://api.github.com/repos/${repository}`,
+    {
       ttl: TTL,
-    })
-  ).data;
+    }
+  );
 
   return {
     name: repositoryResponse.full_name,

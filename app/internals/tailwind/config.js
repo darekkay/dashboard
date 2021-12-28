@@ -1,7 +1,9 @@
 /** @type {import('@types/tailwindcss/tailwind-config').TailwindConfig} */
 module.exports = {
   presets: [require("@darekkay/styles/tailwind.config")],
-
+  purge: {
+    content: [],
+  },
   theme: {
     // remove line-height from base fontSize definition
     fontSize: {

@@ -40,6 +40,7 @@ i18n.use(initReactI18next).init({
   fallbackLng: "en",
 
   interpolation: {
+    skipOnVariables: false, // support interpolation in widget headlines etc.
     escapeValue: false, // not required for React
     format: (value, format, language) => {
       if (format === "number") {

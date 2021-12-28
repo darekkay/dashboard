@@ -9,19 +9,19 @@ describe("Settings duck", () => {
       actions.changeBackgroundUrl("mock")
     );
 
-    expect(updatedState.backgroundUrl).toEqual("mock");
+    expect(updatedState.backgroundUrl).toBe("mock");
   });
 
   test("updates the color theme", () => {
     const updatedState = reducer(initialState, actions.changeTheme("mock"));
 
-    expect(updatedState.theme).toEqual("mock");
+    expect(updatedState.theme).toBe("mock");
   });
 
   test("changes the language", () => {
     const updatedState = reducer(initialState, actions.changeLanguage("mock"));
 
-    expect(updatedState.language).toEqual("mock");
+    expect(updatedState.language).toBe("mock");
   });
 
   test("imports all settings when available", () => {
@@ -37,9 +37,9 @@ describe("Settings duck", () => {
       })
     );
 
-    expect(updatedState.theme).toEqual("dark");
-    expect(updatedState.language).toEqual("de");
-    expect(updatedState.backgroundUrl).toEqual("image.png");
+    expect(updatedState.theme).toBe("dark");
+    expect(updatedState.language).toBe("de");
+    expect(updatedState.backgroundUrl).toBe("image.png");
   });
 
   test("doesn't import empty language or theme", () => {
@@ -59,8 +59,8 @@ describe("Settings duck", () => {
       })
     );
 
-    expect(updatedState.theme).toEqual("default");
-    expect(updatedState.language).toEqual("en");
-    expect(updatedState.backgroundUrl).toEqual("");
+    expect(updatedState.theme).toBe("default");
+    expect(updatedState.language).toBe("en");
+    expect(updatedState.backgroundUrl).toBe("");
   });
 });

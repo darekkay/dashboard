@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import Fullscreen from "react-full-screen";
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import isEmpty from "lodash/isEmpty";
 
 import { actions as layoutActions, Layout } from "common/ducks/layout";
 import { actions as stateActions } from "common/ducks/state";
-import useToggle from "common/hooks/useToggle";
 import Dashboard from "components/dashboard";
 import Header from "components/header";
 import { updateCssVariables, Theme } from "components/settings/theme-select";
@@ -29,13 +28,10 @@ export const App: React.FC<Props> = (props) => {
     updateCssVariables(currentTheme);
   }, [currentTheme]);
 
-  const [isFullscreen, toggleFullscreen] = useToggle(false);
+  const fullScreenHandle = useFullScreenHandle();
 
   return (
-    <Fullscreen
-      enabled={isFullscreen}
-      onChange={(isFull) => toggleFullscreen(isFull)}
-    >
+    <FullScreen handle={fullScreenHandle}>
       <div
         className="flex flex-col absolute inset-0 bg-cover bg-fixed bg-offset"
         style={
@@ -47,8 +43,12 @@ export const App: React.FC<Props> = (props) => {
         }
       >
         <Header
-          isFullscreen={isFullscreen}
-          toggleFullscreen={toggleFullscreen}
+          isFullscreen={fullScreenHandle.active}
+          toggleFullscreen={
+            fullScreenHandle.active
+              ? fullScreenHandle.exit
+              : fullScreenHandle.enter
+          }
           addWidgetToLayout={addWidgetToLayout}
         />
 
@@ -63,7 +63,7 @@ export const App: React.FC<Props> = (props) => {
           </main>
         </div>
       </div>
-    </Fullscreen>
+    </FullScreen>
   );
 };
 

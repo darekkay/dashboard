@@ -137,6 +137,8 @@ export const Widget: React.FC<Props> = React.forwardRef<HTMLDivElement, Props>(
   }
 );
 
+Widget.displayName = "Widget";
+
 export interface Props {
   id: string;
   type: WidgetType;

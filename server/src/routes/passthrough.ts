@@ -13,6 +13,7 @@ const routes = (app: Express) => {
   /* Passthrough a GET resource to bypass CORS */
   app.get(
     "/passthrough",
+    /* eslint-disable-next-line @typescript-eslint/no-misused-promises */
     async (request: Request, response: Response, next: NextFunction) => {
       if (!isRequestValid(request)) {
         return response.status(400).end();
@@ -21,8 +22,11 @@ const routes = (app: Express) => {
       try {
         const { url, ttl } = request.query;
 
-        const axiosResponse = await axios.get(url, { ttl: ttl || 5 * 60 });
+        const axiosResponse = await axios.get(url as string, {
+          ttl: ttl ? parseInt(ttl as string, 10) : 5 * 60,
+        });
 
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         if (axiosResponse.headers?.["content-type"]) {
           // pass through the content-type header
           // this block a migration to tsoa: https://github.com/lukeautry/tsoa/issues/968

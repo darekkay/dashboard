@@ -1,0 +1,5 @@
+# npm-check-updates configuration
+
+reject:
+  # pinned to Node 16
+  - "@types/node"

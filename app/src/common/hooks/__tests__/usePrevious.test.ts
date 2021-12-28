@@ -13,10 +13,10 @@ describe("usePrevious", () => {
 
     // On subsequent renders, the previous value should be returned
     rerender("second");
-    expect(result.current).toEqual("first");
+    expect(result.current).toBe("first");
 
     rerender(null);
-    expect(result.current).toEqual("second");
+    expect(result.current).toBe("second");
 
     // Supports null values
     rerender("last");

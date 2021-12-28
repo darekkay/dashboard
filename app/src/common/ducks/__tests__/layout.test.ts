@@ -59,21 +59,21 @@ describe("Layout duck", () => {
     let updatedState = addWidgetToLayoutAction([
       { i: "text-01", x: 0, y: 0, w: 1, h: 1 },
     ]);
-    expect(getLastWidget(updatedState.config.desktop).y).toEqual(1);
+    expect(getLastWidget(updatedState.config.desktop).y).toBe(1);
 
     updatedState = addWidgetToLayoutAction([
       { i: "text-01", x: 0, y: 0, w: 1, h: 3 },
     ]);
-    expect(getLastWidget(updatedState.config.desktop).y).toEqual(3);
+    expect(getLastWidget(updatedState.config.desktop).y).toBe(3);
 
     updatedState = addWidgetToLayoutAction([
       { i: "text-01", x: 0, y: 0, w: 1, h: 3 },
       { i: "text-02", x: 3, y: 3, w: 1, h: 3 },
     ]);
-    expect(getLastWidget(updatedState.config.desktop).y).toEqual(6);
+    expect(getLastWidget(updatedState.config.desktop).y).toBe(6);
 
     updatedState = addWidgetToLayoutAction([]);
-    expect(getLastWidget(updatedState.config.desktop).y).toEqual(0);
+    expect(getLastWidget(updatedState.config.desktop).y).toBe(0);
   });
 
   test("removes widgets from the dashboard", () => {
@@ -90,7 +90,7 @@ describe("Layout duck", () => {
       "text-01"
     );
     expect(updatedState.config.desktop).toHaveLength(1);
-    expect(getLastWidget(updatedState.config.desktop).i).toEqual("text-02");
+    expect(getLastWidget(updatedState.config.desktop).i).toBe("text-02");
 
     updatedState = removeWidgetFromLayoutAction(
       [
@@ -107,6 +107,6 @@ describe("Layout duck", () => {
       reducer(state, actions.incrementNextWidgetId());
 
     const updatedState = incrementNextWidgetIdAction(getInitialState([]));
-    expect(updatedState.nextWidgetId).toEqual(101);
+    expect(updatedState.nextWidgetId).toBe(101);
   });
 });
