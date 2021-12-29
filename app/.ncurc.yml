@@ -1,9 +1,6 @@
 # npm-check-updates configuration
 
 reject:
-  # 11+ requires webpack 5
-  - "sass-loader"
-
   # pinned to 2 as long as jit is not used
   - "tailwindcss"
 

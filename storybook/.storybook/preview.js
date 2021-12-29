@@ -3,7 +3,7 @@ import { addDecorator, addParameters } from "@storybook/react";
 import initStore from "state/store";
 import "common/i18n";
 
-import "../src/styles/index.scss";
+import "../../app/src/styles/index.scss";
 import "./storybook.scss";
 
 initStore();

@@ -44,8 +44,6 @@
   "devDependencies": {
     "@darekkay/logger": "1.2.0",
     "@darekkay/scripts": "1.5.3",
-    "@storybook/addons": "6.4.9",
-    "@storybook/react": "6.4.9",
     "@testing-library/jest-dom": "5.16.1",
     "@testing-library/react": "12.1.2",
     "@testing-library/react-hooks": "7.0.2",
@@ -61,25 +59,23 @@
     "@types/react-modal": "3.13.1",
     "@types/react-redux": "7.1.21",
     "@vitejs/plugin-react": "1.1.3",
+    "dotenv": "10.0.0",
     "plop": "3.0.5",
     "postcss": "8.4.5",
     "react-test-renderer": "17.0.2",
     "regenerator-runtime": "0.13.9",
     "sass": "1.45.1",
-    "sass-loader": "10.2.0",
-    "storybook-addon-themes": "6.1.0",
     "swagger-typescript-api": "9.3.1",
     "tailwindcss": "2.2.19",
     "ts-jest": "27.1.2",
     "ts-node": "10.4.0",
-    "tsconfig-paths-webpack-plugin": "3.5.2",
     "typescript": "4.5.4",
     "vite": "2.7.9",
     "vite-plugin-svgr": "0.6.0",
     "vite-tsconfig-paths": "3.3.17"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=12.22.0"
   },
   "homepage": "https://dashboard.darekkay.com",
   "license": "MIT",
@@ -90,7 +86,6 @@
     "url": "https://github.com/darekkay/dashboard.git"
   },
   "scripts": {
-    "analyze": "source-map-explorer \"build/static/js/*.js\"",
     "build": "vite build",
     "ci": "dks ci",
     "clean-demo": "ts-node -P internals/scripts/tsconfig.json internals/scripts/clean-demo.ts",
@@ -102,8 +97,6 @@
     "scan:api": "swagger-typescript-api --axios --route-types --js -p ../server/src/api/swagger.json -o src/api -n routes.ts",
     "scan:widgets": "ts-node --transpile-only -P internals/scripts/tsconfig.json internals/scripts/scan-widgets.ts && prettier --write src/widgets/list.ts && prettier --write ../server/src/widgets.ts",
     "start": "vite",
-    "storybook:build": "build-storybook --quiet",
-    "storybook:start": "start-storybook -p 6006 --no-version-updates --quiet",
     "tailwind": "tailwind build -i internals/tailwind/tailwind.css -c internals/tailwind/config.js --no-autoprefixer -o src/styles/_tailwind.scss && prettier --write src/styles/_tailwind.scss",
     "test": "dks test --coverage",
     "typecheck": "dks typecheck"

@@ -14,6 +14,7 @@
     "setup:app": "cd app && yarn install",
     "setup:docs": "cd docs && yarn install",
     "setup:server": "cd server && yarn install",
+    "setup:storybook": "cd storybook && yarn install",
     "start": "server/node_modules/.bin/run-p start:*",
     "start:app": "cd app && yarn start",
     "start:server": "cd server && yarn dev"

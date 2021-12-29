@@ -37,7 +37,7 @@ yarn setup
 
 Note: You may also use `npm` instead of `yarn`.
 
-The `setup` task will install dependencies in all available modules (`app`, `server`, `docs`).
+The `setup` task will install dependencies in all available modules (`app`, `server`, `storybook`, `docs`).
 
 ### Quick start
 
@@ -68,13 +68,12 @@ Notice: The `server` module offers the `yarn dev` task that uses `nodemon`. It w
 The `package.json` files contain other useful scripts, which you can execute using `yarn <command>` or `npm run <command>`:
 
 | Command         | Description                                          |
-| --------------- | ---------------------------------------------------- |
+|-----------------|------------------------------------------------------|
 | build           | Builds the app for production to the `build` folder. |
 | ci              | Runs linter, typescript compiler and tests.          |
 | format          | Reformat all files with `prettier`.                  |
 | generate        | Generate boilerplate code (components, widgets).     |
 | lint            | Run ESLint, apply automatic fixes if possible.       |
-| storybook:start | Start Storybook                                      |
 | test            | Run tests and check test coverage.                   |
 
 The `master` branch is (manually) deployed to [dashboard.darekkay.com](https://dashboard.darekkay.com).
@@ -99,6 +98,8 @@ This client module was bootstrapped with [Create React App](https://github.com/f
 #### Storybook
 
 This project uses [Storybook](https://storybook.js.org/), a tool for developing UI components in isolation. It is automatically deployed [here](https://dashboard.darekkay.com/storybook/) on every push to production. Every widget and every common component should provide a story in a `__stories__` sub-folder.
+
+Run `yarn start` in the `storybook` module to start a local development instance of Storybook.
 
 ### Server
 
