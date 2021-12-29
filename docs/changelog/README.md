@@ -22,8 +22,12 @@
 - :bug: Preserve theme and language settings when using a demo template.
 - :bug: Fix black background color in fullscreen mode.
 - :bug: Reset pending widget status on state persist.
+- :bug: Internationalize hardcoded menu label.
 - :hammer: [Migrate](https://darekkay.com/blog/create-react-app-to-vite/) from Create React App to Vite.
 - :hammer: Extract Storybook into a separate module.
+- :hammer: Silence unnecessary Storybook console output.
+- :hammer: Replace `react-sizeme` with `react-resize-detector`.
+- :hammer: Replace `qrcode.react` with `react-qr-code`.
 - :hammer: Improve test coverage.
 - :hammer: Improve TypeScript types.
 - :hammer: Modernize Redux code.
