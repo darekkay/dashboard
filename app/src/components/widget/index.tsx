@@ -41,16 +41,16 @@ export const Widget: React.FC<Props> = React.forwardRef<HTMLDivElement, Props>(
     const headline = t(`widget.${type}.headline`, { ...options, ...data });
     const isWidgetConfigurable = widgets[type].configurable;
 
-    const [isDraggable, setDraggable] = useState(true);
-
-    const [isWidgetMenuVisible, showWidgetMenu, , setWidgetMenuVisible] =
-      useBooleanState(false);
-
     const [
       isConfigurationModalOpen,
       openConfigurationModal,
       closeConfigurationModal,
     ] = useBooleanState(false);
+
+    const [isDraggable, setDraggable] = useState(true);
+
+    const [isWidgetMenuVisible, showWidgetMenu, , setWidgetMenuVisible] =
+      useBooleanState(false);
 
     const onBlur: FocusEventHandler = (event) => {
       // The widget becomes draggable if neither of its children is focused
