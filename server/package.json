@@ -48,6 +48,7 @@
   "homepage": "https://dashboard.darekkay.com",
   "license": "MIT",
   "main": "index.js",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/darekkay/dashboard-server.git"

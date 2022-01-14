@@ -2,6 +2,7 @@
   "name": "dashboard-monorepo",
   "description": "Package for the dashboard monorepo",
   "version": "1.0.0",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "ci": "server/node_modules/.bin/run-s ci:*",

@@ -7,10 +7,11 @@ package-lock.json
 
 ### IDE ###
 
-/.idea/workspace.xml
-/.idea/tasks.xml
-/.idea/shelf
 /.idea/httpRequests
+/.idea/markdown.xml
+/.idea/shelf
+/.idea/tasks.xml
+/.idea/workspace.xml
 
 ### Misc ###
 
