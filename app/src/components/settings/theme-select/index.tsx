@@ -8,16 +8,14 @@ import Icon from "components/icon";
 
 import selectComponentProps from "./selectors";
 
-const themeSelectors = THEMES.map((theme) => `theme-${theme}`);
-
 export const updateCssVariables = (theme: Theme) => {
-  document.body.classList.remove(...themeSelectors);
-  document.body.classList.add(`theme-${theme}`);
+  document.body.dataset.theme = theme;
 };
 
 export const ThemeOption: React.FC<ThemeProps> = ({ name, label, onClick }) => (
   <button
-    className={`theme-${name} inline-block mr-6 p-0 border-0 cursor-pointer`}
+    className="inline-block mr-6 p-0 border-0 cursor-pointer"
+    data-theme={name}
     style={{ width: "150px", height: "100px" }}
     onClick={onClick}
     type="button"

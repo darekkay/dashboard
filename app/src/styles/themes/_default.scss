@@ -2,7 +2,8 @@
 
 $blue-vivid-55: #0072ce;
 
-.theme-default {
+:root,
+[data-theme="default"] {
   --color-text-default: #{$blue-80};
   --color-text-offset: #{$dk-gray-55};
   --color-text-accent: #{$violet-vivid-60};

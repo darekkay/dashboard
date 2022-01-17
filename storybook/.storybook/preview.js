@@ -10,13 +10,26 @@ initStore();
 
 // Define UI themes
 addParameters({
-  themes: [
-    {
-      name: "Default",
-      color: "#f5f7fb",
-      class: "theme-default",
-      default: true,
+  themes: {
+    default: "Default",
+    list: [
+      {
+        name: "Default",
+        color: "#f5f7fb",
+        class: "theme-default",
+      },
+      { name: "Dark", color: "#1c1c1c", class: "theme-dark" },
+    ],
+    onChange: (theme) => {
+      const storybookIframe = document.getElementById(
+        "storybook-preview-iframe"
+      );
+      const storybookIframeDocument =
+        storybookIframe.contentDocument ||
+        storybookIframe.contentWindow.document;
+
+      storybookIframeDocument.body.dataset.theme =
+        theme?.class.substring(6) || "default";
     },
-    { name: "Dark", color: "#1c1c1c", class: "theme-dark" },
-  ],
+  },
 });

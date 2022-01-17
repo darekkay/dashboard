@@ -1,6 +1,6 @@
 @import "~@darekkay/styles/src/base/colors";
 
-.theme-dark {
+[data-theme="dark"] {
   --color-text-default: #{$white};
   --color-text-offset: #{$gray-20};
   --color-text-accent: #{$blue-20};
