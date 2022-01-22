@@ -54,6 +54,7 @@
     "url": "git+https://github.com/darekkay/dashboard-server.git"
   },
   "scripts": {
+    "build": "tsc",
     "build-api": "tsoa spec-and-routes",
     "build-api:dev": "nodemon -x tsoa spec-and-routes --ignore src/api",
     "ci": "dks ci",
