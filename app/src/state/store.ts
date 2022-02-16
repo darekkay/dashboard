@@ -36,6 +36,7 @@ const initStore = (preloadedState?: State) => {
     preloadedState,
     middleware: [
       sagaMiddleware,
+      // TODO: check deprecation recommendation
       ...getDefaultMiddleware({
         thunk: false,
         immutableCheck: true,
@@ -45,6 +46,7 @@ const initStore = (preloadedState?: State) => {
       }),
     ],
     devTools: {
+      // TODO: check deprecation recommendation
       actionsBlacklist: [],
     },
   });
