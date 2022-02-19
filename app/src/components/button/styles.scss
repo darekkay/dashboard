@@ -1,18 +1,16 @@
 @import "../../styles/mixins";
 
 @mixin button-variant(
+  $base,
   $foreground,
   $background,
-  $border,
-  $event-foreground,
-  $event-background,
   $focus-ring
 ) {
   color: $foreground;
   background-color: $background;
 
   &.btn-border {
-    border-color: $border;
+    border-color: $base;
   }
 
   svg {
@@ -21,11 +19,11 @@
 
   &:hover,
   &:active {
-    color: $event-foreground;
-    background-color: $event-background;
+    color: var(--button-inverse-color);
+    background-color: $base;
 
     svg {
-      fill: $event-foreground;
+      fill: var(--button-inverse-color);
     }
   }
 
@@ -39,7 +37,6 @@
   white-space: nowrap;
 
   &:not(.no-transition) {
-    -webkit-transition: all 0.15s ease;
     transition: all 0.15s ease;
   }
 
@@ -48,7 +45,6 @@
   }
 
   &:active {
-    -webkit-transform: translateY(1px);
     transform: translateY(1px);
   }
 
@@ -78,11 +74,9 @@
 
 .btn-primary {
   @include button-variant(
-    var(--button-inverse-color),
-    var(--button-primary-color),
     var(--button-primary-color),
     var(--button-inverse-color),
-    var(--button-primary-event-bg),
+    var(--button-primary-color),
     var(--button-primary-focus-ring)
   );
 }
@@ -90,21 +84,17 @@
 .btn-primary-outline {
   @include button-variant(
     var(--button-primary-color),
-    transparent,
     var(--button-primary-color),
-    var(--button-inverse-color),
-    var(--button-primary-event-bg),
+    transparent,
     var(--button-primary-focus-ring)
   );
 }
 
 .btn-secondary {
   @include button-variant(
-    var(--button-inverse-color),
-    var(--button-secondary-color),
     var(--button-secondary-color),
     var(--button-inverse-color),
-    var(--button-secondary-event-bg),
+    var(--button-secondary-color),
     var(--button-secondary-focus-ring)
   );
 }
@@ -112,31 +102,25 @@
 .btn-secondary-outline {
   @include button-variant(
     var(--button-secondary-color),
-    transparent,
     var(--button-secondary-color),
-    var(--button-inverse-color),
-    var(--button-secondary-event-bg),
+    transparent,
     var(--button-secondary-focus-ring)
   );
 }
 
 .btn-danger {
   @include button-variant(
-    var(--button-inverse-color),
-    var(--button-danger-color),
     var(--button-danger-color),
     var(--button-inverse-color),
-    var(--button-danger-event-bg),
+    var(--button-danger-color),
     var(--button-danger-focus-ring)
   );
 }
 .btn-danger-outline {
   @include button-variant(
     var(--button-danger-color),
-    transparent,
     var(--button-danger-color),
-    var(--button-inverse-color),
-    var(--button-danger-event-bg),
+    transparent,
     var(--button-danger-focus-ring)
   );
 }

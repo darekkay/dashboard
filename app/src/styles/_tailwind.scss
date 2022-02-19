@@ -1031,72 +1031,40 @@
   border-color: transparent;
 }
 
-.border-inherit {
-  border-color: inherit;
-}
-
-.border-default {
-  border-color: var(--color-background-default);
-}
-
-.border-offset {
-  border-color: var(--color-background-offset);
-}
-
 .border-success {
-  border-color: var(--color-background-success);
+  border-color: var(--color-border-success);
 }
 
 .border-warning {
-  border-color: var(--color-background-warning);
+  border-color: var(--color-border-warning);
 }
 
 .border-danger {
-  border-color: var(--color-background-danger);
+  border-color: var(--color-border-danger);
 }
 
 .border-info {
-  border-color: var(--color-background-info);
-}
-
-.border-inverted {
-  border-color: var(--inverted-color-background-default);
+  border-color: var(--color-border-info);
 }
 
 .hover\:border-transparent:hover {
   border-color: transparent;
 }
 
-.hover\:border-inherit:hover {
-  border-color: inherit;
-}
-
-.hover\:border-default:hover {
-  border-color: var(--color-background-default);
-}
-
-.hover\:border-offset:hover {
-  border-color: var(--color-background-offset);
-}
-
 .hover\:border-success:hover {
-  border-color: var(--color-background-success);
+  border-color: var(--color-border-success);
 }
 
 .hover\:border-warning:hover {
-  border-color: var(--color-background-warning);
+  border-color: var(--color-border-warning);
 }
 
 .hover\:border-danger:hover {
-  border-color: var(--color-background-danger);
+  border-color: var(--color-border-danger);
 }
 
 .hover\:border-info:hover {
-  border-color: var(--color-background-info);
-}
-
-.hover\:border-inverted:hover {
-  border-color: var(--inverted-color-background-default);
+  border-color: var(--color-border-info);
 }
 
 .bg-transparent {

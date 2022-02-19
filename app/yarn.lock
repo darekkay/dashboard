@@ -1927,10 +1927,10 @@
     which "2.0.2"
     yargs-parser "21.0.0"
 
-"@darekkay/styles@2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@darekkay/styles/-/styles-2.5.0.tgz#4f9530c75174eeabc106b3c472827d3d9c89c215"
-  integrity sha512-TcRJrB3u26/yzBPlVMRVYz+BAO3/rKUI8CIl3M5GKkfJQLdQL7VnWrc0gCvINGCigvLQcQokNMZ4wNllMFqF1g==
+"@darekkay/styles@2.6.4":
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/@darekkay/styles/-/styles-2.6.4.tgz#199a881ee41903d7f3b2445cfa9f7681335b8fc3"
+  integrity sha512-kseqN0b/7BOtl6uxPvDencMO8aYh5bnegUMrnUNCJ5pMopt0sg5AdSwIXSrqGjl11QgGhgf0PZc/sDid/f5EZg==
   dependencies:
     "@types/tailwindcss" "2.2.4"
 

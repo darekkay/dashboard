@@ -1,37 +1,18 @@
 @import "~@darekkay/styles/src/base/colors";
 
 [data-theme="dark"] {
-  --color-text-default: #{$white};
-  --color-text-offset: #{$gray-20};
-  --color-text-accent: #{$blue-20};
-  --color-text-interaction: #{$green-warm-vivid-30};
-  --color-text-success: #{$green-cool-vivid-30};
-  --color-text-danger: #{$gold-vivid-30};
-
-  --color-background-default: #{$gray-cool-80};
-  --color-background-offset: #{$gray-warm-90};
-
-  --color-border: #{$gray-warm-60};
-  --color-focus-ring: #{$green-warm-50};
-
-  --color-box-shadow: rgba(0, 0, 0, 0.5);
-  --color-backdrop: rgba(0, 0, 0, 0.6);
-
   --overlay-color-background-default: rgba(0, 0, 0, 0.6);
   --overlay-color-text-default: #{$white};
   --overlay-color-text-interaction: #{$green-warm-20};
 
-  --button-primary-color: #{$green-warm-vivid-30};
-  --button-primary-event-bg: #{$green-warm-30};
-  --button-primary-focus-ring: #{$green-warm-50};
+  --button-primary-color: #{$gold-vivid-20};
+  --button-primary-focus-ring: #{$gold-50};
 
   --button-secondary-color: #{$blue-vivid-30};
-  --button-secondary-event-bg: #{$blue-30};
   --button-secondary-focus-ring: #{$blue-60};
 
-  --button-danger-color: var(--color-text-danger);
-  --button-danger-event-bg: #{$gold-vivid-20};
-  --button-danger-focus-ring: #{$gold-vivid-50};
+  --button-danger-color: #{$red-vivid-30};
+  --button-danger-focus-ring: #{$red-warm-50};
 
   --button-inverse-color: #{$black};
   --button-disabled-color: #{$gray-40};

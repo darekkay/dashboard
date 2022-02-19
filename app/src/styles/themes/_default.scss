@@ -4,36 +4,21 @@ $blue-vivid-55: #0072ce;
 
 :root,
 [data-theme="default"] {
-  --color-text-default: #{$blue-80};
-  --color-text-offset: #{$dk-gray-55};
-  --color-text-accent: #{$violet-vivid-60};
   --color-text-interaction: #{$blue-vivid-55};
-  --color-text-success: #{$green-50};
-  --color-text-danger: #{$red-50};
-
-  --color-background-default: #{$white};
-  --color-background-offset: #{$gray-cool-3};
-
-  --color-border: #{$gray-cool-10};
-  --color-focus-ring: #{$blue-30};
-
-  --color-box-shadow: rgba(0, 0, 0, 0.1);
-  --color-backdrop: rgba(255, 255, 255, 0.6);
 
   --overlay-color-background-default: rgba(255, 255, 255, 0.5);
   --overlay-color-text-default: #{$black};
   --overlay-color-text-interaction: #{$violet-vivid-70};
 
+  --button-event-filter: saturate(80%) brightness(93%);
+
   --button-primary-color: #{$blue-vivid-55};
-  --button-primary-event-bg: #{$blue-vivid-60};
   --button-primary-focus-ring: #{$blue-30};
 
   --button-secondary-color: #{$violet-50};
-  --button-secondary-event-bg: #{$violet-60};
   --button-secondary-focus-ring: #{$violet-vivid-30};
 
   --button-danger-color: var(--color-text-danger);
-  --button-danger-event-bg: #{$red-60};
   --button-danger-focus-ring: #{$red-30};
 
   --button-inverse-color: #{$white};

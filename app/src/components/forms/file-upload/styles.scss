@@ -1,5 +1,5 @@
 .file-upload {
-  border: 2px dashed var(--color-border);
+  border: 2px dashed var(--color-border-default);
 
   &.drag-active {
     border-color: var(--color-focus-ring);
