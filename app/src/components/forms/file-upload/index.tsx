@@ -1,7 +1,6 @@
 import React from "react";
 import { DropzoneOptions, useDropzone } from "react-dropzone";
-import cn from "classnames";
-import { ClassValue } from "classnames/types";
+import cn, { Argument as ClassValue } from "classnames";
 
 import Icon from "components/icon";
 
