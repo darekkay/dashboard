@@ -13,6 +13,8 @@ import "./styles/index.scss";
 
 import Entry from "./entry";
 
+const githubCiTest: string = 1;
+
 updateCssVariables(defaultTheme());
 
 ReactDOM.render(<Entry />, document.querySelector("#root"));
