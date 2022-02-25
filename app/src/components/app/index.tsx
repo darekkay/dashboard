@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import isEmpty from "lodash/isEmpty";
@@ -7,7 +7,6 @@ import { actions as layoutActions, Layout } from "common/ducks/layout";
 import { actions as stateActions } from "common/ducks/state";
 import Dashboard from "components/dashboard";
 import Header from "components/header";
-import { updateCssVariables, Theme } from "components/settings/theme-select";
 import { WidgetType } from "widgets/list";
 import { State } from "state/store";
 
@@ -20,13 +19,8 @@ export const App: React.FC<Props> = (props) => {
     saveLayout,
     addWidgetToLayout,
     importState,
-    currentTheme,
     backgroundUrl,
   } = props;
-
-  useEffect(() => {
-    updateCssVariables(currentTheme);
-  }, [currentTheme]);
 
   const fullScreenHandle = useFullScreenHandle();
 
@@ -70,7 +64,6 @@ export const App: React.FC<Props> = (props) => {
 export interface SelectedProps {
   widgetIDs: string[];
   layout: Layout;
-  currentTheme: Theme;
   backgroundUrl: string;
 }
 

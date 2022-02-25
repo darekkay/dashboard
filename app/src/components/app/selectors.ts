@@ -7,8 +7,8 @@ import { State } from "state/store";
 import { SelectedProps as AppProps } from "components/app/index";
 
 const selectComponentProps = createSelector<State, AppProps>(
-  ["layout", "config.theme", "config.backgroundUrl"],
-  (layout: LayoutState, theme, backgroundUrl) => ({
+  ["layout", "config.backgroundUrl"],
+  (layout: LayoutState, backgroundUrl) => ({
     layout: layout.config,
 
     // mobile and desktop layouts are independent
@@ -19,7 +19,6 @@ const selectComponentProps = createSelector<State, AppProps>(
         // exclude non-available widgets, e.g. when switching development branches
         (widgetId: string) => availableWidgets[getTypeFromId(widgetId)]
       ),
-    currentTheme: theme,
     backgroundUrl,
   })
 );

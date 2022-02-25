@@ -44,6 +44,17 @@
     </div>
   </noscript>
   <div id="root"></div>
+  <script>
+    // set theme early to prevent flash of incorrect theme
+    const localStorageTheme = localStorage.getItem("theme");
+    if (localStorageTheme) {
+      document.body.dataset.theme = localStorageTheme;
+    } else {
+      document.body.dataset.theme = window.matchMedia?.("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "default";
+    }
+  </script>
   <script type="module" src="/src/index.tsx"></script>
 </body>
 </html>

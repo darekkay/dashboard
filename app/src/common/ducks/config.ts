@@ -7,7 +7,6 @@ import isEmpty from "lodash/isEmpty";
 import { State } from "state/store";
 import { Theme } from "components/settings/theme-select";
 import { importState } from "common/ducks/state";
-import { IS_DEVELOPMENT } from "common/environment";
 
 export interface ConfigState {
   theme: string;
@@ -16,11 +15,12 @@ export interface ConfigState {
 }
 
 export const defaultTheme = (): Theme => {
-  /* istanbul ignore next */
-  if (IS_DEVELOPMENT) {
-    return "default";
+  // theme is stored in the DOM prior to the app script being executed
+  const initialTheme = document.body.dataset.theme;
+  if (initialTheme === "default" || initialTheme === "dark") {
+    return initialTheme;
   }
-  return window.matchMedia?.("(prefers-color-scheme: dark)")
+  return window.matchMedia?.("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "default";
 };

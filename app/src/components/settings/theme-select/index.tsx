@@ -8,7 +8,9 @@ import Icon from "components/icon";
 
 import selectComponentProps from "./selectors";
 
-export const updateCssVariables = (theme: Theme) => {
+const syncTheme = (theme: Theme) => {
+  // to prevent flash of incorrect theme, the current theme is written into local storage and read on page load
+  localStorage.setItem("theme", theme);
   document.body.dataset.theme = theme;
 };
 
@@ -48,7 +50,7 @@ export const ThemeSelect: React.FC<Props> = (props) => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    updateCssVariables(theme);
+    syncTheme(theme);
   }, [theme]);
 
   return (
