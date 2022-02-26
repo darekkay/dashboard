@@ -6,8 +6,11 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "7.16.5",
+    "@storybook/addon-storyshots": "6.4.9",
+    "@storybook/addon-storyshots-puppeteer": "6.4.9",
     "@storybook/addons": "6.4.9",
     "@storybook/react": "6.4.9",
+    "puppeteer": "5.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sass": "1.45.1",
