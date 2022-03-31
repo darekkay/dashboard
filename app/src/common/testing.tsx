@@ -43,17 +43,6 @@ export const renderConnected = (
   };
 };
 
-export const expectToThrow = (func: Function) => {
-  const consoleErrorSpy = jest
-    .spyOn(console, "error")
-    .mockImplementation(() => {});
-
-  expect(func).toThrow();
-
-  expect(consoleErrorSpy).toHaveBeenCalledTimes(2);
-  jest.clearAllMocks();
-};
-
 /** Executes a redux-saga and returns dispatched actions */
 export const executeSaga = async (
   saga: Saga,

@@ -39,6 +39,7 @@ const Header: React.FC<Props> = ({
         className="mr-6 my-2"
         variant="primary"
         size="small"
+        // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onClick={toggleFullscreen}
         aria-label={t(
           isFullscreen ? "common.fullscreen.exit" : "common.fullscreen.start"
@@ -104,7 +105,7 @@ export interface Props {
   addWidgetToLayout: (widgetType: WidgetType) => void;
 
   isFullscreen: boolean;
-  toggleFullscreen: () => void;
+  toggleFullscreen: () => Promise<void>;
 }
 
 export default Header;

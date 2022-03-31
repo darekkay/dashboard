@@ -1,6 +1,6 @@
 import React from "react";
 
-import { render, screen, expectToThrow } from "common/testing";
+import { render, screen } from "common/testing";
 
 import Icon from "../index";
 
@@ -12,6 +12,6 @@ describe("<Icon />", () => {
 
   test("does not render unknown icons", () => {
     // @ts-expect-error
-    expectToThrow(() => render(<Icon name="c01c4b" />));
+    expect(() => render(<Icon name="c01c4b" />)).toThrow();
   });
 });

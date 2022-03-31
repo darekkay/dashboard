@@ -1,12 +1,14 @@
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
 describe("index", () => {
   test("renders the app", () => {
     // See also: https://stackoverflow.com/questions/43044696/test-a-create-react-app-index-js-file
 
-    const reactRenderSpy = jest
-      .spyOn(ReactDOM, "render")
-      .mockImplementation(() => {});
+    const reactRenderSpy = jest.fn();
+    jest.spyOn(ReactDOM, "createRoot").mockImplementation(() => ({
+      render: reactRenderSpy,
+      unmount: () => null,
+    }));
 
     const root = document.createElement("div");
     root.setAttribute("id", "root");
@@ -22,4 +24,4 @@ describe("index", () => {
   });
 });
 
-export {}; // required for TS
+// required for TS

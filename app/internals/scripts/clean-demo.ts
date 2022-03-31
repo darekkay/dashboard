@@ -13,7 +13,7 @@ const demoFilePath = join(
   "templates",
   "demo.json"
 );
-const demo = JSON.parse(readFileSync(demoFilePath, "utf-8")) as State;
+const demo = JSON.parse(readFileSync(demoFilePath, "utf8")) as State;
 
 // redux-persist
 // @ts-expect-error

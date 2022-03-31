@@ -22,7 +22,7 @@
     "tsoa": "3.14.1"
   },
   "devDependencies": {
-    "@darekkay/scripts": "1.5.4",
+    "@darekkay/scripts": "1.6.0",
     "@types/body-parser": "1.19.2",
     "@types/cors": "2.8.12",
     "@types/express": "4.17.13",

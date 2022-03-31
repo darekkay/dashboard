@@ -10,7 +10,7 @@ describe("<Header />", () => {
       <Header
         isFullscreen={false}
         addWidgetToLayout={() => null}
-        toggleFullscreen={() => null}
+        toggleFullscreen={Promise.resolve}
       />
     );
 

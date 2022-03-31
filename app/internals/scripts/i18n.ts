@@ -30,7 +30,7 @@ const readI18nFiles = (path: string): Record<string, string[]> =>
     // Read all i18n files
     .map((fileName) => ({
       lang: fileName.substring(0, fileName.length - 5),
-      labels: readFileSync(join(I18N_FILES_PATH, fileName), "utf-8"),
+      labels: readFileSync(join(I18N_FILES_PATH, fileName), "utf8"),
     }))
 
     // Convert to JSON

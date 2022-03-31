@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 
 import "common/i18n";
 
@@ -11,7 +11,9 @@ import "./styles/index.scss";
 
 import Entry from "./entry";
 
-ReactDOM.render(<Entry />, document.querySelector("#root"));
+const container = document.querySelector("#root");
+const root = createRoot(container!);
+root.render(<Entry />);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

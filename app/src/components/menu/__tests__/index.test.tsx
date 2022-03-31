@@ -1,6 +1,6 @@
 import React from "react";
 
-import { render, screen, userEvent, expectToThrow } from "common/testing";
+import { render, screen, userEvent } from "common/testing";
 
 import Menu, { MenuAction, MenuSeparator } from "../index";
 
@@ -25,7 +25,7 @@ describe("<Menu />", () => {
   });
 
   test("doesn't allow MenuAction to be used outside of a Menu", () => {
-    expectToThrow(() => render(<MenuAction text="Item 1" icon="cog" />));
+    expect(() => render(<MenuAction text="Item 1" icon="cog" />)).toThrow();
   });
 
   test("handles menu buttons", async () => {
