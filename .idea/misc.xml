@@ -3,7 +3,13 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="JSX" />
   </component>
+  <component name="SwUserDefinedSpecifications">
+    <option name="specTypeByUrl">
+      <map />
+    </option>
+  </component>
   <component name="WebPackConfiguration">
+    <option name="mode" value="MANUAL" />
     <option name="path" value="$PROJECT_DIR$/.idea/webpack.config.js" />
   </component>
 </project>
