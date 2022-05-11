@@ -15,7 +15,7 @@ jobs:
     name: app-node-${{ matrix.node }}
     strategy:
       matrix:
-        node: [ 14, 16 ]
+        node: [ 14, 18 ]
       fail-fast: true
     defaults:
       run:
@@ -58,7 +58,7 @@ jobs:
     name: server-node-${{ matrix.node }}
     strategy:
       matrix:
-        node: [ 14, 16 ]
+        node: [ 14, 18 ]
       fail-fast: true
     defaults:
       run:
@@ -98,7 +98,7 @@ jobs:
     name: docs-node-${{ matrix.node }}
     strategy:
       matrix:
-        node: [ 12 ]
+        node: [ 14 ]
       fail-fast: true
     defaults:
       run:
