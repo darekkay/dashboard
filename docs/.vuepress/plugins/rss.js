@@ -16,7 +16,8 @@ const processMarkdown = (content, siteUrl) =>
     .join("\n")
     .replace(/\.\.\/assets/g, `${siteUrl}/assets`);
 
-const processHtml = content => content.replace(/<OutboundLink\/>/g, "");
+const processHtml = (content) =>
+  content.replace(/<OutboundLink\/>/g, "").replace(/<ExternalLinkIcon\/>/g, "");
 
 const renderHtml = (page, siteUrl, markdown) => {
   const [, ...rest] = page.content.split("\n");
@@ -27,14 +28,17 @@ const renderHtml = (page, siteUrl, markdown) => {
   );
 };
 
-module.exports = (pluginOptions, ctx) => {
+module.exports = (pluginOptions) => {
   return {
     name: "rss",
 
-    onGenerated() {
-      const { pages, markdown } = ctx;
+    onGenerated(app) {
+      const { pages, markdown } = app;
       const { filter = () => true, count = 20 } = pluginOptions;
-      const siteData = require(path.resolve(ctx.dir.source(), ".vuepress/config.js"));
+      const siteData = require(path.resolve(
+        app.dir.source(),
+        ".vuepress/config.ts"
+      ));
       const siteUrl = `${pluginOptions.site_url}${pluginOptions.base_url}`;
 
       const feed = new RSS({
@@ -42,7 +46,7 @@ module.exports = (pluginOptions, ctx) => {
         description: siteData.description,
         feed_url: `${siteUrl}/rss.xml`,
         site_url: `${siteUrl}`,
-        language: "en"
+        language: "en",
       });
 
       // DEBUG
@@ -55,20 +59,20 @@ module.exports = (pluginOptions, ctx) => {
       // console.info(renderHtml(example, siteUrl));
 
       pages
-        .filter(page => page.path.startsWith("/blog/2"))
-        .map(page => ({ ...page, date: new Date(page.title.substr(0, 10)) }))
+        .filter((page) => page.path.startsWith("/blog/2"))
+        .map((page) => ({ ...page, date: new Date(page.title.substr(0, 10)) }))
         .sort((a, b) => b.title.localeCompare(a.title))
-        .map(page => ({
+        .map((page) => ({
           title: page.title,
           description: renderHtml(page, siteUrl, markdown),
           url: `${siteUrl}${page.path}`,
-          date: page.date
+          date: page.date,
         }))
         .slice(0, count)
-        .forEach(page => feed.item(page));
+        .forEach((page) => feed.item(page));
 
-      fs.writeFile(path.resolve(ctx.dir.dest(), "rss.xml"), feed.xml());
+      fs.writeFile(path.resolve(app.dir.dest(), "rss.xml"), feed.xml());
       console.log(chalk.green.bold("RSS has been generated!"));
-    }
+    },
   };
 };

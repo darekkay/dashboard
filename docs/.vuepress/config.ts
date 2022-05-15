@@ -1,24 +1,20 @@
+const { viteBundler } = require("@vuepress/bundler-vite");
+const { defaultTheme } = require("vuepress");
+const { searchPlugin } = require("@vuepress/plugin-search");
+
+const rssPlugin = require("./plugins/rss");
+
 module.exports = {
   title: "Dashboard Documentation",
   description: "Customizable personal dashboard and startpage",
   base: "/docs/",
 
-  bundler: "@vuepress/bundler-vite",
+  bundler: viteBundler({
+    viteOptions: {},
+    vuePluginOptions: {},
+  }),
 
-  head: [
-    [
-      "meta",
-      {
-        property: "og:image",
-        content: "https://dashboard.darekkay.com/docs/assets/img/dashboard.jpg",
-      },
-    ],
-    ["meta", { property: "og:title", content: "Dashboard blog" }],
-    ["meta", { name: "twitter:site", content: "@darek_kay" }],
-    ["meta", { name: "twitter:card", content: "summary_large_image" }],
-  ],
-
-  themeConfig: {
+  theme: defaultTheme({
     repo: "https://github.com/darekkay/dashboard",
     docsDir: "docs",
     docsBranch: "master",
@@ -84,21 +80,27 @@ module.exports = {
       ],
     },
     sidebarDepth: 1,
-  },
+  }),
+
+  head: [
+    [
+      "meta",
+      {
+        property: "og:image",
+        content: "https://dashboard.darekkay.com/docs/assets/img/dashboard.jpg",
+      },
+    ],
+    ["meta", { property: "og:title", content: "Dashboard blog" }],
+    ["meta", { name: "twitter:site", content: "@darek_kay" }],
+    ["meta", { name: "twitter:card", content: "summary_large_image" }],
+  ],
+
   plugins: [
-    [
-      require("./plugins/rss"),
-      {
-        base_url: "/docs",
-        site_url: "https://dashboard.darekkay.com",
-        count: 20,
-      },
-    ],
-    [
-      "@vuepress/plugin-search",
-      {
-        hotKeys: [],
-      },
-    ],
+    rssPlugin({
+      base_url: "/docs",
+      site_url: "https://dashboard.darekkay.com",
+      count: 20,
+    }),
+    searchPlugin({ hotKeys: [] }),
   ],
 };
