@@ -12,16 +12,14 @@ import { State } from "state/store";
 
 import mapStateToProps from "./selectors";
 
-export const App: React.FC<Props> = (props) => {
-  const {
-    widgetIDs,
-    layout,
-    saveLayout,
-    addWidgetToLayout,
-    importState,
-    backgroundUrl,
-  } = props;
-
+export const App = ({
+  widgetIDs,
+  layout,
+  saveLayout,
+  addWidgetToLayout,
+  importState,
+  backgroundUrl,
+}: Props) => {
   const fullScreenHandle = useFullScreenHandle();
 
   return (

@@ -19,14 +19,14 @@ if (!IS_TEST) {
   ReactModal.setAppElement("#modal-root");
 }
 
-const Modal: React.FC<Props> = ({
+const Modal = ({
   headline,
   maxWidth = "600px",
   closeModal,
   renderFooter,
   children,
   ...rest
-}) => {
+}: Props) => {
   const { t } = useTranslation();
   return (
     <ReactModal

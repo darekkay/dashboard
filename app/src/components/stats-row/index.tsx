@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import Icon, { IconName } from "components/icon";
 
-const StatsRow: React.FC<Props> = ({ value, labelKey, icon }) => {
+const StatsRow = ({ value, labelKey, icon }: Props) => {
   const { t } = useTranslation();
   if (typeof value !== "number") return null;
   return (

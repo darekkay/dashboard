@@ -9,7 +9,7 @@ import { WidgetOptions } from "./configuration";
 
 export { saga } from "./sagas";
 
-const Cryptocurrencies: React.FC<Props> = ({
+const Cryptocurrencies = ({
   id,
   crypto,
   fiat,
@@ -19,7 +19,7 @@ const Cryptocurrencies: React.FC<Props> = ({
   meta,
   triggerUpdate,
   widgetStatusDisplay,
-}) => {
+}: Props) => {
   const { t } = useTranslation();
   useTriggerUpdate({ id, params: { crypto, fiat }, meta, triggerUpdate }, [
     crypto,

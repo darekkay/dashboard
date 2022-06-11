@@ -22,7 +22,7 @@ const openSearchUrl = (
   }
 };
 
-const Search: React.FC<Props> = ({ id, type, pattern }) => {
+const Search = ({ id, type, pattern }: Props) => {
   const [value, setValue] = useState("");
   const { t } = useTranslation();
   if (isEmpty(pattern)) return <WidgetUnconfigured type={type} />;

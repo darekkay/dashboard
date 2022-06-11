@@ -9,29 +9,22 @@ import {
   YAxis,
 } from "recharts";
 
-const LineChart: React.FC<Props> = ({
+const LineChart = ({
   data,
   dataKeyX = "x",
   dataKeyY = "y",
   className,
-}) => {
-  return (
-    <ResponsiveContainer className={className} width="100%" height="100%">
-      <RechartsLineChart data={data} margin={{ right: 40 }}>
-        <CartesianGrid strokeDasharray="2 2" vertical={false} />
-        <XAxis dataKey={dataKeyX} tick={{ fontSize: "1.4rem" }} height={25} />
-        <YAxis tick={{ fontSize: "1.4rem" }} />
-        <Tooltip />
-        <Line
-          type="linear"
-          dataKey={dataKeyY}
-          dot={false}
-          activeDot={{ r: 4 }}
-        />
-      </RechartsLineChart>
-    </ResponsiveContainer>
-  );
-};
+}: Props) => (
+  <ResponsiveContainer className={className} width="100%" height="100%">
+    <RechartsLineChart data={data} margin={{ right: 40 }}>
+      <CartesianGrid strokeDasharray="2 2" vertical={false} />
+      <XAxis dataKey={dataKeyX} tick={{ fontSize: "1.4rem" }} height={25} />
+      <YAxis tick={{ fontSize: "1.4rem" }} />
+      <Tooltip />
+      <Line type="linear" dataKey={dataKeyY} dot={false} activeDot={{ r: 4 }} />
+    </RechartsLineChart>
+  </ResponsiveContainer>
+);
 
 export interface Props {
   data: any[];

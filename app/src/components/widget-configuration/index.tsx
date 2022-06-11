@@ -8,7 +8,7 @@ import { ConfigurationProps, ValueUpdateAction } from "widgets";
 import { WidgetType } from "widgets/list";
 
 /* Widget configuration modal */
-const WidgetConfiguration: React.FC<Props> = ({
+const WidgetConfiguration = ({
   id,
   type,
   configuration,
@@ -16,7 +16,7 @@ const WidgetConfiguration: React.FC<Props> = ({
   setOptions,
   closeModal,
   isModalOpen,
-}) => {
+}: Props) => {
   const { t } = useTranslation();
   const [values, setValues] = useState(options);
 

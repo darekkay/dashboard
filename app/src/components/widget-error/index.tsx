@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import Icon from "components/icon";
 
-const WidgetError: React.FC<Props> = ({ labelKey = "error.unknown" }) => {
+const WidgetError = ({ labelKey = "error.unknown" }: Props) => {
   const { t } = useTranslation();
   return (
     <div

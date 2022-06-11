@@ -4,7 +4,7 @@ import cn from "classnames";
 
 import "./styles.scss";
 
-const Loading: React.FC<Props> = ({ className, type = "spinner" }) => {
+const Loading = ({ className, type = "spinner" }: Props) => {
   const { t } = useTranslation();
   return (
     <div

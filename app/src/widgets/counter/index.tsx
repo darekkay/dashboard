@@ -7,7 +7,7 @@ import Icon from "components/icon";
 import { WidgetProps } from "../index";
 import { WidgetOptions } from "./configuration";
 
-const Counter: React.FC<Props> = ({ id, value = 0, setData }) => {
+const Counter = ({ id, value = 0, setData }: Props) => {
   const { t } = useTranslation();
   return (
     <div className="w-full h-full flex flex-col justify-center">

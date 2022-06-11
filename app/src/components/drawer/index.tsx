@@ -10,7 +10,7 @@ import Link from "components/link";
 
 const categoriesWithWidgets = groupBy(widgets, (widget) => widget.category);
 
-const Drawer: React.FC<Props> = ({ addWidgetToLayout, onWidgetAdded }) => {
+const Drawer = ({ addWidgetToLayout, onWidgetAdded }: Props) => {
   const { t } = useTranslation();
   return (
     <div className="" style={{ marginLeft: "-2rem", marginRight: "-2rem" }}>

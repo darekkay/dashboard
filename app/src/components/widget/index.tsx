@@ -20,9 +20,9 @@ import {
 } from "./duck";
 
 /** Single widget within the dashboard */
-export const Widget: React.FC<Props> = React.forwardRef<HTMLDivElement, Props>(
-  (props, ref) => {
-    const {
+export const Widget = React.forwardRef<HTMLDivElement, Props>(
+  (
+    {
       id,
       type,
       options,
@@ -35,8 +35,9 @@ export const Widget: React.FC<Props> = React.forwardRef<HTMLDivElement, Props>(
       className,
       children,
       ...rest
-    } = props;
-
+    }: Props,
+    ref
+  ) => {
     const { t } = useTranslation();
     const headline = t(`widget.${type}.headline`, { ...options, ...data });
     const isWidgetConfigurable = widgets[type].configurable;

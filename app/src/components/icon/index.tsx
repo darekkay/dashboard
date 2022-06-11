@@ -9,25 +9,25 @@ import "./styles.scss";
 
 export type IconName = FontAwesomeIconName | CustomIconName;
 
-const renderIcon: React.FC<Props> = (props) => {
+const renderIcon = ({ name, alt }: Props) => {
   // @ts-expect-error
-  const customIcon = customIcons[props.name];
+  const customIcon = customIcons[name];
   if (customIcon !== undefined) {
     return React.createElement(customIcon, {
-      "aria-label": props.alt, // "alt" is not supported for inline SVGs
+      "aria-label": alt, // "alt" is not supported for inline SVGs
     });
   }
 
   // @ts-expect-error
-  const fontAwesomeIcon = fontAwesomeIcons[props.name];
+  const fontAwesomeIcon = fontAwesomeIcons[name];
   if (fontAwesomeIcon !== undefined) {
-    return <FontAwesomeIcon title={props.alt} icon={fontAwesomeIcon} />;
+    return <FontAwesomeIcon title={alt} icon={fontAwesomeIcon} />;
   }
 
-  throw new Error(`Unknown icon '${props.name}'`);
+  throw new Error(`Unknown icon '${name}'`);
 };
 
-const Icon: React.FC<Props> = (props) => {
+const Icon = (props: Props) => {
   const { className, position } = props;
   return (
     <div

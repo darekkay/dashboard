@@ -63,7 +63,7 @@ const TransitionLabel = ({
   );
 };
 
-const DayCountdown: React.FC<Props> = ({ type, eventName, eventDate }) => {
+const DayCountdown = ({ type, eventName, eventDate }: Props) => {
   const [currentDate, setCurrentDate] = useState(dayjs());
   useInterval(() => setCurrentDate(dayjs()), UPDATE_INTERVAL_MINUTES);
 

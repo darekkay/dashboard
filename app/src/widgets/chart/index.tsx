@@ -12,7 +12,7 @@ import { WidgetOptions } from "./configuration";
 
 export { saga } from "./sagas";
 
-const Chart: React.FC<Props> = ({
+const Chart = ({
   id,
   type,
   url,
@@ -23,7 +23,7 @@ const Chart: React.FC<Props> = ({
   triggerUpdate,
   widgetStatusDisplay,
   ...rest
-}) => {
+}: Props) => {
   useTriggerUpdate({ id, params: { url }, meta, triggerUpdate }, [url]);
 
   if (isEmpty(url) || isEmpty(dataPath))

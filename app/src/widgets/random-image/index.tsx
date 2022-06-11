@@ -8,7 +8,7 @@ import { WidgetProps } from "../index";
 
 export { saga } from "./sagas";
 
-const RandomImage: React.FC<Props> = ({
+const RandomImage = ({
   id,
   meta,
   triggerUpdate,
@@ -17,7 +17,7 @@ const RandomImage: React.FC<Props> = ({
   authorUrl,
   altText,
   widgetStatusDisplay,
-}) => {
+}: Props) => {
   useTriggerUpdate({ id, params: {}, meta, triggerUpdate }, []);
 
   if (widgetStatusDisplay) return widgetStatusDisplay;

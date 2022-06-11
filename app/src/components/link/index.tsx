@@ -1,14 +1,13 @@
 import React from "react";
 
-export const Link: React.FC<Props> = (props) => {
-  const { external = true, ...domProps } = props;
+export const Link = ({ external = true, children, ...domProps }: Props) => {
   return (
     <a
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
       {...domProps}
     >
-      {props.children}
+      {children}
     </a>
   );
 };

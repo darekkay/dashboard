@@ -7,7 +7,7 @@ export type ButtonVariant = "primary" | "secondary" | "danger" | "unstyled";
 
 export type ButtonSize = "regular" | "small" | "auto";
 
-const Button: React.FC<Props> = React.forwardRef<HTMLButtonElement, Props>(
+const Button = React.forwardRef<HTMLButtonElement, Props>(
   (
     {
       children,
@@ -18,7 +18,7 @@ const Button: React.FC<Props> = React.forwardRef<HTMLButtonElement, Props>(
       border = true,
       style,
       ...domProps
-    },
+    }: Props,
     ref
   ) => (
     <button

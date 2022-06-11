@@ -4,7 +4,7 @@ import cn from "classnames";
 /* Makes possible changes easier */
 export type SectionType = "app" | "story";
 
-const Section: React.FC<Props> = ({ headline, type, children }) => {
+const Section = ({ headline, type, children }: Props) => {
   return (
     <div>
       {headline && (

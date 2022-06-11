@@ -8,7 +8,7 @@ import { WidgetProps } from "../index";
 
 export { saga } from "./sagas";
 
-const TotdWorldCountries: React.FC<Props> = ({
+const TotdWorldCountries = ({
   id,
   name,
   capital,
@@ -18,7 +18,7 @@ const TotdWorldCountries: React.FC<Props> = ({
   meta,
   triggerUpdate,
   widgetStatusDisplay,
-}) => {
+}: Props) => {
   const { t } = useTranslation();
   useTriggerUpdate({ id, params: {}, meta, triggerUpdate }, []);
 

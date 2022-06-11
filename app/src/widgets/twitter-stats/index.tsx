@@ -12,7 +12,7 @@ import { WidgetOptions } from "./configuration";
 
 export { saga } from "./sagas";
 
-const TwitterStats: React.FC<Props> = ({
+const TwitterStats = ({
   id,
   type,
   username,
@@ -23,7 +23,7 @@ const TwitterStats: React.FC<Props> = ({
   meta,
   triggerUpdate,
   widgetStatusDisplay,
-}) => {
+}: Props) => {
   const { t } = useTranslation();
   useTriggerUpdate({ id, params: { username }, meta, triggerUpdate }, [
     username,

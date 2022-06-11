@@ -8,8 +8,7 @@ import Dropdown from "components/forms/dropdown";
 
 import selectComponentProps from "./selectors";
 
-export const LanguageSelect: React.FC<Props> = (props) => {
-  const { language, changeLanguage } = props;
+export const LanguageSelect = ({ language, changeLanguage }: Props) => {
   const { t } = useTranslation();
 
   return (

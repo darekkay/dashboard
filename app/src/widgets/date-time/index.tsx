@@ -6,7 +6,7 @@ import useInterval from "common/hooks/useInterval";
 import { WidgetProps } from "../index";
 import { WidgetOptions } from "./configuration";
 
-export const DateTime: React.FC<Props> = memo(({ timezone }) => {
+export const DateTime = memo(({ timezone }: Props) => {
   const [date, setDate] = useState(dayjs());
   useInterval(() => setDate(dayjs()), 1000);
 

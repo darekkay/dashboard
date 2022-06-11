@@ -10,7 +10,7 @@ import Icon from "components/icon";
 import FileUpload from "components/forms/file-upload";
 import { UpdateStatus } from "components/widget/duck";
 
-export const ImportExport: React.FC<Props> = ({ state, importState }) => {
+export const ImportExport = ({ state, importState }: Props) => {
   const { t } = useTranslation();
   const [uploadResult, setUploadResult] = useState<UpdateStatus>("pending");
   const onDropAccepted = useCallback(

@@ -14,7 +14,7 @@ const syncTheme = (theme: Theme) => {
   document.body.dataset.theme = theme;
 };
 
-export const ThemeOption: React.FC<ThemeProps> = ({ name, label, onClick }) => (
+export const ThemeOption = ({ name, label, onClick }: ThemeProps) => (
   <button
     className="inline-block mr-6 p-0 border-0 cursor-pointer"
     data-theme={name}
@@ -44,9 +44,7 @@ interface ThemeProps {
   onClick: () => void;
 }
 
-export const ThemeSelect: React.FC<Props> = (props) => {
-  const { theme, changeTheme } = props;
-
+export const ThemeSelect = ({ theme, changeTheme }: Props) => {
   const { t } = useTranslation();
 
   useEffect(() => {

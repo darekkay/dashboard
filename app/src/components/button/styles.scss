@@ -1,11 +1,6 @@
 @import "../../styles/mixins";
 
-@mixin button-variant(
-  $base,
-  $foreground,
-  $background,
-  $focus-ring
-) {
+@mixin button-variant($base, $foreground, $background, $focus-ring) {
   color: $foreground;
   background-color: $background;
 

@@ -7,7 +7,7 @@ import { WidgetProps } from "../index";
 
 export { saga } from "./sagas";
 
-const ChemicalElements: React.FC<Props> = ({
+const ChemicalElements = ({
   id,
   name,
   nameDE,
@@ -16,7 +16,7 @@ const ChemicalElements: React.FC<Props> = ({
   meta,
   triggerUpdate,
   widgetStatusDisplay,
-}) => {
+}: Props) => {
   const { i18n } = useTranslation();
 
   useTriggerUpdate({ id, params: {}, meta, triggerUpdate }, []);

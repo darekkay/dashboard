@@ -12,7 +12,7 @@ import { WidgetOptions } from "./configuration";
 
 export { saga } from "./sagas";
 
-const Weather: React.FC<Props> = ({
+const Weather = ({
   id,
   type,
   lat,
@@ -23,7 +23,7 @@ const Weather: React.FC<Props> = ({
   meta,
   triggerUpdate,
   widgetStatusDisplay,
-}) => {
+}: Props) => {
   useTriggerUpdate({ id, params: { lat, lon, unit }, meta, triggerUpdate }, [
     lat,
     lon,

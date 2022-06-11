@@ -18,7 +18,7 @@ const toggleBuiltInImage = (
   changeBackgroundUrl(builtInImages[nextTemplateIndex]);
 };
 
-export const BackgroundSelect: React.FC<Props> = (props) => {
+export const BackgroundSelect = (props: Props) => {
   const { backgroundUrl, changeBackgroundUrl, ...rest } = props;
   const { t } = useTranslation();
   return (

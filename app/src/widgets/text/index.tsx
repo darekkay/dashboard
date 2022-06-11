@@ -5,7 +5,7 @@ import TextArea from "components/forms/text-area";
 
 import { WidgetProps } from "../index";
 
-const Text: React.FC<Props> = ({ id, content, setData }) => {
+const Text = ({ id, content, setData }: Props) => {
   const { t } = useTranslation();
   return (
     <div className="flex w-full h-full p-1 items-stretch">

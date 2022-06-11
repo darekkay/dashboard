@@ -39,7 +39,7 @@ const eventCoordinates = (event: MouseEvent<any> | TouchEvent<any>) => {
   return { x: 0, y: 0 };
 };
 
-const WidgetOverlay: React.FC<Props> = ({
+const WidgetOverlay = ({
   id,
   type,
   isWidgetMenuVisible,
@@ -47,7 +47,7 @@ const WidgetOverlay: React.FC<Props> = ({
   setDraggable,
   removeWidgetFromLayout,
   openConfigurationModal,
-}) => {
+}: Props) => {
   const { t } = useTranslation();
 
   const isWidgetConfigurable = widgets[type].configurable;

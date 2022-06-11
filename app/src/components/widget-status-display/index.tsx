@@ -4,7 +4,7 @@ import Loading from "components/loading";
 import WidgetError from "components/widget-error";
 import { WidgetMeta } from "components/widget/duck";
 
-const WidgetStatusDisplay: React.FC<Props> = ({ meta }) => {
+const WidgetStatusDisplay = ({ meta }: Props) => {
   if (meta.updateStatus === "idle") return null;
   if (meta.updateStatus === "pending") return <Loading />;
   if (meta.updateStatus === "error")

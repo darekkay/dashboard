@@ -8,7 +8,7 @@ import demoTemplate from "templates/demo.json";
 
 import illustration from "./illustration.svg";
 
-const WelcomePage: React.FC<Props> = ({ importState }) => {
+const WelcomePage = ({ importState }: Props) => {
   const { t } = useTranslation();
   const createExampleBoard = () => {
     importState(demoTemplate as State);

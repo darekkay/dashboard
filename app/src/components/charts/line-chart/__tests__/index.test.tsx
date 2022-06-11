@@ -43,7 +43,7 @@ describe("<LineChart />", () => {
   test("handles default data keys x and y", () => {
     render(
       <div style={{ height: "300px", width: "300px" }}>
-        <LineChart data={[{ x: 1, y: 2 }]}>Example</LineChart>
+        <LineChart data={[{ x: 1, y: 2 }]} />
       </div>
     );
 
@@ -53,9 +53,7 @@ describe("<LineChart />", () => {
   test("handles custom data keys", () => {
     render(
       <div style={{ height: "300px", width: "300px" }}>
-        <LineChart data={data} dataKeyX="time" dataKeyY="visitors">
-          Example
-        </LineChart>
+        <LineChart data={data} dataKeyX="time" dataKeyY="visitors" />
       </div>
     );
 

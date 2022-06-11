@@ -3,12 +3,7 @@ import cn from "classnames";
 
 import Label from "components/forms/label";
 
-const TextArea: React.FC<Props> = ({
-  label,
-  className,
-  setValue,
-  ...domProps
-}) => {
+const TextArea = ({ label, className, setValue, ...domProps }: Props) => {
   return (
     <Label text={label}>
       <textarea

@@ -10,7 +10,7 @@ import Button from "components/button";
 import Icon from "components/icon";
 import Section from "components/section";
 
-const Settings: React.FC<Props> = ({ closeModal }) => {
+const Settings = ({ closeModal }: Props) => {
   const { t } = useTranslation();
   return (
     <PersistorContext.Consumer>

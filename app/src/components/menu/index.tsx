@@ -14,12 +14,7 @@ import Button from "components/button";
 // @ts-expect-error default value is defined in the context provider
 const MenuContext = React.createContext<MenuStateReturn>({});
 
-const Menu: React.FC<Props> = ({
-  children,
-  title,
-  icon,
-  disclosureClassName,
-}) => {
+const Menu = ({ children, title, icon, disclosureClassName }: Props) => {
   const menu = useMenuState();
   return (
     <>
@@ -56,16 +51,9 @@ const useMenuContext = () => {
   return context;
 };
 
-export const MenuSeparator: React.FC = () => (
-  <hr className="border-0 border-top m-0" />
-);
+export const MenuSeparator = () => <hr className="border-0 border-top m-0" />;
 
-export const MenuAction: React.FC<MenuItemProps> = ({
-  text,
-  icon,
-  onClick,
-  href,
-}) => {
+export const MenuAction = ({ text, icon, onClick, href }: MenuItemProps) => {
   const menu = useMenuContext();
   return (
     <MenuItem

@@ -12,7 +12,7 @@ import { WidgetOptions } from "./configuration";
 
 export { saga } from "./sagas";
 
-const GithubStats: React.FC<Props> = ({
+const GithubStats = ({
   id,
   type,
   stars,
@@ -24,7 +24,7 @@ const GithubStats: React.FC<Props> = ({
   meta,
   triggerUpdate,
   widgetStatusDisplay,
-}) => {
+}: Props) => {
   const { t } = useTranslation();
   useTriggerUpdate({ id, params: { query }, meta, triggerUpdate }, [query]);
 

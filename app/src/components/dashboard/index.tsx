@@ -12,9 +12,7 @@ import { State } from "state/store";
 const makeWidgetMemoized = memoize(makeWidget);
 
 /** A grid containing all the widgets */
-const Dashboard: React.FC<Props> = (props) => {
-  const { layout, widgetIDs, saveLayout, importState } = props;
-
+const Dashboard = ({ layout, widgetIDs, saveLayout, importState }: Props) => {
   const targetRef = useRef(null);
   const { width } = useResizeDetector({ targetRef });
 

@@ -8,7 +8,7 @@ import isEmpty from "lodash/isEmpty";
 import { WidgetProps } from "../index";
 {{#if configurationEnabled}}import { WidgetOptions } from "./configuration";{{/if}}
 
-const {{ properCase name }}: React.FC<Props> = ({ id, type {{#if useSagas}}, myAwesomeRequestParam, triggerUpdate, widgetStatusDisplay{{/if}}, meta }) => {
+const {{ properCase name }} = ({ id, type {{#if useSagas}}, myAwesomeRequestParam, triggerUpdate, widgetStatusDisplay{{/if}}, meta }: Props) => {
   const { t } = useTranslation();
 {{#if useSagas}}
   useTriggerUpdate({ id, params: { myAwesomeRequestParam }, meta, triggerUpdate }, [

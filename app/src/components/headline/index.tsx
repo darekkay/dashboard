@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "classnames";
 
-const Headline: React.FC<Props> = ({ level = 2, className, children }) => {
+const Headline = ({ level = 2, className, children }: Props) => {
   return React.createElement(
     `h${level}`,
     {

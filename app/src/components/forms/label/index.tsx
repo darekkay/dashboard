@@ -2,7 +2,7 @@ import React from "react";
 import cn from "classnames";
 import isEmpty from "lodash/isEmpty";
 
-const Label: React.FC<Props> = ({ text, className, children, ...domProps }) => {
+const Label = ({ text, className, children, ...domProps }: Props) => {
   if (isEmpty(text)) return <>{children}</>;
   return (
     <label

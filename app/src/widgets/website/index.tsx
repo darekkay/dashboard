@@ -6,8 +6,8 @@ import WidgetUnconfigured from "components/widget-unconfigured";
 import { WidgetProps } from "../index";
 import { WidgetOptions } from "./configuration";
 
-const Website: React.FC<Props> = memo(
-  ({ id, type, url }) => {
+const Website = memo(
+  ({ id, type, url }: Props) => {
     if (isEmpty(url)) return <WidgetUnconfigured type={type} />;
 
     // eslint-disable-next-line react/iframe-missing-sandbox

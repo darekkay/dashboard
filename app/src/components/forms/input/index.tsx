@@ -13,7 +13,7 @@ const onKeyUp = (event: any, props: Props) => {
   }
 };
 
-const Input: React.FC<Props> = (props) => {
+const Input = (props: Props) => {
   const {
     className,
     label,

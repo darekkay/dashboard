@@ -12,7 +12,7 @@ import { WidgetOptions } from "./configuration";
 
 export { saga } from "./sagas";
 
-const YoutubeStats: React.FC<Props> = ({
+const YoutubeStats = ({
   id,
   type,
   subscriberCount,
@@ -22,7 +22,7 @@ const YoutubeStats: React.FC<Props> = ({
   meta,
   triggerUpdate,
   widgetStatusDisplay,
-}) => {
+}: Props) => {
   const { t } = useTranslation();
   useTriggerUpdate({ id, params: { query }, meta, triggerUpdate }, [query]);
 

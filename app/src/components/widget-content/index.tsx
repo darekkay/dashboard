@@ -16,7 +16,7 @@ import { WidgetType } from "widgets/list";
 
 const initialDimensions: Dimensions = { width: 1, height: 1 };
 
-export const WidgetContent: React.FC<Props & ErrorProps> = ({
+export const WidgetContent = ({
   id,
   type,
   hasRenderError,
@@ -27,7 +27,7 @@ export const WidgetContent: React.FC<Props & ErrorProps> = ({
   setOptions,
   setData,
   triggerUpdate,
-}) => {
+}: Props & ErrorProps) => {
   const [dimensions, setDimensions] = useState<Dimensions>(initialDimensions);
 
   if (hasRenderError) {

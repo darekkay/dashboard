@@ -6,12 +6,7 @@ import Icon from "components/icon";
 
 import "./styles.scss";
 
-const FileUpload: React.FC<Props> = ({
-  label,
-  className,
-  accept,
-  onDropAccepted,
-}) => {
+const FileUpload = ({ label, className, accept, onDropAccepted }: Props) => {
   const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
     useDropzone({
       accept,

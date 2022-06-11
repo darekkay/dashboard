@@ -10,11 +10,11 @@ import useBooleanState from "common/hooks/useBooleanState";
 import Drawer from "components/drawer";
 import { WidgetType } from "widgets/list";
 
-const Header: React.FC<Props> = ({
+const Header = ({
   addWidgetToLayout,
   isFullscreen,
   toggleFullscreen,
-}) => {
+}: Props) => {
   const { t } = useTranslation();
 
   const [isSettingsModalOpen, openSettingsModal, closeSettingsModal] =
