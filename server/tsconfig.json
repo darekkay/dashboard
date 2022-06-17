@@ -16,6 +16,9 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
 
+    "incremental": true,
+    "tsBuildInfoFile": "node_modules/.tsbuildinfo",
+
     "typeRoots": ["./node_modules/@types", "./typings"]
   },
   "include": ["src", "internals"],

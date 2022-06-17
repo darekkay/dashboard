@@ -3,6 +3,8 @@
     "baseUrl": "src",
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react-jsx",
+
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -13,8 +15,13 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+
     "noEmit": true,
-    "jsx": "react-jsx",
+    "incremental": true,
+    "tsBuildInfoFile": "node_modules/.tsbuildinfo",
+
+    "noFallthroughCasesInSwitch": true,
+
     "types": [
       "vite/client",
       "vite-plugin-svgr/client",
@@ -22,8 +29,8 @@
       "jest",
       "testing-library__jest-dom"
     ],
-    "typeRoots": ["./node_modules/@types", "./typings"],
-    "noFallthroughCasesInSwitch": true
+    "typeRoots": ["./node_modules/@types", "./typings"]
   },
-  "include": ["src", "internals"]
+  "include": ["src", "internals"],
+  "exclude": ["node_modules"]
 }
