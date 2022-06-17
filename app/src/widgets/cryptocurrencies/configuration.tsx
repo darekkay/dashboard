@@ -91,9 +91,13 @@ const Configuration = ({
         ]}
       />
       <div className="text-right text-1">
-        <Trans i18nKey="common.poweredBy">
-          <Link href="https://www.coingecko.com/">{{ name: "CoinGecko" }}</Link>
-        </Trans>
+        <Trans
+          i18nKey="common.poweredBy"
+          values={{ name: "CoinGecko" }}
+          components={{
+            alink: <Link href="https://www.coingecko.com/">{""}</Link>,
+          }}
+        />
       </div>
     </div>
   );

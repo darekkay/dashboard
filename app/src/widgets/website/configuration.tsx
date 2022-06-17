@@ -44,9 +44,12 @@ const Configuration = ({
       </div>
       {/* NICE: Extract "Alert/Info" component */}
       <div>
-        <Trans i18nKey="widget.website.configuration.disclaimer">
-          <strong />
-        </Trans>
+        <Trans
+          i18nKey="widget.website.configuration.disclaimer"
+          components={{
+            strong: <strong />,
+          }}
+        />
       </div>
     </div>
   );

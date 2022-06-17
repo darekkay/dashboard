@@ -13,6 +13,7 @@ export const Link = ({ external = true, children, ...domProps }: Props) => {
 };
 
 export interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  children: React.ReactNode | React.ReactNode[];
   external?: boolean;
 }
 

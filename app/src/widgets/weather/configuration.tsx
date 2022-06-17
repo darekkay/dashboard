@@ -29,12 +29,19 @@ const Configuration = ({
         onEnter={save}
       />
       <p>
-        <Trans i18nKey="widget.weather.configuration.latLonNotice">
-          <Link href="https://www.latlong.net/" />
-          <Link
-            href={`https://www.latlong.net/c/?lat=${options.lat}&long=${options.lon}`}
-          />
-        </Trans>
+        <Trans
+          i18nKey="widget.weather.configuration.latLonNotice"
+          components={{
+            mainLink: <Link href="https://www.latlong.net/">{""}</Link>,
+            testLink: (
+              <Link
+                href={`https://www.latlong.net/c/?lat=${options.lat}&long=${options.lon}`}
+              >
+                {""}
+              </Link>
+            ),
+          }}
+        />
       </p>
       <Dropdown
         label={t("widget.weather.configuration.unit")}

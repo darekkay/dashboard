@@ -14,9 +14,9 @@ export const ImportExport = ({ state, importState }: Props) => {
   const { t } = useTranslation();
   const [uploadResult, setUploadResult] = useState<UpdateStatus>("pending");
   const onDropAccepted = useCallback(
-    (acceptedFiles) => {
+    (acceptedFiles: File[]) => {
       if (acceptedFiles.length > 0) {
-        (acceptedFiles[0] as File).text().then((data) => {
+        acceptedFiles[0].text().then((data) => {
           const jsonData = JSON.parse(data);
           if (
             // basic validation - the object has to contain all existing state keys
@@ -52,7 +52,9 @@ export const ImportExport = ({ state, importState }: Props) => {
       <FileUpload
         label={t("config.data.restore.default")}
         className={cn("w-full mb-2", uploadResult)}
-        accept=".json"
+        accept={{
+          "application/json/*": [".json"],
+        }}
         onDropAccepted={onDropAccepted}
       />
       {uploadResult === "error" && (

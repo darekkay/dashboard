@@ -13,7 +13,7 @@
     "error": "Unerwarteter Fehler",
     "menu": "Menü",
     "documentation": "Dokumentation",
-    "poweredBy": "Powered by <0>{{name}}</0>",
+    "poweredBy": "Powered by <alink>{{name}}</alink>",
     "headline": "Überschrift",
     "fullscreen": {
       "start": "Vollbildmodus",
@@ -51,9 +51,9 @@
   },
 
   "welcome": {
-    "message1": "Willkommen im <0>{{projectName}}</0> — Deiner digitalen Infoanzeige",
+    "message1": "Willkommen im <strong>{{projectName}}</strong> — Deiner digitalen Infoanzeige",
     "message2": "Pass den Inhalt an, indem du neue Komponenten hinzufügst, oder verwende die folgende Vorlage mit häufig genutzten Komponenten.",
-    "message3": "Lies die <0>Dokumentation</0> für weitere Informationen.",
+    "message3": "Lies die <dashboardLink>Dokumentation</dashboardLink> für weitere Informationen.",
     "createExampleBoard": "Nutze Vorlage"
   },
   "widget": {
@@ -157,7 +157,7 @@
       "name": "Zufälliges Bild",
       "description": "Täglich wechselndes Bild.",
       "headline": "",
-      "attribution": "Photo von <0>{{authorName}}</0> auf <1>Unsplash</1>"
+      "attribution": "Photo von <authorLink>{{authorName}}</authorLink> auf <unsplashLink>Unsplash</unsplashLink>"
     },
     "qr-code": {
       "name": "QR-Code",
@@ -217,7 +217,7 @@
       "configuration": {
         "lat": "Breitengrad",
         "lon": "Längengrad",
-        "latLonNotice": "Finde den <0>Breiten- und Längengrad</0> für deinen Ort oder <1>teste</1> deine aktuelle Eingabe.",
+        "latLonNotice": "Finde den <mainLink>Breiten- und Längengrad</mainLink> für deinen Ort oder <testLink>teste</testLink> deine aktuelle Eingabe.",
         "unit": "Einheit"
       }
     },
@@ -227,7 +227,7 @@
       "headline": "",
       "configuration": {
         "url": "Webseite URL",
-        "disclaimer": "<0>Info:</0> Leider verbieten viele Webseiten die Einbindung in einem Iframe. Falls eine Seite nicht angezeigt werden kann, ist dies wahrscheinlich der Grund dafür."
+        "disclaimer": "<strong>Info:</strong> Leider verbieten viele Webseiten die Einbindung in einem Iframe. Falls eine Seite nicht angezeigt werden kann, ist dies wahrscheinlich der Grund dafür."
       }
     },
     "youtube-stats": {

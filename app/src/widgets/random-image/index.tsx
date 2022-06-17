@@ -31,14 +31,24 @@ const RandomImage = ({
       />
       {authorUrl && (
         <figcaption className="absolute bottom-0 w-full text-0 py-1 px-2 truncate background-overlay">
-          <Trans i18nKey="widget.random-image.attribution">
-            <Link
-              href={`${authorUrl}?utm_source=dashboard&utm_medium=referral`}
-            >
-              {{ authorName }}
-            </Link>
-            <Link href="https://unsplash.com/?utm_source=dashboard&utm_medium=referral" />
-          </Trans>
+          <Trans
+            i18nKey="widget.random-image.attribution"
+            values={{ authorName }}
+            components={{
+              authorLink: (
+                <Link
+                  href={`${authorUrl}?utm_source=dashboard&utm_medium=referral`}
+                >
+                  {""}
+                </Link>
+              ),
+              unsplashLink: (
+                <Link href="https://unsplash.com/?utm_source=dashboard&utm_medium=referral">
+                  {""}
+                </Link>
+              ),
+            }}
+          />
         </figcaption>
       )}
     </figure>

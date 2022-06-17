@@ -23,9 +23,13 @@ const WelcomePage = ({ importState }: Props) => {
           <img src={illustration} alt="" style={{ maxWidth: "250px" }} />
         </p>
         <p>
-          <Trans i18nKey="welcome.message1">
-            <strong>{{ projectName: "Dashboard" }}</strong>
-          </Trans>
+          <Trans
+            i18nKey="welcome.message1"
+            values={{ projectName: "Dashboard" }}
+            components={{
+              strong: <strong />,
+            }}
+          />
         </p>
         <p>{t("welcome.message2")}</p>
         <p>
@@ -34,9 +38,14 @@ const WelcomePage = ({ importState }: Props) => {
           </Button>
         </p>
         <p>
-          <Trans i18nKey="welcome.message3">
-            <Link href="https://dashboard.darekkay.com/docs/" />
-          </Trans>
+          <Trans
+            i18nKey="welcome.message3"
+            components={{
+              dashboardLink: (
+                <Link href="https://dashboard.darekkay.com/docs/">{""}</Link>
+              ),
+            }}
+          />
         </p>
       </div>
     </div>

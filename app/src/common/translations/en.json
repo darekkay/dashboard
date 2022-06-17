@@ -15,7 +15,7 @@
     "error": "Unexpected error",
     "menu": "Menu",
     "documentation": "Documentation",
-    "poweredBy": "Powered by <0>{{name}}</0>",
+    "poweredBy": "Powered by <alink>{{name}}</alink>",
     "headline": "Headline",
     "fullscreen": {
       "start": "Fullscreen",
@@ -56,9 +56,9 @@
   },
 
   "welcome": {
-    "message1": "Welcome to <0>{{projectName}}</0> — Your digital info board",
+    "message1": "Welcome to <strong>{{projectName}}</strong> — Your digital info board",
     "message2": "Customize the content by adding new widgets from the menu or use the following template with some common widgets.",
-    "message3": "Read the <0>documentation</0> for more information.",
+    "message3": "Read the <dashboardLink>documentation</dashboardLink> for more information.",
     "createExampleBoard": "Use Template"
   },
   "widget": {
@@ -237,7 +237,7 @@
       "name": "Random Image",
       "description": "Daily image from Unsplash.",
       "headline": "",
-      "attribution": "Photo by <0>{{authorName}}</0> on <1>Unsplash</1>"
+      "attribution": "Photo by <authorLink>{{authorName}}</authorLink> on <unsplashLink>Unsplash</unsplashLink>"
     },
     "qr-code": {
       "name": "QR Code",
@@ -297,7 +297,7 @@
       "configuration": {
         "lat": "Latitude",
         "lon": "Longitude",
-        "latLonNotice": "Find the <0>latitude and longitude</0> for your location or <1>test</1> your current input.",
+        "latLonNotice": "Find the <mainLink>latitude and longitude</mainLink> for your location or <testLink>test</testLink> your current input.",
         "unit": "Unit",
         "units": {
           "metric": "°C",
@@ -311,7 +311,7 @@
       "headline": "",
       "configuration": {
         "url": "Website URL",
-        "disclaimer": "<0>Notice:</0> Unfortunately, many websites do not allow to be included within an iframe. If a website cannot be displayed, this is most likely the case."
+        "disclaimer": "<strong>Notice:</strong> Unfortunately, many websites do not allow to be included within an iframe. If a website cannot be displayed, this is most likely the case."
       }
     },
     "youtube-stats": {

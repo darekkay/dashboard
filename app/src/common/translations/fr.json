@@ -10,7 +10,7 @@
     "settings": "Paramètres",
     "help": "Aide",
     "documentation": "Documentation",
-    "poweredBy": "Powered by <0>{{name}}</0>",
+    "poweredBy": "Powered by <alink>{{name}}</alink>",
     "headline": "Entête",
     "fullscreen": {
       "start": "Plein écran",
@@ -44,9 +44,9 @@
   },
 
   "welcome": {
-    "message1": "Bienvenue à <0>{{projectName}}</0> — Votre tableau de bord digital",
+    "message1": "Bienvenue à <strong>{{projectName}}</strong> — Votre tableau de bord digital",
     "message2": "Personnalisez le contenu en ajoutant de nouveaux composants depuis le menu ou utilisez les modèles suivants de composants.",
-    "message3": "Lisez la <0>documentation</0> pour plus d'informations.",
+    "message3": "Lisez la <dashboardLink>documentation</dashboardLink> pour plus d'informations.",
     "createExampleBoard": "Utiliser un modèle"
   },
   "widget": {
@@ -172,7 +172,7 @@
       "headline": "",
       "configuration": {
         "url": "URL du site web",
-        "disclaimer": "<0>Attention:</0> Malheureusement, beaucoup de site n'autorise pas d'être inclue dans une iframe. Si un site ne peux pas être afficher, c'est vraissemblablement pour cela."
+        "disclaimer": "<strong>Attention:</strong> Malheureusement, beaucoup de site n'autorise pas d'être inclue dans une iframe. Si un site ne peux pas être afficher, c'est vraissemblablement pour cela."
       }
     },
     "youtube-stats": {
