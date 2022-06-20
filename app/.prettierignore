@@ -1,0 +1,12 @@
+node_modules/
+public/
+dist/
+build/
+out/
+coverage/
+
+*.min.js
+*.hbs
+*.html
+
+src/api
