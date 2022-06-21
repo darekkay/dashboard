@@ -6,10 +6,7 @@ import log from "common/log";
 import withErrorHandling, { State as ErrorProps } from "../withErrorHandling";
 
 const ComponentWithoutErrors = (props: {} & ErrorProps) => (
-  <div>
-    {props.hasRenderError && <span>Error</span>}
-    {!props.hasRenderError && <span>Success</span>}
-  </div>
+  <div>{props.hasRenderError ? <span>Error</span> : <span>Success</span>}</div>
 );
 const NoErrors = withErrorHandling(ComponentWithoutErrors);
 
