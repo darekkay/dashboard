@@ -1,7 +1,7 @@
 import React from "react";
 
-import { State } from "state/store";
-import { Props as WidgetComponentProps } from "components/widget";
+import type { State } from "state/store";
+import type { Props as WidgetComponentProps } from "components/widget";
 
 interface MockWidgetProps extends Omit<WidgetComponentProps, "id"> {
   id: string;

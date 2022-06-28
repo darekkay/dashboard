@@ -1,4 +1,4 @@
-import express, { ErrorRequestHandler } from "express";
+import express, { type ErrorRequestHandler } from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import morgan from "morgan";

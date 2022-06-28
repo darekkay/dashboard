@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import Button from "components/button";
 import Icon from "components/icon";
 
-import { WidgetProps } from "../index";
-import { WidgetOptions } from "./configuration";
+import type { WidgetProps } from "../index";
+import type { WidgetOptions } from "./configuration";
 
 const Counter = ({ id, value = 0, setData }: Props) => {
   const { t } = useTranslation();

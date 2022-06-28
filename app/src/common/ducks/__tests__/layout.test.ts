@@ -1,6 +1,6 @@
-import { Layout as ReactGridLayout } from "react-grid-layout";
+import type { Layout as ReactGridLayout } from "react-grid-layout";
 
-import { initialState, reducer, actions, LayoutState } from "../layout";
+import { initialState, reducer, actions, type LayoutState } from "../layout";
 
 const getInitialState = (widgets: ReactGridLayout[]) => {
   const layout = {

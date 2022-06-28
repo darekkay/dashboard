@@ -6,15 +6,15 @@
  * */
 
 import React from "react";
-import { Action, AnyAction, Store } from "redux";
+import type { Action, AnyAction, Store } from "redux";
 import { Provider } from "react-redux";
-import { runSaga, Saga } from "redux-saga";
+import { runSaga, type Saga } from "redux-saga";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 // act differences: https://github.com/testing-library/react-hooks-testing-library/issues/173
 import { renderHook, act as hookAct } from "@testing-library/react-hooks";
 
-import initStore, { State } from "../state/store";
+import initStore, { type State } from "../state/store";
 import { stateProps } from "./utils/mock";
 
 // Re-export utilities from @testing-library

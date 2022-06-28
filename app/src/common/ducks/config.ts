@@ -1,11 +1,11 @@
 /** Application settings */
 
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { put, takeEvery } from "typed-redux-saga";
 import isEmpty from "lodash/isEmpty";
 
-import { State } from "state/store";
-import { Theme } from "components/settings/theme-select";
+import type { State } from "state/store";
+import type { Theme } from "components/settings/theme-select";
 import { importState } from "common/ducks/state";
 
 export interface ConfigState {

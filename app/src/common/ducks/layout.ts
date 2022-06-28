@@ -3,14 +3,14 @@
 import maxBy from "lodash/maxBy";
 import filter from "lodash/filter";
 import clone from "lodash/clone";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { put, select, takeEvery } from "typed-redux-saga";
-import { Layout as ReactGridLayout } from "react-grid-layout";
+import type { Layout as ReactGridLayout } from "react-grid-layout";
 
 import widgets from "widgets";
 import { actions as widgetActions } from "components/widget/duck";
 import { importState } from "common/ducks/state";
-import { WidgetType } from "widgets/list";
+import type { WidgetType } from "widgets/list";
 
 export interface Layout {
   mobile: ReactGridLayout[];

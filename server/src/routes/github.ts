@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return,@typescript-eslint/restrict-plus-operands */
-import { Controller, Get, Query, Res, Route, TsoaResponse } from "tsoa";
+import { Controller, Get, Query, Res, Route, type TsoaResponse } from "tsoa";
 
 import axios from "../axios";
 import { ttlForWidgetType } from "../utils";

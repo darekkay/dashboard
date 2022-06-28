@@ -4,8 +4,8 @@ import { readdirSync, writeFileSync } from "fs";
 
 import logger from "@darekkay/logger";
 
-import { WidgetProperties } from "widgets";
-import { WidgetType } from "widgets/list";
+import type { WidgetProperties } from "widgets";
+import type { WidgetType } from "widgets/list";
 
 /* This script scans all availables widgets and extracts data which is required at compile/run time */
 

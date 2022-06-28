@@ -1,5 +1,5 @@
 /* Based on https://github.com/streamich/react-use/blob/master/src/useToggle.ts */
-import { useReducer, Reducer } from "react";
+import { useReducer, type Reducer } from "react";
 
 const toggleReducer = (state: boolean, nextValue?: any) =>
   typeof nextValue === "boolean" ? nextValue : !state;

@@ -1,4 +1,4 @@
-import { EffectCallback, useEffect } from "react";
+import { useEffect, type EffectCallback } from "react";
 
 /**
  * React hook to run a callback only on first render (on mount).

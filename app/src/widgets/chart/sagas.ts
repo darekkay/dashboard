@@ -1,6 +1,6 @@
 import { takeEvery } from "typed-redux-saga";
 
-import { passthrough, PassthroughParams } from "api/index";
+import { passthrough, type PassthroughParams } from "api/index";
 import triggerUpdateHandler from "common/utils/triggerUpdateHandler";
 import { triggerUpdate } from "components/widget/duck";
 

@@ -1,4 +1,4 @@
-import axios, { AxiosStatic } from "axios";
+import axios, { type AxiosStatic } from "axios";
 
 const cachios = jest.createMockFromModule<AxiosStatic>("cachios");
 

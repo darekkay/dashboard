@@ -3,12 +3,13 @@ import { connect } from "react-redux";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import isEmpty from "lodash/isEmpty";
 
-import { actions as layoutActions, Layout } from "common/ducks/layout";
+import type { Layout } from "common/ducks/layout";
+import { actions as layoutActions } from "common/ducks/layout";
 import { actions as stateActions } from "common/ducks/state";
 import Dashboard from "components/dashboard";
 import Header from "components/header";
-import { WidgetType } from "widgets/list";
-import { State } from "state/store";
+import type { WidgetType } from "widgets/list";
+import type { State } from "state/store";
 
 import mapStateToProps from "./selectors";
 

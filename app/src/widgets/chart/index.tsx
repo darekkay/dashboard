@@ -7,8 +7,8 @@ import LineChart from "components/charts/line-chart";
 import WidgetError from "components/widget-error";
 import WidgetUnconfigured from "components/widget-unconfigured";
 
-import { WidgetProps } from "../index";
-import { WidgetOptions } from "./configuration";
+import type { WidgetProps } from "../index";
+import type { WidgetOptions } from "./configuration";
 
 export { saga } from "./sagas";
 

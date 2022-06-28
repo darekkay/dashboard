@@ -1,6 +1,6 @@
-import { WidgetProperties } from "widgets/index";
+import type { WidgetProperties } from "widgets/index";
 
-{{#if configurationEnabled}}import { WidgetOptions } from "./configuration";{{/if}}
+{{#if configurationEnabled}}import type { WidgetOptions } from "./configuration";{{/if}}
 
 const properties: WidgetProperties{{#if configurationEnabled}}<WidgetOptions>{{/if}} = {
   // TODO: adjust properties and run yarn scan:widgets

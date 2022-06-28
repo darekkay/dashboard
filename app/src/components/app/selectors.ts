@@ -1,10 +1,10 @@
 import createSelector from "selectorator";
 
 import availableWidgets from "widgets";
-import { LayoutState } from "common/ducks/layout";
+import type { LayoutState } from "common/ducks/layout";
 import { getTypeFromId } from "components/widget/selectors";
-import { State } from "state/store";
-import { SelectedProps as AppProps } from "components/app/index";
+import type { State } from "state/store";
+import type { SelectedProps as AppProps } from "components/app/index";
 
 const selectComponentProps = createSelector<State, AppProps>(
   ["layout", "config.backgroundUrl"],

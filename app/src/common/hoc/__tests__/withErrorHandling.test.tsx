@@ -3,7 +3,9 @@ import React from "react";
 import { render, screen } from "common/testing";
 import log from "common/log";
 
-import withErrorHandling, { State as ErrorProps } from "../withErrorHandling";
+import withErrorHandling, {
+  type State as ErrorProps,
+} from "../withErrorHandling";
 
 const ComponentWithoutErrors = (props: {} & ErrorProps) => (
   <div>{props.hasRenderError ? <span>Error</span> : <span>Success</span>}</div>

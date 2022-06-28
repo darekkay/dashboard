@@ -10,9 +10,9 @@ import {
 } from "redux-persist";
 
 import { IS_STORAGE_PAUSED } from "common/environment";
-import { ConfigState } from "common/ducks/config";
-import { LayoutState } from "common/ducks/layout";
-import { WidgetsState } from "components/widget/duck";
+import type { ConfigState } from "common/ducks/config";
+import type { LayoutState } from "common/ducks/layout";
+import type { WidgetsState } from "components/widget/duck";
 
 import { persistReducer, persistStore, pause } from "./localStorage";
 import { rootReducer } from "./reducers";

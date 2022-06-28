@@ -3,7 +3,7 @@
 import { readFileSync, writeFileSync } from "fs";
 import { join } from "path";
 
-import { State } from "../../src/state/store";
+import type { State } from "../../src/state/store";
 
 const demoFilePath = join(
   __dirname,

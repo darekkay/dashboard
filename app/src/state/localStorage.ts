@@ -1,13 +1,13 @@
-import { Reducer } from "redux";
+import type { Reducer } from "redux";
 import {
   createTransform,
-  Persistor,
   persistReducer as _persistReducer,
   persistStore as _persistStore,
+  type Persistor,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import { Widget } from "components/widget/duck"; // localStorage for web and AsyncStorage for react-native
+import type { Widget } from "components/widget/duck"; // localStorage for web and AsyncStorage for react-native
 
 const blacklist: string[] = [];
 

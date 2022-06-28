@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express";
+import type { Request, Response, NextFunction } from "express";
 import random from "lodash/random";
 
 import { requestContains } from "../utils";

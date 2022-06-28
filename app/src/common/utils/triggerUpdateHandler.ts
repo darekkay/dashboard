@@ -1,9 +1,9 @@
 import { put, call } from "typed-redux-saga";
-import { PayloadAction } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
 
 import {
   actions as widgetActions,
-  TriggerUpdateAction,
+  type TriggerUpdateAction,
 } from "components/widget/duck";
 
 type ApiCall = (params: any) => Record<string, any>;

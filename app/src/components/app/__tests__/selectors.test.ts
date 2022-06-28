@@ -1,4 +1,4 @@
-import { Widget } from "components/widget/duck";
+import type { Widget } from "components/widget/duck";
 
 import selectComponentProps from "../selectors";
 

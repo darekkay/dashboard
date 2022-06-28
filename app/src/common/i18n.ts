@@ -1,12 +1,12 @@
-import i18n, { Resource } from "i18next";
+import i18n, { type Resource } from "i18next";
 import { initReactI18next } from "react-i18next";
-import { PayloadAction } from "@reduxjs/toolkit";
+import { type PayloadAction } from "@reduxjs/toolkit";
 import { takeEvery } from "typed-redux-saga";
 
 import dayjs from "common/date";
 import { DEBUG_LABELS } from "common/environment";
 import { actions as configActions } from "common/ducks/config";
-import { State } from "state/store";
+import type { State } from "state/store";
 
 import "dayjs/locale/de";
 import "dayjs/locale/fr";

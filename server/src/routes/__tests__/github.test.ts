@@ -4,7 +4,7 @@ import logger from "@darekkay/logger";
 import axios from "axios";
 
 import app from "../../app";
-import { parseQuery, QueryType } from "../github";
+import { parseQuery, type QueryType } from "../github";
 import repositoryMockResponse from "./__examples__/github-repository.json";
 import userMockResponse from "./__examples__/github-user.json";
 import userRepositoriesMockResponse from "./__examples__/github-user-repositories.json";

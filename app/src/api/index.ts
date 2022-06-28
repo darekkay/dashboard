@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios, { type AxiosRequestConfig } from "axios";
 
 import { API_BASE_URL, IS_DEVELOPMENT } from "common/environment";
 

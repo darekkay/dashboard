@@ -1,4 +1,4 @@
-import { Request } from "express";
+import type { Request } from "express";
 import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
 import logger from "@darekkay/logger";

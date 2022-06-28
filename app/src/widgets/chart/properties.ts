@@ -1,6 +1,6 @@
-import { WidgetProperties } from "widgets/index";
+import type { WidgetProperties } from "widgets/index";
 
-import { WidgetOptions } from "./configuration";
+import type { WidgetOptions } from "./configuration";
 
 const properties: WidgetProperties<WidgetOptions> = {
   widgetType: "chart",

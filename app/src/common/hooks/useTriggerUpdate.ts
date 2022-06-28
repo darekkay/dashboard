@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import dayjs from "common/date";
 import log from "common/log";
 import useInterval from "common/hooks/useInterval";
-import { TriggerUpdateAction, WidgetMeta } from "components/widget/duck";
+import type { TriggerUpdateAction, WidgetMeta } from "components/widget/duck";
 
 interface UseTriggerUpdate {
   id: string;
