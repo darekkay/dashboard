@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@darekkay/logger": "2.0.0",
-    "@darekkay/scripts": "2.3.1",
+    "@darekkay/scripts": "2.4.0",
     "@testing-library/jest-dom": "5.16.1",
     "@testing-library/react": "13.0.0",
     "@testing-library/react-hooks": "7.0.2",
