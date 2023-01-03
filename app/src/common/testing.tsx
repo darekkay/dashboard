@@ -11,8 +11,6 @@ import { Provider } from "react-redux";
 import { runSaga, type Saga } from "redux-saga";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-// act differences: https://github.com/testing-library/react-hooks-testing-library/issues/173
-import { renderHook, act as hookAct } from "@testing-library/react-hooks";
 
 import initStore, { type State } from "../state/store";
 import { stateProps } from "./utils/mock";
@@ -20,7 +18,7 @@ import { stateProps } from "./utils/mock";
 // Re-export utilities from @testing-library
 export * from "@testing-library/react";
 
-export { userEvent, renderHook, hookAct };
+export { userEvent };
 
 // Based on: https://github.com/kentcdodds/react-testing-library-course/blob/tjs/src/__tests__/redux-03.js
 export const renderConnected = (

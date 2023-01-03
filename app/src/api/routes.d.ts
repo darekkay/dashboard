@@ -13,7 +13,9 @@ export interface CryptocurrencyPrice {
   /** @format double */
   currentPrice: number;
   last24h: {
+    /** @format double */
     changePercentage: number;
+    /** @format double */
     change: number;
   };
   imageUrl?: string;
@@ -78,12 +80,16 @@ export interface WeatherCondition {
 export interface WeatherData {
   current: {
     condition: WeatherCondition;
+    /** @format double */
     temperature: number;
   };
   forecast: {
     condition: WeatherCondition;
+    /** @format double */
     temperatureMax: number;
+    /** @format double */
     temperatureMin: number;
+    /** @format double */
     date: number;
   }[];
   [key: string]: any;
@@ -107,7 +113,9 @@ export declare namespace Cryptocurrencies {
   namespace GetCryptocurrencyPrice {
     type RequestParams = {};
     type RequestQuery = {
+      /** cryptocurrency code, e.g. "bitcoin" */
       crypto: string;
+      /** fiat currency code, e.g. "eur" */
       fiat: string;
     };
     type RequestBody = never;
@@ -124,6 +132,7 @@ export declare namespace Github {
   namespace GetGitHubStats {
     type RequestParams = {};
     type RequestQuery = {
+      /** GitHub user or repository */
       query: string;
     };
     type RequestBody = never;
@@ -140,6 +149,7 @@ export declare namespace Twitter {
   namespace GetTwitterStats {
     type RequestParams = {};
     type RequestQuery = {
+      /** Twitter username */
       username: string;
     };
     type RequestBody = never;
@@ -170,8 +180,11 @@ export declare namespace Weather {
   namespace GetWeatherData {
     type RequestParams = {};
     type RequestQuery = {
+      /** Latitude */
       lat: string;
+      /** Longtitude */
       lon: string;
+      /** Unit */
       unit: "imperial" | "metric";
     };
     type RequestBody = never;
@@ -188,6 +201,7 @@ export declare namespace Youtube {
   namespace GetYoutubeStats {
     type RequestParams = {};
     type RequestQuery = {
+      /** Youtube id or username */
       query: string;
     };
     type RequestBody = never;
@@ -223,6 +237,7 @@ export declare enum ContentType {
   Json = "application/json",
   FormData = "multipart/form-data",
   UrlEncoded = "application/x-www-form-urlencoded",
+  Text = "text/plain",
 }
 export declare class HttpClient<SecurityDataType = unknown> {
   instance: AxiosInstance;
@@ -232,7 +247,9 @@ export declare class HttpClient<SecurityDataType = unknown> {
   private format?;
   constructor({ securityWorker, secure, format, ...axiosConfig }?: ApiConfig<SecurityDataType>);
   setSecurityData: (data: SecurityDataType | null) => void;
-  private mergeRequestParams;
+  protected mergeRequestParams(params1: AxiosRequestConfig, params2?: AxiosRequestConfig): AxiosRequestConfig;
+  protected stringifyFormItem(formItem: unknown): string;
+  protected createFormData(input: Record<string, unknown>): FormData;
   request: <T = any, _E = any>({
     secure,
     path,
@@ -241,7 +258,7 @@ export declare class HttpClient<SecurityDataType = unknown> {
     format,
     body,
     ...params
-  }: FullRequestParams) => Promise<any>;
+  }: FullRequestParams) => Promise<AxiosResponse<T>>;
 }
 /**
  * @title dashboard-server
@@ -262,7 +279,9 @@ export declare class Api<SecurityDataType extends unknown> extends HttpClient<Se
      */
     getCryptocurrencyPrice: (
       query: {
+        /** cryptocurrency code, e.g. "bitcoin" */
         crypto: string;
+        /** fiat currency code, e.g. "eur" */
         fiat: string;
       },
       params?: RequestParams,
@@ -277,6 +296,7 @@ export declare class Api<SecurityDataType extends unknown> extends HttpClient<Se
      */
     getGitHubStats: (
       query: {
+        /** GitHub user or repository */
         query: string;
       },
       params?: RequestParams,
@@ -291,6 +311,7 @@ export declare class Api<SecurityDataType extends unknown> extends HttpClient<Se
      */
     getTwitterStats: (
       query: {
+        /** Twitter username */
         username: string;
       },
       params?: RequestParams,
@@ -314,8 +335,11 @@ export declare class Api<SecurityDataType extends unknown> extends HttpClient<Se
      */
     getWeatherData: (
       query: {
+        /** Latitude */
         lat: string;
+        /** Longtitude */
         lon: string;
+        /** Unit */
         unit: "imperial" | "metric";
       },
       params?: RequestParams,
@@ -330,6 +354,7 @@ export declare class Api<SecurityDataType extends unknown> extends HttpClient<Se
      */
     getYoutubeStats: (
       query: {
+        /** Youtube id or username */
         query: string;
       },
       params?: RequestParams,

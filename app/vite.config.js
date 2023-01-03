@@ -42,13 +42,6 @@ export default ({ mode }) => {
 
     build: {
       outDir: "build",
-
-      rollupOptions: {
-        output: {
-          // https://github.com/facebook/regenerator/issues/378
-          intro: "window.regeneratorRuntime = undefined;",
-        },
-      },
     },
 
     plugins: [

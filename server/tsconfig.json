@@ -21,6 +21,6 @@
 
     "typeRoots": ["./node_modules/@types", "./typings"]
   },
-  "include": ["src", "internals"],
+  "include": ["src", "internals", "typings"],
   "exclude": ["node_modules"]
 }

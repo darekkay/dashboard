@@ -1,4 +1,4 @@
-import { hookAct, renderHook } from "common/testing";
+import { act, renderHook } from "common/testing";
 
 import useBooleanState from "../useBooleanState";
 
@@ -25,22 +25,22 @@ describe("useBooleanState", () => {
 
     expect(getResult(result).value).toBe(true);
 
-    hookAct(() => {
+    act(() => {
       getResult(result).setValue(false);
     });
     expect(getResult(result).value).toBe(false);
 
-    hookAct(() => {
+    act(() => {
       getResult(result).setValue(true);
     });
     expect(getResult(result).value).toBe(true);
 
-    hookAct(() => {
+    act(() => {
       getResult(result).setValueFalse();
     });
     expect(getResult(result).value).toBe(false);
 
-    hookAct(() => {
+    act(() => {
       getResult(result).setValueTrue();
     });
     expect(getResult(result).value).toBe(true);

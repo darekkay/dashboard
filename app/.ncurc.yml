@@ -3,6 +3,3 @@
 reject:
   # pinned to 2 as long as jit is not used
   - "tailwindcss"
-
-  # pinned to Node 16
-  - "@types/node"

@@ -39,6 +39,9 @@ i18n.use(initReactI18next).init({
   lng: defaultLanguage(),
   fallbackLng: "en",
 
+  // disallow null values as valid translation
+  returnNull: false,
+
   interpolation: {
     skipOnVariables: false, // support interpolation in widget headlines etc.
     escapeValue: false, // not required for React

@@ -1,5 +1,5 @@
 /* Based on https://github.com/streamich/react-use/blob/master/tests/useToggle.test.ts */
-import { hookAct, renderHook } from "common/testing";
+import { act, renderHook } from "common/testing";
 
 import useToggle from "../useToggle";
 
@@ -27,7 +27,7 @@ describe("useToggle", () => {
 
     expect(result.current[0]).toBe(false);
 
-    hookAct(() => {
+    act(() => {
       toggle(true);
     });
 
@@ -40,7 +40,7 @@ describe("useToggle", () => {
 
     expect(result.current[0]).toBe(true);
 
-    hookAct(() => {
+    act(() => {
       toggle(false);
     });
 
@@ -51,7 +51,7 @@ describe("useToggle", () => {
     const { result } = setUp(true);
     const [, toggle] = result.current;
 
-    hookAct(() => {
+    act(() => {
       toggle();
     });
 
@@ -62,7 +62,7 @@ describe("useToggle", () => {
     const { result } = setUp(false);
     const [, toggle] = result.current;
 
-    hookAct(() => {
+    act(() => {
       toggle();
     });
 
@@ -73,13 +73,13 @@ describe("useToggle", () => {
     const { result } = setUp(true);
     const [, toggle] = result.current;
 
-    hookAct(() => {
+    act(() => {
       toggle("string");
     });
 
     expect(result.current[0]).toBe(false);
 
-    hookAct(() => {
+    act(() => {
       toggle({});
     });
 

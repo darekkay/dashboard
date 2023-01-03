@@ -8,7 +8,7 @@ import "@testing-library/jest-dom/extend-expect";
 
 import "common/i18n"; // Note: i18next is mocked to return the label key in tests
 
-jest.useFakeTimers("modern");
+jest.useFakeTimers();
 
 /*
  * Mock unimplemented JSDOM functions
