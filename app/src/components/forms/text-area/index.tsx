@@ -1,5 +1,5 @@
 import React from "react";
-import cn from "classnames";
+import clsx from "clsx";
 
 import Label from "components/forms/label";
 
@@ -7,7 +7,7 @@ const TextArea = ({ label, className, setValue, ...domProps }: Props) => {
   return (
     <Label text={label}>
       <textarea
-        className={cn(
+        className={clsx(
           "py-2 px-4 w-full h-full border rounded resize-none bg-default",
           { "text-4": !className?.includes("text-") },
           className

@@ -1,5 +1,5 @@
 import React from "react";
-import cn from "classnames";
+import clsx from "clsx";
 
 import Icon, { IconName } from "components/icon";
 
@@ -20,7 +20,7 @@ const ariaLabel = (value: number, unit?: string, percentage?: number) => {
 const Deviation = ({ value, unit, percentage, className }: Props) => {
   return (
     <div
-      className={cn(
+      className={clsx(
         "flex items-center",
         {
           "text-danger": value < 0,

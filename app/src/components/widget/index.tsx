@@ -1,7 +1,7 @@
 import React, { FocusEventHandler, useState } from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
-import cn from "classnames";
+import clsx from "clsx";
 
 import useBooleanState from "common/hooks/useBooleanState";
 import WidgetOverlay from "components/widget-overlay";
@@ -74,7 +74,7 @@ export const Widget = React.forwardRef<HTMLDivElement, Props>(
       <>
         <div
           ref={ref}
-          className={cn(
+          className={clsx(
             "widget",
             "flex",
             "flex-col",

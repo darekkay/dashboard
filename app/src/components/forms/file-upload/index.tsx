@@ -1,6 +1,6 @@
 import React from "react";
 import { DropzoneOptions, useDropzone } from "react-dropzone";
-import cn, { Argument as ClassValue } from "classnames";
+import clsx, { ClassValue } from "clsx";
 
 import Icon from "components/icon";
 
@@ -16,7 +16,7 @@ const FileUpload = ({ label, className, accept, onDropAccepted }: Props) => {
 
   return (
     <div
-      className={cn(
+      className={clsx(
         "file-upload flex flex-col items-center p-3 text-center bg-default",
         { "drag-active": isDragActive },
         className

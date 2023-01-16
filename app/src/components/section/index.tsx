@@ -1,5 +1,5 @@
 import React from "react";
-import cn from "classnames";
+import clsx from "clsx";
 
 /* Makes possible changes easier */
 export type SectionType = "app" | "story";
@@ -9,7 +9,7 @@ const Section = ({ headline, type, children }: Props) => {
     <div>
       {headline && (
         <h3
-          className={cn("mb-4 text-4 font-bold", {
+          className={clsx("mb-4 text-4 font-bold", {
             "mt-7 text-center": type === "story",
           })}
         >

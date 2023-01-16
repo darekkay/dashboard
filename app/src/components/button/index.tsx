@@ -1,5 +1,5 @@
 import React from "react";
-import cn from "classnames";
+import clsx from "clsx";
 
 import "./styles.scss";
 
@@ -22,7 +22,7 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
     ref
   ) => (
     <button
-      className={cn(
+      className={clsx(
         "btn",
         `btn-${variant}${outline ? "-outline" : ""}`,
         `btn-${size}`,

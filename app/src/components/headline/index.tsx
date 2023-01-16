@@ -1,11 +1,11 @@
 import React from "react";
-import cn from "classnames";
+import clsx from "clsx";
 
 const Headline = ({ level = 2, className, children }: Props) => {
   return React.createElement(
     `h${level}`,
     {
-      className: cn("font-semibold", className),
+      className: clsx("font-semibold", className),
     },
     children
   );

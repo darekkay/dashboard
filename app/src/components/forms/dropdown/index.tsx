@@ -1,5 +1,5 @@
 import React from "react";
-import cn from "classnames";
+import clsx from "clsx";
 
 import Icon from "components/icon";
 import Label from "components/forms/label";
@@ -17,7 +17,7 @@ const Dropdown = <T extends string>({
 }: Props<T>) => {
   return (
     <Label text={label}>
-      <div className={cn("forms-dropdown relative bg-default", className)}>
+      <div className={clsx("forms-dropdown relative bg-default", className)}>
         <select
           className="w-full pl-4 pr-7 py-2 border rounded bg-default text-default"
           onChange={(event) => {

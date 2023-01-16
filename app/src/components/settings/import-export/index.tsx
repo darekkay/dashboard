@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
-import cn from "classnames";
+import clsx from "clsx";
 
 import { State, STATE_PROPERTIES } from "state/store";
 import { actions as stateActions } from "common/ducks/state";
@@ -51,7 +51,7 @@ export const ImportExport = ({ state, importState }: Props) => {
       </div>
       <FileUpload
         label={t("config.data.restore.default")}
-        className={cn("w-full mb-2", uploadResult)}
+        className={clsx("w-full mb-2", uploadResult)}
         accept={{
           "application/json/*": [".json"],
         }}

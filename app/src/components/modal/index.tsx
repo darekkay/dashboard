@@ -1,7 +1,7 @@
 import React from "react";
 import ReactModal, { Props as ReactModalProps } from "react-modal";
 import { useTranslation } from "react-i18next";
-import cn from "classnames";
+import clsx from "clsx";
 import { Property } from "csstype";
 
 import { IS_TEST } from "common/environment";
@@ -43,7 +43,7 @@ const Modal = ({
     >
       {/* Modal header */}
       <div
-        className={cn("flex px-6", {
+        className={clsx("flex px-6", {
           "py-3": !headline,
           "py-6 border-bottom bg-offset": headline,
         })}

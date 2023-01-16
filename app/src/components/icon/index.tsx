@@ -1,5 +1,5 @@
 import React from "react";
-import cl from "classnames";
+import cl from "clsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import fontAwesomeIcons, { FontAwesomeIconName } from "./font-awesome";

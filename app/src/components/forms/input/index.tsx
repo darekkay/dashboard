@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import cn from "classnames";
+import clsx from "clsx";
 
 import Button from "components/button";
 import Label from "components/forms/label";
@@ -39,7 +39,7 @@ const Input = (props: Props) => {
         }}
       >
         <input
-          className={cn(
+          className={clsx(
             "w-full px-4 py-2 border rounded bg-default text-default",
             {
               "pr-7": isFocused,

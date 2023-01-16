@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import cn from "classnames";
+import clsx from "clsx";
 
 import "./styles.scss";
 
@@ -8,7 +8,7 @@ const Loading = ({ className, type = "spinner" }: Props) => {
   const { t } = useTranslation();
   return (
     <div
-      className={cn(
+      className={clsx(
         {
           "spinner mx-auto": type === "spinner",
           skeleton: type === "skeleton",
