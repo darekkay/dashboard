@@ -1,6 +1,6 @@
 # Dashboard
 
-[![Build](https://img.shields.io/github/workflow/status/darekkay/dashboard/Continuous%20Integration/master?style=flat-square)](https://github.com/darekkay/dashboard/actions)
+[![Build](https://img.shields.io/github/actions/workflow/status/darekkay/dashboard/ci.yml?branch=master&style=flat-square)](https://github.com/darekkay/dashboard/actions/workflows/ci.yml)
 [![Gitter](https://img.shields.io/gitter/room/darekkay/dashboard?style=flat-square)](https://gitter.im/darekkay-dashboard/community)
 [![license](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/darekkay/dashboard/blob/master/LICENSE)
 
