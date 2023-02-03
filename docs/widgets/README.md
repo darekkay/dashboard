@@ -34,5 +34,4 @@ This is a list of all currently implemented widgets. The [roadmap](../roadmap/RE
 
 - [Cryptocurrencies](cryptocurrencies.md): Current market price and 24h trend for various cryptocurrencies.
 - [GitHub Stats](github-stats.md): Various GitHub user and repository statistics.
-- [Twitter Stats](twitter-stats.md): Various Twitter user statistics.
 - [YouTube Stats](youtube-stats.md): Various YouTube user and channel statistics.

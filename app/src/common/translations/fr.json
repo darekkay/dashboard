@@ -145,20 +145,6 @@
       "name": "Eléments chimiques",
       "headline": ""
     },
-    "twitter-stats": {
-      "name": "Twitter Stats",
-      "headline": "{{username}}",
-      "followers": "follower",
-      "following": "suivis",
-      "tweets": "tweets",
-      "listed": "listes",
-      "configuration": {
-        "query": "Pseudo Twitter"
-      },
-      "error": {
-        "404": "Pseudo Twitter inconnu"
-      }
-    },
     "weather": {
       "name": "Météo",
       "configuration": {

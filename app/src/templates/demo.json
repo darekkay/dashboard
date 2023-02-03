@@ -83,20 +83,6 @@
         "headlineIcon": "github"
       }
     },
-    "twitter-stats-112": {
-      "type": "twitter-stats",
-      "data": {},
-      "options": {
-        "username": "darek_kay"
-      },
-      "meta": {
-        "updateCycle": {
-          "hours": 24
-        },
-        "updateStatus": "idle",
-        "headlineIcon": "twitter"
-      }
-    },
     "chart-118": {
       "type": "chart",
       "data": {},
@@ -142,6 +128,17 @@
         "updateStatus": "idle",
         "headlineIcon": "youtube"
       }
+    },
+    "random-image-125": {
+      "type": "random-image",
+      "data": {},
+      "options": {},
+      "meta": {
+        "updateCycle": {
+          "hours": 24
+        },
+        "updateStatus": "idle"
+      }
     }
   },
   "layout": {
@@ -160,17 +157,17 @@
           "w": 1,
           "h": 3,
           "x": 0,
-          "y": 26,
-          "i": "github-stats-01",
+          "y": 8,
+          "i": "weather-121",
           "moved": false,
           "static": false
         },
         {
           "w": 1,
-          "h": 3,
+          "h": 2,
           "x": 0,
-          "y": 8,
-          "i": "twitter-stats-112",
+          "y": 21,
+          "i": "totd-chemical-elements-01",
           "moved": false,
           "static": false
         },
@@ -178,7 +175,7 @@
           "w": 1,
           "h": 4,
           "x": 0,
-          "y": 16,
+          "y": 17,
           "i": "image-01",
           "moved": false,
           "static": false
@@ -187,7 +184,7 @@
           "w": 1,
           "h": 2,
           "x": 0,
-          "y": 24,
+          "y": 25,
           "i": "cryptocurrencies-01",
           "moved": false,
           "static": false
@@ -196,8 +193,8 @@
           "w": 1,
           "h": 3,
           "x": 0,
-          "y": 11,
-          "i": "chart-118",
+          "y": 27,
+          "i": "github-stats-01",
           "moved": false,
           "static": false
         },
@@ -212,9 +209,27 @@
         },
         {
           "w": 1,
+          "h": 3,
+          "x": 0,
+          "y": 11,
+          "i": "youtube-stats-124",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 1,
+          "h": 3,
+          "x": 0,
+          "y": 14,
+          "i": "chart-118",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 1,
           "h": 2,
           "x": 0,
-          "y": 22,
+          "y": 23,
           "i": "counter-01",
           "moved": false,
           "static": false
@@ -229,27 +244,11 @@
           "static": false
         },
         {
-          "w": 1,
-          "h": 2,
-          "x": 0,
-          "y": 20,
-          "i": "totd-chemical-elements-01",
-          "moved": false,
-          "static": false
-        },
-        {
-          "i": "weather-121",
+          "i": "random-image-125",
           "x": 0,
           "y": 8,
-          "w": 7,
-          "h": 3
-        },
-        {
-          "i": "youtube-stats-124",
-          "x": 0,
-          "y": 8,
-          "w": 3,
-          "h": 3
+          "w": 6,
+          "h": 4
         }
       ],
       "desktop": [
@@ -299,29 +298,20 @@
           "static": false
         },
         {
-          "w": 3,
+          "w": 6,
           "h": 3,
           "x": 9,
           "y": 2,
-          "i": "github-stats-01",
+          "i": "chart-118",
           "moved": false,
           "static": false
         },
         {
           "w": 3,
-          "h": 3,
-          "x": 12,
-          "y": 2,
-          "i": "twitter-stats-112",
-          "moved": false,
-          "static": false
-        },
-        {
-          "w": 3,
-          "h": 3,
+          "h": 2,
           "x": 15,
           "y": 3,
-          "i": "text-01",
+          "i": "search-01",
           "moved": false,
           "static": false
         },
@@ -335,11 +325,29 @@
           "static": false
         },
         {
-          "w": 6,
+          "w": 3,
           "h": 3,
           "x": 9,
           "y": 5,
-          "i": "chart-118",
+          "i": "github-stats-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 3,
+          "x": 12,
+          "y": 5,
+          "i": "text-01",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 3,
+          "x": 15,
+          "y": 5,
+          "i": "random-image-125",
           "moved": false,
           "static": false
         },
@@ -351,18 +359,9 @@
           "i": "counter-01",
           "moved": false,
           "static": false
-        },
-        {
-          "w": 3,
-          "h": 2,
-          "x": 15,
-          "y": 6,
-          "i": "search-01",
-          "moved": false,
-          "static": false
         }
       ]
     },
-    "nextWidgetId": 125
+    "nextWidgetId": 126
   }
 }

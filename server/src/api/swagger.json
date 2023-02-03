@@ -69,31 +69,6 @@
 				"type": "object",
 				"additionalProperties": true
 			},
-			"TwitterUser": {
-				"properties": {
-					"name": {
-						"type": "string"
-					},
-					"followers": {
-						"type": "number",
-						"format": "double"
-					},
-					"following": {
-						"type": "number",
-						"format": "double"
-					},
-					"tweets": {
-						"type": "number",
-						"format": "double"
-					},
-					"listed": {
-						"type": "number",
-						"format": "double"
-					}
-				},
-				"type": "object",
-				"additionalProperties": true
-			},
 			"UnsplashImage": {
 				"properties": {
 					"imageUrl": {
@@ -321,47 +296,6 @@
 						"description": "GitHub user or repository",
 						"in": "query",
 						"name": "query",
-						"required": true,
-						"schema": {
-							"type": "string"
-						}
-					}
-				]
-			}
-		},
-		"/twitter/user": {
-			"get": {
-				"operationId": "GetTwitterStats",
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/TwitterUser"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "Not found",
-						"content": {
-							"application/json": {
-								"schema": {
-									"properties": {},
-									"type": "object"
-								}
-							}
-						}
-					}
-				},
-				"description": "Returns stats for a Twitter user.",
-				"security": [],
-				"parameters": [
-					{
-						"description": "Twitter username",
-						"in": "query",
-						"name": "username",
 						"required": true,
 						"schema": {
 							"type": "string"

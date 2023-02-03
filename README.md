@@ -42,7 +42,7 @@ A new project is also a great opportunity to learn new concepts.
 
 ## Features
 
-- ☑ 17 [widgets](https://dashboard.darekkay.com/docs/widgets/) as of July 2021.
+- ☑ 16 [widgets](https://dashboard.darekkay.com/docs/widgets/) as of February 2023.
 - ☑ Themes support. Because no one will bat an eye without a Dark Mode™.
 - ☑ Multi-language support (English, German and French already provided).
 

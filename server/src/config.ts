@@ -14,7 +14,6 @@ const config = {
   saveAxiosResponses: process.env.SAVE_AXIOS_RESPONSES === "true",
   api: {
     openWeatherMap: process.env.API_OPEN_WEATHER_MAP,
-    twitter: process.env.API_TWITTER_BEARER,
     unsplash: process.env.API_UNSPLASH,
     youtube: process.env.API_YOUTUBE,
   },

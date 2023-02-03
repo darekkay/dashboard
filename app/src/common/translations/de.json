@@ -195,21 +195,6 @@
       "currency": "Währung",
       "languages": "Sprachen"
     },
-    "twitter-stats": {
-      "name": "Twitter Stats",
-      "description": "Statistiken für Twitter Nutzer.",
-      "headline": "{{username}}",
-      "followers": "Follower",
-      "following": "Following",
-      "tweets": "Tweets",
-      "listed": "Listen",
-      "configuration": {
-        "query": "Twitter Benutzername"
-      },
-      "error": {
-        "404": "Benutzername unbekannt"
-      }
-    },
     "weather": {
       "name": "Wetter",
       "description": "Aktuelles Wetter und Wettervorhersage.",

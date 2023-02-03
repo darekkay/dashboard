@@ -39,11 +39,7 @@ import {
   faSave,
   faTrashAlt,
 } from "@fortawesome/free-regular-svg-icons";
-import {
-  faGithub,
-  faTwitter,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 export type FontAwesomeIconName =
   | "arrowDown"
@@ -78,7 +74,6 @@ export type FontAwesomeIconName =
   | "success"
   | "times"
   | "trash"
-  | "twitter"
   | "undo"
   | "upload"
   | "userFriends"
@@ -124,7 +119,6 @@ const icons: Record<FontAwesomeIconName, IconDefinition> = {
   success: faCheckCircle,
   times: faTimes,
   trash: faTrashAlt,
-  twitter: faTwitter,
   undo: faUndoAlt,
   upload: faUpload,
   userFriends: faUserFriends,

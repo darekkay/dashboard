@@ -99,3 +99,8 @@ Many more integrations ideas can be found in other products, e.g.:
 - [unofficial-apis](https://github.com/Rolstenhouse/unofficial-apis)
 - [Public APIs](https://public-apis.io/)
 - [public-apis](https://github.com/public-apis/public-apis)
+
+## Out of scope
+
+- Twitter integration
+  - A Twitter Stats widget was one of the first widgets in this dashboard project. Since February 2023, the access to the Twitter API is no longer free. Even if a free tier is introduced one day, Musk irreversibly lost any trust to use his platform.

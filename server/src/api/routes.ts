@@ -7,8 +7,6 @@ import { CryptocurrenciesController } from './../routes/cryptocurrencies';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { GitHubController } from './../routes/github';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-import { TwitterController } from './../routes/twitter';
-// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { UnsplashController } from './../routes/unsplash';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { WeatherController } from './../routes/weather';
@@ -38,18 +36,6 @@ const models: TsoaRoute.Models = {
             "subscribers": {"dataType":"double"},
             "forks": {"dataType":"double"},
             "open_issues": {"dataType":"double"},
-        },
-        "additionalProperties": true,
-    },
-    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    "TwitterUser": {
-        "dataType": "refObject",
-        "properties": {
-            "name": {"dataType":"string"},
-            "followers": {"dataType":"double"},
-            "following": {"dataType":"double"},
-            "tweets": {"dataType":"double"},
-            "listed": {"dataType":"double"},
         },
         "additionalProperties": true,
     },
@@ -105,6 +91,7 @@ export function RegisterRoutes(app: express.Router) {
     //      Please look into the "controllerPathGlobs" config option described in the readme: https://github.com/lukeautry/tsoa
     // ###########################################################################################################
         app.get('/cryptocurrencies/price',
+
             function CryptocurrenciesController_getCryptocurrencyPrice(request: any, response: any, next: any) {
             const args = {
                     crypto: {"in":"query","name":"crypto","required":true,"dataType":"string"},
@@ -116,18 +103,19 @@ export function RegisterRoutes(app: express.Router) {
             let validatedArgs: any[] = [];
             try {
                 validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new CryptocurrenciesController();
+
+
+              const promise = controller.getCryptocurrencyPrice.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);
             }
-
-            const controller = new CryptocurrenciesController();
-
-
-            const promise = controller.getCryptocurrencyPrice.apply(controller, validatedArgs as any);
-            promiseHandler(controller, promise, response, undefined, next);
         });
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
         app.get('/github/stats',
+
             function GitHubController_getGitHubStats(request: any, response: any, next: any) {
             const args = {
                     query: {"in":"query","name":"query","required":true,"dataType":"string"},
@@ -139,41 +127,19 @@ export function RegisterRoutes(app: express.Router) {
             let validatedArgs: any[] = [];
             try {
                 validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new GitHubController();
+
+
+              const promise = controller.getGitHubStats.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);
             }
-
-            const controller = new GitHubController();
-
-
-            const promise = controller.getGitHubStats.apply(controller, validatedArgs as any);
-            promiseHandler(controller, promise, response, undefined, next);
-        });
-        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-        app.get('/twitter/user',
-            function TwitterController_getTwitterStats(request: any, response: any, next: any) {
-            const args = {
-                    username: {"in":"query","name":"username","required":true,"dataType":"string"},
-                    notFound: {"in":"res","name":"404","required":true,"dataType":"nestedObjectLiteral","nestedProperties":{}},
-            };
-
-            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-
-            let validatedArgs: any[] = [];
-            try {
-                validatedArgs = getValidatedArgs(args, request, response);
-            } catch (err) {
-                return next(err);
-            }
-
-            const controller = new TwitterController();
-
-
-            const promise = controller.getTwitterStats.apply(controller, validatedArgs as any);
-            promiseHandler(controller, promise, response, undefined, next);
         });
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
         app.get('/unsplash/random',
+
             function UnsplashController_getRandomImage(request: any, response: any, next: any) {
             const args = {
             };
@@ -183,18 +149,19 @@ export function RegisterRoutes(app: express.Router) {
             let validatedArgs: any[] = [];
             try {
                 validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new UnsplashController();
+
+
+              const promise = controller.getRandomImage.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);
             }
-
-            const controller = new UnsplashController();
-
-
-            const promise = controller.getRandomImage.apply(controller, validatedArgs as any);
-            promiseHandler(controller, promise, response, undefined, next);
         });
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
         app.get('/weather',
+
             function WeatherController_getWeatherData(request: any, response: any, next: any) {
             const args = {
                     lat: {"in":"query","name":"lat","required":true,"dataType":"string"},
@@ -207,18 +174,19 @@ export function RegisterRoutes(app: express.Router) {
             let validatedArgs: any[] = [];
             try {
                 validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new WeatherController();
+
+
+              const promise = controller.getWeatherData.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);
             }
-
-            const controller = new WeatherController();
-
-
-            const promise = controller.getWeatherData.apply(controller, validatedArgs as any);
-            promiseHandler(controller, promise, response, undefined, next);
         });
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
         app.get('/youtube/stats',
+
             function YoutubeController_getYoutubeStats(request: any, response: any, next: any) {
             const args = {
                     query: {"in":"query","name":"query","required":true,"dataType":"string"},
@@ -230,15 +198,15 @@ export function RegisterRoutes(app: express.Router) {
             let validatedArgs: any[] = [];
             try {
                 validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new YoutubeController();
+
+
+              const promise = controller.getYoutubeStats.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);
             }
-
-            const controller = new YoutubeController();
-
-
-            const promise = controller.getYoutubeStats.apply(controller, validatedArgs as any);
-            promiseHandler(controller, promise, response, undefined, next);
         });
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 

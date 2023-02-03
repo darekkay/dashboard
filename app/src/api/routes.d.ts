@@ -35,18 +35,6 @@ export interface GitHubStats {
   open_issues?: number;
   [key: string]: any;
 }
-export interface TwitterUser {
-  name?: string;
-  /** @format double */
-  followers?: number;
-  /** @format double */
-  following?: number;
-  /** @format double */
-  tweets?: number;
-  /** @format double */
-  listed?: number;
-  [key: string]: any;
-}
 export interface UnsplashImage {
   imageUrl?: string;
   authorName?: string;
@@ -138,23 +126,6 @@ export declare namespace Github {
     type RequestBody = never;
     type RequestHeaders = {};
     type ResponseBody = GitHubStats;
-  }
-}
-export declare namespace Twitter {
-  /**
-   * @description Returns stats for a Twitter user.
-   * @name GetTwitterStats
-   * @request GET:/twitter/user
-   */
-  namespace GetTwitterStats {
-    type RequestParams = {};
-    type RequestQuery = {
-      /** Twitter username */
-      username: string;
-    };
-    type RequestBody = never;
-    type RequestHeaders = {};
-    type ResponseBody = TwitterUser;
   }
 }
 export declare namespace Unsplash {
@@ -301,21 +272,6 @@ export declare class Api<SecurityDataType extends unknown> extends HttpClient<Se
       },
       params?: RequestParams,
     ) => Promise<AxiosResponse<GitHubStats>>;
-  };
-  twitter: {
-    /**
-     * @description Returns stats for a Twitter user.
-     *
-     * @name GetTwitterStats
-     * @request GET:/twitter/user
-     */
-    getTwitterStats: (
-      query: {
-        /** Twitter username */
-        username: string;
-      },
-      params?: RequestParams,
-    ) => Promise<AxiosResponse<TwitterUser>>;
   };
   unsplash: {
     /**

@@ -19,7 +19,6 @@ Recommended:
 Some widgets require a 3rd-party API key:
 
 - [Unsplash](https://unsplash.com/documentation)
-- [Twitter](https://developer.twitter.com/en/docs/twitter-api)
 - [OpenWeatherMap](https://openweathermap.org/api)
 - [YouTube](https://developers.google.com/youtube/v3/getting-started)
 

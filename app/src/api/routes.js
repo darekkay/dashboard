@@ -132,22 +132,6 @@ export class Api extends HttpClient {
         ...params,
       }),
   };
-  twitter = {
-    /**
-     * @description Returns stats for a Twitter user.
-     *
-     * @name GetTwitterStats
-     * @request GET:/twitter/user
-     */
-    getTwitterStats: (query, params = {}) =>
-      this.request({
-        path: `/twitter/user`,
-        method: "GET",
-        query: query,
-        format: "json",
-        ...params,
-      }),
-  };
   unsplash = {
     /**
      * @description Returns a random Unsplash image.

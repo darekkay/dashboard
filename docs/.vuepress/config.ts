@@ -91,8 +91,6 @@ module.exports = {
       },
     ],
     ["meta", { property: "og:title", content: "Dashboard blog" }],
-    ["meta", { name: "twitter:site", content: "@darek_kay" }],
-    ["meta", { name: "twitter:card", content: "summary_large_image" }],
   ],
 
   plugins: [
