@@ -2,6 +2,8 @@
 
 ## Current development
 
+- :boom: Remove Twitter integration.
+- :boom: Drop Node 12 support.
 - :sparkles: New widget: [Weather](https://dashboard.darekkay.com/docs/widgets/weather.html).
 - :sparkles: New widget: [Day Countdown](https://dashboard.darekkay.com/docs/widgets/day-countdown.html).
 - :rocket: Use a meaningful widget focus order.
@@ -29,6 +31,7 @@
 - :hammer: Silence unnecessary Storybook console output.
 - :hammer: Replace `react-sizeme` with `react-resize-detector`.
 - :hammer: Replace `qrcode.react` with `react-qr-code`.
+- :hammer: Replace `classnames` with `clsx`.
 - :hammer: Improve test coverage.
 - :hammer: Improve TypeScript types.
 - :hammer: Modernize Redux code.
