@@ -67,9 +67,7 @@ const Modal = ({
 
       {/* Modal footer */}
       {renderFooter && (
-        <div className="px-6 pb-6 pt-6 md:pt-0 md:space-x-6 space-y-6 border-top bg-offset text-right">
-          {/* Dummy element to make "space" work even with only one footer element */}
-          <span />
+        <div className="flex flex-col md:flex-row justify-end p-6 gap-6 border-top bg-offset text-right">
           {renderFooter()}
         </div>
       )}

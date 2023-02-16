@@ -57,7 +57,7 @@ const ModalVariant = ({
 export const Variants = () => {
   return (
     <>
-      <div className="text-center space-x-4">
+      <div className="flex flex-wrap justify-center gap-4 text-center ">
         <ModalVariant buttonLabel="Small modal">
           Small modal content
         </ModalVariant>

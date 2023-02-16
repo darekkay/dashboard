@@ -26,5 +26,6 @@ module.exports = {
 
   variants: {
     backgroundColor: ["focus", "hover"],
+    gap: [],
   },
 };
