@@ -7,7 +7,7 @@
     </scripts>
     <node-interpreter value="project" />
     <envs>
-      <env name="NODE_OPTIONS" value="--openssl-legacy-provider" />
+      <env name="DEBUG" value="vite-tsconfig-paths" />
     </envs>
     <method v="2" />
   </configuration>

@@ -1,5 +1,0 @@
-# npm-check-updates configuration
-
-reject:
-  # 11+ requires webpack 5
-  - "sass-loader"

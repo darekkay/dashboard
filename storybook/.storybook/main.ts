@@ -1,17 +1,9 @@
 // @ts-nocheck
 
-import svgr from "vite-plugin-svgr";
-import tsconfigPaths from 'vite-tsconfig-paths'
-
-const { resolve } = require("path");
-
-
-// TODO: change to TS - https://github.com/storybookjs/builder-vite#typescript
-
 /** @type {import("@storybook/core-common").StorybookConfig} */
 module.exports = {
   core: {
-    builder: "@storybook/builder-vite",
+    disableTelemetry: true,
   },
   stories: ["../../app/src/**/__stories__/*.stories.tsx"],
 
@@ -29,16 +21,13 @@ module.exports = {
     reactDocgen: false,
   },
 
-  async viteFinal(config, { configType }) {
-    config.plugins = [...config.plugins, svgr(), tsconfigPaths({ root: "../app"})];
-    config.resolve = {
-      alias: [
-        {
-          find: /^~@darekkay\/styles/,
-          replacement: resolve(__dirname, "../../app/node_modules/@darekkay/styles"),
-        },
-      ],
-    };
-    return config;
+  framework: {
+    name: "@storybook/react-vite",
+    options: {},
+  },
+
+  docs: {
+    // TODO: check
+    autodocs: true,
   },
 };

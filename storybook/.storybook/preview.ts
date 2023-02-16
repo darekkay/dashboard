@@ -14,7 +14,7 @@ import "./storybook.scss";
 initStore();
 
 // Define UI themes
-addParameters({
+export const parameters = {
   themes: {
     default: "Default",
     list: [
@@ -37,4 +37,4 @@ addParameters({
         theme?.class.substring(6) || "default";
     },
   },
-});
+};

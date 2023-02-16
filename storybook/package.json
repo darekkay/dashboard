@@ -5,22 +5,16 @@
   "author": "Darek Kay <hello@darekkay.com> (https://darekkay.com/)",
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "7.20.12",
-    "@mdx-js/react": "2.1.1",
-    "@storybook/addons": "6.5.16",
-    "@storybook/react": "6.5.16",
-    "@storybook/builder-vite": "0.1.36",
+    "@storybook/addon-essentials": "7.0.0-beta.48",
+    "@storybook/react": "7.0.0-beta.48",
+    "@storybook/react-vite": "7.0.0-beta.48",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "1.58.1",
-    "sass-loader": "10.2.0",
+    "storybook": "7.0.0-beta.48",
     "storybook-addon-themes": "6.1.0",
-    "tsconfig-paths-webpack-plugin": "3.5.2",
     "typescript": "4.9.5",
-    "ts-node": "10.8.1",
-    "vite": "2.9.10",
-    "vite-plugin-svgr": "2.1.0",
-    "vite-tsconfig-paths": "3.5.0"
+    "vite": "4.1.1"
   },
   "engines": {
     "node": ">=14.0.0"
@@ -34,7 +28,7 @@
     "url": "https://github.com/darekkay/dashboard.git"
   },
   "scripts": {
-    "build": "build-storybook --quiet",
-    "start": "start-storybook -p 6006 --no-version-updates --quiet"
+    "build": "storybook build --quiet",
+    "start": "storybook dev -p 6006 --no-version-updates --quiet"
   }
 }
