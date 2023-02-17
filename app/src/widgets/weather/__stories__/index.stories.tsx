@@ -54,7 +54,7 @@ const createForecast = () => {
 export const Variants = () => {
   return (
     <>
-      <Section type="story" headline="Weather widget">
+      <Section type="story">
         <Widget
           {...widgetProps}
           id="weather-01"
