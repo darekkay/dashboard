@@ -9,6 +9,11 @@ import {
   YAxis,
 } from "recharts";
 
+const roundIfNumber = (value: any) => {
+  if (typeof value === "number") return `${String(Math.round(value))}`;
+  return value;
+};
+
 const LineChart = ({
   data,
   dataKeyX = "x",
@@ -19,7 +24,7 @@ const LineChart = ({
     <RechartsLineChart data={data} margin={{ right: 40 }}>
       <CartesianGrid strokeDasharray="2 2" vertical={false} />
       <XAxis dataKey={dataKeyX} tick={{ fontSize: "1.4rem" }} height={25} />
-      <YAxis tick={{ fontSize: "1.4rem" }} />
+      <YAxis tick={{ fontSize: "1.4rem" }} tickFormatter={roundIfNumber} />
       <Tooltip />
       <Line type="linear" dataKey={dataKeyY} dot={false} activeDot={{ r: 4 }} />
     </RechartsLineChart>
