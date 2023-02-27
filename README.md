@@ -44,7 +44,7 @@ A new project is also a great opportunity to learn new concepts.
 
 - ☑ 16 [widgets](https://dashboard.darekkay.com/docs/widgets/) as of February 2023.
 - ☑ Themes support. Because no one will bat an eye without a Dark Mode™.
-- ☑ Multi-language support (English, German and French already provided).
+- ☑ Multi-language support (English, German, French and Portuguese already provided).
 
 ## Contribution
 
@@ -67,6 +67,7 @@ Thanks goes to these wonderful people:
     <td align="center"><a href='http://adrianriosweb.com/' title='adrianrios25 is awesome!'><img src='https://avatars1.githubusercontent.com/u/12592624?v=4' alt='adrianrios25' width='50px' /></a></td>
     <td align="center"><a href='https://github.com/syentix' title='syentix is awesome!'><img src='https://avatars3.githubusercontent.com/u/43079612?v=4' alt='syentix' width='50px' /></a></td>
     <td align="center"><a href='https://alexandru-pinca.me' title='pinkahd is awesome!'><img src='https://avatars.githubusercontent.com/u/1828242?v=4' alt='pinkahd' width='50px' /></a></td>
+    <td align="center"><a href='https://github.com/ludufre' title='ludufre is awesome!'><img src='https://avatars.githubusercontent.com/u/4112077?v=4' alt='pinkahd' width='50px' /></a></td>
   </tr>
 </table>
 

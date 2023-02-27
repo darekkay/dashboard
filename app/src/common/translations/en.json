@@ -38,7 +38,8 @@
       "headline": "Language",
       "en": "English",
       "de": "Deutsch",
-      "fr": "Français"
+      "fr": "Français",
+      "pt": "Portuguese"
     },
     "background": {
       "headline": "Background image URL"
