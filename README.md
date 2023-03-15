@@ -60,14 +60,17 @@ Thanks goes to these wonderful people:
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href='https://darekkay.com/' title='darekkay is awesome!'><img src='https://avatars0.githubusercontent.com/u/3101914?v=4' alt='darekkay' width='50px' /></a></td>
-    <td align="center"><a href='https://github.com/faboo03' title='faboo03 is awesome!'><img src='https://avatars3.githubusercontent.com/u/421979?v=4' alt='faboo03' width='50px' /></a></td>
-    <td align="center"><a href='https://github.com/TateKennington' title='TateKennington is awesome!'><img src='https://avatars0.githubusercontent.com/u/27887751?v=4' alt='TateKennington' width='50px' /></a></td>
-    <td align="center"><a href='http://adrianriosweb.com/' title='adrianrios25 is awesome!'><img src='https://avatars1.githubusercontent.com/u/12592624?v=4' alt='adrianrios25' width='50px' /></a></td>
-    <td align="center"><a href='https://github.com/syentix' title='syentix is awesome!'><img src='https://avatars3.githubusercontent.com/u/43079612?v=4' alt='syentix' width='50px' /></a></td>
-    <td align="center"><a href='https://alexandru-pinca.me' title='pinkahd is awesome!'><img src='https://avatars.githubusercontent.com/u/1828242?v=4' alt='pinkahd' width='50px' /></a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="8.33%"><a href='https://darekkay.com/' title='darekkay is awesome!'><img src='https://avatars0.githubusercontent.com/u/3101914?v=4' alt='darekkay' width='50px' /></a></td>
+      <td align="center" valign="top" width="8.33%"><a href='https://github.com/faboo03' title='faboo03 is awesome!'><img src='https://avatars3.githubusercontent.com/u/421979?v=4' alt='faboo03' width='50px' /></a></td>
+      <td align="center" valign="top" width="8.33%"><a href='https://github.com/TateKennington' title='TateKennington is awesome!'><img src='https://avatars0.githubusercontent.com/u/27887751?v=4' alt='TateKennington' width='50px' /></a></td>
+      <td align="center" valign="top" width="8.33%"><a href='http://adrianriosweb.com/' title='adrianrios25 is awesome!'><img src='https://avatars1.githubusercontent.com/u/12592624?v=4' alt='adrianrios25' width='50px' /></a></td>
+      <td align="center" valign="top" width="8.33%"><a href='https://github.com/syentix' title='syentix is awesome!'><img src='https://avatars3.githubusercontent.com/u/43079612?v=4' alt='syentix' width='50px' /></a></td>
+      <td align="center" valign="top" width="8.33%"><a href='https://alexandru-pinca.me' title='pinkahd is awesome!'><img src='https://avatars.githubusercontent.com/u/1828242?v=4' alt='pinkahd' width='50px' /></a></td>
+      <td align="center" valign="top" width="8.33%"><a href='https://ludufre.com' title='ludufre is awesome!'><img src='https://avatars.githubusercontent.com/u/4112077?v=4' alt='ludufre' width='50px' /></a></td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->
