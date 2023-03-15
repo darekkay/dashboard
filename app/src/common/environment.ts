@@ -5,7 +5,7 @@ import toLower from "lodash/toLower";
 export const toBoolean = (value?: string) => toLower(value) === "true";
 
 /** Available languages */
-export const LANGUAGES = ["en", "de", "fr"];
+export const LANGUAGES = ["en", "de", "fr", "pt"];
 
 /** Available themes */
 export const THEMES = ["default", "dark"];

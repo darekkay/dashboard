@@ -1,0 +1,297 @@
+{
+  "number": "{{value, number}}",
+
+  "common": {
+    "edit": "Editar",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "close": "Fechar",
+    "clear": "Limpar",
+    "download": "Baixar",
+    "loading": "Carregando...",
+    "settings": "Configurações",
+    "help": "Ajuda",
+    "random": "Aleatório",
+    "error": "Erro inesperado",
+    "menu": "Menu",
+    "documentation": "Documentação",
+    "poweredBy": "Fornecido por <alink>{{name}}</alink>",
+    "headline": "Título",
+    "fullscreen": {
+      "start": "Tela cheia",
+      "exit": "Sair da tela cheia"
+    }
+  },
+
+  "error": {
+    "unknown": "Erro inesperado",
+    "connectionError": "Erro na conexão"
+  },
+
+  "config": {
+    "theme": {
+      "headline": "Tema",
+      "default": "Padrão",
+      "dark": "Escuro"
+    },
+    "language": {
+      "headline": "Idioma"
+    },
+    "background": {
+      "headline": "URL da Imagem de Fundo"
+    },
+    "data": {
+      "headline": "Seus dados",
+      "purge": "Apagar tudo",
+      "backup": "Cópia de segurança",
+      "restore": {
+        "default": "Restaurar cópia de segurança",
+        "success": "Cópia de segurança restaurada",
+        "error": "Não foi possível restaurar"
+      }
+    }
+  },
+
+  "welcome": {
+    "message1": "Bem-vindo ao <strong>{{projectName}}</strong> — Seu painel de informações digitais",
+    "message2": "Personalize o conteúdo adicionando novos widgets no menu ou use o seguinte modelo com alguns widgets comuns.",
+    "message3": "Leia a <dashboardLink>documentação</dashboardLink> para mais informações.",
+    "createExampleBoard": "Usar Modelo"
+  },
+  "widget": {
+    "common": {
+      "headline": "Widgets",
+      "add": "Adicionar widget {{widget}}",
+      "remove": "Remover widget {{widget}}",
+      "configuration": "Configuração: {{widget}}",
+      "unconfigured": "Configuração de widget necessária."
+    },
+    "category": {
+      "general": "Geral",
+      "media": "Mídia",
+      "knowledge": "Conhecimento",
+      "tools": "Ferramentas",
+      "tracking": "Rastreamento",
+      "monitoring": "Monitoramento"
+    },
+    "drawer": {
+      "open": "Adicionar widget",
+      "headline": "Adicionar widget ao painel"
+    },
+
+    "chart": {
+      "name": "Gráfico",
+      "description": "Gráfico de linha para exibição de dados JSON genéricos.",
+      "headline": "{{headline}}",
+      "configuration": {
+        "url": "URL dos Dados",
+        "dataPath": "Caminho JSON para o vetor de dados",
+        "dataKeyX": "Caminho JSON para a chave (eixo x)",
+        "dataKeyY": "Caminho JSON para a chave (eixo y)"
+      },
+      "error": {
+        "noArrayData": "A configuração atual não retorna vetor de dados."
+      }
+    },
+    "counter": {
+      "name": "Contador",
+      "description": "Contador de números genérico.",
+      "headline": "{{headline}}",
+      "increment": "Aumentar",
+      "decrement": "Diminuir"
+    },
+    "cryptocurrencies": {
+      "name": "Criptomoedas",
+      "description": "Preço de mercado atual e tendência 24h para várias criptomoedas.",
+      "headline": "",
+      "configuration": {
+        "fiat": "Moeda fiduciária",
+        "crypto": "Moeda criptográfica"
+      }
+    },
+    "date-time": {
+      "name": "Data e Hora",
+      "description": "Exibição de relógio e data com suporte para vários fusos horários.",
+      "headline": "{{headline}}",
+      "configuration": {
+        "timezone": "Fuso ho´rario",
+        "timezones": {
+          "auto": "Padrão",
+          "Pacific/Midway": "(GMT-11:00) Ilha de Midway",
+          "Pacific/Samoa": "(GMT-11:00) Samoa",
+          "US/Hawaii": "(GMT-10:00) Havaí",
+          "US/Alaska": "(GMT-08:00) Alasca",
+          "US/Pacific": "(GMT-07:00) Horário do Pacífico (EUA e Canadá)",
+          "America/Tijuana": "(GMT-07:00) Tijuana",
+          "America/Chihuahua": "(GMT-06:00) Chihuahua",
+          "US/Mountain": "(GMT-06:00) Horário das Montanhas (EUA e Canadá)",
+          "US/Central": "(GMT-05:00) Horário Central (EUA e Canadá)",
+          "Mexico/General": "(GMT-05:00) Cidade do México",
+          "America/Bogota": "(GMT-05:00) Bogotá",
+          "US/Eastern": "(GMT-04:00) Horário Oriental (EUA e Canadá)",
+          "America/Santiago": "(GMT-04:00) Santiago",
+          "Canada/Atlantic": "(GMT-03:00) Horário do Atlântico (Canadá)",
+          "America/Sao_Paulo": "(GMT-03:00) São Paulo",
+          "America/Godthab": "(GMT-02:00) Groenlândia",
+          "Canada/Newfoundland": "(GMT-02:30) Terra Nova",
+          "Atlantic/Cape_Verde": "(GMT-01:00) Cabo Verde",
+          "Atlantic/Azores": "(GMT+00:00) Açores",
+          "Africa/Monrovia": "(GMT+00:00) Monróvia",
+          "UTC": "(GMT+00:00) UTC",
+          "Africa/Casablanca": "(GMT+01:00) Casablanca",
+          "Europe/London": "(GMT+01:00) Londres",
+          "Europe/Berlin": "(GMT+02:00) Berlim",
+          "Africa/Cairo": "(GMT+02:00) Cairo",
+          "Europe/Athens": "(GMT+03:00) Atenas",
+          "Europe/Moscow": "(GMT+03:00) Moscou",
+          "Asia/Baghdad": "(GMT+03:00) Bagdá",
+          "Asia/Dubai": "(GMT+04:00) Dubai",
+          "Asia/Tehran": "(GMT+04:30) Teerã",
+          "Asia/Karachi": "(GMT+05:00) Carachi",
+          "Asia/Calcutta": "(GMT+05:30) Calcutá",
+          "Asia/Kathmandu": "(GMT+05:45) Catmandu",
+          "Asia/Almaty": "(GMT+06:00) Almaty",
+          "Asia/Rangoon": "(GMT+06:30) Yangon",
+          "Asia/Novosibirsk": "(GMT+07:00) Novosibirsk",
+          "Asia/Bangkok": "(GMT+07:00) Bangkok",
+          "Asia/Shanghai": "(GMT+08:00) Pequim",
+          "Asia/Hong_Kong": "(GMT+08:00) Hong Kong",
+          "Australia/Perth": "(GMT+08:00) Perth",
+          "Singapore": "(GMT+08:00) Cingapura",
+          "Asia/Seoul": "(GMT+09:00) Seul",
+          "Asia/Tokyo": "(GMT+09:00) Tóquio",
+          "Australia/Adelaide": "(GMT+09:30) Adelaide",
+          "Australia/Sydney": "(GMT+10:00) Sydney",
+          "Asia/Vladivostok": "(GMT+10:00) Vladivostok",
+          "Asia/Magadan": "(GMT+11:00) Magadan",
+          "Pacific/Norfolk": "(GMT+11:00) Norfolk",
+          "Pacific/Auckland": "(GMT+12:00) Auckland",
+          "Pacific/Fiji": "(GMT+12:00) Fiji",
+          "Asia/Kamchatka": "(GMT+12:00) Kamchatka",
+          "Pacific/Tongatapu": "(GMT+13:00) Nuku'alofa"
+        }
+      }
+    },
+    "day-countdown": {
+      "name": "Contagem regressiva",
+      "description": "Contagem para até o dia de um evento.",
+      "headline": "",
+      "day": "dia",
+      "days": "dias",
+      "today": "Hoje",
+      "transition": {
+        "since": "desde",
+        "until": "até",
+        "is": "é"
+      },
+      "configuration": {
+        "eventName": "Nome do evento",
+        "eventDate": "Data do evento"
+      }
+    },
+    "github-stats": {
+      "name": "Estatísticas do GitHub",
+      "description": "Várias estatísticas de usuários e repositórios do GitHub.",
+      "headline": "{{name}}",
+      "stars": "stars",
+      "subscribers": "assinantes",
+      "followers": "seguidores",
+      "forks": "forks",
+      "openIssues": "Issues abertas",
+      "configuration": {
+        "query": "Nome de usuário ou repositório do GitHub"
+      },
+      "error": {
+        "404": "Nome de usuário ou repositório não encontrado"
+      }
+    },
+    "image": {
+      "name": "Imagem",
+      "description": "Imagem externa personalizada.",
+      "headline": "",
+      "configuration": {
+        "url": "URL da Imagem"
+      }
+    },
+    "random-image": {
+      "name": "Imagem Aleatória",
+      "description": "Imagem diária do Unsplash.",
+      "headline": "",
+      "attribution": "Foto por <authorLink>{{authorName}}</authorLink> no <unsplashLink>Unsplash</unsplashLink>"
+    },
+    "qr-code": {
+      "name": "QR Code",
+      "description": "QR code de qualquer conteúdo de texto.",
+      "headline": "{{headline}}",
+      "configuration": {
+        "content": "Conteúdo"
+      }
+    },
+    "search": {
+      "name": "Buscador Web",
+      "description": "Campo de entrada de busca para sites externos.",
+      "headline": "Buscador {{title}}",
+      "buttonAriaLabel": "Abrir resultados de pesquisa",
+      "configuration": {
+        "title": "Título",
+        "pattern": "URL da Busca"
+      }
+    },
+    "text": {
+      "name": "Notas",
+      "description": "Campo de texto editável para fazer anotações.",
+      "headline": "{{headline}}"
+    },
+    "totd-chemical-elements": {
+      "name": "Elementos Químicos",
+      "description": "Elemento químico do dia (nome, símbolo, número atômico).",
+      "headline": ""
+    },
+    "totd-world-countries": {
+      "name": "Países do Mundo",
+      "description": "País mundial do dia (bandeira, capital, moeda, idiomas).",
+      "headline": "{{name}}",
+      "capital": "Capital",
+      "currency": "Moeda",
+      "languages": "Idiomas"
+    },
+    "weather": {
+      "name": "Clima",
+      "description": "Clima atual e previsão do tempo.",
+      "headline": "{{headline}}",
+      "configuration": {
+        "lat": "Latitude",
+        "lon": "Longitude",
+        "latLonNotice": "Encontre a <mainLink>latitude e longitude</mainLink> para sua localização ou <testLink>teste</testLink> buscando manualmente.",
+        "unit": "Unidade",
+        "units": {
+          "metric": "°C",
+          "imperial": "°F"
+        }
+      }
+    },
+    "website": {
+      "name": "Website",
+      "description": "Iframe para exibição de sites externos.",
+      "headline": "",
+      "configuration": {
+        "url": "URL do Website",
+        "disclaimer": "<strong>Importante:</strong> Infelizmente, muitos sites não permitem a inclusão em um iframe. Se um site não puder ser exibido, esse é provavelmente o caso."
+      }
+    },
+    "youtube-stats": {
+      "name": "Estatísticas do YouTube",
+      "description": "Várias estatísticas de usuários e canais do YouTube.",
+      "headline": "{{channelTitle}}",
+      "subscriberCount": "Inscritos",
+      "viewCount": "visualizações",
+      "videoCount": "vídeos",
+      "configuration": {
+        "query": "Nome ou URL do canal"
+      },
+      "error": {
+        "404": "Canal não encontrado"
+      }
+    }
+  }
+}

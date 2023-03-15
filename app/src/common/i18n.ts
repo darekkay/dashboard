@@ -10,11 +10,13 @@ import type { State } from "state/store";
 
 import "dayjs/locale/de";
 import "dayjs/locale/fr";
+import "dayjs/locale/pt";
 
 // NICE: import only the language that is being used
 import de from "./translations/de.json";
 import en from "./translations/en.json";
 import fr from "./translations/fr.json";
+import pt from "./translations/pt.json";
 
 export const resources: Resource = {
   en: {
@@ -25,6 +27,9 @@ export const resources: Resource = {
   },
   fr: {
     translation: fr,
+  },
+  pt: {
+    translation: pt,
   },
 };
 
