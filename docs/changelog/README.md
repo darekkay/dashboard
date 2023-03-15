@@ -6,6 +6,7 @@
 - :boom: Drop Node 12 support.
 - :sparkles: New widget: [Weather](https://dashboard.darekkay.com/docs/widgets/weather.html).
 - :sparkles: New widget: [Day Countdown](https://dashboard.darekkay.com/docs/widgets/day-countdown.html).
+- :sparkles: Add Portuguese translation ([@ludufre](https://github.com/ludufre)).
 - :rocket: Use a meaningful widget focus order.
 - :rocket: Unify loading and error behavior.
 - :rocket: Update built-in background images.
