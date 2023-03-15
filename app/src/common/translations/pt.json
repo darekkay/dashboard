@@ -35,11 +35,7 @@
       "dark": "Escuro"
     },
     "language": {
-      "headline": "Idioma",
-      "en": "Inglês",
-      "de": "Alemão",
-      "fr": "Francês",
-      "pt": "Português"
+      "headline": "Idioma"
     },
     "background": {
       "headline": "URL da Imagem de Fundo"
