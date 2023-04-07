@@ -20,6 +20,10 @@ module.exports = {
     reactDocgen: false,
   },
 
+  core: {
+    disableTelemetry: true,
+  },
+
   /**
    * Storybook Webpack customization
    * @param config Webpack config
