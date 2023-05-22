@@ -15,33 +15,22 @@ jobs:
     name: app-node-${{ matrix.node }}
     strategy:
       matrix:
-        node: [ 14, 18 ]
+        node: [ 16, 20 ]
       fail-fast: true
     defaults:
       run:
-        working-directory: ./app
+        working-directory: app
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Setup yarn cache
-        uses: actions/cache@v2
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+        uses: actions/checkout@v3
 
       - name: Setup Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
+          cache: "yarn"
+          cache-dependency-path: "app"
 
       - name: Install dependencies
         run: yarn install --pure-lockfile --prefer-offline
@@ -58,33 +47,22 @@ jobs:
     name: server-node-${{ matrix.node }}
     strategy:
       matrix:
-        node: [ 14, 18 ]
+        node: [ 16, 20 ]
       fail-fast: true
     defaults:
       run:
-        working-directory: ./server
+        working-directory: server
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Setup yarn cache
-        uses: actions/cache@v2
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+        uses: actions/checkout@v3
 
       - name: Setup Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
+          cache: "yarn"
+          cache-dependency-path: "server"
 
       - name: Install dependencies
         run: yarn install --pure-lockfile --prefer-offline
@@ -98,33 +76,22 @@ jobs:
     name: docs-node-${{ matrix.node }}
     strategy:
       matrix:
-        node: [ 14 ]
+        node: [ 16 ]
       fail-fast: true
     defaults:
       run:
-        working-directory: ./docs
+        working-directory: docs
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Setup yarn cache
-        uses: actions/cache@v2
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+        uses: actions/checkout@v3
 
       - name: Setup Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
+          cache: "yarn"
+          cache-dependency-path: "docs"
 
       - name: Install dependencies
         run: yarn install --pure-lockfile --prefer-offline
