@@ -1,12 +1,12 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Button } from "@darekkay/react-ui";
 
 import { PersistorContext } from "entry";
 import BackgroundSelect from "components/settings/background-select";
 import ThemeSelect from "components/settings/theme-select";
 import LanguageSelect from "components/settings/language-select";
 import ImportExport from "components/settings/import-export";
-import Button from "components/button";
 import Icon from "components/icon";
 import Section from "components/section";
 

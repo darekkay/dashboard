@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Button } from "@darekkay/react-ui";
 
-import Button from "components/button";
 import Icon from "components/icon";
 
 import type { WidgetProps } from "../index";

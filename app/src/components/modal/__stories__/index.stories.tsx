@@ -1,6 +1,6 @@
 import React from "react";
+import { Button } from "@darekkay/react-ui";
 
-import Button from "components/button";
 import useBooleanState from "common/hooks/useBooleanState";
 
 import Modal from "../index";

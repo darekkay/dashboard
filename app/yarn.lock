@@ -1675,6 +1675,11 @@
     log-symbols "4.1.0"
     loglevel "1.8.1"
 
+"@darekkay/react-ui@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@darekkay/react-ui/-/react-ui-1.1.0.tgz#60e421d8c4df2b0d3926e7abe6ede3041d1b3436"
+  integrity sha512-cx2qki9e26N/FPmJPxfn8nswYPIJEmnwxmm6EhkQWUiTFhOeRtdOQXjXJKxcGmva6/uOlaG+Mdg6iodur15axg==
+
 "@darekkay/scripts@2.5.0":
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/@darekkay/scripts/-/scripts-2.5.0.tgz#fe12fadc6b890c6f1b773736c5d38d319a49114d"
@@ -1704,10 +1709,10 @@
     which "3.0.0"
     yargs-parser "21.1.1"
 
-"@darekkay/styles@3.3.4":
-  version "3.3.4"
-  resolved "https://registry.yarnpkg.com/@darekkay/styles/-/styles-3.3.4.tgz#a015fcf2e91d9ef7f697e856bceaf6c7245da6c5"
-  integrity sha512-r/J7HTFba+1BnPPhoEQYFv99VInRkIWBQwWjPLwoAGi6FjPxlx/TJeutGo/JwextLiSk/rd5eeEZ/ud+mvgyzA==
+"@darekkay/styles@4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@darekkay/styles/-/styles-4.2.1.tgz#6e7a7ce061ebfd7eab8eced3bd005ae865aac872"
+  integrity sha512-BbUtZfI8cyrjY58/R+yWe0kprQsLu1DNV4iJr8Ugoh0RxXLABuV+uIIvHw15ADXZcXyeq8VxdhrTA/QrmjygKw==
   dependencies:
     "@types/tailwindcss" "2.2.4"
 

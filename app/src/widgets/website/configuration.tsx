@@ -1,9 +1,8 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
+import { Button, Input } from "@darekkay/react-ui";
 
 import { ConfigurationProps } from "widgets/index";
-import Input from "components/forms/input";
-import Button from "components/button";
 
 import providers from "./lib/providers";
 

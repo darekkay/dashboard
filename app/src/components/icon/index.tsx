@@ -46,7 +46,6 @@ const Icon = (props: Props) => {
 
 export interface Props {
   className?: string;
-  color?: string;
   name: IconName;
   alt?: string;
   position?: "left" | "right";

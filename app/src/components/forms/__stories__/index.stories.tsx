@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { Input } from "@darekkay/react-ui";
 
 import Section from "components/section";
-import Input from "components/forms/input";
 import TextArea from "components/forms/text-area";
 import Dropdown from "components/forms/dropdown";
 import DatePicker from "components/forms/date-picker";

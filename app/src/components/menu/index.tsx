@@ -7,9 +7,9 @@ import {
   MenuStateReturn,
 } from "reakit/Menu";
 import isEmpty from "lodash/isEmpty";
+import { Button } from "@darekkay/react-ui";
 
 import Icon, { IconName } from "components/icon";
-import Button from "components/button";
 
 // @ts-expect-error default value is defined in the context provider
 const MenuContext = React.createContext<MenuStateReturn>({});

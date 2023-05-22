@@ -2,10 +2,10 @@ import React, { useCallback, useState } from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 import clsx from "clsx";
+import { Link } from "@darekkay/react-ui";
 
 import { State, STATE_PROPERTIES } from "state/store";
 import { actions as stateActions } from "common/ducks/state";
-import Link from "components/link";
 import Icon from "components/icon";
 import FileUpload from "components/forms/file-upload";
 import { UpdateStatus } from "components/widget/duck";

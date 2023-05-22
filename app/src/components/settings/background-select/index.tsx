@@ -1,10 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { Button, Input, InputProps } from "@darekkay/react-ui";
 
 import { actions } from "common/ducks/config";
-import Input, { Props as InputProps } from "components/forms/input";
-import Button from "components/button";
 
 import builtInImages from "./images";
 import selectComponentProps from "./selectors";

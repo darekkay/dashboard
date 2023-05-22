@@ -1,8 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Input } from "@darekkay/react-ui";
 
 import { ConfigurationProps } from "widgets/index";
-import Input from "components/forms/input";
 import DatePicker from "components/forms/date-picker";
 
 const Configuration = ({

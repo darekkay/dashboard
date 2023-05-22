@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-
-import Input from "../index";
+import { Input } from "@darekkay/react-ui";
 
 export default {
-  title: "Components/Forms/Input",
+  title: "Shared Components/Forms/Input",
 };
 
 export const Variants = () => {

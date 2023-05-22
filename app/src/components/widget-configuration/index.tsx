@@ -1,7 +1,7 @@
 import React, { Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Button } from "@darekkay/react-ui";
 
-import Button from "components/button";
 import Modal from "components/modal";
 import Loading from "components/loading";
 import { ConfigurationProps, ValueUpdateAction } from "widgets";

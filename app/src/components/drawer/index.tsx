@@ -1,12 +1,12 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import groupBy from "lodash/groupBy";
+import { Link } from "@darekkay/react-ui";
 
 import widgets, { WidgetProperties } from "widgets";
 import { categories } from "widgets/categories";
 import { WidgetType } from "widgets/list";
 import Icon from "components/icon";
-import Link from "components/link";
 
 const categoriesWithWidgets = groupBy(widgets, (widget) => widget.category);
 

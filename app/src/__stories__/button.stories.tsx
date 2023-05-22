@@ -1,9 +1,8 @@
 import React from "react";
+import { Button, ButtonProps } from "@darekkay/react-ui";
 
 import Icon from "components/icon";
 import Section from "components/section";
-
-import Button, { Props as ButtonProps } from "../index";
 
 interface RowProps {
   title: string;
@@ -35,7 +34,7 @@ const Row = ({
 );
 
 export default {
-  title: "Components/Button",
+  title: "Shared Components/Button",
 };
 
 export const Variants = () => (

@@ -1,8 +1,7 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
+import { Link, Button } from "@darekkay/react-ui";
 
-import Button from "components/button";
-import Link from "components/link";
 import { State } from "state/store";
 import demoTemplate from "templates/demo.json";
 

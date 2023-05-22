@@ -1,11 +1,10 @@
 import React from "react";
+import { Link } from "@darekkay/react-ui";
 
 import Icon from "components/icon";
 
-import Link from "../index";
-
 export default {
-  title: "Components/Link",
+  title: "Shared Components/Link",
 };
 
 export const Variants = () => {

@@ -1,8 +1,8 @@
 import React from "react";
 import { Trans } from "react-i18next";
+import { Link } from "@darekkay/react-ui";
 
 import useTriggerUpdate from "common/hooks/useTriggerUpdate";
-import Link from "components/link";
 
 import { WidgetProps } from "../index";
 

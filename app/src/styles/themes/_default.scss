@@ -10,20 +10,6 @@ $blue-vivid-55: #0070ca;
   --overlay-color-text-default: #{$black};
   --overlay-color-text-interaction: #{$violet-vivid-70};
 
-  --button-event-filter: saturate(80%) brightness(93%);
-
-  --button-primary-color: #{$blue-vivid-55};
-  --button-primary-focus-ring: #{$blue-30};
-
-  --button-secondary-color: #{$violet-50};
-  --button-secondary-focus-ring: #{$violet-vivid-30};
-
-  --button-danger-color: var(--color-text-danger);
-  --button-danger-focus-ring: #{$red-30};
-
-  --button-inverse-color: #{$white};
-  --button-disabled-color: #{$gray-warm-50};
-
   --loading-background-color: #{$gray-warm-10};
   --loading-spinner-color: #{$gray-warm-90};
 }

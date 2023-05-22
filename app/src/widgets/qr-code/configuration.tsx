@@ -1,8 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Input } from "@darekkay/react-ui";
 
 import { ConfigurationProps } from "widgets/index";
-import Input from "components/forms/input";
 import TextArea from "components/forms/text-area";
 
 const Configuration = ({

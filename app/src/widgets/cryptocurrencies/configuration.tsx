@@ -1,9 +1,9 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
+import { Link } from "@darekkay/react-ui";
 
 import { ConfigurationProps } from "widgets/index";
 import Dropdown from "components/forms/dropdown";
-import Link from "components/link";
 
 const Configuration = ({
   options,

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import isEmpty from "lodash/isEmpty";
+import { Button, Input } from "@darekkay/react-ui";
 
-import Button from "components/button";
-import Input from "components/forms/input";
 import Icon from "components/icon";
 import WidgetUnconfigured from "components/widget-unconfigured";
 
