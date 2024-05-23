@@ -3,7 +3,7 @@
 ## Current development
 
 - :boom: Remove Twitter integration.
-- :boom: Drop Node 12 support.
+- :boom: Drop Node 16 support.
 - :sparkles: New widget: [Weather](https://dashboard.darekkay.com/docs/widgets/weather.html).
 - :sparkles: New widget: [Day Countdown](https://dashboard.darekkay.com/docs/widgets/day-countdown.html).
 - :sparkles: Add Portuguese translation ([@ludufre](https://github.com/ludufre)).
