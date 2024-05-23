@@ -6,18 +6,18 @@
   "private": true,
   "scripts": {
     "ci": "server/node_modules/.bin/run-s ci:*",
-    "ci:app": "cd app && yarn ci",
-    "ci:server": "cd server && yarn ci",
+    "ci:app": "cd app && npm run ci",
+    "ci:server": "cd server && npm run ci",
     "scan": "server/node_modules/.bin/run-s scan:server scan:app",
-    "scan:app": "cd app && yarn scan",
-    "scan:server": "cd server && yarn build-api",
+    "scan:app": "cd app && npm run scan",
+    "scan:server": "cd server && npm run build-api",
     "setup": "server/node_modules/.bin/run-s setup:*",
-    "setup:app": "cd app && yarn install",
-    "setup:docs": "cd docs && yarn install",
-    "setup:server": "cd server && yarn install",
-    "setup:storybook": "cd storybook && yarn install",
+    "setup:app": "cd app && npm install",
+    "setup:docs": "cd docs && npm install",
+    "setup:server": "cd server && npm install",
+    "setup:storybook": "cd storybook && npm install",
     "start": "server/node_modules/.bin/run-p start:*",
-    "start:app": "cd app && yarn start",
-    "start:server": "cd server && yarn dev"
+    "start:app": "cd app && npm run start",
+    "start:server": "cd server && npm run dev"
   }
 }

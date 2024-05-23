@@ -28,6 +28,7 @@
 - :bug: Reset pending widget status on state persist.
 - :bug: Internationalize hardcoded menu label.
 - :hammer: [Migrate](https://darekkay.com/blog/create-react-app-to-vite/) from Create React App to Vite.
+- :hammer: Switch from yarn to npm.
 - :hammer: Extract Storybook into a separate module.
 - :hammer: Silence unnecessary Storybook console output.
 - :hammer: Replace `react-sizeme` with `react-resize-detector`.

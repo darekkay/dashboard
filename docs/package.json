@@ -22,7 +22,7 @@
     "url": "https://github.com/darekkay/dashboard.git"
   },
   "scripts": {
-    "build": "yarn clean && yarn copy-assets && vuepress build",
+    "build": "npm run clean && npm run copy-assets && vuepress build",
     "clean": "rimraf .vuepress/public .vuepress/dist",
     "copy-assets": "copyfiles assets/**/* .vuepress/public",
     "dev": "vuepress dev"

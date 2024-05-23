@@ -29,17 +29,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-          cache: "yarn"
           cache-dependency-path: "app"
 
       - name: Install dependencies
-        run: yarn install --pure-lockfile --prefer-offline
+        run: npm ci
 
       - name: Validate
-        run: yarn ci
+        run: npm run ci
 
       - name: Build
-        run: yarn build
+        run: npm run build
 
   # server module
   server:
@@ -61,14 +60,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-          cache: "yarn"
           cache-dependency-path: "server"
 
       - name: Install dependencies
-        run: yarn install --pure-lockfile --prefer-offline
+        run: npm ci
 
       - name: Validate
-        run: yarn ci
+        run: npm run ci
 
   # docs module
   docs:
@@ -90,11 +88,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-          cache: "yarn"
           cache-dependency-path: "docs"
 
       - name: Install dependencies
-        run: yarn install --pure-lockfile --prefer-offline
+        run: npm ci
 
       - name: Build
-        run: yarn build
+        run: npm run build

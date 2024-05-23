@@ -3,7 +3,7 @@ import type { WidgetProperties } from "widgets/index";
 {{#if configurationEnabled}}import type { WidgetOptions } from "./configuration";{{/if}}
 
 const properties: WidgetProperties{{#if configurationEnabled}}<WidgetOptions>{{/if}} = {
-  // TODO: adjust properties and run yarn scan:widgets
+  // TODO: adjust properties and run npm run scan:widgets
   widgetType: "{{kebabCase name}}",
   category: "general", // TODO: check category
   configurable: {{configurationEnabled}},

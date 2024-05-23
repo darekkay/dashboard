@@ -8,8 +8,7 @@ This is the technical overview of the project.
 
 Required:
 
-- Node.js 12+
-- `yarn` (preferred) or `npm`
+- Node.js 18+
 
 Recommended:
 
@@ -31,10 +30,8 @@ Clone the Git repository, change the directory and run the setup script:
 ```bash
 git clone git@github.com:darekkay/dashboard.git
 cd dashboard
-yarn setup
+npm run setup
 ```
-
-Note: You may also use `npm` instead of `yarn`.
 
 The `setup` task will install dependencies in all available modules (`app`, `server`, `storybook`, `docs`).
 
@@ -43,7 +40,7 @@ The `setup` task will install dependencies in all available modules (`app`, `ser
 - Run `start` in the root folder to run the `app` and `server` modules in parallel:
 
 ```bash
-yarn start
+npm run start
 ```
 
 - Open [http://localhost:42007](http://localhost:42007) to view the app in the browser.
@@ -53,18 +50,18 @@ Alternatively, check out available npm tasks in each of the module's `package.js
 ```shell
 # Shell 1
 cd app
-yarn start
+npm run start
 
 # Shell 2
 cd server
-yarn dev
+npm run dev
 ```
 
-Notice: The `server` module offers the `yarn dev` task that uses `nodemon`. It will restart the server every time a file is changed (hot reload). The `app` module uses hot reload by default.
+Notice: The `server` module offers the `npm run dev` task that uses `nodemon`. It will restart the server every time a file is changed (hot reload). The `app` module uses hot reload by default.
 
 ## Available tasks
 
-The `package.json` files contain other useful scripts, which you can execute using `yarn <command>` or `npm run <command>`:
+The `package.json` files contain other useful scripts, which you can execute using `npm run <command>` or `npm run <command>`:
 
 | Command         | Description                                          |
 |-----------------|------------------------------------------------------|
@@ -92,13 +89,12 @@ This client module was bootstrapped with [Create React App](https://github.com/f
 - Internationalization: [react-i18next](https://react.i18next.com/)
 - Styling: [SCSS](https://sass-lang.com/) with [Tailwind](https://tailwindcss.com/)
 - Testing: [jest](https://jestjs.io/), [react-testing-library](https://testing-library.com/)
-- Dependency management: [yarn](https://yarnpkg.com)
 
 #### Storybook
 
 This project uses [Storybook](https://storybook.js.org/), a tool for developing UI components in isolation. It is automatically deployed [here](https://dashboard.darekkay.com/storybook/) on every push to production. Every widget and every common component should provide a story in a `__stories__` sub-folder.
 
-Run `yarn start` in the `storybook` module to start a local development instance of Storybook.
+Run `npm run start` in the `storybook` module to start a local development instance of Storybook.
 
 ### Server
 
@@ -116,17 +112,17 @@ The documentation is created with [VuePress](https://vuepress.vuejs.org/). It is
 
 ### Creating a new widget
 
-1. Run the file generator (`yarn generate Widget`) in the `app` module.
+1. Run the file generator (`npm run generate Widget`) in the `app` module.
 2. Adjust the widget's `properties.ts` file with sane initial values.
-3. Re-scan the available widgets (`yarn scan:widgets`).
+3. Re-scan the available widgets (`npm run scan:widgets`).
 4. Add mandatory widget labels (at least `name`) to all translation files under `common/translations`.
 5. Edit documentation under `docs/widgets`.
 
 ### Creating a new server endpoint
 
-1. Run the file generator (`yarn generate`) in the `server` module.
+1. Run the file generator (`npm run generate`) in the `server` module.
 2. Implement endpoint 
-2. Run `yarn build-api` (or `yarn build-api:dev` for live reload) to generate OpenAPI/Swagger definition using [tsoa](https://tsoa-community.github.io/docs/).
+2. Run `npm run build-api` (or `npm run build-api:dev` for live reload) to generate OpenAPI/Swagger definition using [tsoa](https://tsoa-community.github.io/docs/).
 
 ### Auto-updating data
 
@@ -139,7 +135,7 @@ export const initialMeta = {
 };
 ```
 
-When creating a new widget (using `yarn generate`), make sure to choose the option to "use sagas". This will set up much of the necessary boilerplate. The core update logic is implemented in `useTriggerUpdate`. An update will be automatically triggered:
+When creating a new widget (using `npm run generate`), make sure to choose the option to "use sagas". This will set up much of the necessary boilerplate. The core update logic is implemented in `useTriggerUpdate`. An update will be automatically triggered:
 
 - After each update cycle (per widget type)
 - Whenever a dependent prop changes (e.g. when adjusting the settings)
@@ -157,7 +153,7 @@ Default UI language is based on the browser language and can be changed by the u
 
 Numbers are localized using a custom [i18next formatter](https://www.i18next.com/translation-function/formatting): `t("number", { value }`.
 
-To find missing label translations, run `yarn i18n` in the `app` module.
+To find missing label translations, run `npm run i18n` in the `app` module.
 
 ### Typography
 
@@ -209,7 +205,7 @@ To debug certain issues, include the following string in the URL as a query para
 
 ## Contributing
 
-Please run `yarn ci` for every changed module to make sure there are not linting issues or failing unit tests. Run `yarn lint:fix` to fix some common issues, incl. prettier formatting.
+Please run `npm run ci` for every changed module to make sure there are not linting issues or failing unit tests. Run `npm run lint:fix` to fix some common issues, incl. prettier formatting.
 
 ### Commit message format
 
