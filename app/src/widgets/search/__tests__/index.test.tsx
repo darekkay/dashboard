@@ -1,6 +1,6 @@
 import React from "react";
 
-import { render, screen, userEvent } from "common/testing";
+import { render, screen, userEvent, act } from "common/testing";
 import { widgetContentProps } from "common/utils/mock";
 
 import Search, { Props } from "../index";
@@ -58,7 +58,8 @@ describe("<Search />", () => {
     const searchButton = screen.getByRole("button", {
       name: "widget.search.buttonAriaLabel",
     });
-    userEvent.click(searchButton);
+    // eslint-disable-next-line testing-library/no-unnecessary-act
+    act(() => userEvent.click(searchButton));
 
     // opens the search in a new window
     expect(windowOpenSpy).toHaveBeenCalledTimes(1);

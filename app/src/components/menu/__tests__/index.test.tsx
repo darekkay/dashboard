@@ -1,6 +1,7 @@
+/* eslint-disable testing-library/no-unnecessary-act */
 import React from "react";
 
-import { render, screen, userEvent } from "common/testing";
+import { render, screen, userEvent, act } from "common/testing";
 
 import Menu, { MenuAction, MenuSeparator } from "../index";
 
@@ -17,7 +18,7 @@ describe("<Menu />", () => {
     expect(screen.queryByRole("menu")).not.toBeInTheDocument();
 
     // open the menu
-    userEvent.click(screen.getByRole("button"));
+    act(() => userEvent.click(screen.getByRole("button", { name: "title" })));
 
     expect(screen.getByRole("menu")).toBeInTheDocument();
     expect(screen.getAllByRole("menuitem")).toHaveLength(2);
@@ -37,11 +38,12 @@ describe("<Menu />", () => {
     );
 
     // open the menu
-    userEvent.click(screen.getByRole("button"));
+    act(() => userEvent.click(screen.getByRole("button", { name: "title" })));
 
     const menuButton = screen.getByRole("menuitem");
     expect(onClick).toHaveBeenCalledTimes(0);
-    userEvent.click(menuButton);
+
+    act(() => userEvent.click(menuButton));
     expect(onClick).toHaveBeenCalledTimes(1);
 
     // the menu should close on click
@@ -60,11 +62,11 @@ describe("<Menu />", () => {
     );
 
     // open the menu
-    userEvent.click(screen.getByRole("button"));
+    act(() => userEvent.click(screen.getByRole("button", { name: "title" })));
 
     const menuLink = screen.getByRole("menuitem");
     expect(windowOpenSpy).toHaveBeenCalledTimes(0);
-    userEvent.click(menuLink);
+    act(() => userEvent.click(menuLink));
 
     // opens the menu link in a new window
     expect(windowOpenSpy).toHaveBeenCalledTimes(1);

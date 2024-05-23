@@ -1,69 +1,51 @@
 import React from "react";
+import clsx from "clsx";
 import {
-  useMenuState,
-  Menu as ReakitMenu,
+  Menu as AriakitMenu,
   MenuButton,
   MenuItem,
-  MenuStateReturn,
-} from "reakit/Menu";
-import isEmpty from "lodash/isEmpty";
-import { Button } from "@darekkay/react-ui";
+  MenuProvider,
+} from "@ariakit/react";
 
 import Icon, { IconName } from "components/icon";
 
-// @ts-expect-error default value is defined in the context provider
-const MenuContext = React.createContext<MenuStateReturn>({});
-
 const Menu = ({ children, title, icon, disclosureClassName }: Props) => {
-  const menu = useMenuState();
   return (
-    <>
+    <MenuProvider>
       <MenuButton
-        {...menu}
         aria-label={title}
-        className={disclosureClassName}
-        as={Button}
-        size="small"
-        variant="secondary"
+        className={clsx(
+          disclosureClassName,
+          "btn",
+          "btn-secondary",
+          "btn-small"
+        )}
       >
         <Icon name={icon} />
       </MenuButton>
-      <ReakitMenu
-        {...menu}
+      <AriakitMenu
+        // store={menu}
         aria-label={title}
         className="z-20 min-w-250 overflow-hidden bg-default border rounded-lg shadow-xl outline-none no-focus"
         // Fixes Popper warning: https://github.com/react-bootstrap/react-bootstrap/issues/5081
         style={{ top: "5px" }}
       >
-        <MenuContext.Provider value={menu}>{children}</MenuContext.Provider>
-      </ReakitMenu>
-    </>
+        {children}
+      </AriakitMenu>
+    </MenuProvider>
   );
-};
-
-const useMenuContext = () => {
-  const context = React.useContext<MenuStateReturn>(MenuContext);
-  if (isEmpty(context)) {
-    throw new Error(
-      "Menu compound components cannot be rendered outside the Menu component"
-    );
-  }
-  return context;
 };
 
 export const MenuSeparator = () => <hr className="border-0 border-top m-0" />;
 
 export const MenuAction = ({ text, icon, onClick, href }: MenuItemProps) => {
-  const menu = useMenuContext();
   return (
     <MenuItem
-      {...menu}
       key={text}
       className="block w-full flex items-center px-5 py-4 text-left text-3 text-default bg-default border-0 no-focus outline-none hover event:bg-offset cursor-pointer"
       onClick={() => {
         if (onClick) onClick();
         if (href) window.open(href, "_blank");
-        menu.hide();
       }}
     >
       <Icon name={icon} position="left" />
