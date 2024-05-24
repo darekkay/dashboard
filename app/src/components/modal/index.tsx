@@ -10,7 +10,11 @@ import Icon from "components/icon";
 
 if (!IS_TEST) {
   // bind modal to the root app element
-  ReactModal.setAppElement("#root");
+  if (document.querySelector("#storybook-root")) {
+    ReactModal.setAppElement("#storybook-root");
+  } else {
+    ReactModal.setAppElement("#root");
+  }
 } else {
   // create a mock modal root
   const modalRoot = document.createElement("div");
