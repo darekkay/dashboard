@@ -87,33 +87,29 @@
 				"type": "object",
 				"additionalProperties": true
 			},
+			"WeatherIcon": {
+				"type": "string",
+				"enum": [
+					"sun",
+					"cloud-sun",
+					"cloud-sun-rain",
+					"moon",
+					"cloud-moon",
+					"cloud-moon-rain",
+					"clouds",
+					"cloud-showers",
+					"thunderstorm",
+					"snow",
+					"fog"
+				]
+			},
 			"WeatherCondition": {
 				"properties": {
 					"description": {
 						"type": "string"
 					},
 					"icon": {
-						"type": "string",
-						"enum": [
-							"01d",
-							"02d",
-							"03d",
-							"04d",
-							"09d",
-							"10d",
-							"11d",
-							"13d",
-							"50d",
-							"01n",
-							"02n",
-							"03n",
-							"04n",
-							"09n",
-							"10n",
-							"11n",
-							"13n",
-							"50n"
-						]
+						"$ref": "#/components/schemas/WeatherIcon"
 					}
 				},
 				"required": [

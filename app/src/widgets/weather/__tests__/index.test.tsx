@@ -2,6 +2,7 @@ import React from "react";
 
 import { render, screen } from "common/testing";
 import { widgetContentProps, widgetStatusDisplay } from "common/utils/mock";
+import type { WeatherIcon } from "api";
 
 import Weather from "../index";
 
@@ -12,7 +13,7 @@ const commonProps = {
     temperature: 24,
     condition: {
       description: "clear sky",
-      icon: "01d" as const,
+      icon: "sun" as WeatherIcon,
     },
   },
   forecast: [
@@ -20,7 +21,7 @@ const commonProps = {
       date: 1598180400,
       condition: {
         description: "overcast clouds",
-        icon: "04d" as const,
+        icon: "clouds" as WeatherIcon,
       },
       temperatureMin: 18,
       temperatureMax: 30,

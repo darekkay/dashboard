@@ -42,27 +42,22 @@ export interface UnsplashImage {
   altText?: string;
   [key: string]: any;
 }
+export declare enum WeatherIcon {
+  Sun = "sun",
+  CloudSun = "cloud-sun",
+  CloudSunRain = "cloud-sun-rain",
+  Moon = "moon",
+  CloudMoon = "cloud-moon",
+  CloudMoonRain = "cloud-moon-rain",
+  Clouds = "clouds",
+  CloudShowers = "cloud-showers",
+  Thunderstorm = "thunderstorm",
+  Snow = "snow",
+  Fog = "fog",
+}
 export interface WeatherCondition {
   description: string;
-  icon:
-    | "01d"
-    | "02d"
-    | "03d"
-    | "04d"
-    | "09d"
-    | "10d"
-    | "11d"
-    | "13d"
-    | "50d"
-    | "01n"
-    | "02n"
-    | "03n"
-    | "04n"
-    | "09n"
-    | "10n"
-    | "11n"
-    | "13n"
-    | "50n";
+  icon: WeatherIcon;
   [key: string]: any;
 }
 export interface WeatherData {

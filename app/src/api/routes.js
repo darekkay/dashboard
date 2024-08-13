@@ -9,6 +9,20 @@
  * ---------------------------------------------------------------
  */
 
+export var WeatherIcon;
+(function (WeatherIcon) {
+  WeatherIcon["Sun"] = "sun";
+  WeatherIcon["CloudSun"] = "cloud-sun";
+  WeatherIcon["CloudSunRain"] = "cloud-sun-rain";
+  WeatherIcon["Moon"] = "moon";
+  WeatherIcon["CloudMoon"] = "cloud-moon";
+  WeatherIcon["CloudMoonRain"] = "cloud-moon-rain";
+  WeatherIcon["Clouds"] = "clouds";
+  WeatherIcon["CloudShowers"] = "cloud-showers";
+  WeatherIcon["Thunderstorm"] = "thunderstorm";
+  WeatherIcon["Snow"] = "snow";
+  WeatherIcon["Fog"] = "fog";
+})(WeatherIcon || (WeatherIcon = {}));
 import axios from "axios";
 export var ContentType;
 (function (ContentType) {

@@ -51,6 +51,15 @@ const Configuration = ({
         }
         options={["metric", "imperial"] as const}
       />
+      <div className="text-right text-1">
+        <Trans
+          i18nKey="common.poweredBy"
+          values={{ name: "Open-Meteo" }}
+          components={{
+            alink: <Link href="https://open-meteo.com/">{""}</Link>,
+          }}
+        />
+      </div>
     </div>
   );
 };

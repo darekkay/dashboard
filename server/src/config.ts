@@ -13,7 +13,6 @@ const config = {
   port: process.env.PORT ?? 3401,
   saveAxiosResponses: process.env.SAVE_AXIOS_RESPONSES === "true",
   api: {
-    openWeatherMap: process.env.API_OPEN_WEATHER_MAP,
     unsplash: process.env.API_UNSPLASH,
     youtube: process.env.API_YOUTUBE,
   },

@@ -18,7 +18,6 @@ Recommended:
 Some widgets require a 3rd-party API key:
 
 - [Unsplash](https://unsplash.com/documentation)
-- [OpenWeatherMap](https://openweathermap.org/api)
 - [YouTube](https://developers.google.com/youtube/v3/getting-started)
 
 Those keys need to be stored at `server/.env` (copy `server/.env.example` as a template). The project will run with missing API keys, but the affected widgets will not work.

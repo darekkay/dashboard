@@ -4,7 +4,7 @@ import logger from "@darekkay/logger";
 import axios from "axios";
 
 import app from "../../app";
-import openweatherMockResponse from "./__examples__/weather.json";
+import openMeteoMockResponse from "./__examples__/weather.json";
 
 describe("weather", () => {
   afterEach(() => {
@@ -13,7 +13,7 @@ describe("weather", () => {
 
   test("should return a valid response", async () => {
     const mockedAxios = axios as jest.Mocked<typeof axios>;
-    mockedAxios.get.mockResolvedValueOnce(openweatherMockResponse);
+    mockedAxios.get.mockResolvedValueOnce(openMeteoMockResponse);
 
     return request(app)
       .get("/weather")

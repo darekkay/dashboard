@@ -3,6 +3,7 @@
 ## Current development
 
 - :boom: Remove Twitter integration.
+- :boom: Switch from OpenWeather to [[Open-Meteo](https://open-meteo.com).
 - :boom: Drop Node 16 support.
 - :sparkles: New widget: [Weather](https://dashboard.darekkay.com/docs/widgets/weather.html).
 - :sparkles: New widget: [Day Countdown](https://dashboard.darekkay.com/docs/widgets/day-countdown.html).
